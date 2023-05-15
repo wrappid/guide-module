@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CoreGrid, CoreBox, CoreTypographyBody1, CoreButton, CoreH1 } from '@wrappid/core';
 import { resetTest, testFailure, testSuccess } from '../actions/test.action';
 
-function TestComponent() {
+function TestComponentMobile() {
     const dispatch = useDispatch();
     const test = useSelector(state => state.test);
 
@@ -15,7 +15,7 @@ function TestComponent() {
                     sm: 8
                 }
             }}>
-                <CoreH1>Test Component Both</CoreH1>
+                <CoreH1>Test Component Mobile</CoreH1>
                 <CoreTypographyBody1>{JSON.stringify(test, null, 2)}</CoreTypographyBody1>
             </CoreBox>
             <CoreBox gridProps={{
@@ -32,4 +32,4 @@ function TestComponent() {
     )
 }
 
-export default TestComponent
+export default TestComponentMobile;
