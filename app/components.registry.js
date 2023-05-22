@@ -4,14 +4,14 @@ import TestComponentMobile from "./components/TestComponentMobile";
 
 export const ComponentRegistry = {
     TestComponents: {
-        comp: TestComponents,
+        comp: TestComponent,
     },
     TestComponentsWeb: {
-        comp: TestComponentsWeb,
+        comp: TestComponentWeb,
         mobile: false
     },
     TestComponentsMobile: {
-        comp: TestComponentsMobile,
+        comp: TestComponentMobile,
         web: false
     }
 }

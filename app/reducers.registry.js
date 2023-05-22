@@ -1,5 +1,5 @@
 import testReducer from "./reducers/test.reducer"
 
-export const reducers = {
+export const ReducerRegistry = {
     "test": testReducer
 }
