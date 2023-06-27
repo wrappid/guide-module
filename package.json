@@ -4,6 +4,8 @@
   "description": "This is a template repository for a Wrappid app module.",
   "main": "index.js",
   "scripts": {
+    "code:lint": "eslint --ignore-path .gitignore .",
+    "code:format": "npm run code:lint -- --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

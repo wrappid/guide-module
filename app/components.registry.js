@@ -1,17 +1,15 @@
 import TestComponent from "./components/TestComponent";
-import TestComponentWeb from "./components/TestComponentWeb";
 import TestComponentMobile from "./components/TestComponentMobile";
+import TestComponentWeb from "./components/TestComponentWeb";
 
 export const ComponentRegistry = {
-    TestComponents: {
-        comp: TestComponent,
-    },
-    TestComponentsWeb: {
-        comp: TestComponentWeb,
-        mobile: false
-    },
-    TestComponentsMobile: {
-        comp: TestComponentMobile,
-        web: false
-    }
-}
+  TestComponents      : { comp: TestComponent },
+  TestComponentsMobile: {
+    comp: TestComponentMobile,
+    web : false
+  },
+  TestComponentsWeb: {
+    comp  : TestComponentWeb,
+    mobile: false
+  }
+};

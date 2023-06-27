@@ -1,7 +1,6 @@
 const express = require("express");
 
 const testController = require("../controllers/test.controller");
-
 const testMiddleware = require("../middlewares/test.middleware");
 
 const testRouter = express.Router();
