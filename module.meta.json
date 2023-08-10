@@ -1,7 +1,0 @@
-{
-    "app": {
-        "web": true,
-        "mobile": true
-    },
-    "service": {}
-}
