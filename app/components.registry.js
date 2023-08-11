@@ -2,7 +2,7 @@ import TestComponent from "./components/TestComponent";
 import TestComponentMobile from "./components/TestComponentMobile";
 import TestComponentWeb from "./components/TestComponentWeb";
 
-export const ComponentRegistry = {
+export const ComponentsRegistry = {
   TestComponents      : { comp: TestComponent },
   TestComponentsMobile: {
     comp: TestComponentMobile,
