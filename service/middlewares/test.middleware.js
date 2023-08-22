@@ -1,6 +1,7 @@
 const testMiddleware = (req, res, next) => {
     try {
-        // logger implementation pending
+        console.log("Test middleware called successfully!");
+
         next();
     } catch (error) {
         res.status(500).json({ error: error.message });

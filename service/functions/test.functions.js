@@ -1,23 +1,63 @@
 const { cacheActions, databaseActions } = require("@wrappid/service-core");
 
 /**
- *
- * @returns
+ * 
+ * @param {*} req 
+ * @returns 
  */
-const testFunc1 = () => {
-  return "This is a test func 1.";
+const readTestDataAll = async (req) => {
+  try {
+    //cache call to get data
+    let cacheKey = "testData";
+    let result = await cacheActions.read("wrappid-cache", cacheKey);
+    if (result) {
+      return result;
+    } else {
+      //Database call and update to cache
+      let result = await databaseActions.findAll("application", "TestDatas");
+      // Update chache with data
+      let cacheKey = "testData";
+      let data = JSON.stringify(result);
+      await cacheActions.update("wrappid-cache", cacheKey, data);
+      return data;
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+/**
+ * 
+ * @param {*} req 
+ * @returns 
+ */
+const readTestData = async (req) => {
+  try {
+    //cache call to get data
+    let cacheKey = req.params.id.toString();
+    let result = await cacheActions.read("wrappid-cache", cacheKey);
+    if (result) {
+      return result;
+    } else {
+      //Database call and update to cache
+      let result = await databaseActions.findOne("application", "TestDatas", {
+        req,
+      });
+      // Update chache with data
+      let cacheKey = result[0]["id"].toString();
+      let data = JSON.stringify(result[0]);
+      await cacheActions.update("wrappid-cache", cacheKey, data);
+      return data;
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 /**
- *
- * @returns
- */
-const testFunc2 = () => {
-  return "This is a test func 2.";
-};
-
-/**
- *
+ * 
+ * @param {*} req 
+ * @returns 
  */
 const createTestData = async (req) => {
   try {
@@ -31,76 +71,36 @@ const createTestData = async (req) => {
 };
 
 /**
- *
+ * 
+ * @param {*} req 
+ * @returns 
  */
 const updateTestData = async (req) => {
   try {
-    let ressult = await databaseActions.update("application", "TestDatas", {
-      req
+    let result = await databaseActions.update("application", "TestDatas", {
+      data: { ...req.body },
+      where: {
+        id: req.params.id
+      }
     });
-    // Update chache with data
-    let cacheKey = req.params.id.toString();
-    let data = JSON.stringify(req.params);
-    await cacheActions.update("first", cacheKey, data);
-    return data;
-  } catch (error) {
-    throw new Error(error);
-  }
-};
 
-/**
- * @returns
- */
-const readTestDataAll = async (req) => {
-  try {
-    //cache call to get data
-    let cacheKey = "testData";
-    let result = await cacheActions.read("first", cacheKey);
     if (result) {
-      return result;
+      // Delete chache with data
+      cacheKey = req.params.toString();
+      await cacheActions.delete("wrappid-cache", cacheKey);
     } else {
-      //Database call and update to cache
-      let result = await databaseActions.findAll("application", "TestDatas");
-      // Update chache with data
-      let cacheKey = "testData";
-      let data = JSON.stringify(result);
-      await cacheActions.update("first", cacheKey, data);
-      return data;
-    }
-  } catch (error) {
-    throw new Error(error);
-  }
-}
-
-/**
- *
- * @returns
- */
-const readTestData = async (req) => {
-  try {
-    //cache call to get data
-    let cacheKey = req.params.id.toString();
-    let result = await cacheActions.read("first", cacheKey);
-    if (result) {
-      return result;
-    } else {
-      //Database call and update to cache
-      let result = await databaseActions.findOne("application", "TestDatas", {
-        req,
-      });
-      // Update chache with data
-      let cacheKey = result[0]["id"].toString();
-      let data = JSON.stringify(result[0]);
-      await cacheActions.update("first", cacheKey, data);
-      return data;
+      throw new Error("Can't update entity in the database");
     }
   } catch (error) {
     throw new Error(error);
   }
 };
 
+
 /**
- *
+ * 
+ * @param {*} req 
+ * @returns 
  */
 const deleteTestData = async (req) => {
   try {
@@ -110,10 +110,8 @@ const deleteTestData = async (req) => {
       },
     });
     cacheKey = req.params.toString();
-    await cacheActions.delete("first", cacheKey);
-
-    //if present in cache then delete from cache
-
+    await cacheActions.delete("wrappid-cache", cacheKey);
+    
     return data;
   } catch (error) {
     throw new Error(error);
@@ -121,23 +119,10 @@ const deleteTestData = async (req) => {
 };
 
 
-const sentMail = async (mailoptions) => {
-  try {
-   const mail = require("./../../../wrappid/communication/sentMail")
-   return await mail.sentMail(mailoptions);
-  }catch (error) {
-    throw new Error(error);
-  }
-};
-
-
 module.exports = {
-  testFunc1,
-  testFunc2,
+  readTestDataAll,
+  readTestData,
   createTestData,
   updateTestData,
-  readTestData,
-  readTestDataAll,
   deleteTestData,
-  sentMail
 };
