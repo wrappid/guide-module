@@ -1,6 +1,6 @@
 const testController = require("./controllers/test.controller");
 
-const ControllerssRegistry = {
+const controllersRegistry = {
     "testGetAllFunc": testController.testGetAllFunc,
     "testGetFunc": testController.testGetFunc,
     "testPostFunc": testController.testPostFunc,
@@ -8,4 +8,4 @@ const ControllerssRegistry = {
     "testPatchFunc": testController.testPatchFunc,
 };
 
-module.exports = ControllerssRegistry;
+module.exports = controllersRegistry;
