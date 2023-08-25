@@ -1,11 +1,11 @@
 const testFunctions = require("./functions/test.functions");
 
 const functionsRegistry = {
-    "getTestAll": testFunctions.getTestAll,
-    "getTestAll": testFunctions.get,
-    "getTestAll": testFunctions.getTestAll,
-    "getTestAll": testFunctions.getTestAll,
-    "getTestAll": testFunctions.getTestAll,
+    "readTestData": testFunctions.readTestData,
+    "readTestDataAll": testFunctions.readTestDataAll,
+    "createTestData": testFunctions.createTestData,
+    "updateTestData": testFunctions.updateTestData,
+    "deleteTestData": testFunctions.deleteTestData,
 };
 
 module.exports = functionsRegistry;
