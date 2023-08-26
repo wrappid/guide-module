@@ -4,4 +4,4 @@ const middlewaresRegistry = {
     "testMiddleware": testMiddleware
  };
 
-module.exports = middlewaresRegistry;
+exports.middlewaresRegistry = middlewaresRegistry;

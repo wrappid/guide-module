@@ -4,4 +4,4 @@ const validationsRegistry = {
     ...testValidations
 };
 
-module.exports = validationsRegistry;
+exports.validationsRegistry = validationsRegistry;

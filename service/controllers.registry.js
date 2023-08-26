@@ -8,4 +8,4 @@ const controllersRegistry = {
     "testPatchFunc": testController.testPatchFunc,
 };
 
-module.exports = controllersRegistry;
+exports.controllersRegistry = controllersRegistry;

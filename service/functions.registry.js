@@ -8,4 +8,4 @@ const functionsRegistry = {
     "deleteTestData": testFunctions.deleteTestData,
 };
 
-module.exports = functionsRegistry;
+exports.functionsRegistry = functionsRegistry;
