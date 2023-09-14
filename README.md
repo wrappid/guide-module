@@ -1,1 +1,1 @@
-# wm-module
+# guide-module

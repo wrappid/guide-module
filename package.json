@@ -1,7 +1,7 @@
 {
-  "name": "wrappid-module",
+  "name": "guide-module",
   "version": "0.0.1",
-  "description": "This is a template repository for a Wrappid app module.",
+  "description": "This is a template repository for a guide module.",
   "main": "index.js",
   "scripts": {
     "code:lint:app": "eslint --ignore-path .gitignore ./app",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git:https://github.com/wrappid/wm-app-module.git"
+    "url": "git:https://github.com/wrappid/guide-module.git"
   },
   "keywords": [
     "wrappid",
