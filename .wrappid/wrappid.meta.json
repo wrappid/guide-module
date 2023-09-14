@@ -1,0 +1,14 @@
+{
+    "projectType": "module",
+    "projectID": "",
+    "projectName": "wrappid",
+    "remote": true,
+    "repoProvider": "github.com",
+    "repoOwner": "wrappid",
+    "repoURL": "https://github.com/wrappid/wrappid-module.git",
+    "app": {
+        "renderType": []
+    },
+    "service": {},
+    "modules": {}
+}

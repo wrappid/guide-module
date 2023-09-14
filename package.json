@@ -1,0 +1,36 @@
+{
+  "name": "wrappid-module",
+  "version": "0.0.1",
+  "description": "This is a template repository for a Wrappid app module.",
+  "main": "index.js",
+  "scripts": {
+    "code:lint:app": "eslint --ignore-path .gitignore ./app",
+    "code:format:app": "npm run code:lint:app -- --fix ./app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git:https://github.com/wrappid/wm-app-module.git"
+  },
+  "keywords": [
+    "wrappid",
+    "module",
+    "react",
+    "react-native",
+    "template"
+  ],
+  "author": "wrappid",
+  "license": "ISC",
+  "devDependencies": {
+    "@wrappid/core": "^0.0.276",
+    "@wrappid/styles": "^0.0.88",
+    "eslint": "^8.40.0",
+    "eslint-plugin-etc": "^2.0.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-require-extensions": "^0.1.3",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "react-redux": "^8.0.5"
+  }
+}
