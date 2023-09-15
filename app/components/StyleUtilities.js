@@ -4,32 +4,34 @@ import {
   CoreH5,
   CoreH6,
   CoreTypographyBody1,
+  CoreTypographyBody2,
   CoreBox,
   CoreGrid,
   CoreDivider,
-  CoreClasses
+  CoreClasses,
 } from "@wrappid/core";
 import { UtilityClasses } from "@wrappid/styles";
 
 import CodeSample from "./CodeSample";
+import StyleSample from "./StyleSample";
 
 const CLASS_NAME_TO_EXCLUDE = [
-  // -- "DEV_BORDER",
-  // -- "ALIGNMENT",
+  "DEV_BORDER",
+  "ALIGNMENT",
+  "DISPLAY",
+  "FLEX",
+  "FLOAT",
   "INTERACTIONS",
+  "OBJECT_FIT",
+  "OPACITY",
+  "OVERFLOW",
   "POSITION",
   "WIDTH",
   "HEIGHT",
   "VW_100",
   "MIN_VW_100",
 ];
-const CLASS_NAME_FOR_SCREEN_SIZES = [
-  "SM",
-  "MD",
-  "LG",
-  "XL",
-  "XXL"
-];
+const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
 
 export default function StyleUtilities() {
   return (
@@ -43,14 +45,16 @@ export default function StyleUtilities() {
           These are style utilities built using bootstrap flavour.
         </CoreTypographyBody1>
 
-        {getStyleSamples(UtilityClasses)}
-
+        {/* {getStyleSamples(UtilityClasses)} */}
+        <StyleSample classes={UtilityClasses} />
         {/* -- {getStyleSamples(StyledComponentsClasses)} */}
         {/* -- {getStyleSamples(CoreClasses)} */}
       </CoreBox>
 
       <CoreBox gridProps={{ gridSize: 3 }}>
-        <CoreTypographyBody1>Table Of Contents</CoreTypographyBody1>
+        <CoreTypographyBody1>
+          Table Of Contents{/* <CoreTOC>Table Of Contents</CoreTOC> */}
+        </CoreTypographyBody1>
       </CoreBox>
     </CoreGrid>
   );
@@ -73,33 +77,52 @@ const getStyleSamples = (classes) => {
     <CoreBox styleClasses={[CoreClasses.MARGIN.MB5]}>
       {Object.keys(classes).map((className, index) => {
         console.log("className = " + className);
-        if (!CLASS_NAME_TO_EXCLUDE?.some((nameToExclude) => nameToExclude?.includes(className))) {
+        if (!CLASS_NAME_TO_EXCLUDE?.includes(className)) {
+          console.log("Handling className = " + className);
+          let key =
+            (classGroupName ? classGroupName + "-" : "") + (className ? "" + className : "group");
+          console.log("key = " + key);
           if (isString(classes[className])) {
-            return (
+            let codeSampleData = CLASS_SPECIFIC_SAMPLE_COMPONENT[className]
+              ? CLASS_SPECIFIC_SAMPLE_COMPONENT[className]
+              : CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName]
+              ? CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName]
+              : DEFAULT_SAMPLE_COMPONENT;
+            return codeSampleData.grouped ? (
+              codeSampleData.renderElement(classes, className)
+            ) : (
               <CodeSample
+                key={key}
                 title={className}
-                description={"Some description text goes here..."}
+                description={codeSampleData.description}
                 code={"NOT YET CODED!!!"}
-                renderElement={
-                  CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName]
-                    ? CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName](classes, className)
-                    : DEFAULT_SAMPLE_COMPONENT(classes, className)
-                }
+                renderElement={codeSampleData.renderElement(classes, className)}
               />
             );
           } else if (isObject(classes[className])) {
-            if (
-              CLASS_NAME_FOR_SCREEN_SIZES?.some((nameToExclude) =>
-                nameToExclude?.includes(className)
-              )
-            ) {
+            if (CLASS_NAME_FOR_SCREEN_SIZES?.includes(className)) {
               return (
                 <CoreTypographyBody1 styleClasses={[CoreClasses.COLOR.TEXT_WARNING_LIGHT]}>
                   {className} : Size specific documantation not available as of now
                 </CoreTypographyBody1>
               );
             } else {
+              // handling the group
               classGroupName = className;
+              let codeSampleData = CLASS_SPECIFIC_SAMPLE_COMPONENT[className]
+                ? CLASS_SPECIFIC_SAMPLE_COMPONENT[className]
+                : DEFAULT_SAMPLE_COMPONENT;
+              return codeSampleData.grouped ? (
+                codeSampleData.renderElement(classes, className)
+              ) : (
+                <CodeSample
+                  key={key}
+                  title={className}
+                  description={codeSampleData.description}
+                  code={"NOT YET CODED!!!"}
+                  renderElement={codeSampleData.renderElement(classes, className)}
+                />
+              );
               return (
                 <>
                   <CoreH5 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
@@ -117,6 +140,8 @@ const getStyleSamples = (classes) => {
           } else {
             console.warn("Unknown type for " + className);
           }
+        } else {
+          console.log("Excluding className = " + className);
         }
       })}
 
@@ -125,69 +150,155 @@ const getStyleSamples = (classes) => {
   );
 };
 
-const DEFAULT_SAMPLE_COMPONENT = (classes, className) => {
-  return (
-    <CoreBox
-      // key={`${className}-${index}`}
-      // gridProps={{ gridSize: 4 }}
-      styleClasses={[classes[className], CoreClasses.PADDING.P2, CoreClasses.MARGIN.MB1]}
-    >
-      {className}
-    </CoreBox>
-  );
+const DEFAULT_SAMPLE_COMPONENT = {
+  description: "",
+  grouped: false,
+  renderElement: (classes, className) => {
+    return (
+      <CoreBox
+        // key={`${className}-${index}`}
+        // gridProps={{ gridSize: 4 }}
+        styleClasses={[classes[className], CoreClasses.PADDING.P2, CoreClasses.MARGIN.MB1]}
+      >
+        {className}
+      </CoreBox>
+    );
+  },
 };
 
 const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
-  ALIGNMENT: (classes, className) => {
-    return (
-      <CoreBox
-        styleClasses={[
-          classes[className],
-          CoreClasses.BORDER.BORDER,
-          CoreClasses.PADDING.P2,
-          CoreClasses.HEIGHT.MIN_VH_25,
-          CoreClasses.WIDTH.MIN_W_75,
-          CoreClasses.FLEX.FLEX_WRAP,
-        ]}
-      >
-        <CoreTypographyBody1 styleClasses={[CoreClasses.BG.BG_PRIMARY]}>
-          {className}
+  ALIGNMENT: {
+    description: "",
+    grouped: true,
+    renderElement: (classes, className) => {
+      return (
+        <CoreBox
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P2,
+            CoreClasses.HEIGHT.MIN_VH_25,
+            CoreClasses.WIDTH.MIN_W_75,
+            CoreClasses.FLEX.FLEX_WRAP,
+          ]}
+        >
+          <CoreTypographyBody1 styleClasses={[CoreClasses.BG.BG_PRIMARY]}>
+            {className}
+          </CoreTypographyBody1>
+        </CoreBox>
+      );
+    },
+  },
+  BG: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Sets the background of an element to any contextual class.
         </CoreTypographyBody1>
-      </CoreBox>
-    );
+        <CoreTypographyBody2>
+          {`Background utilities do not set color, so in some cases you’ll want to use CoreClasses.COLOR.TEXT_<contextual-class>`}
+        </CoreTypographyBody2>
+      </>
+    ),
+    grouped: true,
+    renderElement: (classes, className) => {
+      return (
+        <CoreBox
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P2,
+            CoreClasses.TEXT.TEXT_CENTER,
+            CoreClasses.WIDTH.MIN_W_75,
+          ]}
+        >
+          {className}
+        </CoreBox>
+      );
+    },
   },
-  BG: (classes, className) => {
-    return (
-      <CoreBox
-        styleClasses={[
-          classes[className],
-          CoreClasses.BORDER.BORDER,
-          CoreClasses.PADDING.P2,
-          CoreClasses.TEXT.TEXT_CENTER,
-          CoreClasses.WIDTH.MIN_W_75,
-        ]}
-      >
-        {className}
-      </CoreBox>
-    );
+  BORDER: {
+    description: "",
+    grouped: true,
+    renderElement: (classes, className) => {
+      return (
+        <CoreBox
+          // key={`borderClass-${index}`}
+          gridProps={{ gridSize: 3 }}
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            classes[className],
+            CoreClasses.PADDING.P2,
+            CoreClasses.MARGIN.MB1,
+          ]}
+        >
+          {className}
+        </CoreBox>
+      );
+    },
   },
-  BORDER: (classes, className) => {
-    return (
-      <CoreBox
-        // key={`borderClass-${index}`}
-        gridProps={{ gridSize: 3 }}
-        sx={{ backgroundColor: "#eee" }}
-        styleClasses={[
-          CoreClasses.BORDER.BORDER,
-          CoreClasses.BORDER.BORDER_2,
-          CoreClasses.BORDER[className],
-          CoreClasses.PADDING.P2,
-          CoreClasses.MARGIN.MB1,
-        ]}
-      >
-        {className}
-      </CoreBox>
-    );
+  SHADOW: {
+    description: "",
+    grouped: true,
+    renderElement: (classes, className) => {
+      return (
+        <CoreBox
+          styleClasses={[
+            classes[className],
+            CoreClasses.PADDING.P3,
+            CoreClasses.MARGIN.M3,
+            CoreClasses.TEXT.TEXT_CENTER,
+            CoreClasses.WIDTH.MIN_W_75,
+          ]}
+        >
+          {className}
+        </CoreBox>
+      );
+    },
+  },
+  PADDING: {
+    description: "",
+    grouped: true,
+    renderElement: (classes, className) => {
+      return (
+        <CoreBox
+          styleClasses={[
+            classes[className],
+            CoreClasses.BG.BG_SUCCESS_LIGHT,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_SUCCESS,
+            CoreClasses.MARGIN.M3,
+          ]}
+        >
+          <CoreTypographyBody1 styleClasses={[CoreClasses.BG.BG_WHITE, CoreClasses.MARGIN.M0]}>
+            {className}
+          </CoreTypographyBody1>
+        </CoreBox>
+      );
+    },
+  },
+  MARGIN: {
+    description: "",
+    grouped: true,
+    renderElement: (classes, className) => {
+      return (
+        <CoreBox
+          styleClasses={[
+            CoreClasses.BG.BG_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_WARNING,
+            CoreClasses.MARGIN.M3,
+          ]}
+        >
+          <CoreTypographyBody1
+            styleClasses={[CoreClasses.BG.BG_WHITE, CoreClasses.MARGIN.M0, classes[className]]}
+          >
+            {className}
+          </CoreTypographyBody1>
+        </CoreBox>
+      );
+    },
   },
 };
 
@@ -208,7 +319,11 @@ const getBackgroundColorUtilitySamples = () => {
             <CoreBox
               key={`bgClass-${index}`}
               gridProps={{ gridSize: 4 }}
-              styleClasses={[CoreClasses.BG[bgClass], CoreClasses.PADDING.P2, CoreClasses.MARGIN.MB1]}
+              styleClasses={[
+                CoreClasses.BG[bgClass],
+                CoreClasses.PADDING.P2,
+                CoreClasses.MARGIN.MB1,
+              ]}
             >
               {bgClass}
             </CoreBox>
@@ -266,7 +381,11 @@ const getColorUtilitySamples = () => {
             <CoreBox
               key={`colorClass-${index}`}
               gridProps={{ gridSize: 3 }}
-              styleClasses={[CoreClasses.COLOR[colorClass], CoreClasses.PADDING.PX2, CoreClasses.MARGIN.MB1]}
+              styleClasses={[
+                CoreClasses.COLOR[colorClass],
+                CoreClasses.PADDING.PX2,
+                CoreClasses.MARGIN.MB1,
+              ]}
             >
               {colorClass}
             </CoreBox>
@@ -289,7 +408,11 @@ const getTextUtilitySamples = () => {
             <CoreBox
               key={`textClass-${index}`}
               gridProps={{ gridSize: 3 }}
-              styleClasses={[CoreClasses.TEXT[textClass], CoreClasses.PADDING.PX2, CoreClasses.MARGIN.MB1]}
+              styleClasses={[
+                CoreClasses.TEXT[textClass],
+                CoreClasses.PADDING.PX2,
+                CoreClasses.MARGIN.MB1,
+              ]}
             >
               {textClass}
             </CoreBox>
@@ -321,7 +444,12 @@ const getOpacityUtilitySamples = () => {
             <CoreBox
               key={`opacityClass-${index}`}
               gridProps={{ gridSize: 3 }}
-              styleClasses={[CoreClasses.OPACITY[opacityClass], CoreClasses.PADDING.P2, CoreClasses.MARGIN.MB1, CoreClasses.BG.BG_PRIMARY]}
+              styleClasses={[
+                CoreClasses.OPACITY[opacityClass],
+                CoreClasses.PADDING.P2,
+                CoreClasses.MARGIN.MB1,
+                CoreClasses.BG.BG_PRIMARY,
+              ]}
             >
               {opacityClass}
             </CoreBox>
