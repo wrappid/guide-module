@@ -1,6 +1,8 @@
 import React from "react";
 
-import { CoreTextButton, CoreBox, CoreGrid, CoreTypographyBody1, CoreClasses } from "@wrappid/core";
+import {
+  CoreTextButton, CoreBox, CoreGrid, CoreTypographyBody1, CoreClasses, CoreH4 
+} from "@wrappid/core";
 
 import DocsRegistry from "./docs/DocsRegistry";
 
@@ -26,7 +28,7 @@ export default function Components() {
 
   const getAllDocKeys = (docsRegistry, docPagesReg) => {
     if (Object.keys(docsRegistry)?.length > 0) {
-      let tempDocsRegistry = docsRegistry?.main ? (docsRegistry?.childrens || {}) : docsRegistry;
+      let tempDocsRegistry = docsRegistry?.main ? (docsRegistry?.children || {}) : docsRegistry;
 
       docPagesReg = { ...docPagesReg, ...getDocsPage(tempDocsRegistry) };
       Object.keys(tempDocsRegistry).forEach(docKey => {
@@ -62,9 +64,9 @@ export default function Components() {
                 }}
               />
               
-              {docsRegistry[docKey]?.childrens
-                && Object.keys(docsRegistry[docKey]?.childrens)?.length > 0
-                && renderTOC(docsRegistry[docKey]?.childrens)}
+              {docsRegistry[docKey]?.children
+                && Object.keys(docsRegistry[docKey]?.children)?.length > 0
+                && renderTOC(docsRegistry[docKey]?.children)}
             </CoreBox>
           );
         })}
@@ -75,7 +77,9 @@ export default function Components() {
   return (
     <CoreGrid>
       <CoreBox gridProps={{ gridSize: 9 }}>
-        {currentPage && React.createElement(docsPageRegistry[currentPage])}
+        {currentPage && docsPageRegistry[currentPage]
+          ? React.createElement(docsPageRegistry[currentPage])
+          : <CoreH4>No documentation component available for {currentPage}.</CoreH4>}
       </CoreBox>
 
       <CoreBox gridProps={{ gridSize: 3 }}>
