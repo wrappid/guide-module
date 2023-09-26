@@ -5,8 +5,7 @@ import {
   CoreSpan,
   CoreH4,
   CoreTypographyBody1,
-  CoreIcon,
-  CoreDivider
+  CoreIcon
 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
@@ -210,53 +209,9 @@ export default function CoreAvatarDocs() {
       <CodeSample title="Total avatars (NOT IMPLEMENTED)" />
 
       <CodeSample title="With badge (NOT IMPLEMENTED)" />
-          
-      <CoreDivider />
 
       <ComponentProps component={CoreAvatar} />
 
-      {/* <PropsSection propName={"alt"} subtitle={"Used in combination with src or srcSet to provide an alt attribute for the rendered img element."} types={"'string'"} />
-      
-      <CoreDivider />
-
-      <PropsSection propName={"children"} subtitle={"Used to render icon or text elements inside the Avatar if src is not set. This can be an element, or just a string."} types={"'node'"} />
-      
-      <CoreDivider />
-
-      <PropsSection propName={"sizes"} subtitle={"The sizes attribute for the img element."} types={"'string'"} />
-      
-      <CoreDivider />
-
-      <PropsSection propName={"src"} subtitle={"The src attribute for the img element."} types={"'string'"} />
-      
-      <CoreDivider />
-
-      <PropsSection propName={"srcSet"} subtitle={"The srcSet attribute for the img element. Use this attribute for responsive image display."} types={"'string'"} />
-      
-      <CoreDivider />
-
-      <PropsSection propName={"variant"} subtitle={"The shape of the avatar."} types={"'circular' | 'rounded' | 'square' | 'string'"} />
-
-      <CoreDivider />
-
-      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY1]}>Props used with different names than in MUI</CoreH4>
-
-      <PropsSection
-        propName={"styleClasses"}
-        subtitle={"Set the text-align on the component."}
-        types={"'center' | 'inherit' | 'justify' | 'left' | 'right'"} />
-
-      <CoreDivider />
-
-      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY1]}>Props to be supported in future</CoreH4>
-
-      <CoreDivider />
-
-      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY1]}>Props never to be supported</CoreH4>
-
-      <CoreTypographyBody1>{"sx"}</CoreTypographyBody1> */}
-
-      <CoreDivider />
     </>
   );
 }

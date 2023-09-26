@@ -1,71 +1,39 @@
 import {
-  CoreBox, CoreChip, CoreClasses, CoreStack, CoreTypographyBody2, CoreTypographySubtitle2 
+  stringUtils, defaultValidProps, CoreBox, CoreClasses, CoreDivider, CoreH6, CoreTypographyBody1, CoreH5, CoreChip, CoreStack 
 } from "@wrappid/core";
 
+import ComponentPropTypes from "./ComponentPropTypes";
+
 export default function ComponentProps(props) {
-  const { component } = props;
+  const { type = "valid", component } = props;
+    
+  const validProps = [...(component?.validProps || []), ...defaultValidProps];
 
   return (
     <>
+      <CoreH5>{`${stringUtils.getLabel(type)} Props`}</CoreH5>
+
       {
-        component?.validProps && component?.validProps?.map(eachProp => {
+        validProps && validProps?.map(eachProp => {
           return (
-            <CoreBox key={`${eachProp}`} styleClasses={[CoreClasses.MARGIN.MT1]}>
-              <CoreChip
-                label={<CoreTypographySubtitle2>{eachProp?.name}</CoreTypographySubtitle2>}
-                size="small"
-              />
+            <CoreBox key={`${eachProp}`}>
+              <CoreDivider styleClasses={[CoreClasses.MARGIN.MY3]} />
 
-              <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.MT1]}>
+              <CoreStack>
+                <CoreH6>{eachProp?.name}</CoreH6>
+                
+                {eachProp?.required ? (
+                  <CoreChip size={"small"} color={"primary"} label={"REQUIRED"} />
+                ) : (
+                  <CoreChip size={"small"} color={"secondary"} label={"OPTIONAL"} />
+                )}
+              </CoreStack>
+
+              <CoreTypographyBody1>
                 {eachProp?.description}
-              </CoreTypographyBody2>
+              </CoreTypographyBody1>
 
-              {eachProp?.types?.map(eachType => {
-                return (
-                      
-                  <>
-                    {JSON.stringify(eachType)}
-
-                    <CoreStack
-                      direction="row"
-                      spacing={1}
-                      styleClasses={[CoreClasses.MARGIN.MT1]}
-                    >
-                      <CoreTypographyBody2
-                        styleClasses={[CoreClasses.TEXT.TEXT_WEIGHT_BOLD]}
-                      >
-                                      Type:
-                      </CoreTypographyBody2>
-
-                      <CoreChip label={eachType?.type?.name} size="small" />
-                    </CoreStack>
-
-                    <CoreTypographySubtitle2>
-                      {"Valid Values: "}
-
-                      {
-                        eachType?.validValues?.join(" | ")
-                      }
-                    </CoreTypographySubtitle2>
-
-                    {eachType?.default && (
-                      <CoreStack
-                        direction="row"
-                        spacing={1}
-                        styleClasses={[CoreClasses.MARGIN.MT1]}
-                      >
-                        <CoreTypographyBody2
-                          styleClasses={[CoreClasses.TEXT.TEXT_WEIGHT_BOLD]}
-                        >
-                                          Default:
-                        </CoreTypographyBody2>
-
-                        <CoreChip label={eachType?.default} size="small" />
-                      </CoreStack>
-                    )}
-                  </>
-                );
-              })}
+              <ComponentPropTypes propTypes={eachProp?.types} />
             </CoreBox>
           );
         })
