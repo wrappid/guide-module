@@ -32,5 +32,26 @@
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-unused-imports": "^2.0.0",
     "react-redux": "^8.0.5"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.1.0",
+    "jest": "^27.5.1",
+    "service-core": "^3.0.1",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts}",
+      "!**/node_modules/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    }
   }
 }
