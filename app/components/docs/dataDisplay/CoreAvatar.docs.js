@@ -28,7 +28,6 @@ export default function CoreAvatarDocs() {
         description={
           <>
             Image avatars can be created by passing standard
-            {/* eslint-disable-next-line react/jsx-newline */}
             <CoreSpan code={true}>{" img "}</CoreSpan>props
 
             <CoreSpan code={true}>{" src "}</CoreSpan>or
@@ -205,6 +204,8 @@ export default function CoreAvatarDocs() {
       />
 
       <CodeSample title="Fallbacks (NOT IMPLEMENTED)" />
+
+      <CodeSample title="Grouped (NOT IMPLEMENTED)" />
 
       <CodeSample title="Total avatars (NOT IMPLEMENTED)" />
 

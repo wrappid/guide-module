@@ -6,7 +6,7 @@ import {
   CoreClasses,
   CoreDivider,
   CoreH6,
-  CoreTypographyBody1,
+  CoreTypographyBody1
 } from "@wrappid/core";
 
 export default function CodeSample(props) {
@@ -16,7 +16,6 @@ export default function CodeSample(props) {
 
   return (
     <CoreBox styleClasses={[CoreClasses.MARGIN.MB5]}>
-      {/* <CoreTypographyBody1>----- CodeSample STARTS here -----</CoreTypographyBody1> */}
       <CoreH6 styleClasses={[CoreClasses.MARGIN.MY1, CoreClasses.COLOR.TEXT_PRIMARY_LIGHT]}>
         {title || "NO TITLE SET"}
       </CoreH6>
@@ -24,7 +23,6 @@ export default function CodeSample(props) {
       <CoreTypographyBody1>{description || "NO DESCRIPTION SET"}</CoreTypographyBody1>
 
       <CoreCard>
-        {/* <CoreBox styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_SECONDARY]}> */}
         <CoreBox styleClasses={[]}>
           <CoreBox
             styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P3]}
@@ -39,7 +37,6 @@ export default function CodeSample(props) {
           </CoreBox>
         </CoreBox>
       </CoreCard>
-      {/* <CoreTypographyBody1>----- CodeSample ENDS here -----</CoreTypographyBody1> */}
     </CoreBox>
   );
 }
