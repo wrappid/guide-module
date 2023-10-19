@@ -9,6 +9,7 @@ import CoreH6Docs from "./dataDisplay/heading/CoreH6.docs";
 import HeadingDocs from "./dataDisplay/heading/Heading.docs";
 import CoreAlertDocs from "./feedback/CoreAlert.docs";
 import OverviewDocs from "./Overview.docs";
+import CoreBadgeDocs from "./dataDisplay/CoreBadge.docs";
 
 export default {
   DataDisplay: {
@@ -57,5 +58,7 @@ export default {
     children: {},
     main    : OverviewDocs,
     order   : 0
-  }
+  },
+  CoreBadge: { main: CoreBadgeDocs }
+
 };
