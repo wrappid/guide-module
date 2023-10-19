@@ -1,8 +1,52 @@
 import {
-  CoreTable, CoreTableBody, CoreTableCell, CoreTableHead, CoreTableHeadCell, CoreTableRow, CoreTypographySubtitle2 
+  CoreTable,
+  CoreTableBody,
+  CoreTableCell,
+  CoreTableHead,
+  CoreTableHeadCell,
+  CoreTableRow,
+  CoreTypographySubtitle2,
 } from "@wrappid/core";
 
 export default function ComponentPropTypes({ propTypes }) {
+  const VALUE_NOT_SPECIFIED = "Not Specified";
+  const VALUE_NOT_PROVIDED = "Not Provided";
+  const prepareValueString = (value) => {
+    if (value) {
+      console.log("ValidValue Exists");
+      if (Array.isArray(value)) {
+        console.log("ValidValue is an array");
+        if (value.length > 0) {
+          console.log("ValidValue array contains element(s)");
+          return value.join(" | ");
+        } else {
+          console.log("ValidValue array is empty");
+          return VALUE_NOT_SPECIFIED;
+        }
+      } else {
+        console.log("ValidValue is not an array");
+        return JSON.stringify(value);
+      }
+    } else {
+      console.log("ValidValue Not Exists");
+      return VALUE_NOT_SPECIFIED;
+    }
+  };
+
+  const handleValidValues = (value) => {
+    if (value) {
+      return prepareValueString(value.validValues);
+    } else {
+      return VALUE_NOT_PROVIDED;
+    }
+  };
+  const handleDefaultValues = (value) => {
+    if (value) {
+      return prepareValueString(value.default);
+    } else {
+      return VALUE_NOT_PROVIDED;
+    }
+  };
   return (
     <CoreTable>
       <CoreTableHead>
@@ -17,20 +61,14 @@ export default function ComponentPropTypes({ propTypes }) {
 
       <CoreTableBody>
         {propTypes && propTypes.length > 0 ? (
-          propTypes?.map(eachType => {
+          propTypes?.map((eachType) => {
             return (
               <CoreTableRow key={`${eachType}`}>
-                <CoreTableCell>
-                  {eachType?.type || "Not Given"}
-                </CoreTableCell>
+                <CoreTableCell>{eachType?.type || "Not Given"}</CoreTableCell>
 
-                <CoreTableCell>
-                  {eachType?.default || "Not Given"}
-                </CoreTableCell>
+                <CoreTableCell>{handleDefaultValues(eachType)}</CoreTableCell>
 
-                <CoreTableCell>
-                  {eachType?.validValues?.join(" | ") || "Not Given"}
-                </CoreTableCell>
+                <CoreTableCell>{handleValidValues(eachType)}</CoreTableCell>
               </CoreTableRow>
             );
           })
@@ -38,7 +76,7 @@ export default function ComponentPropTypes({ propTypes }) {
           <CoreTableRow>
             <CoreTableCell></CoreTableCell>
 
-            <CoreTableCell>    
+            <CoreTableCell>
               <CoreTypographySubtitle2>Not specified.</CoreTypographySubtitle2>
             </CoreTableCell>
 
