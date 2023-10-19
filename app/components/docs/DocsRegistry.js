@@ -8,8 +8,21 @@ import CoreH5Docs from "./dataDisplay/heading/CoreH5.docs";
 import CoreH6Docs from "./dataDisplay/heading/CoreH6.docs";
 import HeadingDocs from "./dataDisplay/heading/Heading.docs";
 import CoreAlertDocs from "./feedback/CoreAlert.docs";
-import OverviewDocs from "./Overview.docs";
+import CoreAlertTitleDocs from "./feedback/CoreAlertTitle.docs";
+import CoreBackdropDocs from "./feedback/CoreBackdrop.docs";
+import CoreDialogDocs from "./feedback/CoreDialog.docs";
+import CoreSkeletonDocs from "./feedback/CoreSkeleton.docs";
+import CoreSnackbarDocs from "./feedback/CoreSnackbar.docs";
+import CoreTypographyDocs from "./dataDisplay/CoreTypography.docs";
+import CoreTooltipDocs from "./dataDisplay/CoreTooltip.docs";
 import CoreBadgeDocs from "./dataDisplay/CoreBadge.docs";
+import CoreDividerDocs from "./dataDisplay/CoreDivider.docs";
+import CoreProgressDocs from "./feedback/progress/CoreProgress.docs";
+import CoreChipDocs from "./dataDisplay/CoreChip.docs";
+import CoreIconsDocs from "./dataDisplay/CoreIcons.docs";
+import OverviewDocs from "./Overview.docs";
+import CoreListDocs from "./dataDisplay/CoreList.docs";
+import CoreTableDocs from "./dataDisplay/CoreTable.docs";
 
 export default {
   DataDisplay: {
@@ -44,21 +57,34 @@ export default {
         },
         main : HeadingDocs,
         order: 0
-      }
+      },
+      CoreBadge: {main: CoreBadgeDocs },
+      CoreChip: {main: CoreChipDocs },
+      CoreDivider: {main: CoreDividerDocs },
+      CoreIcons: {main: CoreIconsDocs },
+      CoreList: {main: CoreListDocs},
+      CoreTable: {main: CoreTableDocs},
+      CoreTooltip: {main: CoreTooltipDocs},
+      CoreTypography: {main: CoreTypographyDocs}
     },
-    main : DataDisplayDocs,
-    order: 1 
   },
   Feedback: {
     children: {
-      CoreAlertDocs: {main: CoreAlertDocs },
+      CoreAlert: {main: CoreAlertDocs, 
+        children: {
+          CoreAlertTitle: { main: CoreAlertTitleDocs}
+        },
+      },
+      CoreBackdrop: {main: CoreBackdropDocs},
+      CoreDialog: {main: CoreDialogDocs},
+      CoreProgress:{main: CoreDialogDocs},
+      CoreSkeleton: {main:CoreSkeletonDocs},
+      CoreSnackbar: {main: CoreSnackbarDocs }
     }
   },
   Overview: {
     children: {},
     main    : OverviewDocs,
     order   : 0
-  },
-  CoreBadge: { main: CoreBadgeDocs }
-
+  }
 };

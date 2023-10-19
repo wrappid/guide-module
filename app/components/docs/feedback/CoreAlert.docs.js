@@ -4,7 +4,8 @@ import {
     CoreDivider,
     CoreAlert,
     CoreStack,
-    CoreClasses
+    CoreClasses,
+    // CoreAlertTitle
   } from "@wrappid/core";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
@@ -36,7 +37,44 @@ import ComponentProps from "../../ComponentProps";
 
         }
         />
+
+        <CodeSample 
+        title={"Description (NOT IMPLEMENTED)"}
+        description={"You can use the AlertTitle component to display a formatted title above the content."}
+        code={`<CoreAlert severity="error">
+<CoreAlertTitle>Error</CoreAlertTitle>
+This is an error alert.
+</CoreAlert>
+<CoreAlert severity="warning">
+<CoreAlertTitle>Warning</CoreAlertTitle>
+This is a warning alert.
+</CoreAlert>
+<CoreAlert severity="info">
+<CoreAlertTitle>Info</CoreAlertTitle>
+This is an info alert.
+</CoreAlert>
+<CoreAlert severity="success">
+<CoreAlertTitle>Success</CoreAlertTitle>
+This is a success alert.
+</CoreAlert>`}
+        />
         <CoreDivider/>
+        <CodeSample 
+        title={"Actions"}
+        description={"An alert can have an action, such as a close or undo button. It is rendered after the message, at the end of the alert. \
+        If an onClose callback is provided and no action prop is set, a close icon is displayed. The action prop can be used to provide an alternative action, for example using a Button or IconButton."}
+        code={""}
+        renderElement={
+          <>
+          <CoreAlert onClose={() => { } }>This is a success alert — check it out!</CoreAlert><CoreAlert
+            action={<Button color="inherit" size="small">
+              UNDO
+            </Button>}
+          >
+            This is a success alert — check it out!
+          </CoreAlert></>
+        }
+        />
       <ComponentProps component={CoreAlert} />
         </>
     )
