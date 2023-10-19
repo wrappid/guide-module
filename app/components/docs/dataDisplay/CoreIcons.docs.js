@@ -1,15 +1,15 @@
 import {
   CoreH4,
-  CoreTypographyBody1
-  // Core
+  CoreTypographyBody1,
+  CoreIcon
 } from "@wrappid/core";
-import CodeSample from "../../../CodeSample";
-import ComponentProps from "../../../ComponentProps";
+import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreIconsDocs() {
   return (
     <>
-      <CoreH4>COMPONENT_NAME</CoreH4>
+      <CoreH4>CoreIcon</CoreH4>
       <CoreTypographyBody1>
         COMPONENT_DESCRIPTION
         </CoreTypographyBody1>
@@ -19,7 +19,7 @@ export default function CoreIconsDocs() {
         code={`PRE-FORMATTED_CODE_GOES_HERE`}
         renderElement={<></>}
         />
-      <ComponentProps component={CoreIcons} />
+      <ComponentProps component={CoreIcon} />
     </>
   );
 }

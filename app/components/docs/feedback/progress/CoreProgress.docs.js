@@ -1,7 +1,7 @@
 import {
   CoreH4,
-  CoreTypographyBody1
-  // Core
+  CoreTypographyBody1,
+  // CoreProgress
 } from "@wrappid/core";
 import CodeSample from "../../../CodeSample";
 import ComponentProps from "../../../ComponentProps";
@@ -9,7 +9,7 @@ import ComponentProps from "../../../ComponentProps";
 export default function CoreProgressDocs() {
   return (
     <>
-      <CoreH4>COMPONENT_NAME</CoreH4>
+      <CoreH4>{`CoreProgress (NOT DEFINED)`}</CoreH4>
       <CoreTypographyBody1>
         COMPONENT_DESCRIPTION
         </CoreTypographyBody1>
@@ -19,7 +19,7 @@ export default function CoreProgressDocs() {
         code={`PRE-FORMATTED_CODE_GOES_HERE`}
         renderElement={<></>}
         />
-      <ComponentProps component={CoreProgress} />
+      {/* <ComponentProps component={CoreProgress} /> */}
     </>
   );
 }

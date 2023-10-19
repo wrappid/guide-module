@@ -67,9 +67,9 @@ This is a success alert.
         renderElement={
           <>
           <CoreAlert onClose={() => { } }>This is a success alert — check it out!</CoreAlert><CoreAlert
-            action={<Button color="inherit" size="small">
-              UNDO
-            </Button>}
+            // action={<Button color="inherit" size="small">
+            //   UNDO
+            // </Button>}
           >
             This is a success alert — check it out!
           </CoreAlert></>

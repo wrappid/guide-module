@@ -27,55 +27,6 @@ import {
         A divider is a thin line that groups content in lists and layouts.
         </CoreTypographyBody1>
   
-        <CodeSample
-          title={"List dividers "}
-          description={
-            <>
-            The divider renders as an 
-            <CoreSpan code={true}>{" <hr> "}</CoreSpan>
-            by default. You can save rendering this DOM element by using the  
-            <CoreSpan code={true}>{" divider "}</CoreSpan>
-            prop on the  
-            <CoreSpan code={true}>{" ListItem "}</CoreSpan>
-            component.
-          </>
-            
-          }
-          code={`<List sx={style} component="nav" aria-label="mailbox folders">
-    <ListItem button>
-        <ListItemText primary="Inbox" />
-    </ListItem>
-    <Divider />
-    <ListItem button divider>
-        <ListItemText primary="Drafts" />
-    </ListItem>
-    <ListItem button>
-        <ListItemText primary="Trash" />
-    </ListItem>
-    <Divider light />
-    <ListItem button>
-        <ListItemText primary="Spam" />
-    </ListItem>
-</List>`}
-          renderElement={
-            <List sx={style} component="nav" aria-label="mailbox folders">
-            <ListItem button>
-              <ListItemText primary="Inbox" />
-            </ListItem>
-            <Divider />
-            <ListItem button divider>
-              <ListItemText primary="Drafts" />
-            </ListItem>
-            <ListItem button>
-              <ListItemText primary="Trash" />
-            </ListItem>
-            <Divider light />
-            <ListItem button>
-              <ListItemText primary="Spam" />
-            </ListItem>
-          </List>
-          }
-        />
   
        
   

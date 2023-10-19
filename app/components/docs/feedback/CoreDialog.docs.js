@@ -7,7 +7,7 @@ import {
   CoreTypographyButton,
   CoreTypographySubtitle1,
   CoreCircularProgress,
-  CoreSimpleDialog
+  // CoreSimpleDialog
   // CoreDialogTitle
 } from "@wrappid/core";
 import CodeSample from "../../CodeSample";
@@ -25,19 +25,19 @@ export default function CoreDialogDocs() {
 //   const { onClose, selectedValue, open } = props;
 
 const [open, setOpen] = React.useState(false);
-const [selectedValue, setSelectedValue] = React.useState(emails[1]);
-const { onClose} = props;
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
+const [selectedValue, setSelectedValue] = React.useState("abc"/*emails[1]*/);
+// const { onClose} = props;
+//   const handleListItemClick = (value) => {
+//     onClose(value);
+//   };
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = (value) => {
-    setOpen(false);
-    setSelectedValue(value);
-  };
+//   const handleClickOpen = () => {
+//     setOpen(true);
+//   };
+//   const handleClose = (value) => {
+//     setOpen(false);
+//     setSelectedValue(value);
+//   };
 
   return (
     <>
@@ -88,14 +88,14 @@ onClick={handleClose}
               Selected: {selectedValue}
             </CoreTypographySubtitle1>
             <br />
-            <CoreTypographyButton variant="outlined" onClick={handleClickOpen}>
+            <CoreTypographyButton variant="outlined" /*onClick={handleClickOpen}*/>
               Open simple dialog
             </CoreTypographyButton>
-            <CoreSimpleDialog
+            {/* <CoreSimpleDialog
               selectedValue={selectedValue}
               open={open}
-              onClose={handleClose}
-            />
+              //onClose={handleClose}
+            /> */}
           </CoreStack>
         }
       />

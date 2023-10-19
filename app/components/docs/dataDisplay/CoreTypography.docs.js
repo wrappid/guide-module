@@ -1,15 +1,15 @@
 import {
   CoreH4,
-  CoreTypographyBody1
-  // Core
+  CoreTypographyBody1,
+  CoreTypography
 } from "@wrappid/core";
-import CodeSample from "../../../CodeSample";
-import ComponentProps from "../../../ComponentProps";
+import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreTypographyDocs() {
   return (
     <>
-      <CoreH4>COMPONENT_NAME</CoreH4>
+      <CoreH4>{`CoreTypography (NOT DEFINED)`}</CoreH4>
       <CoreTypographyBody1>
         COMPONENT_DESCRIPTION
         </CoreTypographyBody1>
@@ -19,7 +19,7 @@ export default function CoreTypographyDocs() {
         code={`PRE-FORMATTED_CODE_GOES_HERE`}
         renderElement={<></>}
         />
-      <ComponentProps component={CoreTypography} />
+      {/* <ComponentProps component={CoreTypography} /> */}
     </>
   );
 }

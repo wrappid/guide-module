@@ -1,15 +1,15 @@
 import {
   CoreH4,
-  CoreTypographyBody1
-  // Core
+  CoreTypographyBody1,
+  // CoreSnackbar
 } from "@wrappid/core";
-import CodeSample from "../../../CodeSample";
-import ComponentProps from "../../../ComponentProps";
+import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreSnackbarDocs() {
   return (
     <>
-      <CoreH4>COMPONENT_NAME</CoreH4>
+      <CoreH4>{`CoreSnackbar (NOT DEFINED)`}</CoreH4>
       <CoreTypographyBody1>
         COMPONENT_DESCRIPTION
         </CoreTypographyBody1>
@@ -19,7 +19,7 @@ export default function CoreSnackbarDocs() {
         code={`PRE-FORMATTED_CODE_GOES_HERE`}
         renderElement={<></>}
         />
-      <ComponentProps component={CoreSnackbar} />
+      {/* <ComponentProps component={CoreSnackbar} /> */}
     </>
   );
 }

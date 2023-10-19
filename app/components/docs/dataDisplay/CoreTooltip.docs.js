@@ -1,10 +1,10 @@
 import {
   CoreH4,
-  CoreTypographyBody1
-  // Core
+  CoreTypographyBody1,
+  CoreTooltip
 } from "@wrappid/core";
-import CodeSample from "../../../CodeSample";
-import ComponentProps from "../../../ComponentProps";
+import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreTooltipDocs() {
   return (
