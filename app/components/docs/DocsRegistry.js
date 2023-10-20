@@ -17,6 +17,8 @@ import CoreTooltipDocs from "./dataDisplay/CoreTooltip.docs";
 import CoreBadgeDocs from "./dataDisplay/CoreBadge.docs";
 import CoreDividerDocs from "./dataDisplay/CoreDivider.docs";
 import CoreProgressDocs from "./feedback/progress/CoreProgress.docs";
+import CoreCircularProgressDocs from "./feedback/progress/CoreCircularProgress.docs";
+import CoreLinearProgressDocs from "./feedback/progress/CoreLinearProgress.docs.js";
 import CoreChipDocs from "./dataDisplay/CoreChip.docs";
 import CoreIconsDocs from "./dataDisplay/CoreIcons.docs";
 import OverviewDocs from "./Overview.docs";
@@ -72,7 +74,13 @@ export default {
       CoreAlert: { main: CoreAlertDocs },
       CoreBackdrop: { main: CoreBackdropDocs },
       CoreDialog: { main: CoreDialogDocs },
-      CoreProgress: { main: CoreDialogDocs },
+      CoreProgress: {
+        main: CoreProgressDocs, 
+        children: {
+        CoreCircularProgress: { main: CoreCircularProgressDocs },
+        CoreLinearProgress: { main:  CoreLinearProgressDocs}
+        },
+      },
       CoreSkeleton: { main: CoreSkeletonDocs },
       CoreSnackbar: { main: CoreSnackbarDocs },
     },

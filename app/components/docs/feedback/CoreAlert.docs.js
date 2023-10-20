@@ -83,7 +83,7 @@ This is a success alert.
       />
       <CoreDivider />
       <CoreAlert severity="error">
-        Actions Error: CoreButton is not working, X(cross) and undo button.
+        Actions Error: X(cross) button and undo button is not showing.
       </CoreAlert>
       <CodeSample
         title={"Actions (BUTTON NOT WORKING)"}
