@@ -4,7 +4,8 @@ import {
     CoreDivider,
     CoreBackdrop,
     CoreStack,
-    CoreTypographyButton,
+    CoreButton,
+  CoreClasses,
     CoreCircularProgress
     // CoreBackdropTitle
   } from "@wrappid/core";
@@ -36,7 +37,7 @@ import React from "react";
         </CoreStack>
 
         <CodeSample
-        title={"Basic alerts"}
+        title={"Backdrop"}
         description={"The CoreBackdrop offers four severity levels that set a distinctive icon and color"}
         code={`const [open, setOpen] = React.useState(false);
 const handleClose = () => {
@@ -47,7 +48,7 @@ const handleOpen = () => {
 };
 return (
 <>
-<CoreTypographyButton onClick={handleOpen}>Show backdrop</CoreTypographyButton>
+<CoreButton onClick={handleOpen}>Show backdrop</CoreButton>
 <CoreBackdrop
 open={open}
 onClick={handleClose}
@@ -59,7 +60,7 @@ onClick={handleClose}
         renderElement={
             
       <CoreStack direction="column" spacing={2}>
-            <CoreTypographyButton onClick={handleOpen}>Show backdrop</CoreTypographyButton>
+            <CoreButton onClick={handleOpen}>Show backdrop</CoreButton>
             <CoreBackdrop
             open={open}
             onClick={handleClose}
@@ -67,7 +68,6 @@ onClick={handleClose}
             <CoreCircularProgress color="inherit" />
             </CoreBackdrop>
             </CoreStack>
-
         }
         />
         <CoreDivider/>

@@ -8,7 +8,6 @@ import CoreH5Docs from "./dataDisplay/heading/CoreH5.docs";
 import CoreH6Docs from "./dataDisplay/heading/CoreH6.docs";
 import HeadingDocs from "./dataDisplay/heading/Heading.docs";
 import CoreAlertDocs from "./feedback/CoreAlert.docs";
-import CoreAlertTitleDocs from "./feedback/CoreAlertTitle.docs";
 import CoreBackdropDocs from "./feedback/CoreBackdrop.docs";
 import CoreDialogDocs from "./feedback/CoreDialog.docs";
 import CoreSkeletonDocs from "./feedback/CoreSkeleton.docs";
@@ -28,63 +27,59 @@ export default {
   DataDisplay: {
     children: {
       CoreAvatar: { main: CoreAvatarDocs },
-      Headings  : {
+      Headings: {
         children: {
           CoreH1: {
-            main : CoreH1Docs,
-            order: 0
+            main: CoreH1Docs,
+            order: 0,
           },
           CoreH2: {
-            main : CoreH2Docs,
-            order: 1
+            main: CoreH2Docs,
+            order: 1,
           },
           CoreH3: {
-            main : CoreH3Docs,
-            order: 2
+            main: CoreH3Docs,
+            order: 2,
           },
           CoreH4: {
-            main : CoreH4Docs,
-            order: 3
+            main: CoreH4Docs,
+            order: 3,
           },
           CoreH5: {
-            main : CoreH5Docs,
-            order: 4
+            main: CoreH5Docs,
+            order: 4,
           },
           CoreH6: {
-            main : CoreH6Docs,
-            order: 5
-          }
+            main: CoreH6Docs,
+            order: 5,
+          },
         },
-        main : HeadingDocs,
-        order: 0
+        main: HeadingDocs,
+        order: 0,
       },
-      CoreBadge: {main: CoreBadgeDocs },
-      CoreChip: {main: CoreChipDocs },
-      CoreDivider: {main: CoreDividerDocs },
-      CoreIcons: {main: CoreIconsDocs },
-      CoreList: {main: CoreListDocs},
-      CoreTable: {main: CoreTableDocs},
-      CoreTooltip: {main: CoreTooltipDocs},
-      CoreTypography: {main: CoreTypographyDocs}
+      CoreBadge: { main: CoreBadgeDocs },
+      CoreChip: { main: CoreChipDocs },
+      CoreDivider: { main: CoreDividerDocs },
+      CoreIcons: { main: CoreIconsDocs },
+      CoreList: { main: CoreListDocs },
+      CoreTable: { main: CoreTableDocs },
+      CoreTooltip: { main: CoreTooltipDocs },
+      CoreTypography: { main: CoreTypographyDocs },
     },
   },
   Feedback: {
     children: {
-      CoreAlert: {main: CoreAlertDocs, 
-        children: {
-          CoreAlertTitle: { main: CoreAlertTitleDocs}
-        },
-      },
-      CoreBackdrop: {main: CoreBackdropDocs},
-      CoreDialog: {main: CoreDialogDocs},
-      CoreProgress:{main: CoreDialogDocs},
-      CoreSkeleton: {main:CoreSkeletonDocs},
-      CoreSnackbar: {main: CoreSnackbarDocs }
-    }
+      CoreAlert: { main: CoreAlertDocs },
+      CoreBackdrop: { main: CoreBackdropDocs },
+      CoreDialog: { main: CoreDialogDocs },
+      CoreProgress: { main: CoreDialogDocs },
+      CoreSkeleton: { main: CoreSkeletonDocs },
+      CoreSnackbar: { main: CoreSnackbarDocs },
+    },
   },
   Overview: {
     children: {},
-    main    : OverviewDocs,
-    order   : 0
-  }
+    main: OverviewDocs,
+    order: 0,
+  },
 };
