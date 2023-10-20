@@ -14,7 +14,7 @@ export default function CoreLinearProgressDocs() {
   const [buffer, setBuffer] = React.useState(10);
   return (
     <>
-      <CoreH4>Linear Progress</CoreH4>
+      <CoreH4>CoreLinearProgress</CoreH4>
 
       <CoreAlert severity="error">
         Linear Error: Linear progress bar is not showing

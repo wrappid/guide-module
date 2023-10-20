@@ -13,7 +13,7 @@ export default function CoreCircularProgressDocs() {
   const [progress, setProgress] = React.useState(0);
   return (
     <>
-      <CoreH4>Circular Progress</CoreH4>
+      <CoreH4>CoreCircularProgress</CoreH4>
       <CodeSample
         title={"Circular indeterminate"}
         code={`<CoreCircularProgress />`}

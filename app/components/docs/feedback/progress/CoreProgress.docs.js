@@ -17,21 +17,21 @@ export default function CoreProgressDocs() {
   const [buffer, setBuffer] = React.useState(10);
   return (
     <>
-      <CoreH4>Progress</CoreH4>
+      <CoreH4>CoreProgress</CoreH4>
       <CoreStack direction="column" spacing={2}>
         <CoreTypographyBody1>
-          Progress indicators commonly known as spinners, express an unspecified
+          CoreProgress indicators commonly known as spinners, express an unspecified
           wait time or display the length of a process.
         </CoreTypographyBody1>
         <CoreTypographyBody1>
-          Progress indicators inform users about the status of ongoing
+          CoreProgress indicators inform users about the status of ongoing
           processes, such as loading an app, submitting a form, or saving
           updates. Determinate indicators display how long an operation will
           take. Indeterminate indicators visualize an unspecified wait time.
         </CoreTypographyBody1>
       </CoreStack>
 
-      <CoreH6>Circular</CoreH6>
+      <CoreH6>CoreCircularProgress</CoreH6>
       <CodeSample
         title={"Circular indeterminate"}
         code={`<CoreCircularProgress />`}
@@ -83,7 +83,7 @@ export default function CoreProgressDocs() {
         code={`<CoreCircularProgressWithLabel value={progress} />`}
       />
 
-      <CoreH6>Linear</CoreH6>
+      <CoreH6>CoreLinearProgress</CoreH6>
 
       <CoreAlert severity="error">
         Linear Error: Linear progress bar is not showing
