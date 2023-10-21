@@ -22,21 +22,23 @@ export default function CodeSample(props) {
 
       <CoreTypographyBody1>{description || "NO DESCRIPTION SET"}</CoreTypographyBody1>
 
-      <CoreCard>
-        <CoreBox styleClasses={[]}>
-          <CoreBox
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P3]}
-          >
-            {renderElement}
-          </CoreBox>
+      {code && renderElement && 
+        <CoreCard>
+          <CoreBox styleClasses={[]}>
+            <CoreBox
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P3]}
+            >
+              {renderElement}
+            </CoreBox>
 
-          <CoreDivider />
+            <CoreDivider />
 
-          <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-            <CoreTypographyBody1 code={true}>{code}</CoreTypographyBody1>
+            <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+              <CoreTypographyBody1 code={true}>{code}</CoreTypographyBody1>
+            </CoreBox>
           </CoreBox>
-        </CoreBox>
-      </CoreCard>
+        </CoreCard>
+      }
     </CoreBox>
   );
 }

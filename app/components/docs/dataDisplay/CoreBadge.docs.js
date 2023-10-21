@@ -167,6 +167,8 @@ export default function CoreBadgeDocs() {
     horizontal: 'right',
     }}
 >
+  <CoreIcon icon="mail" />
+</CoreBadge>
         `}
         renderElement={
           <CoreStack spacing={2} direction="row">
@@ -175,7 +177,9 @@ export default function CoreBadgeDocs() {
                 horizontal: "right",
                 vertical  : "top",
               }}
-            ></CoreBadge>
+            >
+              <CoreIcon icon="mail" />
+            </CoreBadge>
           </CoreStack>
         }
       />
@@ -184,7 +188,7 @@ export default function CoreBadgeDocs() {
         title={"Accessibility"}
         description={
           <>
-            You can't rely on the content of the badge to be announced
+            You can&apos;t rely on the content of the badge to be announced
             correctly. You should provide a full description, for instance, with
             <CoreSpan code={true}>{" aria-label: "}</CoreSpan>
           </>

@@ -208,15 +208,195 @@ export default function CoreAvatarDocs() {
         }
       />
 
-      <CodeSample title="Fallbacks (NOT IMPLEMENTED)" />
+      <CodeSample
+        title="Fallbacks (NOT IMPLEMENTED)"
+        description="If there is an error loading the avatar image, the component falls back to an alternative in the following order:
+the provided children
+the first letter of the alt text
+a generic avatar icon
+"
+        code={`
+<CoreStack direction="row" spacing={2}>
+  <CoreAvatar
+    styleClasses={[CoreClasses.BG.BG_PRIMARY]}
+    alt="Remy Sharp"
+    src="/broken-image.jpg"
+  >
+    B
+  </CoreAvatar>
+  <CoreAvatar
+    styleClasses={[CoreClasses.BG.BG_PRIMARY]}
+    alt="Remy Sharp"
+    src="/broken-image.jpg"
+  />
+  <CoreAvatar src="/broken-image.jpg" />
+</CoreStack>
+        `}
+        renderElement={
+          <CoreStack direction="row" spacing={2}>
+            <CoreAvatar
+              styleClasses={[CoreClasses.BG.BG_PRIMARY]}
+              alt="Remy Sharp"
+              src="/broken-image.jpg"
+            >
+              B
+            </CoreAvatar>
 
-      <CodeSample title="Grouped (NOT IMPLEMENTED)" />
+            <CoreAvatar
+              styleClasses={[CoreClasses.BG.BG_PRIMARY]}
+              alt="Remy Sharp"
+              src="/broken-image.jpg"
+            />
 
-      <CodeSample title="Total avatars (NOT IMPLEMENTED)" />
+            <CoreAvatar src="/broken-image.jpg" />
+          </CoreStack>
+        }
+      />
 
-      <CodeSample title="Custom surplus (NOT IMPLEMENTED)" />
+      <CodeSample
+        title="Grouped (NOT IMPLEMENTED)"
+        description="AvatarGroup renders its children as a stack. Use the max prop to limit the number of avatars."
+        code={`
+          <CoreAvatarGroup max={4}>
+            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+            <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
+            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+          </CoreAvatarGroup>
+        `}
+        renderElement={
+          <>
+            {/* <CoreAvatarGroup max={4}> */}
+            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
 
-      <CodeSample title="With badge (NOT IMPLEMENTED)" />
+            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+
+            <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
+
+            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+
+            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+
+            {/* </CoreAvatarGroup> */}
+          </>
+        }
+      />
+
+      <CodeSample
+        title="Total avatars (NOT IMPLEMENTED)"
+        description="If you need to control the total number of avatars not shown, you can use the total prop."
+        code={`
+          <CoreAvatarGroup total={24}>
+            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+          </CoreAvatarGroup>
+        `}
+        renderElement={
+          <>
+            {/* <CoreAvatarGroup total={24}> */}
+            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+
+            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+
+            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+
+            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+
+            {/* </CoreAvatarGroup> */}
+          </>
+        }
+      />
+
+      <CodeSample
+        title="Custom surplus (NOT IMPLEMENTED)"
+        description="Set the renderSurplus prop as a callback to customize the surplus avatar. The callback will receive the surplus number as an argument based on the children and the max prop, and should return a React.ReactNode.
+The renderSurplus prop is useful when you need to render the surplus based on the data sent from the server."
+        code={`
+          <CoreAvatarGroup 
+            renderSurplus={(surplus) => <>+{surplus.toString()[0]}k</>}
+            total={4250}>
+            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+          </CoreAvatarGroup>
+        `}
+        renderElement={
+          <>
+            {/* <CoreAvatarGroup 
+              renderSurplus={(surplus) => <>+{surplus.toString()[0]}k</>}
+              total={4250}> */}
+            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+
+            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+
+            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+
+            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+
+            {/* </CoreAvatarGroup> */}
+          </>
+        }
+      />
+
+      <CodeSample
+        title="With badge (NOT IMPLEMENTED)"
+        description=""
+        code={`
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    backgroundColor: '#44b700',
+    color: '#44b700',
+    boxShadow: \`0 0 0 2px \${theme.palette.background.paper}\`,
+    '&::after': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      borderRadius: '50%',
+      animation: 'ripple 1.2s infinite ease-in-out',
+      border: '1px solid currentColor',
+      content: '""',
+    },
+  },
+  '@keyframes ripple': {
+    '0%': {
+      transform: 'scale(.8)',
+      opacity: 1,
+    },
+    '100%': {
+      transform: 'scale(2.4)',
+      opacity: 0,
+    },
+  },
+}));
+<CoreStack direction="row" spacing={2}>
+  <StyledBadge
+    overlap="circular"
+    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+    variant="dot"
+  >
+    <CoreAvatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+  </StyledBadge>
+  <CoreBadge
+    overlap="circular"
+    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+    badgeContent={
+      <SmallAvatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+    }
+  >
+    <CoreAvatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+  </CoreBadge>
+</CoreStack>
+        `}
+        renderElement={
+          <></>
+        }
+      />
 
       <ComponentProps component={CoreAvatar} />
 
