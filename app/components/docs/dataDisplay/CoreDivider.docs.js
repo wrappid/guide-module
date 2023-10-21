@@ -377,7 +377,94 @@ const style = {
 
       <CodeSample 
         title="Dividers with text"
+        description="You can also render a divider with content."
+        code={`
+<CoreBox>
+  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+  <CoreDivider>CENTER</CoreDivider>
+  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+  <CoreDivider textAlign="left">LEFT</CoreDivider>
+  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+  <CoreDivider textAlign="right">RIGHT</CoreDivider>
+  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+  <CoreDivider>
+    <CoreChip label="CHIP" />
+  </CoreDivider>
+  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+</CoreBox>
+        `}
+        renderElement={<CoreBox>
+          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
 
+          <CoreDivider>CENTER</CoreDivider>
+
+          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+
+          <CoreDivider textAlign="left">LEFT</CoreDivider>
+
+          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+
+          <CoreDivider textAlign="right">RIGHT</CoreDivider>
+
+          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+
+          <CoreDivider>
+            <CoreChip label="CHIP" />
+          </CoreDivider>
+
+          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+        </CoreBox>
+        }
+      />
+
+      <CodeSample 
+        title="Vertical divider"
+        description="You can also render a divider vertically using the orientation prop."
+        code={`
+<CoreStack direction="row" spacing={2}>
+  <CoreIcon icon="mail" />
+  <CoreIcon icon="mail" />
+  <CoreIcon icon="mail" />
+  <CoreDivider orientation="vertical" flexItem />
+  <CoreIcon icon="mail" />
+  <CoreIcon icon="mail" />
+</CoreStack>
+        `}
+        renderElement={
+          <CoreStack direction="row" spacing={2}>
+            <CoreIcon icon="mail" />
+
+            <CoreIcon icon="mail" />
+
+            <CoreIcon icon="mail" />
+
+            <CoreDivider orientation="vertical" flexItem />
+
+            <CoreIcon icon="mail" />
+
+            <CoreIcon icon="mail" />
+          </CoreStack>
+        }
       />
 
       <ComponentProps component={CoreBadge} />
