@@ -5,7 +5,7 @@ import {
 import ComponentPropTypes from "./ComponentPropTypes";
 
 export default function ComponentProps(props) {
-  const { type = "valid", component } = props;
+  const { component } = props;
     
   const validProps = [...(component?.validProps || []), ...defaultValidProps];
   const invalidProps = component?.invalidProps || [];
@@ -23,9 +23,9 @@ export default function ComponentProps(props) {
               <CoreH6 styleClasses={[CoreClasses.PADDING.PR1]}>{eachProp?.name}</CoreH6>
                 
               {eachProp?.required ? (
-                <CoreChip size={"small"} color={"primary"} label={"REQUIRED"} />
+                <CoreChip size="small" color="primary" label="REQUIRED" />
               ) : (
-                <CoreChip size={"small"} color={"secondary"} label={"OPTIONAL"} />
+                <CoreChip size="small" color="secondary" label="OPTIONAL" />
               )}
             </CoreStack>
 

@@ -35,9 +35,11 @@ export default function CoreAvatarDocs() {
             <CoreSpan code={true}>{" srcSet "}</CoreSpan>to the component.
           </>
         }
-        code={`<CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
+        code={`
+<CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
 <CoreAvatar src="https://mui.com/static/images/avatar/2.jpg" />
-<CoreAvatar src="https://mui.com/static/images/avatar/3.jpg" />`}
+<CoreAvatar src="https://mui.com/static/images/avatar/3.jpg" />
+        `}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
@@ -58,10 +60,12 @@ export default function CoreAvatarDocs() {
             <CoreSpan code={true}>{" children "}</CoreSpan>
           </>
         }
-        code={`<CoreAvatar>W</CoreAvatar>
+        code={`
+<CoreAvatar>W</CoreAvatar>
 <CoreAvatar>WD</CoreAvatar>
 <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]}>W</CoreAvatar>
-<CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>WR</CoreAvatar>`}
+<CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>WR</CoreAvatar>
+        `}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreAvatar>W</CoreAvatar>
@@ -107,7 +111,8 @@ export default function CoreAvatarDocs() {
 
 <CoreAvatar 
   src="https://mui.com/static/images/avatar/2.jpg"
-  styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XXLARGE]} />`}
+  styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XXLARGE]} />
+        `}
         renderElement={
           <CoreStack direction="row">
             <CoreAvatar
@@ -208,6 +213,8 @@ export default function CoreAvatarDocs() {
       <CodeSample title="Grouped (NOT IMPLEMENTED)" />
 
       <CodeSample title="Total avatars (NOT IMPLEMENTED)" />
+
+      <CodeSample title="Custom surplus (NOT IMPLEMENTED)" />
 
       <CodeSample title="With badge (NOT IMPLEMENTED)" />
 

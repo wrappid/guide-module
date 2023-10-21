@@ -1,5 +1,4 @@
 import {
-  NativeBadge,
   CoreClasses,
   CoreStack,
   CoreSpan,
@@ -9,7 +8,6 @@ import {
   CoreBadge,
   CoreBox
 } from "@wrappid/core";
-import {Badge} from "@mui/material"
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
@@ -30,18 +28,19 @@ export default function CoreBadgeDocs() {
       <CodeSample
         title={"Basic badge"}
         description={
-            "Examples of badges containing text, using primary and secondary\
+          "Examples of badges containing text, using primary and secondary\
             colors. The badge is applied to its children."
         }
-        code={`<CoreBadge badgeContent={4} color="primary">
-    <CoreIcon color="action" />
+        code={`
+<CoreBadge badgeContent={4} color="primary">
+  <CoreIcon color="action" icon="mail" />
 </CoreBadge>`}
         renderElement={
-            <CoreBox>
-              <CoreBadge badgeContent={4}>
+          <CoreBox>
+            <CoreBadge badgeContent={4} color="primary">
               <CoreIcon color="action" icon="mail" />
             </CoreBadge>
-            </CoreBox>
+          </CoreBox>
         }
       />
 
@@ -54,19 +53,22 @@ export default function CoreBadgeDocs() {
             prop to apply theme palette to component.
           </>
         }
-        code={`<CoreBadge badgeContent={4} color="secondary">
-    <CoreIcon color="action" />
+        code={`
+<CoreBadge badgeContent={4} color="secondary">
+  <CoreIcon color="action" icon="mail" />
 </CoreBadge>
 <CoreBadge badgeContent={4} color="success">
-    <CoreIcon color="action" />
-</CoreBadge>`}
+  <CoreIcon color="action" icon="mail" />
+</CoreBadge>
+        `}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreBadge badgeContent={4} color="secondary">
-              <CoreIcon color="action" />
+              <CoreIcon color="action" icon="mail" />
             </CoreBadge>
+
             <CoreBadge badgeContent={4} color="success">
-              <CoreIcon color="action" />
+              <CoreIcon color="action" icon="mail" />
             </CoreBadge>
           </CoreStack>
         }
@@ -99,25 +101,28 @@ export default function CoreBadgeDocs() {
             the badge content.
           </>
         }
-        code={`<CoreBadge color="secondary" badgeContent={99}>
-    <CoreIcon />
+        code={`
+<CoreBadge color="secondary" badgeContent={99}>
+    <CoreIcon icon="mail" />
 </CoreBadge>
-      <CoreBadge color="secondary" badgeContent={100}>
-    <CoreIcon />
+<CoreBadge color="secondary" badgeContent={100}>
+    <CoreIcon icon="mail" />
 </CoreBadge>
-    <CoreBadge color="secondary" badgeContent={1000} max={999}>
-    <CoreIcon />
+<CoreBadge color="secondary" badgeContent={1000} max={999}>
+    <CoreIcon icon="mail" />
 </CoreBadge>`}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreBadge color="secondary" badgeContent={99}>
-              <CoreIcon />
+              <CoreIcon icon="mail" />
             </CoreBadge>
+
             <CoreBadge color="secondary" badgeContent={100}>
-              <CoreIcon />
+              <CoreIcon icon="mail" />
             </CoreBadge>
+
             <CoreBadge color="secondary" badgeContent={1000} max={999}>
-              <CoreIcon />
+              <CoreIcon icon="mail" />
             </CoreBadge>
           </CoreStack>
         }
@@ -133,13 +138,14 @@ export default function CoreBadgeDocs() {
             notification that something has changed without giving a coun
           </>
         }
-        code={`<CoreBadge color="secondary" variant="dot">
-    <CoreIcon />
+        code={`
+<CoreBadge color="secondary" variant="dot">
+    <CoreIcon icon="mail" />
 </CoreBadge>`}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreBadge color="secondary" variant="dot">
-              <CoreIcon />
+              <CoreIcon icon="mail" />
             </CoreBadge>
           </CoreStack>
         }
@@ -154,18 +160,20 @@ export default function CoreBadgeDocs() {
             prop to move the badge to any corner of the wrapped element.
           </>
         }
-        code={`<CoreBadge
+        code={`
+<CoreBadge
   anchorOrigin={{
     vertical: 'top',
     horizontal: 'right',
     }}
->`}
+>
+        `}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreBadge
               anchorOrigin={{
-                vertical: "top",
                 horizontal: "right",
+                vertical  : "top",
               }}
             ></CoreBadge>
           </CoreStack>
@@ -181,23 +189,24 @@ export default function CoreBadgeDocs() {
             <CoreSpan code={true}>{" aria-label: "}</CoreSpan>
           </>
         }
-        code={`<IconButton aria-label={notificationsLabel(100)}>
+        code={`
+<IconButton aria-label={notificationsLabel(100)}>
   <CoreBadge color="secondary" variant="dot">
-    <CoreIcon />
+    <CoreIcon icon="mail" />
   </CoreBadge>
 </IconButton>`}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreIcon aria-label={100}>
               <CoreBadge badgeContent={100} color="secondary">
-                <CoreIcon />
+                <CoreIcon icon="mail" />
               </CoreBadge>
             </CoreIcon>
           </CoreStack>
         }
       />
 
-<ComponentProps component={CoreBadge} />
+      <ComponentProps component={CoreBadge} />
 
     </>
   );

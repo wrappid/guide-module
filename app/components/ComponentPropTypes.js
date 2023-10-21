@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   CoreTable,
   CoreTableBody,
@@ -5,7 +6,7 @@ import {
   CoreTableHead,
   CoreTableHeadCell,
   CoreTableRow,
-  CoreTypographySubtitle2,
+  CoreTypographySubtitle2
 } from "@wrappid/core";
 
 export default function ComponentPropTypes({ propTypes }) {
@@ -40,6 +41,7 @@ export default function ComponentPropTypes({ propTypes }) {
       return VALUE_NOT_PROVIDED;
     }
   };
+  
   const handleDefaultValues = (value) => {
     if (value) {
       return prepareValueString(value.default);
@@ -47,6 +49,7 @@ export default function ComponentPropTypes({ propTypes }) {
       return VALUE_NOT_PROVIDED;
     }
   };
+
   return (
     <CoreTable>
       <CoreTableHead>
