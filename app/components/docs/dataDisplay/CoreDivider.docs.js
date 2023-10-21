@@ -1,7 +1,6 @@
 import {
   CoreClasses,
   CoreH4,
-  CoreTypography,
   CoreTypographyBody1,
   CoreBadge,
   CoreList,
@@ -13,7 +12,11 @@ import {
   CoreIcon,
   CoreBox,
   CoreGrid,
-  CoreButton
+  CoreButton,
+  CoreStack,
+  CoreChip,
+  CoreTypographyBody2,
+  CoreH6
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
@@ -279,38 +282,47 @@ const style = {
       <CodeSample 
         title="Middle divider"
         code={`
-<CoreBox sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-  <CoreBox sx={{ my: 3, mx: 2 }}>
+<CoreBox sx={{ bgcolor: "background.paper", maxWidth: 360, width: "100%" }}>
+  <CoreBox sx={{ mx: 2, my: 3 }}>
     <CoreGrid container alignItems="center">
       <CoreGrid item xs>
-        <CoreTypography gutterBottom variant="h4" component="div">
+        <CoreH4 gutterBottom component="div">
           Toothbrush
-        </CoreTypography>
+        </CoreH4>
       </CoreGrid>
+
       <CoreGrid item>
-        <CoreTypography gutterBottom variant="h6" component="div">
+        <CoreH6 gutterBottom component="div">
           $4.50
-        </CoreTypography>
+        </CoreH6>
       </CoreGrid>
     </CoreGrid>
-    <CoreTypography color="text.secondary" variant="body2">
+
+    <CoreTypographyBody2 color="text.secondary">
       Pinstriped cornflower blue cotton blouse takes you on a walk to the park or
       just down the hall.
-    </CoreTypography>
+    </CoreTypographyBody2>
   </CoreBox>
+
   <CoreDivider variant="middle" />
+
   <CoreBox sx={{ m: 2 }}>
-    <CoreTypography gutterBottom variant="body1">
+    <CoreTypographyBody1 gutterBottom>
       Select type
-    </CoreTypography>
+    </CoreTypographyBody1>
+
     <CoreStack direction="row" spacing={1}>
       <CoreChip label="Extra Soft" />
+
       <CoreChip color="primary" label="Soft" />
+
       <CoreChip label="Medium" />
+
       <CoreChip label="Hard" />
     </CoreStack>
   </CoreBox>
-  <CoreBox sx={{ mt: 3, ml: 1, mb: 1 }}>
+
+  <CoreBox sx={{ mb: 1, ml: 1, mt: 3 }}>
     <CoreButton>Add to cart</CoreButton>
   </CoreBox>
 </CoreBox>
@@ -320,30 +332,30 @@ const style = {
             <CoreBox sx={{ mx: 2, my: 3 }}>
               <CoreGrid container alignItems="center">
                 <CoreGrid item xs>
-                  <CoreTypography gutterBottom variant="h4" component="div">
+                  <CoreH4 gutterBottom component="div">
                     Toothbrush
-                  </CoreTypography>
+                  </CoreH4>
                 </CoreGrid>
 
                 <CoreGrid item>
-                  <CoreTypography gutterBottom variant="h6" component="div">
+                  <CoreH6 gutterBottom component="div">
                     $4.50
-                  </CoreTypography>
+                  </CoreH6>
                 </CoreGrid>
               </CoreGrid>
 
-              <CoreTypography color="text.secondary" variant="body2">
+              <CoreTypographyBody2 color="text.secondary">
                 Pinstriped cornflower blue cotton blouse takes you on a walk to the park or
                 just down the hall.
-              </CoreTypography>
+              </CoreTypographyBody2>
             </CoreBox>
 
             <CoreDivider variant="middle" />
 
             <CoreBox sx={{ m: 2 }}>
-              <CoreTypography gutterBottom variant="body1">
+              <CoreTypographyBody1 gutterBottom>
                 Select type
-              </CoreTypography>
+              </CoreTypographyBody1>
 
               <CoreStack direction="row" spacing={1}>
                 <CoreChip label="Extra Soft" />
@@ -363,7 +375,10 @@ const style = {
         }
       />
 
-      <CodeSample />
+      <CodeSample 
+        title="Dividers with text"
+
+      />
 
       <ComponentProps component={CoreBadge} />
   
