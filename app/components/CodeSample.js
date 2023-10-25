@@ -3,42 +3,54 @@ import React from "react";
 import {
   CoreBox,
   CoreCard,
+  CoreCardContent,
+  CoreCardHeader,
   CoreClasses,
   CoreDivider,
-  CoreH6,
+  CoreStack,
+  CoreTextButton,
   CoreTypographyBody1
 } from "@wrappid/core";
 
 export default function CodeSample(props) {
   const { title, description, code, renderElement } = props;
+  const [expandedBlock, setExpandedBlock] = React.useState(false);
+
+  const expandBlock = (panel) => {
+    setExpandedBlock(expandBlock === panel ? false : panel);
+  };
 
   React.useEffect(() => {}, []);
 
   return (
     <CoreBox styleClasses={[CoreClasses.MARGIN.MB5]}>
-      <CoreH6 styleClasses={[CoreClasses.MARGIN.MY1, CoreClasses.COLOR.TEXT_PRIMARY_LIGHT]}>
-        {title || "NO TITLE SET"}
-      </CoreH6>
+      <CoreCard>
+        <CoreCardHeader
+          title={title || "NO TITLE SET"}
+          subheader={description || "NO DESCRIPTION SET"} />
 
-      <CoreTypographyBody1>{description || "NO DESCRIPTION SET"}</CoreTypographyBody1>
-
-      {code && renderElement && 
-        <CoreCard>
-          <CoreBox styleClasses={[]}>
-            <CoreBox
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P3]}
-            >
-              {renderElement}
-            </CoreBox>
-
+        {code && renderElement && 
+          <CoreCardContent>
+            {renderElement}
+            
+            <CoreDivider />
+            
+            <CoreStack direction="row" styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END]}>
+              <CoreTextButton
+                label="Expand Code"
+                OnClick={() => {
+                  expandedBlock === "code" ? expandBlock(false) : expandBlock("code");
+                }} />
+            </CoreStack>
+            
             <CoreDivider />
 
-            <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+            {expandedBlock === "code" && (
               <CoreTypographyBody1 code={true}>{code}</CoreTypographyBody1>
-            </CoreBox>
-          </CoreBox>
-        </CoreCard>
-      }
+            )}
+          </CoreCardContent>
+        }
+      </CoreCard>
     </CoreBox>
   );
 }
