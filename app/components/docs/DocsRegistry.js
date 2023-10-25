@@ -36,6 +36,13 @@ import CoreDialogContentDocs from "./feedback/CoreDialogContent.docs";
 import CoreDialogContentTextDocs from "./feedback/CoreDialogContentText.docs";
 import CoreDialogTitleDocs from "./feedback/CoreDialogTitle.docs";
 import CoreAvatarGroupDocs from "./dataDisplay/CoreAvatarGroup.docs";
+import CoreTypographyBody1Docs from "./dataDisplay/CoreTypographyBody1.docs";
+import CoreTypographyBody2Docs from "./dataDisplay/CoreTypographyBody2.docs";
+import CoreTypographyButtonDocs from "./dataDisplay/CoreTypographyButton.docs";
+import CoreTypographyCaptionDocs from "./dataDisplay/CoreTypographyCaption.docs";
+import CoreTypographyOverlineDocs from "./dataDisplay/CoreTypographyOverline.docs";
+import CoreTypographySubtitle1Docs from "./dataDisplay/CoreTypographySubtitle1.docs";
+import CoreTypographySubtitle2Docs from "./dataDisplay/CoreTypographySubtitle2.docs";
 
 export default {
   DataDisplay: {
@@ -64,7 +71,30 @@ export default {
       },
       CoreTable: { main: CoreTableDocs },
       CoreTooltip: { main: CoreTooltipDocs },
-      CoreTypography: { main: CoreTypographyDocs },
+      CoreTypography: {
+        main: CoreTypographyDocs,
+        children: {
+          CoreTypographyBody1: { main: CoreTypographyBody1Docs, order: 0 },
+          CoreTypographyBody2: { main: CoreTypographyBody2Docs, order: 1 },
+          CoreTypographyButton: { main: CoreTypographyButtonDocs, order: 2 },
+          CoreTypographyCaption: {
+            main: CoreTypographyCaptionDocs,
+            order: 3,
+          },
+          CoreTypographyOverline: {
+            main: CoreTypographyOverlineDocs,
+            order: 4,
+          },
+          CoreTypographySubtitle1: {
+            main: CoreTypographySubtitle1Docs,
+            order: 5,
+          },
+          CoreTypographySubtitle2: {
+            main: CoreTypographySubtitle2Docs,
+            order: 6,
+          },
+        },
+      },
       Headings: {
         children: {
           CoreH1: {
