@@ -209,7 +209,7 @@ export default function CoreAvatarDocs() {
       />
 
       <CodeSample
-        title="Fallbacks (NOT IMPLEMENTED)"
+        title="Fallbacks"
         description="If there is an error loading the avatar image, the component falls back to an alternative in the following order:
 the provided children
 the first letter of the alt text

@@ -3,7 +3,7 @@ import CoreBadgeDocs from "./dataDisplay/CoreBadge.docs";
 import CoreChipDocs from "./dataDisplay/CoreChip.docs";
 import CoreDividerDocs from "./dataDisplay/CoreDivider.docs";
 import CoreIconsDocs from "./dataDisplay/CoreIcons.docs";
-import CoreListDocs from "./dataDisplay/CoreList.docs";
+import CoreListDocs from "./dataDisplay/list/CoreList.docs";
 import CoreTableDocs from "./dataDisplay/CoreTable.docs";
 import CoreTooltipDocs from "./dataDisplay/CoreTooltip.docs";
 import CoreTypographyDocs from "./dataDisplay/CoreTypography.docs";
