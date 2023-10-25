@@ -35,11 +35,17 @@ import CoreDialogActionsDocs from "./feedback/CoreDialogActions.docs";
 import CoreDialogContentDocs from "./feedback/CoreDialogContent.docs";
 import CoreDialogContentTextDocs from "./feedback/CoreDialogContentText.docs";
 import CoreDialogTitleDocs from "./feedback/CoreDialogTitle.docs";
+import CoreAvatarGroupDocs from "./dataDisplay/CoreAvatarGroup.docs";
 
 export default {
   DataDisplay: {
     children: {
-      CoreAvatar: { main: CoreAvatarDocs },
+      CoreAvatar: {
+        main: CoreAvatarDocs,
+        children: {
+          CoreAvatarGroup: { main: CoreAvatarGroupDocs },
+        },
+      },
       CoreBadge: { main: CoreBadgeDocs },
       CoreChip: { main: CoreChipDocs },
       CoreDivider: { main: CoreDividerDocs },
@@ -47,13 +53,12 @@ export default {
       CoreList: {
         main: CoreListDocs,
         children: {
-          CoreList: { main: CoreListDocs },
           CoreListItem: { main: CoreListItemDocs },
           CoreListItemAvatar: { main: CoreListItemAvatarDocs },
           CoreListItemButton: { main: CoreListItemButtonDocs },
           CoreListItemIcon: { main: CoreListItemIconDocs },
           CoreListItemSecondaryAction: {
-            main: CoreListItemSecondaryActionDocs
+            main: CoreListItemSecondaryActionDocs,
           },
         },
       },
