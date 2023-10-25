@@ -25,6 +25,11 @@ import CoreCircularProgressDocs from "./feedback/progress/CoreCircularProgress.d
 import CoreLinearProgressDocs from "./feedback/progress/CoreLinearProgress.docs.js";
 import CoreProgressDocs from "./feedback/progress/CoreProgress.docs";
 import OverviewDocs from "./Overview.docs";
+import CoreAlertTitleDocs from "./feedback/CoreAlertTitle.docs";
+import CoreDialogActionsDocs from "./feedback/CoreDialogActions.docs";
+import CoreDialogContentDocs from "./feedback/CoreDialogContent.docs";
+import CoreDialogContentTextDocs from "./feedback/CoreDialogContentText.docs";
+import CoreDialogTitleDocs from "./feedback/CoreDialogTitle.docs";
 
 export default {
   DataDisplay: {
@@ -74,9 +79,22 @@ export default {
   },
   Feedback: {
     children: {
-      CoreAlert   : { main: CoreAlertDocs },
-      CoreBackdrop: { main: CoreBackdropDocs },
-      CoreDialog  : { main: CoreDialogDocs },
+      CoreAlert   : {
+        children: { 
+        CoreAlertDocs: {main: CoreAlertDocs} ,
+        CoreAlertTitleDocs: {main: CoreAlertTitleDocs}
+      }
+    },
+      CoreBackdropDocs: { main: CoreBackdropDocs },
+      CoreDialog  : {
+        children: {
+          CoreDialogDocs: { main: CoreDialogDocs },
+          CoreDialogActionsDocs: {main: CoreDialogActionsDocs},
+          CoreDialogContentDocs: {main: CoreDialogContentDocs},
+          CoreDialogContentTextDocs: {main: CoreDialogContentTextDocs},
+          CoreDialogTitleDocs: {main: CoreDialogTitleDocs}
+        }
+      },
       CoreProgress: {
         children: {
           CoreCircularProgress: { main: CoreCircularProgressDocs },
@@ -84,8 +102,8 @@ export default {
         }, 
         main: CoreProgressDocs,
       },
-      CoreSkeleton: { main: CoreSkeletonDocs },
-      CoreSnackbar: { main: CoreSnackbarDocs },
+      CoreSkeletonDocs: { main: CoreSkeletonDocs },
+      CoreSnackbarDocs: { main: CoreSnackbarDocs },
     },
     main : FeedbackDocs,
     order: 2
