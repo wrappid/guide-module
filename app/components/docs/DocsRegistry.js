@@ -4,6 +4,11 @@ import CoreChipDocs from "./dataDisplay/CoreChip.docs";
 import CoreDividerDocs from "./dataDisplay/CoreDivider.docs";
 import CoreIconsDocs from "./dataDisplay/CoreIcons.docs";
 import CoreListDocs from "./dataDisplay/list/CoreList.docs";
+import CoreListItemDocs from "./dataDisplay/list/CoreListItem.docs";
+import CoreListItemAvatarDocs from "./dataDisplay/list/CoreListItemAvatar.docs";
+import CoreListItemButtonDocs from "./dataDisplay/list/CoreListItemButton.docs";
+import CoreListItemIconDocs from "./dataDisplay/list/CoreListItemIcon.docs";
+import CoreListItemSecondaryActionDocs from "./dataDisplay/list/CoreListItemSecondaryAction.docs";
 import CoreTableDocs from "./dataDisplay/CoreTable.docs";
 import CoreTooltipDocs from "./dataDisplay/CoreTooltip.docs";
 import CoreTypographyDocs from "./dataDisplay/CoreTypography.docs";
@@ -34,83 +39,95 @@ import CoreDialogTitleDocs from "./feedback/CoreDialogTitle.docs";
 export default {
   DataDisplay: {
     children: {
-      CoreAvatar    : { main: CoreAvatarDocs },
-      CoreBadge     : { main: CoreBadgeDocs },
-      CoreChip      : { main: CoreChipDocs },
-      CoreDivider   : { main: CoreDividerDocs },
-      CoreIcons     : { main: CoreIconsDocs },
-      CoreList      : { main: CoreListDocs },
-      CoreTable     : { main: CoreTableDocs },
-      CoreTooltip   : { main: CoreTooltipDocs },
+      CoreAvatar: { main: CoreAvatarDocs },
+      CoreBadge: { main: CoreBadgeDocs },
+      CoreChip: { main: CoreChipDocs },
+      CoreDivider: { main: CoreDividerDocs },
+      CoreIcons: { main: CoreIconsDocs },
+      CoreList: {
+        main: CoreListDocs,
+        children: {
+          CoreList: { main: CoreListDocs },
+          CoreListItem: { main: CoreListItemDocs },
+          CoreListItemAvatar: { main: CoreListItemAvatarDocs },
+          CoreListItemButton: { main: CoreListItemButtonDocs },
+          CoreListItemIcon: { main: CoreListItemIconDocs },
+          CoreListItemSecondaryAction: {
+            main: CoreListItemSecondaryActionDocs
+          },
+        },
+      },
+      CoreTable: { main: CoreTableDocs },
+      CoreTooltip: { main: CoreTooltipDocs },
       CoreTypography: { main: CoreTypographyDocs },
-      Headings      : {
+      Headings: {
         children: {
           CoreH1: {
-            main : CoreH1Docs,
+            main: CoreH1Docs,
             order: 0,
           },
           CoreH2: {
-            main : CoreH2Docs,
+            main: CoreH2Docs,
             order: 1,
           },
           CoreH3: {
-            main : CoreH3Docs,
+            main: CoreH3Docs,
             order: 2,
           },
           CoreH4: {
-            main : CoreH4Docs,
+            main: CoreH4Docs,
             order: 3,
           },
           CoreH5: {
-            main : CoreH5Docs,
+            main: CoreH5Docs,
             order: 4,
           },
           CoreH6: {
-            main : CoreH6Docs,
+            main: CoreH6Docs,
             order: 5,
           },
         },
-        main : HeadingDocs,
+        main: HeadingDocs,
         order: 0,
       },
     },
-    main : DataDisplayDocs,
+    main: DataDisplayDocs,
     order: 1,
   },
   Feedback: {
     children: {
-      CoreAlert   : {
-        children: { 
-        CoreAlertDocs: {main: CoreAlertDocs} ,
-        CoreAlertTitleDocs: {main: CoreAlertTitleDocs}
-      }
-    },
-      CoreBackdropDocs: { main: CoreBackdropDocs },
-      CoreDialog  : {
+      CoreAlert: {
         children: {
-          CoreDialogDocs: { main: CoreDialogDocs },
-          CoreDialogActionsDocs: {main: CoreDialogActionsDocs},
-          CoreDialogContentDocs: {main: CoreDialogContentDocs},
-          CoreDialogContentTextDocs: {main: CoreDialogContentTextDocs},
-          CoreDialogTitleDocs: {main: CoreDialogTitleDocs}
-        }
+          CoreAlert: { main: CoreAlertDocs },
+          CoreAlertTitle: { main: CoreAlertTitleDocs },
+        },
+      },
+      CoreBackdrop: { main: CoreBackdropDocs },
+      CoreDialog: {
+        children: {
+          CoreDialog: { main: CoreDialogDocs },
+          CoreDialogActions: { main: CoreDialogActionsDocs },
+          CoreDialogContent: { main: CoreDialogContentDocs },
+          CoreDialogContentText: { main: CoreDialogContentTextDocs },
+          CoreDialogTitle: { main: CoreDialogTitleDocs },
+        },
       },
       CoreProgress: {
         children: {
           CoreCircularProgress: { main: CoreCircularProgressDocs },
-          CoreLinearProgress  : { main: CoreLinearProgressDocs }
-        }, 
+          CoreLinearProgress: { main: CoreLinearProgressDocs },
+        },
         main: CoreProgressDocs,
       },
-      CoreSkeletonDocs: { main: CoreSkeletonDocs },
-      CoreSnackbarDocs: { main: CoreSnackbarDocs },
+      CoreSkeleton: { main: CoreSkeletonDocs },
+      CoreSnackbar: { main: CoreSnackbarDocs },
     },
-    main : FeedbackDocs,
-    order: 2
+    main: FeedbackDocs,
+    order: 2,
   },
   Overview: {
     children: {},
-    main    : OverviewDocs,
-    order   : 0,
+    main: OverviewDocs,
+    order: 0,
   },
 };

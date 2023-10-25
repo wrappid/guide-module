@@ -1,15 +1,15 @@
 import {
   CoreH4,
   CoreTypographyBody1,
-  CoreList
+  CoreListItem
 } from "@wrappid/core";
 import CodeSample from "../../../CodeSample";
 import ComponentProps from "../../../ComponentProps";
 
-export default function CoreListDocs() {
+export default function CoreListItemDocs() {
   return (
     <>
-      <CoreH4>{`CoreList (NOT DEFINED)`}</CoreH4>
+      <CoreH4>{`CoreListItem (NOT DEFINED)`}</CoreH4>
       <CoreTypographyBody1>
         COMPONENT_DESCRIPTION
         </CoreTypographyBody1>
@@ -19,7 +19,7 @@ export default function CoreListDocs() {
         code={`PRE-FORMATTED_CODE_GOES_HERE`}
         renderElement={<></>}
         />
-      <ComponentProps component={CoreList} />
+      <ComponentProps component={CoreListItem} />
     </>
   );
 }
