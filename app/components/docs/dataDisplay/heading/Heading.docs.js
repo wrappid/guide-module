@@ -9,7 +9,7 @@ export default function HeadingDocs() {
     <>
       <CoreH4>Heading Docs</CoreH4>
       <CoreTypographyBody1>
-      Use CoreH(x) to present your design and content as clearly and efficiently as possible.
+      Use CoreH(x) to present your design and content as clearly and efficiently as possible. These are used to define headings.
         </CoreTypographyBody1>
       <CoreTypographyBody1>
       6 levels of headings are supported.

@@ -6,11 +6,10 @@ import ComponentProps from "../../../ComponentProps";
 export default function CoreH1Docs() {
   return (
     <>
-      <CoreH4>CoreH1 Docs</CoreH4>
+      <CoreH4>CoreH1</CoreH4>
 
       <CoreTypographyBody1>
-        The CoreH1 typography component follows the Material Design typographic scale that provides a limited set of type sizes that work well together for a consistent layout.
-        This will helps you to create H1 heading in your design.
+      CoreH1 helps you to create H1 heading in your design.
       </CoreTypographyBody1>
 
       <CodeSample
