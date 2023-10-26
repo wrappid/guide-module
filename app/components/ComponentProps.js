@@ -1,5 +1,5 @@
 import {
-  defaultValidProps, CoreBox, CoreClasses, CoreDivider, CoreH6, CoreTypographyBody1, CoreH5, CoreChip, CoreStack 
+  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreDivider, CoreH6, CoreTypographyBody1, CoreH5, CoreChip, CoreStack 
 } from "@wrappid/core";
 
 import ComponentPropTypes from "./ComponentPropTypes";
@@ -8,7 +8,7 @@ export default function ComponentProps(props) {
   const { component } = props;
     
   const validProps = [...(component?.validProps || []), ...defaultValidProps];
-  const invalidProps = component?.invalidProps || [];
+  const invalidProps = [...(component?.invalidProps || []), ...defaultInvalidProps];
 
   return (
     <>
