@@ -1,9 +1,10 @@
 import {
   CoreH4,
-  CoreTypographyBody1,
+  CoreTypographyBody1
   // CoreSnackbar
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 
 export default function CoreDialogContentTextDocs() {
@@ -12,6 +13,8 @@ export default function CoreDialogContentTextDocs() {
       <CoreH4>{"CoreDialogContentText (NOT DEFINED)"}</CoreH4>
 
       <CoreTypographyBody1>COMPONENT_DESCRIPTION</CoreTypographyBody1>
+
+      <CodeImport name="CoreDialogContentText" />
 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}

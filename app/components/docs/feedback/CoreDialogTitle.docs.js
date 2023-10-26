@@ -1,17 +1,20 @@
 import {
   CoreH4,
-  CoreTypographyBody1,
+  CoreTypographyBody1
   // CoreSnackbar
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 
 export default function CoreDialogTitleDocs() {
   return (
     <>
-      <CoreH4>{"CoreDialogContentText (NOT DEFINED)"}</CoreH4>
+      <CoreH4>{"CoreDialogContent (NOT DEFINED)"}</CoreH4>
 
       <CoreTypographyBody1>COMPONENT_DESCRIPTION</CoreTypographyBody1>
+
+      <CodeImport name="CoreDialogContent" />
 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}

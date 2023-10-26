@@ -16,6 +16,7 @@ import {
   // CoreAlertTitle
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -30,6 +31,8 @@ export default function CoreAlertDocs() {
       <CoreTypographyBody1>
         {"A CoreAlert displays a short, important message in a way that attracts the user's attention without interrupting the user's task."}
       </CoreTypographyBody1>
+
+      <CodeImport name="CoreAlert" />
 
       <CodeSample
         title={"Basic alerts"}

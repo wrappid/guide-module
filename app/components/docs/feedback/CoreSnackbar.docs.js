@@ -7,9 +7,13 @@ import {
   CoreBox,
   CoreButton,
   CoreStack,
-  CoreClasses
+  CoreClasses,
+  CoreIconButton,
+  CoreIcon,
+  CoreAlert
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -63,6 +67,40 @@ export default function CoreSnackbarDocs() {
     </>
   );
 
+  //
+  const [opeN, setOpen] = React.useState(false);
+  const handleClicK = () => {
+    setOpen(true);
+  };
+
+  const handleClosE = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  // <React.Fragment>
+  const action = (
+    <><CoreButton color="secondary" size="small" onClick={handleClosE}>
+    UNDO
+    </CoreButton><CoreIconButton
+      size="small"
+      aria-label="close"
+      color="inherit"
+      onClick={handleClosE}
+    >
+      <CoreIcon fontSize="small" >close</CoreIcon>
+    </CoreIconButton></>
+  );
+  // </React.Fragment>
+  const Action = (
+    <CoreButton color="secondary" size="small">
+      lorem ipsum dolorem
+    </CoreButton>
+  );
+  
   return (
     <>
       <CoreH4>{"CoreSnackbar (NOT DEFINED)"}</CoreH4>
@@ -85,12 +123,15 @@ export default function CoreSnackbarDocs() {
         can use them to display notifications.
       </CoreTypographyBody1>
 
+      <CodeImport name="CoreSnackbar" />
+
+      {/* 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<></>}
-      />
+      /> */}
 
       <CodeSample
         title={"Simple snackbars(NOT WORKING)"}
@@ -109,7 +150,17 @@ export default function CoreSnackbarDocs() {
       />
         
         `}
-        renderElement={<></>}
+        renderElement={<>
+          <CoreButton label="Open simple snackbar" onClick={handleClicK}></CoreButton>
+
+          <CoreSnackbar
+            open={opeN}
+            autoHideDuration={6000}
+            onClose={handleClosE}
+            message="Note archived"
+            action={action}
+          />
+        </>}
       />
 
       <CodeSample
@@ -118,7 +169,30 @@ export default function CoreSnackbarDocs() {
           "Here are some examples of customizing the component. You can learn more about this in the overrides documentation page."
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+          <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2} >
+            <CoreButton
+              label="Open success snackbar"
+              variant="outlined"
+              onClick={handleClicK}>
+            </CoreButton>
+
+            <CoreSnackbar open={opeN} autoHideDuration={6000} onClose={handleClosE}>
+              <CoreAlert onClose={handleClosE} severity="success" >
+          This is a success message!
+              </CoreAlert>
+            </CoreSnackbar>
+
+            <CoreAlert severity="error">This is an error message!</CoreAlert>
+
+            <CoreAlert severity="warning">This is a warning message!</CoreAlert>
+
+            <CoreAlert severity="info">This is an information message!</CoreAlert>
+
+            <CoreAlert severity="success">This is a success message!</CoreAlert>
+          </CoreStack>
+        
+        </>}
       />
 
       <CodeSample
@@ -156,7 +230,32 @@ export default function CoreSnackbarDocs() {
         title={"Message Length (NOT WORKING)"}
         description={"Some snackbars with varying message length."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+          <CoreStack spacing={2} styleClasses={[CoreClasses.WIDTH.MIN_W_100]} >
+            {/* <SnackbarContent message="I love snacks." action={Action} />
+
+            <SnackbarContent
+              message={
+                "I love candy. I love cookies. I love cupcakes. \
+          I love cheesecake. I love chocolate."
+              }
+            />
+
+            <SnackbarContent
+              message="I love candy. I love cookies. I love cupcakes."
+              action={Action}
+            />
+
+            <SnackbarContent
+              message={
+                "I love candy. I love cookies. I love cupcakes. \
+          I love cheesecake. I love chocolate."
+              }
+              action={Action}
+            /> */}
+          </CoreStack>
+        
+        </>}
       />
 
       <CodeSample

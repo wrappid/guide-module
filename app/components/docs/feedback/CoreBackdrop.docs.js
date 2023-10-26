@@ -9,7 +9,7 @@ import {
   CoreButton,
   CoreClasses,
   CoreAlert,
-  CoreCircularProgress,
+  CoreCircularProgress
   // CoreBackdropTitle
 } from "@wrappid/core";
 
@@ -76,14 +76,11 @@ onClick={handleClose}
 </>
 )`}
         renderElement={
-          <CoreStack direction="column" spacing={2}>
+          <CoreStack styleClasses={[CoreClasses.WIDTH.W_25, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="column" spacing={2}>
             <CoreButton onClick={handleOpen}>Show backdrop</CoreButton>
 
             <CoreBackdrop
-              styleClasses={[
-                CoreClasses.COLOR.TEXT_WHITE,
-                CoreClasses.Z_INDEX.Z_3,
-              ]}
+              styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
               open={open}
               onClick={handleClose}
             >

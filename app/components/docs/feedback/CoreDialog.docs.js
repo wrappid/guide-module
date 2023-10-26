@@ -4,11 +4,12 @@ import {
   CoreH4,
   CoreTypographyBody1,
   CoreDialog,
-  CoreStack,
+  CoreStack
   // CoreSimpleDialog
   // CoreDialogTitle
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -54,6 +55,8 @@ export default function CoreDialogDocs() {
           sparingly.
         </CoreTypographyBody1>
       </CoreStack>
+
+      <CodeImport name="CoreDialog" />
 
       <CodeSample
         title={"Basic dialog"}
