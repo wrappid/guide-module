@@ -12,6 +12,7 @@ import {
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -61,6 +62,8 @@ export default function CoreAvatarDocs() {
         Avatars are found throughout material design with uses in everything from tables to dialog
         menus.
       </CoreTypographyBody1>
+
+      <CodeImport name="CoreAvatar" />
 
       <CodeSample
         title={"Image avatars"}

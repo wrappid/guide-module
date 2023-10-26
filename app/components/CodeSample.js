@@ -1,16 +1,16 @@
 import React from "react";
 
 import {
-  CoreBox,
   CoreCard,
   CoreCardContent,
   CoreCardHeader,
   CoreClasses,
   CoreDivider,
   CoreStack,
-  CoreTextButton,
-  CoreTypographyBody1
+  CoreTextButton
 } from "@wrappid/core";
+
+import CodeBlock from "./CodeBlock";
 
 export default function CodeSample(props) {
   const { title, description, code, renderElement } = props;
@@ -23,13 +23,12 @@ export default function CodeSample(props) {
   React.useEffect(() => {}, []);
 
   return (
-    <CoreBox styleClasses={[CoreClasses.MARGIN.MB5]}>
-      <CoreCard>
-        <CoreCardHeader
-          title={title || "NO TITLE SET"}
-          subheader={description || "NO DESCRIPTION SET"} />
+    <CoreCard styleClasses={[CoreClasses.MARGIN.MB2]}>
+      <CoreCardHeader
+        title={title || "NO TITLE SET"}
+        subheader={description || "NO DESCRIPTION SET"} />
 
-        {code && renderElement && 
+      {code && renderElement && 
           <CoreCardContent>
             {renderElement}
             
@@ -46,11 +45,10 @@ export default function CodeSample(props) {
             <CoreDivider />
 
             {expandedBlock === "code" && (
-              <CoreTypographyBody1 code={true} noWrap={true}>{code}</CoreTypographyBody1>
+              <CodeBlock noWrap={true} block={true}>{code}</CodeBlock>
             )}
           </CoreCardContent>
-        }
-      </CoreCard>
-    </CoreBox>
+      }
+    </CoreCard>
   );
 }
