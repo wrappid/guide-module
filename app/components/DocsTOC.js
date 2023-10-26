@@ -3,7 +3,7 @@ import {
 } from "@wrappid/core";
 
 export default function DocsTOC(props) {
-  const { docsRegistry, currentPage, setCurrentPage } = props;
+  const { docsRegistry, /* currentPage, */ setCurrentPage } = props;
   const getSortedRegistry = (docsRegistry) => {
     return Object.keys(docsRegistry).sort((curr, next) => docsRegistry[curr].order - docsRegistry[next].order);
   };
