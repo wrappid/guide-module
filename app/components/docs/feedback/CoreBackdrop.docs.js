@@ -9,7 +9,7 @@ import {
   CoreButton,
   CoreClasses,
   CoreAlert,
-  CoreCircularProgress
+  CoreCircularProgress,
   // CoreBackdropTitle
 } from "@wrappid/core";
 
@@ -47,9 +47,9 @@ export default function CoreBackdropDocs() {
       </CoreStack>
 
       <CoreAlert severity="error">
-        Backdrop Error: On clinking show backdrop, backdrop comes, but doesn't
+        Backdrop Error: On clinking show backdrop, backdrop comes, but does not
         closes. In MUI on clicking backdrop, page remians srollable, but here
-        page is not scrolling. Label on button is not showing
+        page is not scrolling.
       </CoreAlert>
 
       <CodeSample
@@ -57,36 +57,57 @@ export default function CoreBackdropDocs() {
         description={
           "The CoreBackdrop offers four severity levels that set a distinctive icon and color"
         }
-        code={`const [open, setOpen] = React.useState(false);
-const handleClose = () => {
-    setOpen(false);
-};
-const handleOpen = () => {
-    setOpen(true);
-};
-return (
-<>
-<CoreButton onClick={handleOpen}>Show backdrop</CoreButton>
-<CoreBackdrop
-open={open}
-onClick={handleClose}
+        code={`<CoreStack
+  direction="row"
+  styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
 >
-<CoreCircularProgress color="inherit" />
-</CoreBackdrop>
-</>
+  <CoreButton
+    onClick={() => {
+      setOpen(true);
+    }}
+  >
+    Show backdrop
+  </CoreButton>
+
+  <CoreBackdrop
+    styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
+    open={open}
+    onClick={() => {
+      setOpen(false);
+    }}
+  >
+    <CoreCircularProgress color="inherit" />
+  </CoreBackdrop>
+</CoreStack>
 )`}
         renderElement={
-          <CoreStack styleClasses={[CoreClasses.WIDTH.W_25, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="column" spacing={2}>
-            <CoreButton onClick={handleOpen}>Show backdrop</CoreButton>
-
-            <CoreBackdrop
-              styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
-              open={open}
-              onClick={handleClose}
+          <>
+            <CoreStack
+              direction="row"
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
-              <CoreCircularProgress color="inherit" />
-            </CoreBackdrop>
-          </CoreStack>
+              <CoreButton
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
+                Show backdrop
+              </CoreButton>
+
+              <CoreBackdrop
+                styleClasses={[
+                  CoreClasses.COLOR.TEXT_WHITE,
+                  CoreClasses.Z_INDEX.Z_3,
+                ]}
+                open={open}
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <CoreCircularProgress color="inherit" />
+              </CoreBackdrop>
+            </CoreStack>
+          </>
         }
       />
 
