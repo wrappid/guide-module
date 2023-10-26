@@ -46,7 +46,7 @@ export default function CodeSample(props) {
             <CoreDivider />
 
             {expandedBlock === "code" && (
-              <CoreTypographyBody1 code={true}>{code}</CoreTypographyBody1>
+              <CoreTypographyBody1 code={true} noWrap={true}>{code}</CoreTypographyBody1>
             )}
           </CoreCardContent>
         }
