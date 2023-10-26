@@ -139,7 +139,7 @@ export default {
       },
     },
     main : DataDisplayDocs,
-    order: 1,
+    order: 2,
   },
   Feedback: {
     children: {
@@ -170,7 +170,7 @@ export default {
       CoreSnackbar: { main: CoreSnackbarDocs },
     },
     main : FeedbackDocs,
-    order: 2,
+    order: 3,
   },
   Inputs: {
     children: {
@@ -197,7 +197,7 @@ export default {
       CoreTransferList: { main: CoreTransferListDocs },
     },
     main : InputsDocs,
-    order: 0,
+    order: 1,
   },
   Overview: {
     children: {},
