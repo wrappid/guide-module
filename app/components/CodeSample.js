@@ -1,13 +1,12 @@
 import React from "react";
 
 import {
-  CoreCard,
-  CoreCardContent,
-  CoreCardHeader,
   CoreClasses,
-  CoreDivider,
   CoreStack,
-  CoreTextButton
+  CoreButton,
+  CoreTypographyBody1,
+  CoreH5,
+  CoreBox,
 } from "@wrappid/core";
 
 import CodeBlock from "./CodeBlock";
@@ -23,32 +22,58 @@ export default function CodeSample(props) {
   React.useEffect(() => {}, []);
 
   return (
-    <CoreCard styleClasses={[CoreClasses.MARGIN.MB2]}>
-      <CoreCardHeader
-        title={title || "NO TITLE SET"}
-        subheader={description || "NO DESCRIPTION SET"} />
+    <>
+      <CoreH5>{title || "NO TITLE SET"}</CoreH5>
+      <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MY2]}>
+        {description || "NO DESCRIPTION SET"}
+      </CoreTypographyBody1>
 
-      {code && renderElement && 
-          <CoreCardContent>
-            {renderElement}
-            
-            <CoreDivider />
-            
-            <CoreStack direction="row" styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END]}>
-              <CoreTextButton
-                label="Expand Code"
-                OnClick={() => {
-                  expandedBlock === "code" ? expandBlock(false) : expandBlock("code");
-                }} />
-            </CoreStack>
-            
-            <CoreDivider />
-
-            {expandedBlock === "code" && (
-              <CodeBlock noWrap={true} block={true}>{code}</CodeBlock>
-            )}
-          </CoreCardContent>
-      }
-    </CoreCard>
+      {(renderElement || code) && (
+        <CoreBox
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_SECONDARY,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.FLEX.DIRECTION_COLUMN,
+            CoreClasses.MARGIN.MT2,
+            CoreClasses.MARGIN.MB5,
+          ]}
+        >
+          {renderElement && (
+            <CoreBox
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.MY3]}
+            >
+              {renderElement}
+            </CoreBox>
+          )}
+          {code && (
+            <CoreBox>
+              <CoreStack
+                direction="row"
+                styleClasses={[
+                  CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END,
+                  CoreClasses.BORDER.BORDER_TOP,
+                  CoreClasses.BORDER.BORDER_BOTTOM,
+                  CoreClasses.BORDER.BORDER_SECONDARY,
+                  CoreClasses.PADDING.P1,
+                ]}
+              >
+                <CoreButton
+                  label={expandedBlock === "code" ? "Collapse Code" : "Expand Code"}
+                  OnClick={() => {
+                    expandedBlock === "code" ? expandBlock(false) : expandBlock("code");
+                  }}
+                />
+              </CoreStack>
+              {expandedBlock === "code" && (
+                <CodeBlock noWrap={true} block={true}>
+                  {code}
+                </CodeBlock>
+              )}
+            </CoreBox>
+          )}
+        </CoreBox>
+      )}
+    </>
   );
 }
