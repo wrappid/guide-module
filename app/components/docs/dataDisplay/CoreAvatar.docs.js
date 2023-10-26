@@ -1,11 +1,14 @@
+import { styled } from "@mui/material/styles";
 import {
+  CoreAvatarGroup,
   CoreAvatar,
   CoreClasses,
   CoreStack,
-  CoreSpan,
   CoreH4,
   CoreTypographyBody1,
-  CoreIcon
+  CoreIcon,
+  CoreSpan,
+  CoreBadge
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
@@ -13,6 +16,41 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreAvatarDocs() {
+  const StyledBadge = styled(CoreBadge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      "&::after": {
+        animation   : "ripple 1.2s infinite ease-in-out",
+        border      : "1px solid currentColor",
+        borderRadius: "50%",
+        content     : "\"\"",
+        height      : "100%",
+        left        : 0,
+        position    : "absolute",
+        top         : 0,
+        width       : "100%",
+      },
+      backgroundColor: "#44b700",
+      boxShadow      : `0 0 0 2px ${theme.palette.background.paper}`,
+      color          : "#44b700",
+    },
+    "@keyframes ripple": {
+      "0%": {
+        opacity  : 1,
+        transform: "scale(.8)",
+      },
+      "100%": {
+        opacity  : 0,
+        transform: "scale(2.4)",
+      },
+    },
+  }));
+
+  const SmallAvatar = styled(CoreAvatar)(({ theme }) => ({
+    border: `2px solid ${theme.palette.background.paper}`,
+    height: 22,
+    width : 22,
+  }));
+
   return (
     <>
       <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
@@ -33,16 +71,16 @@ export default function CoreAvatarDocs() {
 
             <CodeBlock>{" src "}</CodeBlock>or
 
-            <CodeBlock code={true}>{" srcSet "}</CodeBlock>to the component.
+            <CodeBlock>{" srcSet "}</CodeBlock>to the component.
           </>
         }
-        code={`<CoreStack spacing={2} direction="row">
-<CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
-<CoreAvatar src="https://mui.com/static/images/avatar/2.jpg" />
-<CoreAvatar src="https://mui.com/static/images/avatar/3.jpg" />
+        code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+  <CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
+  <CoreAvatar src="https://mui.com/static/images/avatar/2.jpg" />
+  <CoreAvatar src="https://mui.com/static/images/avatar/3.jpg" />
 </CoreStack>`}
         renderElement={
-          <CoreStack spacing={2} direction="row">
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
             <CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
 
             <CoreAvatar src="https://mui.com/static/images/avatar/2.jpg" />
@@ -58,17 +96,17 @@ export default function CoreAvatarDocs() {
           <>
             Avatars containing simple characters can be created by passing a string as
             {/* eslint-disable-next-line react/jsx-newline */}
-            <CoreSpan code={true}>{" children "}</CoreSpan>.
+            <CodeBlock>{"children"}</CodeBlock>.
           </>
         }
-        code={`<CoreStack spacing={2} direction="row">
+        code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
   <CoreAvatar>W</CoreAvatar>
   <CoreAvatar>WR</CoreAvatar>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]}>W</CoreAvatar>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>WR</CoreAvatar>
 </CoreStack>`}
         renderElement={
-          <CoreStack spacing={2} direction="row">
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
             <CoreAvatar>W</CoreAvatar>
 
             <CoreAvatar>WR</CoreAvatar>
@@ -83,39 +121,34 @@ export default function CoreAvatarDocs() {
       <CodeSample
         title={"Sizes"}
         description={
-          <>
-            You can change the size of the avatar with the{" "}
-
-            <CoreSpan code={true}>{" height "}</CoreSpan> and
-
-            <CoreSpan code={true}>{" width "}</CoreSpan> CSS properties.
-
-            {/* eslint-disable-next-line react/jsx-newline */}
-          </>
+          <CoreTypographyBody1>
+            You can change the size of the avatar with the{" "}<CodeBlock>{"height"}</CodeBlock>{" and "}<CodeBlock>{"width"}</CodeBlock> CSS properties.
+          </CoreTypographyBody1>
         }
-        code={`
-<CoreAvatar 
-  src="https://mui.com/static/images/avatar/1.jpg"
-  styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]} />
-
-<CoreAvatar 
-  src="https://mui.com/static/images/avatar/2.jpg"
-  styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_MEDIUM]} />
-
-<CoreAvatar 
-  src="https://mui.com/static/images/avatar/3.jpg"
-  styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_LARGE]} />
-
-<CoreAvatar 
-  src="https://mui.com/static/images/avatar/1.jpg"
-  styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XLARGE]} />
-
-<CoreAvatar 
-  src="https://mui.com/static/images/avatar/2.jpg"
-  styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XXLARGE]} />
-        `}
+        code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
+  <CoreAvatar
+    src="https://mui.com/static/images/avatar/1.jpg"
+    styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
+  />
+  <CoreAvatar
+    src="https://mui.com/static/images/avatar/2.jpg"
+    styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_MEDIUM]}
+  />
+  <CoreAvatar
+    src="https://mui.com/static/images/avatar/3.jpg"
+    styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_LARGE]}
+  />
+  <CoreAvatar
+    src="https://mui.com/static/images/avatar/1.jpg"
+    styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XLARGE]}
+  />
+  <CoreAvatar
+    src="https://mui.com/static/images/avatar/2.jpg"
+    styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XXLARGE]}
+  />
+</CoreStack>`}
         renderElement={
-          <CoreStack direction="row">
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
             <CoreAvatar
               src="https://mui.com/static/images/avatar/1.jpg"
               styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
@@ -150,21 +183,22 @@ export default function CoreAvatarDocs() {
           <>
             Icon avatars are created by passing an icon as
             {/* eslint-disable-next-line react/jsx-newline */}
-            <CoreSpan code={true}>{" children "}</CoreSpan>
+            <CodeBlock>{" children "}</CodeBlock>.
           </>
         }
-        code={`
-<CoreAvatar 
-    styleClasses={[CoreClasses.BG.BG_BLACK]}>
-    <CoreIcon>folder</CoreIcon></CoreAvatar>
-<CoreAvatar 
-    styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]}>
-    <CoreIcon>pageview</CoreIcon></CoreAvatar>
-<CoreAvatar 
-    styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]}>
-    <CoreIcon>assignment</CoreIcon></CoreAvatar>`}
+        code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY_DARK]}>
+    <CoreIcon>folder</CoreIcon>
+  </CoreAvatar>
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]}>
+    <CoreIcon>pageview</CoreIcon>
+  </CoreAvatar>
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]}>
+    <CoreIcon>assignment</CoreIcon>
+  </CoreAvatar>
+</CoreStack>`}
         renderElement={
-          <CoreStack spacing={2} direction="row">
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
             <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY_DARK]}>
               <CoreIcon>folder</CoreIcon>
             </CoreAvatar>
@@ -186,21 +220,18 @@ export default function CoreAvatarDocs() {
           <>
             If you need square or rounded avatars, use the{" "}
 
-            <CoreSpan code={true}>{" variant "}</CoreSpan> prop.
+            <CodeBlock>{"variant"}</CodeBlock> prop.
           </>
         }
-        code={`
-<CoreAvatar 
-    styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]}
-    variant="square">N</CoreAvatar>
-    <CoreAvatar 
-    styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]} 
-    variant="round"><CoreIcon>assignment</CoreIcon></CoreAvatar>`}
+        code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]} variant="square">N</CoreAvatar>
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]} variant="rounded">
+    <CoreIcon>assignment</CoreIcon>
+  </CoreAvatar>
+</CoreStack>`}
         renderElement={
-          <CoreStack spacing={2} direction="row">
-            <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]} variant="square">
-              N
-            </CoreAvatar>
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+            <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]} variant="square">N</CoreAvatar>
 
             <CoreAvatar styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]} variant="rounded">
               <CoreIcon>assignment</CoreIcon>
@@ -211,20 +242,23 @@ export default function CoreAvatarDocs() {
 
       <CodeSample
         title="Fallbacks"
-        description="If there is an error loading the avatar image, the component falls back to an alternative in the following order:
-the provided children
-the first letter of the alt text
-a generic avatar icon
-"
+        description={
+          <>
+            <CoreTypographyBody1>{"If there is an error loading the avatar image, the component falls back to an alternative in the following order:"}</CoreTypographyBody1>
+
+            <CoreTypographyBody1>
+            - the provided children
+            - the first letter of the alt text
+            - a generic avatar icon
+            </CoreTypographyBody1>
+          </>}
         code={`
-<CoreStack direction="row" spacing={2}>
+<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <CoreAvatar
     styleClasses={[CoreClasses.BG.BG_PRIMARY]}
     alt="Remy Sharp"
     src="/broken-image.jpg"
-  >
-    B
-  </CoreAvatar>
+  >B</CoreAvatar>
   <CoreAvatar
     styleClasses={[CoreClasses.BG.BG_PRIMARY]}
     alt="Remy Sharp"
@@ -234,7 +268,7 @@ a generic avatar icon
 </CoreStack>
         `}
         renderElement={
-          <CoreStack direction="row" spacing={2}>
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
             <CoreAvatar
               styleClasses={[CoreClasses.BG.BG_PRIMARY]}
               alt="Remy Sharp"
@@ -255,59 +289,60 @@ a generic avatar icon
       />
 
       <CodeSample
-        title="Grouped (NOT IMPLEMENTED)"
+        title="Grouped"
         description="AvatarGroup renders its children as a stack. Use the max prop to limit the number of avatars."
-        code={`
-          <CoreAvatarGroup max={4}>
-            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-            <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
-            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
-          </CoreAvatarGroup>
-        `}
+        code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+  <CoreAvatarGroup max={4}>
+    <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+    <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+    <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
+    <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+    <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+  </CoreAvatarGroup>
+</CoreStack>`}
         renderElement={
-          <>
-            {/* <CoreAvatarGroup max={4}> */}
-            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
 
-            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+            <CoreAvatarGroup max={4}>
+            
+              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
 
-            <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
+              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
 
-            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+              <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
 
-            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
 
-            {/* </CoreAvatarGroup> */}
-          </>
+              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+
+            </CoreAvatarGroup>
+          </CoreStack>
         }
       />
 
       <CodeSample
-        title="Total avatars (NOT IMPLEMENTED)"
+        title="Total avatars"
         description="If you need to control the total number of avatars not shown, you can use the total prop."
-        code={`
-          <CoreAvatarGroup total={24}>
-            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
-          </CoreAvatarGroup>
-        `}
+        code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+  <CoreAvatarGroup total={24}>
+    <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+    <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+    <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+    <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+  </CoreAvatarGroup>
+</CoreStack>`}
         renderElement={
-          <>
-            {/* <CoreAvatarGroup total={24}> */}
-            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-
-            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-
-            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-
-            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
-
-            {/* </CoreAvatarGroup> */}
-          </>
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+            <CoreAvatarGroup total={24}>
+              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+              
+              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+              
+              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+              
+              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+            </CoreAvatarGroup>
+          </CoreStack>
         }
       />
 
@@ -326,20 +361,19 @@ The renderSurplus prop is useful when you need to render the surplus based on th
           </CoreAvatarGroup>
         `}
         renderElement={
-          <>
-            {/* <CoreAvatarGroup 
-              renderSurplus={(surplus) => <>+{surplus.toString()[0]}k</>}
-              total={4250}> */}
-            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+            <CoreAvatarGroup 
+              renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>}
+              total={4250}>
+              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
 
-            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
 
-            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
 
-            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
-
-            {/* </CoreAvatarGroup> */}
-          </>
+              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+            </CoreAvatarGroup>
+          </CoreStack>
         }
       />
 
@@ -375,7 +409,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
-<CoreStack direction="row" spacing={2}>
+
+<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <StyledBadge
     overlap="circular"
     anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
@@ -395,7 +430,25 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 </CoreStack>
         `}
         renderElement={
-          <></>
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+            <StyledBadge
+              overlap="circular"
+              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+              variant="dot"
+            >
+              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+            </StyledBadge>
+            
+            <CoreBadge
+              overlap="circular"
+              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+              badgeContent={
+                <SmallAvatar styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]} alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+              }
+            >
+              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/1.jpg" />
+            </CoreBadge>
+          </CoreStack>
         }
       />
 
