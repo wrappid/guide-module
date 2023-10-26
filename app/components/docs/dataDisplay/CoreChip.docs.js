@@ -231,7 +231,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
       />
 
       <CodeSample
-        title="Color chip"
+        title="Color chip(NOT WORKING)"
         description="You can use the color prop to define a color from theme palette."
         code={`
 <CoreStack spacing={1} alignItems="center">

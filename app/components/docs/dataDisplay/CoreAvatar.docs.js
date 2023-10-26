@@ -134,6 +134,9 @@ export default function CoreAvatarDocs() {
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
   />
   <CoreAvatar
+    src="https://mui.com/static/images/avatar/1.jpg"
+  />
+  <CoreAvatar
     src="https://mui.com/static/images/avatar/2.jpg"
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_MEDIUM]}
   />
@@ -151,10 +154,14 @@ export default function CoreAvatarDocs() {
   />
 </CoreStack>`}
         renderElement={
-          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
+          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
             <CoreAvatar
               src="https://mui.com/static/images/avatar/1.jpg"
               styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
+            />
+
+            <CoreAvatar
+              src="https://mui.com/static/images/avatar/1.jpg"
             />
 
             <CoreAvatar

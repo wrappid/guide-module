@@ -38,13 +38,7 @@ export default function CoreDividerDocs() {
       <CodeSample 
         title="List dividers"
         description="The divider renders as an <hr> by default. You can save rendering this DOM element by using the divider prop on the ListItem component."
-        code={`
-const style = {
-  width: '100%',
-  maxWidth: 360,
-  bgcolor: 'background.paper',
-};
-<CoreList sx={style} component="nav" aria-label="mailbox folders">
+        code={`<CoreList component="nav" aria-label="mailbox folders">
   <CoreListItem button>
     <CoreListItemText primary="Inbox" />
   </CoreListItem>
@@ -95,13 +89,7 @@ const style = {
         title="Inset dividers"
         description=""
         code={`
-<CoreList
-  sx={{
-    width: '100%',
-    maxWidth: 360,
-    bgcolor: 'background.paper',
-  }}
->
+<CoreList>
   <CoreListItem>
     <CoreListItemAvatar>
       <CoreAvatar>
@@ -131,13 +119,7 @@ const style = {
 </CoreList>
         `}
         renderElement={
-          <CoreList
-            sx={{
-              bgcolor : "background.paper",
-              maxWidth: 360,
-              width   : "100%",
-            }}
-          >
+          <CoreList>
             <CoreListItem>
               <CoreListItemAvatar>
                 <CoreAvatar>
@@ -178,21 +160,13 @@ const style = {
       <CodeSample 
         title="Subheader dividers"
         description=""
-        code={`
-<CoreList
-  sx={{
-    width: '100%',
-    maxWidth: 360,
-    bgcolor: 'background.paper',
-  }}
->
+        code={`<CoreList>
   <CoreListItem>
     <CoreListItemText primary="Photos" secondary="Jan 9, 2014" />
   </CoreListItem>
   <CoreDivider component="li" />
   <CoreListItem>
     <CoreTypographyBody1
-      sx={{ mt: 0.5, ml: 2 }}
       color="text.secondary"
       display="block"
       variant="caption"
@@ -206,7 +180,7 @@ const style = {
   <CoreDivider component="li" variant="inset" />
   <CoreListItem>
     <CoreTypographyBody1
-      sx={{ mt: 0.5, ml: 9 }}
+      styleClasses={[CoreClasses.MARGIN.ML2]}
       color="text.secondary"
       display="block"
       variant="caption"
@@ -222,16 +196,9 @@ const style = {
     </CoreListItemAvatar>
     <CoreListItemText primary="Vacation" secondary="July 20, 2014" />
   </CoreListItem>
-</CoreList>
-        `}
+</CoreList>`}
         renderElement={
-          <CoreList
-            sx={{
-              bgcolor : "background.paper",
-              maxWidth: 360,
-              width   : "100%",
-            }}
-          >
+          <CoreList>
             <CoreListItem>
               <CoreListItemText primary="Photos" secondary="Jan 9, 2014" />
             </CoreListItem>
@@ -240,12 +207,11 @@ const style = {
 
             <CoreListItem>
               <CoreTypographyBody1
-                sx={{ ml: 2, mt: 0.5 }}
                 color="text.secondary"
                 display="block"
                 variant="caption"
               >
-                Divider
+      Divider
               </CoreTypographyBody1>
             </CoreListItem>
 
@@ -257,12 +223,12 @@ const style = {
 
             <CoreListItem>
               <CoreTypographyBody1
-                sx={{ ml: 9, mt: 0.5 }}
+                styleClasses={[CoreClasses.MARGIN.ML2]}
                 color="text.secondary"
                 display="block"
                 variant="caption"
               >
-                Leisure
+      Leisure
               </CoreTypographyBody1>
             </CoreListItem>
 
@@ -281,9 +247,8 @@ const style = {
 
       <CodeSample 
         title="Middle divider"
-        code={`
-<CoreBox sx={{ bgcolor: "background.paper", maxWidth: 360, width: "100%" }}>
-  <CoreBox sx={{ mx: 2, my: 3 }}>
+        code={`<CoreBox>
+  <CoreBox>
     <CoreGrid container alignItems="center">
       <CoreGrid item xs>
         <CoreH4 gutterBottom component="div">
@@ -306,7 +271,7 @@ const style = {
 
   <CoreDivider variant="middle" />
 
-  <CoreBox sx={{ m: 2 }}>
+  <CoreBox>
     <CoreTypographyBody1 gutterBottom>
       Select type
     </CoreTypographyBody1>
@@ -322,14 +287,13 @@ const style = {
     </CoreStack>
   </CoreBox>
 
-  <CoreBox sx={{ mb: 1, ml: 1, mt: 3 }}>
+  <CoreBox>
     <CoreButton>Add to cart</CoreButton>
   </CoreBox>
-</CoreBox>
-        `}
+</CoreBox>`}
         renderElement={
-          <CoreBox sx={{ bgcolor: "background.paper", maxWidth: 360, width: "100%" }}>
-            <CoreBox sx={{ mx: 2, my: 3 }}>
+          <CoreBox>
+            <CoreBox>
               <CoreGrid container alignItems="center">
                 <CoreGrid item xs>
                   <CoreH4 gutterBottom component="div">
@@ -352,7 +316,7 @@ const style = {
 
             <CoreDivider variant="middle" />
 
-            <CoreBox sx={{ m: 2 }}>
+            <CoreBox>
               <CoreTypographyBody1 gutterBottom>
                 Select type
               </CoreTypographyBody1>
@@ -368,7 +332,7 @@ const style = {
               </CoreStack>
             </CoreBox>
 
-            <CoreBox sx={{ mb: 1, ml: 1, mt: 3 }}>
+            <CoreBox>
               <CoreButton>Add to cart</CoreButton>
             </CoreBox>
           </CoreBox>
