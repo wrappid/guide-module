@@ -1,10 +1,9 @@
 import React from "react";
 
-import {
-  CoreTextButton, CoreBox, CoreGrid, CoreTypographyBody1, CoreClasses, CoreH4 
-} from "@wrappid/core";
+import { CoreBox, CoreGrid, CoreH4 } from "@wrappid/core";
 
 import DocsRegistry from "./docs/DocsRegistry";
+import DocsTOC from "./DocsTOC";
 
 export default function Components() {
 
@@ -51,29 +50,6 @@ export default function Components() {
     setCurrentPage(getSortedRegistry(_DocsRegistry)[0]);
   }, [docsPageRegistry]);
 
-  const renderTOC = (docsRegistry) => {
-    return (
-      <>
-        {getSortedRegistry(docsRegistry).map(docKey => {
-          return (
-            <CoreBox key={`${docKey}`} styleClasses={[CoreClasses.PADDING.PL1]}>
-              <CoreTextButton
-                label={docKey}
-                OnClick={() => {
-                  setCurrentPage(docKey);
-                }}
-              />
-              
-              {docsRegistry[docKey]?.children
-                && Object.keys(docsRegistry[docKey]?.children)?.length > 0
-                && renderTOC(docsRegistry[docKey]?.children)}
-            </CoreBox>
-          );
-        })}
-      </>
-    );
-  };
-
   return (
     <CoreGrid>
       <CoreBox gridProps={{ gridSize: 9 }}>
@@ -83,9 +59,11 @@ export default function Components() {
       </CoreBox>
 
       <CoreBox gridProps={{ gridSize: 3 }}>
-        <CoreTypographyBody1>Table Of Contents</CoreTypographyBody1>
-
-        {renderTOC(_DocsRegistry)}
+        <DocsTOC
+          docsRegistry={_DocsRegistry}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </CoreBox>
     </CoreGrid>
   );
