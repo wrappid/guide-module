@@ -1,14 +1,68 @@
+import React from "react";
+
 import {
   CoreH4,
   CoreSnackbar,
   CoreTypographyBody1,
-  // CoreSnackbar
+  CoreBox,
+  CoreButton,
+  CoreStack,
+  CoreClasses
 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreSnackbarDocs() {
+  const [state, setState] = React.useState({
+    horizontal: "center",
+    open      : false,
+    vertical  : "top",
+  });
+  const { vertical, horizontal, open } = state;
+
+  const handleClick = (newState) => () => {
+    setState({ ...newState, open: true });
+  };
+
+  const handleClose = () => {
+    setState({ ...state, open: false });
+  };
+
+  const buttons = (
+    // <React.Fragment>
+    <>
+      <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+        <CoreButton label="Top-Center" onClick={handleClick({ horizontal: "center", vertical: "top" })}>
+        </CoreButton>
+      </CoreBox>
+
+      <CoreStack direction="row" container styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}>
+
+        <CoreButton label="Top-Left" onClick={handleClick({ horizontal: "left", vertical: "top" })}>
+        </CoreButton>
+
+        <CoreButton label="Top-Right" onClick={handleClick({ horizontal: "right", vertical: "top" })}>
+        </CoreButton>
+      </CoreStack>
+
+      <CoreStack direction="row" container styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}>
+
+        <CoreButton label="Bottom-Left" onClick={handleClick({ horizontal: "left", vertical: "bottom" })} />
+
+        <CoreButton label="Bottom-Right" onClick={handleClick({ horizontal: "right", vertical: "bottom" })} />
+      </CoreStack>
+
+      <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+        <CoreButton label="Bottom-Center" onClick={handleClick({ horizontal: "center", vertical: "bottom" })}>
+          Bottom-Center
+        </CoreButton>
+      </CoreBox>
+
+      {/* </React.Fragment> */}
+    </>
+  );
+
   return (
     <>
       <CoreH4>{"CoreSnackbar (NOT DEFINED)"}</CoreH4>
@@ -21,7 +75,7 @@ export default function CoreSnackbarDocs() {
       <CoreTypographyBody1>
         Snackbars inform users of a process that an app has performed or will
         perform. They appear temporarily, towards the bottom of the screen. They
-        shouldn't interrupt the user experience, and they don't require user
+        should not interrupt the user experience, and they do not require user
         input to disappear.
       </CoreTypographyBody1>
 
@@ -72,8 +126,30 @@ export default function CoreSnackbarDocs() {
         description={
           "In wide layouts, snackbars can be left-aligned or center-aligned if they are consistently placed on the same spot at the bottom of the screen, however there may be circumstances where the placement of the snackbar needs to be more flexible. You can control the position of the snackbar by specifying the anchorOrigin prop."
         }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`<CoreBox styleClasses={[CoreClasses.WIDTH.MIN_W_100]}>
+{buttons}
+
+<CoreSnackbar
+  anchorOrigin={{ horizontal, vertical }}
+  open={open}
+  onClose={handleClose}
+  message="I love snacks"
+  key={vertical + horizontal}
+/>
+</CoreBox>`}
+        renderElement={<>
+          <CoreBox styleClasses={[CoreClasses.WIDTH.MIN_W_100]}>   {/* 300 */}
+            {buttons}
+
+            <CoreSnackbar
+              anchorOrigin={{ horizontal, vertical }}
+              open={open}
+              onClose={handleClose}
+              message="I love snacks"
+              key={vertical + horizontal}
+            />
+          </CoreBox>
+        </>}
       />
 
       <CodeSample
