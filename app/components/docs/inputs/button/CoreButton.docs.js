@@ -7,7 +7,7 @@ import {
   CoreClasses,
   CoreBox,
   CoreIcon,
-  CoreIconButton,
+  CoreIconButton
 } from "@wrappid/core";
 
 import CodeBlock from "../../../CodeBlock";
@@ -17,15 +17,15 @@ import ComponentProps from "../../../ComponentProps";
 
 export default function CoreButtonDocs() {
   const VisuallyHiddenInput = styled("input")({
-    bottom: 0,
-    clip: "rect(0 0 0 0)",
-    clipPath: "inset(50%)",
-    height: 1,
-    left: 0,
-    overflow: "hidden",
-    position: "absolute",
+    bottom    : 0,
+    clip      : "rect(0 0 0 0)",
+    clipPath  : "inset(50%)",
+    height    : 1,
+    left      : 0,
+    overflow  : "hidden",
+    position  : "absolute",
     whiteSpace: "nowrap",
-    width: 1,
+    width     : 1,
   });
 
   return (
@@ -548,7 +548,9 @@ export default function CoreButtonDocs() {
         description={
           <CoreTypographyBody1>
             To create a file upload button, turn the button into a label using{" "}
+
             <CodeBlock>component={"}label{"}</CodeBlock> and then create a
+
             visually-hidden input with type <CodeBlock>file</CodeBlock>.
           </CoreTypographyBody1>
         }

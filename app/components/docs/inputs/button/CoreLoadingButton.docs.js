@@ -1,6 +1,6 @@
 import {
   CoreH4,
-  CoreTypographyBody1,
+  CoreTypographyBody1
   // CoreLoadingButton
 } from "@wrappid/core";
 

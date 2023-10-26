@@ -9,7 +9,7 @@ import {
   CoreButton,
   CoreClasses,
   CoreAlert,
-  CoreCircularProgress,
+  CoreCircularProgress
   // CoreBackdropTitle
 } from "@wrappid/core";
 
@@ -95,10 +95,7 @@ export default function CoreBackdropDocs() {
               </CoreButton>
 
               <CoreBackdrop
-                styleClasses={[
-                  CoreClasses.COLOR.TEXT_WHITE,
-                  CoreClasses.Z_INDEX.Z_3,
-                ]}
+                styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
                 open={open}
                 onClick={() => {
                   setOpen(false);

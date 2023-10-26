@@ -4,7 +4,7 @@ import {
   CoreStack,
   CoreClasses,
   CoreIconButton,
-  CoreIcon,
+  CoreIcon
 } from "@wrappid/core";
 
 import CodeBlock from "../../../CodeBlock";
