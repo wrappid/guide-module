@@ -1,3 +1,5 @@
+import OverviewDocs from "./Overview.docs";
+import DataDisplayDocs from "./dataDisplay/DataDisplay.docs";
 import CoreAvatarDocs from "./dataDisplay/CoreAvatar.docs";
 import CoreBadgeDocs from "./dataDisplay/CoreBadge.docs";
 import CoreChipDocs from "./dataDisplay/CoreChip.docs";
@@ -12,7 +14,6 @@ import CoreListItemSecondaryActionDocs from "./dataDisplay/list/CoreListItemSeco
 import CoreTableDocs from "./dataDisplay/CoreTable.docs";
 import CoreTooltipDocs from "./dataDisplay/CoreTooltip.docs";
 import CoreTypographyDocs from "./dataDisplay/CoreTypography.docs";
-import DataDisplayDocs from "./dataDisplay/DataDisplay.docs";
 import CoreH1Docs from "./dataDisplay/heading/CoreH1.docs";
 import CoreH2Docs from "./dataDisplay/heading/CoreH2.docs";
 import CoreH3Docs from "./dataDisplay/heading/CoreH3.docs";
@@ -20,6 +21,14 @@ import CoreH4Docs from "./dataDisplay/heading/CoreH4.docs";
 import CoreH5Docs from "./dataDisplay/heading/CoreH5.docs";
 import CoreH6Docs from "./dataDisplay/heading/CoreH6.docs";
 import HeadingDocs from "./dataDisplay/heading/Heading.docs";
+import CoreAvatarGroupDocs from "./dataDisplay/CoreAvatarGroup.docs";
+import CoreTypographyBody1Docs from "./dataDisplay/CoreTypographyBody1.docs";
+import CoreTypographyBody2Docs from "./dataDisplay/CoreTypographyBody2.docs";
+import CoreTypographyButtonDocs from "./dataDisplay/CoreTypographyButton.docs";
+import CoreTypographyCaptionDocs from "./dataDisplay/CoreTypographyCaption.docs";
+import CoreTypographyOverlineDocs from "./dataDisplay/CoreTypographyOverline.docs";
+import CoreTypographySubtitle1Docs from "./dataDisplay/CoreTypographySubtitle1.docs";
+import CoreTypographySubtitle2Docs from "./dataDisplay/CoreTypographySubtitle2.docs";
 import CoreAlertDocs from "./feedback/CoreAlert.docs";
 import CoreBackdropDocs from "./feedback/CoreBackdrop.docs";
 import CoreDialogDocs from "./feedback/CoreDialog.docs";
@@ -29,22 +38,58 @@ import FeedbackDocs from "./feedback/Feedback.docs";
 import CoreCircularProgressDocs from "./feedback/progress/CoreCircularProgress.docs";
 import CoreLinearProgressDocs from "./feedback/progress/CoreLinearProgress.docs.js";
 import CoreProgressDocs from "./feedback/progress/CoreProgress.docs";
-import OverviewDocs from "./Overview.docs";
 import CoreAlertTitleDocs from "./feedback/CoreAlertTitle.docs";
 import CoreDialogActionsDocs from "./feedback/CoreDialogActions.docs";
 import CoreDialogContentDocs from "./feedback/CoreDialogContent.docs";
 import CoreDialogContentTextDocs from "./feedback/CoreDialogContentText.docs";
 import CoreDialogTitleDocs from "./feedback/CoreDialogTitle.docs";
-import CoreAvatarGroupDocs from "./dataDisplay/CoreAvatarGroup.docs";
-import CoreTypographyBody1Docs from "./dataDisplay/CoreTypographyBody1.docs";
-import CoreTypographyBody2Docs from "./dataDisplay/CoreTypographyBody2.docs";
-import CoreTypographyButtonDocs from "./dataDisplay/CoreTypographyButton.docs";
-import CoreTypographyCaptionDocs from "./dataDisplay/CoreTypographyCaption.docs";
-import CoreTypographyOverlineDocs from "./dataDisplay/CoreTypographyOverline.docs";
-import CoreTypographySubtitle1Docs from "./dataDisplay/CoreTypographySubtitle1.docs";
-import CoreTypographySubtitle2Docs from "./dataDisplay/CoreTypographySubtitle2.docs";
+import InputsDocs from "./inputs/Inputs.docs";
+import CoreAutocompleteDocs from "./inputs/CoreAutocomplete.docs";
+import CoreButtonDocs from "./inputs/button/CoreButton.docs";
+import CoreButtonBaseDocs from "./inputs/button/CoreButtonBase.docs";
+import CoreIconButtonDocs from "./inputs/button/CoreIconButton.docs";
+import CoreLoadingButtonDocs from "./inputs/button/CoreLoadingButton.docs";
+import CoreButtonGroupDocs from "./inputs/CoreButtonGroup.docs";
+import CoreCheckboxDocs from "./inputs/CoreCheckbox.docs";
+import CoreFabDocs from "./inputs/CoreFab.docs";
+import CoreRadioGroupDocs from "./inputs/CoreRadioGroup.docs";
+import CoreRatingDocs from "./inputs/CoreRating.docs";
+import CoreSelectDocs from "./inputs/CoreSelect.docs";
+import CoreSliderDocs from "./inputs/CoreSlider.docs";
+import CoreSwitchDocs from "./inputs/CoreSwitch.docs";
+import CoreTextFieldDocs from "./inputs/CoreTextField.docs";
+import CoreTransferListDocs from "./inputs/CoreTransferList.docs";
+import CoreAsyncSelectDocs from "./inputs/CoreAsyncSelect.docs";
+import CoreToggleButtonDocs from "./inputs/CoreToggleButton.docs";
 
 export default {
+  Inputs: {
+    children: {
+      CoreAutocomplete: { main: CoreAutocompleteDocs },
+      CoreButton: {
+        main: CoreButtonDocs,
+        children: {
+          CoreButtonBase: { main: CoreButtonBaseDocs },
+          CoreIconButton: { main: CoreIconButtonDocs },
+          CoreLoadingButton: { main: CoreLoadingButtonDocs },
+        },
+      },
+      CoreButtonGroup: { main: CoreButtonGroupDocs },
+      CoreCheckbox: { main: CoreCheckboxDocs },
+      CoreFab: { main: CoreFabDocs },
+      CoreRadioGroup: { main: CoreRadioGroupDocs },
+      CoreRating: { main: CoreRatingDocs },
+      CoreSelect: { main: CoreSelectDocs },
+      CoreSlider: { main: CoreSliderDocs },
+      CoreSwitch: { main: CoreSwitchDocs },
+      CoreTextField: { main: CoreTextFieldDocs },
+      CoreTransferList: { main: CoreTransferListDocs },
+      CoreAsyncSelect: { main: CoreAsyncSelectDocs },
+      CoreToggleButton: { main: CoreToggleButtonDocs },
+    },
+    main: InputsDocs,
+    order: 0,
+  },
   DataDisplay: {
     children: {
       CoreAvatar: {
