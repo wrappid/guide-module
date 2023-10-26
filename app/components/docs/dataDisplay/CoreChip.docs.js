@@ -247,7 +247,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
         `}
         renderElement={
           <CoreStack spacing={1} alignItems="center">
-            <CoreStack direction="row" spacing={1}>
+            {/* <CoreStack direction="row" spacing={1}>
               <CoreChip label="primary" color="primary" />
             
               <CoreChip label="success" color="success" />
@@ -257,7 +257,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
               <CoreChip label="primary" color="primary" variant="outlined" />
             
               <CoreChip label="success" color="success" variant="outlined" />
-            </CoreStack>
+            </CoreStack> */}
           </CoreStack>
         }
       />

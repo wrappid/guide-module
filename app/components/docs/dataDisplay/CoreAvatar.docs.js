@@ -8,6 +8,7 @@ import {
   CoreIcon
 } from "@wrappid/core";
 
+import CodeBlock from "../../CodeBlock";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -28,18 +29,18 @@ export default function CoreAvatarDocs() {
         description={
           <>
             Image avatars can be created by passing standard
-            <CoreSpan code={true}>{" img "}</CoreSpan>props
+            <CodeBlock>{" img "}</CodeBlock>props
 
-            <CoreSpan code={true}>{" src "}</CoreSpan>or
+            <CodeBlock>{" src "}</CodeBlock>or
 
-            <CoreSpan code={true}>{" srcSet "}</CoreSpan>to the component.
+            <CodeBlock code={true}>{" srcSet "}</CodeBlock>to the component.
           </>
         }
-        code={`
+        code={`<CoreStack spacing={2} direction="row">
 <CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
 <CoreAvatar src="https://mui.com/static/images/avatar/2.jpg" />
 <CoreAvatar src="https://mui.com/static/images/avatar/3.jpg" />
-        `}
+</CoreStack>`}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
@@ -57,15 +58,15 @@ export default function CoreAvatarDocs() {
           <>
             Avatars containing simple characters can be created by passing a string as
             {/* eslint-disable-next-line react/jsx-newline */}
-            <CoreSpan code={true}>{" children "}</CoreSpan>
+            <CoreSpan code={true}>{" children "}</CoreSpan>.
           </>
         }
-        code={`
-<CoreAvatar>W</CoreAvatar>
-<CoreAvatar>WD</CoreAvatar>
-<CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]}>W</CoreAvatar>
-<CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>WR</CoreAvatar>
-        `}
+        code={`<CoreStack spacing={2} direction="row">
+  <CoreAvatar>W</CoreAvatar>
+  <CoreAvatar>WR</CoreAvatar>
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]}>W</CoreAvatar>
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>WR</CoreAvatar>
+</CoreStack>`}
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreAvatar>W</CoreAvatar>
