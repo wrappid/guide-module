@@ -252,13 +252,13 @@ export default function CoreButtonDocs() {
         title={"Color"}
         description={"Using Default Colors"}
         code={`<CoreStack direction="row" spacing={2} styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-  <CoreButton color="secondary">Secondary</CoreButton>
+  <CoreButton color="secondary" onClick={() => {}} >Secondary</CoreButton>
 
-  <CoreButton variant="contained" color="success">
+  <CoreButton variant="contained" color="success" onClick={() => {}} >
       Success
   </CoreButton>
 
-  <CoreButton variant="outlined" color="error">
+  <CoreButton variant="outlined" color="error" onClick={() => {}} >
       Error
   </CoreButton>
 </CoreStack>`}
@@ -269,13 +269,13 @@ export default function CoreButtonDocs() {
               spacing={2}
               styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
-              <CoreButton color="secondary">Secondary</CoreButton>
+              <CoreButton color="secondary" onClick={() => {}} >Secondary</CoreButton>
 
-              <CoreButton variant="contained" color="success">
+              <CoreButton variant="contained" color="success" onClick={() => {}}>
                 Success
               </CoreButton>
 
-              <CoreButton variant="outlined" color="error">
+              <CoreButton variant="outlined" color="error" onClick={() => {}}>
                 Error
               </CoreButton>
             </CoreStack>
@@ -288,15 +288,15 @@ export default function CoreButtonDocs() {
         description={"For larger or smaller buttons, use the size prop."}
         code={`<CoreStack direction="row" spacing={2} styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
   <CoreBox styleClasses={[CoreClasses.MARGIN.M1]}>
-    <div>
+    <CoreStack direction="row">
       <CoreButton size="small">Small</CoreButton>
 
       <CoreButton size="medium">Medium</CoreButton>
 
       <CoreButton size="large">Large</CoreButton>
-    </div>
+    </CoreStack>
 
-    <div>
+    <CoreStack direction="row">
       <CoreButton variant="outlined" size="small">
           Small
       </CoreButton>
@@ -308,9 +308,9 @@ export default function CoreButtonDocs() {
       <CoreButton variant="outlined" size="large">
           Large
       </CoreButton>
-    </div>
+    </CoreStack>
 
-    <div>
+    <CoreStack direction="row">
       <CoreButton variant="contained" size="small">
           Small
       </CoreButton>
@@ -322,7 +322,7 @@ export default function CoreButtonDocs() {
       <CoreButton variant="contained" size="large">
           Large
       </CoreButton>
-    </div>
+    </CoreStack>
   </CoreBox>
 </CoreStack>`}
         renderElement={
@@ -333,15 +333,15 @@ export default function CoreButtonDocs() {
               styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               <CoreBox styleClasses={[CoreClasses.MARGIN.M1]}>
-                <div>
+                <CoreStack direction="row">
                   <CoreButton size="small">Small</CoreButton>
 
                   <CoreButton size="medium">Medium</CoreButton>
 
                   <CoreButton size="large">Large</CoreButton>
-                </div>
+                </CoreStack>
 
-                <div>
+                <CoreStack direction="row">
                   <CoreButton variant="outlined" size="small">
                     Small
                   </CoreButton>
@@ -353,9 +353,9 @@ export default function CoreButtonDocs() {
                   <CoreButton variant="outlined" size="large">
                     Large
                   </CoreButton>
-                </div>
+                </CoreStack>
 
-                <div>
+                <CoreStack direction="row">
                   <CoreButton variant="contained" size="small">
                     Small
                   </CoreButton>
@@ -367,7 +367,7 @@ export default function CoreButtonDocs() {
                   <CoreButton variant="contained" size="large">
                     Large
                   </CoreButton>
-                </div>
+                </CoreStack>
               </CoreBox>
             </CoreStack>
           </>
@@ -471,8 +471,8 @@ export default function CoreButtonDocs() {
         title={"Sizes"}
         description={
           <CoreTypographyBody1>
-            For larger or smaller icon buttons, use the
-            <CodeBlock>size</CodeBlock> prop.
+            For larger or smaller icon buttons, use 
+            the <CodeBlock>size</CodeBlock> prop.
           </CoreTypographyBody1>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
@@ -549,7 +549,7 @@ export default function CoreButtonDocs() {
           <CoreTypographyBody1>
             To create a file upload button, turn the button into a label using{" "}
 
-            <CodeBlock>component={"}label{"}</CodeBlock> and then create a
+            <CodeBlock>component="label"</CodeBlock> and then create a
 
             visually-hidden input with type <CodeBlock>file</CodeBlock>.
           </CoreTypographyBody1>
