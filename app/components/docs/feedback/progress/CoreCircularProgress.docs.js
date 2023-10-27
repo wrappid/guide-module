@@ -30,7 +30,7 @@ export default function CoreCircularProgressDocs() {
 <CoreCircularProgress color="success" />
 <CoreCircularProgress color="inherit" />`}
         renderElement={
-          <CoreStack direction="column" spacing={2}>
+          <CoreStack direction="row" spacing={2}>
             <CoreCircularProgress color="secondary" />
 
             <CoreCircularProgress color="success" />
@@ -48,7 +48,7 @@ export default function CoreCircularProgressDocs() {
 <CoreCircularProgress variant="determinate" value={100} />
 <CoreCircularProgress variant="determinate" value={progress} />`}
         renderElement={
-          <CoreStack direction="column" spacing={2}>
+          <CoreStack direction="row" spacing={2}>
             <CoreCircularProgress variant="determinate" value={25} />
 
             <CoreCircularProgress variant="determinate" value={50} />

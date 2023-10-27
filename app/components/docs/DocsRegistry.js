@@ -4,7 +4,11 @@ import CoreBadgeDocs from "./dataDisplay/CoreBadge.docs";
 import CoreChipDocs from "./dataDisplay/CoreChip.docs";
 import CoreDividerDocs from "./dataDisplay/CoreDivider.docs";
 import CoreIconsDocs from "./dataDisplay/CoreIcons.docs";
+import CoreLabelDocs from "./dataDisplay/CoreLabel.docs";
 import CoreTableDocs from "./dataDisplay/CoreTable.docs";
+import CoreTableBodyCellDocs from "./dataDisplay/CoreTableBodyCell.docs";
+import CoreTableHeadCellDocs from "./dataDisplay/CoreTableHeadCell.docs";
+import CoreTableHeadRowDocs from "./dataDisplay/CoreTableHeadRow.docs";
 import CoreTooltipDocs from "./dataDisplay/CoreTooltip.docs";
 import CoreTypographyDocs from "./dataDisplay/CoreTypography.docs";
 import CoreTypographyBody1Docs from "./dataDisplay/CoreTypographyBody1.docs";
@@ -14,6 +18,15 @@ import CoreTypographyCaptionDocs from "./dataDisplay/CoreTypographyCaption.docs"
 import CoreTypographyOverlineDocs from "./dataDisplay/CoreTypographyOverline.docs";
 import CoreTypographySubtitle1Docs from "./dataDisplay/CoreTypographySubtitle1.docs";
 import CoreTypographySubtitle2Docs from "./dataDisplay/CoreTypographySubtitle2.docs";
+import CoreEmailLinkDocs from "./dataDisplay/custom/CoreEmailLink.docs";
+import CoreEmailOrPhoneLinkDocs from "./dataDisplay/custom/CoreEmailOrPhoneLink.docs";
+import CoreIconTextDocs from "./dataDisplay/custom/CoreIconText.docs";
+import CoreImageDocs from "./dataDisplay/custom/CoreImage.docs";
+import CoreMarkdownViewerDocs from "./dataDisplay/custom/CoreMarkdownViewer.docs";
+import CorePhoneLinkDocs from "./dataDisplay/custom/CorePhoneLink.docs";
+import CoreTimerDocs from "./dataDisplay/custom/CoreTimer.docs";
+import StatusTextDocs from "./dataDisplay/custom/StatusText.docs";
+import UserChipDocs from "./dataDisplay/custom/UserChip.docs";
 import DataDisplayDocs from "./dataDisplay/DataDisplay.docs";
 import CoreH1Docs from "./dataDisplay/heading/CoreH1.docs";
 import CoreH2Docs from "./dataDisplay/heading/CoreH2.docs";
@@ -71,6 +84,7 @@ export default {
       CoreChip       : { main: CoreChipDocs },
       CoreDivider    : { main: CoreDividerDocs },
       CoreIcons      : { main: CoreIconsDocs },
+      CoreLabel      : { main: CoreLabelDocs },
       CoreList       : {
         children: {
           CoreListItem               : { main: CoreListItemDocs },
@@ -81,9 +95,12 @@ export default {
         },
         main: CoreListDocs,
       },
-      CoreTable     : { main: CoreTableDocs },
-      CoreTooltip   : { main: CoreTooltipDocs },
-      CoreTypography: {
+      CoreTable        : { main: CoreTableDocs },
+      CoreTableBodyCell: { main: CoreTableBodyCellDocs },
+      CoreTableHeadCell: { main: CoreTableHeadCellDocs },
+      CoreTableHeadRow : { main: CoreTableHeadRowDocs },
+      CoreTooltip      : { main: CoreTooltipDocs },
+      CoreTypography   : {
         children: {
           CoreTypographyBody1  : { main: CoreTypographyBody1Docs, order: 0 },
           CoreTypographyBody2  : { main: CoreTypographyBody2Docs, order: 1 },
@@ -106,6 +123,20 @@ export default {
           },
         },
         main: CoreTypographyDocs,
+      },
+      Custom: {
+        children: {
+          CoreEmailLink       : { main: CoreEmailLinkDocs },
+          CoreEmailOrPhoneLink: { main: CoreEmailOrPhoneLinkDocs },
+          CoreIconText        : { main: CoreIconTextDocs },
+          CoreImage           : { main: CoreImageDocs },
+          CoreMarkdownViewer  : { main: CoreMarkdownViewerDocs },
+          CorePhoneLink       : { main: CorePhoneLinkDocs },
+          CoreTimer           : { main: CoreTimerDocs },
+          StatusText          : { main: StatusTextDocs },
+          UserChip            : { main: UserChipDocs }
+
+        } 
       },
       Headings: {
         children: {
@@ -136,7 +167,7 @@ export default {
         },
         main : HeadingDocs,
         order: 0,
-      },
+      }
     },
     main : DataDisplayDocs,
     order: 2,
