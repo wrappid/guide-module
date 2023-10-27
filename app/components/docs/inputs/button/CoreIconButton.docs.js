@@ -152,26 +152,6 @@ export default function CoreIconButtonDocs() {
         }
       />
 
-      <CodeSample title={"Customization (NOT_DEFINED)"} description={" "} />
-
-      <CodeSample
-        title={"Complex button (NOT_IMPLEMENTED)"}
-        description={
-          "The Text Buttons, Contained Buttons, Floating Action Buttons and Icon Buttons are built on top of the same component: the ButtonBase. You can take advantage of this lower-level component to build custom interactions."
-        }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
-
-      <CodeSample
-        title={"Loading button (NOT_IMPLEMENTED)"}
-        description={
-          "CoreLoading buttons can show loading state and disable interactions."
-        }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
-
       <ComponentProps component={CoreIconButton} />
     </>
   );
