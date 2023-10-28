@@ -133,27 +133,28 @@ export default function CoreAvatarDocs() {
           </CoreTypographyBody1>
         }
         code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
+  <CoreAvatar src="https://picsum.photos/200?random=1" />
   <CoreAvatar
-    src="https://mui.com/static/images/avatar/1.jpg"
+    src="https://picsum.photos/200?random=1""
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
   />
   <CoreAvatar
-    src="https://mui.com/static/images/avatar/1.jpg"
+    src="https://picsum.photos/200?random=2"
   />
   <CoreAvatar
-    src="https://mui.com/static/images/avatar/2.jpg"
+    src="https://picsum.photos/200?random=3"
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_MEDIUM]}
   />
   <CoreAvatar
-    src="https://mui.com/static/images/avatar/3.jpg"
+    src="https://picsum.photos/200?random=4"
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_LARGE]}
   />
   <CoreAvatar
-    src="https://mui.com/static/images/avatar/1.jpg"
+    src="https://picsum.photos/200?random=5"
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XLARGE]}
   />
   <CoreAvatar
-    src="https://mui.com/static/images/avatar/2.jpg"
+    src="https://picsum.photos/200?random=6"
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XXLARGE]}
   />
 </CoreStack>`}
@@ -164,29 +165,29 @@ export default function CoreAvatarDocs() {
             spacing={2}
           >
             <CoreAvatar
-              src="https://mui.com/static/images/avatar/1.jpg"
+              src="https://picsum.photos/200?random=1"
               styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
             />
 
-            <CoreAvatar src="https://mui.com/static/images/avatar/1.jpg" />
+            <CoreAvatar src="https://picsum.photos/200?random=2" />
 
             <CoreAvatar
-              src="https://mui.com/static/images/avatar/2.jpg"
+              src="https://picsum.photos/200?random=3"
               styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_MEDIUM]}
             />
 
             <CoreAvatar
-              src="https://mui.com/static/images/avatar/3.jpg"
+              src="https://picsum.photos/200?random=4"
               styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_LARGE]}
             />
 
             <CoreAvatar
-              src="https://mui.com/static/images/avatar/1.jpg"
+              src="https://picsum.photos/200?random=5"
               styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XLARGE]}
             />
 
             <CoreAvatar
-              src="https://mui.com/static/images/avatar/2.jpg"
+              src="https://picsum.photos/200?random=6"
               styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XXLARGE]}
             />
           </CoreStack>
@@ -324,11 +325,11 @@ export default function CoreAvatarDocs() {
         description="AvatarGroup renders its children as a stack. Use the max prop to limit the number of avatars."
         code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <CoreAvatarGroup max={4}>
-    <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-    <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-    <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
-    <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-    <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+    <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+    <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+    <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
+    <CoreAvatar alt="Some Photo 5" src="https://picsum.photos/200?random=5" />
   </CoreAvatarGroup>
 </CoreStack>`}
         renderElement={
@@ -338,15 +339,11 @@ export default function CoreAvatarDocs() {
             spacing={2}
           >
             <CoreAvatarGroup max={4}>
-              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-
-              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-
-              <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
-
-              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-
-              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+              <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+              <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+              <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+              <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
+              <CoreAvatar alt="Some Photo 5" src="https://picsum.photos/200?random=5" />
             </CoreAvatarGroup>
           </CoreStack>
         }
@@ -357,10 +354,10 @@ export default function CoreAvatarDocs() {
         description="If you need to control the total number of avatars not shown, you can use the total prop."
         code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <CoreAvatarGroup total={24}>
-    <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-    <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-    <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-    <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+    <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+    <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+    <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
   </CoreAvatarGroup>
 </CoreStack>`}
         renderElement={
@@ -370,13 +367,10 @@ export default function CoreAvatarDocs() {
             spacing={2}
           >
             <CoreAvatarGroup total={24}>
-              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-
-              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-
-              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-
-              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+              <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+              <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+              <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+              <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
             </CoreAvatarGroup>
           </CoreStack>
         }
@@ -390,10 +384,10 @@ The renderSurplus prop is useful when you need to render the surplus based on th
           <CoreAvatarGroup 
             renderSurplus={(surplus) => <>+{surplus.toString()[0]}k</>}
             total={4250}>
-            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+    <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+    <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+    <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
           </CoreAvatarGroup>
         `}
         renderElement={
@@ -406,13 +400,10 @@ The renderSurplus prop is useful when you need to render the surplus based on th
               renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>}
               total={4250}
             >
-              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-
-              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-
-              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-
-              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+    <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+    <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+    <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
             </CoreAvatarGroup>
           </CoreStack>
         }
@@ -481,7 +472,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               variant="dot"
             >
-              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
             </StyledBadge>
 
             <CoreBadge
@@ -491,11 +482,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
                 <SmallAvatar
                   styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
                   alt="Remy Sharp"
-                  src="https://mui.com/static/images/avatar/1.jpg"
+                  src="https://picsum.photos/200?random=1"
                 />
               }
             >
-              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/1.jpg" />
+    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=2" />
             </CoreBadge>
           </CoreStack>
         }
