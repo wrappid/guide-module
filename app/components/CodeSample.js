@@ -6,14 +6,14 @@ import {
   CoreButton,
   CoreTypographyBody1,
   CoreH5,
-  CoreBox,
+  CoreBox
 } from "@wrappid/core";
 
 import CodeBlock from "./CodeBlock";
 
 export default function CodeSample(props) {
   const { title, description, code, renderElement } = props;
-  const [expandedBlock, setExpandedBlock] = React.useState(false);
+  const [expandedBlock, setExpandedBlock] = React.useState("code");
 
   const expandBlock = (panel) => {
     setExpandedBlock(expandBlock === panel ? false : panel);
@@ -24,6 +24,7 @@ export default function CodeSample(props) {
   return (
     <>
       <CoreH5>{title || "NO TITLE SET"}</CoreH5>
+
       <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MY2]}>
         {description || "NO DESCRIPTION SET"}
       </CoreTypographyBody1>
@@ -46,6 +47,7 @@ export default function CodeSample(props) {
               {renderElement}
             </CoreBox>
           )}
+
           {code && (
             <CoreBox>
               <CoreStack
@@ -65,6 +67,7 @@ export default function CodeSample(props) {
                   }}
                 />
               </CoreStack>
+
               {expandedBlock === "code" && (
                 <CodeBlock noWrap={true} block={true}>
                   {code}
