@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, CorePhoneLink } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function CorePhoneLinkDocs() {
 
@@ -20,6 +21,8 @@ export default function CorePhoneLinkDocs() {
           <CorePhoneLink phone="987878675" verified={true}></CorePhoneLink>
         </>}
       />
+
+      <ComponentProps component={CorePhoneLink} />
 
     </>
   );

@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, CoreTable, CoreTableHeadCell, CoreTableHeadRow } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 function createData(name, calories, fat, carbs, protein) {
   return { calories, carbs, fat, name, protein };
 }
@@ -57,6 +58,9 @@ export default function CoreTableHeadCellDocs() {
           </CoreTable>
         </>}
       />
+
+      <ComponentProps component={CoreTableHeadCell} />
+
     </>
   );
 }

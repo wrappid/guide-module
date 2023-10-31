@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, CoreTimer } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function CoreTimerDocs() {
 
@@ -20,6 +21,9 @@ export default function CoreTimerDocs() {
           <CoreTimer ></CoreTimer>
         </>}
       />
+
+      <ComponentProps component={CoreTimer} />
+
     </>
   );
 }

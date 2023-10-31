@@ -10,7 +10,7 @@ import ComponentProps from "../../ComponentProps";
 export default function CoreSelectDocs() {
   return (
     <>
-      <CoreH4>COMPONENT_NAME</CoreH4>
+      <CoreH4>CoreSelect</CoreH4>
 
       <CoreTypographyBody1>
         COMPONENT_DESCRIPTION

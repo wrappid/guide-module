@@ -2,6 +2,7 @@ import { CoreAlert, CoreH4, CoreStack, CoreAlertTitle } from "@wrappid/core";
 
 import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreAlertTitleDocs() {
   return (
@@ -69,6 +70,9 @@ export default function CoreAlertTitleDocs() {
           </>
         }
       />
+
+      <ComponentProps component={CoreAlertTitle} />
+
     </>
   );
 }

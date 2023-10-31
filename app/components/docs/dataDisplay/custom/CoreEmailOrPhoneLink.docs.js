@@ -1,6 +1,7 @@
-import { CoreClasses, CoreEmailLink, CoreH4, CoreStack } from "@wrappid/core";
+import { CoreClasses, CoreEmailLink, CoreEmailOrPhoneLink, CoreH4, CoreStack } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function CoreEmailOrPhoneLinkDocs() {
 
@@ -32,6 +33,9 @@ export default function CoreEmailOrPhoneLinkDocs() {
             </CoreStack>
           </>
         } />
+
+      <ComponentProps component={CoreEmailOrPhoneLink} />
+
     </>
     
   );

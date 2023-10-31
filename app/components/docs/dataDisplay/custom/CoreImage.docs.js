@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, CoreImage } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function CoreImageDocs() {
 
@@ -28,6 +29,9 @@ export default function CoreImageDocs() {
           </CoreImage>
         </>}
       />
+
+      <ComponentProps component={CoreImage} />
+
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, CoreTable, CoreTableBodyCell } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreTableBodyCellDocs() {
 
@@ -36,6 +37,8 @@ export default function CoreTableBodyCellDocs() {
             <CoreTableBodyCell>DATA</CoreTableBodyCell>
           </CoreTable>
         </>} />
+
+      <ComponentProps component={CoreTableBodyCell} />
         
     </>
   );

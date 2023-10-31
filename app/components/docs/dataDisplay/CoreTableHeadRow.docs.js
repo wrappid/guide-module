@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, CoreTableHeadRow } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreTableHeadRowDocs() {
 
@@ -18,6 +19,9 @@ export default function CoreTableHeadRowDocs() {
           <CoreTableHeadRow></CoreTableHeadRow>
         }
       />
+
+      <ComponentProps component={CoreTableHeadRow} />
+
     </>
   );
 }

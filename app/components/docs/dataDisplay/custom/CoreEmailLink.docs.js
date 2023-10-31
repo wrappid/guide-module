@@ -1,6 +1,7 @@
 import { CoreClasses, CoreEmailLink, CoreH4 } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function CoreEmailLinkDocs() {
 
@@ -19,6 +20,9 @@ export default function CoreEmailLinkDocs() {
         renderElement={
           <CoreEmailLink email="pritam@rxefy"></CoreEmailLink>
         } />
+
+      <ComponentProps component={CoreEmailLink} />
+
     </>
   );
 }

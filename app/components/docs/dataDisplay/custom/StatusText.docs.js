@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, StatusText } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function StatusTextDocs() {
 
@@ -20,6 +21,9 @@ export default function StatusTextDocs() {
           <StatusText status="ACTIVE" ></StatusText>
         </>}
       />
+
+      <ComponentProps component={StatusText} />
+
     </>
   );
 }

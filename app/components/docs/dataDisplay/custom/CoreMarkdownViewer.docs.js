@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, CoreMarkdownViewer } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function CoreMarkdownViewerDocs() {
 
@@ -20,6 +21,8 @@ export default function CoreMarkdownViewerDocs() {
           <CoreMarkdownViewer></CoreMarkdownViewer>
         </>}
       />
+
+      <ComponentProps component={CoreMarkdownViewer} />
 
     </>
   );

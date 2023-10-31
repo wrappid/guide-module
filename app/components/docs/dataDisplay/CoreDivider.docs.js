@@ -2,7 +2,6 @@ import {
   CoreClasses,
   CoreH4,
   CoreTypographyBody1,
-  CoreBadge,
   CoreList,
   CoreListItem,
   CoreListItemAvatar,
@@ -431,7 +430,7 @@ export default function CoreDividerDocs() {
         }
       />
 
-      <ComponentProps component={CoreBadge} />
+      <ComponentProps component={CoreDivider} />
   
     </>
   );

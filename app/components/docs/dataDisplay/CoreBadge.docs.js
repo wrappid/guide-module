@@ -16,8 +16,7 @@ export default function CoreBadgeDocs() {
   return (
     <>
       <CoreH4
-        styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}
-      >
+        styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
         CoreBadge
       </CoreH4>
 

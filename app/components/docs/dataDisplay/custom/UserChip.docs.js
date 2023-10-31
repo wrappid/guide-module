@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, UserChip } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function UserChipDocs() {
 
@@ -36,6 +37,9 @@ export default function UserChipDocs() {
           </UserChip>
         </>}
       />
+
+      <ComponentProps component={UserChip} />
+
     </>
   );
 }

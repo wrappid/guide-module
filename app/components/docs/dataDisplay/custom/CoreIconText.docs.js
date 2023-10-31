@@ -1,6 +1,7 @@
 import { CoreClasses, CoreH4, CoreIconText, CoreStack } from "@wrappid/core";
 
 import CodeSample from "../../../CodeSample";
+import ComponentProps from "../../../ComponentProps";
 
 export default function CoreIconTextDocs() {
 
@@ -28,6 +29,9 @@ export default function CoreIconTextDocs() {
           </CoreStack>
         </>}
       />
+
+      <ComponentProps component={CoreIconText} />
+
     </>
   );
 }
