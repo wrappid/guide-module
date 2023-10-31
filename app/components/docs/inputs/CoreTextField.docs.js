@@ -46,22 +46,39 @@ export default function CoreTextFieldDocs() {
     },
   ];
 
+  function RedBar() {
+    return (
+      <CoreStack
+        direction="row"
+        spacing={2}
+        // sx={{
+        //   backgroundColor: (theme) =>
+        //     theme.palette.mode === "light"
+        //       ? "rgba(255, 0, 0, 0.1)"
+        //       : "rgb(255 132 132 / 25%)",
+        //   height: 20,
+        // }}
+        styleCLasses={[CoreClasses.HEIGHT.H25, CoreClasses.BG.BG_ERROR_LIGHT]}
+      />
+    );
+  }
+  
   return (
     <>
       <CoreH4>CoreTextField</CoreH4>
 
       <CoreTypographyBody1>
-      Text fields allow users to enter text into a UI. They typically appear
-      in forms and dialogs.
+        Text fields allow users to enter text into a UI. They typically appear
+        in forms and dialogs.
       </CoreTypographyBody1>
 
       <CodeSample
         title={"Basic TextField"}
         description={
           <CoreTypographyBody1>
-          The <CodeBlock>TextField</CodeBlock> wrapper component is a complete
-          form control including a label, input, and help text. It comes with
-          three variants: outlined (default), filled, and standard.
+            The <CodeBlock>TextField</CodeBlock> wrapper component is a complete
+            form control including a label, input, and help text. It comes with
+            three variants: outlined (default), filled, and standard.
           </CoreTypographyBody1>
         }
         code={`<CoreBox
@@ -110,23 +127,15 @@ autoComplete="off"
         title={"Form props"}
         description={
           <CoreTypographyBody1>
-          Standard form attributes are supported e.g.{" "}
+            Standard form attributes are supported e.g.{" "}
 
-            <CodeBlock>required</CodeBlock>, 
+            <CodeBlock>required</CodeBlock>, <CodeBlock>disabled</CodeBlock>,{" "}
 
-            {" "}
-
-            <CodeBlock>disabled</CodeBlock>,
-
-            {" "}
-
-            <CodeBlock>type</CodeBlock>, etc. as well as a
-          
-            {" "}
+            <CodeBlock>type</CodeBlock>, etc. as well as a{" "}
 
             <CodeBlock>helperText</CodeBlock> which is used to give context
 
-          about a field{"'"}s input, such as how the input will be used.
+            about a field{"'"}s input, such as how the input will be used.
           </CoreTypographyBody1>
         }
         code={`<CoreStack
@@ -484,12 +493,10 @@ autoComplete="off"
         title={"Validation"}
         description={
           <CoreTypographyBody1>
-          The <CodeBlock>error</CodeBlock> prop toggles the error state. The
-          
-            {" "}
+            The <CodeBlock>error</CodeBlock> prop toggles the error state. The{" "}
 
             <CodeBlock>helperText</CodeBlock> prop can then be used to provide
-          feedback to the user about the error.
+            feedback to the user about the error.
           </CoreTypographyBody1>
         }
         code={`<CoreStack
@@ -627,16 +634,14 @@ autoComplete="off"
         title={"Multiline"}
         description={
           <CoreTypographyBody1>
-          The <CodeBlock>multiline</CodeBlock> prop transforms the text field
+            The <CodeBlock>multiline</CodeBlock> prop transforms the text field
 
-          into a TextareaAutosize element. Unless the{" "}
+            into a TextareaAutosize element. Unless the{" "}
 
             <CodeBlock>rows</CodeBlock> prop is set, the height of the text
-          field dynamically matches its content (using TextareaAutosize). You
+            field dynamically matches its content (using TextareaAutosize). You
 
-          can use the <CodeBlock>minRows</CodeBlock> and
-          
-            {" "}
+            can use the <CodeBlock>minRows</CodeBlock> and{" "}
 
             <CodeBlock>maxRows</CodeBlock> props to bound it.
           </CoreTypographyBody1>
@@ -826,8 +831,8 @@ autoComplete="off"
         title={"Select (NOT_DEFINED)"}
         description={
           <CoreTypographyBody1>
-          The <CodeBlock>select</CodeBlock> prop makes the text field use the
-          Select component internally.
+            The <CodeBlock>select</CodeBlock> prop makes the text field use the
+            Select component internally.
           </CoreTypographyBody1>
         }
         code={`<CoreStack
@@ -962,10 +967,8 @@ autoComplete="off"
                 >
                   {currencies.map((option) => (
                     <CoreMenuItem key={option.value} value={option.value}>
-
                       {option.label}
                     </CoreMenuItem>
-
                   ))}
                 </CoreTextField>
 
@@ -996,10 +999,8 @@ autoComplete="off"
                 >
                   {currencies.map((option) => (
                     <CoreMenuItem key={option.value} value={option.value}>
-
                       {option.label}
                     </CoreMenuItem>
-
                   ))}
                 </CoreTextField>
 
@@ -1031,10 +1032,8 @@ autoComplete="off"
                 >
                   {currencies.map((option) => (
                     <CoreMenuItem key={option.value} value={option.value}>
-
                       {option.label}
                     </CoreMenuItem>
-
                   ))}
                 </CoreTextField>
 
@@ -1054,18 +1053,20 @@ autoComplete="off"
                   ))}
                 </CoreTextField>
               </CoreStack>
-            </CoreStack>      
+            </CoreStack>
           </>
         }
       />
 
-      <CoreAlert severity="error">Icons Error: "With a start adornment" Should be at suffix  </CoreAlert>
+      <CoreAlert severity="error">
+        Icons Error: "With a start adornment" Should be at suffix{" "}
+      </CoreAlert>
 
       <CodeSample
         title={"Icons"}
         description={
           <CoreTypographyBody1>
-          There are multiple ways to display an icon with a text field.
+            There are multiple ways to display an icon with a text field.
           </CoreTypographyBody1>
         }
         code={`<CoreStack styleCLasses={[CoreClasses.MARGIN.M1]}>
@@ -1108,14 +1109,14 @@ With a start adornment
             <CoreStack styleCLasses={[CoreClasses.MARGIN.M1]}>
               <CoreFormControl variant="standard">
                 <CoreInputLabel htmlFor="input-with-icon-adornment">
-          With a start adornment
+                  With a start adornment
                 </CoreInputLabel>
 
                 <CoreInput
                   id="input-with-icon-adornment"
                   startAdornment={
                     <CoreInputAdornment position="start">
-                      <CoreIcon icon="account_circle"/>
+                      <CoreIcon icon="account_circle" />
                     </CoreInputAdornment>
                   }
                 />
@@ -1126,7 +1127,9 @@ With a start adornment
                 label="TextField"
                 InputProps={{
                   startAdornment: (
-                    <CoreInputAdornment position="start" ><CoreIcon icon="account_circle"/></CoreInputAdornment>
+                    <CoreInputAdornment position="start">
+                      <CoreIcon icon="account_circle" />
+                    </CoreInputAdornment>
                   ),
                 }}
                 variant="standard"
@@ -1148,9 +1151,10 @@ With a start adornment
         title={"Input Adornments (NOT_IMPLEMENTED)"}
         description={
           <CoreTypographyBody1>
-          The main way is with an <CodeBlock>CoreInputAdornment</CodeBlock>. This
-          can be used to add a prefix, a suffix, or an action to an input. For
-          instance, you can use an icon button to hide or reveal the password.
+            The main way is with an <CodeBlock>CoreInputAdornment</CodeBlock>.
+            This can be used to add a prefix, a suffix, or an action to an
+            input. For instance, you can use an icon button to hide or reveal
+            the password.
           </CoreTypographyBody1>
         }
         code={`<CoreStack
@@ -1314,62 +1318,262 @@ With a start adornment
     </CoreFormControl>
   </CoreStack>
 </CoreStack>`}
-        renderElement={
-          <>
-
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
-        title={"Sizes (NOT_DEFINED)"}
+        title={"Sizes"}
         description={
           <>
             <CoreTypographyBody1>
-            For smaller inputs use the <CodeBlock>size</CodeBlock> prop.
+              For smaller inputs use the <CodeBlock>size</CodeBlock> prop.
             </CoreTypographyBody1>
 
             <CoreTypographyBody1>
-            The <CodeBlock>filled</CodeBlock> variant input height can be
-            further reduced by rendering the label outside of it.
+              The <CodeBlock>filled</CodeBlock> variant input height can be
+              further reduced by rendering the label outside of it.
             </CoreTypographyBody1>
           </>
         }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
+        code={`            <CoreStack
+        direction="column"
+        spacing={2}
+        component="form"
+        styleCLasses={[CoreClasses.MARGIN.M1, CoreClasses.WIDTH.W25]}
+        noValidate
+        autoComplete="off"
+      >
+        <CoreStack
+          direction="row"
+          spacing={2}>
+          <CoreTextField
+            label="Size"
+            id="outlined-size-small"
+            defaultValue="Small"
+            size="small"
+          />
+
+          <CoreTextField label="Size" id="outlined-size-normal" defaultValue="Normal" />
+        </CoreStack>
+
+        <CoreStack
+          direction="row"
+          spacing={2}>
+          <CoreTextField
+            label="Size"
+            id="filled-size-small"
+            defaultValue="Small"
+            variant="filled"
+            size="small"
+          />
+
+          <CoreTextField
+            label="Size"
+            id="filled-size-normal"
+            defaultValue="Normal"
+            variant="filled"
+          />
+        </CoreStack>
+
+        <CoreStack
+          direction="row"
+          spacing={2}>
+          <CoreTextField
+            label="Size"
+            id="standard-size-small"
+            defaultValue="Small"
+            size="small"
+            variant="standard"
+          />
+
+          <CoreTextField
+            label="Size"
+            id="standard-size-normal"
+            defaultValue="Normal"
+            variant="standard"
+          />
+        </CoreStack>
+      </CoreStack>`}
         renderElement={
           <>
-      
+            <CoreStack
+              direction="column"
+              spacing={2}
+              component="form"
+              // sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+              styleCLasses={[CoreClasses.MARGIN.M1, CoreClasses.WIDTH.W25]}
+              noValidate
+              autoComplete="off"
+            >
+              <CoreStack direction="row" spacing={2}>
+                <CoreTextField
+                  label="Size"
+                  id="outlined-size-small"
+                  defaultValue="Small"
+                  size="small"
+                />
+
+                <CoreTextField
+                  label="Size"
+                  id="outlined-size-normal"
+                  defaultValue="Normal"
+                />
+              </CoreStack>
+
+              <CoreStack direction="row" spacing={2}>
+                <CoreTextField
+                  label="Size"
+                  id="filled-size-small"
+                  defaultValue="Small"
+                  variant="filled"
+                  size="small"
+                />
+
+                <CoreTextField
+                  label="Size"
+                  id="filled-size-normal"
+                  defaultValue="Normal"
+                  variant="filled"
+                />
+              </CoreStack>
+
+              <CoreStack direction="row" spacing={2}>
+                <CoreTextField
+                  label="Size"
+                  id="standard-size-small"
+                  defaultValue="Small"
+                  size="small"
+                  variant="standard"
+                />
+
+                <CoreTextField
+                  label="Size"
+                  id="standard-size-normal"
+                  defaultValue="Normal"
+                  variant="standard"
+                />
+              </CoreStack>
+            </CoreStack>
           </>
         }
       />
 
       <CodeSample
-        title={"Margin (NOT_DEFINED)"}
+        title={"TITLE_NOT_DEFINED"}
+        description={"The filled variant input height can be further reduced by rendering the label outside of it."}
+        code={`<CoreStack
+  component="form"
+  styleCLasses={[CoreClasses.WIDTH.W25]}
+  spacing={2}
+  noValidate
+  autoComplete="off"
+>
+  <CoreTextField
+    hiddenLabel
+    id="filled-hidden-label-small"
+    defaultValue="Small"
+    variant="filled"
+    size="small"
+  />
+
+  <CoreTextField
+    hiddenLabel
+    id="filled-hidden-label-normal"
+    defaultValue="Normal"
+    variant="filled"
+  />
+</CoreStack>`}
+        renderElement={
+          <>
+            <CoreStack
+              component="form"
+              // sx={{ width: "25ch" }}
+              styleCLasses={[CoreClasses.WIDTH.W25]}
+              spacing={2}
+              noValidate
+              autoComplete="off"
+            >
+              <CoreTextField
+                hiddenLabel
+                id="filled-hidden-label-small"
+                defaultValue="Small"
+                variant="filled"
+                size="small"
+              />
+
+              <CoreTextField
+                hiddenLabel
+                id="filled-hidden-label-normal"
+                defaultValue="Normal"
+                variant="filled"
+              />
+            </CoreStack>
+          </>
+        }
+      />
+
+      <CoreAlert severity="warning">Margin Warning: Bar Not showing (RedBar Custom function)</CoreAlert>
+
+      <CodeSample
+        title={"Margin"}
         description={
           <CoreTypographyBody1>
-          The <CodeBlock>argin</CodeBlock> prop can be used to alter the
+            The <CodeBlock>argin</CodeBlock> prop can be used to alter the
 
-          vertical spacing of the text field. Using{" "}
+            vertical spacing of the text field. Using{" "}
 
-            <CodeBlock>none</CodeBlock> (default) 
+            <CodeBlock>none</CodeBlock> (default) doesn{"'"}t apply margins to
 
-          doesn{"'"}t apply margins to
+            the <CodeBlock>FormControl</CodeBlock> whereas{" "}
 
-          the <CodeBlock>FormControl</CodeBlock> whereas
-          
-            {" "}
-
-            <CodeBlock>dense</CodeBlock> and 
-
-            {" "}
-
-            <CodeBlock>normal</CodeBlock> do.
+            <CodeBlock>dense</CodeBlock> and <CodeBlock>normal</CodeBlock> do.
           </CoreTypographyBody1>
         }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
+        code={`<CoreStack
+  direction="column"
+  spacing={2}
+  styleCLasses={[CoreClasses.WIDTH.W25, CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN]}
+>
+  <RedBar />
+
+  <CoreTextField label={"margin=\"none\""} id="margin-none" />
+
+  <RedBar />
+
+  <CoreTextField label={"margin=\"dense\""} id="margin-dense" margin="dense" />
+
+  <RedBar />
+
+  <CoreTextField label={"margin=\"normal\""} id="margin-normal" margin="normal" />
+
+  <RedBar />
+</CoreStack>`}
         renderElement={
           <>
-      
+            <CoreStack
+              // sx={{
+              //   "& .MuiTextField-root": { width: "25ch" },
+              //   display               : "flex",
+              //   flexDirection         : "column",
+              // }}
+              direction="column"
+              spacing={2}
+              styleCLasses={[CoreClasses.WIDTH.W25, CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN]}
+            >
+              <RedBar />
+
+              <CoreTextField label={"margin=\"none\""} id="margin-none" />
+
+              <RedBar />
+
+              <CoreTextField label={"margin=\"dense\""} id="margin-dense" margin="dense" />
+
+              <RedBar />
+
+              <CoreTextField label={"margin=\"normal\""} id="margin-normal" margin="normal" />
+
+              <RedBar />
+            </CoreStack>
           </>
         }
       />
@@ -1379,15 +1583,22 @@ With a start adornment
         description={
           <CoreTypographyBody1>
             <CodeBlock>fullWidth</CodeBlock> can be used to make the input take
-          up the full width of its container.
+            up the full width of its container.
           </CoreTypographyBody1>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={
           <>
-      
-          </>
-        }
+            <CoreBox
+              // sx={{
+              //   maxWidth: "100%",
+              //   width   : 500,
+              // }}
+              styleCLasses={[CoreClasses.WIDTH.W]}
+            >
+              <CoreTextField fullWidth label="fullWidth" id="fullWidth" />
+            </CoreBox>
+          </>}
       />
 
       <CodeSample
@@ -1395,26 +1606,22 @@ With a start adornment
         description={
           <>
             <CoreTypographyBody1>
-            The component can be controlled or uncontrolled
+              The component can be controlled or uncontrolled
             </CoreTypographyBody1>
 
             <CoreTypographyBody1>
-            - A component is controlled when it{"'"}s managed by its parent
-            using props.
+              - A component is controlled when it{"'"}s managed by its parent
+              using props.
             </CoreTypographyBody1>
 
             <CoreTypographyBody1>
-            - A component is uncontrolled when it{"'"}s managed by its own
-            local state.
+              - A component is uncontrolled when it{"'"}s managed by its own
+              local state.
             </CoreTypographyBody1>
           </>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
@@ -1424,136 +1631,98 @@ With a start adornment
             <CoreTypographyBody1>
               <CodeBlock>CoreTextField</CodeBlock> is composed of smaller
 
-            components ( <CodeBlock>FormControl</CodeBlock>,
-            
-              {" "}
+              components ( <CodeBlock>FormControl</CodeBlock>,{" "}
 
-              <CodeBlock>Input</CodeBlock>, 
-            
-              <CodeBlock>FilledInput</CodeBlock>,
-            
-              {" "}
+              <CodeBlock>Input</CodeBlock>,<CodeBlock>FilledInput</CodeBlock>,{" "}
 
-              <CodeBlock>InputLabel</CodeBlock>,
-            
-              {" "}
+              <CodeBlock>InputLabel</CodeBlock>,{" "}
 
-              <CodeBlock>OutlinedInput</CodeBlock>, and
-            
-              {" "}
+              <CodeBlock>OutlinedInput</CodeBlock>, and{" "}
 
               <CodeBlock>FormHelperText</CodeBlock> ) that you can leverage
-            directly to significantly customize your form inputs.
+              directly to significantly customize your form inputs.
             </CoreTypographyBody1>
 
             <CoreTypographyBody1>
-            You might also have noticed that some native HTML input properties
-            are missing from the <CodeBlock>CoreTextField</CodeBlock>{" "}
-            component. This is on purpose. The component takes care of the
+              You might also have noticed that some native HTML input properties
+              are missing from the <CodeBlock>CoreTextField</CodeBlock>{" "}
+              component. This is on purpose. The component takes care of the
 
-            most used properties. Then, it{"'"}s up to the user to use the
-            underlying component shown in the following demo. Still, you can
+              most used properties. Then, it{"'"}s up to the user to use the
+              underlying component shown in the following demo. Still, you can
 
-            use <CodeBlock>inputProps</CodeBlock> (and
-            
-              {" "}
+              use <CodeBlock>inputProps</CodeBlock> (and{" "}
 
-              <CodeBlock>InputProps</CodeBlock>,
-            
-              {" "}
+              <CodeBlock>InputProps</CodeBlock>,{" "}
 
               <CodeBlock>InputLabelProps</CodeBlock> properties) if you want to
-            avoid some boilerplate.
+              avoid some boilerplate.
             </CoreTypographyBody1>
           </>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"Inputs (NOT_DEFINED)"}
         description={<CoreTypographyBody1></CoreTypographyBody1>}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"Color (NOT_DEFINED)"}
         description={
           <CoreTypographyBody1>
-          The <CodeBlock>color</CodeBlock> prop changes the highlight color of
-          the text field when focused.
+            The <CodeBlock>color</CodeBlock> prop changes the highlight color of
+            the text field when focused.
           </CoreTypographyBody1>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CoreH4>Customization</CoreH4>
 
       <CoreTypographyBody1>
-      Here are some examples of customizing the component.{" "}
+        Here are some examples of customizing the component.{" "}
       </CoreTypographyBody1>
 
       <CodeSample
         title={"Using the styled API (NOT_DEFINED)"}
         description={
           <CoreTypographyBody1>
-          Here are some examples of customizing the component.
+            Here are some examples of customizing the component.
           </CoreTypographyBody1>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"Using the theme style overrides API (NOT_DEFINED)"}
         description={
           <CoreTypographyBody1>
-          Use the <CodeBlock>styleOverrides</CodeBlock> key to change any
-          style injected by Material UI into the DOM
+            Use the <CodeBlock>styleOverrides</CodeBlock> key to change any
+            style injected by Material UI into the DOM
           </CoreTypographyBody1>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"useFormControl (NOT_DEFINED)"}
         description={
           <CoreTypographyBody1>
-          For advanced customization use cases, a useFormControl() hook is
-          exposed. This hook returns the context value of the parent
-          FormControl component.
+            For advanced customization use cases, a useFormControl() hook is
+            exposed. This hook returns the context value of the parent
+            FormControl component.
           </CoreTypographyBody1>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CoreH4>Limitations</CoreH4>
@@ -1563,91 +1732,63 @@ With a start adornment
         description={
           <>
             <CoreTypographyBody1>
-            The input label "shrink" state isn't always correct. The input
-            label is supposed to shrink as soon as the input is displaying
-            something. In some circumstances, we can't determine the "shrink"
-            state (number input, datetime input, Stripe input). You might
-            notice an overlap.
+              The input label "shrink" state isn't always correct. The input
+              label is supposed to shrink as soon as the input is displaying
+              something. In some circumstances, we can't determine the "shrink"
+              state (number input, datetime input, Stripe input). You might
+              notice an overlap.
             </CoreTypographyBody1>
 
             <CoreTypographyBody1>
-            To workaround the issue, you can force the "shrink" state of the
-            label.
+              To workaround the issue, you can force the "shrink" state of the
+              label.
             </CoreTypographyBody1>
           </>
         }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}
         description={<CoreTypographyBody1></CoreTypographyBody1>}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}
         description={<CoreTypographyBody1></CoreTypographyBody1>}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}
         description={<CoreTypographyBody1></CoreTypographyBody1>}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}
         description={<CoreTypographyBody1></CoreTypographyBody1>}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}
         description={<CoreTypographyBody1></CoreTypographyBody1>}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}
         description={<CoreTypographyBody1></CoreTypographyBody1>}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={
-          <>
-      
-          </>
-        }
+        renderElement={<></>}
       />
 
       <ComponentProps component={CoreTextField} />
