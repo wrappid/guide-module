@@ -1,4 +1,5 @@
 import {
+  CoreFormErrorText,
   CoreH4,
   CoreTypographyBody1
 } from "@wrappid/core";
@@ -15,10 +16,14 @@ export default function CoreFormErrorTextDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"Simple CoreFormErrorText"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreFormErrorText title="Error Message" ></CoreFormErrorText>
+        `}
+        renderElement={<>
+          <CoreFormErrorText title="Error Message" ></CoreFormErrorText>
+        </>}
       />
         
       {/* <ComponentProps component={CoreFormErrorText} /> */}

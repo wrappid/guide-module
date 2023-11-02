@@ -1,5 +1,8 @@
 import {
+  CoreClasses,
+  CoreConfirmPasswordField,
   CoreH4,
+  CoreStack,
   CoreTypographyBody1
 } from "@wrappid/core";
   
@@ -17,8 +20,54 @@ export default function CoreConfirmPasswordFieldDocs() {
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreStack
+    styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+    spacing={2}
+    direction="row">
+    <CoreConfirmPasswordField
+      id="outlined-basic"
+      label="Outlined"
+      variant="outlined"
+      value="Password"></CoreConfirmPasswordField>
+
+    <CoreConfirmPasswordField
+      id="filled-basic"
+      label="Filled"
+      variant="filled"
+      value="Password"></CoreConfirmPasswordField>
+
+    <CoreConfirmPasswordField
+      id="standard-basic"
+      label="Standard"
+      variant="standard"
+      value="pPasswordpp"></CoreConfirmPasswordField>
+  </CoreStack>
+        `}
+        renderElement={<>
+          <CoreStack
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            spacing={2}
+            direction="row">
+            <CoreConfirmPasswordField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+              value="Password"></CoreConfirmPasswordField>
+
+            <CoreConfirmPasswordField
+              id="filled-basic"
+              label="Filled"
+              variant="filled"
+              value="Password"></CoreConfirmPasswordField>
+
+            <CoreConfirmPasswordField
+              id="standard-basic"
+              label="Standard"
+              variant="standard"
+              value="pPasswordpp"></CoreConfirmPasswordField>
+          </CoreStack>
+        </>}
       />
         
       {/* <ComponentProps component={CoreConfirmPasswordField} /> */}

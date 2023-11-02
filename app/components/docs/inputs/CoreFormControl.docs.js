@@ -1,4 +1,5 @@
 import {
+  CoreFormControl,
   CoreH4,
   CoreTypographyBody1
 } from "@wrappid/core";
@@ -15,10 +16,14 @@ export default function CoreFormControlDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"TITLE_OF_THE_SAMPLE (NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`        
+<CoreFormControl color="secondary"></CoreFormControl>
+        `}
+        renderElement={<>
+          <CoreFormControl color="secondary"></CoreFormControl>
+        </>}
       />
         
       {/* <ComponentProps component={CoreFormControl} /> */}

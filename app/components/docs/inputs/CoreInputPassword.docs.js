@@ -1,5 +1,6 @@
 import {
   CoreH4,
+  CoreInputPassword,
   CoreTypographyBody1
 } from "@wrappid/core";
   
@@ -15,10 +16,14 @@ export default function CoreInputPasswordDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"Simple CoreInputPassword (NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreInputPassword></CoreInputPassword>
+        `}
+        renderElement={<>
+          <CoreInputPassword></CoreInputPassword>
+        </>}
       />
         
       {/* <ComponentProps component={CoreInputPassword} /> */}

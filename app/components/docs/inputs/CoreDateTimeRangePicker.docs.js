@@ -15,10 +15,14 @@ export default function CoreDateTimeRangePickerDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"TITLE_OF_THE_SAMPLE (ERROR)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreDateTimeRangePicker></CoreDateTimeRangePicker>
+        `}
+        renderElement={<>
+          {/* <CoreDateTimeRangePicker></CoreDateTimeRangePicker> */}
+        </>}
       />
         
       {/* <ComponentProps component={CoreDateTimeRangePicker} /> */}

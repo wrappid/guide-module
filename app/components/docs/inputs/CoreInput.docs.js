@@ -1,5 +1,6 @@
 import {
   CoreH4,
+  CoreInput,
   CoreTypographyBody1
 } from "@wrappid/core";
   
@@ -15,10 +16,14 @@ export default function CoreInputDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"TITLE_OF_THE_SAMPLE"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreInput helperText="Helper Text"></CoreInput>
+        `}
+        renderElement={<>
+          <CoreInput helperText="Helper Text"></CoreInput>
+        </>}
       />
         
       {/* <ComponentProps component={CoreInput} /> */}

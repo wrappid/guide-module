@@ -1,5 +1,6 @@
 import {
   CoreH4,
+  CoreImagePicker,
   CoreTypographyBody1
 } from "@wrappid/core";
   
@@ -15,10 +16,14 @@ export default function CoreImagePickerDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"Simple CoreImagePicker"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreImagePicker></CoreImagePicker>
+        `}
+        renderElement={<>
+          <CoreImagePicker></CoreImagePicker>
+        </>}
       />
         
       {/* <ComponentProps component={CoreImagePicker} /> */}

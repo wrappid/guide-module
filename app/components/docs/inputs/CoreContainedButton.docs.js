@@ -1,4 +1,5 @@
 import {
+  CoreContainedButton,
   CoreH4,
   CoreTypographyBody1
 } from "@wrappid/core";
@@ -17,8 +18,16 @@ export default function CoreContainedButtonDocs() {
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreContainedButton label="TEXT"></CoreContainedButton>
+        `}
+        renderElement={<>
+          <CoreContainedButton
+            label="TEXT"
+            onClick={() => {
+              alert("clicked");
+            }}></CoreContainedButton>
+        </>}
       />
         
       {/* <ComponentProps component={CoreContainedButton} /> */}

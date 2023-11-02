@@ -1,9 +1,11 @@
 import {
+  CoreDateRangepicker,
   CoreH4,
   CoreTypographyBody1
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreDateRangepickerDocs() {
   return (
@@ -17,11 +19,15 @@ export default function CoreDateRangepickerDocs() {
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreDateRangepicker></CoreDateRangepicker>
+        `}
+        renderElement={<>
+          {/* <CoreDateRangepicker></CoreDateRangepicker> */}
+        </>}
       />
         
-      {/* <ComponentProps component={CoreDateRangepicker} /> */}
+      <ComponentProps component={CoreDateRangepicker} />
       
     </>
   );

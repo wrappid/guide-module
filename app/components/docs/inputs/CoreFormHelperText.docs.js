@@ -1,4 +1,5 @@
 import {
+  CoreFormHelperText,
   CoreH4,
   CoreTypographyBody1
 } from "@wrappid/core";
@@ -15,10 +16,14 @@ export default function CoreFormHelperTextDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"TITLE_OF_THE_SAMPLE (NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreFormHelperText error={true} ></CoreFormHelperText> 
+        `}
+        renderElement={<>
+          <CoreFormHelperText error={true} ></CoreFormHelperText> 
+        </>}
       />
         
       {/* <ComponentProps component={CoreFormHelperText} /> */}

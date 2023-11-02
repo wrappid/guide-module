@@ -15,10 +15,12 @@ export default function CoreFormLabelCheckboxDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"TITLE_OF_THE_SAMPLE (NOT_WORKINNG)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+          {/* <CoreFormLabelCheckbox></CoreFormLabelCheckbox> */}
+        </>}
       />
         
       {/* <ComponentProps component={CoreFormLabelCheckbox} /> */}

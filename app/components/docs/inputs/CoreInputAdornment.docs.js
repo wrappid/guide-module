@@ -1,5 +1,6 @@
 import {
   CoreH4,
+  CoreInputAdornment,
   CoreTypographyBody1
 } from "@wrappid/core";
   
@@ -15,12 +16,16 @@ export default function CoreInputAdornmentDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"TITLE_OF_THE_SAMPLE (NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreInputAdornment></CoreInputAdornment>
+        `}
+        renderElement={<>
+          <CoreInputAdornment></CoreInputAdornment>
+        </>}
       />
-        
+
       {/* <ComponentProps component={CoreInputAdornment} /> */}
       
     </>

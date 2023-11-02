@@ -1,4 +1,5 @@
 import {
+  CoreFilePicker,
   CoreH4,
   CoreTypographyBody1
 } from "@wrappid/core";
@@ -17,8 +18,12 @@ export default function CoreFilePickerDocs() {
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`
+<CoreFilePicker label="Profile Photo" helperText="JPEG and PNG Formate Only"></CoreFilePicker>
+        `}
+        renderElement={<>
+          <CoreFilePicker label="Profile Photo" helperText="JPEG and PNG Formate Only"></CoreFilePicker>
+        </>}
       />
         
       {/* <ComponentProps component={CoreFilePicker} /> */}
