@@ -4,7 +4,7 @@ import {
   // CoreButtonBase
 } from "@wrappid/core";
 
-import CodeSample from "../../../CodeSample";
+import CodeSample from "../../CodeSample";
 
 export default function CoreButtonBaseDocs() {
   return (

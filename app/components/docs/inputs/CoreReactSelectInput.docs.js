@@ -1,29 +1,28 @@
 import {
   CoreH4,
-  CoreTypographyBody1,
-  CoreAsyncSelect
+  CoreTypographyBody1
 } from "@wrappid/core";
-
+  
 import CodeSample from "../../CodeSample";
-import ComponentProps from "../../ComponentProps";
 
-export default function CoreAsyncSelectDocs() {
+export default function CoreReactSelectInputDocs() {
   return (
     <>
-      <CoreH4>CoreAsyncSelect</CoreH4>
-
+      <CoreH4>CoreReactSelectInput</CoreH4>
+  
       <CoreTypographyBody1>
-        COMPONENT_DESCRIPTION
+          COMPONENT_DESCRIPTION
       </CoreTypographyBody1>
-
+  
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE"}
+        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<></>}
       />
-
-      <ComponentProps component={CoreAsyncSelect} />
+        
+      {/* <ComponentProps component={CoreReactSelectInput} /> */}
+      
     </>
   );
 }

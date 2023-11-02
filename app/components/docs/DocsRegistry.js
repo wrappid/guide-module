@@ -55,24 +55,60 @@ import FeedbackDocs from "./feedback/Feedback.docs";
 import CoreCircularProgressDocs from "./feedback/progress/CoreCircularProgress.docs";
 import CoreLinearProgressDocs from "./feedback/progress/CoreLinearProgress.docs.js";
 import CoreProgressDocs from "./feedback/progress/CoreProgress.docs";
-import CoreButtonDocs from "./inputs/button/CoreButton.docs";
-import CoreButtonBaseDocs from "./inputs/button/CoreButtonBase.docs";
-import CoreIconButtonDocs from "./inputs/button/CoreIconButton.docs";
-import CoreLoadingButtonDocs from "./inputs/button/CoreLoadingButton.docs";
-import CoreAsyncSelectDocs from "./inputs/CoreAsyncSelect.docs";
-import CoreAutocompleteDocs from "./inputs/CoreAutocomplete.docs";
-import CoreButtonGroupDocs from "./inputs/CoreButtonGroup.docs";
-import CoreCheckboxDocs from "./inputs/CoreCheckbox.docs";
-import CoreFabDocs from "./inputs/CoreFab.docs";
-import CoreRadioGroupDocs from "./inputs/CoreRadioGroup.docs";
-import CoreRatingDocs from "./inputs/CoreRating.docs";
-import CoreSelectDocs from "./inputs/CoreSelect.docs";
-import CoreSliderDocs from "./inputs/CoreSlider.docs";
-import CoreSwitchDocs from "./inputs/CoreSwitch.docs";
-import CoreTextFieldDocs from "./inputs/CoreTextField.docs";
-import CoreToggleButtonDocs from "./inputs/CoreToggleButton.docs";
-import CoreTransferListDocs from "./inputs/CoreTransferList.docs";
-import InputsDocs from "./inputs/Inputs.docs";
+import ChildMapDocs from "./inputs/ChildMap.docs.js";
+import CoreAsyncSelectDocs from "./inputs/CoreAsyncSelect.docs.js";
+import CoreAutocompleteDocs from "./inputs/CoreAutocomplete.docs.js";
+import CoreButtonDocs from "./inputs/CoreButton.docs.js";
+import CoreButtonBaseDocs from "./inputs/CoreButtonBase.docs.js";
+import CoreButtonGroupDocs from "./inputs/CoreButtonGroup.docs.js";
+import CoreCheckboxDocs from "./inputs/CoreCheckbox.docs.js";
+import CoreConfirmPasswordDocs from "./inputs/CoreConfirmPassword.docs.js";
+import CoreConfirmPasswordFieldDocs from "./inputs/CoreConfirmPasswordField.docs.js";
+import CoreContainedButtonDocs from "./inputs/CoreContainedButton.docs.js";
+import CoreDatepickerDocs from "./inputs/CoreDatepicker.docs.js";
+import CoreDateRangepickerDocs from "./inputs/CoreDateRangepicker.docs.js";
+import CoreDateTimePickerDocs from "./inputs/CoreDateTimePicker.docs.js";
+import CoreDateTimeRangePickerDocs from "./inputs/CoreDateTimeRangePicker.docs.js";
+import CoreFabDocs from "./inputs/CoreFab.docs.js";
+import CoreFilePickerDocs from "./inputs/CoreFilePicker.docs.js";
+import CoreFormControlDocs from "./inputs/CoreFormControl.docs.js";
+import CoreFormErrorTextDocs from "./inputs/CoreFormErrorText.docs.js";
+import CoreFormHelperTextDocs from "./inputs/CoreFormHelperText.docs.js";
+import CoreFormLabelCheckboxDocs from "./inputs/CoreFormLabelCheckbox.docs.js";
+import CoreGoogleButtonDocs from "./inputs/CoreGoogleButton.docs.js";
+import CoreIconButtonDocs from "./inputs/CoreIconButton.docs.js";
+import CoreImagePickerDocs from "./inputs/CoreImagePicker.docs.js";
+import CoreInputDocs from "./inputs/CoreInput.docs.js";
+import CoreInputAdornmentDocs from "./inputs/CoreInputAdornment.docs.js";
+import CoreInputLabelDocs from "./inputs/CoreInputLabel.docs.js";
+import CoreInputPasswordDocs from "./inputs/CoreInputPassword.docs.js";
+import CoreJSONEditorDocs from "./inputs/CoreJSONEditor.docs.js";
+import CoreJSONInputDocs from "./inputs/CoreJSONInput.docs.js";
+import CoreLoadingButtonDocs from "./inputs/CoreLoadingButton.docs.js";
+import CoreMedicineSelectorDocs from "./inputs/CoreMedicineSelector.docs.js";
+import CoreMenuDocs from "./inputs/CoreMenu.docs.js";
+import CoreMultiTimeRangePickerDocs from "./inputs/CoreMultiTimeRangePicker.docs.js";
+import CoreOtpInputDocs from "./inputs/CoreOtpInput.docs.js";
+import CoreOutlinedButtonDocs from "./inputs/CoreOutlinedButton.docs.js";
+import CorePhoneDocs from "./inputs/CorePhone.docs.js";
+import CoreRadioGroupDocs from "./inputs/CoreRadioGroup.docs.js";
+import CoreRatingDocs from "./inputs/CoreRating.docs.js";
+import CoreReactSelectInputDocs from "./inputs/CoreReactSelectInput.docs.js";
+import CoreResponsiveButtonDocs from "./inputs/CoreResponsiveButton.docs.js";
+import CoreRichTextEditorDocs from "./inputs/CoreRichTextEditor.docs.js";
+import CoreSelectDocs from "./inputs/CoreSelect.docs.js";
+import CoreSliderDocs from "./inputs/CoreSlider.docs.js";
+import CoreSpeechToTextDocs from "./inputs/CoreSpeechToText.docs.js";
+import CoreSwitchDocs from "./inputs/CoreSwitch.docs.js";
+import CoreTextareaDocs from "./inputs/CoreTextarea.docs.js";
+import CoreTextButtonDocs from "./inputs/CoreTextButton.docs.js";
+import CoreTextFieldDocs from "./inputs/CoreTextField.docs.js";
+import CoreTimePickerDocs from "./inputs/CoreTimePicker.docs.js";
+import CoreTimeRangePickerDocs from "./inputs/CoreTimeRangePicker.docs.js";
+import CoreToggleButtonDocs from "./inputs/CoreToggleButton.docs.js";
+import CoreTransferListDocs from "./inputs/CoreTransferList.docs.js";
+import InputsDocs from "./inputs/Inputs.docs.js";
+import ParentChildMapDocs from "./inputs/ParentChildMap.docs.js";
 import OverviewDocs from "./Overview.docs";
 
 export default {
@@ -205,27 +241,60 @@ export default {
   },
   Inputs: {
     children: {
-      CoreAsyncSelect : { main: CoreAsyncSelectDocs },
-      CoreAutocomplete: { main: CoreAutocompleteDocs },
-      CoreButton      : {
-        children: {
-          CoreButtonBase   : { main: CoreButtonBaseDocs },
-          CoreIconButton   : { main: CoreIconButtonDocs },
-          CoreLoadingButton: { main: CoreLoadingButtonDocs },
-        },
-        main: CoreButtonDocs,
-      },
-      CoreButtonGroup : { main: CoreButtonGroupDocs },
-      CoreCheckbox    : { main: CoreCheckboxDocs },
-      CoreFab         : { main: CoreFabDocs },
-      CoreRadioGroup  : { main: CoreRadioGroupDocs },
-      CoreRating      : { main: CoreRatingDocs },
-      CoreSelect      : { main: CoreSelectDocs },
-      CoreSlider      : { main: CoreSliderDocs },
-      CoreSwitch      : { main: CoreSwitchDocs },
-      CoreTextField   : { main: CoreTextFieldDocs },
-      CoreToggleButton: { main: CoreToggleButtonDocs },
-      CoreTransferList: { main: CoreTransferListDocs },
+      ChildMap                : { main: ChildMapDocs },
+      CoreAsyncSelect         : { main: CoreAsyncSelectDocs },
+      CoreAutocomplete        : { main: CoreAutocompleteDocs },
+      CoreButton              : { main: CoreButtonDocs },
+      CoreButtonBase          : { main: CoreButtonBaseDocs },
+      CoreButtonGroup         : { main: CoreButtonGroupDocs },
+      CoreCheckbox            : { main: CoreCheckboxDocs },
+      CoreConfirmPassword     : { main: CoreConfirmPasswordDocs },
+      CoreConfirmPasswordField: { main: CoreConfirmPasswordFieldDocs },
+      CoreContainedButton     : { main: CoreContainedButtonDocs },
+      CoreDateRangepicker     : { main: CoreDateRangepickerDocs },
+      CoreDateTimePicker      : { main: CoreDateTimePickerDocs },
+      CoreDateTimeRangePicker : { main: CoreDateTimeRangePickerDocs },
+      CoreDatepicker          : { main: CoreDatepickerDocs },
+      CoreFab                 : { main: CoreFabDocs },
+      CoreFilePicker          : { main: CoreFilePickerDocs },
+      CoreFormControl         : { main: CoreFormControlDocs },
+      CoreFormErrorText       : { main: CoreFormErrorTextDocs },
+      CoreFormHelperText      : { main: CoreFormHelperTextDocs },
+      CoreFormLabelCheckbox   : { main: CoreFormLabelCheckboxDocs },
+      CoreGoogleButton        : { main: CoreGoogleButtonDocs },
+      CoreIconButton          : { main: CoreIconButtonDocs },
+      CoreImagePicker         : { main: CoreImagePickerDocs },
+      CoreInput               : { main: CoreInputDocs },
+      CoreInputAdornment      : { main: CoreInputAdornmentDocs },
+      CoreInputLabel          : { main: CoreInputLabelDocs },
+      CoreInputPassword       : { main: CoreInputPasswordDocs },
+      CoreJSONEditor          : { main: CoreJSONEditorDocs },
+      CoreJSONInput           : { main: CoreJSONInputDocs },
+      CoreLoadingButton       : { main: CoreLoadingButtonDocs },
+      CoreMedicineSelector    : { main: CoreMedicineSelectorDocs },
+      CoreMenu                : { main: CoreMenuDocs },
+      CoreMultiTimeRangePicker: { main: CoreMultiTimeRangePickerDocs },
+      CoreOtpInput            : { main: CoreOtpInputDocs },
+      CoreOutlinedButton      : { main: CoreOutlinedButtonDocs },
+      CorePhone               : { main: CorePhoneDocs },
+      CoreRadioGroup          : { main: CoreRadioGroupDocs },
+      CoreRating              : { main: CoreRatingDocs },
+      CoreReactSelectInput    : { main: CoreReactSelectInputDocs },
+      CoreResponsiveButton    : { main: CoreResponsiveButtonDocs },
+      CoreRichTextEditor      : { main: CoreRichTextEditorDocs },
+      CoreSelect              : { main: CoreSelectDocs },
+      CoreSlider              : { main: CoreSliderDocs },
+      CoreSpeechToText        : { main: CoreSpeechToTextDocs },
+      CoreSwitch              : { main: CoreSwitchDocs },
+      CoreTextButton          : { main: CoreTextButtonDocs },
+      CoreTextField           : { main: CoreTextFieldDocs },
+      CoreTextarea            : { main: CoreTextareaDocs },
+      CoreTimePicker          : { main: CoreTimePickerDocs },
+      CoreTimeRangePicker     : { main: CoreTimeRangePickerDocs },
+      CoreToggleButton        : { main: CoreToggleButtonDocs },
+      CoreTransferList        : { main: CoreTransferListDocs },
+      Inputs                  : { main: InputsDocs },
+      ParentChildMap          : { main: ParentChildMapDocs },
     },
     main : InputsDocs,
     order: 1,
