@@ -1,31 +1,28 @@
-import { CoreClasses, CoreH4, CoreLabel, CoreStack } from "@wrappid/core";
-
+import {
+  CoreH4,
+  CoreTypographyBody1
+} from "@wrappid/core";
+  
 import CodeSample from "../../CodeSample";
 
 export default function CoreLabelDocs() {
-
   return (
     <>
-      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
-      CoreLabel
-      </CoreH4>
-
+      <CoreH4>CoreLabel</CoreH4>
+  
+      <CoreTypographyBody1>
+          COMPONENT_DESCRIPTION
+      </CoreTypographyBody1>
+  
       <CodeSample
-        title="Basic CoreLabel"
-        description=""
-        code={`
-<CoreStack direction="column">
-  <CoreLabel>This is Lable 1</CoreLabel><CoreLabel>This is Lable 2</CoreLabel><CoreLabel>This is Lable 3</CoreLabel>
-</CoreStack>        
-`}
-        renderElement={
-          <>
-            <CoreStack direction="column">
-              <CoreLabel>This is Lable 1</CoreLabel><CoreLabel>This is Lable 2</CoreLabel><CoreLabel>This is Lable 3</CoreLabel>
-            </CoreStack>
-          </>
-        }
+        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        description={"DESCRIPTION_OF_THE_SAMPLE"}
+        code={"PRE-FORMATTED_CODE_GOES_HERE"}
+        renderElement={<></>}
       />
+        
+      {/* <ComponentProps component={CoreLabel} /> */}
+      
     </>
   );
 }
