@@ -3,18 +3,18 @@ import {
   CoreTypographyBody1,
   CoreTypographyBody2,
   CoreBox,
-  CoreGrid,
-  CoreClasses
+  CoreClasses,
+  CoreGrid
 } from "@wrappid/core";
 
 import CodeSample from "./CodeSample";
 
 const CLASS_NAME_TO_EXCLUDE = [
-  // "DEV_BORDER",
+  "DEV_BORDER",
   "ALIGNMENT",
   // "BG",
-  "BORDER",
-  // "COLOR",
+  // "BORDER",
+  "COLOR",
   "DISPLAY",
   "FLEX",
   "FLOAT",
@@ -87,38 +87,29 @@ export default function StyleSample(props) {
           console.log("CLASS_NAME is FOR_SCREEN_SIZES for className = " + className);
 
           return (
-            <CoreTypographyBody1 styleClasses={[CoreClasses.COLOR.TEXT_WARNING_LIGHT]}>
+            <CoreTypographyBody1 key={key} styleClasses={[CoreClasses.COLOR.TEXT_WARNING_LIGHT]}>
               {className} : Size specific documantation not available as of now
             </CoreTypographyBody1>
           );
         } else {
           console.log("calling recursive for className = " + className);
-          // if (codeSampleData?.grouped) {
-          //   console.log("grouped");
-          // } else {
-          //   console.log("ungrouped");
-          //   return <StyleSample classes={classes[className]} classGroupName={className} />;
-          // }
           return codeSampleData.grouped ? (
-            // <CoreTypographyBody1 styleClasses={[CoreClasses.COLOR.TEXT_INFO]}>
-            //   {className} : grouped recursive call
-            // </CoreTypographyBody1>
             <CodeSample
               key={key}
               title={className}
               description={codeSampleData.description}
               code={"NOT YET CODED!!!"}
               renderElement={
-                <CoreGrid>
-                  <StyleSample classes={classes[className]} classGroupName={className} />
+                <CoreGrid id="parent-style-sample">
+                  {Object.keys(classes[className]).map((childClassName) => {
+                    return codeSampleData.renderElement(classes[className], childClassName);
+                  })}
+                  
+                  {/* <StyleSample classes={classes[className]} classGroupName={className} /> */}
                 </CoreGrid>
               }
             />
           ) : (
-          // <CoreTypographyBody1 styleClasses={[CoreClasses.COLOR.TEXT_ERROR]}>
-          //   {className} : ungrouped recursive call
-          // </CoreTypographyBody1>
-
             <StyleSample classes={classes[className]} classGroupName={className} />
           );
         }
@@ -190,9 +181,11 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       </>
     ),
     grouped      : true,
+    // renderElement: BGElement
     renderElement: (classes, className) => {
       return (
         <CoreBox
+          id={`padding-element-${className}`}
           gridProps={{ gridSize: 4 }}
           styleClasses={[
             classes[className],
