@@ -1,15 +1,12 @@
 /* eslint-disable no-console */
 import {
-  CoreH4,
-  CoreH5,
-  CoreH6,
   CoreTypographyBody1,
   CoreTypographyBody2,
   CoreBox,
   CoreGrid,
-  CoreDivider,
-  CoreClasses,
+  CoreClasses
 } from "@wrappid/core";
+
 import CodeSample from "./CodeSample";
 
 const CLASS_NAME_TO_EXCLUDE = [
@@ -37,20 +34,28 @@ const CLASS_NAME_TO_EXCLUDE = [
   "VISIBILITY",
   "Z_INDEX",
 ];
-const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
+const CLASS_NAME_FOR_SCREEN_SIZES = [
+  "SM",
+  "MD",
+  "LG",
+  "XL",
+  "XXL"
+];
 
 export default function StyleSample(props) {
   const { classes, classGroupName, className } = props;
+
   console.log("##### Start of <StyleSample /> with below arg:");
   console.log(classes);
   console.log("classGroupName = " + classGroupName);
   console.log("className = " + className);
   let key = (classGroupName ? classGroupName + "-" : "") + (className ? "" + className : "group");
+
   console.log("key = " + key);
 
   let codeSampleData = DEFAULT_SAMPLE_COMPONENT;
 
-  Object.keys(classes).map((className, index) => {
+  return Object.keys(classes).map((className, index) => {
     console.log("index = " + index + ", className = " + className);
     if (CLASS_NAME_TO_EXCLUDE?.includes(className)) {
       console.log("Excluding className = " + className);
@@ -60,8 +65,8 @@ export default function StyleSample(props) {
       codeSampleData = CLASS_SPECIFIC_SAMPLE_COMPONENT[className]
         ? CLASS_SPECIFIC_SAMPLE_COMPONENT[className]
         : CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName]
-        ? CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName]
-        : DEFAULT_SAMPLE_COMPONENT;
+          ? CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName]
+          : DEFAULT_SAMPLE_COMPONENT;
 
       if (isString(classes[className])) {
         console.log("isString true for className = " + className);
@@ -110,9 +115,9 @@ export default function StyleSample(props) {
               }
             />
           ) : (
-            // <CoreTypographyBody1 styleClasses={[CoreClasses.COLOR.TEXT_ERROR]}>
-            //   {className} : ungrouped recursive call
-            // </CoreTypographyBody1>
+          // <CoreTypographyBody1 styleClasses={[CoreClasses.COLOR.TEXT_ERROR]}>
+          //   {className} : ungrouped recursive call
+          // </CoreTypographyBody1>
 
             <StyleSample classes={classes[className]} classGroupName={className} />
           );
@@ -123,9 +128,6 @@ export default function StyleSample(props) {
       }
     }
   });
-  {
-    /* </CoreBox> */
-  }
 }
 
 function isObject(obj) {
@@ -137,8 +139,8 @@ function isString(obj) {
 }
 
 const DEFAULT_SAMPLE_COMPONENT = {
-  description: "",
-  grouped: false,
+  description  : "",
+  grouped      : false,
   renderElement: (classes, className) => {
     return (
       <CoreBox
@@ -154,8 +156,8 @@ const DEFAULT_SAMPLE_COMPONENT = {
 
 const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   ALIGNMENT: {
-    description: "",
-    grouped: true,
+    description  : "",
+    grouped      : true,
     renderElement: (classes, className) => {
       return (
         <CoreBox
@@ -181,12 +183,13 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreTypographyBody1>
           Sets the background of an element to any contextual class.
         </CoreTypographyBody1>
+
         <CoreTypographyBody2>
-          {`Background utilities do not set color, so in some cases you’ll want to use CoreClasses.COLOR.TEXT_<contextual-class>`}
+          {"Background utilities do not set color, so in some cases you’ll want to use CoreClasses.COLOR.TEXT_<contextual-class>"}
         </CoreTypographyBody2>
       </>
     ),
-    grouped: true,
+    grouped      : true,
     renderElement: (classes, className) => {
       return (
         <CoreBox
@@ -206,8 +209,8 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   BORDER: {
-    description: "",
-    grouped: true,
+    description  : "",
+    grouped      : true,
     renderElement: (classes, className) => {
       return (
         <CoreBox
@@ -226,28 +229,26 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-  SHADOW: {
-    description: "",
-    grouped: true,
+  MARGIN: {
+    description  : "",
+    grouped      : true,
     renderElement: (classes, className) => {
       return (
         <CoreBox
-          styleClasses={[
-            classes[className],
-            CoreClasses.PADDING.P3,
-            CoreClasses.MARGIN.M3,
-            CoreClasses.TEXT.TEXT_CENTER,
-            CoreClasses.WIDTH.MIN_W_75,
-          ]}
+          styleClasses={[CoreClasses.BG.BG_WARNING_LIGHT, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_WARNING, CoreClasses.MARGIN.M3]}
         >
-          {className}
+          <CoreTypographyBody1
+            styleClasses={[CoreClasses.BG.BG_WHITE, CoreClasses.MARGIN.M0, classes[className]]}
+          >
+            {className}
+          </CoreTypographyBody1>
         </CoreBox>
       );
     },
   },
   PADDING: {
-    description: "",
-    grouped: true,
+    description  : "",
+    grouped      : true,
     renderElement: (classes, className) => {
       return (
         <CoreBox
@@ -266,24 +267,21 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-  MARGIN: {
-    description: "",
-    grouped: true,
+  SHADOW: {
+    description  : "",
+    grouped      : true,
     renderElement: (classes, className) => {
       return (
         <CoreBox
           styleClasses={[
-            CoreClasses.BG.BG_WARNING_LIGHT,
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_WARNING,
+            classes[className],
+            CoreClasses.PADDING.P3,
             CoreClasses.MARGIN.M3,
+            CoreClasses.TEXT.TEXT_CENTER,
+            CoreClasses.WIDTH.MIN_W_75,
           ]}
         >
-          <CoreTypographyBody1
-            styleClasses={[CoreClasses.BG.BG_WHITE, CoreClasses.MARGIN.M0, classes[className]]}
-          >
-            {className}
-          </CoreTypographyBody1>
+          {className}
         </CoreBox>
       );
     },
