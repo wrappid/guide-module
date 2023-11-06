@@ -8,6 +8,13 @@
                        |_|   |_|
 
 ```
+
+- [`Wrappid` Module Boilerplate](#wrappid-module-boilerplate)
+  - [1. Introduction](#1-introduction)
+  - [Getting Started](#getting-started)
+      - [4.3.1. Initialize a wrappid-module](#431-initialize-a-wrappid-module)
+      - [4.3.2. Include or exclude a wrappid-module from `wrappid-[app|service]`](#432-include-or-exclude-a-wrappid-module-from-wrappid-appservice)
+
 ## 1. Introduction   
 
 This is a **module boilerplate** to build wrappid modules which serves specific technical needs or business specific needs.
@@ -52,7 +59,7 @@ Make sure to not write `-module` following your <module-name>
 
 Similarly, to exclude a module from your `wrappid-[app|service]`, run the below command.
 ```terminal
-wrappid exclude <module>-name
+wrappid exclude <module-name>
 ```
 
 Make sure to not write `-module` following your <module-name>
