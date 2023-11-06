@@ -58,12 +58,10 @@ export default function StyleUtilities() {
     console.log(classes);
     console.log("classGroupName = " + classGroupName);
     console.log("className = " + className);
-    let key = (classGroupName ? classGroupName + "-" : "") + (className ? className : "");
-
-    console.log("key = " + key);
-
+        
     return Object.keys(classes).map((className, index) => {
-      console.log("index = " + index + ", className = " + className);
+      let key = (classGroupName ? classGroupName + "-" +className + "-" +index : "") + (className ? className+"-"+index : "");
+      console.log("index = " + index + ", className = " + className, "key = " + key);
       if (CLASS_NAME_TO_EXCLUDE?.includes(className)) {
         console.log("Excluding className = " + className);
       } else {
