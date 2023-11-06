@@ -5,6 +5,7 @@ import {
   CoreBox,
   CoreGrid,
   CoreClasses,
+  CoreTOC,
   CoreTypographyBody2
 } from "@wrappid/core";
 import { UtilityClasses } from "@wrappid/styles";
@@ -14,9 +15,9 @@ import CodeSample from "./CodeSample";
 const CLASS_NAME_TO_EXCLUDE = [
   "DEV_BORDER",
   "ALIGNMENT",
-  // "BG",
-  // "BORDER",
-  // "COLOR",
+  // -- "BG",
+  // -- "BORDER",
+  // -- "COLOR",
   "DISPLAY",
   "FLEX",
   "FLOAT",
@@ -57,7 +58,7 @@ export default function StyleUtilities() {
     console.log(classes);
     console.log("classGroupName = " + classGroupName);
     console.log("className = " + className);
-    let key = (classGroupName ? classGroupName + "-" : "") + (className ? "" + className : "group");
+    let key = (classGroupName ? classGroupName + "-" : "") + (className ? className : "");
 
     console.log("key = " + key);
 
@@ -73,7 +74,7 @@ export default function StyleUtilities() {
         if (isString(classes[className])) {
           console.log("isString true for className = " + className);
           return codeSampleData.grouped ? (
-            codeSampleData.renderElement(classes, className)
+            codeSampleData.renderElement(key, classes, className)
           ) : (
             <CodeSample
               key={key}
@@ -138,6 +139,8 @@ export default function StyleUtilities() {
         <CoreTypographyBody1>
           Table Of Contents
         </CoreTypographyBody1>
+
+        <CoreTOC />
       </CoreBox>
     </CoreGrid>
   );
@@ -158,10 +161,10 @@ function isString(obj) {
 const DEFAULT_SAMPLE_COMPONENT = {
   description  : "",
   grouped      : false,
-  renderElement: (classes, className) => {
+  renderElement: (key, classes, className) => {
     return (
       <CoreBox
-        // key={`${className}-${index}`}
+        key={key}
         // gridProps={{ gridSize: 4 }}
         styleClasses={[classes[className], CoreClasses.PADDING.P2, CoreClasses.MARGIN.MB1]}
       >
@@ -175,7 +178,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   ALIGNMENT: {
     description  : "",
     grouped      : true,
-    renderElement: (classes, className) => {
+    renderElement: (key, classes, className) => {
       return (
         <CoreBox
           styleClasses={[
@@ -207,7 +210,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       </>
     ),
     grouped      : true,
-    renderElement: (classes, className) => {
+    renderElement: (key, classes, className) => {
       return (
         <CoreBox
           id={`padding-element-${className}`}
@@ -228,7 +231,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   BORDER: {
     description  : "In the examples the border-width is forcefully given 2px, so that examples are easily visible.",
     grouped      : true,
-    renderElement: (classes, className) => {
+    renderElement: (key, classes, className) => {
       return (
         <CoreBox
           // key={`borderClass-${index}`}
@@ -249,7 +252,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   COLOR: {
     description: "Colorize text with text color utilities.",
     grouped    : true,
-    /* renderElement: (classes, className) => {
+    /* -- renderElement: (key, classes, className) => {
       return (
         <CoreBox
           id={`padding-element-${className}`}
@@ -270,7 +273,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   MARGIN: {
     description  : "",
     grouped      : true,
-    renderElement: (classes, className) => {
+    renderElement: (key, classes, className) => {
       return (
         <CoreBox
           styleClasses={[CoreClasses.BG.BG_WARNING_LIGHT, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_WARNING, CoreClasses.MARGIN.M3]}
@@ -287,7 +290,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   PADDING: {
     description  : "",
     grouped      : true,
-    renderElement: (classes, className) => {
+    renderElement: (key, classes, className) => {
       return (
         <CoreBox
           styleClasses={[
@@ -308,7 +311,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   SHADOW: {
     description  : "",
     grouped      : true,
-    renderElement: (classes, className) => {
+    renderElement: (key, classes, className) => {
       return (
         <CoreBox
           styleClasses={[
