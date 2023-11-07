@@ -12,6 +12,7 @@
 - [`Wrappid` Module Boilerplate](#wrappid-module-boilerplate)
   - [1. Introduction](#1-introduction)
   - [2. Getting Started](#2-getting-started)
+    - [2.1. What are my Pre-requisites?](#21-what-are-my-pre-requisites)
     - [2.2. How to Create?](#22-how-to-create)
     - [2.3 How to Use Modules?](#23-how-to-use-modules)
       - [2.3.1 Include module in `wrappid-[app|service]`](#231-include-module-in-wrappid-appservice)
@@ -28,9 +29,17 @@ This is a **module boilerplate** to build wrappid modules which serves specific 
 ## 2. Getting Started
 This getting started section will help you setup a basic module built using the `Wrappid` framework Wrappid Projects. Follow the below steps to get going.   
 
-2.1. [Verify Pre-requisites]()   
-2.2. [Initialize a module `wrappid-module`]()   
-2.3  How to Use Modules?
+[2.1. What are my Pre-requisites?](#21-what-are-my-pre-requisites)
+
+[2.2. How to Create?](#22-how-to-create)
+
+[2.3 How to Use Modules?](#23-how-to-use-modules)
+
+
+### 2.1. What are my Pre-requisites?
+
+- [Refer here](https://github.com/wrappid/#1-check-pre-requisites)
+- install @wrappid/toolkit globally. [Click here](https://github.com/wrappid/#2-install-wrappid-toolkit)for installation guide of @wrappid/toolkit.
 
 ### 2.2. How to Create?
 Run the below command to create Module Wrappid Project
