@@ -119,6 +119,8 @@ PortfolioPage: {comp: portfolioPage}
 }
 ```
 
+To know more about frontend wrappid app, [click here](https://github.com/wrappid/wrappid-app)
+
 #### 2.3.2 Backend
 
 
