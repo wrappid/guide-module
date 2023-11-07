@@ -60,8 +60,10 @@ export default function StyleUtilities() {
     console.log("className = " + className);
         
     return Object.keys(classes).map((className, index) => {
-      let key = (classGroupName ? classGroupName + "-" +className + "-" +index : "") + (className ? className+"-"+index : "");
+      let key = (classGroupName ? classGroupName + "-" + className + "-" + index : "") + (className ? className + "-" + index : "");
+
       console.log("index = " + index + ", className = " + className, "key = " + key);
+      
       if (CLASS_NAME_TO_EXCLUDE?.includes(className)) {
         console.log("Excluding className = " + className);
       } else {
