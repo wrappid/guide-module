@@ -3,7 +3,7 @@ import {
   CoreTypographyBody1
 } from "@wrappid/core";
   
-import CodeSample from "../../CodeSample";
+import CodeSample from "../../../CodeSample";
 
 export default function CoreViewFormDocs() {
   return (
