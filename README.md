@@ -9,6 +9,8 @@
 
 ```
 
+**This is a template documentation, @wrappid/toolkit uses this template to create module boilerplate.**
+
 - [`Wrappid` Module Boilerplate](#wrappid-module-boilerplate)
   - [1. Introduction](#1-introduction)
   - [2. Getting Started](#2-getting-started)
@@ -53,6 +55,8 @@ wrappid init module <wrappid>
 
 
 Now you have a `<wrappid-module>` Module Wrappid Project at the directory the command was executed from.
+
+> **_Note:_** _If you already have a wrappid-module project in your github, you need to clone it in the directory you have your `wrappid-[app|service]`._
 
 ### 2.3 How to Use Modules?
 
