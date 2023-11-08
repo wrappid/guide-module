@@ -16,13 +16,11 @@ export default function CoreFormHelperTextDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_WORKING)"}
+        title={"Basic CoreFormHelperText )"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={`
-<CoreFormHelperText error={true} ></CoreFormHelperText> 
-        `}
+        code={"<CoreFormHelperText error={true} >You can display an error</CoreFormHelperText>"}
         renderElement={<>
-          <CoreFormHelperText error={true} ></CoreFormHelperText> 
+          <CoreFormHelperText error={true} >You can display an error</CoreFormHelperText> 
         </>}
       />
         
