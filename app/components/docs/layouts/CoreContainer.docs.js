@@ -11,14 +11,36 @@ export default function CoreContainerDocs() {
       <CoreH4>CoreContainer</CoreH4>
   
       <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
+      The container centers your content horizontally. It's the most basic layout element.
+      </CoreTypographyBody1>
+
+      <CoreTypographyBody1>
+      While containers can be nested, most layouts do not require a nested container.
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        title={"Fluid(NOT_WORKING)"}
+        description={"A fluid container width is bounded by the maxWidth prop value."}
+        code={`
+<CoreContainer maxWidth="sm">
+  <CoreBox styleClasses={[CoreClasses.BG.BG_PRIMARY_DARK, CoreClasses.HEIGHT.H_75]} />
+</CoreContainer>
+        `}
+        renderElement={<>
+
+        </>}
+      />
+
+      <CodeSample
+        title={"Fixed(NOT_WORKING)"}
+        description={"If you prefer to design for a fixed set of sizes instead of trying to accommodate a fully fluid viewport, you can set the fixed prop. The max-width matches the min-width of the current breakpoi"}
+        code={`
+<CoreContainer fixed>
+    <CoreBox styleClasses={[CoreClasses.BG.BG_PRIMARY_DARK, CoreClasses.HEIGHT.H_75]} />
+</CoreContainer>`}
+        renderElement={<>
+          
+        </>}
       />
         
       {/* <ComponentProps component={CoreContainer} /> */}

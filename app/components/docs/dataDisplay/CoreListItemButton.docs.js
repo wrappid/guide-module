@@ -17,7 +17,7 @@ export default function CoreListItemButtonDocs() {
       </CoreTypographyBody1>
 
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE"}
+        title={"CoreListItemButton(NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<></>}

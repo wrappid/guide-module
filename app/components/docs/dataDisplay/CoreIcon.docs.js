@@ -11,7 +11,8 @@ export default function CoreIconDocs() {
       <CoreH4>CoreIcon</CoreH4>
   
       <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
+      Guidance and suggestions for using icons with Material UI.
+
       </CoreTypographyBody1>
   
       <CodeSample

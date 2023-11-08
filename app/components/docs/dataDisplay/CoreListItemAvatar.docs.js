@@ -10,17 +10,19 @@ import ComponentProps from "../../ComponentProps";
 export default function CoreListItemAvatarDocs() {
   return (
     <>
-      <CoreH4>{"CoreListItemAvatar (NOT DEFINED)"}</CoreH4>
+      <CoreH4>{"CoreListItemAvatar"}</CoreH4>
 
       <CoreTypographyBody1>
         COMPONENT_DESCRIPTION
       </CoreTypographyBody1>
 
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE"}
+        title={"CoreListItemAvatar(NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+          
+        </>}
       />
 
       <ComponentProps component={CoreListItemAvatar} />
