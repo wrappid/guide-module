@@ -16,7 +16,7 @@ export default function CoreInputDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE"}
+        title={"CoreInput"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={`
 <CoreInput helperText="Helper Text"></CoreInput>
