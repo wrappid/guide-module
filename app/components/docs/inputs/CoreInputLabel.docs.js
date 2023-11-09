@@ -1,5 +1,6 @@
 import {
   CoreH4,
+  CoreInput,
   CoreInputLabel,
   CoreTypographyBody1
 } from "@wrappid/core";
@@ -18,11 +19,15 @@ export default function CoreInputLabelDocs() {
       <CodeSample
         title={"Simple CoreInputLabel (NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={`
-<CoreInputLabel></CoreInputLabel>
+        code={`<CoreInput >
+  <CoreInputLabel shrink>Count</CoreInputLabel>
+</CoreInput>
         `}
         renderElement={<>
-          <CoreInputLabel></CoreInputLabel>
+          <CoreInput >
+            <CoreInputLabel shrink>Count</CoreInputLabel>
+          </CoreInput>
+          
         </>}
       />
         
