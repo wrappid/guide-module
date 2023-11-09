@@ -39,7 +39,7 @@ export default function CoreTableDocs() {
       </CoreTypographyBody1>
 
       <CodeSample
-        title={"Basic table"}
+        title={"Basic Coretable"}
         description={"A simple example with no frills."}
         code={`<CoreTableContainer >
 <CoreTable styleClasses={[CoreClasses.WIDTH.MIN_W_50]} aria-label="simple table">
