@@ -6,7 +6,7 @@ import {
   CoreButton,
   CoreTypographyBody1,
   CoreH5,
-  CoreBox
+  CoreBox,
 } from "@wrappid/core";
 
 import CodeBlock from "./CodeBlock";
@@ -42,7 +42,7 @@ export default function CodeSample(props) {
         >
           {renderElement && (
             <CoreBox
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.MY3]}
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M2]}
             >
               {renderElement}
             </CoreBox>
