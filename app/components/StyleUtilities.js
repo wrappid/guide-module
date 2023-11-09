@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+import React, { createRef } from "react";
+
 import {
   CoreH4,
   CoreTypographyBody1,
@@ -6,9 +8,12 @@ import {
   CoreGrid,
   CoreClasses,
   CoreTOC,
-  CoreTypographyBody2
+  CoreTypographyBody2,
+  getPageTOC,
+  CoreH1,
+  CoreH2,
+  CoreH3
 } from "@wrappid/core";
-import { UtilityClasses } from "@wrappid/styles";
 
 import CodeSample from "./CodeSample";
 
@@ -45,8 +50,15 @@ const CLASS_NAME_FOR_SCREEN_SIZES = [
   "XXL"
 ];
 
-export default function StyleUtilities() {
+const Content = React.forwardRef((props, ref) => {
+  return <CoreBox ref={ref}>{props.children}</CoreBox>;
+});
 
+Content.displayName = "Content";
+
+export default function StyleUtilities() {
+  const contentRef = createRef();
+  const elements = getPageTOC({ contentRef });
   /**
    * This recurrsive function helps you render style's sample
    * 
@@ -132,7 +144,28 @@ export default function StyleUtilities() {
           These are style utilities built using bootstrap flavour.
         </CoreTypographyBody1>
 
-        {renderStyleSamples({ classes: UtilityClasses })}
+        <Content ref={contentRef}>
+          {/* {renderStyleSamples({ classes: UtilityClasses })} */}
+          <CoreH1>Heading1</CoreH1>
+
+          <CoreH2>Heading1.2</CoreH2>
+
+          <CoreBox>
+            <CoreH2>Heading1.2</CoreH2>
+          </CoreBox>
+
+          <CoreH2>Heading1.3</CoreH2>
+
+          <CoreH3>Heading1.3.1</CoreH3>
+
+          <CoreBox>
+            <CoreH3>Heading1.3.2</CoreH3>
+          </CoreBox>
+
+          <CoreH1>Heading4</CoreH1>
+
+          <CoreH1>Heading5</CoreH1>
+        </Content>
       </CoreBox>
 
       <CoreBox gridProps={{ gridSize: 3 }}>
