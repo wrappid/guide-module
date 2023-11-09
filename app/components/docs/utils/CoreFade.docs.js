@@ -41,7 +41,7 @@ export default function CoreFadeDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"Fade (NOT_WORKING)"}
+        title={"CoreFade (NOT_WORKING)"}
         description={"Fade in from transparent to opaque."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
