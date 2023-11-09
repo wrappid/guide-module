@@ -15,7 +15,7 @@ export default function CoreTablePaginationDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"CoreTablePagination (NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<></>}
