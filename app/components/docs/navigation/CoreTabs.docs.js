@@ -1,5 +1,7 @@
 import {
+  CoreClasses,
   CoreH4,
+  CoreStack,
   CoreTypographyBody1
 } from "@wrappid/core";
   
@@ -9,18 +11,52 @@ export default function CoreTabsDocs() {
   return (
     <>
       <CoreH4>CoreTabs</CoreH4>
-  
-      <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
-      </CoreTypographyBody1>
+
+      <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+        <CoreTypographyBody1>
+      Tabs make it easy to explore and switch between different views.
+        </CoreTypographyBody1>
+
+        <CoreTypographyBody1>
+        Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.
+        </CoreTypographyBody1>
+      </CoreStack>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
+        title={"Basic tabs(NOT_WORKING)"}
+        description={"A basic example with tab panels.  "}
+        code={"PRE-"}
         renderElement={<></>}
       />
         
+      <CodeSample
+        title={"(NOT_WORKING)"}
+        description={""}
+        code={"PRE-"}
+        renderElement={<></>}
+      />
+
+      <CodeSample
+        title={"(NOT_WORKING)"}
+        description={""}
+        code={"PRE-"}
+        renderElement={<></>}
+      />
+
+      <CodeSample
+        title={"(NOT_WORKING)"}
+        description={""}
+        code={"PRE-"}
+        renderElement={<></>}
+      />
+
+      <CodeSample
+        title={"(NOT_WORKING)"}
+        description={""}
+        code={"PRE-"}
+        renderElement={<></>}
+      />
+
       {/* <ComponentProps component={CoreTabs} /> */}
       
     </>

@@ -1,3 +1,5 @@
+import * as React from "react";
+
 import {
   CoreH4,
   CoreTypographyBody1,
@@ -8,19 +10,46 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreSelectDocs() {
+  const [age, setAge] = React.useState("");
+  
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
   return (
     <>
       <CoreH4>CoreSelect</CoreH4>
 
       <CoreTypographyBody1>
-        COMPONENT_DESCRIPTION
+        Select components are used for collecting user provided information from a list of options.
       </CoreTypographyBody1>
 
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
+        title={"Basic CoreSelect(NOT_WORKING)<Incomplete>"}
+        description={"Menus are positioned under their emitting elements, unless they are close to the bottom of the viewport."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+          {/* <CoreBox sx={{ minWidth: 120 }}>
+            <CoreFormControl fullWidth>
+              <CoreInputLabel id="demo-simple-select-label">Age</CoreInputLabel>
+
+              <CoreSelect
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age}
+                label="Age"
+                onChange={handleChange}
+              >
+                <CoreMenuItem value={10}>Ten</CoreMenuItem>
+
+                <CoreMenuItem value={20}>Twenty</CoreMenuItem>
+
+                <CoreMenuItem value={30}>Thirty</CoreMenuItem>
+              </CoreSelect>
+            </CoreFormControl>
+          </CoreBox> */}
+
+        </>}
       />
 
       <ComponentProps component={CoreSelect} />

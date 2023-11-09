@@ -1,5 +1,10 @@
 import {
+  CoreAppBar,
+  CoreBox,
+  CoreButton,
   CoreH4,
+  CoreIconButton,
+  CoreToolbar,
   CoreTypographyBody1
 } from "@wrappid/core";
   
@@ -15,10 +20,51 @@ export default function CoreToolbarDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"CoreToolbar (NOT_WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={`<CoreBox sx={{ flexGrow: 1 }}>
+  <CoreAppBar position="static">
+    <CoreToolbar>
+      <CoreIconButton
+        size="large"
+        edge="start"
+        color="inherit"
+        aria-label="menu"
+        sx={{ mr: 2 }}
+      >
+      </CoreIconButton>
+
+      <CoreTypographyBody1 variant="h6" component="div" sx={{ flexGrow: 1 }}>
+  News
+      </CoreTypographyBody1>
+
+      <CoreButton color="inherit">Login</CoreButton>
+    </CoreToolbar>
+  </CoreAppBar>
+</CoreBox>
+        `}
+        renderElement={<>
+          <CoreBox sx={{ flexGrow: 1 }}>
+            <CoreAppBar position="static">
+              <CoreToolbar>
+                <CoreIconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="menu"
+                  sx={{ mr: 2 }}
+                >
+                </CoreIconButton>
+
+                <CoreTypographyBody1 variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            News
+                </CoreTypographyBody1>
+
+                <CoreButton color="inherit">Login</CoreButton>
+              </CoreToolbar>
+            </CoreAppBar>
+          </CoreBox>
+        </>}
       />
         
       {/* <ComponentProps component={CoreToolbar} /> */}
