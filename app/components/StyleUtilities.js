@@ -22,7 +22,7 @@ import CodeSample from "./CodeSample";
 const CLASS_NAME_TO_EXCLUDE = [
   // "DEV_BORDER",
   "ALIGNMENT",
-  "BG",
+  // "BG",
   // "BORDER",
   // "COLOR",
   "DISPLAY",
@@ -34,8 +34,8 @@ const CLASS_NAME_TO_EXCLUDE = [
   "OVERFLOW",
   "POSITION",
   // "SHADOW",
-  // "WIDTH",
-  // "HEIGHT",
+  "WIDTH",
+  "HEIGHT",
   // "PADDING",
   // "MARGIN",
   "GAP",
@@ -152,6 +152,11 @@ export default function StyleUtilities() {
         if (className.startsWith(sampleClassNameToMatch)) {
           startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
         }
+      } else if (sampleClassName?.startsWith("__ENDS_WITH__")) {
+        let sampleClassNameToMatch = sampleClassName.split("__ENDS_WITH__")[1];
+        if (className.endsWith(sampleClassNameToMatch)) {
+          startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+        }
       }
     });
 
@@ -196,7 +201,7 @@ function isString(obj) {
 }
 
 const DEFAULT_SAMPLE_COMPONENT = {
-  description: "",
+  description: "Basic example and usage sample.",
   grouped: false,
   renderElement: (key, classes, className) => {
     return (
@@ -210,7 +215,7 @@ const DEFAULT_SAMPLE_COMPONENT = {
           CoreClasses.TEXT.TEXT_CENTER,
         ]}
       >
-        {className}
+        <CoreTypographyCaption>{className}</CoreTypographyCaption>
       </CoreBox>
     );
   },
@@ -227,7 +232,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       <>
         <CoreTypographyBody1>
           Sets the border of all elements when the wrappid app is started in DEV env. This border
-          could be used during development to understand boundary of a rendered element.
+          could be used during development to understand boundary of all rendered elements.
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
@@ -252,7 +257,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyBody1 styleClasses={[CoreClasses.BG.BG_PRIMARY]}>
-            {className}
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
           </CoreTypographyBody1>
         </CoreBox>
       );
@@ -285,28 +290,49 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          {className}
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  BG_BLACK: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+            CoreClasses.COLOR.TEXT_WHITE,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
   },
   BORDER: {
     description:
-      "In the examples the border-width is forcefully given 2px, so that examples are easily visible.",
+      "In some of the examples the border-width is forcefully given 2px, so that examples are easily visible.",
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
-          key={key} // key={`borderClass-${index}`}
-          gridProps={{ gridSize: 4 }}
+          key={key}
+          gridProps={{ gridSize: 3 }}
           styleClasses={[
+            CoreClasses.BG.BG_SECONDARY_LIGHT,
             CoreClasses.BORDER.BORDER,
-            // CoreClasses.BORDER.BORDER_2,
             classes[className],
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
             CoreClasses.PADDING.P1,
           ]}
         >
-          {className}
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -316,20 +342,63 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 3 }}
-          styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.PADDING.P1]}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            CoreClasses.FLEX.DIRECTION_COLUMN,
+            CoreClasses.FLEX.FLEX_WRAP_WRAP,
+            CoreClasses.ALIGNMENT.ALIGN_CONTENT_CENTER,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.PADDING.P1,
+          ]}
         >
           <CoreBox
-            width={75}
-            height={75}
+            width={56}
+            height={56}
             styleClasses={[
               CoreClasses.BG.BG_SECONDARY_LIGHT,
               CoreClasses.BORDER.BORDER,
               classes[className],
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+              CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
               CoreClasses.PADDING.P1,
             ]}
           >
-            75x75
+            <CoreTypographyCaption>56x56</CoreTypographyCaption>
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  __ENDS_WITH___PILL: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            CoreClasses.FLEX.DIRECTION_COLUMN,
+            CoreClasses.FLEX.FLEX_WRAP_WRAP,
+            CoreClasses.ALIGNMENT.ALIGN_CONTENT_CENTER,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.PADDING.P1,
+          ]}
+        >
+          <CoreBox
+            width={144}
+            height={56}
+            styleClasses={[
+              CoreClasses.BG.BG_SECONDARY_LIGHT,
+              CoreClasses.BORDER.BORDER,
+              classes[className],
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+              CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+              CoreClasses.PADDING.P1,
+            ]}
+          >
+            <CoreTypographyCaption>144x56</CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
@@ -341,10 +410,17 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
-          styleClasses={[classes[className], CoreClasses.PADDING.P1]}
+          gridProps={{ gridSize: 3 }}
+          styleClasses={[
+            CoreClasses.BG.BG_SECONDARY_LIGHT,
+            // CoreClasses.BORDER.BORDER,
+            classes[className],
+            // CoreClasses.BORDER.BORDER_2,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+            CoreClasses.PADDING.P1,
+          ]}
         >
-          {className}
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -364,7 +440,26 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          {className}
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  __STARTS_WITH__TEXT_WHITE: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BG.BG_BLACK,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -385,14 +480,28 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           <CoreTypographyBody1
             styleClasses={[CoreClasses.BG.BG_WHITE, CoreClasses.MARGIN.M0, classes[className]]}
           >
-            {className}
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
           </CoreTypographyBody1>
         </CoreBox>
       );
     },
   },
   OPACITY: {
-    description: "",
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Sets the opacity level for an element. The opacity level describes the transparency level
+          for an element, where OPACITY_0 is completely transparent, OPACITY_50 is 50% visible, and
+          OPACITY_100 is not transparent at all.
+        </CoreTypographyBody1>
+        <CoreTypographyBody1>
+          {"Set the opacity of an element using OPACITY_{value} utilities."}
+        </CoreTypographyBody1>
+        <CoreTypographyBody2>
+          Note: The values are 0, 5, 10, ... , 100 with a step of 5.
+        </CoreTypographyBody2>
+      </>
+    ),
     grouped: true,
   },
   PADDING: {
@@ -412,7 +521,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyBody1 styleClasses={[CoreClasses.BG.BG_WHITE, CoreClasses.MARGIN.M0]}>
-            {className}
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
           </CoreTypographyBody1>
         </CoreBox>
       );
@@ -433,7 +542,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.WIDTH.MIN_W_75,
           ]}
         >
-          {className}
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -453,7 +562,7 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             classes[className],
           ]}
         >
-          {className}
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
