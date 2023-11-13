@@ -9,6 +9,7 @@ import {
   CoreClasses,
   CoreTOC,
   CoreTypographyBody2,
+  CoreTypographyCaption,
   getPageTOC,
   CoreH1,
   CoreH2,
@@ -21,7 +22,7 @@ import CodeSample from "./CodeSample";
 const CLASS_NAME_TO_EXCLUDE = [
   // "DEV_BORDER",
   "ALIGNMENT",
-  // "BG",
+  "BG",
   // "BORDER",
   // "COLOR",
   "DISPLAY",
@@ -55,7 +56,7 @@ export default function StyleUtilities() {
   /**
    * This is a recurrsive function which helps to render style samples
    *
-   * @param { classes, classGroupName, className }
+   * @param { classes, classGroupName }
    * @returns element
    */
   const renderStyleSamples = ({ classes, classGroupName }) => {
@@ -75,11 +76,10 @@ export default function StyleUtilities() {
       } else {
         console.log("Handling className = " + className);
 
-        let codeSampleData = {
-          ...DEFAULT_SAMPLE_COMPONENT,
-          ...CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName],
-          ...CLASS_SPECIFIC_SAMPLE_COMPONENT[className],
-        };
+        let codeSampleData = prepareCodeSampleData({
+          classGroupName: classGroupName,
+          className: className,
+        });
 
         if (isString(classes[className])) {
           console.log("isString true for className = " + className);
@@ -91,7 +91,7 @@ export default function StyleUtilities() {
               title={className}
               description={codeSampleData.description}
               renderElement={codeSampleData?.renderElement(key, classes, className)}
-              code={codeSampleData.code}
+              code={codeSampleData.code(classGroupName, className)}
             />
           );
         } else if (isObject(classes[className])) {
@@ -131,6 +131,33 @@ export default function StyleUtilities() {
         }
       }
     });
+  };
+
+  /**
+   *
+   * @param { classGroupName, classes } param0
+   * @returns { description:String, grouped:boolean, renderElement: (key, classes, className), code: (classGroupName, className) }
+   */
+  const prepareCodeSampleData = ({ classGroupName, className }) => {
+    let codeSampleData = {
+      ...DEFAULT_SAMPLE_COMPONENT,
+      ...CLASS_SPECIFIC_SAMPLE_COMPONENT[classGroupName],
+      ...CLASS_SPECIFIC_SAMPLE_COMPONENT[className],
+    };
+
+    let startsWithSampleComponent;
+    Object.keys(CLASS_SPECIFIC_SAMPLE_COMPONENT).forEach((sampleClassName, index) => {
+      if (sampleClassName?.startsWith("__STARTS_WITH__")) {
+        let sampleClassNameToMatch = sampleClassName.split("__STARTS_WITH__")[1];
+        if (className.startsWith(sampleClassNameToMatch)) {
+          startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+        }
+      }
+    });
+
+    codeSampleData = { ...codeSampleData, ...startsWithSampleComponent };
+
+    return codeSampleData;
   };
 
   return (
@@ -175,6 +202,7 @@ const DEFAULT_SAMPLE_COMPONENT = {
     return (
       <CoreBox
         key={key}
+        gridProps={{ gridSize: 3 }}
         styleClasses={[
           classes[className],
           CoreClasses.BORDER.BORDER,
@@ -186,9 +214,28 @@ const DEFAULT_SAMPLE_COMPONENT = {
       </CoreBox>
     );
   },
+  code: (classGroupName, className) => {
+    return `<AnyComponent styleClasses={[CoreClasses${classGroupName ? "." + classGroupName : ""}${
+      className ? "." + className : ""
+    }]}></AnyComponent>`;
+  },
 };
 
 const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
+  DEV_BORDER: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Sets the border of all elements when the wrappid app is started in DEV env. This border
+          could be used during development to understand boundary of a rendered element.
+        </CoreTypographyBody1>
+
+        <CoreTypographyBody2>
+          Note: this border renders in different color in different screen sizes.
+        </CoreTypographyBody2>
+      </>
+    ),
+  },
   ALIGNMENT: {
     description: "",
     grouped: true,
@@ -254,10 +301,48 @@ const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           gridProps={{ gridSize: 4 }}
           styleClasses={[
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
+            // CoreClasses.BORDER.BORDER_2,
             classes[className],
             CoreClasses.PADDING.P1,
           ]}
+        >
+          {className}
+        </CoreBox>
+      );
+    },
+  },
+  __STARTS_WITH__BORDER_ROUNDED: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 3 }}
+          styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.PADDING.P1]}
+        >
+          <CoreBox
+            width={75}
+            height={75}
+            styleClasses={[
+              CoreClasses.BG.BG_SECONDARY_LIGHT,
+              CoreClasses.BORDER.BORDER,
+              classes[className],
+              CoreClasses.PADDING.P1,
+            ]}
+          >
+            75x75
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  __STARTS_WITH__BORDER_STYLE: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[classes[className], CoreClasses.PADDING.P1]}
         >
           {className}
         </CoreBox>
