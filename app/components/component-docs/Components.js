@@ -2,7 +2,7 @@ import React from "react";
 
 import { CoreBox, CoreGrid, CoreH4 } from "@wrappid/core";
 
-import DocsRegistry from "./docs/DocsRegistry";
+import DocsRegistry from "./DocsRegistry";
 import DocsTOC from "./DocsTOC";
 
 export default function Components() {

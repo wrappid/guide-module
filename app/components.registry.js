@@ -1,5 +1,5 @@
-import Components from "./components/Components";
-import StyleUtilities from "./components/StyleUtilities";
+import Components from "./components/component-docs/Components";
+import StyleUtilities from "./components/styles-docs/StyleUtilities";
 
 export const ComponentsRegistry = {
   Components    : { comp: Components },
