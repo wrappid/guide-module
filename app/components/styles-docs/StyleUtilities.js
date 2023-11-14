@@ -30,13 +30,13 @@ const CLASS_NAME_TO_EXCLUDE = [
   // "OPACITY",
   "OVERFLOW",
   "POSITION",
-  "SHADOW",
+  // "SHADOW",
   "WIDTH",
   "HEIGHT",
   // "PADDING",
-  // "MARGIN",
+  "MARGIN",
   "GAP",
-  "TEXT",
+  // "TEXT",
   "VERTICAL_ALIGN",
   "VISIBILITY",
   "Z_INDEX",
@@ -51,7 +51,7 @@ Content.displayName = "Content";
 
 /**
  * This component will render guided code sample for style utilities
- * 
+ *
  * @returns Node Element
  */
 export default function StyleUtilities() {
@@ -177,23 +177,26 @@ const prepareCodeSampleData = ({ classGroupName, className }) => {
   let startsWithSampleComponent;
 
   Object.keys(CLASS_SPECIFIC_SAMPLE_COMPONENT).forEach((sampleClassName, index) => {
-    if (sampleClassName?.startsWith("__STARTS_WITH__")) {
-      let sampleClassNameToMatch = sampleClassName.split("__STARTS_WITH__")[1];
+    if (sampleClassName !== classGroupName && sampleClassName?.startsWith(classGroupName)) {
+      let sampleClassNameMinusGroupName = sampleClassName.slice(classGroupName?.length);
+      if (sampleClassNameMinusGroupName?.startsWith("__STARTS_WITH__")) {
+        let sampleClassNameToMatch = sampleClassNameMinusGroupName.split("__STARTS_WITH__")[1];
 
-      if (className.startsWith(sampleClassNameToMatch)) {
-        startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
-      }
-    } else if (sampleClassName?.startsWith("__ENDS_WITH__")) {
-      let sampleClassNameToMatch = sampleClassName.split("__ENDS_WITH__")[1];
+        if (className.startsWith(sampleClassNameToMatch)) {
+          startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+        }
+      } else if (sampleClassNameMinusGroupName?.startsWith("__ENDS_WITH__")) {
+        let sampleClassNameToMatch = sampleClassNameMinusGroupName.split("__ENDS_WITH__")[1];
 
-      if (className.endsWith(sampleClassNameToMatch)) {
-        startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
-      }
-    } else if (sampleClassName?.startsWith("__INCLUDES__")) {
-      let sampleClassNameToMatch = sampleClassName.split("__INCLUDES__")[1];
+        if (className.endsWith(sampleClassNameToMatch)) {
+          startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+        }
+      } else if (sampleClassNameMinusGroupName?.startsWith("__INCLUDES__")) {
+        let sampleClassNameToMatch = sampleClassNameMinusGroupName.split("__INCLUDES__")[1];
 
-      if (className.includes(sampleClassNameToMatch)) {
-        startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+        if (className.includes(sampleClassNameToMatch)) {
+          startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+        }
       }
     }
   });
@@ -214,5 +217,3 @@ function isObject(obj) {
 function isString(obj) {
   return obj !== undefined && obj !== null && obj.constructor == String;
 }
-
-
