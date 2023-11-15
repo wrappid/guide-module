@@ -3,6 +3,7 @@ import {
   CoreAlert,
   CoreBox,
   CoreClasses,
+  CoreH6,
   CoreList,
   CoreListItem,
   CoreTypographyBody1,
@@ -543,9 +544,34 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreTypographyBody1>
+          Documentation and examples for common text utilities to control alignment, wrapping,
+          weight, and more.
+        </CoreTypographyBody1>
+
+        <CoreH6>Text alignment</CoreH6>
+        <CoreTypographyBody1>
+          Easily realign text to components with text alignment classes. Use TEXT_START, TEXT_END,
+          TEXT_CENTER or TEXT_JUSTIFY for respective alignments. Responsive classes are also
+          available.
+        </CoreTypographyBody1>
+
+        <CoreH6>Font weight</CoreH6>
+        <CoreTypographyBody1>
           {
-            "Documentation and examples for common text utilities to control alignment, wrapping, weight, and more."
+            "Quickly change the font-weight of text with text weight classes. Use TEXT_WIGHT_<font-weight>, where <font-weight> values are LIGHTER = lighter, LIGHT = 300, NORMAL = 400, MEDIUM = 500, SEMIBOLD = 600, BOLD = 700 and BOLDER = bolder."
           }
+        </CoreTypographyBody1>
+
+        <CoreH6>Font style</CoreH6>
+        <CoreTypographyBody1>
+          Change the font-style of text with text style classes. Use TEXT_STYLE_ITALIC or
+          TEXT_STYLE_NORMAL for respective font styles.
+        </CoreTypographyBody1>
+
+        <CoreH6>Text decoration</CoreH6>
+        <CoreTypographyBody1>
+          Decorate text in components with text decoration classes. Use TEXT_DECORATION_NONE,
+          TEXT_DECORATION_UNDERLINE and TEXT_DECORATION_LINE_THROUGH to decorate.
         </CoreTypographyBody1>
       </>
     ),
@@ -555,12 +581,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 12 }}
-          styleClasses={[
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.PADDING.P1,
-            // CoreClasses.TEXT.TEXT_CENTER,
-            classes[className],
-          ]}
+          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1, classes[className]]}
         >
           <CoreTypographyCaption>
             {className}
@@ -572,15 +593,47 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
+  TEXT__STARTS_WITH__TEXT_WEIGHT: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 12 }}
+          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
+        >
+          <CoreTypographyCaption styleClasses={[classes[className]]}>
+            {className}
+            {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
+          </CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  TEXT__STARTS_WITH__TEXT_STYLE: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 6 }}
+          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
+        >
+          <CoreTypographyCaption styleClasses={[classes[className]]}>
+            {className}
+            {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
+          </CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
   TEXT__STARTS_WITH__TEXT_DECORATION: {
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1, classes[className]]}
+          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
         >
-          <CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
             {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
           </CoreTypographyCaption>
@@ -594,9 +647,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1, classes[className]]}
+          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
         >
-          <CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
             {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
           </CoreTypographyCaption>
@@ -610,9 +663,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 6 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1, classes[className]]}
+          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
         >
-          <CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
             {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
           </CoreTypographyCaption>
