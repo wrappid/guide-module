@@ -6,7 +6,6 @@ import {
 } from "@wrappid/core";
 import React from "react";
 import PropTypes from "prop-types";
-import CodeSample from "../git/guide-module/app/components/CodeSample";
 import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material/styles";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -17,6 +16,7 @@ import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied
 import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAltOutlined";
 import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
+import CodeSample from "../../CodeSample";
 
 // labels for hover Feedback Section
 const labels = {
