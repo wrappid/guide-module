@@ -3,20 +3,15 @@ import {
   CoreTypographyBody1,
   CoreRating,
   CoreBox,
+  CoreIcon,
 } from "@wrappid/core";
 import React from "react";
 import PropTypes from "prop-types";
 import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material/styles";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import StarIcon from "@mui/icons-material/Star";
-import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
-import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied";
-import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
-import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAltOutlined";
-import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
 import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
+
 
 // labels for hover Feedback Section
 const labels = {
@@ -57,23 +52,23 @@ const StyledRating1 = styled(Rating)(({ theme }) => ({
 // customIcons for Radio Section
 const customIcons = {
   1: {
-    icon: <SentimentVeryDissatisfiedIcon color="error" />,
+    icon: <CoreIcon icon="sentiment_very_dissatisfied" color="error" />,
     label: "Very Dissatisfied",
   },
   2: {
-    icon: <SentimentDissatisfiedIcon color="error" />,
+    icon: <CoreIcon icon="sentiment_dissatisfied" color="error" />,
     label: "Dissatisfied",
   },
   3: {
-    icon: <SentimentSatisfiedIcon color="warning" />,
+    icon: <CoreIcon icon="sentiment_satisfied" color="warning" />,
     label: "Neutral",
   },
   4: {
-    icon: <SentimentSatisfiedAltIcon color="success" />,
+    icon: <CoreIcon icon="sentiment_satisfied_alt" color="success" />,
     label: "Satisfied",
   },
   5: {
-    icon: <SentimentVerySatisfiedIcon color="success" />,
+    icon: <CoreIcon icon="sentiment_very_satisfied" color="success" />,
     label: "Very Satisfied",
   },
 };
@@ -137,7 +132,7 @@ export default function CoreRatingDocs() {
             <CoreRating name="read-only" value={value} readOnly />
 
             <CoreTypographyBody1>Disabled </CoreTypographyBody1>
-            <CoreRating name="disabled" value={value} disabled />
+          <CoreRating name="disabled" value={value} disabled />
 
             <CoreTypographyBody1>No rating given </CoreTypographyBody1>
             <CoreRating name="no-value" value={null} />
@@ -182,7 +177,7 @@ export default function CoreRatingDocs() {
             setHover(newHover);
           }}
           emptyIcon={
-            <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
+            <CoreIcon icon="star" style={{ opacity: 0.55 }} fontSize="inherit" />
           }
         />
         {value !== null && (
@@ -202,7 +197,7 @@ export default function CoreRatingDocs() {
                 setHover(newHover);
               }}
               emptyIcon={
-                <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
+                <CoreIcon icon="star" style={{ opacity: 0.55 }} fontSize="inherit" />
               }
             />
             {value !== null && (
@@ -242,8 +237,8 @@ export default function CoreRatingDocs() {
           \`\${value} Heart\${value !== 1 ? "s" : ""}\`
         }
         precision={0.5}
-        icon={<FavoriteIcon fontSize="inherit" />}
-        emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+        icon={<CoreIcon icon="favorite" />}
+        emptyIcon={<CoreIcon icon="favorite_border" />}
       />
       <CoreTypographyBody1 component="legend">
         10 stars
@@ -257,12 +252,12 @@ export default function CoreRatingDocs() {
             <StyledRating
               name="customized-color"
               defaultValue={2}
-              getLabelText={(value: number) =>
+              getLabelText={(value) =>
                 `${value} Heart${value !== 1 ? "s" : ""}`
               }
               precision={0.5}
-              icon={<FavoriteIcon fontSize="inherit" />}
-              emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+              icon={<CoreIcon icon="favorite" />}
+              emptyIcon={<CoreIcon icon="favorite_border" />}
             />
             <CoreTypographyBody1 component="legend">
               10 stars
@@ -297,7 +292,7 @@ export default function CoreRatingDocs() {
         }
       />
 
-      {/* <ComponentProps component={CoreRating} /> */}
+      <ComponentProps component={CoreRating} />
     </>
   );
 }
