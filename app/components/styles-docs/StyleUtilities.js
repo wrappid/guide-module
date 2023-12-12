@@ -14,31 +14,35 @@ import { UtilityClasses } from "@wrappid/styles";
 
 import CodeSample from "../CodeSample";
 
-import { DEFAULT_SAMPLE_COMPONENT, CLASS_SPECIFIC_SAMPLE_COMPONENT } from "./StyleUtilitiesSamples";
+import {
+  DEFAULT_SAMPLE_COMPONENT,
+  CLASS_SPECIFIC_SAMPLE_COMPONENT,
+} from "./StyleUtilitiesSamples";
 
 const CLASS_NAME_TO_EXCLUDE = [
-  // "DEV_BORDER",
+  // "DEV_BORDER", // DONE
   "ALIGNMENT",
-  // "BG",
-  // "BORDER",
-  // "COLOR",
-  "DISPLAY",
+  // "BG", // DONE
+  // "BORDER", // DONE
+  "COLOR",
+  // "CURSOR", // DONE
+  // "DISPLAY", // DONE
   "FLEX",
   "FLOAT",
-  "INTERACTIONS",
-  "OBJECT_FIT",
-  // "OPACITY",
-  "OVERFLOW",
-  "POSITION",
-  // "SHADOW",
-  "WIDTH",
-  "HEIGHT",
-  // "PADDING",
-  "MARGIN",
   "GAP",
-  // "TEXT",
+  // "HEIGHT", //DONE*
+  // "INTERACTIONS", //DONE
+  // "MARGIN", // DONE
+  "OBJECT_FIT",
+  // "OPACITY", // DONE
+  // "OVERFLOW", // DONE
+  "PADDING", // DONE
+  "POSITION",
+  // "SHADOW", // DONE
+  // "TEXT", // DONE*
   "VERTICAL_ALIGN",
-  "VISIBILITY",
+  // "VISIBILITY", // DONE
+  // "WIDTH", // DONE*
   "Z_INDEX",
 ];
 const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
@@ -58,7 +62,12 @@ export default function StyleUtilities() {
   return (
     <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
       <CoreBox gridProps={{ gridSize: 9 }}>
-        <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
+        <CoreH4
+          styleClasses={[
+            CoreClasses.MARGIN.MY2,
+            CoreClasses.COLOR.TEXT_PRIMARY,
+          ]}
+        >
           Style Utilities
         </CoreH4>
 
@@ -115,14 +124,20 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
             key={key}
             title={className}
             description={codeSampleData.description}
-            renderElement={codeSampleData?.renderElement(key, classes, className)}
+            renderElement={codeSampleData?.renderElement(
+              key,
+              classes,
+              className
+            )}
             code={codeSampleData.code(classGroupName, className)}
           />
         );
       } else if (isObject(classes[className])) {
         console.log("isObject true for className = " + className);
         if (CLASS_NAME_FOR_SCREEN_SIZES?.includes(className)) {
-          console.log("CLASS_NAME is FOR_SCREEN_SIZES for className = " + className);
+          console.log(
+            "CLASS_NAME is FOR_SCREEN_SIZES for className = " + className
+          );
 
           return (
             <CoreTypographyCaption
@@ -151,7 +166,10 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
               }
             />
           ) : (
-            renderStyleSamples({ classGroupName: className, classes: classes[className] })
+            renderStyleSamples({
+              classGroupName: className,
+              classes: classes[className],
+            })
           );
         }
       } else {
@@ -176,30 +194,43 @@ const prepareCodeSampleData = ({ classGroupName, className }) => {
 
   let startsWithSampleComponent;
 
-  Object.keys(CLASS_SPECIFIC_SAMPLE_COMPONENT).forEach((sampleClassName, index) => {
-    if (sampleClassName !== classGroupName && sampleClassName?.startsWith(classGroupName)) {
-      let sampleClassNameMinusGroupName = sampleClassName.slice(classGroupName?.length);
-      if (sampleClassNameMinusGroupName?.startsWith("__STARTS_WITH__")) {
-        let sampleClassNameToMatch = sampleClassNameMinusGroupName.split("__STARTS_WITH__")[1];
+  Object.keys(CLASS_SPECIFIC_SAMPLE_COMPONENT).forEach(
+    (sampleClassName, index) => {
+      if (
+        sampleClassName !== classGroupName &&
+        sampleClassName?.startsWith(classGroupName)
+      ) {
+        let sampleClassNameMinusGroupName = sampleClassName.slice(
+          classGroupName?.length
+        );
+        if (sampleClassNameMinusGroupName?.startsWith("__STARTS_WITH__")) {
+          let sampleClassNameToMatch =
+            sampleClassNameMinusGroupName.split("__STARTS_WITH__")[1];
 
-        if (className.startsWith(sampleClassNameToMatch)) {
-          startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
-        }
-      } else if (sampleClassNameMinusGroupName?.startsWith("__ENDS_WITH__")) {
-        let sampleClassNameToMatch = sampleClassNameMinusGroupName.split("__ENDS_WITH__")[1];
+          if (className.startsWith(sampleClassNameToMatch)) {
+            startsWithSampleComponent =
+              CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+          }
+        } else if (sampleClassNameMinusGroupName?.startsWith("__ENDS_WITH__")) {
+          let sampleClassNameToMatch =
+            sampleClassNameMinusGroupName.split("__ENDS_WITH__")[1];
 
-        if (className.endsWith(sampleClassNameToMatch)) {
-          startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
-        }
-      } else if (sampleClassNameMinusGroupName?.startsWith("__INCLUDES__")) {
-        let sampleClassNameToMatch = sampleClassNameMinusGroupName.split("__INCLUDES__")[1];
+          if (className.endsWith(sampleClassNameToMatch)) {
+            startsWithSampleComponent =
+              CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+          }
+        } else if (sampleClassNameMinusGroupName?.startsWith("__INCLUDES__")) {
+          let sampleClassNameToMatch =
+            sampleClassNameMinusGroupName.split("__INCLUDES__")[1];
 
-        if (className.includes(sampleClassNameToMatch)) {
-          startsWithSampleComponent = CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+          if (className.includes(sampleClassNameToMatch)) {
+            startsWithSampleComponent =
+              CLASS_SPECIFIC_SAMPLE_COMPONENT[sampleClassName];
+          }
         }
       }
     }
-  });
+  );
 
   codeSampleData = { ...codeSampleData, ...startsWithSampleComponent };
 

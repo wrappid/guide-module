@@ -13,9 +13,9 @@ import {
 
 export const DEFAULT_SAMPLE_COMPONENT = {
   code: (classGroupName, className) => {
-    return `<AnyComponent styleClasses={[CoreClasses${classGroupName ? "." + classGroupName : ""}${
-      className ? "." + className : ""
-    }]}></AnyComponent>`;
+    return `<AnyComponent styleClasses={[CoreClasses${
+      classGroupName ? "." + classGroupName : ""
+    }${className ? "." + className : ""}]}></AnyComponent>`;
   },
   description: "Basic example and usage sample.",
   grouped: false,
@@ -42,12 +42,14 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreTypographyBody1>
-          Sets the border of all elements when the wrappid app is started in DEV env. This border
-          could be used during development to understand boundary of all rendered elements.
+          Sets the border of all elements when the wrappid app is started in DEV
+          env. This border could be used during development to understand
+          boundary of all rendered elements.
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
-          Note: This border renders in different color in different screen sizes.
+          Note: This border renders in different color in different screen
+          sizes.
         </CoreTypographyBody2>
       </>
     ),
@@ -60,7 +62,10 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN]}
+          styleClasses={[
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.FLEX.DIRECTION_COLUMN,
+          ]}
         >
           <CoreBox
             height={64}
@@ -99,7 +104,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-  ALIGNMENT__STARTS_WITH__ALIGN_ITEMS: {
+  ALIGNMENT__STARTS_WITH__ALIGN_CONTENT: {
     description: "specific desc",
     grouped: true,
     renderElement: (key, classes, className) => {
@@ -107,10 +112,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN]}
+          styleClasses={[
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.FLEX.DIRECTION_COLUMN,
+          ]}
         >
           <CoreBox
-            height={64}
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
@@ -119,6 +126,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             ]}
           >
             <CoreTypographyCaption
+              height={20}
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
                 CoreClasses.BORDER.BORDER_2,
@@ -126,9 +134,10 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
                 CoreClasses.PADDING.P1,
               ]}
             >
-              ITEM
+              CONTENT
             </CoreTypographyCaption>
             <CoreTypographyCaption
+              height={40}
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
                 CoreClasses.BORDER.BORDER_2,
@@ -136,7 +145,29 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
                 CoreClasses.PADDING.P1,
               ]}
             >
-              ITEM
+              CONTENT Lorem Ipsum has been the industry's
+            </CoreTypographyCaption>
+            <CoreTypographyCaption
+              height={30}
+              styleClasses={[
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.BORDER.BORDER_2,
+                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.PADDING.P1,
+              ]}
+            >
+              CONTENT
+            </CoreTypographyCaption>
+            <CoreTypographyCaption
+              height={10}
+              styleClasses={[
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.BORDER.BORDER_2,
+                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.PADDING.P1,
+              ]}
+            >
+              CONTENT
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption styleClasses={[CoreClasses.TEXT.TEXT_CENTER]}>
@@ -146,19 +177,24 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-  ALIGNMENT__STARTS_WITH__JUSTIFY_CONTENT: {
-    grouped: false,
+  ALIGNMENT__STARTS_WITH__ALIGN_SELF: {
+    description: "specific desc",
+    grouped: true,
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN]}
+          styleClasses={[
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.FLEX.DIRECTION_COLUMN,
+          ]}
         >
           <CoreBox
             height={64}
             styleClasses={[
-              classes[className],
+              CoreClasses.DISPLAY.FLEX,
+              CoreClasses.FLEX.DIRECTION_ROW,
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_2,
               CoreClasses.BORDER.BORDER_WARNING_LIGHT,
@@ -166,16 +202,18 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           >
             <CoreTypographyCaption
               styleClasses={[
+                classes[className],
                 CoreClasses.BORDER.BORDER,
                 CoreClasses.BORDER.BORDER_2,
                 CoreClasses.BORDER.BORDER_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
-              ITEM
+              SELF CONTENT
             </CoreTypographyCaption>
             <CoreTypographyCaption
               styleClasses={[
+                classes[className],
                 CoreClasses.BORDER.BORDER,
                 CoreClasses.BORDER.BORDER_2,
                 CoreClasses.BORDER.BORDER_INFO,
@@ -228,13 +266,13 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreTypographyBody1>
-          Use border utilities to add or remove an element’s borders. Choose from all borders or one
-          at a time.
+          Use border utilities to add or remove an element’s borders. Choose
+          from all borders or one at a time.
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
-          Note: In some of the examples the border-width is forcefully given 2px, so that examples
-          are easily visible.
+          Note: In some of the examples the border-width is forcefully given
+          2px, so that examples are easily visible.
         </CoreTypographyBody2>
       </>
     ),
@@ -390,6 +428,236 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   CURSOR: {
     grouped: true,
   },
+  DISPLAY: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Quickly and responsively toggle the display value of components and
+          more with our display utilities. Includes support for some of the more
+          common values, as well as some extras for controlling display when
+          printing.
+        </CoreTypographyBody1>
+
+        <CoreTypographyBody2>
+          {
+            "Width utilitiy includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
+          }
+        </CoreTypographyBody2>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          </CoreBox>
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  GAP: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          When using display: grid or display: flex, you can make use of gap
+          utilities on the parent element. This can save on having to add margin
+          utilities to individual children of a grid or flex container.{" "}
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox gridProps={{ gridSize: 3 }}>
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.DISPLAY.FLEX,
+              CoreClasses.DISPLAY.FLEX_WRAP_WRAP,
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreBox
+              styleClasses={[
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption>ITEM 1</CoreTypographyCaption>
+            </CoreBox>
+            <CoreBox
+              styleClasses={[
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption>ITEM 2</CoreTypographyCaption>
+            </CoreBox>
+            <CoreBox
+              styleClasses={[
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption>ITEM 3</CoreTypographyCaption>
+            </CoreBox>
+            <CoreBox
+              styleClasses={[
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption>ITEM 4</CoreTypographyCaption>
+            </CoreBox>
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  HEIGHT: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Easily make an element as tall (relative to its parent) with height
+          utilitiy.
+        </CoreTypographyBody1>
+
+        <CoreTypographyBody2>
+          {
+            "height utilitiy includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
+          }
+        </CoreTypographyBody2>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox gridProps={{ gridSize: 1 }} height={256}>
+          <CoreBox
+            key={key}
+            // gridProps={{ gridSize: 3 }}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  INTERACTIONS: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Utility classes that change how users interact with contents of a
+          website.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  USER_SELECT: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Change the way in which the content is selected when the user
+          interacts with it.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  POINTER_EVENT: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Classes to prevent or add element interactions.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
   MARGIN: {
     description: (
       <>
@@ -406,22 +674,34 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
-          {"Note: Classes are built from multiples of DEFAULT_MARGIN having a value of 8px."}
+          {
+            "Note: Classes are built from multiples of DEFAULT_MARGIN having a value of 8px."
+          }
         </CoreTypographyBody2>
 
         <CoreTypographyBody1>
-          {"The classes are named using the format CoreClasses.MARGIN.M{sides}{size}"}
+          {
+            "The classes are named using the format CoreClasses.MARGIN.M{sides}{size}"
+          }
 
           <CoreList dense={true} marker="disc">
             {"Where sides is one of:"}
 
-            <CoreListItem>{"T - (top) for classes that set margin-top"}</CoreListItem>
+            <CoreListItem>
+              {"T - (top) for classes that set margin-top"}
+            </CoreListItem>
 
-            <CoreListItem>{"B - (bottom) for classes that set margin-bottom"}</CoreListItem>
+            <CoreListItem>
+              {"B - (bottom) for classes that set margin-bottom"}
+            </CoreListItem>
 
-            <CoreListItem>{"L - (left) for classes that set margin-left"}</CoreListItem>
+            <CoreListItem>
+              {"L - (left) for classes that set margin-left"}
+            </CoreListItem>
 
-            <CoreListItem>{"R - (right) for classes that set margin-right"}</CoreListItem>
+            <CoreListItem>
+              {"R - (right) for classes that set margin-right"}
+            </CoreListItem>
 
             <CoreListItem>
               {"X - for classes that set both margin-left and margin-right"}
@@ -432,7 +712,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreListItem>
 
             <CoreListItem>
-              {"blank - for classes that set a margin on all 4 sides of the element"}
+              {
+                "blank - for classes that set a margin on all 4 sides of the element"
+              }
             </CoreListItem>
           </CoreList>
 
@@ -443,7 +725,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               {"0 - for classes that eliminate the margin by setting it to 0"}
             </CoreListItem>
 
-            <CoreListItem>{"1 - for classes that set the margin to DEFAULT_MARGIN"}</CoreListItem>
+            <CoreListItem>
+              {"1 - for classes that set the margin to DEFAULT_MARGIN"}
+            </CoreListItem>
 
             <CoreListItem>
               {"2 - for classes that set the margin to DEFAULT_MARGIN * 2"}
@@ -461,7 +745,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               {"5 - for classes that set the margin to DEFAULT_MARGIN * 5"}
             </CoreListItem>
 
-            <CoreListItem>{"AUTO - for classes that set the margin to auto"}</CoreListItem>
+            <CoreListItem>
+              {"AUTO - for classes that set the margin to auto"}
+            </CoreListItem>
           </CoreList>
         </CoreTypographyBody1>
       </>
@@ -502,9 +788,39 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.BG.BG_WHITE, classes[className]]}>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.BG.BG_WHITE, classes[className]]}
+          >
             {className}
           </CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  OBJECT_FIT: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Use the object fit utilities to modify how the content of a replaced
+          element, such as an img or video, should be resized to fit its
+          container.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -513,9 +829,10 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreTypographyBody1>
-          Sets the opacity level for an element. The opacity level describes the transparency level
-          for an element, where OPACITY_0 is completely transparent, OPACITY_50 is 50% visible, and
-          OPACITY_100 is not transparent at all.
+          Sets the opacity level for an element. The opacity level describes the
+          transparency level for an element, where OPACITY_0 is completely
+          transparent, OPACITY_50 is 50% visible, and OPACITY_100 is not
+          transparent at all.
         </CoreTypographyBody1>
 
         <CoreTypographyBody1>
@@ -529,6 +846,40 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     ),
     grouped: true,
   },
+  OVERFLOW: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Use these shorthand utilities for quickly configuring how content
+          overflows an element.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox gridProps={{ gridSize: 3 }}>
+          <CoreBox
+            key={key}
+            height={64}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              in ultricies quam, sollicitudin porttitor felis. Donec non aliquet
+              purus. Maecenas.
+            </CoreTypographyCaption>
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
   PADDING: {
     description: (
       <>
@@ -539,22 +890,34 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
-          {"Note: Classes are built from multiples of DEFAULT_PADDING having a value of 8px."}
+          {
+            "Note: Classes are built from multiples of DEFAULT_PADDING having a value of 8px."
+          }
         </CoreTypographyBody2>
 
         <CoreTypographyBody1>
-          {"The classes are named using the format CoreClasses.PADDING.P{sides}{size}"}
+          {
+            "The classes are named using the format CoreClasses.PADDING.P{sides}{size}"
+          }
 
           <CoreList dense={true} marker="disc">
             {"Where sides is one of:"}
 
-            <CoreListItem>{"T - (top) for classes that set padding-top"}</CoreListItem>
+            <CoreListItem>
+              {"T - (top) for classes that set padding-top"}
+            </CoreListItem>
 
-            <CoreListItem>{"B - (bottom) for classes that set padding-bottom"}</CoreListItem>
+            <CoreListItem>
+              {"B - (bottom) for classes that set padding-bottom"}
+            </CoreListItem>
 
-            <CoreListItem>{"L - (left) for classes that set padding-left"}</CoreListItem>
+            <CoreListItem>
+              {"L - (left) for classes that set padding-left"}
+            </CoreListItem>
 
-            <CoreListItem>{"R - (right) for classes that set padding-right"}</CoreListItem>
+            <CoreListItem>
+              {"R - (right) for classes that set padding-right"}
+            </CoreListItem>
 
             <CoreListItem>
               {"X - for classes that set both padding-left and padding-right"}
@@ -565,7 +928,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreListItem>
 
             <CoreListItem>
-              {"blank - for classes that set a padding on all 4 sides of the element"}
+              {
+                "blank - for classes that set a padding on all 4 sides of the element"
+              }
             </CoreListItem>
           </CoreList>
 
@@ -576,7 +941,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               {"0 - for classes that eliminate the padding by setting it to 0"}
             </CoreListItem>
 
-            <CoreListItem>{"1 - for classes that set the padding to DEFAULT_PADDING"}</CoreListItem>
+            <CoreListItem>
+              {"1 - for classes that set the padding to DEFAULT_PADDING"}
+            </CoreListItem>
 
             <CoreListItem>
               {"2 - for classes that set the padding to DEFAULT_PADDING * 2"}
@@ -645,15 +1012,15 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreTypographyBody1>
-          Documentation and examples for common text utilities to control alignment, wrapping,
-          weight, and more.
+          Documentation and examples for common text utilities to control
+          alignment, wrapping, weight, and more.
         </CoreTypographyBody1>
 
         <CoreH6>Text alignment</CoreH6>
         <CoreTypographyBody1>
-          Easily realign text to components with text alignment classes. Use TEXT_START, TEXT_END,
-          TEXT_CENTER or TEXT_JUSTIFY for respective alignments. Responsive classes are also
-          available.
+          Easily realign text to components with text alignment classes. Use
+          TEXT_START, TEXT_END, TEXT_CENTER or TEXT_JUSTIFY for respective
+          alignments. Responsive classes are also available.
         </CoreTypographyBody1>
 
         <CoreH6>Font weight</CoreH6>
@@ -665,14 +1032,15 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
 
         <CoreH6>Font style</CoreH6>
         <CoreTypographyBody1>
-          Change the font-style of text with text style classes. Use TEXT_STYLE_ITALIC or
-          TEXT_STYLE_NORMAL for respective font styles.
+          Change the font-style of text with text style classes. Use
+          TEXT_STYLE_ITALIC or TEXT_STYLE_NORMAL for respective font styles.
         </CoreTypographyBody1>
 
         <CoreH6>Text decoration</CoreH6>
         <CoreTypographyBody1>
-          Decorate text in components with text decoration classes. Use TEXT_DECORATION_NONE,
-          TEXT_DECORATION_UNDERLINE and TEXT_DECORATION_LINE_THROUGH to decorate.
+          Decorate text in components with text decoration classes. Use
+          TEXT_DECORATION_NONE, TEXT_DECORATION_UNDERLINE and
+          TEXT_DECORATION_LINE_THROUGH to decorate.
         </CoreTypographyBody1>
       </>
     ),
@@ -682,7 +1050,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 12 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1, classes[className]]}
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            classes[className],
+          ]}
         >
           <CoreTypographyCaption>
             {className}
@@ -704,7 +1076,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
-            {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
+            {
+              " sample. Fusce mattis egestas risus, in euismod odio tincidunt in."
+            }
           </CoreTypographyCaption>
         </CoreBox>
       );
@@ -720,7 +1094,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
-            {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
+            {
+              " sample. Fusce mattis egestas risus, in euismod odio tincidunt in."
+            }
           </CoreTypographyCaption>
         </CoreBox>
       );
@@ -736,7 +1112,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
-            {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
+            {
+              " sample. Fusce mattis egestas risus, in euismod odio tincidunt in."
+            }
           </CoreTypographyCaption>
         </CoreBox>
       );
@@ -752,7 +1130,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
-            {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
+            {
+              " sample. Fusce mattis egestas risus, in euismod odio tincidunt in."
+            }
           </CoreTypographyCaption>
         </CoreBox>
       );
@@ -768,8 +1148,157 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
-            {" sample. Fusce mattis egestas risus, in euismod odio tincidunt in."}
+            {
+              " sample. Fusce mattis egestas risus, in euismod odio tincidunt in."
+            }
           </CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  VISIBILITY: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Control the visibility, without modifying the display, of elements
+          with visibility utilities.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: 6 }}
+          styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}
+        >
+          <CoreBox
+            key={key}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          ></CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  WIDTH: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Easily make an element as wide (relative to its parent) with width
+          utilitiy.
+        </CoreTypographyBody1>
+
+        <CoreTypographyBody2>
+          {
+            "Width utilitiy includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
+          }
+        </CoreTypographyBody2>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 12 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  Z_INDEX: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Z_INDEX plays an important part in how our components overlay and
+          interact with one another.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 6 }}
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>BOX 1</CoreTypographyCaption>
+          </CoreBox>
+          <CoreBox
+            styleClasses={[
+              CoreClasses.BG.BG_SECONDARY_LIGHT,
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>BOX 2</CoreTypographyCaption>
+          </CoreBox>
+
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  POSITION: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Z_INDEX plays an important part in how our components overlay and
+          interact with one another.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 6 }}
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>BOX 1</CoreTypographyCaption>
+          </CoreBox>
+
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
