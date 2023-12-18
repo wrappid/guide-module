@@ -6,9 +6,7 @@ import {
   CoreIcon,
 } from "@wrappid/core";
 import React from "react";
-import PropTypes from "prop-types";
-import Rating from "@mui/material/Rating";
-import { styled } from "@mui/material/styles";
+
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -33,21 +31,21 @@ function getLabelText(value) {
 }
 
 // StyledRating for the Customization Section
-const StyledRating = styled(Rating)({
-  "& .MuiRating-iconFilled": {
-    color: "#ff6d75",
-  },
-  "& .MuiRating-iconHover": {
-    color: "#ff3d47",
-  },
-});
+// const StyledRating = styled(Rating)({
+//   "& .MuiRating-iconFilled": {
+//     color: "#ff6d75",
+//   },
+//   "& .MuiRating-iconHover": {
+//     color: "#ff3d47",
+//   },
+// });
 
-// StyledRating1 for the Radio Section
-const StyledRating1 = styled(Rating)(({ theme }) => ({
-  "& .MuiRating-iconEmpty .MuiSvgIcon-root": {
-    color: theme.palette.action.disabled,
-  },
-}));
+// // StyledRating1 for the Radio Section
+// const StyledRating1 = styled(Rating)(({ theme }) => ({
+//   "& .MuiRating-iconEmpty .MuiSvgIcon-root": {
+//     color: theme.palette.action.disabled,
+//   },
+// }));
 
 // customIcons for Radio Section
 const customIcons = {
@@ -246,10 +244,17 @@ export default function CoreRatingDocs() {
       <CoreRating name="customized-10" defaultValue={2} max={10} />`}
         renderElement={
           <>
+           <CoreTypographyCaption
+              key={key}
+              component="p"
+              styleClasses={[CoreClasses.COLOR.TEXT_WARNING_LIGHT]}
+            >
+              Can not used mui styled function & Rating component directly in our application. Issue available here: https://github.com/wrappid/guide-module/issues/5
+            </CoreTypographyCaption>
             <CoreTypographyBody1 component="legend">
               Custom icon and color
             </CoreTypographyBody1>
-            <StyledRating
+            {/* <StyledRating
               name="customized-color"
               defaultValue={2}
               getLabelText={(value) =>
@@ -258,7 +263,7 @@ export default function CoreRatingDocs() {
               precision={0.5}
               icon={<CoreIcon icon="favorite" />}
               emptyIcon={<CoreIcon icon="favorite_border" />}
-            />
+            /> */}
             <CoreTypographyBody1 component="legend">
               10 stars
             </CoreTypographyBody1>
@@ -281,13 +286,13 @@ export default function CoreRatingDocs() {
         />`}
         renderElement={
           <>
-            <StyledRating
+            {/* <StyledRating
               name="highlight-selected-only"
               defaultValue={2}
               IconContainerComponent={IconContainer}
               getLabelText={(value) => customIcons[value].label}
               highlightSelectedOnly
-            />
+            /> */}
           </>
         }
       />
