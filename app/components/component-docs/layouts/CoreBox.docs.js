@@ -1,6 +1,9 @@
 import {
+  CoreClasses,
   CoreH4,
-  CoreTypographyBody1
+  CoreTypographyBody1, 
+  CoreBox,
+  CoreH6
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
@@ -11,14 +14,20 @@ export default function CoreBoxDocs() {
       <CoreH4>CoreBox</CoreH4>
   
       <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
+      The Box component is a generic, theme-aware container with access to CSS utilities from MUI System.
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        title={"Basics"}
+        description={"The Box component renders as a <div> by default, but you can swap in any other valid HTML tag or React component using the component prop. The demo below replaces the <div> with a <section> element:"}
+        code={`<CoreBox component="section" styleClasses={[CoreClasses.PADDING.P1, CoreClasses.DEV_BORDER]}>
+        <CoreH6>This is a section container</CoreH6>
+ </CoreBox>`}
+        renderElement={<>
+          <CoreBox component="section" styleClasses={[CoreClasses.PADDING.P1, CoreClasses.DEV_BORDER]}>
+            <CoreH6>This is a section container</CoreH6>
+          </CoreBox>
+        </>}
       />
         
       {/* <ComponentProps component={CoreBox} /> */}
