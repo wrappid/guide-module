@@ -55,7 +55,19 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     ),
   },
   ALIGNMENT: {
-    description: "specific desc",
+    description: (
+      <>
+        <CoreAlert severity="error">
+          {"ALIGN_CONTENT are NOT WORKING as of now"}
+        </CoreAlert>
+        <CoreAlert severity="warning">
+          {"Size specific documantation not available as of now"}
+        </CoreAlert>
+        <CoreTypographyBody1>
+          Used to align contentents accordingly
+        </CoreTypographyBody1>
+      </>
+    ),
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
@@ -233,6 +245,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   BG: {
     description: (
       <>
+        <CoreAlert severity="error">
+          {"Text colour not changing by default"}
+        </CoreAlert>
         <CoreTypographyBody1>
           Sets the background of an element to any contextual class.
         </CoreTypographyBody1>
@@ -387,7 +402,16 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   COLOR: {
-    description: "Colorize text with text color utilities.",
+    description: (
+      <>
+        <CoreAlert severity="error">
+          {"TEXT_COLOR is NOT WORKING as of now"}
+        </CoreAlert>
+        <CoreTypographyBody1>
+          Colorize text with text color utilities.
+        </CoreTypographyBody1>
+      </>
+    ),
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
@@ -426,11 +450,15 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   CURSOR: {
+    description: "Small utility that sets cursor when element is hovered",
     grouped: true,
   },
   DISPLAY: {
     description: (
       <>
+        <CoreAlert severity="warning">
+          {"Size specific documantation not available as of now"}
+        </CoreAlert>
         <CoreTypographyBody1>
           Quickly and responsively toggle the display value of components and
           more with our display utilities. Includes support for some of the more
@@ -481,9 +509,100 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
+  FLEX: {
+    description: (
+      <>
+        <CoreAlert severity="error">
+          {"FLEX items documentation INCOMPLETE"}
+        </CoreAlert>
+        <CoreAlert severity="warning">
+          {"Size specific documantation not available as of now"}
+        </CoreAlert>
+        <CoreTypographyBody1>
+          Set the direction of flex items in a flex container with direction
+          utilities. In most cases you can omit the horizontal class here as the
+          browser default is row.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox>
+          <CoreBox
+            key={key}
+            gridProps={{ gridSize: 6 }}
+            styleClasses={[
+              classes[className],
+              CoreClasses.DISPLAY.FLEX,
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreBox
+              styleClasses={[
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.PADDING.P1,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption>BOX 1</CoreTypographyCaption>
+            </CoreBox>
+            <CoreBox
+              styleClasses={[
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.PADDING.P1,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption>BOX 2</CoreTypographyCaption>
+            </CoreBox>
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  FLOAT: {
+    description: (
+      <>
+        <CoreAlert severity="warning">
+          {"Size specific documantation not available as of now"}
+        </CoreAlert>
+        <CoreTypographyBody1>
+          These utility classes float an element to the left or right, or
+          disable floating, based on the current viewport size.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
   GAP: {
     description: (
       <>
+        <CoreAlert severity="error">
+          {"ROW_GAP NOT WORKING as of now"}
+        </CoreAlert>
+        <CoreAlert severity="warning">
+          {"Size specific documantation not available as of now"}
+        </CoreAlert>
         <CoreTypographyBody1>
           When using display: grid or display: flex, you can make use of gap
           utilities on the parent element. This can save on having to add margin
@@ -546,6 +665,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   HEIGHT: {
     description: (
       <>
+        <CoreAlert severity="error">
+          {"VW HEIGHT is exceeding the parent box limit"}
+        </CoreAlert>
         <CoreTypographyBody1>
           Easily make an element as tall (relative to its parent) with height
           utilitiy.
@@ -661,10 +783,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   MARGIN: {
     description: (
       <>
+        <CoreAlert severity="error">
+          {"Negative margin samples are NOT WORKING as of now"}
+        </CoreAlert>
         <CoreAlert severity="warning">
-          {
-            "Some margin samples are NOT WORKING as of now because IMPORTANT is missing on all style files"
-          }
+          {"Size specific documantation not available as of now"}
         </CoreAlert>
 
         <CoreTypographyBody1>
@@ -800,6 +923,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   OBJECT_FIT: {
     description: (
       <>
+        <CoreAlert severity="error">
+          {"OBJECT_FIT documentaion INCOMPLETE as of now"}
+        </CoreAlert>
+        <CoreAlert severity="warning">
+          {"Size specific documantation not available as of now"}
+        </CoreAlert>
         <CoreTypographyBody1>
           Use the object fit utilities to modify how the content of a replaced
           element, such as an img or video, should be resized to fit its
@@ -883,6 +1012,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   PADDING: {
     description: (
       <>
+        <CoreAlert severity="warning">
+          {"Size specific documantation not available as of now"}
+        </CoreAlert>
         <CoreTypographyBody1>
           {
             "Assign padding values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties."
@@ -989,7 +1121,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   SHADOW: {
-    description: "",
+    description: "Add or remove shadows to elements with box-shadow utilities.",
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
@@ -1011,6 +1143,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   TEXT: {
     description: (
       <>
+        <CoreAlert severity="error">{"NO VARIATION in TEXT_WEIGHT"}</CoreAlert>
         <CoreTypographyBody1>
           Documentation and examples for common text utilities to control
           alignment, wrapping, weight, and more.
@@ -1049,7 +1182,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 12 }}
+          gridProps={{ gridSize: 3 }}
           styleClasses={[
             CoreClasses.BORDER.BORDER,
             CoreClasses.PADDING.P1,
@@ -1156,6 +1289,36 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
+  VERTICAL_ALIGN: {
+    description: (
+      <>
+        <CoreAlert severity="error">
+          {"VERTICAL_ALIGN documentation INCOMPLETE"}
+        </CoreAlert>
+        <CoreTypographyBody1>
+          Easily change the vertical alignment of inline, inline-block,
+          inline-table, and table cell elements.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
   VISIBILITY: {
     description: (
       <>
@@ -1180,7 +1343,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
-          ></CoreBox>
+          >
+            <CoreTypographyCaption>CONTENT</CoreTypographyCaption>
+          </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
@@ -1189,6 +1354,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   WIDTH: {
     description: (
       <>
+        <CoreAlert severity="error">
+          {"VW width is exceeding the parent box limit"}
+        </CoreAlert>
         <CoreTypographyBody1>
           Easily make an element as wide (relative to its parent) with width
           utilitiy.
@@ -1222,6 +1390,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   Z_INDEX: {
     description: (
       <>
+        <CoreAlert severity="error">
+          {"Z_INDEX documentation INCOMPLETE"}
+        </CoreAlert>
         <CoreTypographyBody1>
           Z_INDEX plays an important part in how our components overlay and
           interact with one another.

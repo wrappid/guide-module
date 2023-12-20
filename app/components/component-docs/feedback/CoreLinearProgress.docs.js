@@ -4,7 +4,9 @@ import {
   CoreH4,
   CoreAlert,
   CoreStack,
-  CoreLinearProgress
+  CoreLinearProgress,
+  CoreBox,
+  CoreClasses
   // CoreLinearProgressWithLabel
 } from "@wrappid/core";
 
@@ -21,8 +23,12 @@ export default function CoreLinearProgressDocs() {
 
       <CodeSample
         title={"Linear indeterminate"}
-        code={"<CoreLinearProgress />"}
-        renderElement={<CoreLinearProgress />}
+        code={"<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]} ><CoreLinearProgress value={70} /></CoreBox>"}
+        renderElement={<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
+        <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]} >
+          <CoreLinearProgress value={70} />
+        </CoreBox>
+        </CoreBox>}
       />
 
       <CodeSample
@@ -31,7 +37,7 @@ export default function CoreLinearProgressDocs() {
 <CoreLinearProgress color="success" />
 <CoreLinearProgress color="inherit" />`}
         renderElement={
-          <CoreStack direction="column" spacing={2}>
+          <CoreStack direction="column" spacing={2} styleClasses={[CoreClasses.WIDTH.W_100]}>
             <CoreLinearProgress color="secondary" />
 
             <CoreLinearProgress color="success" />
