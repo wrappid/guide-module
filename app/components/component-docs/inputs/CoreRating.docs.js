@@ -4,6 +4,8 @@ import {
   CoreRating,
   CoreBox,
   CoreIcon,
+  CoreTypographyCaption,
+  CoreClasses
 } from "@wrappid/core";
 import React from "react";
 
@@ -77,9 +79,9 @@ function IconContainer(props) {
   return <span {...other}>{customIcons[value].icon}</span>;
 }
 
-IconContainer.propTypes = {
-  value: PropTypes.number.isRequired,
-};
+// IconContainer.propTypes = {
+//   value: PropTypes.number.isRequired,
+// };
 
 // Default export function
 export default function CoreRatingDocs() {
@@ -245,7 +247,7 @@ export default function CoreRatingDocs() {
         renderElement={
           <>
            <CoreTypographyCaption
-              key={key}
+              key={1}
               component="p"
               styleClasses={[CoreClasses.COLOR.TEXT_WARNING_LIGHT]}
             >
