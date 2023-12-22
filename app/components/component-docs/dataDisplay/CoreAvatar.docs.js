@@ -8,7 +8,6 @@ import {
   CoreTypographyBody1,
   CoreIcon,
   CoreSpan,
-  CoreBadge,
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
@@ -475,7 +474,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
             </StyledBadge> */}
 
-            <CoreBadge
+            {/* <CoreBadge
               overlap="circular"
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               badgeContent={
@@ -487,7 +486,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
               }
             >
     <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=2" />
-            </CoreBadge>
+            </CoreBadge> */}
           </CoreStack>
         }
       />
