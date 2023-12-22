@@ -1,4 +1,4 @@
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 import {
   CoreAvatarGroup,
   CoreAvatar,
@@ -17,40 +17,40 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreAvatarDocs() {
-  const StyledBadge = styled(CoreBadge)(({ theme }) => ({
-    "& .MuiBadge-badge": {
-      "&::after": {
-        animation: "ripple 1.2s infinite ease-in-out",
-        border: "1px solid currentColor",
-        borderRadius: "50%",
-        content: '""',
-        height: "100%",
-        left: 0,
-        position: "absolute",
-        top: 0,
-        width: "100%",
-      },
-      backgroundColor: "#44b700",
-      boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-      color: "#44b700",
-    },
-    "@keyframes ripple": {
-      "0%": {
-        opacity: 1,
-        transform: "scale(.8)",
-      },
-      "100%": {
-        opacity: 0,
-        transform: "scale(2.4)",
-      },
-    },
-  }));
+  // const StyledBadge = styled(CoreBadge)(({ theme }) => ({
+  //   "& .MuiBadge-badge": {
+  //     "&::after": {
+  //       animation: "ripple 1.2s infinite ease-in-out",
+  //       border: "1px solid currentColor",
+  //       borderRadius: "50%",
+  //       content: '""',
+  //       height: "100%",
+  //       left: 0,
+  //       position: "absolute",
+  //       top: 0,
+  //       width: "100%",
+  //     },
+  //     backgroundColor: "#44b700",
+  //     boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+  //     color: "#44b700",
+  //   },
+  //   "@keyframes ripple": {
+  //     "0%": {
+  //       opacity: 1,
+  //       transform: "scale(.8)",
+  //     },
+  //     "100%": {
+  //       opacity: 0,
+  //       transform: "scale(2.4)",
+  //     },
+  //   },
+  // }));
 
-  const SmallAvatar = styled(CoreAvatar)(({ theme }) => ({
-    border: `2px solid ${theme.palette.background.paper}`,
-    height: 22,
-    width: 22,
-  }));
+  // const SmallAvatar = styled(CoreAvatar)(({ theme }) => ({
+  //   border: `2px solid ${theme.palette.background.paper}`,
+  //   height: 22,
+  //   width: 22,
+  // }));
 
   return (
     <>
@@ -467,13 +467,13 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
             direction="row"
             spacing={2}
           >
-            <StyledBadge
+            {/* <StyledBadge
               overlap="circular"
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               variant="dot"
             >
     <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
-            </StyledBadge>
+            </StyledBadge> */}
 
             <CoreBadge
               overlap="circular"

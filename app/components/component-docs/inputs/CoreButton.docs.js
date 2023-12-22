@@ -1,4 +1,4 @@
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 import {
   CoreH4,
   CoreTypographyBody1,
@@ -16,17 +16,17 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreButtonDocs() {
-  const VisuallyHiddenInput = styled("input")({
-    bottom    : 0,
-    clip      : "rect(0 0 0 0)",
-    clipPath  : "inset(50%)",
-    height    : 1,
-    left      : 0,
-    overflow  : "hidden",
-    position  : "absolute",
-    whiteSpace: "nowrap",
-    width     : 1,
-  });
+  // const VisuallyHiddenInput = styled("input")({
+  //   bottom    : 0,
+  //   clip      : "rect(0 0 0 0)",
+  //   clipPath  : "inset(50%)",
+  //   height    : 1,
+  //   left      : 0,
+  //   overflow  : "hidden",
+  //   position  : "absolute",
+  //   whiteSpace: "nowrap",
+  //   width     : 1,
+  // });
 
   return (
     <>
@@ -581,7 +581,7 @@ export default function CoreButtonDocs() {
                 startIcon={<CoreIcon icon="cloud_upload" />}
               >
                 Upload file
-                <VisuallyHiddenInput type="file" />
+                {/* <VisuallyHiddenInput type="file" /> */}
               </CoreButton>
             </CoreStack>
           </>
