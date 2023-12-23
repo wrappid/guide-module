@@ -1,6 +1,6 @@
 import {
   CoreH4,
-  CoreTypographyBody1
+  CoreTypographyBody1, CoreClasses, CoreSpan
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
@@ -18,7 +18,9 @@ export default function CoreSpanDocs() {
         title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+                <CoreTypographyBody1>Add the basil, <CoreSpan styleClasses={[CoreClasses.COLOR.TEXT_ERROR]}>pine nuts and garlic</CoreSpan> to a blender and blend into a paste.</CoreTypographyBody1>
+        </>}
       />
         
       {/* <ComponentProps component={CoreSpan} /> */}
