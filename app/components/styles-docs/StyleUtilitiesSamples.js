@@ -268,6 +268,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
@@ -452,6 +454,24 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   CURSOR: {
     description: "Small utility that sets cursor when element is hovered",
     grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 3 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
   },
   DISPLAY: {
     description: (
@@ -481,6 +501,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           gridProps={{ gridSize: 4 }}
           styleClasses={[
             CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
@@ -489,6 +511,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_INFO,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -499,6 +523,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_INFO,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -690,6 +716,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_INFO,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -745,6 +773,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
@@ -771,6 +801,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
@@ -994,6 +1026,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -1185,6 +1219,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           gridProps={{ gridSize: 3 }}
           styleClasses={[
             CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             classes[className],
           ]}
@@ -1205,7 +1241,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 12 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
+          styleClasses={[CoreClasses.BORDER.BORDER,CoreClasses.BORDER.BORDER_2, CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1223,7 +1259,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 6 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
+          styleClasses={[CoreClasses.BORDER.BORDER, 
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1241,7 +1279,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
+          styleClasses={[CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1259,7 +1299,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
+          styleClasses={[CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1277,7 +1319,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 6 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.PADDING.P1]}
+          styleClasses={[CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1340,6 +1384,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -1378,6 +1424,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_INFO,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
