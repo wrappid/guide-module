@@ -47,11 +47,6 @@ const CLASS_NAME_TO_EXCLUDE = [
 ];
 const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
 
-const Content = React.forwardRef((props, ref) => {
-  return <CoreBox ref={ref}>{props.children}</CoreBox>;
-});
-
-Content.displayName = "Content";
 
 /**
  * This component will render guided code sample for style utilities
@@ -59,15 +54,20 @@ Content.displayName = "Content";
  * @returns Node Element
  */
 export default function StyleUtilities() {
+  const contentRef = React.useRef(null);
+  const testH4Ref = React.useRef(null);
+  console.log("this is test cosole", contentRef);
   return (
     <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
-      <CoreBox gridProps={{ gridSize: 9 }}>
+      <CoreBox gridProps={{ gridSize: 9 }} ref={contentRef}>
+      
+
         <CoreH4
           styleClasses={[
             CoreClasses.MARGIN.MY2,
             CoreClasses.COLOR.TEXT_PRIMARY,
           ]}
-        >
+          >
           Style Utilities
         </CoreH4>
 
@@ -76,12 +76,14 @@ export default function StyleUtilities() {
         </CoreTypographyBody1>
 
         {renderStyleSamples({ classes: UtilityClasses })}
+          <CoreH4 key={"Testing-section-Ref"}>Testing section Ref</CoreH4>
+          <CoreBox ref={testH4Ref}></CoreBox>
       </CoreBox>
 
       <CoreBox gridProps={{ gridSize: 3 }}>
         <CoreTypographyBody1>Table Of Contents</CoreTypographyBody1>
 
-        <CoreTOC />
+        <CoreTOC contentRef={contentRef} />
       </CoreBox>
     </CoreGrid>
   );

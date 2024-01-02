@@ -7,6 +7,7 @@ import {
   CoreTypographyBody1,
   CoreH5,
   CoreBox,
+  useDynamicRefs
 } from "@wrappid/core";
 
 import CodeBlock from "./CodeBlock";
@@ -14,6 +15,7 @@ import CodeBlock from "./CodeBlock";
 export default function CodeSample(props) {
   const { title, description, code, renderElement } = props;
   const [expandedBlock, setExpandedBlock] = React.useState("code");
+  const { setRef } = useDynamicRefs();
 
   const expandBlock = (panel) => {
     setExpandedBlock(expandBlock === panel ? false : panel);
@@ -23,7 +25,9 @@ export default function CodeSample(props) {
 
   return (
     <>
-      <CoreH5>{title || "NO TITLE SET"}</CoreH5>
+      <CoreBox ref={setRef(title?.trim()?.replaceAll(" ", "-"))}></CoreBox>
+
+      <CoreH5 /* ref={setRef(title?.trim()?.replaceAll(" ", "-"))} */>{title || "NO TITLE SET"}</CoreH5>
 
       <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MY2]}>
         {description || "NO DESCRIPTION SET"}
