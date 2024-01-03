@@ -15,10 +15,11 @@ export default function DocsTOC(props) {
           return (
             <CoreAccordion
               key={`${docKey}`}
+              styleClasses={[CoreClasses.BG.BG_SECONDARY]}
               //   expanded={currentPage === docKey/*|| Object.keys(docsRegistry[docKey]?.children)?.includes(currentPage)*/}
               //   onChange={setCurrentPage(docKey)}
             >
-              <CoreAccordionSummary>
+              <CoreAccordionSummary  styleClasses={[CoreClasses.BG.BG_SUCCESS]}>
                 <CoreTextButton
                   label={docKey}
                   OnClick={() => {
@@ -28,7 +29,7 @@ export default function DocsTOC(props) {
               </CoreAccordionSummary>
 
               {docsRegistry[docKey]?.children && Object.keys(docsRegistry[docKey]?.children)?.length > 0 && (
-                <CoreAccordionDetail styleClasses={[CoreClasses.PADDING.PL1]}>
+                <CoreAccordionDetail styleClasses={[CoreClasses.PADDING.PL1, CoreClasses.BG.BG_INFO]}>
                   {renderTOC(docsRegistry[docKey]?.children)}
                 </CoreAccordionDetail>
               )}
@@ -43,7 +44,7 @@ export default function DocsTOC(props) {
     <>
       <CoreTypographyBody1>Table Of Contents</CoreTypographyBody1>
      
-      <CoreBox>
+      <CoreBox CoreClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.H_100]}>
         {renderTOC(docsRegistry)}
       </CoreBox>
     </>
