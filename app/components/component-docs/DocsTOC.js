@@ -19,7 +19,7 @@ export default function DocsTOC(props) {
               //   expanded={currentPage === docKey/*|| Object.keys(docsRegistry[docKey]?.children)?.includes(currentPage)*/}
               //   onChange={setCurrentPage(docKey)}
             >
-              <CoreAccordionSummary  styleClasses={[CoreClasses.BG.BG_SUCCESS]}>
+              <CoreAccordionSummary styleClasses={[CoreClasses.BG.BG_SUCCESS]}>
                 <CoreTextButton
                   label={docKey}
                   OnClick={() => {

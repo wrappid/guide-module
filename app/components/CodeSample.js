@@ -25,9 +25,7 @@ export default function CodeSample(props) {
 
   return (
     <>
-      <CoreBox ref={setRef(title?.trim()?.replaceAll(" ", "-"))}></CoreBox>
-
-      <CoreH5 /* ref={setRef(title?.trim()?.replaceAll(" ", "-"))} */>{title || "NO TITLE SET"}</CoreH5>
+      <CoreH5 ref={setRef(title?.trim()?.replaceAll(" ", "-"))}> {title || "NO TITLE SET"} </CoreH5>
 
       <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MY2]}>
         {description || "NO DESCRIPTION SET"}
