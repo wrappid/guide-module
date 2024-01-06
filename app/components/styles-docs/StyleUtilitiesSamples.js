@@ -3,6 +3,7 @@ import {
   CoreAlert,
   CoreBox,
   CoreClasses,
+  CoreH3,
   CoreH6,
   CoreList,
   CoreListItem,
@@ -300,7 +301,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           key={key}
           gridProps={{ gridSize: 3 }}
           styleClasses={[
-            CoreClasses.BG.BG_SECONDARY_LIGHT,
             CoreClasses.BORDER.BORDER,
             classes[className],
             CoreClasses.BORDER.BORDER_2,
@@ -331,7 +331,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             width={56}
             height={56}
             styleClasses={[
-              CoreClasses.BG.BG_SECONDARY_LIGHT,
               CoreClasses.BORDER.BORDER,
               classes[className],
               CoreClasses.BORDER.BORDER_2,
@@ -355,7 +354,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           key={key}
           gridProps={{ gridSize: 3 }}
           styleClasses={[
-            CoreClasses.BG.BG_SECONDARY_LIGHT,
             classes[className],
             CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
             CoreClasses.PADDING.P1,
@@ -386,7 +384,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             width={144}
             height={56}
             styleClasses={[
-              CoreClasses.BG.BG_SECONDARY_LIGHT,
               CoreClasses.BORDER.BORDER,
               classes[className],
               CoreClasses.BORDER.BORDER_2,
@@ -406,9 +403,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   COLOR: {
     description: (
       <>
-        <CoreAlert severity="error">
-          {"TEXT_COLOR is NOT WORKING as of now"}
-        </CoreAlert>
         <CoreTypographyBody1>
           Colorize text with text color utilities.
         </CoreTypographyBody1>
@@ -427,7 +421,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -446,7 +440,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -562,6 +556,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               classes[className],
               CoreClasses.DISPLAY.FLEX,
               CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -569,6 +565,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreBox
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
+                CoreClasses.BORDER.BORDER_2,
+                CoreClasses.BORDER.BORDER_INFO,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
@@ -578,6 +576,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreBox
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
+                CoreClasses.BORDER.BORDER_2,
+                CoreClasses.BORDER.BORDER_INFO,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
@@ -1521,5 +1521,92 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreBox>
       );
     },
+  },
+
+  //CoreClasses Components
+
+  AUTH: {
+    description: "",
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 3 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  DATA_DISPLAY: {
+    description: "",
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 3 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  DATA_TABLE: {
+    description: "",
+    grouped: true,
+  },
+  ICON: {
+    description: "",
+    grouped: true,
+  },
+  LAYOUT: {
+    description: "",
+    grouped: true,
+  },
+  MENU: {
+    description: "",
+    grouped: true,
+  },
+  NAVIGATION: {
+    description: "",
+    grouped: true,
+  },
+  POPOVER: {
+    description: "",
+    grouped: true,
+  },
+  RX: {
+    description: "",
+    grouped: true,
+  },
+  TABLE: {
+    description: "",
+    grouped: true,
+  },
+  UTILS: {
+    description: "",
+    grouped: true,
+  },
+  WIDGET: {
+    description: "",
+    grouped: true,
   },
 };

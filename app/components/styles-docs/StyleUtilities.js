@@ -9,6 +9,8 @@ import {
   CoreClasses,
   CoreTOC,
   CoreTypographyCaption,
+  CoreH5,
+  CoreH6,
 } from "@wrappid/core";
 import { UtilityClasses } from "@wrappid/styles";
 
@@ -44,6 +46,22 @@ const CLASS_NAME_TO_EXCLUDE = [
   // "VISIBILITY", // DONE
   // "WIDTH", // DONE*
   "Z_INDEX",
+
+  // "AUTH",
+  // "BUSINESS_ENTITY",
+  // "DATA_DISPLAY",
+  // "DATA_TABLE",
+  // "FRAMEWORK",
+  // "ICON",
+  // "LAYOUT",,
+  // "MENU",
+  // "NAVIGATION",
+  // "POPOVER",
+  // "RX",
+  // "SC_APP_DIV",
+  // "TABLE",
+  // "UTILS",
+  // "WIDGET",
 ];
 const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
 
@@ -54,8 +72,6 @@ const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
  */
 export default function StyleUtilities() {
   const contentRef = React.useRef(null);
-  const testH4Ref = React.useRef(null);
-  console.log("this is test cosole", contentRef);
   return (
     <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
       <CoreBox gridProps={{ gridSize: 9 }} ref={contentRef}>
@@ -72,15 +88,22 @@ export default function StyleUtilities() {
           These are style utilities built using bootstrap flavour.
         </CoreTypographyBody1>
 
-        {renderStyleSamples({ classes: UtilityClasses })}
+        {/* {renderStyleSamples({ classes: UtilityClasses })} */}
+        {renderStyleSamples({ classes: CoreClasses })}
       </CoreBox>
 
       <CoreBox
-        styleClasses={CoreClasses.POSITION.POSITION_FIXED}
+        styleClasses={[
+          CoreClasses.POSITION.POSITION_FIXED,
+          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
+          CoreClasses.HEIGHT.VH_100,
+          CoreClasses.PADDING.PB5,
+          CoreClasses.MARGIN.MB5,
+        ]}
         gridProps={{ gridSize: 3 }}
       >
         <CoreTypographyBody1>Table Of Contents</CoreTypographyBody1>
-        <CoreTOC contentRef={contentRef} />
+        <CoreTOC contentRef={contentRef} headerComponents={[CoreH5]} />
       </CoreBox>
     </CoreGrid>
   );
