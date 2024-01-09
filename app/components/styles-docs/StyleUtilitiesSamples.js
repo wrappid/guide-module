@@ -1382,7 +1382,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           <CoreBox
             key={key}
             styleClasses={[
-              classes[className],
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_2,
               CoreClasses.BORDER.BORDER_WARNING_LIGHT,
@@ -1390,7 +1389,20 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
           >
-            <CoreTypographyCaption>CONTENT</CoreTypographyCaption>
+          <CoreBox
+            key={key}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BG.BG_PRIMARY,
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_INFO,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption styleClasses={[CoreClasses.COLOR.TEXT_WHITE]}>I am the content of this box</CoreTypographyCaption>
+          </CoreBox>
           </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
