@@ -11,6 +11,7 @@ import {
   CoreTypographyCaption,
   CoreH5,
   CoreH6,
+  CoreH3,
 } from "@wrappid/core";
 import { UtilityClasses } from "@wrappid/styles";
 
@@ -38,30 +39,30 @@ const CLASS_NAME_TO_EXCLUDE = [
   "OBJECT_FIT",
   // "OPACITY", // DONE
   // "OVERFLOW", // DONE
-  "PADDING", // DONE
+  // "PADDING", // DONE
   "POSITION",
   // "SHADOW", // DONE
   // "TEXT", // DONE*
   "VERTICAL_ALIGN",
   // "VISIBILITY", // DONE
-  // "WIDTH", // DONE*
+  "WIDTH", // DONE*
   "Z_INDEX",
 
-  // "AUTH",
-  // "BUSINESS_ENTITY",
-  // "DATA_DISPLAY",
-  // "DATA_TABLE",
-  // "FRAMEWORK",
-  // "ICON",
-  // "LAYOUT",,
-  // "MENU",
-  // "NAVIGATION",
-  // "POPOVER",
-  // "RX",
-  // "SC_APP_DIV",
-  // "TABLE",
-  // "UTILS",
-  // "WIDGET",
+  "AUTH",
+  "BUSINESS_ENTITY",
+  "DATA_DISPLAY",
+  "DATA_TABLE",
+  "FRAMEWORK",
+  "ICON",
+  "LAYOUT",,
+  "MENU",
+  "NAVIGATION",
+  "POPOVER",
+  "RX",
+  "SC_APP_DIV",
+  "TABLE",
+  "UTILS",
+  "WIDGET",
 ];
 const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
 
@@ -74,7 +75,7 @@ export default function StyleUtilities() {
   const contentRef = React.useRef(null);
   return (
     <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
-      <CoreBox gridProps={{ gridSize: 9 }} ref={contentRef}>
+      <CoreBox gridProps={{ gridSize: 10 }} ref={contentRef}>
         <CoreH4
           styleClasses={[
             CoreClasses.MARGIN.MY2,
@@ -99,11 +100,14 @@ export default function StyleUtilities() {
           CoreClasses.HEIGHT.VH_100,
           CoreClasses.PADDING.PB5,
           CoreClasses.MARGIN.MB5,
+          CoreClasses.BORDER.BORDER,
+          CoreClasses.BORDER.BORDER_LEFT,
+          CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
         ]}
-        gridProps={{ gridSize: 3 }}
+        gridProps={{ gridSize: 2 }}
       >
-        <CoreTypographyBody1>Table Of Contents</CoreTypographyBody1>
-        <CoreTOC contentRef={contentRef} headerComponents={[CoreH5]} />
+        <CoreH5 styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY]}> Table Of Contents</CoreH5>
+        <CoreTOC styleClasses={[CoreClasses.BORDER.BORDER_LEFT]} contentRef={contentRef} headerComponents={[CoreH5]} />
       </CoreBox>
     </CoreGrid>
   );
