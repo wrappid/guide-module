@@ -244,6 +244,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   BG: {
+    title: "BACKGROUND",
     description: (
       <>
         <CoreAlert severity="error">
