@@ -12,7 +12,7 @@ import {
 } from "@wrappid/core";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function DocsTOC(props) {
+export default function ComponentsMenu(props) {
   const dispatch = useDispatch();
 
   const collapse = useSelector((state) => state?.menu?.collapse);
@@ -42,21 +42,22 @@ export default function DocsTOC(props) {
       }) || []
     );
   };
-  React.useEffect(() => {
-    setPreparedMenu(prepareComponentMenu(docsRegistry));
-  }, []);
-  React.useEffect(() => {
-    setPreparedMenu(prepareComponentMenu(docsRegistry));
-  }, [docsRegistry]);
 
-  React.useEffect(() => {
-    console.log("prepared menu");
-    console.log(preparedMenu);
-  }, [preparedMenu]);
+  /**
+   * Right drawer related collapse
+   */
+  const [open, setOpen] = React.useState(true);
 
   return (
     <>
-      <CoreTypographyBody1>Table Of Contents</CoreTypographyBody1>
+    {/* <CoreRightDrawer anchor={props.anchor ? props.anchor : "right"}
+      variant={"persistent"}
+      open={open}
+      PaperProps={{ sx: { ...getEffectiveStyle(["appDrawerPaperHeight", "appbarHeight"]) } }}
+    > 
+    </CoreRightDrawer>
+    */}
+      <CoreTypographyBody1>Component Menu</CoreTypographyBody1>
 
       <CoreBox
         CoreClasses={[
@@ -70,10 +71,10 @@ export default function DocsTOC(props) {
           multiLevel={true}
           menu={prepareComponentMenu(docsRegistry)}
           OnMenuClick={(menuItem) => {
-            if (menuItem.Children && menuItem.Children.length > 0) {
+            if (menuItem?.Children && menuItem?.Children?.length >= 0) {
               dispatch(toggleMenuItemState(menuItem));
             }
-            setCurrentPage(menuItem.id);
+            setCurrentPage(menuItem?.id);
           }}
           open={true}
         />

@@ -3,7 +3,7 @@ import React from "react";
 import { CoreBox, CoreGrid, CoreH4 } from "@wrappid/core";
 
 import DocsRegistry from "./DocsRegistry";
-import DocsTOC from "./DocsTOC";
+import ComponentsMenu from "./ComponentsMenu";
 
 export default function Components() {
 
@@ -59,7 +59,7 @@ export default function Components() {
       </CoreBox>
 
       <CoreBox gridProps={{ gridSize: 3 }}>
-        <DocsTOC
+        <ComponentsMenu
           docsRegistry={_DocsRegistry}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
