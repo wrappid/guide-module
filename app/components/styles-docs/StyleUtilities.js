@@ -148,7 +148,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
         ) : (
           <CodeSample
             key={key}
-            title={className}
+            title={className.replace("_"," ")}
             description={codeSampleData.description}
             renderElement={codeSampleData?.renderElement(
               key,
@@ -179,7 +179,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
           return codeSampleData.grouped ? (
             <CodeSample
               key={key}
-              title={className}
+              title={className.replace("_"," ")}
               description={codeSampleData.description}
               renderElement={
                 <CoreGrid id="parent-style-sample">
