@@ -38,22 +38,18 @@ export default function CoreAvatarGroupDocs() {
   </CoreAvatarGroup>
 </CoreStack>`}
         renderElement={
-          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+          <CoreAvatarGroup max={4}>
+            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
 
-            <CoreAvatarGroup max={4}>
-            
-              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
 
-              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+            <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
+          
+            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
 
-              <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
+            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+          </CoreAvatarGroup>
 
-              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-
-              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
-
-            </CoreAvatarGroup>
-          </CoreStack>
         }
       />
 
@@ -72,11 +68,11 @@ export default function CoreAvatarGroupDocs() {
           <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
             <CoreAvatarGroup total={24}>
               <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
-              
+
               <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
-              
+
               <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
-              
+
               <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
             </CoreAvatarGroup>
           </CoreStack>
@@ -99,7 +95,7 @@ The renderSurplus prop is useful when you need to render the surplus based on th
         `}
         renderElement={
           <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
-            <CoreAvatarGroup 
+            <CoreAvatarGroup
               renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>}
               total={4250}>
               <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />

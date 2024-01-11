@@ -106,13 +106,11 @@ export default function CoreTooltipDocs() {
         <CoreButton>left-start</CoreButton>
       </CoreTooltip>
 
-      <br />
 
       <CoreTooltip title="Add" placement="left">
         <CoreButton>left</CoreButton>
       </CoreTooltip>
 
-      <br />
 
       <CoreTooltip title="Add" placement="left-end">
         <CoreButton>left-end</CoreButton>
@@ -185,13 +183,11 @@ export default function CoreTooltipDocs() {
                   <CoreButton>left-start</CoreButton>
                 </CoreTooltip>
 
-                <br />
 
                 <CoreTooltip title="Add" placement="left">
                   <CoreButton>left</CoreButton>
                 </CoreTooltip>
 
-                <br />
 
                 <CoreTooltip title="Add" placement="left-end">
                   <CoreButton>left-end</CoreButton>
@@ -402,7 +398,7 @@ export default function CoreTooltipDocs() {
                 p      : 2,
               }}
             >
-        Hover
+       <CoreTypographyBody1> Hover</CoreTypographyBody1>
             </CoreBox>
           </CoreTooltip>
         </>}

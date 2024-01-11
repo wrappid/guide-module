@@ -8,24 +8,20 @@ export default function CoreImageDocs() {
   return (
     <>
       <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
-      CoreImage
+        CoreImage
       </CoreH4>
 
       <CodeSample
         title={"Simple CoreImage "}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={`
-<CoreImage
-  src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" 
-  styleClasses={[CoreClasses.WIDTH.W_50, CoreClasses.HEIGHT.H_50]}>
-    
-</CoreImage>
+        <CoreImage width={200} height={200}
+        src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg">
+        </CoreImage>
         `}
         renderElement={<>
-          <CoreImage
-            src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" 
-            styleClasses={[CoreClasses.WIDTH.W_50, CoreClasses.HEIGHT.H_50]}>
-              
+          <CoreImage width={200} height={200}
+            src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg">
           </CoreImage>
         </>}
       />
