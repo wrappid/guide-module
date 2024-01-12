@@ -469,6 +469,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
+          styleClasses={[]}>
+        <CoreBox
           styleClasses={[
             CoreClasses.BORDER.BORDER,
             CoreClasses.BORDER.BORDER_2,
@@ -487,7 +489,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
           >
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption>Box 1</CoreTypographyCaption>
           </CoreBox>
           <CoreBox
             styleClasses={[
@@ -499,8 +501,10 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
           >
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption>Box 2</CoreTypographyCaption>
           </CoreBox>
+          </CoreBox>
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
