@@ -298,22 +298,20 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-          
-          <CoreBox gridProps={{ gridSize: 3 }}>
-        <CoreBox
-          key={key}
-          width={144}
-          height={56}
-          styleClasses={[
-            CoreClasses.BORDER.BORDER,
-            classes[className],
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            CoreClasses.PADDING.P1,
-          ]}
-        >
-          <CoreTypographyCaption>144x56</CoreTypographyCaption>
-        </CoreBox>
+        <CoreBox gridProps={{ gridSize: 3 }}>
+          <CoreBox
+            key={key}
+            height={56}
+            styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              classes[className],
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+              CoreClasses.PADDING.P1,
+            ]}
+          >
+            <CoreTypographyCaption>144x56</CoreTypographyCaption>
+          </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
@@ -323,20 +321,19 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     renderElement: (key, classes, className) => {
       return (
         <CoreBox gridProps={{ gridSize: 3 }}>
-        <CoreBox
-          key={key}
-          width={144}
-          height={56}
-          styleClasses={[
-            classes[className],
-            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            CoreClasses.PADDING.P1,
-            // CoreClasses.BORDER.BORDER,
-            // CoreClasses.BORDER.BORDER_2,
-          ]}
-        >
-          <CoreTypographyCaption>144x56</CoreTypographyCaption>
-        </CoreBox>
+          <CoreBox
+            key={key}
+            height={56}
+            styleClasses={[
+              classes[className],
+              CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+              CoreClasses.PADDING.P1,
+              // CoreClasses.BORDER.BORDER,
+              // CoreClasses.BORDER.BORDER_2,
+            ]}
+          >
+            <CoreTypographyCaption>144x56</CoreTypographyCaption>
+          </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
@@ -357,7 +354,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreBox
-            width={144}
             height={56}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
@@ -397,7 +393,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[classes[className]]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -416,7 +414,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[classes[className]]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -524,10 +524,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox>
+        <CoreBox gridProps={{ gridSize: 6 }}>
           <CoreBox
             key={key}
-            gridProps={{ gridSize: 6 }}
             styleClasses={[
               classes[className],
               CoreClasses.DISPLAY.FLEX,
@@ -995,7 +994,113 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+          ]}
+          gridProps={{ gridSize: 3 }}
+        >
+          <CoreBox
+            key={key}
+            height={64}
+            width={256}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.MARGIN.M1,
+            ]}
+          >
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.TEXT.TEXT_NOWRAP]}
+            >
+              in ultricies quam, sollicitudin porttitor felis.
+            </CoreTypographyCaption>
+            <CoreTypographyCaption>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              in ultricies quam, sollicitudin porttitor felis. Donec non aliquet
+            </CoreTypographyCaption>
+          </CoreBox>
+          <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  OVERFLOW__STARTS_WITH__OVERFLOW_X: {
+    description: (
+      <>
+        <CoreAlert severity="error">
+          {"Scroll-x is NOT WORKING as of now"}
+        </CoreAlert>
+        <CoreTypographyBody1>
+          Use these shorthand utilities for quickly configuring how content
+          overflows an element.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+          ]}
+          gridProps={{ gridSize: 3 }}
+        >
+          <CoreBox
+            key={key}
+            height={64}
+            width={256}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.MARGIN.M1,
+              CoreClasses.TEXT.TEXT_NOWRAP,
+            ]}
+          >
+            <CoreTypographyCaption styleClasses={[CoreClasses.PADDING.PT1]}>
+              Lorem ipsum dolor sit amet, consectur adiping.
+            </CoreTypographyCaption>
+          </CoreBox>
+          <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  OVERFLOW__STARTS_WITH__OVERFLOW_Y: {
+    description: (
+      <>
+        <CoreAlert severity="error">
+          {"Scroll-x is NOT WORKING as of now"}
+        </CoreAlert>
+        <CoreTypographyBody1>
+          Use these shorthand utilities for quickly configuring how content
+          overflows an element.
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+          ]}
+          gridProps={{ gridSize: 3 }}
+        >
           <CoreBox
             key={key}
             height={64}
@@ -1003,18 +1108,19 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               classes[className],
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-              CoreClasses.PADDING.P1,
-              CoreClasses.TEXT.TEXT_CENTER,
+              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.MARGIN.M1,
             ]}
           >
-            <CoreTypographyCaption>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              in ultricies quam, sollicitudin porttitor felis. Donec non aliquet
-              purus. Maecenas.
+            <CoreTypographyCaption styleClasses={[CoreClasses.PADDING.PT1]}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus.consectetur adipiscing elit. Phasellus in ultricies
+              quam, sollicitudin porttitor felis. Donec non aliquet
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          </CoreBox>
         </CoreBox>
       );
     },
@@ -1217,7 +1323,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 12 }}
-          styleClasses={[CoreClasses.BORDER.BORDER,CoreClasses.BORDER.BORDER_2, CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+          ]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1235,9 +1346,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 6 }}
-          styleClasses={[CoreClasses.BORDER.BORDER, 
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
             CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+          ]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1255,9 +1369,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.BORDER.BORDER,
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
             CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+          ]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1275,9 +1392,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
-          styleClasses={[CoreClasses.BORDER.BORDER,
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
             CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+          ]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1295,9 +1415,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 6 }}
-          styleClasses={[CoreClasses.BORDER.BORDER,
+          styleClasses={[
+            CoreClasses.BORDER.BORDER,
             CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT, CoreClasses.PADDING.P1]}
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+          ]}
         >
           <CoreTypographyCaption styleClasses={[classes[className]]}>
             {className}
@@ -1365,20 +1488,24 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
           >
-          <CoreBox
-            key={key}
-            styleClasses={[
-              classes[className],
-              CoreClasses.BG.BG_PRIMARY,
-              CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_INFO,
-              CoreClasses.PADDING.P1,
-              CoreClasses.TEXT.TEXT_CENTER,
-            ]}
-          >
-            <CoreTypographyCaption styleClasses={[CoreClasses.COLOR.TEXT_WHITE]}>I am the content of this box</CoreTypographyCaption>
-          </CoreBox>
+            <CoreBox
+              key={key}
+              styleClasses={[
+                classes[className],
+                CoreClasses.BG.BG_PRIMARY,
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.BORDER.BORDER_2,
+                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.PADDING.P1,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption
+                styleClasses={[CoreClasses.COLOR.TEXT_WHITE]}
+              >
+                I am the content of this box
+              </CoreTypographyCaption>
+            </CoreBox>
           </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
