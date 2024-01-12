@@ -12,6 +12,7 @@ import {
   CoreH5,
   CoreH6,
   CoreH3,
+  CoreDivider,
 } from "@wrappid/core";
 import { UtilityClasses } from "@wrappid/styles";
 
@@ -88,7 +89,7 @@ export default function StyleUtilities() {
         <CoreTypographyBody1>
           These are style utilities built using bootstrap flavour.
         </CoreTypographyBody1>
-
+        <CoreDivider styleClasses={[CoreClasses.MARGIN.MB5]}></CoreDivider>
         {/* {renderStyleSamples({ classes: UtilityClasses })} */}
         {renderStyleSamples({ classes: CoreClasses })}
       </CoreBox>
