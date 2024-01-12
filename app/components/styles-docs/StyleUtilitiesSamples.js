@@ -976,11 +976,28 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
-          Note: The values are 0, 5, 10, ... , 100 with a step of 5.
+          Note: The sequence consists of the integers from 0 to 100, inclusive, spaced at intervals of 5. In other words, the sequence comprises the multiples of 5 from 0 to 20 (i.e., 0, 5, 10, ..., 100).
         </CoreTypographyBody2>
       </>
     ),
     grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+          <CoreBox
+            key={key}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BG.BG_PRIMARY,
+              CoreClasses.MARGIN.M1,
+            ]}
+            gridProps={{gridSize : 3}}
+          >
+            <CoreTypographyCaption styleClasses={[classes[className]]}>
+            {className}
+            </CoreTypographyCaption>
+          </CoreBox>        
+      );
+    },
   },
   OVERFLOW: {
     description: (
