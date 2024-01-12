@@ -106,8 +106,8 @@ export default function StyleUtilities() {
         ]}
         gridProps={{ gridSize: 2 }}
       >
-        <CoreH5 styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY]}> Table Of Contents</CoreH5>
-        <CoreTOC styleClasses={[CoreClasses.BORDER.BORDER_LEFT]} contentRef={contentRef} headerComponents={[CoreH5]} />
+        <CoreH5 styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY, CoreClasses.MARGIN.ML5]}> Table Of Contents</CoreH5>
+        <CoreTOC styleClasses={[CoreClasses.BORDER.BORDER_LEFT, CoreClasses.WIDTH.W_AUTO]} contentRef={contentRef} headerComponents={[CoreH5]} />
       </CoreBox>
     </CoreGrid>
   );
