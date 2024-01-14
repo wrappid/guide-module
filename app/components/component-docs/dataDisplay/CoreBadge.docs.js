@@ -37,7 +37,7 @@ export default function CoreBadgeDocs() {
         renderElement={
           <CoreBox>
             <CoreBadge badgeContent={4} color="primary">
-              <CoreIcon color="action" icon="mail" />
+              <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" color="action" icon="mail" />
             </CoreBadge>
           </CoreBox>
         }
@@ -63,11 +63,11 @@ export default function CoreBadgeDocs() {
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreBadge badgeContent={4} color="secondary">
-              <CoreIcon color="action" icon="mail" />
+              <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" color="action" icon="mail" />
             </CoreBadge>
 
             <CoreBadge badgeContent={4} color="success">
-              <CoreIcon color="action" icon="mail" />
+              <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" color="action" icon="mail" />
             </CoreBadge>
           </CoreStack>
         }
@@ -113,15 +113,15 @@ export default function CoreBadgeDocs() {
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreBadge color="secondary" badgeContent={99}>
-              <CoreIcon icon="mail" />
+              <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" icon="mail" />
             </CoreBadge>
 
             <CoreBadge color="secondary" badgeContent={100}>
-              <CoreIcon icon="mail" />
+              <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" icon="mail" />
             </CoreBadge>
 
             <CoreBadge color="secondary" badgeContent={1000} max={999}>
-              <CoreIcon icon="mail" />
+              <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" icon="mail" />
             </CoreBadge>
           </CoreStack>
         }
@@ -144,7 +144,7 @@ export default function CoreBadgeDocs() {
         renderElement={
           <CoreStack spacing={2} direction="row">
             <CoreBadge color="secondary" variant="dot">
-              <CoreIcon icon="mail" />
+              <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" icon="mail" />
             </CoreBadge>
           </CoreStack>
         }
@@ -177,7 +177,7 @@ export default function CoreBadgeDocs() {
                 vertical  : "top",
               }}
             >
-              <CoreIcon icon="mail" />
+              <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" icon="mail" />
             </CoreBadge>
           </CoreStack>
         }
@@ -202,7 +202,7 @@ export default function CoreBadgeDocs() {
           <CoreStack spacing={2} direction="row">
             <CoreIcon aria-label={100}>
               <CoreBadge badgeContent={100} color="secondary">
-                <CoreIcon icon="mail" />
+                <CoreIcon type="__IconTypes.FONTAWESOME_V5_SOLID_ICON" icon="mail" />
               </CoreBadge>
             </CoreIcon>
           </CoreStack>

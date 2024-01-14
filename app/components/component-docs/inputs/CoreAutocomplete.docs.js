@@ -990,7 +990,7 @@ export default function CoreAutocompleteDocs() {
 
       {/* <CodeImport name="CoreAutocomplete, CoreTextField, CoreBox" /> */}
 
-      <CodeSample
+      {/* <CodeSample
         title={"Country select"}
         description={"Choose one of the 248 countries."}
         code={`<CoreAutocomplete
@@ -1058,7 +1058,7 @@ renderInput={(params) => (
             />
           </>
         }
-      />
+      /> */}
 
       <CodeSample
         title={"Controlled states (NOT_DEFINED)"}
@@ -1112,12 +1112,11 @@ renderInput={(params) => (
       </div>`}
         renderElement={
           <>
-            <div>
-              <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
+            <CoreBox>
+              <CoreTypographyBody1>{`value: ${value !== null ? `'${value}'` : "null"}`}</CoreTypographyBody1>
 
-              <div>{`inputValue: '${inputValue}'`}</div>
+              <CoreTypographyBody1>{`inputValue: '${inputValue}'`}</CoreTypographyBody1>
 
-              <br />
 
               <CoreAutocomplete
                 value={value}
@@ -1135,7 +1134,7 @@ renderInput={(params) => (
                   <CoreTextField {...params} label="Controllable" />
                 )}
               />
-            </div>
+            </CoreBox>
           </>
         }
       />
@@ -1188,7 +1187,7 @@ return <CoreAutocomplete multiple value={selectedValues} />;`}
             <CoreStack spacing={2} styleClasses={CoreClasses.WIDTH.W_AUTO}>
               <CoreAutocomplete
                 id="free-solo-demo"
-                freeSolo
+                // freeSolo
                 options={top100Films.map((option) => option.label)}
                 renderInput={(params) => (
                   <CoreTextField {...params} label="freeSolo" />
