@@ -52,7 +52,7 @@ export default function CoreBackdropDocs() {
         page is not scrolling.
       </CoreAlert>
 
-      <CodeSample
+      {/* <CodeSample
         title={"Backdrop"}
         description={
           "The CoreBackdrop offers four severity levels that set a distinctive icon and color"
@@ -106,7 +106,7 @@ export default function CoreBackdropDocs() {
             </CoreStack>
           </>
         }
-      />
+      /> */}
 
       <CoreDivider />
 

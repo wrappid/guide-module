@@ -20,7 +20,7 @@ export default function CoreCardDocs() {
       component="span"
       // sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
     >
-      •
+      <CoreTypographyBody1>•</CoreTypographyBody1>
     </CoreBox>
   );
 
@@ -41,7 +41,6 @@ export default function CoreCardDocs() {
 
         <CoreTypographyBody2 variant="body2">
           well meaning and kindly.
-          <br />
 
           {"\"a benevolent smile\""}
         </CoreTypographyBody2>
@@ -114,7 +113,7 @@ export default function CoreCardDocs() {
 
               <CoreTypographyBody2 >
           well meaning and kindly.
-                <br />
+                {/* <br /> */}
 
                 {"\"a benevolent smile\""}
               </CoreTypographyBody2>

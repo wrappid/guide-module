@@ -1042,7 +1042,7 @@ renderInput={(params) => (
                     alt=""
                   />
 
-                  {option.icon} {option.name} ({option.abbr}) +{option.code}
+                  <CoreTypographyBody1>{option.icon} {option.name} ({option.abbr}) +{option.code}</CoreTypographyBody1>
                 </CoreBox>
               )}
               renderInput={(params) => (
@@ -1091,7 +1091,7 @@ renderInput={(params) => (
 
         <div>{{inputValue: inputValue}}</div>
 
-        <br />
+        // <br />
 
         <CoreAutocomplete
           value={value}
@@ -1117,7 +1117,7 @@ renderInput={(params) => (
 
               <div>{`inputValue: '${inputValue}'`}</div>
 
-              <br />
+              {/* <br /> */}
 
               <CoreAutocomplete
                 value={value}

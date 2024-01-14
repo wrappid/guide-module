@@ -80,7 +80,7 @@ export default function CoreCardContentDocs() {
 
               <CoreTypographyBody2 >
           well meaning and kindly.
-                <br />
+                {/* <br /> */}
 
                 {"\"a benevolent smile\""}
               </CoreTypographyBody2>
