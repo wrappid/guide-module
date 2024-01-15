@@ -466,45 +466,42 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox
-          key={key}
-          gridProps={{ gridSize: 4 }}
-          styleClasses={[]}>
-        <CoreBox
-          styleClasses={[
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-            CoreClasses.PADDING.P1,
-            CoreClasses.TEXT.TEXT_CENTER,
-          ]}
-        >
+        <CoreBox key={key} gridProps={{ gridSize: 4 }} styleClasses={[]}>
           <CoreBox
             styleClasses={[
-              classes[className],
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_INFO,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
           >
-            <CoreTypographyCaption>Box 1</CoreTypographyCaption>
+            <CoreBox
+              styleClasses={[
+                classes[className],
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.BORDER.BORDER_2,
+                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.PADDING.P1,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption>Box 1</CoreTypographyCaption>
+            </CoreBox>
+            <CoreBox
+              styleClasses={[
+                classes[className],
+                CoreClasses.BORDER.BORDER,
+                CoreClasses.BORDER.BORDER_2,
+                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.PADDING.P1,
+                CoreClasses.TEXT.TEXT_CENTER,
+              ]}
+            >
+              <CoreTypographyCaption>Box 2</CoreTypographyCaption>
+            </CoreBox>
           </CoreBox>
-          <CoreBox
-            styleClasses={[
-              classes[className],
-              CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_INFO,
-              CoreClasses.PADDING.P1,
-              CoreClasses.TEXT.TEXT_CENTER,
-            ]}
-          >
-            <CoreTypographyCaption>Box 2</CoreTypographyCaption>
-          </CoreBox>
-          </CoreBox>
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -719,16 +716,21 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox
-          key={key}
-          gridProps={{ gridSize: 4 }}
-          styleClasses={[
-            classes[className],
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.PADDING.P1,
-            CoreClasses.TEXT.TEXT_CENTER,
-          ]}
-        >
+        <CoreBox>
+          <CoreBox
+            key={key}
+            gridProps={{ gridSize: 4 }}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyBody1>
+              This paragraph will be entirely selected when clicked by the user.
+            </CoreTypographyBody1>
+          </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
@@ -980,26 +982,33 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
-          Note: The sequence consists of the integers from 0 to 100, inclusive, spaced at intervals of 5. In other words, the sequence comprises the multiples of 5 from 0 to 20 (i.e., 0, 5, 10, ..., 100).
+          Note: The sequence consists of the integers from 0 to 100, inclusive,
+          spaced at intervals of 5. In other words, the sequence comprises the
+          multiples of 5 from 0 to 20 (i.e., 0, 5, 10, ..., 100).
         </CoreTypographyBody2>
       </>
     ),
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
+        <CoreBox gridProps={{ gridSize: 3 }}>
           <CoreBox
             key={key}
+            height={24}
             styleClasses={[
               classes[className],
               CoreClasses.BG.BG_PRIMARY,
-              CoreClasses.MARGIN.M1,
+              CoreClasses.TEXT.TEXT_CENTER,
             ]}
-            gridProps={{gridSize : 3}}
           >
-            <CoreTypographyCaption styleClasses={[classes[className]]}>
-            {className}
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.COLOR.TEXT_BLACK]}
+            >
+              Lorem ipsum dolor
             </CoreTypographyCaption>
-          </CoreBox>        
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
       );
     },
   },
