@@ -56,7 +56,7 @@ module.exports.testPostFunc = async (req, res) => {
 */
 module.exports.testPutFunc = async (req, res) => {
   try {
-    console.log('::---',req.params,'---::');
+    console.log("::---",req.params,"---::");
     let data = await testFunctions.updateTestData(req);
     return res.status(200).json({ message: "Data updated (•_•).", data });
   } catch (error) {

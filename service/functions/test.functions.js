@@ -24,7 +24,7 @@ const readTestDataAll = async (req) => {
   } catch (error) {
     throw new Error(error);
   }
-}
+};
 
 /**
  * 
