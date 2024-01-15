@@ -422,7 +422,20 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   CURSOR: {
-    description: "Small utility that sets cursor when element is hovered",
+    description:(<>
+    <CoreTypographyBody1>
+    Small utility that sets cursor when element is hovered.
+    </CoreTypographyBody1>
+    <CoreTypographyBody1>
+    - The alphabets stands for the N(North/Top), E(East/Right), W(West/Left) and S(South/Bottom) direction.
+    </CoreTypographyBody1>
+    <CoreTypographyBody1>
+    - NOTE : Depending on your operating system, desktop environment, and theme: These cursors may or may not be different from each other.
+    </CoreTypographyBody1>
+    
+    </>
+    ),
+  
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
