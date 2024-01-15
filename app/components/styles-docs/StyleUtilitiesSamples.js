@@ -714,27 +714,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       </>
     ),
     grouped: true,
-    renderElement: (key, classes, className) => {
-      return (
-        <CoreBox>
-          <CoreBox
-            key={key}
-            gridProps={{ gridSize: 4 }}
-            styleClasses={[
-              classes[className],
-              CoreClasses.BORDER.BORDER,
-              CoreClasses.PADDING.P1,
-              CoreClasses.TEXT.TEXT_CENTER,
-            ]}
-          >
-            <CoreTypographyBody1>
-              This paragraph will be entirely selected when clicked by the user.
-            </CoreTypographyBody1>
-          </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
-        </CoreBox>
-      );
-    },
   },
   USER_SELECT: {
     description: (
@@ -746,11 +725,16 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       </>
     ),
     grouped: true,
+  },
+  USER_SELECT__STARTS_WITH__ALL: {
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
-          key={key}
           gridProps={{ gridSize: 4 }}
+        >
+
+        <CoreBox
+          key={key}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -759,7 +743,59 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
+          >
+          <CoreTypographyCaption>This paragraph will be entirely selected when clicked by the user.</CoreTypographyCaption>
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  USER_SELECT__STARTS_WITH__AUTO: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: 4 }}
         >
+
+        <CoreBox
+          key={key}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+          >
+          <CoreTypographyCaption>This paragraph has default select behavior. i.e click & drag to select</CoreTypographyCaption>
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  USER_SELECT__STARTS_WITH__NONE: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: 4 }}
+        >
+
+        <CoreBox
+          key={key}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+          >
+          <CoreTypographyCaption>This paragraph will not be selectable when clicked by the user.</CoreTypographyCaption>
+          </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
       );
