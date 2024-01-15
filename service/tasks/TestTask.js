@@ -10,7 +10,7 @@ module.exports = {
   },
   postPerform: () => {
     console.log(`Test Task is completed @ ${new Date()}`);
-    console.log(`<---------------------------------------------------------->`);
+    console.log("<---------------------------------------------------------->");
   },
   handleError: () => {},
 };
