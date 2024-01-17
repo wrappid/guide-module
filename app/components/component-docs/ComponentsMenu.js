@@ -1,8 +1,8 @@
 import React from "react";
 import {
   toggleMenuItemState,
-  CoreAccordion,
-  CoreAccordionDetail,
+  CoreH1,
+  CoreH6,
   CoreAccordionSummary,
   CoreBox,
   CoreClasses,
@@ -63,6 +63,7 @@ export default function ComponentsMenu(props) {
         CoreClasses={[
           CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
           CoreClasses.HEIGHT.H_100,
+          CoreClasses.MARGIN.M1
         ]}
       >
         {/* {JSON.stringify(prepareComponentMenu(docsRegistry), null, 2)} */}
