@@ -25,8 +25,6 @@ export default function CoreListItemSecondaryActionDocs() {
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<></>}
       />
-
-      {/* <ComponentProps component={CoreListItemSecondaryAction} /> */}
     </>
   );
 }

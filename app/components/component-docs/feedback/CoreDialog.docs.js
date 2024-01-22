@@ -14,20 +14,10 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreDialogDocs() {
+  // eslint-disable-next-line no-unused-vars
   const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState("abc" /*emails[1]*/);
-  // const { onClose} = props;
-  //   const handleListItemClick = (value) => {
-  //     onClose(value);
-  //   };
-
-  //   const handleClickOpen = () => {
-  //     setOpen(true);
-  //   };
-  //   const handleClose = (value) => {
-  //     setOpen(false);
-  //     setSelectedValue(value);
-  //   };
+  // eslint-disable-next-line no-unused-vars
+  const [selectedValue, setSelectedValue] = React.useState("abc");
 
   return (
     <>

@@ -19,10 +19,10 @@ export default function CoreFormLabelCheckboxDocs() {
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
-          {/* <CoreFormLabelCheckbox></CoreFormLabelCheckbox> */}
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreFormLabelCheckbox} /> */}
       
     </>

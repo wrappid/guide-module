@@ -50,20 +50,20 @@ const CLASS_NAME_TO_EXCLUDE = [
   "Z_INDEX",
 
   "AUTH",
-  // "BUSINESS_ENTITY",
-  // "DATA_DISPLAY",
-  // "DATA_TABLE",
-  // "FRAMEWORK",
-  // "ICON",
-  // "LAYOUT",,
-  // "MENU",
-  // "NAVIGATION",
-  // "POPOVER",
-  // "RX",
-  // "SC_APP_DIV",
-  // "TABLE",
-  // "UTILS",
-  // "WIDGET",
+  "BUSINESS_ENTITY",
+  "DATA_DISPLAY",
+  "DATA_TABLE",
+  "FRAMEWORK",
+  "ICON",
+  "LAYOUT",,
+  "MENU",
+  "NAVIGATION",
+  "POPOVER",
+  "RX",
+  "SC_APP_DIV",
+  "TABLE",
+  "UTILS",
+  "WIDGET",
 ];
 const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
 
@@ -97,20 +97,35 @@ export default function StyleUtilities() {
       <CoreBox
         styleClasses={[
           CoreClasses.POSITION.POSITION_FIXED,
-          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
           CoreClasses.HEIGHT.H_100,
-          CoreClasses.MARGIN.ML1,
-          CoreClasses.MARGIN.MT3,
-          CoreClasses.MARGIN.MB5,
-          CoreClasses.PADDING.PB5,
           CoreClasses.BORDER.BORDER,
           CoreClasses.BORDER.BORDER_LEFT,
           CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
         ]}
         gridProps={{ gridSize: 2 }}
       >
-        <CoreH5 styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY, CoreClasses.MARGIN.ML5]}>Table Of Contents</CoreH5>
-        <CoreTOC styleClasses={[CoreClasses.BORDER.BORDER_LEFT, CoreClasses.WIDTH.W_AUTO]} contentRef={contentRef} headerComponents={[CoreH5]} />
+        <CoreH6
+          styleClasses={[
+            CoreClasses.MARGIN.MT2,
+            CoreClasses.COLOR.TEXT_PRIMARY,
+            CoreClasses.MARGIN.ML5,
+          ]}
+        >
+          Table Of Contents
+        </CoreH6>
+        <CoreDivider/>
+        <CoreBox styleClasses={[
+          CoreClasses.HEIGHT.H_75,
+          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,]}>
+
+        <CoreTOC
+          styleClasses={[
+            CoreClasses.BORDER.BORDER_LEFT,
+          ]}
+          contentRef={contentRef}
+          headerComponents={[CoreH5]}
+          />
+          </CoreBox>
       </CoreBox>
     </CoreGrid>
   );
@@ -151,7 +166,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
         ) : (
           <CodeSample
             key={key}
-            title={codeSampleData?.title || className.replace("_"," ")}
+            title={codeSampleData?.title || className.replace("_", " ")}
             description={codeSampleData.description}
             renderElement={codeSampleData?.renderElement(
               key,
@@ -182,7 +197,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
           return codeSampleData.grouped ? (
             <CodeSample
               key={key}
-              title={codeSampleData?.title || className.replace("_"," ")}
+              title={codeSampleData?.title || className.replace("_", " ")}
               description={codeSampleData.description}
               renderElement={
                 <CoreGrid id="parent-style-sample">

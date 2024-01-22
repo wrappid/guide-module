@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+
 import {
   CoreH4,
   CoreBox, CoreClasses, CoreDivider, CorePaper, CoreStack, CoreTab, CoreTabs, CoreTypographyBody1
@@ -26,6 +27,7 @@ export default function CoreTabDocs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <>
       <CoreH4>CoreTab</CoreH4>
@@ -80,27 +82,27 @@ export default function CoreTabDocs() {
     </CoreStack>
         `}
         renderElement={<>
- <CoreStack component={CorePaper} styleClases={[CoreClasses.WIDTH.VW_50]}>
-      <CoreBox styleClases={[CoreClasses.WIDTH.W_100]}>
-        <CoreTabs value={value} onChange={handleChange} styleClases={[CoreClasses.PADDING.PX2]}>
+          <CoreStack component={CorePaper} styleClases={[CoreClasses.WIDTH.VW_50]}>
+            <CoreBox styleClases={[CoreClasses.WIDTH.W_100]}>
+              <CoreTabs value={value} onChange={handleChange} styleClases={[CoreClasses.PADDING.PX2]}>
 
-          <CoreTab label="Home"></CoreTab>
+                <CoreTab label="Home"></CoreTab>
 
-          <CoreTab label="About"></CoreTab>
+                <CoreTab label="About"></CoreTab>
 
-          <CoreTab label="Contact"></CoreTab>
-        </CoreTabs>
+                <CoreTab label="Contact"></CoreTab>
+              </CoreTabs>
 
-        <CoreDivider />
+              <CoreDivider />
 
-        <CoreTabPanel value={value} index={0}></CoreTabPanel>
+              <CoreTabPanel value={value} index={0}></CoreTabPanel>
 
-        <CoreTabPanel value={value} index={1}></CoreTabPanel>
+              <CoreTabPanel value={value} index={1}></CoreTabPanel>
 
-        <CoreTabPanel value={value} index={2}></CoreTabPanel>
+              <CoreTabPanel value={value} index={2}></CoreTabPanel>
 
-      </CoreBox>
-    </CoreStack>
+            </CoreBox>
+          </CoreStack>
         </>}
       />  
     </>

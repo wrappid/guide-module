@@ -1,4 +1,3 @@
-import * as React from "react";
 
 import {
   CoreH4,
@@ -8,21 +7,15 @@ import {
 import CodeSample from "../../CodeSample";
 
 export default function CoreFormControlDocs() {
-  const [state, setState] = React.useState({
-    antoine: false,
-    gilad  : true,
-    jason  : false,
-  });
-
-  const handleChange = (event) => {
+  {/* eslint-disable-next-line etc/no-commented-out-code */}
+  {/*const handleChange = (event) => {
     setState({
       ...state,
       [event.target.name]: event.target.checked,
     });
   };
 
-  const { gilad, jason, antoine } = state;
-  const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
+const error = [gilad, jason, antoine].filter((val) => val).length !== 2;*/}
 
   return (
     <>
@@ -39,6 +32,7 @@ export default function CoreFormControlDocs() {
 <CoreFormControl color="secondary"></CoreFormControl>
         `}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox sx={{ display: "flex" }}>
             <CoreFormControl sx={{ m: 3 }} component="fieldset" variant="standard">
 
@@ -105,6 +99,7 @@ export default function CoreFormControlDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreFormControl} /> */}
       
     </>

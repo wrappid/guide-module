@@ -36,18 +36,18 @@ export default function CorePaperDocs() {
         </CoreBox>`}
         renderElement={<>
           <CoreBox styleClasses={[
-        CoreClasses.WIDTH.VW_50,
-        CoreClasses.BG.BG_GREY_100,
-        CoreClasses.DISPLAY.FLEX,
-        CoreClasses.GAP.GAP_2,
-        CoreClasses.PADDING.P2
-      ]}>
-        <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} elevation={0} />
+            CoreClasses.WIDTH.VW_50,
+            CoreClasses.BG.BG_GREY_100,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.GAP.GAP_2,
+            CoreClasses.PADDING.P2
+          ]}>
+            <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} elevation={0} />
 
-        <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} />
+            <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} />
 
-        <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} elevation={3} />
-      </CoreBox>
+            <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} elevation={3} />
+          </CoreBox>
         </>}
       />
 
@@ -81,32 +81,32 @@ export default function CorePaperDocs() {
           ))}
         </CoreBox>`}
         renderElement={<>
-        <CoreBox styleClasses={[
-        CoreClasses.WIDTH.W_75,
-        CoreClasses.BG.BG_GREY_100,
-        CoreClasses.DISPLAY.FLEX,
-        CoreClasses.FLEX.FLEX_WRAP_WRAP,
-        CoreClasses.FLEX.DIRECTION_ROW,
-        CoreClasses.GAP.GAP_2,
-        CoreClasses.PADDING.P2
-      ]}>
-        {[
-          0,
-          1,
-          2,
-          3,
-          4,
-          6,
-          8,
-          12,
-          16,
-          24
-        ].map((elevation) => (
-          <CorePaper styleClasses={[CoreClasses.WIDTH.W_25, CoreClasses.HEIGHT.VH_25]} key={elevation} elevation={elevation}>
-            <CoreTypographyBody1>{`elevation=${elevation}`}</CoreTypographyBody1>
-          </CorePaper>
-        ))}
-      </CoreBox>
+          <CoreBox styleClasses={[
+            CoreClasses.WIDTH.W_75,
+            CoreClasses.BG.BG_GREY_100,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.FLEX.FLEX_WRAP_WRAP,
+            CoreClasses.FLEX.DIRECTION_ROW,
+            CoreClasses.GAP.GAP_2,
+            CoreClasses.PADDING.P2
+          ]}>
+            {[
+              0,
+              1,
+              2,
+              3,
+              4,
+              6,
+              8,
+              12,
+              16,
+              24
+            ].map((elevation) => (
+              <CorePaper styleClasses={[CoreClasses.WIDTH.W_25, CoreClasses.HEIGHT.VH_25]} key={elevation} elevation={elevation}>
+                <CoreTypographyBody1>{`elevation=${elevation}`}</CoreTypographyBody1>
+              </CorePaper>
+            ))}
+          </CoreBox>
         </>}
       />
 
@@ -130,20 +130,20 @@ export default function CorePaperDocs() {
         </CoreBox>`}
         renderElement={<>
           <CoreBox styleClasses={[
-        CoreClasses.WIDTH.VW_50,
-        CoreClasses.BG.BG_GREY_100,
-        CoreClasses.DISPLAY.FLEX,
-        CoreClasses.GAP.GAP_2,
-        CoreClasses.PADDING.P2
-      ]}>
-        <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} variant="outlined">
-          <CoreTypographyBody1>default variant</CoreTypographyBody1>
-        </CorePaper>
+            CoreClasses.WIDTH.VW_50,
+            CoreClasses.BG.BG_GREY_100,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.GAP.GAP_2,
+            CoreClasses.PADDING.P2
+          ]}>
+            <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} variant="outlined">
+              <CoreTypographyBody1>default variant</CoreTypographyBody1>
+            </CorePaper>
 
-        <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} variant="elevation">
-          <CoreTypographyBody1>outlined variant</CoreTypographyBody1>
-        </CorePaper>
-      </CoreBox>
+            <CorePaper styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} variant="elevation">
+              <CoreTypographyBody1>outlined variant</CoreTypographyBody1>
+            </CorePaper>
+          </CoreBox>
         </>}
       />
 
@@ -167,23 +167,24 @@ export default function CorePaperDocs() {
         </CoreBox>`}
         renderElement={<>
           <CoreBox styleClasses={[
-        CoreClasses.WIDTH.VW_50,
-        CoreClasses.BG.BG_GREY_100,
-        CoreClasses.DISPLAY.FLEX,
-        CoreClasses.GAP.GAP_2,
-        CoreClasses.PADDING.P2
-      ]}>
-        <CorePaper  square={false} styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} variant="outlined">
-          <CoreTypographyBody1>rounded corners</CoreTypographyBody1>
-        </CorePaper>
+            CoreClasses.WIDTH.VW_50,
+            CoreClasses.BG.BG_GREY_100,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.GAP.GAP_2,
+            CoreClasses.PADDING.P2
+          ]}>
+            <CorePaper square={false} styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} variant="outlined">
+              <CoreTypographyBody1>rounded corners</CoreTypographyBody1>
+            </CorePaper>
 
-        <CorePaper  square styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} variant="elevation">
-          <CoreTypographyBody1>square corners</CoreTypographyBody1>
-        </CorePaper>
-      </CoreBox>
+            <CorePaper square styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25]} variant="elevation">
+              <CoreTypographyBody1>square corners</CoreTypographyBody1>
+            </CorePaper>
+          </CoreBox>
         </>}
       />
 
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CorePaper} /> */}
       
     </>

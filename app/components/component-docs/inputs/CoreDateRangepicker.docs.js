@@ -23,7 +23,6 @@ export default function CoreDateRangepickerDocs() {
 <CoreDateRangepicker></CoreDateRangepicker>
         `}
         renderElement={<>
-          {/* <CoreDateRangepicker></CoreDateRangepicker> */}
         </>}
       />
         

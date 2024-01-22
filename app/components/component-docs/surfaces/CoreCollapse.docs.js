@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  CoreBox, CoreClasses, CoreCheckbox, CoreCollapse, CorePaper, CoreStack, CoreH4 , CoreTypographyBody1
+  CoreBox, CoreClasses, CoreCheckbox, CoreCollapse, CorePaper, CoreStack, CoreH4, CoreTypographyBody1
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
@@ -73,38 +73,38 @@ export default function CoreCollapseDocs() {
         </CoreStack>
         `}
         renderElement={
-        <>
-        <CoreStack spacing={4} styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.HEIGHT.H_100, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P2]}>
-      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-        <CoreCheckbox
-          checked={checked}
-          onChange={handleChange}
-          label="show"
-        />
-      </CoreBox>
+          <>
+            <CoreStack spacing={4} styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.HEIGHT.H_100, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P2]}>
+              <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                <CoreCheckbox
+                  checked={checked}
+                  onChange={handleChange}
+                  label="show"
+                />
+              </CoreBox>
 
-      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_AROUND, CoreClasses.GAP.GAP_1]}>
-        <CoreCollapse orientation="horizontal" in={checked}>
-          <Div />
-        </CoreCollapse>
+              <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_AROUND, CoreClasses.GAP.GAP_1]}>
+                <CoreCollapse orientation="horizontal" in={checked}>
+                  <Div />
+                </CoreCollapse>
 
-        <CoreCollapse orientation="horizontal" in={checked} collapsedSize={40}>
-          <Div />        
-        </CoreCollapse>
-      </CoreBox>
+                <CoreCollapse orientation="horizontal" in={checked} collapsedSize={40}>
+                  <Div />        
+                </CoreCollapse>
+              </CoreBox>
 
-      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_AROUND, CoreClasses.GAP.GAP_1]}>
-        <CoreCollapse in={checked} collapsedSize={40}>
-          <Div />        
-        </CoreCollapse>
+              <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_AROUND, CoreClasses.GAP.GAP_1]}>
+                <CoreCollapse in={checked} collapsedSize={40}>
+                  <Div />        
+                </CoreCollapse>
 
-        <CoreCollapse in={checked}>
-          <Div />        
-        </CoreCollapse>
-      </CoreBox>
-    </CoreStack>
-        </>
-      }
+                <CoreCollapse in={checked}>
+                  <Div />        
+                </CoreCollapse>
+              </CoreBox>
+            </CoreStack>
+          </>
+        }
       />  
     </>
   );

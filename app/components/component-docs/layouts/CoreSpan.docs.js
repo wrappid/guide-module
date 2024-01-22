@@ -19,10 +19,11 @@ export default function CoreSpanDocs() {
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
-                <CoreTypographyBody1>Add the basil, <CoreSpan styleClasses={[CoreClasses.COLOR.TEXT_ERROR]}>pine nuts and garlic</CoreSpan> to a blender and blend into a paste.</CoreTypographyBody1>
+          <CoreTypographyBody1>Add the basil, <CoreSpan styleClasses={[CoreClasses.COLOR.TEXT_ERROR]}>pine nuts and garlic</CoreSpan> to a blender and blend into a paste.</CoreTypographyBody1>
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreSpan} /> */}
       
     </>

@@ -144,7 +144,8 @@ export default function CoreAutocompleteDocs() {
     { label: "Monty Python and the Holy Grail", year: 1975 },
   ];
 
-  // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/be4cdd0b1f9566847c274d0d05b9549881e0ae4a/packages/core/select/src/data/countries.ts
+  {/* eslint-disable-next-line etc/no-commented-out-code */}
+  {/*// From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/be4cdd0b1f9566847c274d0d05b9549881e0ae4a/packages/core/select/src/data/countries.ts
   const countries = [
     { abbr: "AF", code: "93", icon: "🇦🇫", name: "Afghanistan" },
     { abbr: "AX", code: "358", icon: "🇦🇽", name: "Alland Islands" },
@@ -475,7 +476,7 @@ export default function CoreAutocompleteDocs() {
     { abbr: "YE", code: "967", icon: "🇾🇪", name: "Yemen" },
     { abbr: "ZM", code: "260", icon: "🇿🇲", name: "Zambia" },
     { abbr: "ZW", code: "263", icon: "🇿🇼", name: "Zimbabwe" },
-  ];
+  ];*/}
 
   const [inputValue, setInputValue] = React.useState("");
   const defaultProps = {
@@ -514,7 +515,6 @@ export default function CoreAutocompleteDocs() {
 
       <CodeImport name="CoreAutocomplete" />
 
-      {/* <CodeImport name="CoreAutocomplete, CoreTextField"/> */}
       <CodeSample
         title={"Combo box"}
         description={
@@ -547,7 +547,6 @@ export default function CoreAutocompleteDocs() {
         }
       />
 
-      {/* <CodeImport name="CoreAutocomplete, CoreTextField, CoreStack"/> */}
       <CodeSample
         title={"Playground"}
         description={
@@ -988,8 +987,7 @@ export default function CoreAutocompleteDocs() {
         }
       />
 
-      {/* <CodeImport name="CoreAutocomplete, CoreTextField, CoreBox" /> */}
-
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <CodeSample
         title={"Country select"}
         description={"Choose one of the 248 countries."}
@@ -1069,13 +1067,13 @@ renderInput={(params) => (
             </CoreTypographyBody1>
 
             <CoreTypographyBody1>
-              1. the <CodeBlock>"value"</CodeBlock> state with the value
+              1. the <CodeBlock>value</CodeBlock> state with the value
               onChange props combination. This state represents the value
               selected by the user, for instance when pressing Enter.
             </CoreTypographyBody1>
 
             <CoreTypographyBody1>
-              2. the <CodeBlock>"input value"</CodeBlock> state with the
+              2. the <CodeBlock>input value</CodeBlock> state with the
               inputValue/onInputChange props combination. This state represents
               the value displayed in the textbox.
             </CoreTypographyBody1>
@@ -1116,8 +1114,6 @@ renderInput={(params) => (
               <CoreTypographyBody1>{`value: ${value !== null ? `'${value}'` : "null"}`}</CoreTypographyBody1>
 
               <CoreTypographyBody1>{`inputValue: '${inputValue}'`}</CoreTypographyBody1>
-
-              {/* <br /> */}
 
               <CoreAutocomplete
                 value={value}

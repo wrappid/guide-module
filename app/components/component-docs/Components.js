@@ -2,8 +2,8 @@ import React from "react";
 
 import { CoreBox, CoreGrid, CoreH4 } from "@wrappid/core";
 
-import DocsRegistry from "./DocsRegistry";
 import ComponentsMenu from "./ComponentsMenu";
+import DocsRegistry from "./DocsRegistry";
 
 export default function Components() {
 

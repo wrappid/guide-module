@@ -12,6 +12,7 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreCircularProgressDocs() {
+  // eslint-disable-next-line no-unused-vars
   const [progress, setProgress] = React.useState(0);
 
   return (

@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { pink } from "@mui/material/colors";
-// import { alpha, styled } from "@mui/material/styles";
 import {
   CoreH4,
   CoreTypographyBody1,
@@ -22,14 +20,6 @@ export default function CoreSwitchDocs() {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
-
-  // const PinkSwitch = styled(CoreSwitch)(({ theme }) => ({
-  //   "& .MuiSwitch-switchBase.Mui-checked": {
-  //     "&:hover": { backgroundColor: alpha(pink[600], theme.palette.action.hoverOpacity) },
-  //     color    : pink[600],
-  //   },
-  //   "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": { backgroundColor: pink[600] },
-  // }));
 
   return (
     <>
@@ -174,8 +164,6 @@ export default function CoreSwitchDocs() {
               <CoreSwitch {...label} defaultChecked color="warning" />
 
               <CoreSwitch {...label} defaultChecked color="default" />
-
-              {/* <PinkSwitch {...label} defaultChecked /> */}
             </CoreStack>
           </>
         }

@@ -19,10 +19,10 @@ export default function CoreGoogleButtonDocs() {
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
-          {/* <CoreGoogleButton></CoreGoogleButton> */}
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreGoogleButton} /> */}
       
     </>

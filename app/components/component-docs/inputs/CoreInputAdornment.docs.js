@@ -26,6 +26,7 @@ export default function CoreInputAdornmentDocs() {
         </>}
       />
 
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreInputAdornment} /> */}
       
     </>

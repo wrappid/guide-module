@@ -9,10 +9,11 @@ const testFunctions = require("../functions/test.functions");
 module.exports.testGetAllFunc = async (req, res) => {
   try {
     let data = await testFunctions.readTestDataAll(req);
-    return res.status(200).json({ message: "Response Data(•_•) :", data });
+
+    return res.status(200).json({ data, message: "Response Data(•_•) :" });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Something went wrong.", error });
+    return res.status(500).json({ error, message: "Something went wrong." });
   }
 };
 
@@ -25,10 +26,11 @@ module.exports.testGetAllFunc = async (req, res) => {
 module.exports.testGetFunc = async (req, res) => {
   try {
     let data = await testFunctions.readTestData(req);
-    return res.status(200).json({ message: "Response Data(•_•) :", data });
+
+    return res.status(200).json({ data, message: "Response Data(•_•) :" });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Something went wrong.", error });
+    return res.status(500).json({ error, message: "Something went wrong." });
   }
 };
 
@@ -41,10 +43,11 @@ module.exports.testGetFunc = async (req, res) => {
 module.exports.testPostFunc = async (req, res) => {
   try {
     let data = await testFunctions.createTestData(req);
-    return res.status(200).json({ message: "Data is inserted (•_•) ", data });
+
+    return res.status(200).json({ data, message: "Data is inserted (•_•) " });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Something went wrong.", error });
+    return res.status(500).json({ error, message: "Something went wrong." });
   }
 };
 
@@ -56,12 +59,13 @@ module.exports.testPostFunc = async (req, res) => {
 */
 module.exports.testPutFunc = async (req, res) => {
   try {
-    console.log('::---',req.params,'---::');
+    console.log("::---", req.params, "---::");
     let data = await testFunctions.updateTestData(req);
-    return res.status(200).json({ message: "Data updated (•_•).", data });
+
+    return res.status(200).json({ data, message: "Data updated (•_•)." });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Something went wrong.", error });
+    return res.status(500).json({ error, message: "Something went wrong." });
   }
 };
 
@@ -74,9 +78,10 @@ module.exports.testPutFunc = async (req, res) => {
 module.exports.testPatchFunc = async (req, res) => {
   try {
     let data = await testFunctions.deleteTestData(req);
-    return res.status(200).json({ message: "Deleted(^_^)", data });
+
+    return res.status(200).json({ data, message: "Deleted(^_^)" });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Something went wrong.", error });
+    return res.status(500).json({ error, message: "Something went wrong." });
   }
 };

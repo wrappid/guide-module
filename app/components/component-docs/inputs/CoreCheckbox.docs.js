@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  CoreH4, CoreTypographyBody1, CoreCheckbox, CoreIcon, CoreStack, CoreClasses, CoreBox, CoreAlert 
+  CoreH4, CoreTypographyBody1, CoreCheckbox, CoreIcon, CoreStack, CoreAlert 
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
@@ -16,31 +16,6 @@ export default function CoreCheckboxDocs() {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
-  // const handleChange1 = (event) => {
-  //   setChecked([event.target.checked, event.target.checked]);
-  // };
-
-  // const handleChange2 = (event) => {
-  //   setChecked([event.target.checked, checked[1]]);
-  // };
-
-  // const handleChange3 = (event) => {
-  //   setChecked([checked[0], event.target.checked]);
-  // };
-
-  const children = (
-    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.MARGIN.ML3]}>
-      {/* <CoreFormControlLabel
-        label="Child 1"
-        control={<CoreCheckbox checked={checked[0]} onChange={handleChange2} />}
-      />
-
-      <CoreFormControlLabel
-        label="Child 2"
-        control={<CoreCheckbox checked={checked[1]} onChange={handleChange3} />}
-      /> */}
-    </CoreBox>
-  );
 
   return (
     <>
@@ -109,6 +84,7 @@ export default function CoreCheckboxDocs() {
 </CoreFormGroup>`}
         renderElement={
           <>
+            {/* eslint-disable-next-line etc/no-commented-out-code */}
             {/* <CoreFormGroup>
               <CoreFormControlLabel control={<CoreCheckbox defaultChecked />} label="Label" />
 
@@ -194,8 +170,6 @@ export default function CoreCheckboxDocs() {
 
             <CoreCheckbox
               {...label}
-              // icon="bookmark_border"
-              // checkedIcon="bookmark"
             />
           </>}
       />
@@ -205,7 +179,9 @@ export default function CoreCheckboxDocs() {
         description={
           <CoreTypographyBody1>
           You can control the checkbox with the 
-            <CodeBlock>checked</CodeBlock> and <CodeBlock>onChange</CodeBlock> props:
+            <CodeBlock>checked</CodeBlock> and 
+
+            <CodeBlock>onChange</CodeBlock> props:
           </CoreTypographyBody1>}
         code={`<>
   <CoreCheckbox
