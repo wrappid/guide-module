@@ -1,1 +1,1 @@
-module.exports = { "**/*.{js,jsx,ts,tsx}": ["npx eslint -c ./.eslint/app/.eslintrc.js --ignore-path .gitignore ./app && npx eslint -c ./.eslint/service/.eslintrc.js --ignore-path .gitignore ./service"] };
+module.exports = { "**/*.{js,jsx,ts,tsx}": ["npm run code:lint:app", "npm run code:lint:service" ] };
