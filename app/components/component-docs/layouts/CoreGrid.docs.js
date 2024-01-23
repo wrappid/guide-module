@@ -1,4 +1,3 @@
-import * as React from "react";
 
 import {
   CoreBox,
@@ -13,15 +12,6 @@ import {
 import CodeSample from "../../CodeSample";
 
 export default function CoreGridDocs() {
-  const [spacing, setSpacing] = React.useState(2);
-
-  const handleChange = (event) => {
-    setSpacing(Number(event.target.value));
-  };
-
-  const jsx = `
-<Grid container spacing={${spacing}}>
-`;
 
   return (
     <>
@@ -34,6 +24,7 @@ export default function CoreGridDocs() {
         </CoreTypographyBody1>
 
         <CoreTypographyBody1>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
         The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs. Material Design's responsive UI is based on a 12-column grid layout.
 
         </CoreTypographyBody1>
@@ -81,6 +72,7 @@ export default function CoreGridDocs() {
         For example, xs={12} sm={6} sizes a component to occupy half of the viewport width (6 columns) when viewport width is 600 or more pixels. For smaller viewports, the component fills all 12 available columns."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox sx={{ flexGrow: 1 }}>
             <CoreGrid container spacing={2}>
               <CoreGrid item xs={6} md={8}>
@@ -108,6 +100,7 @@ export default function CoreGridDocs() {
         description={"To control space between children, use the spacing prop. The spacing value can be any positive number, including decimals and any string. The prop is converted into a CSS property using the theme.spacing() helper."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreGrid styleClasses = {[CoreClasses.FLEX.FLEX_GROW_1]} container spacing={2}>
             <CoreGrid item xs={12}>
               <CoreGrid container justifyContent="center" spacing={spacing}>
@@ -175,6 +168,7 @@ export default function CoreGridDocs() {
         description={"The rowSpacing and columnSpacing props allow for specifying the row and column gaps independently. It's similar to the row-gap and column-gap properties of CSS Grid."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox styleClasser = {[coreClasses.WIDTH.W_100]}>
             <CoreGrid container rowSpacing={1} columnSpacing={{ md: 3, sm: 2, xs: 1 }}>
               <CoreGrid item xs={6}>
@@ -203,6 +197,7 @@ export default function CoreGridDocs() {
         description={"You can switch the props' value based on the active breakpoint. For instance, we can implement the \"recommended\" responsive layout grid of Material Design."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox styleClasses = {[CoreClasses.FLEX.FLEX_GROW_1]} >
             <CoreGrid container spacing={{ md: 3, xs: 2 }} columns={{ md: 12, sm: 8, xs: 4 }}>
               {Array.from(Array(6)).map((_, index) => (
@@ -240,6 +235,7 @@ export default function CoreGridDocs() {
         description={"The Auto-layout makes the items equitably share the available space. That also means you can set the width of one item and the others will automatically resize around it."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox styleClasses = {[CoreClasses.FLEX.FLEX_GROW_1]}>
             <CoreGrid container spacing={3}>
               <CoreGrid item xs>
@@ -263,6 +259,7 @@ export default function CoreGridDocs() {
         description={"Set one of the size breakpoint props to \"auto\" instead of true / a number to size a column based on the natural width of its content."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox styleClasses = {[CoreClasses.FLEX.FLEX_GROW_1]}>
             <CoreGrid container spacing={3}>
               <CoreGrid item xs="auto">
@@ -310,6 +307,7 @@ export default function CoreGridDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreGrid} /> */}
       
     </>

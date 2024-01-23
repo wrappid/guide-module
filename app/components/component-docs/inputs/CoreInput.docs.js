@@ -26,6 +26,7 @@ export default function CoreInputDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreInput} /> */}
       
     </>

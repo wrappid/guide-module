@@ -251,12 +251,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           {"Text colour not changing by default"}
         </CoreAlert>
         <CoreTypographyBody1>
-          Sets the background of an element to any contextual class.
+          Sets the background color of an element to any contextual class.
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
           {
-            "Background utilities set color to contrastText by default, so in some cases you’ll want to use CoreClasses.COLOR.TEXT_<contextual-class>"
+            "Background utilities do not set color to contrastText by default, so in some cases you may want to use CoreClasses.COLOR.TEXT_<contextual-class>"
           }
         </CoreTypographyBody2>
       </>
@@ -274,6 +274,27 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.BORDER.BORDER_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  BG__ENDS_WITH___BLACK: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+            CoreClasses.COLOR.TEXT_WHITE,
           ]}
         >
           <CoreTypographyCaption>{className}</CoreTypographyCaption>

@@ -21,6 +21,7 @@ export default function CoreDataTableToolbarDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreDataTableToolbar} /> */}
       
     </>

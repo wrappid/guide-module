@@ -44,15 +44,15 @@ export default function CoreStackDocs() {
       </CoreBox>
         `}
         renderElement={<>
-        <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P1]}>
-        <CoreStack spacing={2}>
-          <Item title={"Item 1"}/>
+          <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P1]}>
+            <CoreStack spacing={2}>
+              <Item title={"Item 1"}/>
 
-          <Item title={"Item 2"}/>
+              <Item title={"Item 2"}/>
 
-          <Item title={"Item 2"}/>
-        </CoreStack>
-      </CoreBox>
+              <Item title={"Item 2"}/>
+            </CoreStack>
+          </CoreBox>
         </>}
       />
 
@@ -69,15 +69,15 @@ export default function CoreStackDocs() {
         </CoreStack>
       </CoreBox>`}
         renderElement={<>
-        <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P1]}>
-        <CoreStack spacing={2} direction="row">
-          <Item title={"Item 1"}/>
+          <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P1]}>
+            <CoreStack spacing={2} direction="row">
+              <Item title={"Item 1"}/>
 
-          <Item title={"Item 2"}/>
+              <Item title={"Item 2"}/>
 
-          <Item title={"Item 2"}/>
-        </CoreStack>
-      </CoreBox>
+              <Item title={"Item 2"}/>
+            </CoreStack>
+          </CoreBox>
         </>}
       />
 
@@ -98,23 +98,23 @@ export default function CoreStackDocs() {
         </CoreStack>
       </CoreBox>`}
         renderElement={<>
-         <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P1]}>
-        <CoreStack
-          spacing={2}
-          direction="row"
-          divider={<CoreDivider orientation="vertical" flexItem />}
-        >
-          <Item title={"Item 1"}/>
+          <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P1]}>
+            <CoreStack
+              spacing={2}
+              direction="row"
+              divider={<CoreDivider orientation="vertical" flexItem />}
+            >
+              <Item title={"Item 1"}/>
 
-          <Item title={"Item 2"}/>
+              <Item title={"Item 2"}/>
 
-          <Item title={"Item 2"}/>
-        </CoreStack>
-      </CoreBox>
+              <Item title={"Item 2"}/>
+            </CoreStack>
+          </CoreBox>
         </>}
       />
 
-      <CodeSample   ///4th buggy one
+      <CodeSample ///4th buggy one
         title={"Responsive values"}
         description={"You can switch the direction or spacing values based on the active breakpoint."}
         code={`<CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P1]}>
@@ -130,19 +130,19 @@ export default function CoreStackDocs() {
         </CoreStack>
       </CoreBox>`}
         renderElement={<>
-        <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.PADDING.P1]}>
-        <CoreStack
-          direction={"row"}
-          // direction={{xs:"row", sm:"column"}}
-          spacing={{ sm: 2, xs: 1 }}
-        >
-          <Item title={"Item 1"}/>
+          <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.PADDING.P1]}>
+            <CoreStack
+              direction={"row"}
+              // direction={{xs:"row", sm:"column"}}
+              spacing={{ sm: 2, xs: 1 }}
+            >
+              <Item title={"Item 1"}/>
 
-          <Item title={"Item 2"}/>
+              <Item title={"Item 2"}/>
 
-          <Item title={"Item 2"}/>
-        </CoreStack>
-      </CoreBox>
+              <Item title={"Item 2"}/>
+            </CoreStack>
+          </CoreBox>
         </>}
       />
 
@@ -160,6 +160,7 @@ export default function CoreStackDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreStack} /> */}
       
     </>

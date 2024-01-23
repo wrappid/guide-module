@@ -1,29 +1,21 @@
 const yup = require("yup");
 
-const getTestAll = {
-  query: yup.object({}).noUnknown().strict(),
-};
+const getTestAll = { query: yup.object({}).noUnknown().strict() };
 
 const getTest = {
   body: yup
-    .object({
-      id: yup.mixed(),
-    })
+    .object({ id: yup.mixed() })
     .noUnknown()
     .strict(),
   query: yup
-    .object({
-      id: yup.mixed(),
-    })
+    .object({ id: yup.mixed() })
     .noUnknown()
     .strict(),
 };
 
 const postTest = {
   body: yup
-    .object({
-      name: yup.string().required(),
-    })
+    .object({ name: yup.string().required() })
     .noUnknown()
     .strict(),
   query: yup.object({}).noUnknown().strict(),
@@ -32,7 +24,7 @@ const postTest = {
 const putTest = {
   body: yup
     .object({
-      id: yup.mixed(),
+      id  : yup.mixed(),
       name: yup.string(),
     })
     .noUnknown()
@@ -45,18 +37,16 @@ const putTest = {
 
 const patchTest = {
   body: yup
-    .object({
-      id: yup.mixed(),
-    })
+    .object({ id: yup.mixed() })
     .noUnknown()
     .strict(),
   query: yup.object({ id: yup.mixed() }).noUnknown().strict(),
 };
 
 module.exports = {
-  getTestAll,
   getTest,
+  getTestAll,
+  patchTest,
   postTest,
-  putTest,
-  patchTest
+  putTest
 };

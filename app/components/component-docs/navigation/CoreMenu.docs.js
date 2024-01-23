@@ -12,7 +12,8 @@ import {
   
 import CodeSample from "../../CodeSample";
 
-const options = [
+{/* eslint-disable-next-line etc/no-commented-out-code */}
+{/*const options = [
   "None",
   "Atria",
   "Callisto",
@@ -29,7 +30,7 @@ const options = [
   "Umbriel",
 ];
 
-const ITEM_HEIGHT = 48;
+const ITEM_HEIGHT = 48;*/}
 
 export default function CoreMenuDocs() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -107,6 +108,7 @@ export default function CoreMenuDocs() {
         description={"In desktop viewport, padding is increased to give more space to the menu."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CorePaper styleClasses = {[CoreClasses.WIDTH.MAX_W_100, CoreClasses.WIDTH.W_25]} >
             <MenuList>
               <MenuItem>
@@ -327,6 +329,8 @@ export default function CoreMenuDocs() {
         description={"If the height of a menu prevents all menu items from being displayed, the menu can scroll internally."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox>
             <CoreIconButton
               aria-label="more"
@@ -368,6 +372,7 @@ export default function CoreMenuDocs() {
         description={"There is a flexbox bug that prevents text-overflow: ellipsis from working in a flexbox layout. You can use the Typography component with noWrap to workaround this issue:"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<> 
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CorePaper styleClasses= {[CoreClasses.WIDTH.W_10]} >
             <CoreMenuList>
               <CoreMenuItem>
@@ -507,6 +512,7 @@ export default function CoreMenuDocs() {
         renderElement={<></>}
       />
 
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreMenu} /> */}
       
     </>

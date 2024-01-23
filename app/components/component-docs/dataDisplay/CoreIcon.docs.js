@@ -22,6 +22,7 @@ export default function CoreIconDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreIcon} /> */}
       
     </>

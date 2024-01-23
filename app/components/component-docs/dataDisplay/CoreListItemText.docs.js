@@ -66,8 +66,6 @@ styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}
           </>
         }
       />
-        
-      {/* <ComponentProps component={CoreListItemText} /> */}
       
     </>
   );

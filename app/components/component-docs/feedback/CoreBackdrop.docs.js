@@ -6,24 +6,15 @@ import {
   CoreDivider,
   CoreBackdrop,
   CoreStack,
-  CoreButton,
-  CoreClasses,
-  CoreAlert,
-  CoreCircularProgress
+  CoreAlert
   // CoreBackdropTitle
 } from "@wrappid/core";
 
-import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreBackdropDocs() {
+  // eslint-disable-next-line no-unused-vars
   const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   return (
     <>
@@ -35,7 +26,7 @@ export default function CoreBackdropDocs() {
 
       <CoreStack direction="column" spacing={2}>
         <CoreTypographyBody1>
-          The Backdrop component narrows the user's focus to a particular
+          The Backdrop component narrows the user s focus to a particular
           element on the screen.
         </CoreTypographyBody1>
 
@@ -52,6 +43,7 @@ export default function CoreBackdropDocs() {
         page is not scrolling.
       </CoreAlert>
 
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <CodeSample
         title={"Backdrop"}
         description={
