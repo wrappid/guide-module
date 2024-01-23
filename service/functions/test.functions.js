@@ -5,7 +5,7 @@ const { cacheActions, databaseActions } = require("@wrappid/service-core");
  * @param {*} req 
  * @returns 
  */
-const readTestDataAll = async (req) => {
+const readTestDataAll = async () => {
   try {
     //cache call to get data
     let cacheKey = "testData";
@@ -86,7 +86,7 @@ const updateTestData = async (req) => {
 
     if (result) {
       // Delete chache with data
-      cacheKey = req.params.toString();
+      let cacheKey = req.params.toString();
       await cacheActions.delete("wrappid-cache", cacheKey);
     } else {
       throw new Error("Can't update entity in the database");
@@ -109,7 +109,7 @@ const deleteTestData = async (req) => {
         id: req.params.id,
       },
     });
-    cacheKey = req.params.toString();
+    let cacheKey = req.params.toString();
     await cacheActions.delete("wrappid-cache", cacheKey);
     
     return data;
