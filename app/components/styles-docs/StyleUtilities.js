@@ -106,8 +106,28 @@ export default function StyleUtilities() {
         ]}
         gridProps={{ gridSize: 2 }}
       >
-        <CoreH5 styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY, CoreClasses.MARGIN.ML5]}>Table Of Contents</CoreH5>
-        <CoreTOC styleClasses={[CoreClasses.BORDER.BORDER_LEFT, CoreClasses.WIDTH.W_AUTO]} contentRef={contentRef} headerComponents={[CoreH5]} />
+        <CoreH6
+          styleClasses={[
+            CoreClasses.MARGIN.MT2,
+            CoreClasses.COLOR.TEXT_PRIMARY,
+            CoreClasses.MARGIN.ML5,
+          ]}
+        >
+          Table Of Contents
+        </CoreH6>
+        <CoreDivider/>
+        <CoreBox styleClasses={[
+          CoreClasses.HEIGHT.H_75,
+          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,]}>
+
+        <CoreTOC
+          styleClasses={[
+            CoreClasses.BORDER.BORDER_LEFT,
+          ]}
+          contentRef={contentRef}
+          headerComponents={[CoreH5]}
+          />
+          </CoreBox>
       </CoreBox>
     </CoreGrid>
   );
@@ -148,7 +168,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
         ) : (
           <CodeSample
             key={key}
-            title={codeSampleData?.title || className.replace("_"," ")}
+            title={codeSampleData?.title || className.replace("_", " ")}
             description={codeSampleData.description}
             renderElement={codeSampleData?.renderElement(
               key,
@@ -179,7 +199,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
           return codeSampleData.grouped ? (
             <CodeSample
               key={key}
-              title={codeSampleData?.title || className.replace("_"," ")}
+              title={codeSampleData?.title || className.replace("_", " ")}
               description={codeSampleData.description}
               renderElement={
                 <CoreGrid id="parent-style-sample">
