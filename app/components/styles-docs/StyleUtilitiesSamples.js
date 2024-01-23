@@ -256,7 +256,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
 
         <CoreTypographyBody2>
           {
-            "Background utilities do not set color to contrastText by default, so in some cases you may want to use CoreClasses.COLOR.TEXT_<contextual-class>"
+            "Background utilities set color to contrastText by default."
           }
         </CoreTypographyBody2>
       </>

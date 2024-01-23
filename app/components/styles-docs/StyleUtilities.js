@@ -96,8 +96,10 @@ export default function StyleUtilities() {
 
       <CoreBox
         styleClasses={[
-          CoreClasses.POSITION.POSITION_FIXED,
-          CoreClasses.HEIGHT.H_100,
+          CoreClasses.POSITION.TOP_0,
+          CoreClasses.POSITION.POSITION_STICKY,
+          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
+          CoreClasses.HEIGHT.VH_100,
           CoreClasses.BORDER.BORDER,
           CoreClasses.BORDER.BORDER_LEFT,
           CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,

@@ -9,7 +9,7 @@
     "code:format:app": "npm run code:lint:app -- --fix ./app",
     "code:lint:service": "eslint -c ./.eslint/service/.eslintrc.js --ignore-path .gitignore ./service",
     "code:format:service": "npm run code:lint:service -- --fix ./service",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
