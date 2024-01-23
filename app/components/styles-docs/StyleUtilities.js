@@ -96,36 +96,18 @@ export default function StyleUtilities() {
 
       <CoreBox
         styleClasses={[
-          CoreClasses.POSITION.POSITION_FIXED,
-          CoreClasses.HEIGHT.H_100,
+          CoreClasses.POSITION.TOP_0,
+          CoreClasses.POSITION.POSITION_STICKY,
+          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
+          CoreClasses.HEIGHT.VH_100,
           CoreClasses.BORDER.BORDER,
           CoreClasses.BORDER.BORDER_LEFT,
           CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
         ]}
         gridProps={{ gridSize: 2 }}
       >
-        <CoreH6
-          styleClasses={[
-            CoreClasses.MARGIN.MT2,
-            CoreClasses.COLOR.TEXT_PRIMARY,
-            CoreClasses.MARGIN.ML5,
-          ]}
-        >
-          Table Of Contents
-        </CoreH6>
-        <CoreDivider/>
-        <CoreBox styleClasses={[
-          CoreClasses.HEIGHT.H_75,
-          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,]}>
-
-        <CoreTOC
-          styleClasses={[
-            CoreClasses.BORDER.BORDER_LEFT,
-          ]}
-          contentRef={contentRef}
-          headerComponents={[CoreH5]}
-          />
-          </CoreBox>
+        <CoreH5 styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY, CoreClasses.MARGIN.ML5]}>Table Of Contents</CoreH5>
+        <CoreTOC styleClasses={[CoreClasses.BORDER.BORDER_LEFT, CoreClasses.WIDTH.W_AUTO]} contentRef={contentRef} headerComponents={[CoreH5]} />
       </CoreBox>
     </CoreGrid>
   );
@@ -166,7 +148,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
         ) : (
           <CodeSample
             key={key}
-            title={codeSampleData?.title || className.replace("_", " ")}
+            title={codeSampleData?.title || className.replace("_"," ")}
             description={codeSampleData.description}
             renderElement={codeSampleData?.renderElement(
               key,
@@ -197,7 +179,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
           return codeSampleData.grouped ? (
             <CodeSample
               key={key}
-              title={codeSampleData?.title || className.replace("_", " ")}
+              title={codeSampleData?.title || className.replace("_"," ")}
               description={codeSampleData.description}
               renderElement={
                 <CoreGrid id="parent-style-sample">

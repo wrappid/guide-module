@@ -251,12 +251,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           {"Text colour not changing by default"}
         </CoreAlert>
         <CoreTypographyBody1>
-          Sets the background color of an element to any contextual class.
+          Sets the background of an element to any contextual class.
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
           {
-            "Background utilities do not set color to contrastText by default, so in some cases you may want to use CoreClasses.COLOR.TEXT_<contextual-class>"
+            "Background utilities set color to contrastText by default."
           }
         </CoreTypographyBody2>
       </>
@@ -274,27 +274,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.BORDER.BORDER_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
-          ]}
-        >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
-        </CoreBox>
-      );
-    },
-  },
-  BG__ENDS_WITH___BLACK: {
-    renderElement: (key, classes, className) => {
-      return (
-        <CoreBox
-          key={key}
-          gridProps={{ gridSize: 4 }}
-          styleClasses={[
-            classes[className],
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-            CoreClasses.PADDING.P1,
-            CoreClasses.TEXT.TEXT_CENTER,
-            CoreClasses.COLOR.TEXT_WHITE,
           ]}
         >
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
@@ -443,22 +422,20 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   CURSOR: {
-    description: (
-      <>
-        <CoreTypographyBody1>
-          Small utility that sets cursor when element is hovered.
-        </CoreTypographyBody1>
-        <CoreTypographyBody1>
-          - The alphabets stands for the N(North/Top), E(East/Right),
-          W(West/Left) and S(South/Bottom) direction.
-        </CoreTypographyBody1>
-        <CoreTypographyBody1>
-          - NOTE : Depending on your operating system, desktop environment, and
-          theme: These cursors may or may not be different from each other.
-        </CoreTypographyBody1>
-      </>
+    description:(<>
+    <CoreTypographyBody1>
+    Small utility that sets cursor when element is hovered.
+    </CoreTypographyBody1>
+    <CoreTypographyBody1>
+    - The alphabets stands for the N(North/Top), E(East/Right), W(West/Left) and S(South/Bottom) direction.
+    </CoreTypographyBody1>
+    <CoreTypographyBody1>
+    - NOTE : Depending on your operating system, desktop environment, and theme: These cursors may or may not be different from each other.
+    </CoreTypographyBody1>
+    
+    </>
     ),
-
+  
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
@@ -765,21 +742,22 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__ALL: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 4 }}>
-          <CoreBox
-            key={key}
-            styleClasses={[
-              classes[className],
-              CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-              CoreClasses.PADDING.P1,
-              CoreClasses.TEXT.TEXT_CENTER,
-            ]}
+        <CoreBox
+          gridProps={{ gridSize: 4 }}
+        >
+
+        <CoreBox
+          key={key}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
           >
-            <CoreTypographyCaption>
-              This paragraph will be entirely selected when clicked by the user.
-            </CoreTypographyCaption>
+          <CoreTypographyCaption>This paragraph will be entirely selected when clicked by the user.</CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
@@ -789,22 +767,22 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__AUTO: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 4 }}>
-          <CoreBox
-            key={key}
-            styleClasses={[
-              classes[className],
-              CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-              CoreClasses.PADDING.P1,
-              CoreClasses.TEXT.TEXT_CENTER,
-            ]}
+        <CoreBox
+          gridProps={{ gridSize: 4 }}
+        >
+
+        <CoreBox
+          key={key}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
           >
-            <CoreTypographyCaption>
-              This paragraph has default select behavior. i.e click & drag to
-              select
-            </CoreTypographyCaption>
+          <CoreTypographyCaption>This paragraph has default select behavior. i.e click & drag to select</CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
@@ -814,21 +792,22 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__NONE: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 4 }}>
-          <CoreBox
-            key={key}
-            styleClasses={[
-              classes[className],
-              CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-              CoreClasses.PADDING.P1,
-              CoreClasses.TEXT.TEXT_CENTER,
-            ]}
+        <CoreBox
+          gridProps={{ gridSize: 4 }}
+        >
+
+        <CoreBox
+          key={key}
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
           >
-            <CoreTypographyCaption>
-              This paragraph will not be selectable when clicked by the user.
-            </CoreTypographyCaption>
+          <CoreTypographyCaption>This paragraph will not be selectable when clicked by the user.</CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
         </CoreBox>
