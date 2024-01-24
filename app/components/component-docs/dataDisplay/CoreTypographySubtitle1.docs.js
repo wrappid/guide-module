@@ -21,6 +21,7 @@ export default function CoreTypographySubtitle1Docs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreTypographySubtitle1} /> */}
       
     </>

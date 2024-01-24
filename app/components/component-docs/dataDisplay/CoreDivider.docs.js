@@ -79,11 +79,6 @@ export default function CoreDividerDocs() {
         }
       />
 
-      {/* <CodeSample 
-        title="HTML5 specification"
-        description="In a list, you should ensure the Divider is rendered as an <li> to match the HTML5 specification. The examples below show two ways of achieving this."
-      /> */}
-
       <CodeSample 
         title="Inset dividers"
         description=""
@@ -380,7 +375,7 @@ export default function CoreDividerDocs() {
    Sed malesuada lobortis pretium.</CoreTypographyBody1>
 
           <CoreDivider textAlign="left">
-          <CoreTypographyBody1>LEFT</CoreTypographyBody1>
+            <CoreTypographyBody1>LEFT</CoreTypographyBody1>
           </CoreDivider>
 
           <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
@@ -388,7 +383,7 @@ export default function CoreDividerDocs() {
    Sed malesuada lobortis pretium.</CoreTypographyBody1>
 
           <CoreDivider textAlign="right">
-          <CoreTypographyBody1>RIGHT</CoreTypographyBody1>
+            <CoreTypographyBody1>RIGHT</CoreTypographyBody1>
           </CoreDivider>
 
           <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.

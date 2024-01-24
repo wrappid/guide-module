@@ -21,6 +21,7 @@ export default function CoreResponsiveButtonDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreResponsiveButton} /> */}
       
     </>

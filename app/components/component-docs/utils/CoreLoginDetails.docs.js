@@ -20,7 +20,8 @@ export default function CoreLoginDetailsDocs() {
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<></>}
       />
-        
+      
+      {/* eslint-disable-next-line etc/no-commented-out-code */}  
       {/* <ComponentProps component={CoreLoginDetails} /> */}
       
     </>

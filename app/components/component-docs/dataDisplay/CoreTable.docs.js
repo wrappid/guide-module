@@ -443,6 +443,7 @@ Collapsible table
         description={"A simple example with spanning rows & columns."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreTableContainer >
             <CoreTable sx={{ minWidth: 700 }} aria-label="spanning table">
               <CoreTableHead>
@@ -511,14 +512,6 @@ Collapsible table
         description={"In the following example, we demonstrate how to use react-virtuoso with the Table component. It renders 200 rows and can easily handle more. Virtualization helps with performance issues."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
-          {/* <Paper style={{ height: 400, width: '100%' }}>
-      <TableVirtuoso
-        data={rows}
-        components={VirtuosoTableComponents}
-        fixedHeaderContent={fixedHeaderContent}
-        itemContent={rowContent}
-      />
-    </Paper> */}
 
         </>}
       />
@@ -676,10 +669,6 @@ const rowss = [
 
 const TAX_RATE = 0.07;
 
-function ccyFormat(num) {
-  return `${num.toFixed(2)}`;
-}
-
 function priceRow(qty, unit) {
   return qty * unit;
 }
@@ -698,5 +687,6 @@ const Rows = [createRow("Paperclips (Box)", 100, 1.15), createRow("Paper (Case)"
 
 const invoiceSubtotal = subtotal(Rows);
 const invoiceTaxes = TAX_RATE * invoiceSubtotal;
+// eslint-disable-next-line no-unused-vars
 const invoiceTotal = invoiceTaxes + invoiceSubtotal;
 

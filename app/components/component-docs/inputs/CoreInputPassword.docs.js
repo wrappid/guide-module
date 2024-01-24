@@ -26,6 +26,7 @@ export default function CoreInputPasswordDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreInputPassword} /> */}
       
     </>

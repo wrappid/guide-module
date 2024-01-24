@@ -27,13 +27,6 @@ export default function CoreTooltipDocs() {
     setOpen(true);
   };
 
-  const handleTooltipClose = () => {
-    setOpen(false);
-  };
-
-  const handleTooltipOpen = () => {
-    setOpen(true);
-  };
   const positionRef = React.useRef({
     x: 0,
     y: 0,
@@ -183,11 +176,9 @@ export default function CoreTooltipDocs() {
                   <CoreButton>left-start</CoreButton>
                 </CoreTooltip>
 
-
                 <CoreTooltip title="Add" placement="left">
                   <CoreButton>left</CoreButton>
                 </CoreTooltip>
-
 
                 <CoreTooltip title="Add" placement="left-end">
                   <CoreButton>left-end</CoreButton>
@@ -274,6 +265,8 @@ export default function CoreTooltipDocs() {
         The touch action requires a long press due to the enterTouchDelay prop being set to 700ms by default."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+        
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <div>
             <CoreGrid container justifyContent="center">
               <CoreGrid item>
@@ -398,7 +391,7 @@ export default function CoreTooltipDocs() {
                 p      : 2,
               }}
             >
-       <CoreTypographyBody1> Hover</CoreTypographyBody1>
+              <CoreTypographyBody1> Hover</CoreTypographyBody1>
             </CoreBox>
           </CoreTooltip>
         </>}

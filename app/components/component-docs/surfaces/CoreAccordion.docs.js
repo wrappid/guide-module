@@ -48,37 +48,40 @@ export default function CoreAccordionDocs() {
         </CoreAccordion>
       </CoreStack>`}
         renderElement={
-        <>
-        <CoreStack component={CorePaper}>
-        <CoreAccordion>
-          <CoreAccordionSummary expandIcon={<CoreIcon color="action" icon="arrow" />}>
-            <CoreTypographyBody1>Accordion 1</CoreTypographyBody1>
-          </CoreAccordionSummary>
+          <>
+            <CoreStack component={CorePaper}>
+              <CoreAccordion>
+                <CoreAccordionSummary expandIcon={<CoreIcon color="action" icon="arrow" />}>
+                  <CoreTypographyBody1>Accordion 1</CoreTypographyBody1>
+                </CoreAccordionSummary>
 
-          <CoreAccordionDetail>
-            <CoreTypographyBody2> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                <CoreAccordionDetail>
+                  <CoreTypographyBody2> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.</CoreTypographyBody2>
-          </CoreAccordionDetail>
-        </CoreAccordion>
-        <CoreAccordion>
-          <CoreAccordionSummary expandIcon={<CoreIcon color="action" icon="arrow" />}>
-            <CoreTypographyBody1>Accordion 2</CoreTypographyBody1>
-          </CoreAccordionSummary>
+                </CoreAccordionDetail>
+              </CoreAccordion>
 
-          <CoreAccordionDetail>
-            <CoreTypographyBody2>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              <CoreAccordion>
+                <CoreAccordionSummary expandIcon={<CoreIcon color="action" icon="arrow" />}>
+                  <CoreTypographyBody1>Accordion 2</CoreTypographyBody1>
+                </CoreAccordionSummary>
+
+                <CoreAccordionDetail>
+                  <CoreTypographyBody2>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.</CoreTypographyBody2>
-          </CoreAccordionDetail>
-        </CoreAccordion>
-        <CoreAccordion disabled>
-          <CoreAccordionSummary expandIcon={<CoreIcon color="action" icon="arrow" />}>
-            <CoreTypographyBody1>Disabled Accordion</CoreTypographyBody1>
-          </CoreAccordionSummary>
-        </CoreAccordion>
-      </CoreStack>
-        </>}
+                </CoreAccordionDetail>
+              </CoreAccordion>
+
+              <CoreAccordion disabled>
+                <CoreAccordionSummary expandIcon={<CoreIcon color="action" icon="arrow" />}>
+                  <CoreTypographyBody1>Disabled Accordion</CoreTypographyBody1>
+                </CoreAccordionSummary>
+              </CoreAccordion>
+            </CoreStack>
+          </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreAccordion} /> */}
       
     </>

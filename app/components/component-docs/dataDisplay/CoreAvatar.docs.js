@@ -1,4 +1,3 @@
-// import { styled } from "@mui/material/styles";
 import {
   CoreAvatarGroup,
   CoreAvatar,
@@ -7,7 +6,7 @@ import {
   CoreH4,
   CoreTypographyBody1,
   CoreIcon,
-  CoreSpan,
+  CoreSpan
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
@@ -16,40 +15,6 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreAvatarDocs() {
-  // const StyledBadge = styled(CoreBadge)(({ theme }) => ({
-  //   "& .MuiBadge-badge": {
-  //     "&::after": {
-  //       animation: "ripple 1.2s infinite ease-in-out",
-  //       border: "1px solid currentColor",
-  //       borderRadius: "50%",
-  //       content: '""',
-  //       height: "100%",
-  //       left: 0,
-  //       position: "absolute",
-  //       top: 0,
-  //       width: "100%",
-  //     },
-  //     backgroundColor: "#44b700",
-  //     boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-  //     color: "#44b700",
-  //   },
-  //   "@keyframes ripple": {
-  //     "0%": {
-  //       opacity: 1,
-  //       transform: "scale(.8)",
-  //     },
-  //     "100%": {
-  //       opacity: 0,
-  //       transform: "scale(2.4)",
-  //     },
-  //   },
-  // }));
-
-  // const SmallAvatar = styled(CoreAvatar)(({ theme }) => ({
-  //   border: `2px solid ${theme.palette.background.paper}`,
-  //   height: 22,
-  //   width: 22,
-  // }));
 
   return (
     <>
@@ -68,8 +33,13 @@ export default function CoreAvatarDocs() {
         title={"Image avatars"}
         description={
           <>
-            Image avatars can be created by passing standard <CodeBlock>img</CodeBlock> props{" "}
-            <CodeBlock>src</CodeBlock> or <CodeBlock>srcSet</CodeBlock> to the component.
+            Image avatars can be created by passing standard <CodeBlock>img</CodeBlock> props
+            
+            {" "}
+
+            <CodeBlock>src</CodeBlock> or 
+
+            <CodeBlock>srcSet</CodeBlock> to the component.
           </>
         }
         code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
@@ -84,7 +54,9 @@ export default function CoreAvatarDocs() {
             direction="row"
           >
             <CoreAvatar src="https://picsum.photos/200?random=1" />
+
             <CoreAvatar src="https://picsum.photos/200?random=2" />
+
             <CoreAvatar src="https://picsum.photos/200?random=3" />
           </CoreStack>
         }
@@ -127,7 +99,9 @@ export default function CoreAvatarDocs() {
         description={
           <CoreTypographyBody1>
             You can change the size of the avatar with the <CodeBlock>{"height"}</CodeBlock>
+
             {" and "}
+
             <CodeBlock>{"width"}</CodeBlock> CSS properties.
           </CoreTypographyBody1>
         }
@@ -339,9 +313,13 @@ export default function CoreAvatarDocs() {
           >
             <CoreAvatarGroup max={4}>
               <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+
               <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+
               <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+
               <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
+
               <CoreAvatar alt="Some Photo 5" src="https://picsum.photos/200?random=5" />
             </CoreAvatarGroup>
           </CoreStack>
@@ -367,8 +345,11 @@ export default function CoreAvatarDocs() {
           >
             <CoreAvatarGroup total={24}>
               <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+
               <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+
               <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+
               <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
             </CoreAvatarGroup>
           </CoreStack>
@@ -399,10 +380,13 @@ The renderSurplus prop is useful when you need to render the surplus based on th
               renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>}
               total={4250}
             >
-    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
-    <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
-    <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
-    <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
+              <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+
+              <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+
+              <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+
+              <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
             </CoreAvatarGroup>
           </CoreStack>
         }
@@ -466,27 +450,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
             direction="row"
             spacing={2}
           >
-            {/* <StyledBadge
-              overlap="circular"
-              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-              variant="dot"
-            >
-    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
-            </StyledBadge> */}
-
-            {/* <CoreBadge
-              overlap="circular"
-              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-              badgeContent={
-                <SmallAvatar
-                  styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
-                  alt="Remy Sharp"
-                  src="https://picsum.photos/200?random=1"
-                />
-              }
-            >
-    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=2" />
-            </CoreBadge> */}
+            
           </CoreStack>
         }
       />

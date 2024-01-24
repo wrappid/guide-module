@@ -52,7 +52,7 @@ export default function CoreCardContentDocs() {
         well meaning and kindly.
         <br />
 
-        {"\"a benevolent smile\""}
+        {""a benevolent smile""}
       </CoreTypographyBody2>
     </CoreCardContent>
 
@@ -70,9 +70,7 @@ export default function CoreCardContentDocs() {
           Word of the Day
               </CoreTypographyBody1>
 
-              <CoreTypographyBody1 variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
-              </CoreTypographyBody1>
+              <CoreTypographyBody1 variant="h5" component="div">{`be${bull}nev${bull}o${bull}lent`}</CoreTypographyBody1>
 
               <CoreTypographyBody1 color="text.secondary">
           adjective
@@ -80,7 +78,6 @@ export default function CoreCardContentDocs() {
 
               <CoreTypographyBody2 >
           well meaning and kindly.
-                {/* <br /> */}
 
                 {"\"a benevolent smile\""}
               </CoreTypographyBody2>
@@ -94,6 +91,7 @@ export default function CoreCardContentDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreCardContent} /> */}
       
     </>

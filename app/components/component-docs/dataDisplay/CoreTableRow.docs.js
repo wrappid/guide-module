@@ -103,6 +103,7 @@ export default function CoreTableRowDocs() {
         </>}
       />
 
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreTableRow} /> */}
       
     </>

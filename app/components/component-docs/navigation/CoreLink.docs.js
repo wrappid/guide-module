@@ -30,11 +30,11 @@ export default function CoreLinkDocs() {
   <CoreLink href="#">Link</CoreLink>
 
   <CoreLink href="#" color="inherit">
-    {"color=\"inherit\""}
+    {"color="inherit""}
   </CoreLink>
 
   <CoreLink href="#" variant="body2">
-    {"variant=\"body2\""}
+    {"variant="body2""}
   </CoreLink>
 </CoreStack>`}
         renderElement={<>
@@ -67,15 +67,15 @@ export default function CoreLinkDocs() {
   onClick={preventDefault}
 >
   <CoreLink href="#" underline="none">
-    {"underline=\"none\""}
+    {"underline="none""}
   </CoreLink>
 
   <CoreLink href="#" underline="hover">
-    {"underline=\"hover\""}
+    {"underline="hover""}
   </CoreLink>
 
   <CoreLink href="#" underline="always">
-    {"underline=\"always\""}
+    {"underline="always""}
   </CoreLink>
 </CoreStack>`}
         renderElement={<>
@@ -107,6 +107,7 @@ export default function CoreLinkDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreLink} /> */}
       
     </>

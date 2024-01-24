@@ -50,6 +50,7 @@ export default function CoreCardMediaDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreCardMedia} /> */}
       
     </>

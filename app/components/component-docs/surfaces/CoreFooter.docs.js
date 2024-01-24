@@ -1,12 +1,10 @@
 import {
   CoreH4,
-  CoreTypographyBody1,
-  CoreFooter
+  CoreTypographyBody1
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
-import ComponentProps from "../../ComponentProps";
-  
+
 export default function CoreFooterDocs() {
   return (
     <>
@@ -23,6 +21,7 @@ export default function CoreFooterDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreFooter} /> */}
       
     </>
