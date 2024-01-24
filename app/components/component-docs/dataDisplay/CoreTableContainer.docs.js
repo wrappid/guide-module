@@ -103,6 +103,7 @@ export default function CoreTableContainerDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreTableContainer} /> */}
       
     </>

@@ -21,6 +21,7 @@ export default function CoreAppDivDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreAppDiv} /> */}
       
     </>

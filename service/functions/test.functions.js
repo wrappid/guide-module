@@ -5,11 +5,12 @@ const { cacheActions, databaseActions } = require("@wrappid/service-core");
  * @param {*} req 
  * @returns 
  */
-const readTestDataAll = async (req) => {
+const readTestDataAll = async () => {
   try {
     //cache call to get data
     let cacheKey = "testData";
     let result = await cacheActions.read("wrappid-cache", cacheKey);
+
     if (result) {
       return result;
     } else {
@@ -18,13 +19,14 @@ const readTestDataAll = async (req) => {
       // Update chache with data
       let cacheKey = "testData";
       let data = JSON.stringify(result);
+
       await cacheActions.update("wrappid-cache", cacheKey, data);
       return data;
     }
   } catch (error) {
     throw new Error(error);
   }
-}
+};
 
 /**
  * 
@@ -36,16 +38,16 @@ const readTestData = async (req) => {
     //cache call to get data
     let cacheKey = req.params.id.toString();
     let result = await cacheActions.read("wrappid-cache", cacheKey);
+
     if (result) {
       return result;
     } else {
       //Database call and update to cache
-      let result = await databaseActions.findOne("application", "TestDatas", {
-        req,
-      });
+      let result = await databaseActions.findOne("application", "TestDatas", { req });
       // Update chache with data
       let cacheKey = result[0]["id"].toString();
       let data = JSON.stringify(result[0]);
+
       await cacheActions.update("wrappid-cache", cacheKey, data);
       return data;
     }
@@ -61,9 +63,8 @@ const readTestData = async (req) => {
  */
 const createTestData = async (req) => {
   try {
-    let data = await databaseActions.create("application", "TestDatas", {
-      req,
-    });
+    let data = await databaseActions.create("application", "TestDatas", { req });
+
     return data;
   } catch (error) {
     throw new Error(error);
@@ -78,15 +79,14 @@ const createTestData = async (req) => {
 const updateTestData = async (req) => {
   try {
     let result = await databaseActions.update("application", "TestDatas", {
-      data: { ...req.body },
-      where: {
-        id: req.params.id
-      }
+      data : { ...req.body },
+      where: { id: req.params.id }
     });
 
     if (result) {
       // Delete chache with data
-      cacheKey = req.params.toString();
+      let cacheKey = req.params.toString();
+
       await cacheActions.delete("wrappid-cache", cacheKey);
     } else {
       throw new Error("Can't update entity in the database");
@@ -96,7 +96,6 @@ const updateTestData = async (req) => {
   }
 };
 
-
 /**
  * 
  * @param {*} req 
@@ -104,12 +103,10 @@ const updateTestData = async (req) => {
  */
 const deleteTestData = async (req) => {
   try {
-    let data = await databaseActions.delete("application", "TestDatas", {
-      where: {
-        id: req.params.id,
-      },
-    });
-    cacheKey = req.params.toString();
+    let data = await databaseActions.delete("application", "TestDatas", { where: { id: req.params.id } });
+
+    let cacheKey = req.params.toString();
+    
     await cacheActions.delete("wrappid-cache", cacheKey);
     
     return data;
@@ -118,11 +115,10 @@ const deleteTestData = async (req) => {
   }
 };
 
-
 module.exports = {
-  readTestDataAll,
-  readTestData,
   createTestData,
-  updateTestData,
   deleteTestData,
+  readTestData,
+  readTestDataAll,
+  updateTestData,
 };

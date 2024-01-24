@@ -21,10 +21,10 @@ export default function CoreDateTimeRangePickerDocs() {
 <CoreDateTimeRangePicker></CoreDateTimeRangePicker>
         `}
         renderElement={<>
-          {/* <CoreDateTimeRangePicker></CoreDateTimeRangePicker> */}
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreDateTimeRangePicker} /> */}
       
     </>

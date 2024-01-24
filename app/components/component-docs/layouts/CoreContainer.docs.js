@@ -11,7 +11,7 @@ export default function CoreContainerDocs() {
       <CoreH4>CoreContainer</CoreH4>
   
       <CoreTypographyBody1>
-      The container centers your content horizontally. It's the most basic layout element.
+        {"The container centers your content horizontally. It's the most basic layout element."}
       </CoreTypographyBody1>
 
       <CoreTypographyBody1>
@@ -43,6 +43,7 @@ export default function CoreContainerDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreContainer} /> */}
       
     </>

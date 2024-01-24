@@ -20,7 +20,9 @@ export default function CoreImageDocs() {
         </CoreImage>
         `}
         renderElement={<>
-          <CoreImage width={200} height={200}
+          <CoreImage
+            width={200}
+            height={200}
             src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg">
           </CoreImage>
         </>}

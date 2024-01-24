@@ -1,4 +1,3 @@
-import * as React from "react";
 
 import {
   CoreH4,
@@ -8,11 +7,12 @@ import {
 import CodeSample from "../../CodeSample";
 
 export default function CoreTabPanelDocs() {
-  const [value, setValue] = React.useState(0);
+  {/* eslint-disable-next-line etc/no-commented-out-code */}
+  {/*const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-  };
+  };*/}
 
   return (
     <>
@@ -27,6 +27,7 @@ export default function CoreTabPanelDocs() {
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox sx={{ width: "100%" }}>
             <CoreBox sx={{ borderBottom: 1, borderColor: "divider" }}>
               <CoreTabs value={value} onChange={handleChange} aria-label="basic tabs example">
@@ -53,6 +54,7 @@ export default function CoreTabPanelDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreTabPanel} /> */}
       
     </>
@@ -79,12 +81,14 @@ export default function CoreTabPanelDocs() {
 //   );
 // }
 
+// eslint-disable-next-line etc/no-commented-out-code
 // CustomTabPanel.propTypes = {
 //   children: PropTypes.node,
 //   index   : PropTypes.number.isRequired,
 //   value   : PropTypes.number.isRequired,
 // };
 
+// eslint-disable-next-line etc/no-commented-out-code
 // function a11yProps(index) {
 //   return {
 //     "aria-controls": `simple-tabpanel-${index}`,

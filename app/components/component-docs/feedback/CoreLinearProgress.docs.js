@@ -14,7 +14,9 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreLinearProgressDocs() {
+  // eslint-disable-next-line no-unused-vars
   const [progress, setProgress] = React.useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [buffer, setBuffer] = React.useState(10);
 
   return (
@@ -25,9 +27,9 @@ export default function CoreLinearProgressDocs() {
         title={"Linear indeterminate"}
         code={"<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]} ><CoreLinearProgress value={70} /></CoreBox>"}
         renderElement={<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
-        <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]} >
-          <CoreLinearProgress value={70} />
-        </CoreBox>
+          <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]} >
+            <CoreLinearProgress value={70} />
+          </CoreBox>
         </CoreBox>}
       />
 

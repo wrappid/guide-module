@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   CoreH4,
   CoreTypographyBody1,
@@ -7,24 +9,22 @@ import {
   CoreTypographyCaption,
   CoreClasses
 } from "@wrappid/core";
-import React from "react";
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
-
 // labels for hover Feedback Section
 const labels = {
   0.5: "Useless",
-  1: "Useless+",
+  1  : "Useless+",
   1.5: "Poor",
-  2: "Poor+",
+  2  : "Poor+",
   2.5: "Ok",
-  3: "Ok+",
+  3  : "Ok+",
   3.5: "Good",
-  4: "Good+",
+  4  : "Good+",
   4.5: "Excellent",
-  5: "Excellent+",
+  5  : "Excellent+",
 };
 
 // getLabelText for hover Feedback Section
@@ -42,6 +42,7 @@ function getLabelText(value) {
 //   },
 // });
 
+// eslint-disable-next-line etc/no-commented-out-code
 // // StyledRating1 for the Radio Section
 // const StyledRating1 = styled(Rating)(({ theme }) => ({
 //   "& .MuiRating-iconEmpty .MuiSvgIcon-root": {
@@ -50,38 +51,31 @@ function getLabelText(value) {
 // }));
 
 // customIcons for Radio Section
-const customIcons = {
+// eslint-disable-next-line etc/no-commented-out-code
+{/*const customIcons = {
   1: {
-    icon: <CoreIcon icon="sentiment_very_dissatisfied" color="error" />,
+    icon : <CoreIcon icon="sentiment_very_dissatisfied" color="error" />,
     label: "Very Dissatisfied",
   },
   2: {
-    icon: <CoreIcon icon="sentiment_dissatisfied" color="error" />,
+    icon : <CoreIcon icon="sentiment_dissatisfied" color="error" />,
     label: "Dissatisfied",
   },
   3: {
-    icon: <CoreIcon icon="sentiment_satisfied" color="warning" />,
+    icon : <CoreIcon icon="sentiment_satisfied" color="warning" />,
     label: "Neutral",
   },
   4: {
-    icon: <CoreIcon icon="sentiment_satisfied_alt" color="success" />,
+    icon : <CoreIcon icon="sentiment_satisfied_alt" color="success" />,
     label: "Satisfied",
   },
   5: {
-    icon: <CoreIcon icon="sentiment_very_satisfied" color="success" />,
+    icon : <CoreIcon icon="sentiment_very_satisfied" color="success" />,
     label: "Very Satisfied",
   },
-};
+};*/}
 
 // IconContainer for Radio Section
-function IconContainer(props) {
-  const { value, ...other } = props;
-  return <span {...other}>{customIcons[value].icon}</span>;
-}
-
-// IconContainer.propTypes = {
-//   value: PropTypes.number.isRequired,
-// };
 
 // Default export function
 export default function CoreRatingDocs() {
@@ -93,7 +87,7 @@ export default function CoreRatingDocs() {
       <CoreH4>CoreRating</CoreH4>
 
       <CoreTypographyBody1>
-        Ratings provide insight regarding others' opinions and experiences, and
+        Ratings provide insight regarding others opinions and experiences, and
         can allow the user to submit a rating of their own.
       </CoreTypographyBody1>
 
@@ -120,6 +114,7 @@ export default function CoreRatingDocs() {
         renderElement={
           <>
             <CoreTypographyBody1>Controlled </CoreTypographyBody1>
+
             <CoreRating
               name="simple-controlled"
               value={value}
@@ -129,12 +124,15 @@ export default function CoreRatingDocs() {
             />
 
             <CoreTypographyBody1>Read only </CoreTypographyBody1>
+
             <CoreRating name="read-only" value={value} readOnly />
 
             <CoreTypographyBody1>Disabled </CoreTypographyBody1>
-          <CoreRating name="disabled" value={value} disabled />
+
+            <CoreRating name="disabled" value={value} disabled />
 
             <CoreTypographyBody1>No rating given </CoreTypographyBody1>
+
             <CoreRating name="no-value" value={null} />
           </>
         }
@@ -150,6 +148,7 @@ export default function CoreRatingDocs() {
         renderElement={
           <>
             <CoreRating name="half-rating" defaultValue={2.5} precision={0.5} />
+
             <CoreRating
               name="half-rating-read"
               defaultValue={2.5}
@@ -200,6 +199,7 @@ export default function CoreRatingDocs() {
                 <CoreIcon icon="star" style={{ opacity: 0.55 }} fontSize="inherit" />
               }
             />
+
             {value !== null && (
               <CoreBox sx={{ ml: 2 }}>
                 {labels[hover !== -1 ? hover : value]}
@@ -218,7 +218,9 @@ export default function CoreRatingDocs() {
         renderElement={
           <>
             <CoreRating name="size-small" defaultValue={2} size="small" />
+
             <CoreRating name="size-medium" defaultValue={2} />
+
             <CoreRating name="size-large" defaultValue={2} size="large" />
           </>
         }
@@ -246,16 +248,19 @@ export default function CoreRatingDocs() {
       <CoreRating name="customized-10" defaultValue={2} max={10} />`}
         renderElement={
           <>
-           <CoreTypographyCaption
+            <CoreTypographyCaption
               key={1}
               component="p"
               styleClasses={[CoreClasses.COLOR.TEXT_WARNING_LIGHT]}
             >
               Can not used mui styled function & Rating component directly in our application. Issue available here: https://github.com/wrappid/guide-module/issues/5
             </CoreTypographyCaption>
+
             <CoreTypographyBody1 component="legend">
               Custom icon and color
             </CoreTypographyBody1>
+
+            {/* eslint-disable-next-line etc/no-commented-out-code */}
             {/* <StyledRating
               name="customized-color"
               defaultValue={2}
@@ -269,6 +274,7 @@ export default function CoreRatingDocs() {
             <CoreTypographyBody1 component="legend">
               10 stars
             </CoreTypographyBody1>
+
             <CoreRating name="customized-10" defaultValue={2} max={10} />
           </>
         }
@@ -288,6 +294,7 @@ export default function CoreRatingDocs() {
         />`}
         renderElement={
           <>
+            {/* eslint-disable-next-line etc/no-commented-out-code */}
             {/* <StyledRating
               name="highlight-selected-only"
               defaultValue={2}

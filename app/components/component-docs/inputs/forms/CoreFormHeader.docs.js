@@ -21,6 +21,7 @@ export default function CoreFormHeaderDocs() {
         renderElement={<></>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreFormHeader} /> */}
       
     </>

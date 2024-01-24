@@ -13,10 +13,6 @@ import CodeSample from "../../../CodeSample";
 export default function CoreFormControlLabelDocs() {
   const [checked, setChecked] = React.useState([true, false]);
 
-  const handleChange1 = (event) => {
-    setChecked([event.target.checked, event.target.checked]);
-  };
-
   const handleChange2 = (event) => {
     setChecked([event.target.checked, checked[1]]);
   };
@@ -25,6 +21,7 @@ export default function CoreFormControlLabelDocs() {
     setChecked([checked[0], event.target.checked]);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const children = (
     <CoreBox sx={{ display: "flex", flexDirection: "column", ml: 3 }}>
       <CoreFormControlLabel
@@ -52,6 +49,7 @@ export default function CoreFormControlLabelDocs() {
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <div>
             <CoreFormControlLabel
               label="Parent"
@@ -70,6 +68,7 @@ export default function CoreFormControlLabelDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreFormControlLabel} /> */}
       
     </>

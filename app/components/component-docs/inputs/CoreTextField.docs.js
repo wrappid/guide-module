@@ -18,15 +18,8 @@ import CodeBlock from "../../CodeBlock";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
-// import React from "react";
 export default function CoreTextFieldDocs() {
-  // const [showPassword, setShowPassword] = React.useState(false);
 
-  // const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  // const handleMouseDownPassword = (event) => {
-  //   event.preventDefault();
-  // };
   const currencies = [
     {
       label: "$",
@@ -129,9 +122,15 @@ autoComplete="off"
           <CoreTypographyBody1>
             Standard form attributes are supported e.g.{" "}
 
-            <CodeBlock>required</CodeBlock>, <CodeBlock>disabled</CodeBlock>,{" "}
+            <CodeBlock>required</CodeBlock>, 
+            
+            <CodeBlock>disabled</CodeBlock>,
+            
+            {" "}
 
-            <CodeBlock>type</CodeBlock>, etc. as well as a{" "}
+            <CodeBlock>type</CodeBlock>, etc. as well as a
+            
+            {" "}
 
             <CodeBlock>helperText</CodeBlock> which is used to give context
 
@@ -493,7 +492,9 @@ autoComplete="off"
         title={"Validation"}
         description={
           <CoreTypographyBody1>
-            The <CodeBlock>error</CodeBlock> prop toggles the error state. The{" "}
+            The <CodeBlock>error</CodeBlock> prop toggles the error state. The
+            
+            {" "}
 
             <CodeBlock>helperText</CodeBlock> prop can then be used to provide
             feedback to the user about the error.
@@ -641,7 +642,9 @@ autoComplete="off"
             <CodeBlock>rows</CodeBlock> prop is set, the height of the text
             field dynamically matches its content (using TextareaAutosize). You
 
-            can use the <CodeBlock>minRows</CodeBlock> and{" "}
+            can use the <CodeBlock>minRows</CodeBlock> and
+            
+            {" "}
 
             <CodeBlock>maxRows</CodeBlock> props to bound it.
           </CoreTypographyBody1>
@@ -1059,7 +1062,7 @@ autoComplete="off"
       />
 
       <CoreAlert severity="error">
-        Icons Error: "With a start adornment" Should be at suffix{" "}
+        Icons Error: With a start adornment, Should be at suffix
       </CoreAlert>
 
       <CodeSample
@@ -1135,13 +1138,6 @@ With a start adornment
                 variant="standard"
               />
 
-              {/* <CoreStack direction="row" styleCLasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END, CoreClasses.DISPLAY.FLEX]} sx={{ alignItems: "flex-end", display: "flex" }}> */}
-              {/* <AccountCircle sx={{ color: "action.active", mr: 1, my: 0.5 }} /> */}
-
-              {/* <CoreIcon icon="account_circle" styleCLasses={[CoreClasses.MARGIN.MR1, CoreClasses.MARGIN.MY1]} /> */}
-
-              {/* <CoreTextField id="input-with-sx" label="With sx" variant="standard" /> */}
-              {/* </CoreStack> */}
             </CoreStack>
           </>
         }
@@ -1522,11 +1518,19 @@ With a start adornment
 
             vertical spacing of the text field. Using{" "}
 
-            <CodeBlock>none</CodeBlock> (default) doesn{"'"}t apply margins to
+            <CodeBlock>none</CodeBlock> (default) doesn
+            
+            {"'"}
+            
+            t apply margins to
 
-            the <CodeBlock>FormControl</CodeBlock> whereas{" "}
+            the <CodeBlock>FormControl</CodeBlock> whereas
+            
+            {" "}
 
-            <CodeBlock>dense</CodeBlock> and <CodeBlock>normal</CodeBlock> do.
+            <CodeBlock>dense</CodeBlock> and 
+            
+            <CodeBlock>normal</CodeBlock> do.
           </CoreTypographyBody1>
         }
         code={`<CoreStack
@@ -1536,15 +1540,15 @@ With a start adornment
 >
   <RedBar />
 
-  <CoreTextField label={"margin=\"none\""} id="margin-none" />
+  <CoreTextField label={"margin="none""} id="margin-none" />
 
   <RedBar />
 
-  <CoreTextField label={"margin=\"dense\""} id="margin-dense" margin="dense" />
+  <CoreTextField label={"margin="dense""} id="margin-dense" margin="dense" />
 
   <RedBar />
 
-  <CoreTextField label={"margin=\"normal\""} id="margin-normal" margin="normal" />
+  <CoreTextField label={"margin="normal""} id="margin-normal" margin="normal" />
 
   <RedBar />
 </CoreStack>`}
@@ -1631,13 +1635,23 @@ With a start adornment
             <CoreTypographyBody1>
               <CodeBlock>CoreTextField</CodeBlock> is composed of smaller
 
-              components ( <CodeBlock>FormControl</CodeBlock>,{" "}
+              components ( <CodeBlock>FormControl</CodeBlock>,
+              
+              {" "}
 
-              <CodeBlock>Input</CodeBlock>,<CodeBlock>FilledInput</CodeBlock>,{" "}
+              <CodeBlock>Input</CodeBlock>,
+              
+              <CodeBlock>FilledInput</CodeBlock>,
+              
+              {" "}
 
-              <CodeBlock>InputLabel</CodeBlock>,{" "}
+              <CodeBlock>InputLabel</CodeBlock>,
+              
+              {" "}
 
-              <CodeBlock>OutlinedInput</CodeBlock>, and{" "}
+              <CodeBlock>OutlinedInput</CodeBlock>, and
+              
+              {" "}
 
               <CodeBlock>FormHelperText</CodeBlock> ) that you can leverage
               directly to significantly customize your form inputs.
@@ -1651,9 +1665,13 @@ With a start adornment
               most used properties. Then, it{"'"}s up to the user to use the
               underlying component shown in the following demo. Still, you can
 
-              use <CodeBlock>inputProps</CodeBlock> (and{" "}
+              use <CodeBlock>inputProps</CodeBlock> (and
+              
+              {" "}
 
-              <CodeBlock>InputProps</CodeBlock>,{" "}
+              <CodeBlock>InputProps</CodeBlock>,
+              
+              {" "}
 
               <CodeBlock>InputLabelProps</CodeBlock> properties) if you want to
               avoid some boilerplate.
@@ -1732,16 +1750,11 @@ With a start adornment
         description={
           <>
             <CoreTypographyBody1>
-              The input label "shrink" state isn't always correct. The input
-              label is supposed to shrink as soon as the input is displaying
-              something. In some circumstances, we can't determine the "shrink"
-              state (number input, datetime input, Stripe input). You might
-              notice an overlap.
+              {"The input label \"shrink\" state isn't always correct. The input label is supposed to shrink as soon as the input is displaying something. In some circumstances, we can't determine the \"shrink\" state (number input, datetime input, Stripe input). You might notice an overlap."}
             </CoreTypographyBody1>
 
             <CoreTypographyBody1>
-              To workaround the issue, you can force the "shrink" state of the
-              label.
+              {"To workaround the issue, you can force the \"shrink\" state of the label."}
             </CoreTypographyBody1>
           </>
         }

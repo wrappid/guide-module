@@ -94,12 +94,14 @@ export default function CoreSnackbarDocs() {
       <CoreIcon fontSize="small" >close</CoreIcon>
     </CoreIconButton></>
   );
-  // </React.Fragment>
+
+  {/* eslint-disable-next-line etc/no-commented-out-code */}
+  {/*// </React.Fragment>
   const Action = (
     <CoreButton color="secondary" size="small">
       lorem ipsum dolorem
     </CoreButton>
-  );
+  );*/}
   
   return (
     <>
@@ -125,6 +127,7 @@ export default function CoreSnackbarDocs() {
 
       <CodeImport name="CoreSnackbar" />
 
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* 
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE"}

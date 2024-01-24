@@ -32,7 +32,7 @@ export default function CoreCardDocs() {
         </CoreTypographyBody1>
 
         <CoreTypographyBody1 variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
+          {`be${bull}nev${bull}o${bull}lent`}
         </CoreTypographyBody1>
 
         <CoreTypographyBody1 color="text.secondary">
@@ -87,7 +87,7 @@ export default function CoreCardDocs() {
   well meaning and kindly.
         <br />
 
-        {"\"a benevolent smile\""}
+        {""a benevolent smile""}
       </CoreTypographyBody2>
     </CoreCardContent>
 
@@ -104,7 +104,7 @@ export default function CoreCardDocs() {
               </CoreTypographyBody1>
 
               <CoreTypographyBody1 variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
+                {`be${bull}nev${bull}o${bull}lent`}
               </CoreTypographyBody1>
 
               <CoreTypographyBody1 color="text.secondary">
@@ -113,7 +113,6 @@ export default function CoreCardDocs() {
 
               <CoreTypographyBody2 >
           well meaning and kindly.
-                {/* <br /> */}
 
                 {"\"a benevolent smile\""}
               </CoreTypographyBody2>
@@ -403,6 +402,7 @@ export default function CoreCardDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreCard} /> */}
       
     </>

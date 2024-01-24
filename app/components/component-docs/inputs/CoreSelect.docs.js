@@ -1,4 +1,3 @@
-import * as React from "react";
 
 import {
   CoreH4,
@@ -10,11 +9,12 @@ import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreSelectDocs() {
-  const [age, setAge] = React.useState("");
+  // eslint-disable-next-line etc/no-commented-out-code
+  {/*const [age, setAge] = React.useState("");
   
   const handleChange = (event) => {
     setAge(event.target.value);
-  };
+  };*/}
 
   return (
     <>
@@ -29,6 +29,7 @@ export default function CoreSelectDocs() {
         description={"Menus are positioned under their emitting elements, unless they are close to the bottom of the viewport."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<>
+          {/* eslint-disable-next-line etc/no-commented-out-code */}
           {/* <CoreBox sx={{ minWidth: 120 }}>
             <CoreFormControl fullWidth>
               <CoreInputLabel id="demo-simple-select-label">Age</CoreInputLabel>

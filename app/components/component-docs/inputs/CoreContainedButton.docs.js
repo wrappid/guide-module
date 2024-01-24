@@ -30,6 +30,7 @@ export default function CoreContainedButtonDocs() {
         </>}
       />
         
+      {/* eslint-disable-next-line etc/no-commented-out-code */}
       {/* <ComponentProps component={CoreContainedButton} /> */}
       
     </>

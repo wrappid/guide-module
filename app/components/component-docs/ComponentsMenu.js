@@ -1,14 +1,11 @@
 import React from "react";
+
 import {
   toggleMenuItemState,
-  CoreAccordion,
-  CoreAccordionDetail,
-  CoreAccordionSummary,
   CoreBox,
   CoreClasses,
-  CoreTextButton,
   CoreTypographyBody1,
-  CoreMenu,
+  CoreMenu
 } from "@wrappid/core";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,6 +13,7 @@ export default function ComponentsMenu(props) {
   const dispatch = useDispatch();
 
   const collapse = useSelector((state) => state?.menu?.collapse);
+  // eslint-disable-next-line no-unused-vars
   const [preparedMenu, setPreparedMenu] = React.useState([]);
   const { docsRegistry, /* currentPage, */ setCurrentPage } = props;
   const getSortedRegistry = (docsRegistry) => {
@@ -30,14 +28,15 @@ export default function ComponentsMenu(props) {
   const prepareComponentMenu = (docsRegistry) => {
     return (
       getSortedRegistry(docsRegistry)?.map((docKey) => {
-        console.log("menu of", docKey);
-        console.log(prepareComponentMenu(docsRegistry[docKey]?.children));
+        // eslint-disable-next-line etc/no-commented-out-code
+        {/*console.log("menu of", docKey);
+      console.log(prepareComponentMenu(docsRegistry[docKey]?.children));*/}
         return {
           Children: prepareComponentMenu(docsRegistry[docKey]?.children),
-          id: docKey,
-          label: docKey?.trim(),
-          name: docKey?.trim(),
-          type: "menuitem",
+          id      : docKey,
+          label   : docKey?.trim(),
+          name    : docKey?.trim(),
+          type    : "menuitem",
         };
       }) || []
     );
@@ -46,26 +45,17 @@ export default function ComponentsMenu(props) {
   /**
    * Right drawer related collapse
    */
+  // eslint-disable-next-line no-unused-vars
   const [open, setOpen] = React.useState(true);
 
   return (
     <>
-    {/* <CoreRightDrawer anchor={props.anchor ? props.anchor : "right"}
-      variant={"persistent"}
-      open={open}
-      PaperProps={{ sx: { ...getEffectiveStyle(["appDrawerPaperHeight", "appbarHeight"]) } }}
-    > 
-    </CoreRightDrawer>
-    */}
+      
       <CoreTypographyBody1>Component Menu</CoreTypographyBody1>
 
       <CoreBox
-        CoreClasses={[
-          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
-          CoreClasses.HEIGHT.H_100,
-        ]}
+        CoreClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.H_100]}
       >
-        {/* {JSON.stringify(prepareComponentMenu(docsRegistry), null, 2)} */}
         <CoreMenu
           openCollapse={collapse}
           multiLevel={true}
