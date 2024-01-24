@@ -327,17 +327,18 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             // height={56}
             styleClasses={[
-              classes[className],
               CoreClasses.HEIGHT.H_50,
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_2,
+              classes[className],
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
               CoreClasses.PADDING.P1,
             ]}
           >
-            <CoreTypographyCaption>144x56</CoreTypographyCaption>
+            <CoreTypographyCaption>CONTENTS</CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[
+              CoreClasses.PADDING.PB3, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -345,21 +346,20 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   BORDER__STARTS_WITH__BORDER_STYLE: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox gridProps={{ gridSize: 3 }} styleClasses={[CoreClasses.HEIGHT.H_100]}>
           <CoreBox
             key={key}
-            height={56}
             styleClasses={[
+              CoreClasses.HEIGHT.H_50,
               classes[className],
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
               CoreClasses.PADDING.P1,
-              // CoreClasses.BORDER.BORDER,
-              // CoreClasses.BORDER.BORDER_2,
             ]}
           >
-            <CoreTypographyCaption>144x56</CoreTypographyCaption>
+            <CoreTypographyCaption>CONTENTS</CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[
+              CoreClasses.PADDING.PB3, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -370,29 +370,23 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           key={key}
           gridProps={{ gridSize: 3 }}
-          styleClasses={[
-            CoreClasses.FLEX.DIRECTION_COLUMN,
-            CoreClasses.FLEX.FLEX_WRAP_WRAP,
-            CoreClasses.ALIGNMENT.ALIGN_CONTENT_CENTER,
-            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-            CoreClasses.PADDING.P1,
-          ]}
+          styleClasses={[CoreClasses.HEIGHT.H_100]}
         >
           <CoreBox
-            height={56}
             styleClasses={[
+              CoreClasses.HEIGHT.H_50,
               CoreClasses.BORDER.BORDER,
-              classes[className],
               CoreClasses.BORDER.BORDER_2,
+              classes[className],
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-              CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
               CoreClasses.PADDING.P1,
             ]}
           >
-            <CoreTypographyCaption>144x56</CoreTypographyCaption>
+            <CoreTypographyCaption>CONTENTS</CoreTypographyCaption>
           </CoreBox>
 
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[
+              CoreClasses.PADDING.PB3, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -412,8 +406,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           key={key}
           gridProps={{ gridSize: 4 }}
           styleClasses={[
-            classes[className],
             CoreClasses.BORDER.BORDER,
+            classes[className],
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
