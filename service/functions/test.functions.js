@@ -86,7 +86,6 @@ const updateTestData = async (req) => {
     if (result) {
       // Delete chache with data
       let cacheKey = req.params.toString();
-
       await cacheActions.delete("wrappid-cache", cacheKey);
     } else {
       throw new Error("Can't update entity in the database");
@@ -103,10 +102,12 @@ const updateTestData = async (req) => {
  */
 const deleteTestData = async (req) => {
   try {
-    let data = await databaseActions.delete("application", "TestDatas", { where: { id: req.params.id } });
-
+    let data = await databaseActions.delete("application", "TestDatas", {
+      where: {
+        id: req.params.id,
+      },
+    });
     let cacheKey = req.params.toString();
-    
     await cacheActions.delete("wrappid-cache", cacheKey);
     
     return data;

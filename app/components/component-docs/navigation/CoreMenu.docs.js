@@ -6,8 +6,9 @@ import {
   CoreFade,
   CoreH4,
   CoreMenu,
-  CoreMenuItem,
-  CoreTypographyBody1
+  CoreClasses,
+  CoreTypographyBody1,
+  CoreStack, CoreMenuList, CoreMenuItem, CoreIcon, CoreListItemIcon, CoreListItemText, CoreIconButton, CoreDivider
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
@@ -104,68 +105,87 @@ export default function CoreMenuDocs() {
       />
 
       <CodeSample
-        title={"Icon menu (NOT_WORKING)"}
+        title={"Icon menu"}
         description={"In desktop viewport, padding is increased to give more space to the menu."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
+        code={""}
         renderElement={<>
-          {/* eslint-disable-next-line etc/no-commented-out-code */}
-          {/* <CorePaper styleClasses = {[CoreClasses.WIDTH.MAX_W_100, CoreClasses.WIDTH.W_25]} >
-            <MenuList>
-              <MenuItem>
-                <ListItemIcon>
-                  <ContentCut fontSize="small" />
-                </ListItemIcon>
+          <CoreStack styleClasses={[CoreClasses.WIDTH.W_25]}>
+            <CoreMenuList>
+              <CoreMenuItem>
+                <CoreListItemIcon>
+                  <CoreIcon icon={"mail"} />
+                </CoreListItemIcon>
 
-                <ListItemText>Cut</ListItemText>
+                <CoreListItemText>Message</CoreListItemText>
 
-                <Typography variant="body2" color="text.secondary">
-            ⌘X
-                </Typography>
-              </MenuItem>
+                <CoreIconButton aria-label="add" color="secondary">
+                  <CoreIcon>add</CoreIcon>
+                </CoreIconButton>
+              </CoreMenuItem>
 
-              <MenuItem>
-                <ListItemIcon>
-                  <ContentCopy fontSize="small" />
-                </ListItemIcon>
+              <CoreMenuItem>
+                <CoreListItemIcon>
+                  <CoreIcon icon={"phone"} />
+                </CoreListItemIcon>
 
-                <ListItemText>Copy</ListItemText>
+                <CoreListItemText>Phone</CoreListItemText>
 
-                <Typography variant="body2" color="text.secondary">
-            ⌘C
-                </Typography>
-              </MenuItem>
+                <CoreIconButton aria-label="add" color="secondary">
+                  <CoreIcon>add</CoreIcon>
+                </CoreIconButton>
+              </CoreMenuItem>
 
-              <MenuItem>
-                <ListItemIcon>
-                  <ContentPaste fontSize="small" />
-                </ListItemIcon>
+              <CoreMenuItem>
+                <CoreListItemIcon>
+                  <CoreIcon icon={"delete"} />
+                </CoreListItemIcon>
 
-                <ListItemText>Paste</ListItemText>
+                <CoreListItemText>Trash</CoreListItemText>
 
-                <Typography variant="body2" color="text.secondary">
-            ⌘V
-                </Typography>
-              </MenuItem>
-
-              <Divider />
-
-              <MenuItem>
-                <ListItemIcon>
-                  <Cloud fontSize="small" />
-                </ListItemIcon>
-
-                <ListItemText>Web Clipboard</ListItemText>
-              </MenuItem>
-            </MenuList>
-          </CorePaper> */}
+                <CoreIconButton aria-label="add" color="secondary">
+                  <CoreIcon>add</CoreIcon>
+                </CoreIconButton>
+              </CoreMenuItem>
+            </CoreMenuList>
+          </CoreStack>
         </>}
       />
 
       <CodeSample
-        title={"Dense menu (NOT_WORKING)"}
+        title={"Dense menu"}
         description={"For the menu that has long list and long text, you can use the dense prop to reduce the padding and text size."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        code={""}
+        renderElement={<>
+          <CoreStack styleClasses={[CoreClasses.WIDTH.W_25]}>
+            <CoreMenuList dense>
+              <CoreMenuItem>
+                <CoreListItemText inset>Single</CoreListItemText>
+              </CoreMenuItem>
+
+              <CoreMenuItem>
+                <CoreListItemText inset>2.5</CoreListItemText>
+              </CoreMenuItem>
+
+              <CoreMenuItem>
+                <CoreListItemText inset>Double</CoreListItemText>
+              </CoreMenuItem>
+
+              <CoreDivider />
+
+              <CoreMenuItem>
+                <CoreListItemText>Add space before paragraph</CoreListItemText>
+              </CoreMenuItem>
+
+              <CoreMenuItem>
+                <CoreListItemText>Add space after paragraph</CoreListItemText>
+              </CoreMenuItem>
+
+              <CoreMenuItem>
+                <CoreListItemText>Custom spacing...</CoreListItemText>
+              </CoreMenuItem>
+            </CoreMenuList>
+          </CoreStack>
+        </>}
       />
 
       <CodeSample
