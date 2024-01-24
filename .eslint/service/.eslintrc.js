@@ -5,7 +5,6 @@ module.exports = {
       node: true,
     },
     extends: ["eslint:recommended", "plugin:import/recommended"],
-    ignorePatterns: ["**/node_modules/*"],
     parserOptions: {
       ecmaVersion: 2021,
       sourceType: "module",

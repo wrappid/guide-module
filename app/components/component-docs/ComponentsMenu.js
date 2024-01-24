@@ -2,9 +2,6 @@ import React from "react";
 
 import {
   toggleMenuItemState,
-  CoreH1,
-  CoreH6,
-  CoreAccordionSummary,
   CoreBox,
   CoreClasses,
   CoreTypographyBody1,
@@ -57,11 +54,7 @@ export default function ComponentsMenu(props) {
       <CoreTypographyBody1>Component Menu</CoreTypographyBody1>
 
       <CoreBox
-        CoreClasses={[
-          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
-          CoreClasses.HEIGHT.H_100,
-          CoreClasses.MARGIN.M1
-        ]}
+        CoreClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.H_100, CoreClasses.MARGIN.M1]}
       >
         <CoreMenu
           openCollapse={collapse}

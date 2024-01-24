@@ -6,8 +6,6 @@ module.exports = {
       "node"   : true,
     },
     "extends"       : ["eslint:recommended", "plugin:react/recommended", "plugin:import/recommended", "plugin:react/jsx-runtime"],
-    "ignorePatterns": ["**/node_modules/*"],
-    "overrides"     : [],
     "parserOptions" : {
       "ecmaVersion": "latest",
       "sourceType" : "module",
@@ -78,12 +76,12 @@ module.exports = {
         {
           blankLine: "always",
           next     : "*",
-          prev     : ["const", "let", "var"],
+          prev     : ["const", "let"],
         },
         {
           blankLine: "any",
-          next     : ["const", "let", "var"],
-          prev     : ["const", "let", "var"],
+          next     : ["const", "let"],
+          prev     : ["const", "let"],
         },
         {
           blankLine: "always",

@@ -8,7 +8,7 @@ import {
   CoreMenu,
   CoreClasses,
   CoreTypographyBody1,
-  CoreStack, CorePaper, CoreMenuList, CoreMenuItem, CoreIcon, CoreListItemIcon, CoreListItemText, CoreIconButton, CoreDivider
+  CoreStack, CoreMenuList, CoreMenuItem, CoreIcon, CoreListItemIcon, CoreListItemText, CoreIconButton, CoreDivider
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
@@ -107,54 +107,54 @@ export default function CoreMenuDocs() {
       <CodeSample
         title={"Icon menu"}
         description={"In desktop viewport, padding is increased to give more space to the menu."}
-        code={``}
+        code={""}
         renderElement={<>
-               <CoreStack  styleClasses={[CoreClasses.WIDTH.W_25]}>
-        <CoreMenuList>
-          <CoreMenuItem>
-            <CoreListItemIcon>
-              <CoreIcon icon={"mail"} />
-            </CoreListItemIcon>
+          <CoreStack styleClasses={[CoreClasses.WIDTH.W_25]}>
+            <CoreMenuList>
+              <CoreMenuItem>
+                <CoreListItemIcon>
+                  <CoreIcon icon={"mail"} />
+                </CoreListItemIcon>
 
-            <CoreListItemText>Message</CoreListItemText>
+                <CoreListItemText>Message</CoreListItemText>
 
-            <CoreIconButton aria-label="add" color="secondary">
-              <CoreIcon>add</CoreIcon>
-            </CoreIconButton>
-          </CoreMenuItem>
+                <CoreIconButton aria-label="add" color="secondary">
+                  <CoreIcon>add</CoreIcon>
+                </CoreIconButton>
+              </CoreMenuItem>
 
-          <CoreMenuItem>
-            <CoreListItemIcon>
-              <CoreIcon icon={"phone"} />
-            </CoreListItemIcon>
+              <CoreMenuItem>
+                <CoreListItemIcon>
+                  <CoreIcon icon={"phone"} />
+                </CoreListItemIcon>
 
-            <CoreListItemText>Phone</CoreListItemText>
+                <CoreListItemText>Phone</CoreListItemText>
 
-            <CoreIconButton aria-label="add" color="secondary">
-              <CoreIcon>add</CoreIcon>
-            </CoreIconButton>
-          </CoreMenuItem>
+                <CoreIconButton aria-label="add" color="secondary">
+                  <CoreIcon>add</CoreIcon>
+                </CoreIconButton>
+              </CoreMenuItem>
 
-          <CoreMenuItem>
-            <CoreListItemIcon>
-              <CoreIcon icon={"delete"} />
-            </CoreListItemIcon>
+              <CoreMenuItem>
+                <CoreListItemIcon>
+                  <CoreIcon icon={"delete"} />
+                </CoreListItemIcon>
 
-            <CoreListItemText>Trash</CoreListItemText>
+                <CoreListItemText>Trash</CoreListItemText>
 
-            <CoreIconButton aria-label="add" color="secondary">
-              <CoreIcon>add</CoreIcon>
-            </CoreIconButton>
-          </CoreMenuItem>
-        </CoreMenuList>
-      </CoreStack>
-                  </>}
+                <CoreIconButton aria-label="add" color="secondary">
+                  <CoreIcon>add</CoreIcon>
+                </CoreIconButton>
+              </CoreMenuItem>
+            </CoreMenuList>
+          </CoreStack>
+        </>}
       />
 
       <CodeSample
         title={"Dense menu"}
         description={"For the menu that has long list and long text, you can use the dense prop to reduce the padding and text size."}
-        code={``}
+        code={""}
         renderElement={<>
           <CoreStack styleClasses={[CoreClasses.WIDTH.W_25]}>
             <CoreMenuList dense>
