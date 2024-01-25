@@ -116,9 +116,7 @@ export default function StyleUtilities() {
           Table Of Contents
         </CoreH6>
         <CoreDivider/>
-        <CoreBox styleClasses={[
-          CoreClasses.HEIGHT.H_75,
-          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,]}>
+        <CoreBox>
 
         <CoreTOC
           styleClasses={[

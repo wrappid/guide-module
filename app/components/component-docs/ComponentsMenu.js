@@ -54,7 +54,7 @@ export default function ComponentsMenu(props) {
       <CoreTypographyBody1>Component Menu</CoreTypographyBody1>
 
       <CoreBox
-        CoreClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.H_100]}
+        CoreClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.H_100, CoreClasses.MARGIN.M1]}
       >
         <CoreMenu
           openCollapse={collapse}

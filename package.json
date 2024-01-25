@@ -5,11 +5,18 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "code:lint:app": "eslint -c ./.eslint/app/.eslintrc.js --ignore-path .gitignore ./app",
-    "code:format:app": "npm run code:lint:app -- --fix ./app",
-    "code:lint:service": "eslint -c ./.eslint/service/.eslintrc.js --ignore-path .gitignore ./service",
-    "code:format:service": "npm run code:lint:service -- --fix ./service",
+    "code:lint": "eslint -c .eslintrc.js --ignore-path .gitignore .",
+    "code:format": "npm run code:lint:app -- --fix",
+    "code:lint:app": "eslint -c .eslintrc.js --ignore-path .gitignore ./app",
+    "code:format:app": "npm run code:lint:app -- --fix",
+    "code:lint:service": "eslint -c .eslintrc.js --ignore-path .gitignore ./service",
+    "code:format:service": "npm run code:lint:service -- --fix",
     "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "author": {
+    "name": "wrappid",
+    "email": "wrappid.framework@gmail.com",
+    "url": "https://www.github.com/wrappid/core"
   },
   "repository": {
     "type": "git",
@@ -22,8 +29,7 @@
     "react-native",
     "template"
   ],
-  "author": "wrappid",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.5.0",
     "@commitlint/config-conventional": "^17.4.4",
