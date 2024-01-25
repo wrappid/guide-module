@@ -5,12 +5,17 @@ import {
   CoreClasses,
   CoreH3,
   CoreH6,
+  CoreLink,
   CoreList,
   CoreListItem,
   CoreTypographyBody1,
   CoreTypographyBody2,
   CoreTypographyCaption,
 } from "@wrappid/core";
+
+const handleClick = () => {
+  alert("Link clicked!");
+};
 
 export const DEFAULT_SAMPLE_COMPONENT = {
   code: (classGroupName, className) => {
@@ -32,7 +37,7 @@ export const DEFAULT_SAMPLE_COMPONENT = {
           CoreClasses.TEXT.TEXT_CENTER,
         ]}
       >
-        <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
       </CoreBox>
     );
   },
@@ -276,28 +281,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
-        </CoreBox>
-      );
-    },
-  },
-  BG__ENDS_WITH___BLACK: {
-    renderElement: (key, classes, className) => {
-      return (
-        <CoreBox
-          key={key}
-          gridProps={{ gridSize: 4 }}
-          styleClasses={[
-            classes[className],
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-            CoreClasses.PADDING.P1,
-            CoreClasses.TEXT.TEXT_CENTER,
-            CoreClasses.COLOR.TEXT_WHITE,
-          ]}
-        >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -472,7 +456,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -535,7 +519,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               <CoreTypographyCaption>Box 2</CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -595,7 +579,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               <CoreTypographyCaption>BOX 2</CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -625,7 +609,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -693,7 +677,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               <CoreTypographyCaption>ITEM 4</CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -732,7 +716,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
           >
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -804,7 +788,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               select
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -828,7 +812,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               This paragraph will not be selectable when clicked by the user.
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -842,11 +826,15 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       </>
     ),
     grouped: true,
+  },
+  POINTER_EVENT__STARTS_WITH__NONE: {
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
           key={key}
           gridProps={{ gridSize: 4 }}
+        >
+        <CoreBox
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -856,11 +844,40 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption><CoreLink onClick={handleClick}>This Link</CoreLink> can not be clicked.</CoreTypographyCaption>
+
+        </CoreBox>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
   },
+  POINTER_EVENT__STARTS_WITH__AUTO: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: 4 }}
+        >
+        <CoreBox
+          styleClasses={[
+            classes[className],
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_2,
+            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.PADDING.P1,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption><CoreLink onClick={handleClick}>This Link</CoreLink> can be clicked.</CoreTypographyCaption>
+
+        </CoreBox>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+
   MARGIN: {
     description: (
       <>
@@ -1030,7 +1047,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1075,7 +1092,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               Lorem ipsum dolor
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1123,7 +1140,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1170,7 +1187,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1217,7 +1234,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1349,7 +1366,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.WIDTH.MIN_W_75,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1409,7 +1426,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               }
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1433,7 +1450,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1455,7 +1472,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption styleClasses={[classes[className]]}>
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1478,7 +1495,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1499,7 +1516,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption styleClasses={[classes[className]]}>
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
-            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1524,7 +1541,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               }
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1548,7 +1565,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               }
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1573,7 +1590,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               }
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1603,7 +1620,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1653,7 +1670,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               </CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1691,7 +1708,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1741,7 +1758,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption>BOX 2</CoreTypographyCaption>
           </CoreBox>
 
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1778,7 +1795,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption>BOX 1</CoreTypographyCaption>
           </CoreBox>
 
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1803,7 +1820,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1825,7 +1842,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
