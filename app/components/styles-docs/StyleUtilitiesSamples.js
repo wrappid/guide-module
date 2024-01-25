@@ -763,7 +763,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               This paragraph will be entirely selected when clicked by the user.
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption>{classes[className]}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
