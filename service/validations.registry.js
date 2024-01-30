@@ -1,4 +1,4 @@
-const testValidations = require("../validations/test.validation");
+const testValidations = require("./validations/test.validation");
 
 const validationsRegistry = { ...testValidations };
 
