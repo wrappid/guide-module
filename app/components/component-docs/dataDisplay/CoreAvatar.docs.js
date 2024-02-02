@@ -108,7 +108,7 @@ export default function CoreAvatarDocs() {
         code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
   <CoreAvatar src="https://picsum.photos/200?random=1" />
   <CoreAvatar
-    src="https://picsum.photos/200?random=1""
+    src="https://picsum.photos/200?random=1"
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
   />
   <CoreAvatar
@@ -362,7 +362,7 @@ export default function CoreAvatarDocs() {
 The renderSurplus prop is useful when you need to render the surplus based on the data sent from the server."
         code={`
           <CoreAvatarGroup 
-            renderSurplus={(surplus) => <>+{surplus.toString()[0]}k</>}
+            renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</>}
             total={4250}>
     <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
     <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
