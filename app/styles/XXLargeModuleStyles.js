@@ -1,6 +1,6 @@
 import { XXLargeCoreStyles } from "@wrappid/core";
 
-export class XXLargeModuleStyles extends XXLargeCoreStyles {
+export default class XXLargeModuleStyles extends XXLargeCoreStyles {
   constructor(){
     super();
     this.style = {

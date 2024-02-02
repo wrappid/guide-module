@@ -1,6 +1,6 @@
 import { MediumCoreStyles } from "@wrappid/core";
 
-export class MediumModuleStyles extends MediumCoreStyles {
+export default class MediumModuleStyles extends MediumCoreStyles {
   constructor(){
     super();
     this.style = {

@@ -1,6 +1,6 @@
 import { LargeCoreStyles } from "@wrappid/core";
 
-export class LargeModuleStyles extends LargeCoreStyles {
+export default class LargeModuleStyles extends LargeCoreStyles {
   constructor(){
     super();
     this.style = {

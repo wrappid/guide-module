@@ -1,6 +1,6 @@
 import { DefaultCoreStyles } from "@wrappid/core";
 
-export class DefaultModuleStyles extends DefaultCoreStyles {
+export default class DefaultModuleStyles extends DefaultCoreStyles {
   constructor(){
     super();
     this.style = {
