@@ -13,15 +13,17 @@
     "code:format:service": "npm run code:lint:service -- --fix",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
+  "license": "MIT",
   "author": {
-    "name": "wrappid",
-    "email": "wrappid.framework@gmail.com",
-    "url": "https://www.github.com/wrappid/core"
-  },
+  "name": "Wrappid",
+  "email": "wrappid.framework@gmail.com",
+  "url": "https://www.github.com/wrappid"
+	},
+  "homepage": "https://github.com/wrappid/wrappid-module",
   "repository": {
     "type": "git",
     "url": "git:https://github.com/wrappid/wrappid-module.git"
-  },
+ },
   "keywords": [
     "wrappid",
     "module",
@@ -29,7 +31,6 @@
     "react-native",
     "template"
   ],
-  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.5.0",
     "@commitlint/config-conventional": "^17.4.4",
