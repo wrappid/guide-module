@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
+    "attributions:gen": "node ./scripts/attributions.gen.js",
     "code:lint": "eslint -c .eslintrc.js --ignore-path .gitignore .",
     "code:format": "npm run code:lint:app -- --fix",
     "code:lint:app": "eslint -c .eslintrc.js --ignore-path .gitignore ./app",
@@ -47,7 +48,8 @@
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.3",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "license-checker": "^25.0.1"
   },
   "dependencies": {
     "@faker-js/faker": "^8.1.0",
