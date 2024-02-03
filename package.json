@@ -16,15 +16,15 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Wrappid",
-    "email": "wrappid.framework@gmail.com",
-    "url": "https://www.github.com/wrappid"
-  },
+  "name": "Wrappid",
+  "email": "wrappid.framework@gmail.com",
+  "url": "https://www.github.com/wrappid"
+	},
   "homepage": "https://github.com/wrappid/wrappid-module",
   "repository": {
     "type": "git",
     "url": "git:https://github.com/wrappid/wrappid-module.git"
-  },
+ },
   "keywords": [
     "wrappid",
     "module",
@@ -53,7 +53,6 @@
   },
   "dependencies": {
     "@faker-js/faker": "^8.1.0",
-    "@wrappid/service-core": "file:../service-core/dist",
     "jest": "^27.5.1",
     "service-core": "^3.0.1",
     "supertest": "^6.3.3"
