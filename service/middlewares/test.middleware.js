@@ -1,4 +1,4 @@
-export const testMiddleware = (req: any, res: any, next: any) => {
+const testMiddleware = (req, res, next) => {
   try {
     console.log("Test middleware called successfully!");
 
@@ -7,3 +7,5 @@ export const testMiddleware = (req: any, res: any, next: any) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+module.exports = testMiddleware;

@@ -1,10 +1,10 @@
-import yup from "yup";
+const yup = require("yup");
 
-export const getTestAll = {
+const getTestAll = {
   query: yup.object({}).noUnknown().strict(),
 };
 
-export const getTest = {
+const getTest = {
   body: yup
     .object({
       id: yup.mixed(),
@@ -19,7 +19,7 @@ export const getTest = {
     .strict(),
 };
 
-export const postTest = {
+const postTest = {
   body: yup
     .object({
       name: yup.string().required(),
@@ -29,7 +29,7 @@ export const postTest = {
   query: yup.object({}).noUnknown().strict(),
 };
 
-export const putTest = {
+const putTest = {
   body: yup
     .object({
       id: yup.mixed(),
@@ -43,7 +43,7 @@ export const putTest = {
     .strict(),
 };
 
-export const patchTest = {
+const patchTest = {
   body: yup
     .object({
       id: yup.mixed(),
@@ -51,4 +51,12 @@ export const patchTest = {
     .noUnknown()
     .strict(),
   query: yup.object({ id: yup.mixed() }).noUnknown().strict(),
+};
+
+module.exports = {
+  getTestAll,
+  getTest,
+  postTest,
+  putTest,
+  patchTest
 };
