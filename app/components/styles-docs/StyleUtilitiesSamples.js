@@ -703,6 +703,29 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
+  GRADIENT: {
+    grouped:true
+  },
+  LINEAR: {
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox gridProps={{ gridSize: 4 }}>
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.BG.BG_PRIMARY_DARK
+            ]}
+          >
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+
+          </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
   HEIGHT: {
     description: (
       <>
@@ -898,7 +921,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-
   MARGIN: {
     description: (
       <>
@@ -1035,6 +1057,166 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           >
             {className}
           </CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N1: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: 2 }}
+          styleClasses={[
+            // CoreClasses.HEIGHT.VH_25,
+            CoreClasses.BG.BG_WHITE,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+
+          ]}
+        >
+        <CoreBox
+          key={key}
+          styleClasses={[
+            CoreClasses.BG.BG_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_WARNING,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.BG.BG_WHITE, classes[className],CoreClasses.WIDTH.W_100]}
+          >
+            Box 1 {className}
+          </CoreTypographyCaption>
+        </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N2: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: 2 }}
+          styleClasses={[
+            // CoreClasses.HEIGHT.VH_25,
+            CoreClasses.BG.BG_WHITE,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+
+          ]}
+        >
+        <CoreBox
+          key={key}
+          styleClasses={[
+            CoreClasses.BG.BG_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_WARNING,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.BG.BG_WHITE, classes[className],CoreClasses.WIDTH.W_100]}
+          >
+            Box 1 {className}
+          </CoreTypographyCaption>
+        </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N3: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: 2 }}
+          styleClasses={[
+            // CoreClasses.HEIGHT.VH_25,
+            CoreClasses.BG.BG_WHITE,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+
+          ]}
+        >
+        <CoreBox
+          key={key}
+          styleClasses={[
+            CoreClasses.BG.BG_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_WARNING,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.BG.BG_WHITE, classes[className],CoreClasses.WIDTH.W_100]}
+          >
+            Box 1 {className}
+          </CoreTypographyCaption>
+        </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N4: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: 2 }}
+          styleClasses={[
+            // CoreClasses.HEIGHT.VH_25,
+            CoreClasses.BG.BG_WHITE,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+
+          ]}
+        >
+        <CoreBox
+          key={key}
+          styleClasses={[
+            CoreClasses.BG.BG_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_WARNING,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.BG.BG_WHITE, classes[className],CoreClasses.WIDTH.W_100]}
+          >
+            Box 1 {className}
+          </CoreTypographyCaption>
+        </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N5: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: 2 }}
+          styleClasses={[
+            // CoreClasses.HEIGHT.VH_25,
+            CoreClasses.BG.BG_WHITE,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+
+          ]}
+        >
+        <CoreBox
+          key={key}
+          styleClasses={[
+            CoreClasses.BG.BG_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_WARNING,
+            CoreClasses.TEXT.TEXT_CENTER,
+          ]}
+        >
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.BG.BG_WHITE, classes[className],CoreClasses.WIDTH.W_100]}
+          >
+            Box 1 {className}
+          </CoreTypographyCaption>
+        </CoreBox>
         </CoreBox>
       );
     },
