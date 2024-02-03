@@ -1,12 +1,12 @@
-const testFunctions = require("../functions/test.functions");
+import * as testFunctions from "../functions/test.functions";
 
 /**
- * 
- * @param {*} req 
- * @param {*} res 
- * @returns 
+ *
+ * @param {*} req
+ * @param {*} res
+ * @returns
  */
-module.exports.testGetAllFunc = async (req, res) => {
+const testGetAllFunc = async (req: any, res: any) => {
   try {
     let data = await testFunctions.readTestDataAll(req);
     return res.status(200).json({ message: "Response Data(•_•) :", data });
@@ -22,7 +22,7 @@ module.exports.testGetAllFunc = async (req, res) => {
  * @param {*} res
  * @returns
  */
-module.exports.testGetFunc = async (req, res) => {
+const testGetFunc = async (req: any, res: any) => {
   try {
     let data = await testFunctions.readTestData(req);
     return res.status(200).json({ message: "Response Data(•_•) :", data });
@@ -38,7 +38,7 @@ module.exports.testGetFunc = async (req, res) => {
  * @param {*} res
  * @returns
  */
-module.exports.testPostFunc = async (req, res) => {
+const testPostFunc = async (req: any, res: any) => {
   try {
     let data = await testFunctions.createTestData(req);
     return res.status(200).json({ message: "Data is inserted (•_•) ", data });
@@ -53,10 +53,10 @@ module.exports.testPostFunc = async (req, res) => {
  * @param {*} req
  * @param {*} res
  * @returns
-*/
-module.exports.testPutFunc = async (req, res) => {
+ */
+const testPutFunc = async (req: any, res: any) => {
   try {
-    console.log("::---",req.params,"---::");
+    console.log("::---", req.params, "---::");
     let data = await testFunctions.updateTestData(req);
     return res.status(200).json({ message: "Data updated (•_•).", data });
   } catch (error) {
@@ -71,7 +71,7 @@ module.exports.testPutFunc = async (req, res) => {
  * @param {*} res
  * @returns
  */
-module.exports.testPatchFunc = async (req, res) => {
+const testPatchFunc = async (req: any, res: any) => {
   try {
     let data = await testFunctions.deleteTestData(req);
     return res.status(200).json({ message: "Deleted(^_^)", data });
@@ -79,4 +79,12 @@ module.exports.testPatchFunc = async (req, res) => {
     console.error(error);
     return res.status(500).json({ message: "Something went wrong.", error });
   }
+};
+
+export {
+  testGetAllFunc,
+  testGetFunc,
+  testPostFunc,
+  testPutFunc,
+  testPatchFunc,
 };
