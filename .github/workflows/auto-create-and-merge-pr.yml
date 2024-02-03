@@ -39,4 +39,6 @@ jobs:
     - name: Merge PR
       run: |
         pr_number=$(echo $pr_url | cut -d '/' -f 7)
-        gh pr merge $pr_number --merge --admin
+        gh pr merge $pr_number --rebase --admin
+      env:
+        GH_TOKEN: ${{ secrets.DEVOPS }}
