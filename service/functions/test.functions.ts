@@ -1,14 +1,13 @@
-const { cacheActions, databaseActions } = require("@wrappid/service-core");
+import { cacheActions, databaseActions } from "@wrappid/service-core";
 
 /**
- * 
- * @param {*} req 
- * @returns 
+ *
+ * @param {*} req
+ * @returns
  */
-const readTestDataAll = async () => {
+const readTestDataAll = async (cacheKey: any) => {
   try {
     //cache call to get data
-    let cacheKey = "testData";
     let result = await cacheActions.read("wrappid-cache", cacheKey);
     if (result) {
       return result;
@@ -27,11 +26,11 @@ const readTestDataAll = async () => {
 };
 
 /**
- * 
- * @param {*} req 
- * @returns 
+ *
+ * @param {*} req
+ * @returns
  */
-const readTestData = async (req) => {
+const readTestData = async (req: any) => {
   try {
     //cache call to get data
     let cacheKey = req.params.id.toString();
@@ -55,11 +54,11 @@ const readTestData = async (req) => {
 };
 
 /**
- * 
- * @param {*} req 
- * @returns 
+ *
+ * @param {*} req
+ * @returns
  */
-const createTestData = async (req) => {
+const createTestData = async (req: any) => {
   try {
     let data = await databaseActions.create("application", "TestDatas", {
       req,
@@ -71,18 +70,24 @@ const createTestData = async (req) => {
 };
 
 /**
- * 
- * @param {*} req 
- * @returns 
+ *
+ * @param {*} req
+ * @returns
  */
-const updateTestData = async (req) => {
+const updateTestData = async (req: any) => {
   try {
-    let result = await databaseActions.update("application", "TestDatas", {
-      data: { ...req.body },
-      where: {
-        id: req.params.id
+    let result = await databaseActions.update(
+      "application",
+      "TestDatas",
+      {
+        data: { ...req.body },
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
       }
-    });
+    );
 
     if (result) {
       // Delete chache with data
@@ -96,13 +101,12 @@ const updateTestData = async (req) => {
   }
 };
 
-
 /**
- * 
- * @param {*} req 
- * @returns 
+ *
+ * @param {*} req
+ * @returns
  */
-const deleteTestData = async (req) => {
+const deleteTestData = async (req: any) => {
   try {
     let data = await databaseActions.delete("application", "TestDatas", {
       where: {
@@ -111,15 +115,14 @@ const deleteTestData = async (req) => {
     });
     let cacheKey = req.params.toString();
     await cacheActions.delete("wrappid-cache", cacheKey);
-    
+
     return data;
   } catch (error) {
     throw new Error(error);
   }
 };
 
-
-module.exports = {
+export {
   readTestDataAll,
   readTestData,
   createTestData,
