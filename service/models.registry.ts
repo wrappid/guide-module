@@ -1,8 +1,9 @@
 import { TestDatas } from "./models/TestDatas.model";
 
-export const modelsRegistry = {
+const ModelsRegistry = {
   TestDatas: {
     database: "application",
     model: TestDatas,
   },
 };
+export { ModelsRegistry };

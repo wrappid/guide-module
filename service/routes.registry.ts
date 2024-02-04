@@ -1,0 +1,36 @@
+const RoutesRegistry = {
+  getTestAPI: {
+    name: "",
+    url: "",
+    authRequired: true,
+    title: "",
+    description: "",
+    keywords: "",
+    extraInfo: "",
+    source: "",
+    _status: "",
+    pageRef: "",
+    entityRef: "",
+    comments: "",
+    reqMethod: "",
+    controllerRef: "",
+  },
+
+  postTestAPI: {
+    name: "",
+    url: "",
+    authRequired: true,
+    title: "",
+    description: "",
+    keywords: "",
+    extraInfo: "",
+    source: "",
+    _status: "",
+    pageRef: "",
+    entityRef: "",
+    comments: "",
+    reqMethod: "",
+    controllerRef: "",
+  },
+};
+export { RoutesRegistry };
