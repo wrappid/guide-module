@@ -7,7 +7,7 @@ export default class LargeModuleStyles extends LargeCoreStyles {
       /**************************************************
        * Using LargeUtilityStyles example
        *************************************************/
-      testWrappidStyleClass: { ...this.styles.devBorder },
+      testWrappidStyleClass: { ...this.style.devBorder },
     };
   }
 }
