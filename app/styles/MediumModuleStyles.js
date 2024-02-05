@@ -7,7 +7,7 @@ export default class MediumModuleStyles extends MediumCoreStyles {
       /**************************************************
        * Using defaultUtilityStyles example
        *************************************************/
-      testWrappidStyleClass: { ...this.styles.devBorder },
+      testWrappidStyleClass: { ...this.style.devBorder },
     };
   }
 }
