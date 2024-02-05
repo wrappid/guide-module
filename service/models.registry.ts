@@ -6,4 +6,4 @@ const ModelsRegistry = {
     model: TestDatas,
   },
 };
-export { ModelsRegistry };
+export default ModelsRegistry;

@@ -1,4 +1,4 @@
-export const TestDatas = (sequelize, DataTypes) => {
+export const TestDatas = (sequelize: any, DataTypes: any) => {
   const TestDatas = sequelize.define(
     "TestDatas",
     {
