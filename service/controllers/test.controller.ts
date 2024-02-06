@@ -1,16 +1,24 @@
-const testFunctions = require("../functions/test.functions");
+import * as testFunctions from "../functions/test.functions";
 
 /**
- * 
- * @param {*} req 
- * @param {*} res 
- * @returns 
+ *
+ * @param {*} req
+ * @param {*} res
+ * @returns
  */
-module.exports.testGetAllFunc = async (req, res) => {
+const testGetAllFunc = async (req: any, res: any) => {
   try {
+<<<<<<< HEAD:service/controllers/test.controller.js
     let data = await testFunctions.readTestDataAll(req);
 
     return res.status(200).json({ data, message: "Response Data(•_•) :" });
+=======
+    let data: any = await testFunctions.readTestDataAll();
+    return res.status(200).json({
+      message: "Response Data(•_•) :",
+      data,
+    });
+>>>>>>> template/development:service/controllers/test.controller.ts
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error, message: "Something went wrong." });
@@ -23,7 +31,7 @@ module.exports.testGetAllFunc = async (req, res) => {
  * @param {*} res
  * @returns
  */
-module.exports.testGetFunc = async (req, res) => {
+const testGetFunc = async (req: any, res: any) => {
   try {
     let data = await testFunctions.readTestData(req);
 
@@ -40,7 +48,7 @@ module.exports.testGetFunc = async (req, res) => {
  * @param {*} res
  * @returns
  */
-module.exports.testPostFunc = async (req, res) => {
+const testPostFunc = async (req: any, res: any) => {
   try {
     let data = await testFunctions.createTestData(req);
 
@@ -56,8 +64,8 @@ module.exports.testPostFunc = async (req, res) => {
  * @param {*} req
  * @param {*} res
  * @returns
-*/
-module.exports.testPutFunc = async (req, res) => {
+ */
+const testPutFunc = async (req: any, res: any) => {
   try {
     console.log("::---", req.params, "---::");
     let data = await testFunctions.updateTestData(req);
@@ -75,7 +83,7 @@ module.exports.testPutFunc = async (req, res) => {
  * @param {*} res
  * @returns
  */
-module.exports.testPatchFunc = async (req, res) => {
+const testPatchFunc = async (req: any, res: any) => {
   try {
     let data = await testFunctions.deleteTestData(req);
 
@@ -84,4 +92,12 @@ module.exports.testPatchFunc = async (req, res) => {
     console.error(error);
     return res.status(500).json({ error, message: "Something went wrong." });
   }
+};
+
+export {
+  testGetAllFunc,
+  testGetFunc,
+  testPostFunc,
+  testPutFunc,
+  testPatchFunc,
 };
