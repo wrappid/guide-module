@@ -5,7 +5,7 @@ on:
     branches:
       - development
 env:
-  GH_TOKEN: ${{ github.token }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   create_and_merge_pr:
     runs-on: ubuntu-latest
@@ -39,8 +39,6 @@ jobs:
     - name: Merge PR
       run: |
         pr_number=$(echo $pr_url | cut -d '/' -f 7)
-
-    - name: Merge PR
-      run: |
-        pr_number=$(echo $pr_url | cut -d '/' -f 7)
-        gh pr merge $pr_number --auto --merge
+        gh pr merge $pr_number --rebase --admin
+      env:
+        GH_TOKEN: ${{ secrets.DEVOPS }}
