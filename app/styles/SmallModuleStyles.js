@@ -7,7 +7,7 @@ export default class SmallModuleStyles extends SmallCoreStyles {
       /**************************************************
        * Using smallUtilityStyles example
        *************************************************/
-      testWrappidStyleClass: { ...this.styles.devBorder },
+      testWrappidStyleClass: { ...this.style.devBorder },
     };
   }
 }
