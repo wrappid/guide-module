@@ -1,9 +1,13 @@
-// -- import { largeUtilityStyles } from "@wrappid/styles";
+import { LargeCoreStyles } from "@wrappid/core";
 
-export const largeAppStyles = {
-  /**************************************************
-   * Using largeUtilityStyles example
-   * eg. usingLargeUtilityStyles: { ...largeUtilityStyles.anyUtilityStyle },
-   *************************************************/
-  testWrappidStyleClass: {/* your style goes here */}
-};
+export default class LargeModuleStyles extends LargeCoreStyles {
+  constructor(){
+    super();
+    this.style = {
+      /**************************************************
+       * Using LargeUtilityStyles example
+       *************************************************/
+      testWrappidStyleClass: { ...this.style.devBorder },
+    };
+  }
+}

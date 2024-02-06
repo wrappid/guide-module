@@ -1,9 +1,13 @@
-import { DefaultUtilityStyles } from "@wrappid/styles";
+import { DefaultCoreStyles } from "@wrappid/core";
 
-export const defaultAppStyles = {
-  /**************************************************
-   * Using defaultUtilityStyles example
-   * eg. testWrappidStyleClass: { ...defaultUtilityStyles.anyUtilityStyle },
-   *************************************************/
-  testWrappidStyleClass: { ...new DefaultUtilityStyles().style.bgBlack }
-};
+export default class DefaultModuleStyles extends DefaultCoreStyles {
+  constructor(){
+    super();
+    this.style = {
+      /**************************************************
+       * Using defaultUtilityStyles example
+       *************************************************/
+      testWrappidStyleClass: { ...this.style.devBorder },
+    };
+  }
+}

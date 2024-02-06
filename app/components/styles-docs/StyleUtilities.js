@@ -34,6 +34,7 @@ const CLASS_NAME_TO_EXCLUDE = [
   // "FLEX",
   "FLOAT",
   "GAP",
+  // "GRADIENT",
   // "HEIGHT", //DONE*
   // "INTERACTIONS", //DONE
   // "MARGIN", // DONE

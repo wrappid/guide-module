@@ -1,9 +1,13 @@
-// -- import { smallUtilityStyles } from "@wrappid/styles";
+import { SmallCoreStyles } from "@wrappid/core";
 
-export const smallAppStyles = {
-  /**************************************************
-   * Using smallUtilityStyles example
-   * eg. usingSmallUtilityStyles: { ...smallUtilityStyles.anyUtilityStyle },
-   *************************************************/
-  testWrappidStyleClass: {/* your style goes here */}
-};
+export default class SmallModuleStyles extends SmallCoreStyles {
+  constructor(){
+    super();
+    this.style = {
+      /**************************************************
+       * Using smallUtilityStyles example
+       *************************************************/
+      testWrappidStyleClass: { ...this.style.devBorder },
+    };
+  }
+}

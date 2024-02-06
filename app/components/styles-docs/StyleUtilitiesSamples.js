@@ -703,6 +703,29 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
+  GRADIENT: {
+    grouped:true
+  },
+  LINEAR: {
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox gridProps={{ gridSize: 4 }}>
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.PADDING.P1,
+              CoreClasses.BG.BG_PRIMARY_DARK
+            ]}
+          >
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+
+          </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
   HEIGHT: {
     description: (
       <>
@@ -897,7 +920,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-
   MARGIN: {
     description: (
       <>

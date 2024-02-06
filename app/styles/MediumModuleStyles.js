@@ -1,10 +1,13 @@
-// -- import { mediumUtilityStyles } from "@wrappid/styles";
+import { MediumCoreStyles } from "@wrappid/core";
 
-export const mediumAppStyles = {
- 
-  /**************************************************
-   * Using mediumUtilityStyles example
-   * eg. usingMediumUtilityStyles: { ...mediumUtilityStyles.anyUtilityStyle },
-   *************************************************/
-  testWrappidStyleClass: {/* your style goes here */}
-};
+export default class MediumModuleStyles extends MediumCoreStyles {
+  constructor(){
+    super();
+    this.style = {
+      /**************************************************
+       * Using defaultUtilityStyles example
+       *************************************************/
+      testWrappidStyleClass: { ...this.style.devBorder },
+    };
+  }
+}
