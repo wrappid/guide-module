@@ -3,7 +3,7 @@ export const testMiddleware = (req: any, res: any, next: any) => {
     console.log("Test middleware called successfully!");
 
     next();
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
 };
