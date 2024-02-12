@@ -1,4 +1,4 @@
-import yup from "yup";
+import * as yup from "yup";
 
 export const getTestAll = {
   query: yup.object({}).noUnknown().strict(),
