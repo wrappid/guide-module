@@ -25,9 +25,12 @@ module.exports = {
     "import/newline-after-import": "error",
     "@typescript-eslint/no-explicit-any": "warn"
   },
-  settings: {
+  "settings": {
     "import/resolver": {
-      "typescript": {}
+      "node": {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        paths: ["node_modules"]
+      }
     }
   }
 };
