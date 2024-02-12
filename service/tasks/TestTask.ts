@@ -10,5 +10,6 @@ export const TestTask = {
     console.log(`Test Task is completed @ ${new Date()}`);
     console.log("<---------------------------------------------------------->");
   },
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   handleError: () => {},
 };

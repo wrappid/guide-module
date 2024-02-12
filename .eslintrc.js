@@ -2,7 +2,7 @@ module.exports = {
     ignorePatterns: ["**/node_modules/*", ".eslintrc.js", "commitlint.config.js" ],
     overrides: [
         {
-            files: ["service/**/*.js"],
+            files: ["service/**/*.ts"],
             // Extend or merge with the service-specific configuration
             ...require("./.eslint/service/.eslintrc.js"),
           },

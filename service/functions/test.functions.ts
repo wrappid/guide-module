@@ -5,9 +5,10 @@ import { databaseActions } from "@wrappid/service-core";
  */
 const readTestDataAll = async () => {
   try {
-    let result = await databaseActions.findAll("application", "TestDatas");
+    const result = await databaseActions.findAll("application", "TestDatas");
     return result;
   } catch (error: any) {
+    console.log(error);
     throw error;
   }
 };
@@ -19,11 +20,12 @@ const readTestDataAll = async () => {
  */
 const readTestData = async (req: any) => {
   try {
-    let result = await databaseActions.findOne("application", "TestDatas", {
+    const result = await databaseActions.findOne("application", "TestDatas", {
       where: { id: req.params.id },
     });
     return result;
   } catch (error: any) {
+    console.log(error);
     throw error;
   }
 };
@@ -35,11 +37,12 @@ const readTestData = async (req: any) => {
  */
 const createTestData = async (req: any) => {
   try {
-    let data = await databaseActions.create("application", "TestDatas", {
+    const data = await databaseActions.create("application", "TestDatas", {
       name: req.body.data,
     });
     return data;
   } catch (error: any) {
+    console.log(error);
     throw error;
   }
 };
@@ -51,7 +54,7 @@ const createTestData = async (req: any) => {
  */
 const updateTestData = async (req: any) => {
   try {
-    let result = await databaseActions.update(
+    await databaseActions.update(
       "application",
       "TestDatas",
       {
@@ -64,6 +67,7 @@ const updateTestData = async (req: any) => {
       }
     );
   } catch (error: any) {
+    console.log(error);
     throw error;
   }
 };
@@ -75,13 +79,14 @@ const updateTestData = async (req: any) => {
  */
 const deleteTestData = async (req: any) => {
   try {
-    let data = await databaseActions.delete("application", "TestDatas", {
+    const data = await databaseActions.delete("application", "TestDatas", {
       where: {
         id: req.params.id,
       },
     });
     return data;
   } catch (error: any) {
+    console.log(error);
     throw error;
   }
 };
