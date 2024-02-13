@@ -1,6 +1,11 @@
 # Wrappid
 .wrappid/runtime
 .wrappid/wrappid.env
+
+# Temporary Files
+dev
+scripts
+
 # Logs
 logs
 *.log
