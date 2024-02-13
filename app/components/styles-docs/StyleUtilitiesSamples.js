@@ -67,7 +67,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           {"ALIGN_CONTENT are NOT WORKING as of now"}
         </CoreAlert>
         <CoreAlert severity="warning">
-          {"Size specific documantation not available as of now"}
+          {"Size specific documentation not available as of now"}
         </CoreAlert>
         <CoreTypographyBody1>
           Used to align contentents accordingly
@@ -253,7 +253,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="error">
-          {"Text colour not changing by default"}
+          {"Text color not changing by default"}
         </CoreAlert>
         <CoreTypographyBody1>
           Sets the background color of an element to any contextual class.
@@ -486,7 +486,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="warning">
-          {"Size specific documantation not available as of now"}
+          {"Size specific documentation not available as of now"}
         </CoreAlert>
         <CoreTypographyBody1>
           Quickly and responsively toggle the display value of components and
@@ -497,7 +497,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
 
         <CoreTypographyBody2>
           {
-            "Width utilitiy includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
+            "Width utility includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
           }
         </CoreTypographyBody2>
       </>
@@ -549,10 +549,10 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="error">
-          {"FLEX items documentation INCOMPLETE"}
+          {"FLEX items documentation: INCOMPLETE"}
         </CoreAlert>
         <CoreAlert severity="warning">
-          {"Size specific documantation not available as of now"}
+          {"Size specific documentation not available as of now"}
         </CoreAlert>
         <CoreTypographyBody1>
           Set the direction of flex items in a flex container with direction
@@ -609,7 +609,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="warning">
-          {"Size specific documantation not available as of now"}
+          {"Size specific documentation not available as of now"}
         </CoreAlert>
         <CoreTypographyBody1>
           These utility classes float an element to the left or right, or
@@ -642,7 +642,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           {"ROW_GAP NOT WORKING as of now"}
         </CoreAlert>
         <CoreAlert severity="warning">
-          {"Size specific documantation not available as of now"}
+          {"Size specific documentation not available as of now"}
         </CoreAlert>
         <CoreTypographyBody1>
           When using display: grid or display: flex, you can make use of gap
@@ -734,12 +734,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreAlert>
         <CoreTypographyBody1>
           Easily make an element as tall (relative to its parent) with height
-          utilitiy.
+          utility.
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
           {
-            "height utilitiy includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
+            "height utility includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
           }
         </CoreTypographyBody2>
       </>
@@ -770,8 +770,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreTypographyBody1>
-          Utility classes that change how users interact with contents of a
-          website.
+          Utility classes that change how users interact with the contents of a website.
         </CoreTypographyBody1>
       </>
     ),
@@ -928,7 +927,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           {"Negative margin samples are NOT WORKING as of now"}
         </CoreAlert>
         <CoreAlert severity="warning">
-          {"Size specific documantation not available as of now"}
+          {"Size specific documentation not available as of now"}
         </CoreAlert>
 
         <CoreTypographyBody1>
@@ -1065,10 +1064,10 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="error">
-          {"OBJECT_FIT documentaion INCOMPLETE as of now"}
+          {"OBJECT_FIT documentaion: INCOMPLETE as of now"}
         </CoreAlert>
         <CoreAlert severity="warning">
-          {"Size specific documantation not available as of now"}
+          {"Size specific documentation not available as of now"}
         </CoreAlert>
         <CoreTypographyBody1>
           Use the object fit utilities to modify how the content of a replaced
@@ -1280,7 +1279,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="warning">
-          {"Size specific documantation not available as of now"}
+          {"Size specific documentation not available as of now"}
         </CoreAlert>
         <CoreTypographyBody1>
           {
@@ -1424,7 +1423,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreH6>Font Weight</CoreH6>
         <CoreTypographyBody1>
           {
-            "Quickly change the font-weight of text with text weight classes. Use TEXT_WIGHT_<font-weight>, where <font-weight> values are LIGHTER = lighter, LIGHT = 300, NORMAL = 400, MEDIUM = 500, SEMIBOLD = 600, BOLD = 700 and BOLDER = bolder."
+            "Quickly change the font-weight of text with text weight classes. Use TEXT_WEIGHT_<font-weight>, where <font-weight> values are LIGHTER = lighter, LIGHT = 300, NORMAL = 400, MEDIUM = 500, SEMIBOLD = 600, BOLD = 700 and BOLDER = bolder."
           }
         </CoreTypographyBody1>
 
@@ -1635,7 +1634,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="error">
-          {"VERTICAL_ALIGN documentation INCOMPLETE"}
+          {"VERTICAL_ALIGN documentation: INCOMPLETE"}
         </CoreAlert>
         <CoreTypographyBody1>
           Easily change the vertical alignment of inline, inline-block,
@@ -1719,12 +1718,12 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreAlert>
         <CoreTypographyBody1>
           Easily make an element as wide (relative to its parent) with width
-          utilitiy.
+          utility.
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
           {
-            "Width utilitiy includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
+            "Width utility includes support for 25%, 50%, 75%, and 100% by default. Modify those values as you need to generate different utilities here."
           }
         </CoreTypographyBody2>
       </>
@@ -1753,7 +1752,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="error">
-          {"Z_INDEX documentation INCOMPLETE"}
+          {"Z_INDEX documentation: INCOMPLETE"}
         </CoreAlert>
         <CoreTypographyBody1>
           Z_INDEX plays an important part in how our components overlay and

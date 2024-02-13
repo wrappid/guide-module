@@ -133,8 +133,7 @@ export default function CoreBadgeDocs() {
           <>
             The
             <CoreSpan code={true}>{" dot "}</CoreSpan>
-            prop changes a badge into a small dot. This can be used as a
-            notification that something has changed without giving a coun
+            prop changes a badge into a small dot. This can be used as a notification that something has changed without giving a count.
           </>
         }
         code={`

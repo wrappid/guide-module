@@ -190,7 +190,7 @@ const renderStyleSamples = ({ classes, classGroupName }) => {
               component="p"
               styleClasses={[CoreClasses.COLOR.TEXT_WARNING_LIGHT]}
             >
-              {className} : Size specific documantation not available as of now
+              {className} : Size specific documentation not available as of now
             </CoreTypographyCaption>
           );
         } else {

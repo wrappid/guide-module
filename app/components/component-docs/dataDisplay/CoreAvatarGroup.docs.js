@@ -85,7 +85,7 @@ export default function CoreAvatarGroupDocs() {
 The renderSurplus prop is useful when you need to render the surplus based on the data sent from the server."
         code={`
           <CoreAvatarGroup 
-            renderSurplus={(surplus) => <>+{surplus.toString()[0]}k</>}
+            renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</>}
             total={4250}>
             <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
             <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />

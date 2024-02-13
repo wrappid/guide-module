@@ -1,27 +1,29 @@
-import yup from "yup";
+import * as yup from "yup";
 
-<<<<<<< HEAD:service/validations/test.validation.js
-const getTestAll = { query: yup.object({}).noUnknown().strict() };
-=======
 export const getTestAll = {
   query: yup.object({}).noUnknown().strict(),
 };
->>>>>>> template/development:service/validations/test.validation.ts
 
 export const getTest = {
   body: yup
-    .object({ id: yup.mixed() })
+    .object({
+      id: yup.mixed(),
+    })
     .noUnknown()
     .strict(),
   query: yup
-    .object({ id: yup.mixed() })
+    .object({
+      id: yup.mixed(),
+    })
     .noUnknown()
     .strict(),
 };
 
 export const postTest = {
   body: yup
-    .object({ name: yup.string().required() })
+    .object({
+      name: yup.string().required(),
+    })
     .noUnknown()
     .strict(),
   query: yup.object({}).noUnknown().strict(),
@@ -30,7 +32,7 @@ export const postTest = {
 export const putTest = {
   body: yup
     .object({
-      id  : yup.mixed(),
+      id: yup.mixed(),
       name: yup.string(),
     })
     .noUnknown()
@@ -43,20 +45,10 @@ export const putTest = {
 
 export const patchTest = {
   body: yup
-    .object({ id: yup.mixed() })
+    .object({
+      id: yup.mixed(),
+    })
     .noUnknown()
     .strict(),
   query: yup.object({ id: yup.mixed() }).noUnknown().strict(),
-<<<<<<< HEAD:service/validations/test.validation.js
 };
-
-module.exports = {
-  getTest,
-  getTestAll,
-  patchTest,
-  postTest,
-  putTest
-};
-=======
-};
->>>>>>> template/development:service/validations/test.validation.ts

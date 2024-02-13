@@ -8,20 +8,14 @@ import * as testFunctions from "../functions/test.functions";
  */
 const testGetAllFunc = async (req: any, res: any) => {
   try {
-<<<<<<< HEAD:service/controllers/test.controller.js
-    let data = await testFunctions.readTestDataAll(req);
-
-    return res.status(200).json({ data, message: "Response Data(•_•) :" });
-=======
-    let data: any = await testFunctions.readTestDataAll();
+    const data: any = await testFunctions.readTestDataAll();
     return res.status(200).json({
       message: "Response Data(•_•) :",
       data,
     });
->>>>>>> template/development:service/controllers/test.controller.ts
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error, message: "Something went wrong." });
+    return res.status(500).json({ message: "Something went wrong.", error });
   }
 };
 
@@ -33,12 +27,11 @@ const testGetAllFunc = async (req: any, res: any) => {
  */
 const testGetFunc = async (req: any, res: any) => {
   try {
-    let data = await testFunctions.readTestData(req);
-
-    return res.status(200).json({ data, message: "Response Data(•_•) :" });
+    const data = await testFunctions.readTestData(req);
+    return res.status(200).json({ message: "Response Data(•_•) :", data });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error, message: "Something went wrong." });
+    return res.status(500).json({ message: "Something went wrong.", error });
   }
 };
 
@@ -50,12 +43,11 @@ const testGetFunc = async (req: any, res: any) => {
  */
 const testPostFunc = async (req: any, res: any) => {
   try {
-    let data = await testFunctions.createTestData(req);
-
-    return res.status(200).json({ data, message: "Data is inserted (•_•) " });
+    const data = await testFunctions.createTestData(req);
+    return res.status(200).json({ message: "Data is inserted (•_•) ", data });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error, message: "Something went wrong." });
+    return res.status(500).json({ message: "Something went wrong.", error });
   }
 };
 
@@ -68,12 +60,11 @@ const testPostFunc = async (req: any, res: any) => {
 const testPutFunc = async (req: any, res: any) => {
   try {
     console.log("::---", req.params, "---::");
-    let data = await testFunctions.updateTestData(req);
-
-    return res.status(200).json({ data, message: "Data updated (•_•)." });
+    const data = await testFunctions.updateTestData(req);
+    return res.status(200).json({ message: "Data updated (•_•).", data });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error, message: "Something went wrong." });
+    return res.status(500).json({ message: "Something went wrong.", error });
   }
 };
 
@@ -85,19 +76,16 @@ const testPutFunc = async (req: any, res: any) => {
  */
 const testPatchFunc = async (req: any, res: any) => {
   try {
-    let data = await testFunctions.deleteTestData(req);
-
-    return res.status(200).json({ data, message: "Deleted(^_^)" });
+    const data = await testFunctions.deleteTestData(req);
+    return res.status(200).json({ message: "Deleted(^_^)", data });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error, message: "Something went wrong." });
+    return res.status(500).json({ message: "Something went wrong.", error });
   }
 };
 
 export {
   testGetAllFunc,
-  testGetFunc,
-  testPostFunc,
-  testPutFunc,
-  testPatchFunc,
+  testGetFunc, testPatchFunc, testPostFunc,
+  testPutFunc
 };
