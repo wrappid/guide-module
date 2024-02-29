@@ -1,4 +1,5 @@
 import Components from "./components/component-docs/Components";
+import SampleLayouts from "./components/component-docs/layouts/SampleLayouts";
 import StyleUtilities from "./components/styles-docs/StyleUtilities";
 import BlankLayoutPage from "./layout/page/BlankLayoutPage";
 import CenteredBlankLayoutPage from "./layout/page/CenteredBlankLayoutPage";
@@ -32,6 +33,7 @@ export const ComponentsRegistry = {
   LeftDrawerLayoutPage       : { comp: LeftDrawerLayoutPage },
   LeftRightDrawerPage        : { comp: LeftRightDrawerPage },
   RightDrawerLayoutPage      : { comp: RightDrawerLayoutPage },
+  SampleLayouts              : { comp: SampleLayouts },
   StyleUtilities             : { comp: StyleUtilities },
   ThreeColumnLayoutPage      : { comp: ThreeColumnLayoutPage },
   TwoColumnLayoutPage        : { comp: TwoColumnLayoutPage },

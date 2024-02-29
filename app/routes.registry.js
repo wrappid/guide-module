@@ -3,6 +3,7 @@ import {
 } from "@wrappid/core";
 
 import Components from "./components/component-docs/Components";
+import SampleLayouts from "./components/component-docs/layouts/SampleLayouts";
 import StyleUtilities from "./components/styles-docs/StyleUtilities";
 import BlankLayoutPage from "./layout/page/BlankLayoutPage";
 import CenteredBlankLayoutPage from "./layout/page/CenteredBlankLayoutPage";
@@ -105,6 +106,12 @@ export const RoutesRegistry = {
     authRequired: false,
     entityRef   : "rightDrawer",
     url         : "layout/rightDrawer"
+  },
+  SampleLayouts: {
+    Page        : { appComponent: SampleLayouts.name },
+    authRequired: false,
+    entityRef   : "SampleLayouts",
+    url         : "sample-layouts"
   },
   StyleUtilities: {
     Page        : { appComponent: StyleUtilities.name },
