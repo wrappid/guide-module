@@ -27,19 +27,19 @@ export const RoutesRegistry = {
     Page        : { appComponent: BlankLayoutPage.name, layout: BlankLayout.name },
     authRequired: false,
     entityRef   : "blankLayout",
-    url         : "layout/blank"
+    url         : "layout/BlankLayout"
   },
   CenteredBlankLayoutPage: {
     Page        : { appComponent: CenteredBlankLayoutPage.name, layout: CenteredBlankLayout.name },
     authRequired: false,
     entityRef   : "centerdBlank",
-    url         : "layout/centerdBlank"
+    url         : "layout/CenteredBlankLayout"
   },
   ComplexLayoutPage: {
     Page        : { appComponent: ComplexLayoutPage.name, layout: ComplexLayout.name },
     authRequired: false,
     entityRef   : "customLayout",
-    url         : "layout/custom"
+    url         : "layout/ComplexLayout"
   },
   Components: {
     Page        : { appComponent: Components.name },
@@ -51,61 +51,61 @@ export const RoutesRegistry = {
     Page        : { appComponent: FixedFooterLayoutPage.name, layout: FixedFooterLayout.name },
     authRequired: false,
     entityRef   : "fixedFooterLayout",
-    url         : "layout/fixedFooter"
+    url         : "layout/FixedFooterLayout"
   },
   FixedHeaderFooterLayoutPage: {
     Page        : { appComponent: FixedHeaderFooterLayoutPage.name, layout: FixedHeaderFooterLayout.name },
     authRequired: false,
     entityRef   : "fixedHeaderFooterLayout",
-    url         : "layout/fixedHeaderFooter"
+    url         : "layout/FixedHeaderFooterLayout"
   },
   FixedHeaderLayoutPage: {
     Page        : { appComponent: FixedHeaderLayoutPage.name, layout: FixedHeaderLayout.name },
     authRequired: false,
     entityRef   : "fixedheader",
-    url         : "layout/fixedHeader"
+    url         : "layout/FixedHeaderLayout"
   },
   FooterLayoutPage: {
     Page        : { appComponent: FooterLayoutPage.name, layout: FooterLayout.name },
     authRequired: false,
     entityRef   : "footerLayout",
-    url         : "layout/footer"
+    url         : "layout/FooterLayout"
   },
   HCenteredBlankLayoutPage: {
     Page        : { appComponent: HCenteredBlankLayoutPage.name, layout: HCenteredBlankLayout.name },
     authRequired: false,
     entityRef   : "HcenterdBlank",
-    url         : "layout/horizontal-centerdBlank"
+    url         : "layout/HCenteredBlankLayout"
   },
   HeaderFooterLayoutPage: {
     Page        : { appComponent: HeaderFooterLayoutPage.name, layout: HeaderFooterLayout.name },
     authRequired: false,
     entityRef   : "headerFooterLayout",
-    url         : "layout/header-footer"
+    url         : "layout/HeaderFooterLayout"
   },
   HeaderLayoutPage: {
     Page        : { appComponent: HeaderLayoutPage.name, layout: HeaderLayout.name },
     authRequired: false,
     entityRef   : "headerLayout",
-    url         : "layout/header"
+    url         : "layout/HeaderLayout"
   },
   LeftDrawerLayoutPage: {
     Page        : { appComponent: LeftDrawerLayoutPage.name, layout: LeftDrawerLayout.name },
     authRequired: false,
     entityRef   : "leftDrawer",
-    url         : "layout/leftDrawer"
+    url         : "layout/LeftDrawerLayout"
   },
   LeftRightDrawerLayoutPage: {
     Page        : { appComponent: LeftRightDrawerLayoutPage.name, layout: LeftRightDrawerLayout.name },
     authRequired: false,
     entityRef   : "left-rightDrawer",
-    url         : "layout/left-rightDrawer"
+    url         : "layout/LeftRightDrawerLayout"
   },
   RightDrawerLayoutPage: {
     Page        : { appComponent: RightDrawerLayoutPage.name, layout: RightDrawerLayout.name },
     authRequired: false,
     entityRef   : "rightDrawer",
-    url         : "layout/rightDrawer"
+    url         : "layout/RightDrawerLayout"
   },
   SampleLayouts: {
     Page        : { appComponent: SampleLayouts.name },
@@ -123,19 +123,19 @@ export const RoutesRegistry = {
     Page        : { appComponent: ThreeColumnLayoutPage.name, layout: ThreeColumnLayout.name },
     authRequired: false,
     entityRef   : "threeColumnLayout",
-    url         : "layout/threeColumn"
+    url         : "layout/ThreeColumnLayout"
   },
   TwoColumnLayoutPage: {
     Page        : { appComponent: TwoColumnLayoutPage.name, layout: TwoColumnLayout.name },
     authRequired: false,
     entityRef   : "twoColumnLayout",
-    url         : "layout/twoColumn"
+    url         : "layout/TwoColumnLayout"
   },
   VCenteredBlankLayoutPage: {
     Page        : { appComponent: VCenteredBlankLayoutPage.name, layout: VCenteredBlankLayout.name },
     authRequired: false,
     entityRef   : "VcenterdBlank",
-    url         : "layout/vertical-centerdBlank"
+    url         : "layout/VCenteredBlankLayout"
   }
 
 };
