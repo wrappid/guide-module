@@ -108,7 +108,7 @@ export const RoutesRegistry = {
     url         : "layout/RightDrawerLayout"
   },
   SampleLayouts: {
-    Page        : { appComponent: SampleLayouts.name },
+    Page        : { appComponent: SampleLayouts.name, layout: "BlankLayout" },
     authRequired: false,
     entityRef   : "SampleLayouts",
     url         : "sample-layouts"
