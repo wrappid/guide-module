@@ -11,8 +11,9 @@ import {
   CoreTypographyCaption,
   CoreH5,
   CoreH6,
-  CoreH3,
   CoreDivider,
+  CoreLayoutItem,
+  BlankLayout,
 } from "@wrappid/core";
 import { UtilityClasses } from "@wrappid/styles";
 
@@ -56,7 +57,7 @@ const CLASS_NAME_TO_EXCLUDE = [
   "DATA_TABLE",
   "FRAMEWORK",
   "ICON",
-  "LAYOUT",,
+  "LAYOUT", ,
   "MENU",
   "NAVIGATION",
   "POPOVER",
@@ -76,59 +77,64 @@ const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
 export default function StyleUtilities() {
   const contentRef = React.useRef(null);
   return (
-    <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
-      <CoreBox gridProps={{ gridSize: 10 }} ref={contentRef}>
-        <CoreH4
-          styleClasses={[
-            CoreClasses.MARGIN.MY2,
-            CoreClasses.COLOR.TEXT_PRIMARY,
-          ]}
-        >
-          Style Utilities
-        </CoreH4>
+    <>
+      <CoreLayoutItem
+        id={BlankLayout.PLACEHOLDER.CONTENT}>
+        <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
+          <CoreBox gridProps={{ gridSize: 10 }} ref={contentRef}>
+            <CoreH4
+              styleClasses={[
+                CoreClasses.MARGIN.MY2,
+                CoreClasses.COLOR.TEXT_PRIMARY,
+              ]}
+            >
+              Style Utilities
+            </CoreH4>
 
-        <CoreTypographyBody1>
-          These are style utilities built using bootstrap flavour.
-        </CoreTypographyBody1>
-        <CoreDivider styleClasses={[CoreClasses.MARGIN.MB5]}></CoreDivider>
-        {/* {renderStyleSamples({ classes: UtilityClasses })} */}
-        {renderStyleSamples({ classes: CoreClasses })}
-      </CoreBox>
-
-      <CoreBox
-        styleClasses={[
-          CoreClasses.POSITION.TOP_0,
-          CoreClasses.POSITION.POSITION_STICKY,
-          CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
-          CoreClasses.HEIGHT.VH_100,
-          CoreClasses.BORDER.BORDER,
-          CoreClasses.BORDER.BORDER_LEFT,
-          CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
-        ]}
-        gridProps={{ gridSize: 2 }}
-      >
-        <CoreH6
-          styleClasses={[
-            CoreClasses.MARGIN.MT2,
-            CoreClasses.COLOR.TEXT_PRIMARY,
-            CoreClasses.MARGIN.ML5,
-          ]}
-        >
-          Table Of Contents
-        </CoreH6>
-        <CoreDivider/>
-        <CoreBox>
-
-        <CoreTOC
-          styleClasses={[
-            CoreClasses.BORDER.BORDER_LEFT,
-          ]}
-          contentRef={contentRef}
-          headerComponents={[CoreH5]}
-          />
+            <CoreTypographyBody1>
+              These are style utilities built using bootstrap flavour.
+            </CoreTypographyBody1>
+            <CoreDivider styleClasses={[CoreClasses.MARGIN.MB5]}></CoreDivider>
+            {/* {renderStyleSamples({ classes: UtilityClasses })} */}
+            {renderStyleSamples({ classes: CoreClasses })}
           </CoreBox>
-      </CoreBox>
-    </CoreGrid>
+
+          <CoreBox
+            styleClasses={[
+              CoreClasses.POSITION.TOP_0,
+              CoreClasses.POSITION.POSITION_STICKY,
+              CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
+              CoreClasses.HEIGHT.VH_100,
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_LEFT,
+              CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
+            ]}
+            gridProps={{ gridSize: 2 }}
+          >
+            <CoreH6
+              styleClasses={[
+                CoreClasses.MARGIN.MT2,
+                CoreClasses.COLOR.TEXT_PRIMARY,
+                CoreClasses.MARGIN.ML5,
+              ]}
+            >
+              Table Of Contents
+            </CoreH6>
+            <CoreDivider />
+            <CoreBox>
+
+              <CoreTOC
+                styleClasses={[
+                  CoreClasses.BORDER.BORDER_LEFT,
+                ]}
+                contentRef={contentRef}
+                headerComponents={[CoreH5]}
+              />
+            </CoreBox>
+          </CoreBox>
+        </CoreGrid>
+      </CoreLayoutItem>
+    </>
   );
 }
 
