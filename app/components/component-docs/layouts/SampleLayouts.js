@@ -2,9 +2,9 @@
 import React from "react";
 
 import {
-  ComponentRegistryContext, CoreBox, CoreClasses, CoreH3, CoreLayoutItem, CoreTypographyBody1, LayoutViewer    
-  , CoreMenu 
-  , BlankLayout 
+  ComponentRegistryContext, CoreBox, CoreClasses, CoreLayoutItem, CoreTypographyBody1, LayoutViewer, CoreGrid
+  , CoreMenu
+  , BlankLayout, CoreH4, CoreH5
 } from "@wrappid/core";
 import { useSelector } from "react-redux";
 
@@ -15,10 +15,14 @@ export default function SampleLayouts() {
   const collapse = useSelector((state) => state?.menu?.collapse);
 
   const componentRegistry = React.useContext(ComponentRegistryContext);
-  
-  const layoutComponentRegistry = Object.fromEntries(Object.entries(componentRegistry).filter((value)=>{
+
+  const layoutComponentRegistry = Object.fromEntries(Object.entries(componentRegistry).filter((value) => {
     return value[1].layout === true;
   }));
+   
+  React.useEffect(() => {
+    setSelectLayout(Object.keys(layoutComponentRegistry)[0]);
+  }, []);
 
   const prepareLayoutMenu = (layoutComponentRegistry) => {
     return Object.entries(layoutComponentRegistry)?.map(([layoutName]) => ({
@@ -34,50 +38,52 @@ export default function SampleLayouts() {
     <>
       <CoreLayoutItem
         id={BlankLayout.PLACEHOLDER.CONTENT}
-        styleClasses={[
-          CoreClasses.DISPLAY.FLEX,
-          CoreClasses.FLEX.DIRECTION_COLUMN,
-          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-          CoreClasses.ALIGNMENT.ALIGN_ITEMS_START,
-          CoreClasses.PADDING.MD.P2
-        ]}>
-        <CoreH3>Wrappid Layout Manger</CoreH3>
+        styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_START]}>
 
-        <CoreTypographyBody1>Layout Manager related description. Layout Manager related description. Layout Manager related description. Layout Manager related description. </CoreTypographyBody1>
+        <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
+          <CoreBox gridProps={{ gridSize: 10 }}>
+            <CoreH4
+              styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}
+            >
+              Layout Manger
+            </CoreH4>
 
-        <CoreTypographyBody1>Click on the below thumbnails to view the layouts</CoreTypographyBody1>
+            <CoreTypographyBody1>Layout Manager related description. Layout Manager related description. Layout Manager related description. Layout Manager related description. </CoreTypographyBody1>
 
-        <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
-          <CoreBox styleClasses={[CoreClasses.WIDTH.W_25, CoreClasses.BG.BG_GREY_200]}>
-            {/* {
-              Object.entries(layoutComponentRegistry).map(([layoutName]) => (
-                <>
-                  <CoreLink key={layoutName} href={`/layout/${layoutName}`}><CoreTypographyBody1>{layoutName}</CoreTypographyBody1></CoreLink>
-                </>
-              ))
-            } */}
+            <CoreTypographyBody1>Click on the below thumbnails to view the layouts</CoreTypographyBody1>
 
+            <CoreH5>{selectLayout}</CoreH5>
+
+            <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+
+              {selectLayout && <LayoutViewer layoutName={selectLayout} />}
+
+            </CoreBox>
+          </CoreBox>
+
+          <CoreBox
+            styleClasses={[
+              CoreClasses.POSITION.TOP_0,
+              CoreClasses.POSITION.POSITION_STICKY,
+              CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
+              CoreClasses.HEIGHT.VH_100,
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_LEFT,
+              CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
+            ]}
+            gridProps={{ gridSize: 2 }}
+          >
             <CoreMenu
               openCollapse={collapse}
               multiLevel={true}
               menu={prepareLayoutMenu(layoutComponentRegistry)}
-              OnMenuClick={(menuItem) => {
-                // if (menuItem?.Children && menuItem?.Children?.length >= 0) {
-                //   dispatch(toggleMenuItemState(menuItem));
-                // }
-                setSelectLayout(menuItem?.name);
-              }}
+              OnMenuClick={(menuItem) => setSelectLayout(menuItem?.name)}
               open={true}
             />
           </CoreBox>
+        </CoreGrid>
 
-          <CoreBox styleClasses={[CoreClasses.WIDTH.W_75]}>
-            <CoreTypographyBody1>{`Layout Viewer ${selectLayout}`}</CoreTypographyBody1>
-
-            {selectLayout && <LayoutViewer layoutName={selectLayout} />}
-          </CoreBox>
-        </CoreBox>
-      </CoreLayoutItem>
+      </CoreLayoutItem >
     </>
   );
 }

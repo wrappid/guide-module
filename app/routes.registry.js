@@ -114,7 +114,7 @@ export const RoutesRegistry = {
     url         : "sample-layouts"
   },
   StyleUtilities: {
-    Page        : { appComponent: StyleUtilities.name },
+    Page        : { appComponent: StyleUtilities.name, layout: "BlankLayout" },
     authRequired: false,
     entityRef   : "styles",
     url         : "guide/styles"
