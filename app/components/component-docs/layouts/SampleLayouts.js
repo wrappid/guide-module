@@ -2,15 +2,19 @@
 import React from "react";
 
 import {
-  ComponentRegistryContext, CoreBox, CoreClasses, CoreLayoutItem, CoreTypographyBody1, LayoutViewer, CoreGrid
-  , CoreMenu
-  , BlankLayout, CoreH4, CoreH5, CoreTab, CoreTabs
+  ComponentRegistryContext, CoreBox, CoreClasses, CoreLayoutItem, CoreTypographyBody1, CoreGrid
+  , CoreMenu, CoreTabPanel
+  , BlankLayout, CoreH4, CoreH5, CoreTab, CoreTabs, CoreContainedButton, LayoutViewer
 } from "@wrappid/core";
 import { useSelector } from "react-redux";
 
 export default function SampleLayouts() {
 
   const [selectLayout, setSelectLayout] = React.useState(null);
+
+  const [potrait, setPotrait] = React.useState(true);
+
+  const [showInfo, setShowInfo] = React.useState(false);
 
   const [value, setValue] = React.useState(0);
 
@@ -40,13 +44,13 @@ export default function SampleLayouts() {
     }));
   };
 
-  function CoreTabPanel(props) {
+  /* function CoreTabPanel(props) {
     const { value, label, index, selectLayout, ...other } = props;
 
     return (
       <>
         <CoreBox
-          styleClases={[CoreClasses.WIDTH.VW_50]}
+          styleClasses={[CoreClasses.WIDTH.VW_50]}
           role="tabpanel"
           hidden={value !== index}
           id={`simple-tabpanel-${index}`}
@@ -73,7 +77,7 @@ export default function SampleLayouts() {
         </CoreBox>
       </>
     );
-  }
+  } */
 
   return (
     <>
@@ -114,121 +118,115 @@ export default function SampleLayouts() {
             </CoreBox> */}
 
             <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
-              <CoreBox styleClases={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+              <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
                 <CoreTabs
-                  onChange={handleChange}
+                  value={value}
+                  onChange={handleChange} 
                   aria-label="full width tabs example" >
-                  <CoreTab
-                    label="Web"></CoreTab>
+                  <CoreTab label="Web"></CoreTab>
 
-                  <CoreTab
-                    label="Tablet"></CoreTab>
+                  <CoreTab label="Tablet"></CoreTab>
 
-                  <CoreTab
-                    label="Mobile"></CoreTab>
+                  <CoreTab label="Mobile"></CoreTab>
                 </CoreTabs>
               </CoreBox>
 
+              <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_START, CoreClasses.ALIGNMENT.ALIGN_ITEMS_START]}>
+                <CoreTypographyBody1>{`Tab ${value} ${selectLayout} ${showInfo} ${potrait}`}</CoreTypographyBody1>
+
+                <CoreContainedButton OnClick={() => setPotrait(true)}>Potrait</CoreContainedButton>
+
+                <CoreContainedButton OnClick={() => setPotrait(false)}>Landscape</CoreContainedButton>
+              </CoreBox>
+
               <CoreBox>
-                <CoreTabPanel
-                  label="Mobile"
-                  value={value}
-                  selectLayout={selectLayout}
-                  index={0}>
+                <CoreTabPanel value={value} index={0}>
+                  <CoreBox
+                    styleClasses={[CoreClasses.WIDTH.VW_50]}
+                    role="tabpanel"
+                  >  
+                    <CoreTypographyBody1>Web</CoreTypographyBody1>
+
+                    <CoreBox styleClasses={[
+                      CoreClasses.WIDTH.W_100,
+                      CoreClasses.DISPLAY.FLEX,
+                      CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+                      CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+                      CoreClasses.FLEX.DIRECTION_COLUMN,
+                      CoreClasses.GAP.GAP_1
+                    ]}>
+
+                      {selectLayout && <LayoutViewer
+                        showInfo={showInfo}
+                        setShowInfo={setShowInfo}
+                        layoutName={selectLayout}
+                        layoutType={"Web"}
+                        potrait={potrait} />}
+
+                      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25, CoreClasses.BG.BG_SECONDARY]}></CoreBox>
+
+                    </CoreBox>
+                  </CoreBox>
                 </CoreTabPanel>
 
-                {/* <CoreTabPanel>
+                <CoreTabPanel value={value} index={1}>
                   <CoreBox
-                    styleClases={[CoreClasses.WIDTH.VW_50]}
-                    role="tabpanel"
-                    hidden={value !== 0}>
-                    {value === 0 && (
-                      <>
-                        <CoreTypographyBody1>{`Tab ${0} ${value} ${selectLayout}`}</CoreTypographyBody1>
+                    styleClasses={[CoreClasses.WIDTH.VW_50]}
+                    role="tabpanel">
 
-                        <CoreBox styleClasses={[
-                          CoreClasses.WIDTH.W_100,
-                          CoreClasses.DISPLAY.FLEX,
-                          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-                          CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-                          CoreClasses.FLEX.DIRECTION_COLUMN,
-                          CoreClasses.GAP.GAP_1
-                        ]}>
+                    <CoreTypographyBody1>Tab</CoreTypographyBody1>
 
-                          {selectLayout && <LayoutViewer layoutName={selectLayout} layoutType={"Web"} />}
+                    <CoreBox styleClasses={[
+                      CoreClasses.WIDTH.W_100,
+                      CoreClasses.DISPLAY.FLEX,
+                      CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+                      CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+                      CoreClasses.FLEX.DIRECTION_COLUMN,
+                      CoreClasses.GAP.GAP_1
+                    ]}>
 
-                        </CoreBox>
-                      </>
-                    )}
+                      {selectLayout && <LayoutViewer
+                        showInfo={showInfo}
+                        setShowInfo={setShowInfo}
+                        layoutName={selectLayout}
+                        layoutType={"Tablet"}
+                        potrait={potrait} />}
+
+                      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25, CoreClasses.BG.BG_SUCCESS]}></CoreBox>
+
+                    </CoreBox>
                   </CoreBox>
-                </CoreTabPanel> */}
-
-                <CoreTabPanel
-                  label="Tablet"
-                  value={value}
-                  selectLayout={selectLayout}
-                  index={1}>
                 </CoreTabPanel>
 
-                {/* <CoreTabPanel>
+                <CoreTabPanel value={value} index={2}>
                   <CoreBox
-                    styleClases={[CoreClasses.WIDTH.VW_50]}
+                    styleClasses={[CoreClasses.WIDTH.VW_50]}
                     role="tabpanel"
-                    hidden={value !== 1}>
-                    {value === 1 && (
-                      <>
-                        <CoreTypographyBody1>{`Tab ${1} ${value} ${selectLayout}`}</CoreTypographyBody1>
+                  >
 
-                        <CoreBox styleClasses={[
-                          CoreClasses.WIDTH.W_100,
-                          CoreClasses.DISPLAY.FLEX,
-                          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-                          CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-                          CoreClasses.FLEX.DIRECTION_COLUMN,
-                          CoreClasses.GAP.GAP_1
-                        ]}>
+                    <CoreTypographyBody1>Mobile</CoreTypographyBody1>
 
-                          {selectLayout && <LayoutViewer layoutName={selectLayout} layoutType={"Tablet"} />}
+                    <CoreBox styleClasses={[
+                      CoreClasses.WIDTH.W_100,
+                      CoreClasses.DISPLAY.FLEX,
+                      CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+                      CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+                      CoreClasses.FLEX.DIRECTION_COLUMN,
+                      CoreClasses.GAP.GAP_1
+                    ]}>
 
-                        </CoreBox>
-                      </>
-                    )}
+                      {selectLayout && <LayoutViewer
+                        showInfo={showInfo}
+                        setShowInfo={setShowInfo}
+                        layoutName={selectLayout}
+                        layoutType={"Web"}
+                        potrait={potrait} />}
+
+                      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25, CoreClasses.BG.BG_ERROR_DARK]}></CoreBox>
+
+                    </CoreBox>
                   </CoreBox>
-                </CoreTabPanel> */}
-
-                <CoreTabPanel
-                  label="Web"
-                  value={value}
-                  selectLayout={selectLayout}
-                  index={2}>
                 </CoreTabPanel>
-
-                {/* <CoreTabPanel>
-                  <CoreBox
-                    styleClases={[CoreClasses.WIDTH.VW_50]}
-                    role="tabpanel"
-                    hidden={value !== 2}>
-                    {value === 2 && (
-                      <>
-                        <CoreTypographyBody1>{`Tab ${2} ${value} ${selectLayout}`}</CoreTypographyBody1>
-
-                        <CoreBox styleClasses={[
-                          CoreClasses.WIDTH.W_100,
-                          CoreClasses.DISPLAY.FLEX,
-                          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-                          CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-                          CoreClasses.FLEX.DIRECTION_COLUMN,
-                          CoreClasses.GAP.GAP_1
-                        ]}>
-
-                          {selectLayout && <LayoutViewer layoutName={selectLayout} layoutType={"Web"} />}
-
-                        </CoreBox>
-                      </>
-                    )}
-                  </CoreBox>
-                </CoreTabPanel> */}
-
               </CoreBox>
 
             </CoreBox>
