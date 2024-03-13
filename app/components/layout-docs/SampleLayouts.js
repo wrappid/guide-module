@@ -12,10 +12,23 @@ import {
   CoreTab,
   CoreTabPanel,
   CoreTabs,
-  CoreTypographyBody1,
-  LayoutViewer
+  CoreTypographyBody1
 } from "@wrappid/core";
 import { useSelector } from "react-redux";
+
+import LayoutViewer from "./LayoutViewer";
+
+// const AspectRtio = {
+//   ASPECT_RATIO_16_9: "aspectRatio16By9",
+//   ASPECT_RATIO_1_1 : "aspectRatio1By1",
+//   ASPECT_RATIO_20_9: "aspectRatio20By9",
+//   ASPECT_RATIO_2_3 : "aspectRatio2By3",
+//   ASPECT_RATIO_3_2 : "aspectRatio3By2",
+//   ASPECT_RATIO_3_4 : "aspectRatio3By4",
+//   ASPECT_RATIO_4_3 : "aspectRatio4By3",
+//   ASPECT_RATIO_9_16: "aspectRatio9By16",
+//   ASPECT_RATIO_9_20: "aspectRatio9By20",
+// };
 
 const RENDER_TYPE = {
   MOBILE: "mobile",
@@ -59,13 +72,13 @@ export default function SampleLayouts() {
     }));
   };
 
-  const renderLayoutViewr = () => {
+  const renderLayoutViewr = (renderType = RENDER_TYPE.WEB) => {
     return (
       <CoreBox
         styleClasses={[CoreClasses.WIDTH.VW_50]}
         role="tabpanel"
       >  
-        <CoreTypographyBody1>Web</CoreTypographyBody1>
+        <CoreTypographyBody1>{renderType}</CoreTypographyBody1>
 
         <CoreBox styleClasses={[
           CoreClasses.WIDTH.W_100,
@@ -80,7 +93,7 @@ export default function SampleLayouts() {
             showInfo={showInfo}
             setShowInfo={setShowInfo}
             layoutName={selectLayout}
-            layoutType={"Web"}
+            layoutType={renderType}
             potrait={potrait} />}
 
           <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25, CoreClasses.BG.BG_SECONDARY]}></CoreBox>
