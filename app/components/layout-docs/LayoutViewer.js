@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys-fix/sort-keys-fix */
 // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-imports
 import React from "react";
 
@@ -6,7 +7,10 @@ import {
   CoreContainedButton,
   CoreBox,
   CoreGrid,
-  CoreClasses, LayoutManager, CoreTabPanel, CoreTab, CoreH5, CoreTabs
+  CoreClasses,
+  LayoutManager,
+  CoreH5,
+  CoreSelect
 } from "@wrappid/core";
 
 // eslint-disable-next-line etc/no-commented-out-code
@@ -22,32 +26,52 @@ import {
 //   ASPECT_RATIO_9_20: "aspectRatio9By20",
 // };
 
-const RENDER_TYPE = {
+const DEVICES = {
+  LAPTOP: "laptop",
   MOBILE: "mobile",
   TABLET: "tablet",
-  WEB   : "web",
+};
+
+const ZOOM_VALUES = {
+  ZOOM_50      : 50,
+  ZOOM_75      : 75,
+  ZOOM_100     : 100,
+  ZOOM_125     : 125,
+  ZOOM_150     : 150,
+  ZOOM_200     : 200,
+  FIT_TO_SCREEN: "Fit to Screen",
 };
 
 export default function LayoutViewer(props) {
   const { layoutName = "ComplexLayout", layoutType } = props;
-  
+
+  // eslint-disable-next-line no-unused-vars
   const [potrait, setPotrait] = React.useState(true);
 
   const [showInfo, setShowInfo] = React.useState(false);
 
-  const [value, setValue] = React.useState(0);
+  const [device, setDevice] = React.useState(DEVICES.LAPTOP);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const [zoomValue, setZoomValue] = React.useState(ZOOM_VALUES.ZOOM_100);
+
+  const handleChange = (event) => {
+    setDevice(event?.target?.value);
+  };
+
+  const handleChangeZoom = (event) => {
+    setZoomValue(event?.target?.value);
   };
 
   const renderLayoutView = () => {
     return (
       <CoreGrid>
-
-        <CoreBox gridProps={{ gridSize: 2 }} styleClasses={[CoreClasses.WIDTH.W_100]}>
-
-          <CoreContainedButton OnClick={() => setShowInfo((prevState) => !prevState)} >
+        <CoreBox
+          gridProps={{ gridSize: 2 }}
+          styleClasses={[CoreClasses.WIDTH.W_100]}
+        >
+          <CoreContainedButton
+            OnClick={() => setShowInfo((prevState) => !prevState)}
+          >
             show Info
           </CoreContainedButton>
 
@@ -55,58 +79,38 @@ export default function LayoutViewer(props) {
         </CoreBox>
 
         <CoreBox gridProps={{ gridSize: 10 }}>
-          <CoreBox styleClasses={[
-            CoreClasses.BG.BG_GREY_100,
-            CoreClasses.PADDING.P1,
-            CoreClasses.SHADOW.SMALL,
-            layoutType === "Web" && CoreClasses.WIDTH.W_100,
-            layoutType === "Tablet" && CoreClasses.WIDTH.W_100,
-            layoutType === "Mobile" && CoreClasses.WIDTH.W_100,
-            (layoutType === "Web" && potrait === true) && CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3, //Potrait
-            (layoutType === "Tablet" && potrait === true) && CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, //Potrait
-            (layoutType === "Mobile" && potrait === true) && CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, //Potrait
-            (layoutType === "Web" && potrait === false) && CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4, // Landscape
-            (layoutType === "Tablet" && potrait === false) && CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, // Landscape
-            (layoutType === "Mobile" && potrait === false) && CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, // Landscape
-          ]}>
+          <CoreBox
+            styleClasses={[
+              CoreClasses.BG.BG_GREY_100,
+              CoreClasses.PADDING.P1,
+              CoreClasses.SHADOW.SMALL,
+              layoutType === "Web" && CoreClasses.WIDTH.W_100,
+              layoutType === "Tablet" && CoreClasses.WIDTH.W_100,
+              layoutType === "Mobile" && CoreClasses.WIDTH.W_100,
+              layoutType === "Web" &&
+                potrait === true &&
+                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3, //Potrait
+              layoutType === "Tablet" &&
+                potrait === true &&
+                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, //Potrait
+              layoutType === "Mobile" &&
+                potrait === true &&
+                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, //Potrait
+              layoutType === "Web" &&
+                potrait === false &&
+                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4, // Landscape
+              layoutType === "Tablet" &&
+                potrait === false &&
+                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, // Landscape
+              layoutType === "Mobile" &&
+                potrait === false &&
+                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, // Landscape
+            ]}
+          >
             <LayoutManager layoutName={layoutName} viewMode={true} />
           </CoreBox>
         </CoreBox>
-
       </CoreGrid>
-    );
-  };
-
-  const renderLayoutViewer = (renderType = RENDER_TYPE.WEB) => {
-    return (
-      <CoreBox
-        styleClasses={[CoreClasses.WIDTH.VW_50]}
-        role="tabpanel"
-      >  
-        <CoreTypographyBody1>{renderType}</CoreTypographyBody1>
-
-        <CoreBox styleClasses={[
-          CoreClasses.WIDTH.W_100,
-          CoreClasses.DISPLAY.FLEX,
-          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-          CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-          CoreClasses.FLEX.DIRECTION_COLUMN,
-          CoreClasses.GAP.GAP_1
-        ]}>
-          {/* eslint-disable-next-line etc/no-commented-out-code */}
-          {/* <LayoutViewer
-            showInfo={showInfo}
-            setShowInfo={setShowInfo}
-            layoutName={layoutName}
-            layoutType={renderType}
-            potrait={potrait} /> */}
-
-          {layoutName && renderLayoutView() }
-
-          <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_25, CoreClasses.BG.BG_SECONDARY]}></CoreBox>
-
-        </CoreBox>
-      </CoreBox>
     );
   };
 
@@ -114,42 +118,51 @@ export default function LayoutViewer(props) {
     <>
       <CoreH5>{layoutName}</CoreH5>
 
-      <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
-        <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-          <CoreTabs
-            value={value}
-            onChange={handleChange} 
-            aria-label="full width tabs example" >
-            <CoreTab label="Web"></CoreTab>
+      <CoreGrid>
+        <CoreSelect
+          gridProps={{ gridSize: 3 }}
+          label="Device:"
+          selectID={device}
+          value={device}
+          handleChange={handleChange}
+          options={[
+            ...Object.keys(DEVICES).map((device) => {
+              return { id: device, label: device, value: device };
+            })
+          ]}
+        />
 
-            <CoreTab label="Tablet"></CoreTab>
+        <CoreTypographyBody1 gridProps={{ gridSize: 3 }}>ZOOM</CoreTypographyBody1>
 
-            <CoreTab label="Mobile"></CoreTab>
-          </CoreTabs>
+        <CoreSelect
+          gridProps={{ gridSize: 3 }}
+          label="Zoom:"
+          selectID={zoomValue}
+          value={zoomValue}
+          handleChange={handleChangeZoom}
+          options={[
+            ...Object.values(ZOOM_VALUES).map((value) => {
+              return { id: value, label: value, value: value };
+            })
+          ]}
+        />
+      </CoreGrid>
+
+      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50]} role="tabpanel">
+        <CoreTypographyBody1>{device}</CoreTypographyBody1>
+
+        <CoreBox
+          styleClasses={[
+            CoreClasses.WIDTH.W_100,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.FLEX.DIRECTION_COLUMN,
+            CoreClasses.GAP.GAP_1,
+          ]}
+        >
+          {layoutName && renderLayoutView()}
         </CoreBox>
-
-        <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_START, CoreClasses.ALIGNMENT.ALIGN_ITEMS_START]}>
-          <CoreTypographyBody1>{`Tab ${value} ${layoutName} ${showInfo} ${potrait}`}</CoreTypographyBody1>
-
-          <CoreContainedButton OnClick={() => setPotrait(true)}>Potrait</CoreContainedButton>
-
-          <CoreContainedButton OnClick={() => setPotrait(false)}>Landscape</CoreContainedButton>
-        </CoreBox>
-
-        <CoreBox>
-          <CoreTabPanel value={value} index={0}>
-            {renderLayoutViewer(RENDER_TYPE.WEB)}
-          </CoreTabPanel>
-
-          <CoreTabPanel value={value} index={1}>
-            {renderLayoutViewer(RENDER_TYPE.TABLET)}
-          </CoreTabPanel>
-
-          <CoreTabPanel value={value} index={2}>
-            {renderLayoutViewer(RENDER_TYPE.MOBILE)}
-          </CoreTabPanel>
-        </CoreBox>
-
       </CoreBox>
     </>
   );
