@@ -9,6 +9,7 @@ import {
 } from "@wrappid/core";
 
 import Components from "./components/component-docs/Components";
+import Layouts from "./components/layout-docs/Layouts";
 import BlankLayoutPage from "./components/layout-docs/page/BlankLayoutPage";
 import CenteredBlankLayoutPage from "./components/layout-docs/page/CenteredBlankLayoutPage";
 import ComplexLayoutPage from "./components/layout-docs/page/ComplexLayoutPage";
@@ -25,8 +26,7 @@ import RightDrawerLayoutPage from "./components/layout-docs/page/RightDrawerLayo
 import ThreeColumnLayoutPage from "./components/layout-docs/page/ThreeColumnLayoutPage";
 import TwoColumnLayoutPage from "./components/layout-docs/page/TwoColumnLayoutPage";
 import VCenteredBlankLayoutPage from "./components/layout-docs/page/VCenteredBlankLayoutPage";
-import SampleLayouts from "./components/layout-docs/SampleLayouts";
-import StyleUtilities from "./components/styles-docs/StyleUtilities";
+import Styles from "./components/styles-docs/Styles";
 
 export const RoutesRegistry = {
   BlankLayoutPage: {
@@ -95,6 +95,12 @@ export const RoutesRegistry = {
     entityRef   : "headerLayout",
     url         : "layout/HeaderLayout"
   },
+  Layouts: {
+    Page        : { appComponent: Layouts.name, layout: "BlankLayout" },
+    authRequired: false,
+    entityRef   : "Layouts",
+    url         : "guide/layouts"
+  },
   LeftDrawerLayoutPage: {
     Page        : { appComponent: LeftDrawerLayoutPage.name, layout: LeftDrawerLayout.name },
     authRequired: false,
@@ -113,14 +119,8 @@ export const RoutesRegistry = {
     entityRef   : "rightDrawer",
     url         : "layout/RightDrawerLayout"
   },
-  SampleLayouts: {
-    Page        : { appComponent: SampleLayouts.name, layout: "BlankLayout" },
-    authRequired: false,
-    entityRef   : "SampleLayouts",
-    url         : "sample-layouts"
-  },
-  StyleUtilities: {
-    Page        : { appComponent: StyleUtilities.name, layout: "BlankLayout" },
+  Styles: {
+    Page        : { appComponent: Styles.name, layout: "BlankLayout" },
     authRequired: false,
     entityRef   : "styles",
     url         : "guide/styles"

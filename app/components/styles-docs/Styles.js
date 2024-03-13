@@ -74,7 +74,7 @@ const CLASS_NAME_FOR_SCREEN_SIZES = ["SM", "MD", "LG", "XL", "XXL"];
  *
  * @returns Node Element
  */
-export default function StyleUtilities() {
+export default function Styles() {
   const contentRef = React.useRef(null);
   return (
     <>
