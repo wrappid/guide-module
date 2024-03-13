@@ -1,7 +1,7 @@
 import * as testValidations from "./validations/test.validation";
 
-const ValidationsRegistry = {
+const validationsRegistry = {
   getTestAll: testValidations.getTestAll,
   getTest: testValidations.getTest,
 };
-export default ValidationsRegistry;
+export default validationsRegistry;
