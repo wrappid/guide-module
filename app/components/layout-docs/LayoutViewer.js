@@ -3,14 +3,13 @@
 import React from "react";
 
 import {
-  CoreTypographyBody1,
-  CoreContainedButton,
   CoreBox,
   CoreGrid,
   CoreClasses,
   LayoutManager,
   CoreH5,
-  CoreSelect
+  CoreSelect,
+  CoreContainedButton
 } from "@wrappid/core";
 
 // eslint-disable-next-line etc/no-commented-out-code
@@ -26,10 +25,40 @@ import {
 //   ASPECT_RATIO_9_20: "aspectRatio9By20",
 // };
 
+const ORIENTATION = {
+  POTRAIT  : { name: "potrait", displayName: "Potrait" },
+  LANDSCAPE: { name: "landscape", displayName: "Landscape" }
+};
+const BENDING = {
+  CONTINUOUS: { name: "continuous", displayName: "Continuous" },
+  FOLDED    : { name: "folded", displayName: "Folded" }
+};
+
 const DEVICES = {
-  LAPTOP: "laptop",
-  MOBILE: "mobile",
-  TABLET: "tablet",
+  MOBILE: {
+    name       : "mobile",
+    displayName: "Mobile", 
+    aspectRatio: { name: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, displayName: "9:16" }, 
+    dimension  : { width: "375", height: "667" }, 
+    orientation: { default: ORIENTATION.POTRAIT, current: ORIENTATION.POTRAIT }, 
+    bending    : { default: BENDING.CONTINUOUS, current: BENDING.CONTINUOUS }
+  },
+  TABLET: {
+    name       : "tablet",
+    displayName: "Tablet", 
+    aspectRatio: { name: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3, displayName: "2:3" }, 
+    dimension  : { width: "820", height: "1180" }, 
+    orientation: { default: ORIENTATION.POTRAIT, current: ORIENTATION.POTRAIT }, 
+    bending    : { default: BENDING.CONTINUOUS, current: BENDING.CONTINUOUS }
+  },
+  LAPTOP: {
+    name       : "web",
+    displayName: "Web", 
+    aspectRatio: { name: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_1_1, displayName: "1:1" }, 
+    dimension  : { width: "1280", height: "800" }, 
+    orientation: { default: ORIENTATION.POTRAIT, current: ORIENTATION.POTRAIT }, 
+    bending    : { default: BENDING.CONTINUOUS, current: BENDING.CONTINUOUS }
+  },
 };
 
 const ZOOM_VALUES = {
@@ -48,13 +77,11 @@ export default function LayoutViewer(props) {
   // eslint-disable-next-line no-unused-vars
   const [potrait, setPotrait] = React.useState(true);
 
-  const [showInfo, setShowInfo] = React.useState(false);
-
   const [device, setDevice] = React.useState(DEVICES.LAPTOP);
 
   const [zoomValue, setZoomValue] = React.useState(ZOOM_VALUES.ZOOM_100);
 
-  const handleChange = (event) => {
+  const handleDeviceChange = (event) => {
     setDevice(event?.target?.value);
   };
 
@@ -64,53 +91,51 @@ export default function LayoutViewer(props) {
 
   const renderLayoutView = () => {
     return (
-      <CoreGrid>
-        <CoreBox
-          gridProps={{ gridSize: 2 }}
-          styleClasses={[CoreClasses.WIDTH.W_100]}
-        >
-          <CoreContainedButton
-            OnClick={() => setShowInfo((prevState) => !prevState)}
-          >
-            show Info
-          </CoreContainedButton>
+      <>
+        <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.FLEX.DIRECTION_COLUMN]}>
+          <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
+            {/* <CoreSpan>AspectRatio : {device.aspectRatio.displayName}</CoreSpan>
 
-          {showInfo && <CoreTypographyBody1>Details</CoreTypographyBody1>}
-        </CoreBox>
+            <CoreSpan>Dimension: {`${device.dimension.height} ${device.dimension.width}`}</CoreSpan>
 
-        <CoreBox gridProps={{ gridSize: 10 }}>
+            <CoreSpan>Orientation: {device.orientation.default.name}</CoreSpan>
+
+            <CoreSpan>Bending: {device.bending.default}</CoreSpan> */}
+          </CoreBox>
+
           <CoreBox
             styleClasses={[
               CoreClasses.BG.BG_GREY_100,
               CoreClasses.PADDING.P1,
               CoreClasses.SHADOW.SMALL,
+              CoreClasses.WIDTH.W_100,
               layoutType === "Web" && CoreClasses.WIDTH.W_100,
               layoutType === "Tablet" && CoreClasses.WIDTH.W_100,
               layoutType === "Mobile" && CoreClasses.WIDTH.W_100,
               layoutType === "Web" &&
-                potrait === true &&
-                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3, //Potrait
+              potrait === true &&
+              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3, //Potrait
               layoutType === "Tablet" &&
-                potrait === true &&
-                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, //Potrait
+              potrait === true &&
+              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, //Potrait
               layoutType === "Mobile" &&
-                potrait === true &&
-                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, //Potrait
+              potrait === true &&
+              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, //Potrait
               layoutType === "Web" &&
-                potrait === false &&
-                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4, // Landscape
+              potrait === false &&
+              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4, // Landscape
               layoutType === "Tablet" &&
-                potrait === false &&
-                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, // Landscape
+              potrait === false &&
+              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, // Landscape
               layoutType === "Mobile" &&
-                potrait === false &&
-                CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, // Landscape
+              potrait === false &&
+              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, // Landscape
             ]}
           >
             <LayoutManager layoutName={layoutName} viewMode={true} />
           </CoreBox>
         </CoreBox>
-      </CoreGrid>
+      </>
     );
   };
 
@@ -119,37 +144,50 @@ export default function LayoutViewer(props) {
       <CoreH5>{layoutName}</CoreH5>
 
       <CoreGrid>
-        <CoreSelect
-          gridProps={{ gridSize: 3 }}
-          label="Device:"
-          selectID={device}
-          value={device}
-          handleChange={handleChange}
-          options={[
-            ...Object.keys(DEVICES).map((device) => {
-              return { id: device, label: device, value: device };
-            })
-          ]}
-        />
+        <CoreBox styleClasses={[
+          CoreClasses.DISPLAY.FLEX,
+          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+          CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+          CoreClasses.WIDTH.W_100,
+          CoreClasses.GAP.GAP_3
+        ]}>
+          <CoreSelect
+            gridProps={{ gridSize: 3 }}
+            label="Device"
+            id={device}
+            value={device}
+            handleChange={handleDeviceChange}
+            options={Object.keys(DEVICES).map((key) => ({
+              id   : DEVICES[key].name || key,
+              label: DEVICES[key].displayName || key,
+              value: DEVICES[key].name || key,
+            }))}
+          />
 
-        <CoreTypographyBody1 gridProps={{ gridSize: 3 }}>ZOOM</CoreTypographyBody1>
+          <CoreSelect
+            gridProps={{ gridSize: 3 }}
+            label="Zoom"
+            id={zoomValue}
+            value={zoomValue}
+            handleChange={handleChangeZoom}
+            options={[
+              ...Object.values(ZOOM_VALUES).map((value) => {
+                return { id: value, label: value, value: value };
+              })
+            ]}
+          />
 
-        <CoreSelect
-          gridProps={{ gridSize: 3 }}
-          label="Zoom:"
-          selectID={zoomValue}
-          value={zoomValue}
-          handleChange={handleChangeZoom}
-          options={[
-            ...Object.values(ZOOM_VALUES).map((value) => {
-              return { id: value, label: value, value: value };
-            })
-          ]}
-        />
+          <CoreContainedButton>
+            Potrait
+          </CoreContainedButton>
+
+          <CoreContainedButton>
+            Fold
+          </CoreContainedButton>
+        </CoreBox>
       </CoreGrid>
 
-      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50]} role="tabpanel">
-        <CoreTypographyBody1>{device}</CoreTypographyBody1>
+      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.MARGIN.MY2]}>
 
         <CoreBox
           styleClasses={[
