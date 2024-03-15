@@ -1,6 +1,6 @@
 import { TestTask } from "./tasks/TestTask";
 
-const TasksRegistry = {
+const tasksRegistry = {
   TestTask: TestTask,
 };
-export default TasksRegistry;
+export default tasksRegistry;
