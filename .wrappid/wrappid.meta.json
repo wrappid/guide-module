@@ -2,6 +2,7 @@
     "projectType": "module",
     "projectID": "",
     "projectName": "wrappid",
+    "wrTemplateVersion": "0.0.1",
     "remote": true,
     "repoProvider": "github.com",
     "repoOwner": "wrappid",
