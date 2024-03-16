@@ -37,7 +37,11 @@ export const DEFAULT_SAMPLE_COMPONENT = {
           CoreClasses.TEXT.TEXT_CENTER,
         ]}
       >
-        <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+        <CoreTypographyCaption
+          styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+        >
+          {className}
+        </CoreTypographyCaption>
       </CoreBox>
     );
   },
@@ -260,9 +264,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreTypographyBody1>
 
         <CoreTypographyBody2>
-          {
-            "Background utilities set color to contrastText by default."
-          }
+          {"Background utilities set color to contrastText by default."}
         </CoreTypographyBody2>
       </>
     ),
@@ -271,7 +273,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -281,7 +283,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[classes[className]]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[classes[className]]}>
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -304,7 +308,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
-          gridProps={{ gridSize: 3 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
           styleClasses={[CoreClasses.HEIGHT.H_100]}
         >
           <CoreBox
@@ -337,7 +341,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
-          gridProps={{ gridSize: 3 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
           styleClasses={[CoreClasses.HEIGHT.H_100]}
         >
           <CoreBox
@@ -368,7 +372,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 3 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
           styleClasses={[CoreClasses.HEIGHT.H_100]}
         >
           <CoreBox
@@ -409,7 +413,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
           styleClasses={[
             CoreClasses.BORDER.BORDER,
             classes[className],
@@ -429,7 +433,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BG.BG_BLACK,
@@ -467,7 +471,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 3 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -477,7 +481,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -505,7 +513,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox key={key} gridProps={{ gridSize: 4 }} styleClasses={[]}>
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
+          styleClasses={[]}
+        >
           <CoreBox
             styleClasses={[
               CoreClasses.BORDER.BORDER,
@@ -540,7 +552,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               <CoreTypographyCaption>Box 2</CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -564,7 +580,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 6 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 6, lg: 6, xl: 6 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -600,7 +618,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               <CoreTypographyCaption>BOX 2</CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -622,7 +644,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -630,7 +652,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -654,7 +680,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             styleClasses={[
               classes[className],
@@ -698,29 +726,38 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               <CoreTypographyCaption>ITEM 4</CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
   },
   GRADIENT: {
-    grouped:true
+    grouped: true,
   },
   LINEAR: {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 4 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
+        >
           <CoreBox
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
               CoreClasses.PADDING.P1,
-              CoreClasses.BG.BG_PRIMARY_DARK
+              CoreClasses.BG.BG_PRIMARY_DARK,
             ]}
           >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
-
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            >
+              {className}
+            </CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -747,7 +784,10 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 1 }} height={256}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 3, sm: 3, md: 1, lg: 1, xl: 1 } }}
+          height={256}
+        >
           <CoreBox
             key={key}
             // gridProps={{ gridSize: 3 }}
@@ -760,7 +800,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
           >
-            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            >
+              {className}
+            </CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -770,7 +814,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreTypographyBody1>
-          Utility classes that change how users interact with the contents of a website.
+          Utility classes that change how users interact with the contents of a
+          website.
         </CoreTypographyBody1>
       </>
     ),
@@ -790,7 +835,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__ALL: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 4 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -806,7 +853,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               This paragraph will be entirely selected when clicked by the user.
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -814,7 +865,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__AUTO: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 4 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -831,7 +884,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               select
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -839,7 +896,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__NONE: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 4 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -855,7 +914,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               This paragraph will not be selectable when clicked by the user.
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -875,22 +938,28 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
         >
-        <CoreBox
-          styleClasses={[
-            classes[className],
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-            CoreClasses.PADDING.P1,
-            CoreClasses.TEXT.TEXT_CENTER,
-          ]}
-        >
-          <CoreTypographyCaption><CoreLink onClick={handleClick}>This Link</CoreLink> can not be clicked.</CoreTypographyCaption>
-
-        </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>
+              <CoreLink onClick={handleClick}>This Link</CoreLink> can not be
+              clicked.
+            </CoreTypographyCaption>
+          </CoreBox>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -900,22 +969,50 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
         >
-        <CoreBox
-          styleClasses={[
-            classes[className],
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-            CoreClasses.PADDING.P1,
-            CoreClasses.TEXT.TEXT_CENTER,
-          ]}
-        >
-          <CoreTypographyCaption><CoreLink onClick={handleClick}>This Link</CoreLink> can be clicked.</CoreTypographyCaption>
-
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption>
+              <CoreLink onClick={handleClick}>This Link</CoreLink> can be
+              clicked.
+            </CoreTypographyCaption>
+          </CoreBox>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+      );
+    },
+  },
+  ASPECT_RATIO: {
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          gridProps={{ gridSize: { xs: 6, sm: 6, md: 4, lg: 4, xl: 4 } }}
+        >
+          <CoreBox
+            key={key}
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            ]}
+          >
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          </CoreBox>
         </CoreBox>
       );
     },
@@ -1020,7 +1117,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 2 }}
+          gridProps={{ gridSize: { xs: 6, sm: 6, md: 2, lg: 2, xl: 2 } }}
           styleClasses={[
             CoreClasses.BG.BG_WARNING_LIGHT,
             CoreClasses.BORDER.BORDER,
@@ -1081,7 +1178,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -1089,7 +1186,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1118,7 +1219,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             key={key}
             height={24}
@@ -1134,7 +1237,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               Lorem ipsum dolor
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1160,7 +1267,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.BORDER.BORDER_2,
             CoreClasses.BORDER.BORDER_WARNING_LIGHT,
           ]}
-          gridProps={{ gridSize: 3 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
         >
           <CoreBox
             styleClasses={[
@@ -1185,7 +1292,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
-            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            >
+              {className}
+            </CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1212,7 +1323,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.BORDER.BORDER_2,
             CoreClasses.BORDER.BORDER_WARNING_LIGHT,
           ]}
-          gridProps={{ gridSize: 3 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
         >
           <CoreBox
             key={key}
@@ -1231,7 +1342,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
-            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            >
+              {className}
+            </CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1248,7 +1363,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.BORDER.BORDER_2,
             CoreClasses.BORDER.BORDER_WARNING_LIGHT,
           ]}
-          gridProps={{ gridSize: 3 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
         >
           <CoreBox
             key={key}
@@ -1367,7 +1482,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 2 }}
+          gridProps={{ gridSize: { xs: 6, sm: 6, md: 2, lg: 2, xl: 2 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BG.BG_SUCCESS_LIGHT,
@@ -1401,7 +1516,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.WIDTH.MIN_W_75,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1444,7 +1563,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -1461,7 +1582,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               }
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1471,7 +1596,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     // grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -1485,7 +1612,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1494,7 +1625,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -1507,7 +1640,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption styleClasses={[classes[className]]}>
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
-            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            >
+              {className}
+            </CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1516,7 +1653,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   TEXT__STARTS_WITH__TEXT_DECORATION: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -1530,7 +1669,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1538,7 +1681,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   TEXT__STARTS_WITH__TEXT_TRANSFORM: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -1551,7 +1696,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption styleClasses={[classes[className]]}>
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
-            <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            >
+              {className}
+            </CoreTypographyCaption>
           </CoreBox>
         </CoreBox>
       );
@@ -1560,7 +1709,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   TEXT__ENDS_WITH__WRAP: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 5 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 5, lg: 5, xl: 5 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -1576,7 +1727,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               }
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1584,7 +1739,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   TEXT__ENDS_WITH__BREAK: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -1600,7 +1757,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               }
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1608,7 +1769,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   TEXT__ENDS_WITH__TRUNCATE: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: 3 }}>
+        <CoreBox
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 3, lg: 3, xl: 3 } }}
+        >
           <CoreBox
             key={key}
             styleClasses={[
@@ -1625,7 +1788,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               }
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1647,7 +1814,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: 4 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 4, lg: 4, xl: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -1655,7 +1822,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1673,7 +1844,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
-          gridProps={{ gridSize: 6 }}
+          gridProps={{ gridSize: { xs: 12, sm: 12, md: 6, lg: 6, xl: 6 } }}
           styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}
         >
           <CoreBox
@@ -1705,7 +1876,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               </CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1743,7 +1918,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1793,7 +1972,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption>BOX 2</CoreTypographyCaption>
           </CoreBox>
 
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1830,7 +2013,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption>BOX 1</CoreTypographyCaption>
           </CoreBox>
 
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1855,7 +2042,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1877,7 +2068,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          >
+            {className}
+          </CoreTypographyCaption>
         </CoreBox>
       );
     },
