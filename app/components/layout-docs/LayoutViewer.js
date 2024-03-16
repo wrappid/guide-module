@@ -1,3 +1,4 @@
+/* eslint-disable etc/no-commented-out-code */
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-imports
 import React from "react";
@@ -9,55 +10,90 @@ import {
   LayoutManager,
   CoreH5,
   CoreSelect,
-  CoreContainedButton
+  CoreTypographyBody1, 
+  CoreIconButton,
+  CoreIcon
 } from "@wrappid/core";
 
-// eslint-disable-next-line etc/no-commented-out-code
-// const AspectRtio = {
-//   ASPECT_RATIO_16_9: "aspectRatio16By9",
-//   ASPECT_RATIO_1_1 : "aspectRatio1By1",
-//   ASPECT_RATIO_20_9: "aspectRatio20By9",
-//   ASPECT_RATIO_2_3 : "aspectRatio2By3",
-//   ASPECT_RATIO_3_2 : "aspectRatio3By2",
-//   ASPECT_RATIO_3_4 : "aspectRatio3By4",
-//   ASPECT_RATIO_4_3 : "aspectRatio4By3",
-//   ASPECT_RATIO_9_16: "aspectRatio9By16",
-//   ASPECT_RATIO_9_20: "aspectRatio9By20",
-// };
-
 const ORIENTATION = {
-  POTRAIT  : { name: "potrait", displayName: "Potrait" },
-  LANDSCAPE: { name: "landscape", displayName: "Landscape" }
+  POTRAIT  : { orientationName: "potrait", orientationDisplayName: "Potrait" },
+  LANDSCAPE: { orientationName: "landscape", orientationDisplayName: "Landscape" }
 };
+
 const BENDING = {
-  CONTINUOUS: { name: "continuous", displayName: "Continuous" },
-  FOLDED    : { name: "folded", displayName: "Folded" }
+  CONTINUOUS    : { bendingnName: "CONTINUOUS", bendingDisplayName: "Continuous" },
+  FOLDED        : { bendingnName: "FOLDED", bendingDisplayName: "Folded" },
+  NOT_APPLICABLE: { bendingnName: "NOT_APPLICABLE", bendingDisplayName: "NA" }
+};
+
+const DEVICE_TYPE = {
+  MOBILE         : "Mobile",
+  MOBILE_NO_TOUCH: "MobileNoTouch",
+  DESKTOP        : "Desktop",
+  DESKTOP_TOUCH  : "DesktopTouch",
 };
 
 const DEVICES = {
   MOBILE: {
-    name       : "mobile",
-    displayName: "Mobile", 
-    aspectRatio: { name: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, displayName: "9:16" }, 
-    dimension  : { width: "375", height: "667" }, 
-    orientation: { default: ORIENTATION.POTRAIT, current: ORIENTATION.POTRAIT }, 
-    bending    : { default: BENDING.CONTINUOUS, current: BENDING.CONTINUOUS }
+    name       : "MOBILE",
+    displayName: "Mobile",
+    deviceType : DEVICE_TYPE.MOBILE,
+    aspectRatio: { default: { aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, aspectRatioDisplayName: "9:16" } },
+    dimension  : { default: { width: "375", height: "667" } },
+    allowRotate: true,
+    orientation: { default: ORIENTATION.POTRAIT },
+    allowFold  : false,
+    bending    : { default: BENDING.NOT_APPLICABLE }
   },
   TABLET: {
-    name       : "tablet",
-    displayName: "Tablet", 
-    aspectRatio: { name: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3, displayName: "2:3" }, 
-    dimension  : { width: "820", height: "1180" }, 
-    orientation: { default: ORIENTATION.POTRAIT, current: ORIENTATION.POTRAIT }, 
-    bending    : { default: BENDING.CONTINUOUS, current: BENDING.CONTINUOUS }
+    name       : "TABLET",
+    displayName: "Tablet",
+    deviceType : DEVICE_TYPE.MOBILE,
+    aspectRatio: { default: { aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3, aspectRatioDisplayName: "2:3" } },
+    dimension  : { default: { width: "820", height: "1180" } },
+    allowRotate: true,
+    orientation: { default: ORIENTATION.POTRAIT },
+    allowFold  : false,
+    bending    : { default: BENDING.NOT_APPLICABLE },
   },
   LAPTOP: {
-    name       : "web",
-    displayName: "Web", 
-    aspectRatio: { name: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_1_1, displayName: "1:1" }, 
-    dimension  : { width: "1280", height: "800" }, 
-    orientation: { default: ORIENTATION.POTRAIT, current: ORIENTATION.POTRAIT }, 
-    bending    : { default: BENDING.CONTINUOUS, current: BENDING.CONTINUOUS }
+    name       : "LAPTOP",
+    displayName: "Laptop",
+    deviceType : DEVICE_TYPE.DESKTOP,
+    aspectRatio: { default: { aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, aspectRatioDisplayName: "16:9" } },
+    dimension  : { default: { width: "1920", height: "1080" } },
+    allowRotate: false,
+    orientation: { default: ORIENTATION.LANDSCAPE },
+    allowFold  : false,
+    bending    : { default: BENDING.NOT_APPLICABLE }
+  },
+  GALAXY_S20_ULTRA: {
+    name       : "GALAXY_S20_ULTRA",
+    displayName: "Samsung Galaxy S20 Ultra",
+    deviceType : DEVICE_TYPE.MOBILE,
+    aspectRatio: { default: { aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_20, aspectRatioDisplayName: "9:20" } },
+    dimension  : { default: { width: "412", height: "915" } },
+    allowRotate: true,
+    orientation: { default: ORIENTATION.POTRAIT },
+    allowFold  : false,
+    bending    : { default: BENDING.NOT_APPLICABLE }
+  },
+  ASUS_ZENBOOK_FOLD: {
+    name       : "ASUS_ZENBOOK_FOLD",
+    displayName: "Asus Zenbook Fold",
+    deviceType : DEVICE_TYPE.DESKTOP_TOUCH,
+    aspectRatio: {
+      default: { aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_2, aspectRatioDisplayName: "3:2" }, 
+      folded : { aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, aspectRatioDisplayName: "16:9" },
+    },
+    dimension: {
+      default: { width: "853", height: "1280" }, 
+      folded : { width: "412", height: "915" } 
+    },
+    allowRotate: true,
+    orientation: { default: ORIENTATION.POTRAIT },
+    allowFold  : true,
+    bending    : { default: BENDING.CONTINUOUS }
   },
 };
 
@@ -72,35 +108,78 @@ const ZOOM_VALUES = {
 };
 
 export default function LayoutViewer(props) {
-  const { layoutName = "ComplexLayout", layoutType } = props;
+  const { layoutName = "ComplexLayout" } = props;
 
   // eslint-disable-next-line no-unused-vars
   const [potrait, setPotrait] = React.useState(true);
 
-  const [device, setDevice] = React.useState(DEVICES.LAPTOP);
+  const [currentDevice, setCurrentDevice] = React.useState(DEVICES.MOBILE);
 
   const [zoomValue, setZoomValue] = React.useState(ZOOM_VALUES.ZOOM_100);
 
   const handleDeviceChange = (event) => {
-    setDevice(event?.target?.value);
+    let currentDevice = DEVICES[event.target.value];
+
+    setCurrentDevice(currentDevice);
+    // eslint-disable-next-line etc/no-commented-out-code
+    // setPotrait(true);
+    // simulateScreenSize(DEVICES[currentDevice]?.dimension.height, DEVICES[currentDevice]?.dimension.width);
   };
 
   const handleChangeZoom = (event) => {
     setZoomValue(event?.target?.value);
   };
 
+  const handleDeviceRotate = () => {};
+
+  const handleDeviceFold = () => {
+    // Create a copy of the currentDevice object
+    let updatedDevice = { ...currentDevice };
+  
+    // eslint-disable-next-line no-console
+    console.log("Before update:", updatedDevice);
+  
+    // Update the bending.default property based on its current value along with aspectRatio and dimension
+    if (BENDING.CONTINUOUS === updatedDevice.bending.default) {
+      // eslint-disable-next-line no-console
+      console.log("if condition", updatedDevice);
+      updatedDevice.bending.default = BENDING.FOLDED;
+  
+      // Update aspectRatio and dimension to folded values
+      updatedDevice.aspectRatio.default = { ...DEVICES[updatedDevice.name].aspectRatio.folded };
+      updatedDevice.dimension.default = { ...DEVICES[updatedDevice.name].dimension.folded };
+  
+    } else if (BENDING.FOLDED === updatedDevice.bending.default) {
+      // eslint-disable-next-line no-console
+      console.log("if else condition", updatedDevice);
+
+      updatedDevice.bending.default = BENDING.CONTINUOUS;
+  
+      // Update aspectRatio and dimension to default values
+      updatedDevice.aspectRatio.default = { ...DEVICES[updatedDevice.name].aspectRatio.default };
+      updatedDevice.dimension.default = { ...DEVICES[updatedDevice.name].dimension.default };
+    }
+  
+    // eslint-disable-next-line no-console
+    console.log("After update:", updatedDevice);
+  
+    setCurrentDevice(updatedDevice);
+  };
   const renderLayoutView = () => {
     return (
       <>
         <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.FLEX.DIRECTION_COLUMN]}>
-          <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
-            {/* <CoreSpan>AspectRatio : {device.aspectRatio.displayName}</CoreSpan>
+          <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.FLEX_WRAP_WRAP, CoreClasses.GAP.GAP_3]}>
+            <CoreTypographyBody1>
+               Aspect Ratio: {currentDevice?.aspectRatio?.[currentDevice.bending.default === BENDING.FOLDED ? "folded" : "default"]?.aspectRatioDisplayName}
+            </CoreTypographyBody1>
 
-            <CoreSpan>Dimension: {`${device.dimension.height} ${device.dimension.width}`}</CoreSpan>
+            <CoreTypographyBody1>Dimension: {`${currentDevice?.dimension.default.width || currentDevice?.dimension.current.width} x ${currentDevice?.dimension.default.height || currentDevice?.dimension.current.height}`}</CoreTypographyBody1>
 
-            <CoreSpan>Orientation: {device.orientation.default.name}</CoreSpan>
+            <CoreTypographyBody1>Orientation: {currentDevice?.orientation.default.orientationDisplayName}</CoreTypographyBody1>
 
-            <CoreSpan>Bending: {device.bending.default}</CoreSpan> */}
+            <CoreTypographyBody1>Bending: {currentDevice?.bending?.current?.bendingDisplayName || currentDevice?.bending?.default?.bendingDisplayName}</CoreTypographyBody1>
+
           </CoreBox>
 
           <CoreBox
@@ -108,26 +187,25 @@ export default function LayoutViewer(props) {
               CoreClasses.BG.BG_GREY_100,
               CoreClasses.PADDING.P1,
               CoreClasses.SHADOW.SMALL,
-              CoreClasses.WIDTH.W_100,
-              layoutType === "Web" && CoreClasses.WIDTH.W_100,
-              layoutType === "Tablet" && CoreClasses.WIDTH.W_100,
-              layoutType === "Mobile" && CoreClasses.WIDTH.W_100,
-              layoutType === "Web" &&
+              CoreClasses.OVERFLOW.OVERFLOW_AUTO,
+              currentDevice?.deviceType === (DEVICE_TYPE.DESKTOP || DEVICE_TYPE.DESKTOP_TOUCH) && CoreClasses.WIDTH.W_75,
+              currentDevice?.deviceType === (DEVICE_TYPE.MOBILE || DEVICE_TYPE.MOBILE_NO_TOUCH) && CoreClasses.WIDTH.W_50,
+              currentDevice?.deviceType === DEVICE_TYPE.DESKTOP &&
               potrait === true &&
-              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3, //Potrait
-              layoutType === "Tablet" &&
-              potrait === true &&
-              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, //Potrait
-              layoutType === "Mobile" &&
+              currentDevice.aspectRatio.default, //Potrait
+              currentDevice?.deviceType === "TABLET" &&
               potrait === true &&
               CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, //Potrait
-              layoutType === "Web" &&
+              currentDevice?.deviceType === "MOBILE" &&
+              potrait === true &&
+              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, //Potrait
+              currentDevice?.deviceType === "WEB" &&
               potrait === false &&
               CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4, // Landscape
-              layoutType === "Tablet" &&
+              currentDevice?.deviceType === "TABLET" &&
               potrait === false &&
-              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, // Landscape
-              layoutType === "Mobile" &&
+              CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, // Landscape
+              currentDevice?.deviceType === "MOBILE" &&
               potrait === false &&
               CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, // Landscape
             ]}
@@ -144,50 +222,55 @@ export default function LayoutViewer(props) {
       <CoreH5>{layoutName}</CoreH5>
 
       <CoreGrid>
-        <CoreBox styleClasses={[
-          CoreClasses.DISPLAY.FLEX,
-          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-          CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-          CoreClasses.WIDTH.W_100,
-          CoreClasses.GAP.GAP_3
-        ]}>
-          <CoreSelect
-            gridProps={{ gridSize: 3 }}
-            label="Device"
-            id={device}
-            value={device}
-            handleChange={handleDeviceChange}
-            options={Object.keys(DEVICES).map((key) => ({
-              id   : DEVICES[key].name || key,
-              label: DEVICES[key].displayName || key,
-              value: DEVICES[key].name || key,
-            }))}
-          />
+        <CoreSelect
+          gridProps={{ gridSize: 3 }}
+          label="Device"
+          id="currentDevice"
+          value={currentDevice.name}
+          handleChange={handleDeviceChange}
+          options={Object.keys(DEVICES).map((key) => ({
+            id   : DEVICES[key].name,
+            label: DEVICES[key].displayName,
+            value: DEVICES[key].name,
+          }))}
+        />
 
-          <CoreSelect
-            gridProps={{ gridSize: 3 }}
-            label="Zoom"
-            id={zoomValue}
-            value={zoomValue}
-            handleChange={handleChangeZoom}
-            options={[
-              ...Object.values(ZOOM_VALUES).map((value) => {
-                return { id: value, label: value, value: value };
-              })
-            ]}
-          />
+        <CoreSelect
+          gridProps={{ gridSize: 2 }}
+          label="Zoom"
+          id={zoomValue}
+          value={zoomValue}
+          handleChange={handleChangeZoom}
+          options={[
+            ...Object.values(ZOOM_VALUES).map((value) => {
+              return { id: value, label: value, value: value };
+            })
+          ]}
+        />
 
-          <CoreContainedButton>
-            Potrait
-          </CoreContainedButton>
+        <CoreBox
+          gridProps={{ gridSize: 2 }}
+          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.WIDTH.W_100]} >
 
-          <CoreContainedButton>
-            Fold
-          </CoreContainedButton>
+          <CoreIconButton
+            title={currentDevice.allowRotate ? "Rotate" : "Screen orientation option"} 
+            onClick={() => handleDeviceRotate()}
+            disabled={!(currentDevice?.allowRotate || false)}>
+            <CoreIcon>screen_rotation</CoreIcon>
+          </CoreIconButton>
+
+          <CoreIconButton
+            title={"Device Fold"}
+            onClick={() => handleDeviceFold()}
+            disabled={!(currentDevice?.allowFold || false)}
+          >
+            <CoreIcon>devices_fold</CoreIcon>
+          </CoreIconButton>
+
         </CoreBox>
       </CoreGrid>
 
-      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.MARGIN.MY2]}>
+      <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.MARGIN.MY2]}>
 
         <CoreBox
           styleClasses={[
@@ -205,3 +288,9 @@ export default function LayoutViewer(props) {
     </>
   );
 }
+
+// eslint-disable-next-line etc/no-commented-out-code
+// function simulateScreenSize(width, height) {
+//   document.documentElement.style.setProperty("--viewport-width", `${width}px`);
+//   document.documentElement.style.setProperty("--viewport-height", `${height}px`);
+// }
