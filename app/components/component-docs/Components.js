@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CoreBox, CoreGrid, CoreH4 } from "@wrappid/core";
+import { BlankLayout, CoreBox, CoreGrid, CoreH4, CoreLayoutItem } from "@wrappid/core";
 
 import ComponentsMenu from "./ComponentsMenu";
 import DocsRegistry from "./DocsRegistry";
@@ -51,20 +51,24 @@ export default function Components() {
   }, [docsPageRegistry]);
 
   return (
-    <CoreGrid>
-      <CoreBox gridProps={{ gridSize: 9 }}>
-        {currentPage && docsPageRegistry[currentPage]
-          ? React.createElement(docsPageRegistry[currentPage])
-          : <CoreH4>No documentation component available for {currentPage}.</CoreH4>}
-      </CoreBox>
+    <>
+      <CoreLayoutItem id={BlankLayout.PLACEHOLDER.CONTENT}>
+        <CoreGrid>
+          <CoreBox gridProps={{ gridSize: 9 }}>
+            {currentPage && docsPageRegistry[currentPage]
+              ? React.createElement(docsPageRegistry[currentPage])
+              : <CoreH4>No documentation component available for {currentPage}.</CoreH4>}
+          </CoreBox>
 
-      <CoreBox gridProps={{ gridSize: 3 }}>
-        <ComponentsMenu
-          docsRegistry={_DocsRegistry}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
-      </CoreBox>
-    </CoreGrid>
+          <CoreBox gridProps={{ gridSize: 3 }}>
+            <ComponentsMenu
+              docsRegistry={_DocsRegistry}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          </CoreBox>
+        </CoreGrid>
+      </CoreLayoutItem>
+    </>
   );
 }
