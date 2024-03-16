@@ -1,5 +1,5 @@
 module.exports = {
-    ignorePatterns: ["**/node_modules/*", ".eslintrc.js", "commitlint.config.js" ],
+    ignorePatterns: ["**/node_modules/*", ".eslintrc.js", "commitlint.config.js", "attributions.gen.js" ],
     overrides: [
         {
             files: ["service/**/*.ts"],
