@@ -8,18 +8,18 @@ export default function CoreEmailOrPhoneLinkDocs() {
   return (
     <>
       <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
-      CoreEmailOrPhoneLink
+        CoreEmailOrPhoneLink
       </CoreH4>
 
       <CodeSample
-        title={"Simple CoreEmailLink (NOT WORKING)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
+        title={"Simple CoreEmailLink"}
+        description={"This is a customized wrappid component built using mui icon. It will be used for displaying user's email id. "}
         code={`
 <CoreStack direction="column">
   
-  <CoreEmailLink email="pritam@rxefy"></CoreEmailLink>
+  <CoreEmailOrPhoneLink email="pritam@rxefy"></CoreEmailOrPhoneLink>
 
-  <CoreEmailLink phone="8777083277"></CoreEmailLink>
+  <CoreEmailOrPhoneLink phone="8777083277"></CoreEmailOrPhoneLink>
   
 </CoreStack>
         `}
@@ -29,7 +29,7 @@ export default function CoreEmailOrPhoneLinkDocs() {
               <CoreEmailLink email="pritam@rxefy"></CoreEmailLink>
 
               <CoreEmailLink phone="8777083277"></CoreEmailLink>
-              
+
             </CoreStack>
           </>
         } />
@@ -37,6 +37,6 @@ export default function CoreEmailOrPhoneLinkDocs() {
       <ComponentProps component={CoreEmailOrPhoneLink} />
 
     </>
-    
+
   );
 }

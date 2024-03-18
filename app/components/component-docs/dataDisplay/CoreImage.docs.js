@@ -13,7 +13,7 @@ export default function CoreImageDocs() {
 
       <CodeSample
         title={"Simple CoreImage "}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
+        description={"The <img> HTML element embeds an image into the document."}
         code={`
         <CoreImage width={200} height={200}
         src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg">

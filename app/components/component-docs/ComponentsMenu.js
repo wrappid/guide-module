@@ -4,7 +4,7 @@ import {
   toggleMenuItemState,
   CoreBox,
   CoreClasses,
-  CoreTypographyBody1,
+  CoreTypographyBody2,
   CoreMenu
 } from "@wrappid/core";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,10 +31,12 @@ export default function ComponentsMenu(props) {
         // eslint-disable-next-line etc/no-commented-out-code
         {/*console.log("menu of", docKey);
       console.log(prepareComponentMenu(docsRegistry[docKey]?.children));*/}
+        let label = <CoreTypographyBody2 gutterBottom={true} styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY]}>{`${docKey?.trim()}`}</CoreTypographyBody2>;
+
         return {
           Children: prepareComponentMenu(docsRegistry[docKey]?.children),
           id      : docKey,
-          label   : docKey?.trim(),
+          label   : label,
           name    : docKey?.trim(),
           type    : "menuitem",
         };
@@ -46,16 +48,13 @@ export default function ComponentsMenu(props) {
    * Right drawer related collapse
    */
   // eslint-disable-next-line no-unused-vars
-  const [open, setOpen] = React.useState(true);
 
   return (
-    <>
+    <CoreBox styleClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.VH_100]}>
       
-      <CoreTypographyBody1>Component Menu</CoreTypographyBody1>
+      <CoreTypographyBody2 styleClasses={[CoreClasses.COLOR.TEXT_SECONDARY, CoreClasses.TEXT.TEXT_CENTER]}>Component Menu</CoreTypographyBody2>
 
-      <CoreBox
-        CoreClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.H_100, CoreClasses.MARGIN.M1]}
-      >
+      <CoreBox>
         <CoreMenu
           openCollapse={collapse}
           multiLevel={true}
@@ -69,6 +68,6 @@ export default function ComponentsMenu(props) {
           open={true}
         />
       </CoreBox>
-    </>
+    </CoreBox>   
   );
 }

@@ -1,5 +1,6 @@
 import {
   CoreH4,
+  CoreLabel,
   CoreTypographyBody1
 } from "@wrappid/core";
   
@@ -15,10 +16,12 @@ export default function CoreLabelDocs() {
       </CoreTypographyBody1>
   
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
+        title={"CoreLabel"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+          <CoreLabel placeholder="CoreLabel" variant="caption"></CoreLabel>
+        </>}
       />
         
       {/* eslint-disable-next-line etc/no-commented-out-code */}

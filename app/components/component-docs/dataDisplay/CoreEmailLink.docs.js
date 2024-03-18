@@ -12,8 +12,8 @@ export default function CoreEmailLinkDocs() {
       </CoreH4>
 
       <CodeSample
-        title={"Simple CoreEmailLink"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
+        title={"CoreEmailLink"}
+        description={"This is a customized wrappid component built using mui icon. It will be used for displaying user's email id. "}
         code={`
 <CoreEmailLink email="pritam@rxefy"></CoreEmailLink>
         `}
