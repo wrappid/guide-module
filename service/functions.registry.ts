@@ -1,10 +1,11 @@
 import * as testFunctions from "./functions/test.functions";
 
-const functionsRegistry = {
+const FunctionsRegistry = {
   readTestData: testFunctions.readTestData,
   readTestDataAll: testFunctions.readTestDataAll,
   createTestData: testFunctions.createTestData,
   updateTestData: testFunctions.updateTestData,
   deleteTestData: testFunctions.deleteTestData,
 };
-export default functionsRegistry;
+
+export default FunctionsRegistry;
