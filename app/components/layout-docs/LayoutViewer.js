@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-imports
 import React from "react";
 
@@ -50,12 +51,12 @@ const DEVICES = {
     allowRotate: true,
     aspectRatio: {
       default: { aspectRatioDisplayName: "3:2", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_2 },
-      folded : { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9 },
+      folded : { aspectRatioDisplayName: "9:16", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16 },
     },
     deviceType: DEVICE_TYPE.DESKTOP_TOUCH,
     dimension : {
       default: { height: "1280", width: "853" },
-      folded : { height: "915", width: "412" }
+      folded : { height: "1280", width: "1706" }
     },
     displayName: "Asus Zenbook Fold",
     name       : "ASUS_ZENBOOK_FOLD",
@@ -145,13 +146,11 @@ export default function LayoutViewer(props) {
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
 
-    // eslint-disable-next-line no-prototype-builtins
     if (updatedDevice.aspectRatio.hasOwnProperty("current") === false) {
       updatedDevice.aspectRatio.current = currentDevice.aspectRatio.default;
     }
 
     if (updatedDevice.allowFold) {
-      // eslint-disable-next-line no-prototype-builtins
       if (updatedDevice.posture.hasOwnProperty("current")) {
         if (POSTURE.CONTINUOUS === updatedDevice.posture.current) {
           updatedDevice.aspectRatio.current = updatedDevice.aspectRatio.default;
@@ -162,10 +161,10 @@ export default function LayoutViewer(props) {
     }
 
     if (updatedDevice.allowRotate) {
-      // eslint-disable-next-line no-prototype-builtins
       if (updatedDevice.orientation.hasOwnProperty("current")) {
         if (updatedDevice.orientation.default === updatedDevice.orientation.current) {
-          if (POSTURE.CONTINUOUS === updatedDevice.posture.current) {
+          if (POSTURE.CONTINUOUS === updatedDevice.posture.current
+            || POSTURE.NOT_APPLICABLE === updatedDevice.posture.current) {
             updatedDevice.aspectRatio.current = updatedDevice.aspectRatio.default;
           } else if (POSTURE.FOLDED === updatedDevice.posture.current) {
             updatedDevice.aspectRatio.current = updatedDevice.aspectRatio.folded;
@@ -175,6 +174,7 @@ export default function LayoutViewer(props) {
         }
       }
     }
+
     setCurrentDevice(updatedDevice);
   };
 
@@ -182,30 +182,40 @@ export default function LayoutViewer(props) {
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
 
-    // eslint-disable-next-line no-prototype-builtins
     if (updatedDevice.dimension.hasOwnProperty("current") === false) {
       updatedDevice.dimension.current = currentDevice.dimension.default;
     }
 
-    if (updatedDevice.orientation.default === updatedDevice.orientation.current) {
-      if (POSTURE.CONTINUOUS === updatedDevice.posture.current && updatedDevice.dimension.default === updatedDevice.dimension.current) {
-        updatedDevice.dimension.current = updatedDevice.dimension.folded;
-      } else if (POSTURE.FOLDED === updatedDevice.posture.current && updatedDevice.dimension.folded === updatedDevice.dimension.current) {
-        updatedDevice.dimension.current = updatedDevice.dimension.default;
+    if (updatedDevice.allowFold) {
+      if (updatedDevice.posture.hasOwnProperty("current")) {
+        if (POSTURE.CONTINUOUS === updatedDevice.posture.current) {
+          updatedDevice.dimension.current = updatedDevice.dimension.default;
+        } else if (POSTURE.FOLDED === updatedDevice.posture.current) {
+          updatedDevice.dimension.current = updatedDevice.dimension.folded;
+        }
       }
-    } 
-
-    if (updatedDevice.dimension.default === updatedDevice.dimension.current) {
-      updatedDevice.dimension.current = updatedDevice.dimension.folded;
-    } else if (updatedDevice.dimension.folded === updatedDevice.dimension.current) {
-      updatedDevice.dimension.current = updatedDevice.dimension.default;
     }
 
-    setCurrentDevice(updatedDevice);
-    handleDeviceAspectRatio();
-    handleDeviceDimension();
+    if (updatedDevice.allowRotate) {
+      if (updatedDevice.orientation.hasOwnProperty("current")) {
+        if (updatedDevice.orientation.default === updatedDevice.orientation.current) {
+          if (POSTURE.CONTINUOUS === updatedDevice.posture.current
+            || POSTURE.NOT_APPLICABLE === updatedDevice.posture.current) {
+            updatedDevice.dimension.current = updatedDevice.dimension.default;
+          } else if (POSTURE.FOLDED === updatedDevice.posture.current) {
+            updatedDevice.dimension.current = updatedDevice.dimension.folded;
+          }
+        } else {
+          let updatedDimension = {
+            height: currentDevice.dimension.default.width,
+            width : currentDevice.dimension.default.height
+          };
 
-    updatedDevice = { ...currentDevice };
+          updatedDevice.dimension.current = updatedDimension;
+        }
+      }
+    }
+
     setCurrentDevice(updatedDevice);
   };
 
@@ -213,7 +223,6 @@ export default function LayoutViewer(props) {
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
 
-    // eslint-disable-next-line no-prototype-builtins
     if (updatedDevice.orientation.hasOwnProperty("current") === false) {
       updatedDevice.orientation.current = currentDevice.orientation.default;
     }
@@ -236,7 +245,6 @@ export default function LayoutViewer(props) {
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
 
-    // eslint-disable-next-line no-prototype-builtins
     if (updatedDevice.posture.hasOwnProperty("current") === false) {
       updatedDevice.posture.current = currentDevice.posture.default;
     }
@@ -261,7 +269,6 @@ export default function LayoutViewer(props) {
    * @returns 
    */
   const getCurrentAspectRatio = () => {
-    // eslint-disable-next-line no-prototype-builtins
     if (currentDevice.aspectRatio.hasOwnProperty("current") === false) {
       currentDevice.aspectRatio.current = currentDevice.aspectRatio.default;
     }
@@ -274,7 +281,6 @@ export default function LayoutViewer(props) {
    * @returns 
    */
   const getCurrentDimension = () => {
-    // eslint-disable-next-line no-prototype-builtins
     if (currentDevice.dimension.hasOwnProperty("current") === false) {
       currentDevice.dimension.current = currentDevice.dimension.default;
     }
@@ -288,7 +294,6 @@ export default function LayoutViewer(props) {
    * @returns 
    */
   const getCurrentOrientation = () => {
-    // eslint-disable-next-line no-prototype-builtins
     if (currentDevice.orientation.hasOwnProperty("current") === false) {
       currentDevice.orientation.current = currentDevice.orientation.default;
     }
@@ -300,7 +305,6 @@ export default function LayoutViewer(props) {
    * @returns 
    */
   const getCurrentPosture = () => {
-    // eslint-disable-next-line no-prototype-builtins
     if (currentDevice.posture.hasOwnProperty("current") === false) {
       currentDevice.posture.current = currentDevice.posture.default;
     }
@@ -316,9 +320,6 @@ export default function LayoutViewer(props) {
         <CoreGrid>
           <CoreTypographyBody2 gridProps={{ gridSize: { md: 3 } }}>
             Aspect Ratio: {getCurrentAspectRatio()}
-
-            {/* eslint-disable-next-line etc/no-commented-out-code */}
-            {/* {currentDevice?.aspectRatio?.[currentDevice.posture.default === POSTURE.FOLDED ? "folded" : "default"]?.aspectRatioDisplayName} */}
           </CoreTypographyBody2>
 
           <CoreTypographyBody2 gridProps={{ gridSize: { md: 3 } }}>
@@ -342,24 +343,7 @@ export default function LayoutViewer(props) {
             CoreClasses.OVERFLOW.OVERFLOW_AUTO,
             currentDevice?.deviceType === (DEVICE_TYPE.DESKTOP || DEVICE_TYPE.DESKTOP_TOUCH) && CoreClasses.WIDTH.W_75,
             currentDevice?.deviceType === (DEVICE_TYPE.MOBILE || DEVICE_TYPE.MOBILE_NO_TOUCH) && CoreClasses.WIDTH.W_50,
-            currentDevice?.deviceType === DEVICE_TYPE.DESKTOP &&
-            potrait === true &&
-            currentDevice.aspectRatio.default, //Potrait
-            currentDevice?.deviceType === "TABLET" &&
-            potrait === true &&
-            CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, //Potrait
-            currentDevice?.deviceType === "MOBILE" &&
-            potrait === true &&
-            CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16, //Potrait
-            currentDevice?.deviceType === "WEB" &&
-            potrait === false &&
-            CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4, // Landscape
-            currentDevice?.deviceType === "TABLET" &&
-            potrait === false &&
-            CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, // Landscape
-            currentDevice?.deviceType === "MOBILE" &&
-            potrait === false &&
-            CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9, // Landscape
+            currentDevice.aspectRatio.current.aspectRatioName
           ]}
         >
           <LayoutManager layoutName={layoutName} viewMode={true} />
