@@ -1,9 +1,10 @@
 import { TestDatas } from "./models/TestDatas.model";
 
-const modelsRegistry = {
+const ModelsRegistry = {
   TestDatas: {
     database: "application",
     model: TestDatas,
   },
 };
-export default modelsRegistry;
+
+export default ModelsRegistry;

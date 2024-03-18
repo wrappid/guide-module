@@ -1,4 +1,4 @@
-const routesRegistry = {
+const RoutesRegistry = {
   testGetAllAPI: {
     name: "Test Get All API",
     url: "wrappidall",
@@ -40,4 +40,5 @@ const routesRegistry = {
     controllerRef: "testPatchFunc",
   },
 };
-export default routesRegistry;
+
+export default RoutesRegistry;

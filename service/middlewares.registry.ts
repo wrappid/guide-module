@@ -1,6 +1,7 @@
 import { testMiddleware } from "./middlewares/test.middleware";
 
-const middlewaresRegistry = {
+const MiddlewaresRegistry = {
   testMiddleware: testMiddleware,
 };
-export default middlewaresRegistry;
+
+export default MiddlewaresRegistry;
