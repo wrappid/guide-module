@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys-fix/sort-keys-fix */
 /* eslint-disable no-prototype-builtins */
 // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-imports
 import React from "react";
@@ -7,11 +8,12 @@ import {
   CoreGrid,
   CoreClasses,
   LayoutManager,
-  CoreH5,
   CoreSelect,
   CoreTypographyBody2,
   CoreIconButton,
-  CoreIcon
+  CoreIcon,
+  CoreLabel,
+  CoreH5
 } from "@wrappid/core";
 
 const DEVICE_TYPE = {
@@ -50,8 +52,8 @@ const DEVICES = {
     allowFold  : true,
     allowRotate: true,
     aspectRatio: {
-      default: { aspectRatioDisplayName: "3:2", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_2 },
-      folded : { aspectRatioDisplayName: "9:16", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16 },
+      default: { aspectRatioDisplayName: "2:3", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3 },
+      folded : { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9 },
     },
     deviceType: DEVICE_TYPE.DESKTOP_TOUCH,
     dimension : {
@@ -111,12 +113,12 @@ const DEVICES = {
 
 const ZOOM_VALUES = {
   FIT_TO_SCREEN: "Fit to Screen",
+  ZOOM_50      : 50,
+  ZOOM_75      : 75,
   ZOOM_100     : 100,
   ZOOM_125     : 125,
   ZOOM_150     : 150,
   ZOOM_200     : 200,
-  ZOOM_50      : 50,
-  ZOOM_75      : 75,
 };
 
 export default function LayoutViewer(props) {
@@ -210,6 +212,13 @@ export default function LayoutViewer(props) {
             height: currentDevice.dimension.default.width,
             width : currentDevice.dimension.default.height
           };
+
+          if (POSTURE.FOLDED === updatedDevice.posture.current) {
+            updatedDimension = {
+              height: currentDevice.dimension.folded.width,
+              width : currentDevice.dimension.folded.height
+            };
+          }
 
           updatedDevice.dimension.current = updatedDimension;
         }
@@ -317,24 +326,6 @@ export default function LayoutViewer(props) {
         gridProps={{ gridSize: 12 }}
         styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.FLEX.DIRECTION_COLUMN]}>
 
-        <CoreGrid>
-          <CoreTypographyBody2 gridProps={{ gridSize: { md: 3 } }}>
-            Aspect Ratio: {getCurrentAspectRatio()}
-          </CoreTypographyBody2>
-
-          <CoreTypographyBody2 gridProps={{ gridSize: { md: 3 } }}>
-            Dimension: {getCurrentDimension()}
-          </CoreTypographyBody2>
-
-          <CoreTypographyBody2 gridProps={{ gridSize: { md: 3 } }}>
-            Orientation: {getCurrentOrientation()}
-          </CoreTypographyBody2>
-
-          <CoreTypographyBody2 gridProps={{ gridSize: { md: 3 } }}>
-            Posture: {getCurrentPosture()}
-          </CoreTypographyBody2>
-        </CoreGrid>
-
         <CoreBox
           styleClasses={[
             CoreClasses.BG.BG_GREY_100,
@@ -354,56 +345,92 @@ export default function LayoutViewer(props) {
 
   return (
     <>
-      <CoreH5>{layoutName}</CoreH5>
+      <CoreBox styleClasses={[CoreClasses.POSITION.STICKY_TOP, CoreClasses.BG.BG_GREY_100, CoreClasses.MARGIN.MB1, CoreClasses.PADDING.P1]} >
+        <CoreGrid>
+          <CoreH5 styleClasses={[CoreClasses.MARGIN.M0]}>{layoutName}</CoreH5>
 
-      <CoreGrid>
-        <CoreSelect
-          gridProps={{ gridSize: { md: 4, xs: 8 } }}
-          label="Device"
-          id="currentDevice"
-          value={currentDevice.name}
-          handleChange={handleDeviceChange}
-          options={Object.keys(DEVICES).map((key) => ({
-            id   : DEVICES[key].name,
-            label: DEVICES[key].displayName,
-            value: DEVICES[key].name,
-          }))}
-        />
+          <CoreSelect
+            gridProps={{ gridSize: { md: 3 } }}
+            label="Device"
+            id="currentDevice"
+            value={currentDevice.name}
+            handleChange={handleDeviceChange}
+            options={Object.keys(DEVICES).map((key) => ({
+              id   : DEVICES[key].name,
+              label: DEVICES[key].displayName,
+              value: DEVICES[key].name,
+            }))}
+          />
 
-        <CoreSelect
-          gridProps={{ gridSize: { md: 2, xs: 4 } }}
-          label="Zoom"
-          id={zoomValue}
-          value={zoomValue}
-          handleChange={handleChangeZoom}
-          options={[
-            ...Object.values(ZOOM_VALUES).map((value) => {
-              return { id: value, label: value, value: value };
-            })
-          ]}
-        />
+          <CoreSelect
+            gridProps={{ gridSize: { md: 2, xs: 4 } }}
+            label="Zoom"
+            id={zoomValue}
+            value={zoomValue}
+            handleChange={handleChangeZoom}
+            options={[
+              ...Object.values(ZOOM_VALUES).map((value) => {
+                return { id: value, label: value, value: value };
+              })
+            ]}
+          />
 
-        <CoreBox
-          gridProps={{ gridSize: { md: 6 } }}
-          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.WIDTH.W_100]} >
-
-          <CoreIconButton
-            title={currentDevice.allowRotate ? "Rotate" : "Screen orientation option"}
-            onClick={(event) => handleDeviceOrientation(event)}
-            disabled={!(currentDevice?.allowRotate || false)}>
-            <CoreIcon>screen_rotation</CoreIcon>
-          </CoreIconButton>
-
-          <CoreIconButton
-            title={"Device posture"}
-            onClick={(event) => handleDevicePosture(event)}
-            disabled={!(currentDevice?.allowFold || false)}
+          <CoreBox
+            gridProps={{ gridSize: { md: 2, xs: 4 }, styleClasses: [CoreClasses.ALIGNMENT.ALIGN_ITEMS_END] }}
           >
-            <CoreIcon>devices_fold</CoreIcon>
-          </CoreIconButton>
+            <CoreIconButton
+              title={currentDevice.allowRotate ? "Rotate" : "Screen orientation option"}
+              onClick={(event) => handleDeviceOrientation(event)}
+              disabled={!(currentDevice?.allowRotate || false)}>
+              <CoreIcon>screen_rotation</CoreIcon>
+            </CoreIconButton>
 
-        </CoreBox>
-      </CoreGrid>
+            <CoreIconButton
+              title={"Device posture"}
+              onClick={(event) => handleDevicePosture(event)}
+              disabled={!(currentDevice?.allowFold || false)}
+            >
+              <CoreIcon>devices_fold</CoreIcon>
+            </CoreIconButton>
+          </CoreBox>
+        </CoreGrid>
+
+        <CoreGrid>
+          <CoreBox gridProps={{ gridSize: { md: 3, xs: 6 } }} >
+            <CoreLabel>Dimension</CoreLabel>
+
+            <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
+              {getCurrentDimension()}
+            </CoreTypographyBody2>
+          </CoreBox>
+
+          <CoreBox gridProps={{ gridSize: { md: 3, xs: 6 } }} >
+            <CoreLabel>Aspect Ratio</CoreLabel>
+
+            <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
+              {getCurrentAspectRatio()}
+            </CoreTypographyBody2>
+          </CoreBox>
+
+          <CoreBox gridProps={{ gridSize: { md: 3, xs: 6 } }} >
+            <CoreLabel>Orientation</CoreLabel>
+
+            <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
+              {getCurrentOrientation()}
+            </CoreTypographyBody2>
+          </CoreBox>
+
+          <CoreBox gridProps={{ gridSize: { md: 3, xs: 6 } }} >
+            <CoreLabel>Posture</CoreLabel>
+
+            <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]} >
+              {getCurrentPosture()}
+            </CoreTypographyBody2>
+          </CoreBox>
+
+        </CoreGrid>
+
+      </CoreBox>
 
       {layoutName && renderLayoutView()}
     </>
