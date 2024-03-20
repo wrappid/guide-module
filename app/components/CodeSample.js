@@ -35,7 +35,7 @@ export default function CodeSample(props) {
         <CoreBox
           styleClasses={[
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_SECONDARY,
+            CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
             CoreClasses.DISPLAY.FLEX,
             CoreClasses.FLEX.DIRECTION_COLUMN,
             CoreClasses.MARGIN.MT2,
@@ -58,7 +58,7 @@ export default function CodeSample(props) {
                   CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END,
                   CoreClasses.BORDER.BORDER_TOP,
                   CoreClasses.BORDER.BORDER_BOTTOM,
-                  CoreClasses.BORDER.BORDER_SECONDARY,
+                  CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
                   CoreClasses.PADDING.P1,
                 ]}
               >
