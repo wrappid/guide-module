@@ -4,8 +4,8 @@ import {
   toggleMenuItemState,
   CoreBox,
   CoreClasses,
-  CoreTypographyBody1,
-  CoreMenu
+  CoreMenu,
+  CoreSpan
 } from "@wrappid/core";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -31,10 +31,12 @@ export default function ComponentsMenu(props) {
         // eslint-disable-next-line etc/no-commented-out-code
         {/*console.log("menu of", docKey);
       console.log(prepareComponentMenu(docsRegistry[docKey]?.children));*/}
+        let label = <CoreSpan gutterBottom={true} styleClasses={[CoreClasses.COLOR.TEXT_BLACK]}>{`${docKey?.trim()}`}</CoreSpan>;
+
         return {
           Children: prepareComponentMenu(docsRegistry[docKey]?.children),
           id      : docKey,
-          label   : docKey?.trim(),
+          label   : label,
           name    : docKey?.trim(),
           type    : "menuitem",
         };
@@ -49,12 +51,9 @@ export default function ComponentsMenu(props) {
   const [open, setOpen] = React.useState(true);
 
   return (
-    <>
-      
-      <CoreTypographyBody1>Component Menu</CoreTypographyBody1>
-
+    <>   
       <CoreBox
-        CoreClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.H_100, CoreClasses.MARGIN.M1]}
+        CoreClasses={[]}
       >
         <CoreMenu
           openCollapse={collapse}
