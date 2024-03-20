@@ -22,7 +22,7 @@ import CodeSample from "../CodeSample";
 import {
   DEFAULT_SAMPLE_COMPONENT,
   CLASS_SPECIFIC_SAMPLE_COMPONENT,
-} from "./StyleUtilitiesSamples";
+} from "./StylesSamples";
 
 const CLASS_NAME_TO_EXCLUDE = [
   // "DEV_BORDER", // DONE
@@ -80,7 +80,7 @@ export default function Styles() {
     <>
       <CoreLayoutItem
         id={BlankLayout.PLACEHOLDER.CONTENT}>
-        <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
+        <CoreGrid styleClasses={[CoreClasses.BG.BG_GREY_100]}>
           <CoreBox gridProps={{ gridSize: 10 }} ref={contentRef}>
             <CoreH4
               styleClasses={[
@@ -94,7 +94,7 @@ export default function Styles() {
             <CoreTypographyBody1>
               These are style utilities built using bootstrap flavour.
             </CoreTypographyBody1>
-            <CoreDivider styleClasses={[CoreClasses.MARGIN.MB5]}></CoreDivider>
+            <CoreDivider/>
             {/* {renderStyleSamples({ classes: UtilityClasses })} */}
             {renderStyleSamples({ classes: CoreClasses })}
           </CoreBox>
@@ -107,7 +107,7 @@ export default function Styles() {
               CoreClasses.HEIGHT.VH_100,
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_LEFT,
-              CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
+              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
             ]}
             gridProps={{ gridSize: 2 }}
           >
@@ -120,13 +120,10 @@ export default function Styles() {
             >
               Table Of Contents
             </CoreH6>
-            <CoreDivider />
+            <CoreDivider/>
             <CoreBox>
 
               <CoreTOC
-                styleClasses={[
-                  CoreClasses.BORDER.BORDER_LEFT,
-                ]}
                 contentRef={contentRef}
                 headerComponents={[CoreH5]}
               />
