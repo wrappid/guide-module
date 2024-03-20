@@ -392,7 +392,7 @@ export default function LayoutViewer(props) {
     return (
       <>
         <CoreBox>
-          <CoreLabel>Rendered Dimension</CoreLabel>
+          <CoreLabel>Rendered Dimension:</CoreLabel>
 
           <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
             {getRenderedDimension()}
