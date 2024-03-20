@@ -1,6 +1,8 @@
 import React from "react";
 
-import { BlankLayout, CoreBox, CoreGrid, CoreH4, CoreLayoutItem } from "@wrappid/core";
+import {
+  BlankLayout, CoreBox, CoreClasses, CoreGrid, CoreH4, CoreLayoutItem 
+} from "@wrappid/core";
 
 import ComponentsMenu from "./ComponentsMenu";
 import DocsRegistry from "./DocsRegistry";
@@ -54,13 +56,17 @@ export default function Components() {
     <>
       <CoreLayoutItem id={BlankLayout.PLACEHOLDER.CONTENT}>
         <CoreGrid>
-          <CoreBox gridProps={{ gridSize: 9 }}>
-            {currentPage && docsPageRegistry[currentPage]
-              ? React.createElement(docsPageRegistry[currentPage])
-              : <CoreH4>No documentation component available for {currentPage}.</CoreH4>}
+          <CoreBox gridProps={{ gridSize: 10 }}>
+            <CoreGrid styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+              <CoreBox gridProps={{ gridSize: 8 }}>
+                {currentPage && docsPageRegistry[currentPage]
+                  ? React.createElement(docsPageRegistry[currentPage])
+                  : <CoreH4>No documentation component available for {currentPage}.</CoreH4>}
+              </CoreBox>
+            </CoreGrid>
           </CoreBox>
 
-          <CoreBox gridProps={{ gridSize: 3 }}>
+          <CoreBox gridProps={{ gridSize: 2, styleClasses: [CoreClasses.BG.BG_GREY_100, CoreClasses.COLOR.TEXT_BLACK, CoreClasses.HEIGHT.H_100] }}>
             <ComponentsMenu
               docsRegistry={_DocsRegistry}
               currentPage={currentPage}

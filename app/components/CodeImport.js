@@ -1,4 +1,4 @@
-import { CoreCard, CoreCardContent, CoreCardHeader, CoreClasses } from "@wrappid/core";
+import { CoreCard, CoreClasses } from "@wrappid/core";
 
 import CodeBlock from "./CodeBlock";
 
@@ -17,12 +17,7 @@ function CodeImport(props) {
 
   return (
     <CoreCard styleClasses={[CoreClasses.MARGIN.MB2]}>
-      <CoreCardHeader
-        title="Import" />
-
-      <CoreCardContent>
-        <CodeBlock block={true}>{getImportStatement()}</CodeBlock>            
-      </CoreCardContent>
+      <CodeBlock block={true}>{getImportStatement()}</CodeBlock>
     </CoreCard>
   );
 }
