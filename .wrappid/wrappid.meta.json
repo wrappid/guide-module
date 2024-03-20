@@ -1,14 +1,15 @@
 {
-    "projectType": "module",
-    "projectID": "",
-    "projectName": "guide",
-    "remote": true,
-    "repoProvider": "github.com",
-    "repoOwner": "wrappid",
-    "repoURL": "https://github.com/wrappid/guide-module.git",
-    "app": {
-        "renderType": []
-    },
-    "service": {},
-    "modules": {}
+  "projectType": "module",
+  "projectID": "",
+  "projectName": "guide",
+  "wrTemplateVersion": "0.0.4",
+  "remote": true,
+  "repoProvider": "github.com",
+  "repoOwner": "wrappid",
+  "repoURL": "https://github.com/wrappid/guide-module.git",
+  "app": {
+    "renderType": []
+  },
+  "service": {},
+  "modules": {}
 }
