@@ -7,7 +7,8 @@ import {
   CoreTypographyBody1,
   CoreH5,
   CoreBox,
-  useDynamicRefs
+  useDynamicRefs,
+  CorePaper
 } from "@wrappid/core";
 
 import CodeBlock from "./CodeBlock";
@@ -33,18 +34,12 @@ export default function CodeSample(props) {
 
       {(renderElement || code) && (
         <CoreBox
-          styleClasses={[
-            CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_SECONDARY,
-            CoreClasses.DISPLAY.FLEX,
-            CoreClasses.FLEX.DIRECTION_COLUMN,
-            CoreClasses.MARGIN.MT2,
-            CoreClasses.MARGIN.MB5,
-          ]}
+          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.MARGIN.MT2, CoreClasses.MARGIN.MB5]}
         >
           {renderElement && (
             <CoreBox
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M2]}
+              component={CorePaper}
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P2]}
             >
               {renderElement}
             </CoreBox>
@@ -54,15 +49,10 @@ export default function CodeSample(props) {
             <CoreBox>
               <CoreStack
                 direction="row"
-                styleClasses={[
-                  CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END,
-                  CoreClasses.BORDER.BORDER_TOP,
-                  CoreClasses.BORDER.BORDER_BOTTOM,
-                  CoreClasses.BORDER.BORDER_SECONDARY,
-                  CoreClasses.PADDING.P1,
-                ]}
+                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END, CoreClasses.BORDER.BORDER_GREY_100, CoreClasses.PADDING.P1]}
               >
                 <CoreButton
+                  varient="outlined"
                   label={expandedBlock === "code" ? "Collapse Code" : "Expand Code"}
                   OnClick={() => {
                     expandedBlock === "code" ? expandBlock(false) : expandBlock("code");
