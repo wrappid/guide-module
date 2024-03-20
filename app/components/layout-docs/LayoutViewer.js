@@ -44,10 +44,31 @@ const ASPECT_RATIO_MAP = {
   [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3] : { aspectRatioDisplayName: "3:2", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_2 },
   [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3] : { aspectRatioDisplayName: "3:4", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4 },
   [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4] : { aspectRatioDisplayName: "4:3", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3 },
+  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_21_9]: { aspectRatioDisplayName: "9:21", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_21 },
+  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_21]: { aspectRatioDisplayName: "21:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_21_9 },
+  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_25_9]: { aspectRatioDisplayName: "9:25", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_25 },
+  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_25]: { aspectRatioDisplayName: "25:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_25_9 },
 
 };
 
 const DEVICES = {
+  GALAXY_FOLD: {
+    allowFold  : true,
+    allowRotate: true,
+    aspectRatio: {
+      default: { aspectRatioDisplayName: "25:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_25_9 },
+      folded : { aspectRatioDisplayName: "21:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_21_9 },
+    },
+    deviceType: DEVICE_TYPE.MOBILE,
+    dimension : {
+      default: { height: "653", width: "512" },
+      folded : { height: "653", width: "280" }
+    },
+    displayName: "Samsung Galaxy Fold",
+    name       : "GALAXY_FOLD",
+    orientation: { default: ORIENTATION.POTRAIT },
+    posture    : { default: POSTURE.CONTINUOUS }
+  },
   ASUS_ZENBOOK_FOLD: {
     allowFold  : true,
     allowRotate: true,
@@ -60,6 +81,7 @@ const DEVICES = {
       default: { height: "1280", width: "853" },
       folded : { height: "1280", width: "1706" }
     },
+    zoom       : { default: 100 },
     displayName: "Asus Zenbook Fold",
     name       : "ASUS_ZENBOOK_FOLD",
     orientation: { default: ORIENTATION.POTRAIT },
@@ -71,6 +93,7 @@ const DEVICES = {
     aspectRatio: { default: { aspectRatioDisplayName: "9:20", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_20 } },
     deviceType : DEVICE_TYPE.MOBILE,
     dimension  : { default: { height: "915", width: "412" } },
+    zoom       : { default: 100 },
     displayName: "Samsung Galaxy S20 Ultra",
     name       : "GALAXY_S20_ULTRA",
     orientation: { default: ORIENTATION.POTRAIT },
@@ -82,6 +105,7 @@ const DEVICES = {
     aspectRatio: { default: { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9 } },
     deviceType : DEVICE_TYPE.DESKTOP,
     dimension  : { default: { height: "1080", width: "1920" } },
+    zoom       : { default: 100 },
     displayName: "Laptop",
     name       : "LAPTOP",
     orientation: { default: ORIENTATION.LANDSCAPE },
@@ -93,6 +117,7 @@ const DEVICES = {
     aspectRatio: { default: { aspectRatioDisplayName: "9:16", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16 } },
     deviceType : DEVICE_TYPE.MOBILE,
     dimension  : { default: { height: "667", width: "375" } },
+    zoom       : { default: 100 },
     displayName: "Mobile",
     name       : "MOBILE",
     orientation: { default: ORIENTATION.POTRAIT },
@@ -104,6 +129,7 @@ const DEVICES = {
     aspectRatio: { default: { aspectRatioDisplayName: "2:3", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3 } },
     deviceType : DEVICE_TYPE.MOBILE,
     dimension  : { default: { height: "1180", width: "820" } },
+    zoom       : { default: 100 },
     displayName: "Tablet",
     name       : "TABLET",
     orientation: { default: ORIENTATION.POTRAIT },
@@ -122,14 +148,16 @@ const ZOOM_VALUES = {
 };
 
 export default function LayoutViewer(props) {
+  
   const { layoutName = "ComplexLayout" } = props;
-
-  // eslint-disable-next-line no-unused-vars
-  const [potrait, setPotrait] = React.useState(true);
 
   const [currentDevice, setCurrentDevice] = React.useState(DEVICES.MOBILE);
 
-  const [zoomValue, setZoomValue] = React.useState(ZOOM_VALUES.ZOOM_100);
+  // eslint-disable-next-line etc/no-commented-out-code
+  // const [zoomValue, setZoomValue] = React.useState(ZOOM_VALUES.ZOOM_100);
+
+  // eslint-disable-next-line no-console
+  // console.log("zoomValue", zoomValue);
 
   const handleDeviceChange = (event) => {
     let currentDevice = DEVICES[event.target.value];
@@ -138,10 +166,6 @@ export default function LayoutViewer(props) {
     // eslint-disable-next-line etc/no-commented-out-code
     // setPotrait(true);
     // simulateScreenSize(DEVICES[currentDevice]?.dimension.height, DEVICES[currentDevice]?.dimension.width);
-  };
-
-  const handleChangeZoom = (event) => {
-    setZoomValue(event?.target?.value);
   };
 
   const handleDeviceAspectRatio = () => {
@@ -208,24 +232,46 @@ export default function LayoutViewer(props) {
             updatedDevice.dimension.current = updatedDevice.dimension.folded;
           }
         } else {
-          let updatedDimension = {
+          // note that width will be set to height and height will be set to width in this section as orientation is changing here
+          let updatedCurrentDimension = {
             height: currentDevice.dimension.default.width,
             width : currentDevice.dimension.default.height
           };
 
           if (POSTURE.FOLDED === updatedDevice.posture.current) {
-            updatedDimension = {
+            updatedCurrentDimension = {
               height: currentDevice.dimension.folded.width,
               width : currentDevice.dimension.folded.height
             };
           }
 
-          updatedDevice.dimension.current = updatedDimension;
+          updatedDevice.dimension.current = updatedCurrentDimension;
         }
       }
     }
+    
+    let updatedRenderedDimension = {
+      height: Math.round(currentDevice.dimension.current.height * currentDevice.zoom.current / 100),
+      width : Math.round(currentDevice.dimension.current.width * currentDevice.zoom.current / 100)
+    };
+
+    updatedDevice.dimension.rendered = updatedRenderedDimension;
 
     setCurrentDevice(updatedDevice);
+  };
+
+  const handleDeviceZoom = (event) => {
+    // eslint-disable-next-line etc/no-commented-out-code
+    // setZoomValue(event?.target?.value);
+    
+    // Create a copy of the currentDevice object
+    let updatedDevice = { ...currentDevice };
+    
+    updatedDevice.zoom.current = event?.target?.value;
+
+    setCurrentDevice(updatedDevice);
+
+    handleDeviceDimension();
   };
 
   const handleDeviceOrientation = () => {
@@ -265,6 +311,9 @@ export default function LayoutViewer(props) {
       updatedDevice.posture.current = POSTURE.CONTINUOUS;
     }
 
+    // reset orientation to default
+    updatedDevice.orientation.current = currentDevice.orientation.default;
+
     setCurrentDevice(updatedDevice);
     handleDeviceAspectRatio();
     handleDeviceDimension();
@@ -273,10 +322,6 @@ export default function LayoutViewer(props) {
     setCurrentDevice(updatedDevice);
   };
 
-  /**
-   * 
-   * @returns 
-   */
   const getCurrentAspectRatio = () => {
     if (currentDevice.aspectRatio.hasOwnProperty("current") === false) {
       currentDevice.aspectRatio.current = currentDevice.aspectRatio.default;
@@ -298,6 +343,14 @@ export default function LayoutViewer(props) {
     return `${currDim.width} x ${currDim.height}`;
   };
 
+  const getRenderedDimension = () => {
+    if (currentDevice.dimension.hasOwnProperty("rendered") === false) {
+      currentDevice.dimension.rendered = currentDevice.dimension.current;
+    }
+    let renderedDim = currentDevice.dimension.rendered;
+
+    return `${renderedDim.width} x ${renderedDim.height}`;
+  };
   /**
    * 
    * @returns 
@@ -320,26 +373,51 @@ export default function LayoutViewer(props) {
     return currentDevice.posture.current.postureDisplayName;
   };
 
+  /**
+   * 
+   * @returns 
+   */
+  const getCurrentZoom = () => {
+    if (currentDevice.hasOwnProperty("zoom") === false) {
+      currentDevice.zoom = {};
+      currentDevice.zoom.default = 100;
+    }
+    if (currentDevice.zoom.hasOwnProperty("current") === false) {
+      currentDevice.zoom.current = currentDevice.zoom.default;
+    }
+    return currentDevice.zoom.current;
+  };
+
   const renderLayoutView = () => {
     return (
-      <CoreBox
-        gridProps={{ gridSize: 12 }}
-        styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.FLEX.DIRECTION_COLUMN]}>
+      <>
+        <CoreBox>
+          <CoreLabel>Rendered Dimension</CoreLabel>
+
+          <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
+            {getRenderedDimension()}
+          </CoreTypographyBody2>
+        </CoreBox>
 
         <CoreBox
-          styleClasses={[
-            CoreClasses.BG.BG_GREY_100,
-            CoreClasses.PADDING.P1,
-            CoreClasses.SHADOW.SMALL,
-            CoreClasses.OVERFLOW.OVERFLOW_AUTO,
-            currentDevice?.deviceType === (DEVICE_TYPE.DESKTOP || DEVICE_TYPE.DESKTOP_TOUCH) && CoreClasses.WIDTH.W_75,
-            currentDevice?.deviceType === (DEVICE_TYPE.MOBILE || DEVICE_TYPE.MOBILE_NO_TOUCH) && CoreClasses.WIDTH.W_50,
-            currentDevice.aspectRatio.current.aspectRatioName
-          ]}
-        >
-          <LayoutManager layoutName={layoutName} viewMode={true} />
-        </CoreBox>
-      </CoreBox >
+          gridProps={{ gridSize: 12 }}
+          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.FLEX.DIRECTION_COLUMN]}>
+
+          <CoreBox 
+            height={getRenderedDimension().height}
+            width={getRenderedDimension().width}
+            styleClasses={[
+              CoreClasses.BG.BG_GREY_100,
+              CoreClasses.PADDING.P1,
+              CoreClasses.SHADOW.SMALL,
+              CoreClasses.OVERFLOW.OVERFLOW_AUTO,
+              currentDevice.aspectRatio.current.aspectRatioName
+            ]}
+          >
+            <LayoutManager layoutName={layoutName} viewMode={true} />
+          </CoreBox>
+        </CoreBox >
+      </>
     );
   };
 
@@ -365,9 +443,9 @@ export default function LayoutViewer(props) {
           <CoreSelect
             gridProps={{ gridSize: { md: 2, xs: 4 } }}
             label="Zoom"
-            id={zoomValue}
-            value={zoomValue}
-            handleChange={handleChangeZoom}
+            id="currentZoom"
+            value={getCurrentZoom()}
+            handleChange={handleDeviceZoom}
             options={[
               ...Object.values(ZOOM_VALUES).map((value) => {
                 return { id: value, label: value, value: value };
