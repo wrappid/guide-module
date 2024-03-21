@@ -351,6 +351,7 @@ export default function LayoutViewer(props) {
 
     return `${renderedDim.width} x ${renderedDim.height}`;
   };
+  
   /**
    * 
    * @returns 
@@ -406,6 +407,8 @@ export default function LayoutViewer(props) {
           <CoreBox 
             height={getRenderedDimension().height}
             width={getRenderedDimension().width}
+            // height={145}
+            // width={170}
             styleClasses={[
               CoreClasses.BG.BG_GREY_100,
               CoreClasses.PADDING.P1,
