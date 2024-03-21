@@ -12,7 +12,10 @@ import {
   CoreTypographyBody2,
   CoreIconButton,
   CoreIcon,
-  CoreLabel,
+  CoreH6,
+  CoreTypographyCaption,
+  CoreSpan,
+  CoreDivider,
   CoreH5
 } from "@wrappid/core";
 
@@ -138,13 +141,14 @@ const DEVICES = {
 };
 
 const ZOOM_VALUES = {
-  FIT_TO_SCREEN: "Fit to Screen",
-  ZOOM_50      : 50,
-  ZOOM_75      : 75,
-  ZOOM_100     : 100,
-  ZOOM_125     : 125,
-  ZOOM_150     : 150,
-  ZOOM_200     : 200,
+  // eslint-disable-next-line etc/no-commented-out-code
+  // FIT_TO_SCREEN: "Fit to Screen",
+  ZOOM_50 : 50,
+  ZOOM_75 : 75,
+  ZOOM_100: 100,
+  ZOOM_125: 125,
+  ZOOM_150: 150,
+  ZOOM_200: 200,
 };
 
 export default function LayoutViewer(props) {
@@ -168,6 +172,9 @@ export default function LayoutViewer(props) {
     // simulateScreenSize(DEVICES[currentDevice]?.dimension.height, DEVICES[currentDevice]?.dimension.width);
   };
 
+  /**
+   * 
+   */
   const handleDeviceAspectRatio = () => {
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
@@ -204,6 +211,9 @@ export default function LayoutViewer(props) {
     setCurrentDevice(updatedDevice);
   };
 
+  /**
+   * 
+   */
   const handleDeviceDimension = () => {
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
@@ -260,10 +270,11 @@ export default function LayoutViewer(props) {
     setCurrentDevice(updatedDevice);
   };
 
+  /**
+   * 
+   * @param {*} event 
+   */
   const handleDeviceZoom = (event) => {
-    // eslint-disable-next-line etc/no-commented-out-code
-    // setZoomValue(event?.target?.value);
-    
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
     
@@ -274,6 +285,9 @@ export default function LayoutViewer(props) {
     handleDeviceDimension();
   };
 
+  /**
+   * 
+   */
   const handleDeviceOrientation = () => {
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
@@ -296,6 +310,9 @@ export default function LayoutViewer(props) {
     setCurrentDevice(updatedDevice);
   };
 
+  /**
+   * 
+   */
   const handleDevicePosture = () => {
     // Create a copy of the currentDevice object
     let updatedDevice = { ...currentDevice };
@@ -322,6 +339,10 @@ export default function LayoutViewer(props) {
     setCurrentDevice(updatedDevice);
   };
 
+  /**
+   * 
+   * @returns 
+   */
   const getCurrentAspectRatio = () => {
     if (currentDevice.aspectRatio.hasOwnProperty("current") === false) {
       currentDevice.aspectRatio.current = currentDevice.aspectRatio.default;
@@ -343,6 +364,28 @@ export default function LayoutViewer(props) {
     return `${currDim.width} x ${currDim.height}`;
   };
 
+  /**
+   * 
+   * @returns 
+   */
+  const getCurrentDimensionWidth = () => {
+    getCurrentDimension();
+    return currentDevice.dimension.current.width;
+  };
+
+  /**
+   * 
+   * @returns 
+   */
+  const getCurrentDimensionHeight = () => {
+    getCurrentDimension();
+    return currentDevice.dimension.current.height;
+  };
+
+  /**
+   * 
+   * @returns 
+   */
   const getRenderedDimension = () => {
     if (currentDevice.dimension.hasOwnProperty("rendered") === false) {
       currentDevice.dimension.rendered = currentDevice.dimension.current;
@@ -351,7 +394,25 @@ export default function LayoutViewer(props) {
 
     return `${renderedDim.width} x ${renderedDim.height}`;
   };
-  
+
+  /**
+   * 
+   * @returns 
+   */
+  const getRenderedDimensionWidth = () => {
+    getRenderedDimension();
+    return currentDevice.dimension.rendered.width;
+  };
+
+  /**
+   * 
+   * @returns 
+   */
+  const getRenderedDimensionHeight = () => {
+    getRenderedDimension();
+    return currentDevice.dimension.rendered.height;
+  };
+
   /**
    * 
    * @returns 
@@ -389,49 +450,21 @@ export default function LayoutViewer(props) {
     return currentDevice.zoom.current;
   };
 
-  const renderLayoutView = () => {
+  /**
+   * 
+   */
+  const renderLayoutViewerMenu = () => {
     return (
       <>
-        <CoreBox>
-          <CoreLabel>Rendered Dimension:</CoreLabel>
+        <CoreH6 styleClasses={[CoreClasses.MARGIN.MB1]}>{layoutName}</CoreH6>
 
-          <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
-            {getRenderedDimension()}
-          </CoreTypographyBody2>
-        </CoreBox>
+        <CoreDivider />
 
-        <CoreBox
-          gridProps={{ gridSize: 12 }}
-          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.FLEX.DIRECTION_COLUMN]}>
+        <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.MB1]}>Device Selection</CoreTypographyBody2>
 
-          <CoreBox 
-            height={getRenderedDimension().height}
-            width={getRenderedDimension().width}
-            // height={145}
-            // width={170}
-            styleClasses={[
-              CoreClasses.BG.BG_GREY_100,
-              CoreClasses.PADDING.P1,
-              CoreClasses.SHADOW.SMALL,
-              CoreClasses.OVERFLOW.OVERFLOW_AUTO,
-              currentDevice.aspectRatio.current.aspectRatioName
-            ]}
-          >
-            <LayoutManager layoutName={layoutName} viewMode={true} />
-          </CoreBox>
-        </CoreBox >
-      </>
-    );
-  };
-
-  return (
-    <>
-      <CoreBox styleClasses={[CoreClasses.POSITION.STICKY_TOP, CoreClasses.BG.BG_GREY_100, CoreClasses.MARGIN.MB1, CoreClasses.PADDING.P1]} >
         <CoreGrid>
-          <CoreH5 styleClasses={[CoreClasses.MARGIN.M0]}>{layoutName}</CoreH5>
-
           <CoreSelect
-            gridProps={{ gridSize: { md: 3 } }}
+            gridProps={{ gridSize: { md: 12 } }}
             label="Device"
             id="currentDevice"
             value={currentDevice.name}
@@ -444,7 +477,7 @@ export default function LayoutViewer(props) {
           />
 
           <CoreSelect
-            gridProps={{ gridSize: { md: 2, xs: 4 } }}
+            gridProps={{ gridSize: { md: 8, xs: 4 } }}
             label="Zoom"
             id="currentZoom"
             value={getCurrentZoom()}
@@ -457,7 +490,7 @@ export default function LayoutViewer(props) {
           />
 
           <CoreBox
-            gridProps={{ gridSize: { md: 2, xs: 4 }, styleClasses: [CoreClasses.ALIGNMENT.ALIGN_ITEMS_END] }}
+            gridProps={{ gridSize: { md: 4, xs: 4 }, styleClasses: [CoreClasses.ALIGNMENT.ALIGN_ITEMS_END] }}
           >
             <CoreIconButton
               title={currentDevice.allowRotate ? "Rotate" : "Screen orientation option"}
@@ -476,44 +509,113 @@ export default function LayoutViewer(props) {
           </CoreBox>
         </CoreGrid>
 
+        <CoreDivider />
+        
+        <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.MB1]}>Device Parameters</CoreTypographyBody2>
+
+        {renderLayoutViewerParam("Aspect Ratio", getCurrentAspectRatio())}
+
+        {renderLayoutViewerParam("Orientation", getCurrentOrientation())}
+
+        {renderLayoutViewerParam("Posture", getCurrentPosture())}
+   
+        {renderLayoutViewerParam("Dimension", getCurrentDimension())}
+
+        {renderLayoutViewerParam("Rendered Dim.", getRenderedDimension())}
+ 
+      </>
+    );
+  };
+
+  const renderLayoutViewerParam = (key, value) => {
+    return ( 
+      <CoreTypographyCaption>
         <CoreGrid>
-          <CoreBox gridProps={{ gridSize: { md: 3, xs: 6 } }} >
-            <CoreLabel>Dimension</CoreLabel>
+          <CoreSpan gridProps={{ gridSize: { md: 7 } }}>{key}</CoreSpan>
 
-            <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
-              {getCurrentDimension()}
-            </CoreTypographyBody2>
-          </CoreBox>
-
-          <CoreBox gridProps={{ gridSize: { md: 3, xs: 6 } }} >
-            <CoreLabel>Aspect Ratio</CoreLabel>
-
-            <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
-              {getCurrentAspectRatio()}
-            </CoreTypographyBody2>
-          </CoreBox>
-
-          <CoreBox gridProps={{ gridSize: { md: 3, xs: 6 } }} >
-            <CoreLabel>Orientation</CoreLabel>
-
-            <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]}>
-              {getCurrentOrientation()}
-            </CoreTypographyBody2>
-          </CoreBox>
-
-          <CoreBox gridProps={{ gridSize: { md: 3, xs: 6 } }} >
-            <CoreLabel>Posture</CoreLabel>
-
-            <CoreTypographyBody2 styleClasses={[CoreClasses.MARGIN.M0]} >
-              {getCurrentPosture()}
-            </CoreTypographyBody2>
-          </CoreBox>
-
+          <CoreSpan
+            gridProps={{
+              gridSize    : { md: 5 },
+              styleClasses: [CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] 
+            }} 
+          >{value}</CoreSpan>
         </CoreGrid>
+      </CoreTypographyCaption>
+    );
+  };
 
-      </CoreBox>
+  /**
+   * 
+   * @returns 
+   */
+  const renderLayoutViewerCanvas = () => {
+    return (
+      <>
+        <CoreTypographyBody2
+          styleClasses={[CoreClasses.BG.BG_WHITE, CoreClasses.POSITION.STICKY_TOP, CoreClasses.MARGIN.MB0, CoreClasses.MARGIN.ML3]}
+        >←&nbsp;&nbsp;&nbsp;Screen Width: {getCurrentDimensionWidth()}px,
 
-      {layoutName && renderLayoutView()}
+         Rendered Width: {getRenderedDimensionWidth()}px&nbsp;&nbsp;&nbsp;→</CoreTypographyBody2>
+
+        <CoreTypographyBody2
+          styleClasses={[
+            CoreClasses.BG.BG_WHITE,
+            CoreClasses.POSITION.STICKY_TOP,
+            CoreClasses.PADDING.PB3,
+            CoreClasses.TEXT.TEXT_WRITING_MODE_BOTTOM_TO_TOP,
+            CoreClasses.FLOAT.START
+          ]}
+        >←&nbsp;&nbsp;&nbsp;Screen Height: {getCurrentDimensionHeight()}px, 
+
+        Rendered Height: {getRenderedDimensionHeight()}px&nbsp;&nbsp;&nbsp;→</CoreTypographyBody2>
+
+        <CoreBox
+          styleClasses={[
+            CoreClasses.BG.BG_DOTTED_GRID_1,
+            CoreClasses.HEIGHT.MIN_VH_75,
+            CoreClasses.HEIGHT.MAX_VH_100,
+            CoreClasses.MARGIN.MB3,
+            CoreClasses.OVERFLOW.OVERFLOW_AUTO,
+            CoreClasses.PADDING.P2
+          ]}>
+
+          <CoreBox 
+            height={currentDevice.dimension.rendered.height + "px"}
+            width={currentDevice.dimension.rendered.width + "px"}
+            styleClasses={[
+              CoreClasses.BG.BG_GREY_100,
+              CoreClasses.PADDING.P1,
+              CoreClasses.SHADOW.NORMAL,
+              CoreClasses.OVERFLOW.OVERFLOW_AUTO,
+              currentDevice.aspectRatio.current.aspectRatioName
+            ]}
+          >
+            <LayoutManager layoutName={layoutName} viewMode={true} />
+          </CoreBox>
+        </CoreBox >
+
+        {/* ↑↓ */}
+      </>
+    );
+  };
+
+  return (
+    <>
+      <CoreH5>Layout Viewer</CoreH5>
+
+      <CoreGrid>
+        <CoreBox
+          gridProps={{ gridSize: { md: 3 } }}
+          styleClasses={[CoreClasses.POSITION.STICKY_TOP, CoreClasses.BG.BG_GREY_100, CoreClasses.MARGIN.MB1, CoreClasses.PADDING.P1]} >
+          {renderLayoutViewerMenu()}
+        </CoreBox>
+
+        <CoreBox
+          gridProps={{ gridSize: { md: 9 } }}
+        >
+          {layoutName && renderLayoutViewerCanvas()}
+        </CoreBox>
+      </CoreGrid>
     </>
   );
 }
