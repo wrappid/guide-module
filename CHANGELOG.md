@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://https//github.com/wrappid/wrappid-module/compare/v0.0.4...v0.0.5) (2024-03-21)
+
+
+### Features
+
+* **core:** :sparkles: layout zoom feature and some UI changes ([750c6f9](https://https//github.com/wrappid/wrappid-module/commit/750c6f9636af1fc55d61d377036d4581fe43e427)), closes [#109](https://https//github.com/wrappid/wrappid-module/issues/109)
+
 ### [0.0.4](https://https//github.com/wrappid/wrappid-module/compare/v0.0.3...v0.0.4) (2024-03-21)
 
 
