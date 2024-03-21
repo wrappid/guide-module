@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import {
+  CoreClasses,
   CoreTable,
   CoreTableBody,
   CoreTableCell,
@@ -10,7 +11,7 @@ import {
 } from "@wrappid/core";
 
 export default function ComponentPropTypes({ propTypes }) {
-  const VALUE_NOT_SPECIFIED = "Not Specified";
+  const VALUE_NOT_SPECIFIED = "NA";
   const VALUE_NOT_PROVIDED = "Not Provided";
   const prepareValueString = (value) => {
     if (value) {
@@ -51,8 +52,8 @@ export default function ComponentPropTypes({ propTypes }) {
   };
 
   return (
-    <CoreTable>
-      <CoreTableHead>
+    <CoreTable size="small">
+      <CoreTableHead styleClasses={[CoreClasses.BG.BG_PRIMARY, CoreClasses.COLOR.TEXT_BLACK]} size="small">
         <CoreTableRow>
           <CoreTableHeadCell>Type</CoreTableHeadCell>
 
@@ -80,7 +81,7 @@ export default function ComponentPropTypes({ propTypes }) {
             <CoreTableCell></CoreTableCell>
 
             <CoreTableCell>
-              <CoreTypographySubtitle2>Not specified.</CoreTypographySubtitle2>
+              <CoreTypographySubtitle2>NA.</CoreTypographySubtitle2>
             </CoreTableCell>
 
             <CoreTableCell></CoreTableCell>
