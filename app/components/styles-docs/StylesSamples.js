@@ -358,9 +358,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption>56x56</CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[
-              CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            ]}
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -424,8 +422,17 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           Small utility that sets cursor when element is hovered.
         </CoreTypographyBody1>
         <CoreTypographyBody1>
-          - The alphabets stands for the N(North/Top), E(East/Right),
-          W(West/Left) and S(South/Bottom) direction.
+          <CoreList dense={true} marker="disc">
+            {"Where The alphabets stands for:"}
+
+            <CoreListItem>{"N -> (North/Top)"}</CoreListItem>
+
+            <CoreListItem>{"E -> (East/Right)"}</CoreListItem>
+
+            <CoreListItem>{"W -> (West/Left)"}</CoreListItem>
+
+            <CoreListItem>{"S -> (South/Bottom)"}</CoreListItem>
+          </CoreList>
         </CoreTypographyBody1>
         <CoreTypographyBody1>
           - NOTE : Depending on your operating system, desktop environment, and
@@ -971,7 +978,9 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="error">
-          {"Negative margin samples are NOT WORKING as of now"}
+          {
+            "Negative margin is WORKING, But samples are not available in the documentation as of now"
+          }
         </CoreAlert>
         <CoreAlert severity="warning">
           {"Size specific documentation not available as of now"}
@@ -1104,6 +1113,47 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             {className}
           </CoreTypographyCaption>
         </CoreBox>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N1: {
+    renderElement: (key, classes, className) => {
+      return <CoreBox styleClasses={[CoreClasses.DISPLAY.NONE]}></CoreBox>;
+    },
+  },
+  MARGIN__ENDS_WITH___N2: {
+    renderElement: (key, classes, className) => {
+      return (
+        <>
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.NONE]}></CoreBox>
+        </>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N3: {
+    renderElement: (key, classes, className) => {
+      return (
+        <>
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.NONE]}></CoreBox>
+        </>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N4: {
+    renderElement: (key, classes, className) => {
+      return (
+        <>
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.NONE]}></CoreBox>
+        </>
+      );
+    },
+  },
+  MARGIN__ENDS_WITH___N5: {
+    renderElement: (key, classes, className) => {
+      return (
+        <>
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.NONE]}></CoreBox>
+        </>
       );
     },
   },
@@ -1473,6 +1523,77 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
+
+  TRANSFORM: {grouped: true,},
+  TRANSFORM__STARTS_WITH__TRANSLATE: {
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{gridSize: {md :4}, styleClasses : [CoreClasses.DISPLAY.FLEX,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_AROUND,]}}
+          styleClasses={[CoreClasses.TEXT.TEXT_CENTER,]}
+        >
+          <CoreBox
+            styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.WIDTH.W_50,
+            ]}
+            >
+            <CoreBox 
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+              CoreClasses.WIDTH.W_50
+            ]}>
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            </CoreBox>
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  ROTATE: {
+    // description: "Add or remove shadows to elements with box-shadow utilities.",
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox
+          key={key}
+          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          styleClasses={[CoreClasses.TEXT.TEXT_CENTER]}
+        >
+          <CoreBox
+            styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            ]}
+            >
+            <CoreBox 
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}>
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+            </CoreBox>
+          </CoreBox>
+          <CoreTypographyCaption>{className}</CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+
   TEXT: {
     description: (
       <>
@@ -1634,12 +1755,39 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption styleClasses={[classes[className]]}>
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
+          </CoreBox>
             <CoreTypographyCaption
               styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
-          </CoreBox>
+        </CoreBox>
+      );
+    },
+  },
+  TEXT__STARTS_WITH__TEXT_WRITING: {
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox gridProps={{ gridSize: { md: 6, lg: 6, xl: 6 } }}>
+          <CoreBox
+            key={key}
+            styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.PADDING.P1,
+              CoreClasses.HEIGHT.VH_25,
+            ]}
+          >
+            <CoreTypographyCaption styleClasses={[classes[className]]}>
+              {"Fusce mattis egestas risus, in euismod odio tincidunt in. Maecenas ut ultricies quam. Curabitur sit amet diam a magna rhoncus posuere quis eu sem. Donec nec convallis ipsum. Donec euismod, ex vel maximus tincidunt, lacus libero faucibus nulla, eu scelerisque nisi metus at mi. Phasellus luctus in magna id finibus."}
+            </CoreTypographyCaption>
+            </CoreBox>
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            >
+              {className}
+            </CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1647,10 +1795,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   TEXT__ENDS_WITH__WRAP: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 5, lg: 5, xl: 5 } }}>
+        <CoreBox gridProps={{ gridSize: { md: 6, lg: 6, xl: 6 } }}>
           <CoreBox
             key={key}
             styleClasses={[
+              CoreClasses.WIDTH.W_75,
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_2,
               CoreClasses.BORDER.BORDER_WARNING_LIGHT,
@@ -1659,7 +1808,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           >
             <CoreTypographyCaption styleClasses={[classes[className]]}>
               {
-                "Fusce mattis egestas risus, in euismod odio tincidunt in. Maecenas ut ultricies quam. Dolor ipsum"
+                "Fusce mattis egestas risus, in euismod odio tincidunt in. Maecenas ut."
               }
             </CoreTypographyCaption>
           </CoreBox>

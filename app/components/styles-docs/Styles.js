@@ -45,6 +45,8 @@ const CLASS_NAME_TO_EXCLUDE = [
   // "PADDING", // DONE
   "POSITION",
   // "SHADOW", // DONE
+  // "TRANSFORM", //DONE
+  // "ROTATE", //DONE
   // "TEXT", // DONE*
   "VERTICAL_ALIGN",
   // "VISIBILITY", // DONE
