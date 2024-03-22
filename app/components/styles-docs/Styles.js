@@ -26,7 +26,7 @@ import {
 
 const CLASS_NAME_TO_EXCLUDE = [
   // "DEV_BORDER", // DONE
-  "ALIGNMENT",
+  // "ALIGNMENT",
   // "BG", // DONE
   // "BORDER", // DONE
   // "COLOR",
@@ -36,7 +36,7 @@ const CLASS_NAME_TO_EXCLUDE = [
   "FLOAT",
   "GAP",
   // "GRADIENT",
-  // "HEIGHT", //DONE*
+  "HEIGHT", //DONE*
   // "INTERACTIONS", //DONE
   // "MARGIN", // DONE
   "OBJECT_FIT",
@@ -59,7 +59,8 @@ const CLASS_NAME_TO_EXCLUDE = [
   "DATA_TABLE",
   "FRAMEWORK",
   "ICON",
-  "LAYOUT", ,
+  "LAYOUT",
+  ,
   "MENU",
   "NAVIGATION",
   "POPOVER",
@@ -80,10 +81,12 @@ export default function Styles() {
   const contentRef = React.useRef(null);
   return (
     <>
-      <CoreLayoutItem
-        id={BlankLayout.PLACEHOLDER.CONTENT}>
-        <CoreGrid styleClasses={[CoreClasses.BG.BG_GREY_100]}>
-          <CoreBox gridProps={{ gridSize: 10 }} ref={contentRef}>
+      <CoreLayoutItem id={BlankLayout.PLACEHOLDER.CONTENT}>
+        <CoreGrid styleClasses={[CoreClasses.BG.BG_GREY_100,CoreClasses.PADDING.PX1]}>
+          <CoreBox
+            gridProps={{ gridSize: { xs: 12,sm: 12, md: 10 } }}
+            ref={contentRef}
+          >
             <CoreH4
               styleClasses={[
                 CoreClasses.MARGIN.MY2,
@@ -96,13 +99,16 @@ export default function Styles() {
             <CoreTypographyBody1>
               These are style utilities built using bootstrap flavour.
             </CoreTypographyBody1>
-            <CoreDivider/>
+            <CoreDivider />
             {/* {renderStyleSamples({ classes: UtilityClasses })} */}
             {renderStyleSamples({ classes: CoreClasses })}
           </CoreBox>
 
           <CoreBox
+            gridProps={{ gridSize: 2 }}
             styleClasses={[
+              CoreClasses.DISPLAY.NONE,
+              CoreClasses.DISPLAY.MD.GRID,
               CoreClasses.POSITION.TOP_0,
               CoreClasses.POSITION.POSITION_STICKY,
               CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
@@ -111,7 +117,6 @@ export default function Styles() {
               CoreClasses.BORDER.BORDER_LEFT,
               CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
             ]}
-            gridProps={{ gridSize: 2 }}
           >
             <CoreH6
               styleClasses={[
@@ -122,13 +127,9 @@ export default function Styles() {
             >
               Table Of Contents
             </CoreH6>
-            <CoreDivider/>
+            <CoreDivider />
             <CoreBox>
-
-              <CoreTOC
-                contentRef={contentRef}
-                headerComponents={[CoreH5]}
-              />
+              <CoreTOC contentRef={contentRef} headerComponents={[CoreH5]} />
             </CoreBox>
           </CoreBox>
         </CoreGrid>

@@ -754,8 +754,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
-          gridProps={{ gridSize: { xs: 3, sm: 3, md: 1, lg: 1, xl: 1 } }}
-          height={256}
+          gridProps={{ gridSize: { xs: 3, sm: 3, md: 1, } }}
         >
           <CoreBox
             key={key}
@@ -1523,7 +1522,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-
   TRANSFORM: {grouped: true,},
   TRANSFORM__STARTS_WITH__TRANSLATE: {
     grouped: true,
