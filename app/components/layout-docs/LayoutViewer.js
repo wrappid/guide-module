@@ -38,19 +38,19 @@ const POSTURE = {
 };
 
 const ASPECT_RATIO_MAP = {
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_1_1] : { aspectRatioDisplayName: "1:1", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_1_1 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9]: { aspectRatioDisplayName: "9:16", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16]: { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_20_9]: { aspectRatioDisplayName: "9:20", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_20 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_20]: { aspectRatioDisplayName: "20:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_20_9 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_2] : { aspectRatioDisplayName: "2:3", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3] : { aspectRatioDisplayName: "3:2", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_2 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3] : { aspectRatioDisplayName: "3:4", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_3_4] : { aspectRatioDisplayName: "4:3", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_4_3 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_21_9]: { aspectRatioDisplayName: "9:21", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_21 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_21]: { aspectRatioDisplayName: "21:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_21_9 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_25_9]: { aspectRatioDisplayName: "9:25", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_25 },
-  [CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_25]: { aspectRatioDisplayName: "25:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_25_9 },
+  [CoreClasses.ASPECT_RATIO.RATIO_1_1] : { aspectRatioDisplayName: "1:1", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_1_1 },
+  [CoreClasses.ASPECT_RATIO.RATIO_16_9]: { aspectRatioDisplayName: "9:16", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_9_16 },
+  [CoreClasses.ASPECT_RATIO.RATIO_9_16]: { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_16_9 },
+  [CoreClasses.ASPECT_RATIO.RATIO_20_9]: { aspectRatioDisplayName: "9:20", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_9_20 },
+  [CoreClasses.ASPECT_RATIO.RATIO_9_20]: { aspectRatioDisplayName: "20:9", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_20_9 },
+  [CoreClasses.ASPECT_RATIO.RATIO_3_2] : { aspectRatioDisplayName: "2:3", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_2_3 },
+  [CoreClasses.ASPECT_RATIO.RATIO_2_3] : { aspectRatioDisplayName: "3:2", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_3_2 },
+  [CoreClasses.ASPECT_RATIO.RATIO_4_3] : { aspectRatioDisplayName: "3:4", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_3_4 },
+  [CoreClasses.ASPECT_RATIO.RATIO_3_4] : { aspectRatioDisplayName: "4:3", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_4_3 },
+  [CoreClasses.ASPECT_RATIO.RATIO_21_9]: { aspectRatioDisplayName: "9:21", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_9_21 },
+  [CoreClasses.ASPECT_RATIO.RATIO_9_21]: { aspectRatioDisplayName: "21:9", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_21_9 },
+  [CoreClasses.ASPECT_RATIO.RATIO_25_9]: { aspectRatioDisplayName: "9:25", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_9_25 },
+  [CoreClasses.ASPECT_RATIO.RATIO_9_25]: { aspectRatioDisplayName: "25:9", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_25_9 },
 
 };
 
@@ -59,8 +59,8 @@ const DEVICES = {
     allowFold  : true,
     allowRotate: true,
     aspectRatio: {
-      default: { aspectRatioDisplayName: "25:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_25_9 },
-      folded : { aspectRatioDisplayName: "21:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_21_9 },
+      default: { aspectRatioDisplayName: "25:9", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_25_9 },
+      folded : { aspectRatioDisplayName: "21:9", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_21_9 },
     },
     deviceType: DEVICE_TYPE.MOBILE,
     dimension : {
@@ -76,8 +76,8 @@ const DEVICES = {
     allowFold  : true,
     allowRotate: true,
     aspectRatio: {
-      default: { aspectRatioDisplayName: "2:3", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3 },
-      folded : { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9 },
+      default: { aspectRatioDisplayName: "2:3", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_2_3 },
+      folded : { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_16_9 },
     },
     deviceType: DEVICE_TYPE.DESKTOP_TOUCH,
     dimension : {
@@ -93,7 +93,7 @@ const DEVICES = {
   GALAXY_S20_ULTRA: {
     allowFold  : false,
     allowRotate: true,
-    aspectRatio: { default: { aspectRatioDisplayName: "9:20", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_20 } },
+    aspectRatio: { default: { aspectRatioDisplayName: "9:20", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_9_20 } },
     deviceType : DEVICE_TYPE.MOBILE,
     dimension  : { default: { height: "915", width: "412" } },
     zoom       : { default: 100 },
@@ -105,7 +105,7 @@ const DEVICES = {
   LAPTOP: {
     allowFold  : false,
     allowRotate: false,
-    aspectRatio: { default: { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_16_9 } },
+    aspectRatio: { default: { aspectRatioDisplayName: "16:9", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_16_9 } },
     deviceType : DEVICE_TYPE.DESKTOP,
     dimension  : { default: { height: "1080", width: "1920" } },
     zoom       : { default: 100 },
@@ -117,7 +117,7 @@ const DEVICES = {
   MOBILE: {
     allowFold  : false,
     allowRotate: true,
-    aspectRatio: { default: { aspectRatioDisplayName: "9:16", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_9_16 } },
+    aspectRatio: { default: { aspectRatioDisplayName: "9:16", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_9_16 } },
     deviceType : DEVICE_TYPE.MOBILE,
     dimension  : { default: { height: "667", width: "375" } },
     zoom       : { default: 100 },
@@ -129,7 +129,7 @@ const DEVICES = {
   TABLET: {
     allowFold  : false,
     allowRotate: true,
-    aspectRatio: { default: { aspectRatioDisplayName: "2:3", aspectRatioName: CoreClasses.ASPECT_RATIO.ASPECT_RATIO_2_3 } },
+    aspectRatio: { default: { aspectRatioDisplayName: "2:3", aspectRatioName: CoreClasses.ASPECT_RATIO.RATIO_2_3 } },
     deviceType : DEVICE_TYPE.MOBILE,
     dimension  : { default: { height: "1180", width: "820" } },
     zoom       : { default: 100 },
@@ -571,7 +571,7 @@ export default function LayoutViewer(props) {
 
         <CoreBox
           styleClasses={[
-            CoreClasses.BG.BG_DOTTED_GRID_1,
+            CoreClasses.BG.BG_DOT_GRID_1,
             CoreClasses.HEIGHT.MIN_VH_75,
             CoreClasses.HEIGHT.MAX_VH_100,
             CoreClasses.MARGIN.MB3,
