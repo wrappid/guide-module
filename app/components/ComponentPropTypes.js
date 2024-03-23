@@ -1,16 +1,14 @@
 /* eslint-disable no-console */
 import {
-  CoreClasses,
-  CoreTable,
-  CoreTableBody,
   CoreTableCell,
-  CoreTableHead,
-  CoreTableHeadCell,
-  CoreTableRow,
-  CoreTypographySubtitle2
+  CoreTableRow, CoreAccordion, CoreAccordionSummary, CoreIconButton, CoreIcon, CoreH6, CoreAccordionDetail, CoreChip, CoreDivider, CoreTypographyBody1, CoreBox
 } from "@wrappid/core";
 
-export default function ComponentPropTypes({ propTypes }) {
+export default function ComponentPropTypes({ propTypes, viewType }) {
+
+  // eslint-disable-next-line no-undef
+  console.log("viewType:", viewType);
+
   const VALUE_NOT_SPECIFIED = "NA";
   const VALUE_NOT_PROVIDED = "Not Provided";
   const prepareValueString = (value) => {
@@ -52,42 +50,52 @@ export default function ComponentPropTypes({ propTypes }) {
   };
 
   return (
-    <CoreTable size="small">
-      <CoreTableHead styleClasses={[CoreClasses.BG.BG_PRIMARY, CoreClasses.COLOR.TEXT_BLACK]} size="small">
-        <CoreTableRow>
-          <CoreTableHeadCell>Type</CoreTableHeadCell>
+    <>
+      { viewType === "Table" && 
+      <CoreTableRow>
+        <CoreTableCell>{propTypes?.name || "NA"}</CoreTableCell>
 
-          <CoreTableHeadCell>Default</CoreTableHeadCell>
+        <CoreTableCell>{propTypes.description || "NA"}</CoreTableCell>
 
-          <CoreTableHeadCell>Valid Values</CoreTableHeadCell>
-        </CoreTableRow>
-      </CoreTableHead>
+        <CoreTableCell>{propTypes?.types?.type || "NA"}</CoreTableCell>
+       
+        <CoreTableCell>{handleDefaultValues(propTypes?.types) || "NA"}</CoreTableCell>
 
-      <CoreTableBody>
-        {propTypes && propTypes.length > 0 ? (
-          propTypes?.map((eachType) => {
-            return (
-              <CoreTableRow key={`${eachType}`}>
-                <CoreTableCell>{eachType?.type || "Not Given"}</CoreTableCell>
+        <CoreTableCell>{handleValidValues(propTypes?.types) || "NA"}</CoreTableCell>
+      </CoreTableRow>
+      } 
 
-                <CoreTableCell>{handleDefaultValues(eachType)}</CoreTableCell>
+      { viewType === "List" && <CoreAccordion>
+        <CoreAccordionSummary expandIcon={<CoreIconButton><CoreIcon icon="expand_more" /></CoreIconButton>}>
+          <CoreH6>{propTypes?.name || "NA"}</CoreH6>
+        </CoreAccordionSummary>
 
-                <CoreTableCell>{handleValidValues(eachType)}</CoreTableCell>
-              </CoreTableRow>
-            );
-          })
-        ) : (
-          <CoreTableRow>
-            <CoreTableCell></CoreTableCell>
+        <CoreAccordionDetail>
+          <CoreBox>
+            {propTypes?.required ? (
+              <CoreChip size="small" color="info" label="REQUIRED" />
+            ) : (
+              <CoreChip size="small" color="warning" label="OPTIONAL" />
+            )}
 
-            <CoreTableCell>
-              <CoreTypographySubtitle2>NA.</CoreTypographySubtitle2>
-            </CoreTableCell>
+            <CoreDivider />
 
-            <CoreTableCell></CoreTableCell>
-          </CoreTableRow>
-        )}
-      </CoreTableBody>
-    </CoreTable>
+            <CoreTypographyBody1>
+              {propTypes?.description || "NA"}
+            </CoreTypographyBody1>
+
+            <CoreTypographyBody1>
+              {handleDefaultValues(propTypes?.types) || "NA"}
+            </CoreTypographyBody1>
+
+            <CoreTypographyBody1>
+              {handleValidValues(propTypes?.types) || "NA"}
+            </CoreTypographyBody1>
+
+            <CoreDivider />
+          </CoreBox>
+        </CoreAccordionDetail>
+      </CoreAccordion>}
+    </>
   );
 }
