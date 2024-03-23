@@ -2,7 +2,7 @@
 import React from "react";
 
 import {
-  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreH5, CoreDivider, CoreSelect
+  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreH5, CoreDivider, CoreSelect, CoreTable, CoreTableHead, CoreTableHeadCell, CoreTableRow, CoreTableBody
 } from "@wrappid/core";
 
 import ComponentPropTypes from "./ComponentPropTypes";
@@ -45,9 +45,33 @@ export default function ComponentProps(props) {
     <>
       <PropsHeading title={"Valid Props"} />
 
-      {validProps && validProps?.map((eachProp, index) => {
+      {viewPropsData === "Table" && <CoreTable size="small">
+        <CoreTableHead styleClasses={[CoreClasses.BG.BG_PRIMARY, CoreClasses.COLOR.TEXT_BLACK]} size="small">
+          <CoreTableRow>
+            <CoreTableHeadCell>Prop</CoreTableHeadCell>
+
+            <CoreTableHeadCell>Description</CoreTableHeadCell>
+
+            <CoreTableHeadCell>Type</CoreTableHeadCell>
+
+            <CoreTableHeadCell>Default</CoreTableHeadCell>
+
+            <CoreTableHeadCell>Valid Values</CoreTableHeadCell>
+          </CoreTableRow>
+        </CoreTableHead>
+
+        <CoreTableBody>
+          {validProps && validProps?.map((eachProp, index) => {
+            return <ComponentPropTypes key={index} propTypes={eachProp} viewType={viewPropsData} />;
+          })}
+        </CoreTableBody>
+      </CoreTable>}
+
+      {(viewPropsData === "List") &&
+        validProps && validProps?.map((eachProp, index) => {
         return <ComponentPropTypes key={index} propTypes={eachProp} viewType={viewPropsData} />;
-      })}
+      })
+      }
 
       <PropsHeading title={"Invalid Props"} />
 

@@ -1,20 +1,23 @@
+/* eslint-disable */
 import React from "react";
 
 import {
   toggleMenuItemState,
   CoreBox,
   CoreClasses,
-  CoreMenu,
-  CoreSpan
+  CoreSpan,
+  CoreTOC,
+  CoreH5,
+  toggleRightMenuState
 } from "@wrappid/core";
 import { useDispatch, useSelector } from "react-redux";
+import { CoreMenu } from "@wrappid/core";
 
 export default function ComponentsMenu(props) {
   const dispatch = useDispatch();
+  const contentRef = React.useRef(null);
 
   const collapse = useSelector((state) => state?.menu?.collapse);
-  // eslint-disable-next-line no-unused-vars
-  const [preparedMenu, setPreparedMenu] = React.useState([]);
   const { docsRegistry, /* currentPage, */ setCurrentPage } = props;
   const getSortedRegistry = (docsRegistry) => {
     return (
@@ -35,26 +38,35 @@ export default function ComponentsMenu(props) {
 
         return {
           Children: prepareComponentMenu(docsRegistry[docKey]?.children),
-          id      : docKey,
-          label   : label,
-          name    : docKey?.trim(),
-          type    : "menuitem",
+          id: docKey,
+          label: label,
+          name: docKey?.trim(),
+          type: "menuitem",
         };
       }) || []
     );
   };
 
-  /**
-   * Right drawer related collapse
-   */
-  // eslint-disable-next-line no-unused-vars
-  const [open, setOpen] = React.useState(true);
-
   return (
-    <>   
-      <CoreBox
-        CoreClasses={[]}
-      >
+    <>
+      <CoreBox>
+        {/* eslint-disable-next-line etc/no-commented-out-code */}
+        {/* <CoreTOC 
+          headerComponents={[CoreH5]}
+          contentRef={contentRef} 
+          openCollapse={collapse}
+          multiLevel={true}
+          menu={prepareComponentMenu(docsRegistry)}
+          OnMenuClick={(menuItem) => {
+            if (menuItem?.Children && menuItem?.Children?.length >= 0) {
+              dispatch(toggleMenuItemState(menuItem));
+            }
+            setCurrentPage(menuItem?.id);
+          }}
+          open={true}
+        /> */}
+
+        {/* eslint-disable-next-line etc/no-commented-out-code */}
         <CoreMenu
           openCollapse={collapse}
           multiLevel={true}
@@ -64,6 +76,7 @@ export default function ComponentsMenu(props) {
               dispatch(toggleMenuItemState(menuItem));
             }
             setCurrentPage(menuItem?.id);
+            dispatch(toggleRightMenuState())
           }}
           open={true}
         />

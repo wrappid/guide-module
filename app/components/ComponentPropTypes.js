@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 import {
-  CoreTableBody,
   CoreTableCell,
-  CoreTableRow, CoreAccordion, CoreAccordionSummary, CoreIconButton, CoreIcon, CoreH6, CoreAccordionDetail, CoreChip, CoreDivider, CoreTypographyBody1, CoreBox, CoreTable, CoreTableHead, CoreTableHeadCell, CoreClasses
+  CoreTableRow, CoreAccordion, CoreAccordionSummary, CoreIconButton, CoreIcon, CoreH6, CoreAccordionDetail, CoreChip, CoreDivider, CoreTypographyBody1, CoreBox
 } from "@wrappid/core";
 
 export default function ComponentPropTypes({ propTypes, viewType }) {
@@ -53,39 +52,20 @@ export default function ComponentPropTypes({ propTypes, viewType }) {
   return (
     <>
       { viewType === "Table" && 
-      
-      <CoreTable size="small">
-        <CoreTableHead styleClasses={[CoreClasses.BG.BG_PRIMARY, CoreClasses.COLOR.TEXT_BLACK]} size="small">
-          <CoreTableRow>
-            <CoreTableHeadCell>Prop</CoreTableHeadCell>
+      <CoreTableRow>
+        <CoreTableCell>{propTypes?.name || "NA"}</CoreTableCell>
 
-            <CoreTableHeadCell>Description</CoreTableHeadCell>
+        <CoreTableCell>{propTypes.description || "NA"}</CoreTableCell>
 
-            <CoreTableHeadCell>Type</CoreTableHeadCell>
+        <CoreTableCell>{propTypes?.types?.type || "NA"}</CoreTableCell>
+       
+        <CoreTableCell>{handleDefaultValues(propTypes?.types) || "NA"}</CoreTableCell>
 
-            <CoreTableHeadCell>Default</CoreTableHeadCell>
-
-            <CoreTableHeadCell>Valid Values</CoreTableHeadCell>
-          </CoreTableRow>
-        </CoreTableHead>
-
-        <CoreTableBody>
-          <CoreTableRow>
-            <CoreTableCell>{propTypes?.name || "NA"}</CoreTableCell>
- 
-            <CoreTableCell>{propTypes.description || "NA"}</CoreTableCell>
- 
-            <CoreTableCell>{propTypes?.types?.type || "NA"}</CoreTableCell>
-             
-            <CoreTableCell>{handleDefaultValues(propTypes?.types) || "NA"}</CoreTableCell>
- 
-            <CoreTableCell>{handleValidValues(propTypes?.types) || "NA"}</CoreTableCell>
-          </CoreTableRow>
-        </CoreTableBody>
-      </CoreTable>
+        <CoreTableCell>{handleValidValues(propTypes?.types) || "NA"}</CoreTableCell>
+      </CoreTableRow>
       } 
 
-      { viewType === "List" && <CoreAccordion gridProps={12}>
+      { viewType === "List" && <CoreAccordion>
         <CoreAccordionSummary expandIcon={<CoreIconButton><CoreIcon icon="expand_more" /></CoreIconButton>}>
           <CoreH6>{propTypes?.name || "NA"}</CoreH6>
         </CoreAccordionSummary>

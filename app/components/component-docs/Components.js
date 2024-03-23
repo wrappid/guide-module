@@ -1,8 +1,9 @@
 import React from "react";
 
 import {
-  BlankLayout, CoreBox, CoreClasses, CoreGrid, CoreH4, CoreLayoutItem 
+  CoreBox, CoreClasses, CoreGrid, CoreH4, CoreLayoutItem, CoreContainer, BlankLayout, CoreIconButton, toggleRightMenuState, CoreIcon, CoreRightDrawer
 } from "@wrappid/core";
+import { useDispatch, useSelector } from "react-redux";
 
 import ComponentsMenu from "./ComponentsMenu";
 import DocsRegistry from "./DocsRegistry";
@@ -13,6 +14,9 @@ export default function Components() {
 
   const [currentPage, setCurrentPage] = React.useState(null);
   const [docsPageRegistry, setDocsPageRegistry] = React.useState({});
+
+  const dispatch = useDispatch();
+  const rightMenuOpen = useSelector((state) => state?.menu?.rightMenuOpen);
 
   const getSortedRegistry = (docsRegistry) => {
     return Object.keys(docsRegistry).sort((curr, next) => docsRegistry[curr].order - docsRegistry[next].order);
@@ -52,26 +56,41 @@ export default function Components() {
     setCurrentPage(getSortedRegistry(_DocsRegistry)[0]);
   }, [docsPageRegistry]);
 
+  const toggleRightDrawer = () => {
+    dispatch(toggleRightMenuState());
+  };
+
   return (
     <>
       <CoreLayoutItem id={BlankLayout.PLACEHOLDER.CONTENT}>
         <CoreGrid>
-          <CoreBox gridProps={{ gridSize: 10 }}>
-            <CoreGrid styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
-              <CoreBox gridProps={{ gridSize: 8 }}>
+          <CoreBox gridProps={{ gridSize: 11 }}>
+            <CoreContainer>
+              <CoreBox>
                 {currentPage && docsPageRegistry[currentPage]
                   ? React.createElement(docsPageRegistry[currentPage])
                   : <CoreH4>No documentation component available for {currentPage}.</CoreH4>}
               </CoreBox>
-            </CoreGrid>
+            </CoreContainer>
           </CoreBox>
 
-          <CoreBox gridProps={{ gridSize: 2, styleClasses: [CoreClasses.BG.BG_GREY_100, CoreClasses.COLOR.TEXT_BLACK, CoreClasses.HEIGHT.H_100] }}>
-            <ComponentsMenu
-              docsRegistry={_DocsRegistry}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            />
+          <CoreBox gridProps={{ gridSize: 1, styleClasses: [CoreClasses.BG.BG_GREY_100, CoreClasses.COLOR.TEXT_BLACK, CoreClasses.HEIGHT.H_100] }}>
+            <CoreIconButton onClick={() => dispatch(toggleRightMenuState())}><CoreIcon icon="menu"></CoreIcon></CoreIconButton>
+
+            {rightMenuOpen === true &&
+              <CoreRightDrawer
+                anchor="right"
+                onOpen={toggleRightDrawer}
+                onClose={toggleRightDrawer}
+                open={rightMenuOpen}
+              >
+                <ComponentsMenu
+                  docsRegistry={_DocsRegistry}
+                  currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
+                />
+              </CoreRightDrawer>
+            }
           </CoreBox>
         </CoreGrid>
       </CoreLayoutItem>
