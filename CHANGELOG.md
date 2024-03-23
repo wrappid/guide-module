@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://https//github.com/wrappid/wrappid-module/compare/v0.0.9...v0.0.10) (2024-03-23)
+
+
+### Features
+
+* **core:** :sparkles: sidebar toggle in component documentation ([20c1ceb](https://https//github.com/wrappid/wrappid-module/commit/20c1cebcbed61ed769709593c78c7c0c4d83b3c6)), closes [#121](https://https//github.com/wrappid/wrappid-module/issues/121)
+
 ### [0.0.9](https://https//github.com/wrappid/wrappid-module/compare/v0.0.8...v0.0.9) (2024-03-23)
 
 
