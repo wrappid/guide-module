@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://https//github.com/wrappid/wrappid-module/compare/v0.0.10...v0.0.11) (2024-03-26)
+
+
+### Features
+
+* **core:** :sparkles: add CoreTOC component with CoreMenu ([85c439f](https://https//github.com/wrappid/wrappid-module/commit/85c439f99fa9c6b7ffb2291889b0556be66fcd0b)), closes [#132](https://https//github.com/wrappid/wrappid-module/issues/132)
+
 ### [0.0.10](https://https//github.com/wrappid/wrappid-module/compare/v0.0.9...v0.0.10) (2024-03-23)
 
 
