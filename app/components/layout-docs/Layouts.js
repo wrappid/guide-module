@@ -27,7 +27,7 @@ export default function Layouts() {
   }));
 
   React.useEffect(() => {
-    setSelectLayout(Object.keys(layoutComponentRegistry)[0]);
+    setSelectLayout(Object.keys(layoutComponentRegistry)[1]);
   }, []);
 
   const prepareLayoutMenu = (layoutComponentRegistry) => {

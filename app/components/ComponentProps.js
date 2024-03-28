@@ -1,51 +1,86 @@
+/* eslint-disable etc/no-commented-out-code */
+import React from "react";
+
 import {
-  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreDivider, CoreH6, CoreTypographyBody1, CoreH5, CoreChip, CoreStack 
+  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreH5, CoreDivider, CoreSelect, CoreTable, CoreTableHead, CoreTableHeadCell, CoreTableRow, CoreTableBody
 } from "@wrappid/core";
 
 import ComponentPropTypes from "./ComponentPropTypes";
 
+const VIEWPROPSDATA = ["Table", "List"];
+
 export default function ComponentProps(props) {
+  const [viewPropsData, setViewPropsData] = React.useState(VIEWPROPSDATA[0]);
   const { component } = props;
-    
+
   const validProps = [...(component?.validProps || []), ...defaultValidProps];
   const invalidProps = [...(component?.invalidProps || []), ...defaultInvalidProps];
 
+  const handleSelectChange = (event) => {
+    setViewPropsData(event.target.value);
+  };
+
+  const PropsHeading = ({ title }) => {
+    return (
+      <CoreBox styleClasses={[CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P2, CoreClasses.BORDER.BORDER_ROUNDED_1, CoreClasses.MARGIN.MY2]}>
+        <CoreH5>{title}</CoreH5>
+
+        {title === "Valid Props" && <CoreSelect
+          gridProps={{ gridSize: { md: 12 } }}
+          label="View props"
+          id="viewPropsData"
+          value={viewPropsData}
+          handleChange={(event) => handleSelectChange(event)}
+          options={Object.keys(VIEWPROPSDATA).map((key) => ({
+            id   : VIEWPROPSDATA[key],
+            label: VIEWPROPSDATA[key],
+            value: VIEWPROPSDATA[key],
+          }))}
+        />}
+      </CoreBox>
+    );
+  };
+
   return (
     <>
-      <CoreH5>{"Valid Props"}</CoreH5>
+      <PropsHeading title={"Valid Props"} />
 
-      {validProps && validProps?.map(eachProp => {
+      {viewPropsData === "Table" && <CoreTable size="small">
+        <CoreTableHead styleClasses={[CoreClasses.BG.BG_PRIMARY, CoreClasses.COLOR.TEXT_BLACK]} size="small">
+          <CoreTableRow>
+            <CoreTableHeadCell>Prop</CoreTableHeadCell>
+
+            <CoreTableHeadCell>Description</CoreTableHeadCell>
+
+            <CoreTableHeadCell>Type</CoreTableHeadCell>
+
+            <CoreTableHeadCell>Default</CoreTableHeadCell>
+
+            <CoreTableHeadCell>Valid Values</CoreTableHeadCell>
+          </CoreTableRow>
+        </CoreTableHead>
+
+        <CoreTableBody>
+          {validProps && validProps?.map((eachProp, index) => {
+            return <ComponentPropTypes key={index} propTypes={eachProp} viewType={viewPropsData} />;
+          })}
+        </CoreTableBody>
+      </CoreTable>}
+
+      {(viewPropsData === "List") &&
+        validProps && validProps?.map((eachProp, index) => {
+        return <ComponentPropTypes key={index} propTypes={eachProp} viewType={viewPropsData} />;
+      })
+      }
+
+      <PropsHeading title={"Invalid Props"} />
+
+      {invalidProps && invalidProps?.map((eachProp) => {
         return (
           <CoreBox key={`${eachProp}`}>
-            <CoreDivider styleClasses={[CoreClasses.MARGIN.MY3]} />
+            <CoreH5>{eachProp}</CoreH5>
 
-            <CoreStack direction="row">
-              <CoreH6 styleClasses={[CoreClasses.PADDING.PR1]}>{eachProp?.name}</CoreH6>
-                
-              {eachProp?.required ? (
-                <CoreChip size="small" color="primary" label="REQUIRED" />
-              ) : (
-                <CoreChip size="small" color="secondary" label="OPTIONAL" />
-              )}
-            </CoreStack>
-
-            <CoreTypographyBody1>
-              {eachProp?.description}
-            </CoreTypographyBody1>
-
-            <ComponentPropTypes propTypes={eachProp?.types} />
-          </CoreBox>
-        );
-      })}
-
-      <CoreDivider />
-
-      <CoreH5>{"Invalid Props"}</CoreH5>
-
-      {invalidProps && invalidProps?.map(eachProp => {
-        return (
-          <CoreBox key={`${eachProp}`}>
-            <CoreH6>{eachProp}</CoreH6>
+            <CoreDivider />
           </CoreBox>
         );
       })}

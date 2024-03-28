@@ -1,20 +1,20 @@
+/* eslint-disable */
 import React from "react";
 
 import {
   toggleMenuItemState,
   CoreBox,
   CoreClasses,
-  CoreTypographyBody2,
+  CoreTypographyBody1,
   CoreMenu
 } from "@wrappid/core";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function ComponentsMenu(props) {
   const dispatch = useDispatch();
+  const contentRef = React.useRef(null);
 
   const collapse = useSelector((state) => state?.menu?.collapse);
-  // eslint-disable-next-line no-unused-vars
-  const [preparedMenu, setPreparedMenu] = React.useState([]);
   const { docsRegistry, /* currentPage, */ setCurrentPage } = props;
   const getSortedRegistry = (docsRegistry) => {
     return (
@@ -31,12 +31,10 @@ export default function ComponentsMenu(props) {
         // eslint-disable-next-line etc/no-commented-out-code
         {/*console.log("menu of", docKey);
       console.log(prepareComponentMenu(docsRegistry[docKey]?.children));*/}
-        let label = <CoreTypographyBody2 gutterBottom={true} styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY]}>{`${docKey?.trim()}`}</CoreTypographyBody2>;
-
         return {
           Children: prepareComponentMenu(docsRegistry[docKey]?.children),
           id      : docKey,
-          label   : label,
+          label   : docKey?.trim(),
           name    : docKey?.trim(),
           type    : "menuitem",
         };
@@ -48,14 +46,18 @@ export default function ComponentsMenu(props) {
    * Right drawer related collapse
    */
   // eslint-disable-next-line no-unused-vars
+  const [open, setOpen] = React.useState(true);
 
   return (
-    <CoreBox styleClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.VH_100]}>
+    <>
       
-      <CoreTypographyBody2 styleClasses={[CoreClasses.COLOR.TEXT_SECONDARY, CoreClasses.TEXT.TEXT_CENTER]}>Component Menu</CoreTypographyBody2>
+      <CoreTypographyBody1>Component Menu</CoreTypographyBody1>
 
-      <CoreBox>
+      <CoreBox
+        CoreClasses={[CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.HEIGHT.H_100, CoreClasses.MARGIN.M1]}
+      >
         <CoreMenu
+          key={"core-menu-components"}
           openCollapse={collapse}
           multiLevel={true}
           menu={prepareComponentMenu(docsRegistry)}
@@ -64,10 +66,11 @@ export default function ComponentsMenu(props) {
               dispatch(toggleMenuItemState(menuItem));
             }
             setCurrentPage(menuItem?.id);
+            // dispatch(toggleRightMenuState());
           }}
           open={true}
         />
       </CoreBox>
-    </CoreBox>   
+    </>   
   );
 }

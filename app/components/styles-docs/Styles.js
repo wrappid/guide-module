@@ -22,11 +22,11 @@ import CodeSample from "../CodeSample";
 import {
   DEFAULT_SAMPLE_COMPONENT,
   CLASS_SPECIFIC_SAMPLE_COMPONENT,
-} from "./StyleUtilitiesSamples";
+} from "./StylesSamples";
 
 const CLASS_NAME_TO_EXCLUDE = [
   // "DEV_BORDER", // DONE
-  "ALIGNMENT",
+  // "ALIGNMENT",
   // "BG", // DONE
   // "BORDER", // DONE
   // "COLOR",
@@ -36,7 +36,8 @@ const CLASS_NAME_TO_EXCLUDE = [
   "FLOAT",
   "GAP",
   // "GRADIENT",
-  // "HEIGHT", //DONE*
+  "REPEAT",
+  "HEIGHT", //DONE*
   // "INTERACTIONS", //DONE
   // "MARGIN", // DONE
   "OBJECT_FIT",
@@ -45,6 +46,8 @@ const CLASS_NAME_TO_EXCLUDE = [
   // "PADDING", // DONE
   "POSITION",
   // "SHADOW", // DONE
+  // "TRANSFORM", //DONE
+  // "ROTATE", //DONE
   // "TEXT", // DONE*
   "VERTICAL_ALIGN",
   // "VISIBILITY", // DONE
@@ -57,7 +60,8 @@ const CLASS_NAME_TO_EXCLUDE = [
   "DATA_TABLE",
   "FRAMEWORK",
   "ICON",
-  "LAYOUT", ,
+  "LAYOUT",
+  ,
   "MENU",
   "NAVIGATION",
   "POPOVER",
@@ -78,10 +82,12 @@ export default function Styles() {
   const contentRef = React.useRef(null);
   return (
     <>
-      <CoreLayoutItem
-        id={BlankLayout.PLACEHOLDER.CONTENT}>
-        <CoreGrid styleClasses={[CoreClasses.BG.BG_WHITE]}>
-          <CoreBox gridProps={{ gridSize: 10 }} ref={contentRef}>
+      <CoreLayoutItem id={BlankLayout.PLACEHOLDER.CONTENT}>
+        <CoreGrid styleClasses={[CoreClasses.BG.BG_GREY_100,CoreClasses.PADDING.PX1]}>
+          <CoreBox
+            gridProps={{ gridSize: { xs: 12,sm: 12, md: 10 } }}
+            ref={contentRef}
+          >
             <CoreH4
               styleClasses={[
                 CoreClasses.MARGIN.MY2,
@@ -94,22 +100,24 @@ export default function Styles() {
             <CoreTypographyBody1>
               These are style utilities built using bootstrap flavour.
             </CoreTypographyBody1>
-            <CoreDivider styleClasses={[CoreClasses.MARGIN.MB5]}></CoreDivider>
+            <CoreDivider />
             {/* {renderStyleSamples({ classes: UtilityClasses })} */}
             {renderStyleSamples({ classes: CoreClasses })}
           </CoreBox>
 
           <CoreBox
+            gridProps={{ gridSize: 2 }}
             styleClasses={[
+              CoreClasses.DISPLAY.NONE,
+              CoreClasses.DISPLAY.MD.GRID,
               CoreClasses.POSITION.TOP_0,
               CoreClasses.POSITION.POSITION_STICKY,
               CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
               CoreClasses.HEIGHT.VH_100,
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_LEFT,
-              CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
+              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
             ]}
-            gridProps={{ gridSize: 2 }}
           >
             <CoreH6
               styleClasses={[
@@ -122,14 +130,7 @@ export default function Styles() {
             </CoreH6>
             <CoreDivider />
             <CoreBox>
-
-              <CoreTOC
-                styleClasses={[
-                  CoreClasses.BORDER.BORDER_LEFT,
-                ]}
-                contentRef={contentRef}
-                headerComponents={[CoreH5]}
-              />
+              <CoreTOC contentRef={contentRef} headerComponents={[CoreH5]} />
             </CoreBox>
           </CoreBox>
         </CoreGrid>
