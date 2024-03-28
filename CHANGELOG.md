@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://https//github.com/wrappid/wrappid-module/compare/v0.0.11...v0.0.12) (2024-03-28)
+
+
+### Features
+
+* **core:** :lipstick: add CoreTOC and CoreMenu in wrappid documentation page ([4e92b14](https://https//github.com/wrappid/wrappid-module/commit/4e92b1455b753686d7bf4442ace65ce778d0be0e)), closes [#132](https://https//github.com/wrappid/wrappid-module/issues/132)
+
 ### [0.0.11](https://https//github.com/wrappid/wrappid-module/compare/v0.0.10...v0.0.11) (2024-03-26)
 
 
