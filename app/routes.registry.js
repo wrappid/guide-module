@@ -120,7 +120,7 @@ export const RoutesRegistry = {
     url         : "layout/RightDrawerLayout"
   },
   Styles: {
-    Page        : { appComponent: Styles.name, layout: "BlankLayout" },
+    Page        : { appComponent: Styles.name },
     authRequired: false,
     entityRef   : "styles",
     url         : "guide/styles"
