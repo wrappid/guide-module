@@ -2168,40 +2168,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-  WORD_SPACING: {
-    description: (
-      <>
-        <CoreTypographyBody1>
-          Use these classes to control the spacing between words.
-        </CoreTypographyBody1>
-      </>
-    ),
-    grouped: true,
-    renderElement: (key, classes, className) => {
-      return (
-        <CoreBox key={key}
-        gridProps={{ gridSize: { md: 4 } }}>
-          <CoreBox  
-            styleClasses={[
-              classes[className],
-              CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
-              CoreClasses.PADDING.P1,
-              CoreClasses.TEXT.TEXT_CENTER,
-            ]}
-          >
-            <CoreTypographyCaption
-              styleClasses={[CoreClasses.TEXT.TEXT_CENTER]}
-            >
-              Lorem ipsum dolor sit amet.
-            </CoreTypographyCaption>
-          </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
-        </CoreBox>
-      );
-    },
-  },
   Z_INDEX: {
     description: (
       <>
