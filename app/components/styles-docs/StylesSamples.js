@@ -69,7 +69,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreAlert severity="error">
-          {"ALIGN_CONTENT are NOT WORKING as of now"}
+          {"ALIGN_CONTENT documentation not provided as of now"}
         </CoreAlert>
         <CoreAlert severity="warning">
           {"Size specific documentation not available as of now"}
@@ -84,7 +84,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4} }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             CoreClasses.DISPLAY.FLEX,
             CoreClasses.FLEX.DIRECTION_COLUMN,
@@ -134,7 +134,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4} }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             CoreClasses.DISPLAY.FLEX,
             CoreClasses.FLEX.DIRECTION_COLUMN,
@@ -207,7 +207,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4} }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             CoreClasses.DISPLAY.FLEX,
             CoreClasses.FLEX.DIRECTION_COLUMN,
@@ -262,9 +262,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     title: "BACKGROUND",
     description: (
       <>
-        <CoreAlert severity="error">
-          {"Text color not changing by default"}
-        </CoreAlert>
         <CoreTypographyBody1>
           Sets the background color of an element to any contextual class.
         </CoreTypographyBody1>
@@ -279,7 +276,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -313,7 +310,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 2, lg: 3, xl: 3 } }}>
+        <CoreBox gridProps={{ gridSize: { md: 4} }}>
           <CoreBox
             key={key}
             styleClasses={[
@@ -335,7 +332,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 3, lg: 3, xl: 3 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             CoreClasses.DISPLAY.FLEX,
             CoreClasses.FLEX.DIRECTION_COLUMN,
@@ -379,7 +376,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             CoreClasses.BORDER.BORDER,
             classes[className],
@@ -399,7 +396,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BG.BG_BLACK,
@@ -425,19 +422,19 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           <CoreList dense={true} marker="disc">
             {"Where The alphabets stands for:"}
 
-            <CoreListItem>{"N -> (North/Top)"}</CoreListItem>
+            <CoreListItem>{"N -> (North) For the Top direction"}</CoreListItem>
 
-            <CoreListItem>{"E -> (East/Right)"}</CoreListItem>
+            <CoreListItem>{"E -> (East) For the Right direction"}</CoreListItem>
 
-            <CoreListItem>{"W -> (West/Left)"}</CoreListItem>
+            <CoreListItem>{"W -> (West) For the Left direction"}</CoreListItem>
 
-            <CoreListItem>{"S -> (South/Bottom)"}</CoreListItem>
+            <CoreListItem>{"S -> (South) For the Bottom direction"}</CoreListItem>
           </CoreList>
         </CoreTypographyBody1>
-        <CoreTypographyBody1>
-          - NOTE : Depending on your operating system, desktop environment, and
+        <CoreTypographyBody2>
+          NOTE : Depending on your operating system, desktop environment, and
           theme: These cursors may or may not be different from each other.
-        </CoreTypographyBody1>
+        </CoreTypographyBody2>
       </>
     ),
 
@@ -490,7 +487,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[]}
         >
           <CoreBox
@@ -617,7 +614,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -707,13 +704,27 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   GRADIENT: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Use gradient utilities to add gradients to elements.{" "}
+        </CoreTypographyBody1>
+      </>
+    ),
     grouped: true,
   },
   LINEAR: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Use Linear gradient utilities to add Linear gradients to elements.{" "}
+        </CoreTypographyBody1>
+      </>
+    ),
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
           <CoreBox
             styleClasses={[
               classes[className],
@@ -733,10 +744,17 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   RADIAL: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Use Radial gradient utilities to add Radial gradients to elements.{" "}
+        </CoreTypographyBody1>
+      </>
+    ),
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
           <CoreBox
             styleClasses={[
               classes[className],
@@ -756,10 +774,17 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   CONIC: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Use Conic gradient utilities to add Conic gradients to elements.{" "}
+        </CoreTypographyBody1>
+      </>
+    ),
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
           <CoreBox
             styleClasses={[
               classes[className],
@@ -847,7 +872,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__ALL: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
           <CoreBox
             key={key}
             styleClasses={[
@@ -875,7 +900,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__AUTO: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
           <CoreBox
             key={key}
             styleClasses={[
@@ -904,7 +929,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   USER_SELECT__STARTS_WITH__NONE: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
           <CoreBox
             key={key}
             styleClasses={[
@@ -942,7 +967,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   POINTER_EVENT__STARTS_WITH__NONE: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox key={key} gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}>
+        <CoreBox key={key} gridProps={{ gridSize: { md: 4 } }}>
           <CoreBox
             styleClasses={[
               classes[className],
@@ -970,7 +995,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   POINTER_EVENT__STARTS_WITH__AUTO: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox key={key} gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}>
+        <CoreBox key={key} gridProps={{ gridSize: { md: 4 } }}>
           <CoreBox
             styleClasses={[
               classes[className],
@@ -999,9 +1024,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox
-          gridProps={{ gridSize: { xs: 3, sm: 3, md: 1} }}
-        >
+        <CoreBox gridProps={{ gridSize: { xs: 3, sm: 3, md: 1 } }}>
           <CoreBox
             key={key}
             styleClasses={[
@@ -1221,7 +1244,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
@@ -1570,7 +1593,18 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
-  TRANSFORM: { grouped: true },
+  TRANSFORM: { 
+    description: (
+      <>
+        <CoreTypographyBody1>
+          {
+            "Use these utilities to apply transformations to an element."
+          }
+        </CoreTypographyBody1>
+      </>
+    ),
+    grouped: true
+  },
   TRANSFORM__STARTS_WITH__TRANSLATE: {
     grouped: true,
     renderElement: (key, classes, className) => {
@@ -1612,13 +1646,20 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     },
   },
   ROTATE: {
+    description: (
+      <>
+        <CoreTypographyBody1>
+          Use these utilities to apply or remove rotation transformations to an element.
+        </CoreTypographyBody1>
+      </>
+    ),
     // description: "Add or remove shadows to elements with box-shadow utilities.",
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[CoreClasses.TEXT.TEXT_CENTER]}
         >
           <CoreBox
@@ -1677,6 +1718,16 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           Decorate text in components with text decoration classes. Use
           TEXT_DECORATION_NONE, TEXT_DECORATION_UNDERLINE and
           TEXT_DECORATION_LINE_THROUGH to decorate.
+        </CoreTypographyBody1>
+
+        <CoreH6>Word Spacing</CoreH6>
+        <CoreTypographyBody1>
+        Use these classes to control the spacing between words.
+        </CoreTypographyBody1>
+
+        <CoreH6>Line Height</CoreH6>
+        <CoreTypographyBody1>
+        Use line-height utilities to set an element's line height.
         </CoreTypographyBody1>
       </>
     ),
@@ -1819,7 +1870,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
   TEXT__STARTS_WITH__TEXT_WRITING: {
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 6,} }}>
+        <CoreBox gridProps={{ gridSize: { md: 6 } }}>
           <CoreBox
             key={key}
             styleClasses={[
@@ -1841,6 +1892,62 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           >
             {className}
           </CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  TEXT__STARTS_WITH__LINE_HEIGHT: {
+    grouped : true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
+          <CoreBox
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.PADDING.P1,
+            ]}
+          >
+            <CoreTypographyCaption>
+              {
+                "Fusce mattis egestas risus, in euismod odio tincidunt in. Maecenas ut ultricies quam. Curabitur sit amet diam a magna rhoncus posuere quis eu sem. Donec nec convallis ipsum. Donec euismod, ex vel maximus tincidunt, lacus libero faucibus nulla, eu scelerisque nisi metus at mi. Phasellus luctus in magna id finibus."
+              }
+            </CoreTypographyCaption>
+          </CoreBox>
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            >
+              {className}
+            </CoreTypographyCaption>
+        </CoreBox>
+      );
+    },
+  },
+  TEXT__STARTS_WITH__WORD_SPACING: {
+    grouped: true,
+    renderElement: (key, classes, className) => {
+      return (
+        <CoreBox key={key}
+        gridProps={{ gridSize: { md: 4 } }}>
+          <CoreBox  
+            styleClasses={[
+              classes[className],
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.PADDING.P1,
+              CoreClasses.TEXT.TEXT_CENTER,
+            ]}
+          >
+            <CoreTypographyCaption
+              styleClasses={[CoreClasses.TEXT.TEXT_CENTER]}
+            >
+              Lorem ipsum dolor sit amet.
+            </CoreTypographyCaption>
+          </CoreBox>
+          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -1948,7 +2055,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       return (
         <CoreBox
           key={key}
-          gridProps={{ gridSize: { md: 4, lg: 4, xl: 4 } }}
+          gridProps={{ gridSize: { md: 4 } }}
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
