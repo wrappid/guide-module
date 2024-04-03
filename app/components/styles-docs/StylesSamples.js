@@ -432,8 +432,10 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           </CoreList>
         </CoreTypographyBody1>
         <CoreTypographyBody2>
-          NOTE : Depending on your operating system, desktop environment, and
-          theme: These cursors may or may not be different from each other.
+          NOTE : Depending on your operating system, desktop environment, and These cursors may or may not be different from each other
+        </CoreTypographyBody2>
+        <CoreTypographyBody2>
+          NOTE : The CURSOR component is not applicable for mobile devices, as there are no physical cursors on touchscreens.
         </CoreTypographyBody2>
       </>
     ),
@@ -724,10 +726,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { sm: 4,md: 2 } }}>
           <CoreBox
             styleClasses={[
               classes[className],
+              CoreClasses.ASPECT_RATIO.RATIO_1_1,
               CoreClasses.BORDER.BORDER,
               CoreClasses.PADDING.P1,
               CoreClasses.BG.BG_PRIMARY_DARK,
@@ -754,10 +757,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { sm: 4,md: 2 } }}>
           <CoreBox
             styleClasses={[
               classes[className],
+              CoreClasses.ASPECT_RATIO.RATIO_1_1,
               CoreClasses.BORDER.BORDER,
               CoreClasses.PADDING.P1,
               CoreClasses.BG.BG_PRIMARY_DARK,
@@ -784,10 +788,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
-        <CoreBox gridProps={{ gridSize: { md: 4 } }}>
+        <CoreBox gridProps={{ gridSize: { sm: 4,md: 2 } }}>
           <CoreBox
             styleClasses={[
               classes[className],
+              CoreClasses.ASPECT_RATIO.RATIO_1_1,
               CoreClasses.BORDER.BORDER,
               CoreClasses.PADDING.P1,
               CoreClasses.BG.BG_PRIMARY_DARK,
