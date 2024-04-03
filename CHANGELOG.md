@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://https//github.com/wrappid/wrappid-module/compare/v0.0.14...v0.0.15) (2024-04-03)
+
+### [0.0.14](https://https//github.com/wrappid/wrappid-module/compare/v0.0.13...v0.0.14) (2024-04-01)
+
+### [0.0.13](https://https//github.com/wrappid/wrappid-module/compare/v0.0.12...v0.0.13) (2024-04-01)
+
+
+### Bug Fixes
+
+* **global:** :bug: key prop added to layoutViewer and styles layout removed ([e2f0501](https://https//github.com/wrappid/wrappid-module/commit/e2f0501b1e7e096bb89088555167fbbeddc71ee3)), closes [#115](https://https//github.com/wrappid/wrappid-module/issues/115)
+
 ### [0.0.12](https://https//github.com/wrappid/wrappid-module/compare/v0.0.11...v0.0.12) (2024-03-28)
 
 

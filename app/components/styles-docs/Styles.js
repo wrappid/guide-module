@@ -26,7 +26,7 @@ import {
 
 const CLASS_NAME_TO_EXCLUDE = [
   // "DEV_BORDER", // DONE
-  // "ALIGNMENT",
+  "ALIGNMENT",
   // "BG", // DONE
   // "BORDER", // DONE
   // "COLOR",

@@ -590,7 +590,7 @@ export default function LayoutViewer(props) {
               currentDevice.aspectRatio.current.aspectRatioName
             ]}
           >
-            <LayoutManager layoutName={layoutName} viewMode={true} />
+            <LayoutManager key={layoutName + "-VIEW-MODE"} layoutName={layoutName} viewMode={true} />
           </CoreBox>
         </CoreBox >
 
