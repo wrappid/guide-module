@@ -60,7 +60,7 @@ export default function CodeSample(props) {
                 <CoreButton
                   varient="outlined"
                   label={expandedBlock === "code" ? "Collapse Code" : "Expand Code"}
-                  OnClick={() => {
+                  onClick={() => {
                     expandedBlock === "code" ? expandBlock(false) : expandBlock("code");
                   }}
                 />

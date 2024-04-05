@@ -146,7 +146,7 @@ export default function CoreAlertDocs() {
                   color="inherit"
                   size="small"
                   label="UNDO"
-                  OnClick={()=>{}} />
+                  onClick={()=>{}} />
               }
             >
               This is a success CoreAlert.
