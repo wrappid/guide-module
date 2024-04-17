@@ -1658,7 +1658,6 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreTypographyBody1>
       </>
     ),
-    // description: "Add or remove shadows to elements with box-shadow utilities.",
     grouped: true,
     renderElement: (key, classes, className) => {
       return (
@@ -1672,18 +1671,22 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_2,
               CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.HEIGHT.VH_25,
+              CoreClasses.DISPLAY.FLEX,
+              CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+              CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER
             ]}
           >
             <CoreBox
               styleClasses={[
                 classes[className],
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+                CoreClasses.BG.BG_PRIMARY_LIGHT,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
             >
-              <CoreTypographyCaption>{className}</CoreTypographyCaption>
+              <CoreTypographyCaption>Lorem, ipsum dolor</CoreTypographyCaption>
             </CoreBox>
           </CoreBox>
           <CoreTypographyCaption>{className}</CoreTypographyCaption>
