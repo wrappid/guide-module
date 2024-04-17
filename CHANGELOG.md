@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://https//github.com/wrappid/wrappid-module/compare/v0.0.17...v0.0.18) (2024-04-17)
+
+
+### Bug Fixes
+
+* **global:** :bug: tramsform rotate documentation related changes ([d565d30](https://https//github.com/wrappid/wrappid-module/commit/d565d3008bbb7d7ee69aa1840b9a0203818b580e)), closes [#115](https://https//github.com/wrappid/wrappid-module/issues/115)
+
 ### [0.0.17](https://https//github.com/wrappid/wrappid-module/compare/v0.0.16...v0.0.17) (2024-04-05)
 
 ### [0.0.16](https://https//github.com/wrappid/wrappid-module/compare/v0.0.15...v0.0.16) (2024-04-04)
