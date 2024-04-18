@@ -28,7 +28,6 @@ const CoreFormSampleSchema = {
     },
   ],
   "submitButtonLabel": "Submit",
-  "validation"       : "coreFormSampleSchema"
 };
 
 const multipleFieldsSampleForm = {
@@ -55,8 +54,25 @@ const multipleFieldsSampleForm = {
     },
   ],
   "submitButtonLabel": "Submit",
-  "validation"       : "coreFormSampleSchema"
 };
+
+const initDataFieldsSampleForm = {
+  "actionContainerStyle": "alignRight",
+  "actions"             : [],
+  "allowCancel"         : true,
+  "cardElevation"       : false,
+  "fields"              : [
+    {
+      "gridSize": 12,
+      "id"      : "initDataField",
+      "label"   : "Input field initial data",
+      "name"    : "initDataField",
+      "required": true,
+      "type"    : "text"
+    },
+  ],
+  "submitButtonLabel": "Add",
+};        
 
 export default function CoreFormDocs() {
 
@@ -104,7 +120,6 @@ export default function CoreFormDocs() {
             },
           ],
           "submitButtonLabel": "Submit",
-          "validation"       : "SampleSchema"
         };
 
         <CoreForm
@@ -153,7 +168,6 @@ export default function CoreFormDocs() {
             },
           ],
           "submitButtonLabel": "Submit",
-          "validation"       : "coreFormSampleSchema"
         };        
         `}
         renderElement={<>
@@ -162,6 +176,39 @@ export default function CoreFormDocs() {
             formId="multipleFieldsSampleForm"
             formJson= {{ multipleFieldsSampleForm: multipleFieldsSampleForm }} 
             authenticated={false}
+          />
+        </>}
+      />
+
+      <CodeSample
+        title={"Form with initial input field data"}
+        description={"A input field with initial form data"}
+        code={`
+        const initDataFieldsSampleForm = {
+          "actionContainerStyle": "alignRight",
+          "actions"             : [],
+          "allowCancel"         : true,
+          "cardElevation"       : false,
+          "fields"              : [
+            {
+              "gridSize": 12,
+              "id"      : "firstField",
+              "label"   : "First input field",
+              "name"    : "firstField",
+              "required": true,
+              "type"    : "text"
+            },
+          ],
+          "submitButtonLabel": "Add",
+        };        
+        `}
+        renderElement={<>
+        
+          <CoreForm
+            formId="initDataFieldsSampleForm"
+            formJson= {{ initDataFieldsSampleForm: initDataFieldsSampleForm }} 
+            authenticated={false}
+            initData={"7001551926"}
           />
         </>}
       />
