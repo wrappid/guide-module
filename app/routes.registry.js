@@ -96,7 +96,7 @@ export const RoutesRegistry = {
     url         : "layout/HeaderLayout"
   },
   Layouts: {
-    Page        : { appComponent: Layouts.name, layout: "BlankLayout" },
+    Page        : { appComponent: Layouts.name },
     authRequired: false,
     entityRef   : "Layouts",
     url         : "guide/layouts"
