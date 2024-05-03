@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://https//github.com/wrappid/wrappid-module/compare/v0.0.19...v0.0.20) (2024-05-03)
+
+
+### Features
+
+* **config:** :sparkles: introduce module specific configurations ([15c0b94](https://https//github.com/wrappid/wrappid-module/commit/15c0b94bb130efb2495ef33fefbeb66a34d8c344)), closes [#71](https://https//github.com/wrappid/wrappid-module/issues/71)
+
+
+### Bug Fixes
+
+* :zap: layouts route shouldn't have any layout ([159f5be](https://https//github.com/wrappid/wrappid-module/commit/159f5bedc5dff248fde3987a1f759511d533b259)), closes [#139](https://https//github.com/wrappid/wrappid-module/issues/139)
+* **core:** :lock: fix security issues ([b2a4725](https://https//github.com/wrappid/wrappid-module/commit/b2a4725653a97c185ea926243b38c177120482de)), closes [#67](https://https//github.com/wrappid/wrappid-module/issues/67)
+
 ### [0.0.19](https://https//github.com/wrappid/wrappid-module/compare/v0.0.18...v0.0.19) (2024-04-18)
 
 ### [0.0.18](https://https//github.com/wrappid/wrappid-module/compare/v0.0.17...v0.0.18) (2024-04-17)
