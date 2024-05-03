@@ -38,10 +38,10 @@
     "@commitlint/config-conventional": "~17.4.4",
     "@commitlint/prompt-cli": "~17.5.0",
     "@faker-js/faker": "~8.1.0",
-    "@types/supertest": "^6.0.2",
-    "@wrappid/core": "latest",
-    "@wrappid/service-core": "latest",
-    "@wrappid/styles": "latest",
+    "@types/supertest": "~6.0.2",
+    "@wrappid/core": "~0.0.465",
+    "@wrappid/service-core": "~0.0.65",
+    "@wrappid/styles": "~0.0.148",
     "eslint": "~8.40.0",
     "eslint-import-resolver-typescript": "~3.6.1",
     "eslint-plugin-etc": "~2.0.2",
@@ -56,9 +56,9 @@
     "jest": "~29.7.0",
     "license-checker": "~25.0.1",
     "react-redux": "~8.0.5",
+    "standard-version": "~9.5.0",
     "supertest": "~6.3.3",
-    "yup": "~1.3.3",
     "ts-jest": "~29.1.2",
-    "standard-version": "~9.5.0"
+    "yup": "~1.3.3"
   }
 }
