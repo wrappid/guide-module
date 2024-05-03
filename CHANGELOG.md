@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://https//github.com/wrappid/wrappid-module/compare/v0.0.4...v0.0.5) (2024-05-03)
+
+
+### Features
+
+* **config:** :sparkles: introduce module specific configurations ([15c0b94](https://https//github.com/wrappid/wrappid-module/commit/15c0b94bb130efb2495ef33fefbeb66a34d8c344)), closes [#71](https://https//github.com/wrappid/wrappid-module/issues/71)
+
 ### [0.0.4](https://https//github.com/wrappid/wrappid-module/compare/v0.0.2...v0.0.4) (2024-05-03)
 
 
