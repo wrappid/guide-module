@@ -1,0 +1,12 @@
+{
+  "app": {
+    "dev": {},
+    "stage": {},
+    "prod": {}
+  },
+  "service": {
+    "dev": {},
+    "stage": {},
+    "prod": {}
+  }
+}
