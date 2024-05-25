@@ -93,6 +93,7 @@ export default function CoreMenuDocs() {
               open={open}
               onClose={handleClose}
               MenuListProps={{ "aria-labelledby": "basic-button" }}
+              displayIcon={true}
             >
               <CoreMenuItem onClick={handleClose}>Profile</CoreMenuItem>
 
@@ -115,7 +116,7 @@ export default function CoreMenuDocs() {
                 <CoreListItemIcon>
                   <CoreIcon icon={"mail"} />
                 </CoreListItemIcon>
-
+ 
                 <CoreListItemText>Message</CoreListItemText>
 
                 <CoreIconButton aria-label="add" color="secondary">
@@ -225,6 +226,7 @@ export default function CoreMenuDocs() {
                 horizontal: "left",
                 vertical  : "top",
               }}
+              displayIcon={true}
             >
               <CoreMenuItem onClick={handleClose}>Profile</CoreMenuItem>
 
@@ -274,6 +276,7 @@ export default function CoreMenuDocs() {
             open={open}
             onClose={handleClose}
             onClick={handleClose}
+            displayIcon={true}
             PaperProps={{
               elevation: 0,
               sx       : {
@@ -369,6 +372,7 @@ export default function CoreMenuDocs() {
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
+              displayIcon={true}
               PaperProps={{
                 style: {
                   maxHeight: ITEM_HEIGHT * 4.5,
@@ -446,6 +450,7 @@ export default function CoreMenuDocs() {
     open={open}
     onClose={HandleClose}
     TransitionComponent={CoreFade}
+    displayIcon={true}
   >
     <CoreMenuItem onClick={HandleClose}>Profile</CoreMenuItem>
 
@@ -474,6 +479,7 @@ export default function CoreMenuDocs() {
               open={open}
               onClose={HandleClose}
               TransitionComponent={CoreFade}
+              displayIcon={true}
             >
               <CoreMenuItem onClick={HandleClose}>Profile</CoreMenuItem>
 
@@ -512,6 +518,7 @@ export default function CoreMenuDocs() {
                   ? { left: contextMenu.mouseX, top: contextMenu.mouseY }
                   : undefined
               }
+              displayIcon={true}
             >
               <CoreMenuItem onClick={handleClose}>Copy</CoreMenuItem>
 

@@ -31,11 +31,6 @@ export default function ComponentsMenu(props) {
   const prepareComponentMenu = (docsRegistry) => {
     return (
       getSortedRegistry(docsRegistry)?.map((docKey) => {
-        // eslint-disable-next-line etc/no-commented-out-code
-        {
-          /*console.log("menu of", docKey);
-      console.log(prepareComponentMenu(docsRegistry[docKey]?.children));*/
-        }
         let label = (
           <CoreSpan
             gutterBottom={true}
@@ -46,7 +41,7 @@ export default function ComponentsMenu(props) {
         return {
           Children: prepareComponentMenu(docsRegistry[docKey]?.children),
           id: docKey,
-          label: label,
+          label: docKey?.trim(),
           name: docKey?.trim(),
           type: "menuitem",
         };
