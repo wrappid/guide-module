@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://https//github.com/wrappid/wrappid-module/compare/v0.0.20...v0.0.21) (2024-05-25)
+
+
+### Features
+
+* :zap: displayIcon flag, tooltip ([9583b96](https://https//github.com/wrappid/wrappid-module/commit/9583b9625b6e3533c5497e8331d350c66fb28f27)), closes [#146](https://https//github.com/wrappid/wrappid-module/issues/146)
+
 ### [0.0.20](https://https//github.com/wrappid/wrappid-module/compare/v0.0.19...v0.0.20) (2024-05-03)
 
 
