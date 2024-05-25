@@ -79,6 +79,7 @@ export default function Layouts() {
               menu={prepareLayoutMenu(layoutComponentRegistry)}
               OnMenuClick={(menuItem) => setSelectLayout(menuItem?.name)}
               open={true}
+              displayIcon={true}
             />
           </CoreBox>
         </CoreGrid>
