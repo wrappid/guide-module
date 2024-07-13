@@ -1,17 +1,18 @@
-import { CoreH2, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
+import { CoreClasses, CoreH2, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
+import CodeImport from "../../CodeImport";
 
 export default function CoreH2Docs() {
   return (
     <>
-      <CoreH4>CoreH2</CoreH4>
+      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>CoreH2</CoreH4>
 
       <CoreTypographyBody1>
         CoreH2 helps you to create H2 heading in your design.
       </CoreTypographyBody1>
-
+<CodeImport name="CoreH2" />
       <CodeSample
         title={"CoreH2 Usage"}
         description={"CoreH2 is used by developers."}
