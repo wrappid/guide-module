@@ -5,12 +5,13 @@ import {
   CoreH4,
   CoreSpan,
   CoreStack,
-  CoreTypographyBody1
+  CoreTypographyBody1,
   // CoreAvatarGroup
 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
+import CodeImport from "../../CodeImport";
 
 export default function CoreAvatarGroupDocs() {
   return (
@@ -24,7 +25,7 @@ export default function CoreAvatarGroupDocs() {
       <CoreTypographyBody1>
         AvatarGroup renders its children as a stack.
       </CoreTypographyBody1>
-
+      <CodeImport name="CoreAvatarGroup" />
       <CodeSample
         title="Grouped"
         description="AvatarGroup renders its children as a stack. Use the max prop to limit the number of avatars."
@@ -39,17 +40,31 @@ export default function CoreAvatarGroupDocs() {
 </CoreStack>`}
         renderElement={
           <CoreAvatarGroup max={4}>
-            <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+            <CoreAvatar
+              alt="Remy Sharp"
+              src="https://mui.com/static/images/avatar/1.jpg"
+            />
 
-            <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+            <CoreAvatar
+              alt="Travis Howard"
+              src="https://mui.com/static/images/avatar/2.jpg"
+            />
 
-            <CoreAvatar alt="Cindy Baker" src="https://mui.com/static/images/avatar/3.jpg" />
-          
-            <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+            <CoreAvatar
+              alt="Cindy Baker"
+              src="https://mui.com/static/images/avatar/3.jpg"
+            />
 
-            <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+            <CoreAvatar
+              alt="Agnes Walker"
+              src="https://mui.com/static/images/avatar/4.jpg"
+            />
+
+            <CoreAvatar
+              alt="Trevor Henderson"
+              src="https://mui.com/static/images/avatar/5.jpg"
+            />
           </CoreAvatarGroup>
-
         }
       />
 
@@ -65,15 +80,31 @@ export default function CoreAvatarGroupDocs() {
   </CoreAvatarGroup>
 </CoreStack>`}
         renderElement={
-          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+          <CoreStack
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            direction="row"
+            spacing={2}
+          >
             <CoreAvatarGroup total={24}>
-              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+              <CoreAvatar
+                alt="Remy Sharp"
+                src="https://mui.com/static/images/avatar/1.jpg"
+              />
 
-              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+              <CoreAvatar
+                alt="Travis Howard"
+                src="https://mui.com/static/images/avatar/2.jpg"
+              />
 
-              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+              <CoreAvatar
+                alt="Agnes Walker"
+                src="https://mui.com/static/images/avatar/4.jpg"
+              />
 
-              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+              <CoreAvatar
+                alt="Trevor Henderson"
+                src="https://mui.com/static/images/avatar/5.jpg"
+              />
             </CoreAvatarGroup>
           </CoreStack>
         }
@@ -94,17 +125,36 @@ The renderSurplus prop is useful when you need to render the surplus based on th
           </CoreAvatarGroup>
         `}
         renderElement={
-          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+          <CoreStack
+            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            direction="row"
+            spacing={2}
+          >
             <CoreAvatarGroup
-              renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>}
-              total={4250}>
-              <CoreAvatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
+              renderSurplus={(surplus) => (
+                <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>
+              )}
+              total={4250}
+            >
+              <CoreAvatar
+                alt="Remy Sharp"
+                src="https://mui.com/static/images/avatar/1.jpg"
+              />
 
-              <CoreAvatar alt="Travis Howard" src="https://mui.com/static/images/avatar/2.jpg" />
+              <CoreAvatar
+                alt="Travis Howard"
+                src="https://mui.com/static/images/avatar/2.jpg"
+              />
 
-              <CoreAvatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+              <CoreAvatar
+                alt="Agnes Walker"
+                src="https://mui.com/static/images/avatar/4.jpg"
+              />
 
-              <CoreAvatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+              <CoreAvatar
+                alt="Trevor Henderson"
+                src="https://mui.com/static/images/avatar/5.jpg"
+              />
             </CoreAvatarGroup>
           </CoreStack>
         }

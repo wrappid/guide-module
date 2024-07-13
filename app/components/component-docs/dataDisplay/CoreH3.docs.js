@@ -1,17 +1,18 @@
-import { CoreH3, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
+import { CoreClasses, CoreH3, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
+import CodeImport from "../../CodeImport";
 
 export default function CoreH3Docs() {
   return (
     <>
-      <CoreH4>CoreH3 Docs</CoreH4>
+      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>CoreH3 Docs</CoreH4>
 
       <CoreTypographyBody1>
         CoreH3 helps you to create H3 heading in your design.
       </CoreTypographyBody1>
-
+<CodeImport name="CoreH3" />
       <CodeSample
         title={"CoreH3 Usage"}
         description={"CoreH3 is used by developers."}
