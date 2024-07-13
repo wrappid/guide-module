@@ -1,17 +1,18 @@
-import { CoreH1, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
+import { CoreClasses, CoreH1, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
+import CodeImport from "../../CodeImport";
 
 export default function CoreH1Docs() {
   return (
     <>
-      <CoreH4>CoreH1</CoreH4>
+      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>CoreH1</CoreH4>
 
       <CoreTypographyBody1>
         CoreH1 helps you to create H1 heading in your design.
       </CoreTypographyBody1>
-
+      <CodeImport name="CoreH1" />
       <CodeSample
         title={"CoreH1 Usage"}
         description={"CoreH1 is used by developers."}
