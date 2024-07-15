@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://https//github.com/wrappid/wrappid-module/compare/v0.0.21...v0.0.22) (2024-07-15)
+
+
+### Bug Fixes
+
+* :bug: fix bugs and colour change and added the codeImport in multiple components in component library ([cd9e7c1](https://https//github.com/wrappid/wrappid-module/commit/cd9e7c149ae0c5e0d05f21f20efc38973f2737d2))
+
 ### [0.0.21](https://https//github.com/wrappid/wrappid-module/compare/v0.0.20...v0.0.21) (2024-05-25)
 
 
