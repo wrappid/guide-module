@@ -20,6 +20,7 @@ import {
   
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
+import CodeImport from "../../CodeImport";
   
 export default function CoreDividerDocs() {
   return (
@@ -33,7 +34,7 @@ export default function CoreDividerDocs() {
       <CoreTypographyBody1>
         A divider is a thin line that groups content in lists and layouts.
       </CoreTypographyBody1>
-  
+  <CodeImport name="CoreDivider" />
       <CodeSample 
         title="List dividers"
         description="The divider renders as an <hr> by default. You can save rendering this DOM element by using the divider prop on the ListItem component."

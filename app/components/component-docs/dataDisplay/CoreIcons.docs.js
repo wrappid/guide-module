@@ -1,4 +1,5 @@
 import {
+  CoreClasses,
   CoreH4,
   CoreTypographyBody1,
   CoreIcon,
@@ -8,16 +9,17 @@ import {
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
+import CodeImport from "../../CodeImport";
 
 export default function CoreIconsDocs() {
   return (
     <>
-      <CoreH4>CoreIcon</CoreH4>
+      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>CoreIcon</CoreH4>
 
       <CoreTypographyBody1>
         Guidance and suggestions for using icons with Wrappid CoreIcon.
       </CoreTypographyBody1>
-
+      <CodeImport name="CoreIcon" />
       <CodeSample
         title="Basic sample"
         description=""
