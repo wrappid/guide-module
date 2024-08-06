@@ -7,9 +7,9 @@ import {
   __IconTypes
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreIconsDocs() {
   return (
@@ -19,7 +19,9 @@ export default function CoreIconsDocs() {
       <CoreTypographyBody1>
         Guidance and suggestions for using icons with Wrappid CoreIcon.
       </CoreTypographyBody1>
+
       <CodeImport name="CoreIcon" />
+
       <CodeSample
         title="Basic sample"
         description=""

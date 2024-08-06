@@ -1,8 +1,8 @@
 import { CoreClasses, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreH4Docs() {
   return (
@@ -12,7 +12,9 @@ export default function CoreH4Docs() {
       <CoreTypographyBody1>
         CoreH4 helps you to create H4 heading in your design.
       </CoreTypographyBody1>
-<CodeImport name="CoreH4" />
+
+      <CodeImport name="CoreH4" />
+
       <CodeSample
         title={"CoreH4 Usage"}
         description={"CoreH4 is used by developers."}
