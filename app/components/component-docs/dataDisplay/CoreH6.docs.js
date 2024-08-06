@@ -1,8 +1,8 @@
 import { CoreClasses, CoreH6, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreH6Docs() {
   return (
@@ -12,7 +12,9 @@ export default function CoreH6Docs() {
       <CoreTypographyBody1>
         CoreH6 helps you to create H6 heading in your design.
       </CoreTypographyBody1>
-<CodeImport name="CoreH6" />
+
+      <CodeImport name="CoreH6" />
+
       <CodeSample
         title={"CoreH6 Usage"}
         description={"CoreH6 is used by developers."}

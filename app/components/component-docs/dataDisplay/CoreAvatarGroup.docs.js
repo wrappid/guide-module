@@ -5,13 +5,13 @@ import {
   CoreH4,
   CoreSpan,
   CoreStack,
-  CoreTypographyBody1,
+  CoreTypographyBody1
   // CoreAvatarGroup
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreAvatarGroupDocs() {
   return (
@@ -25,7 +25,9 @@ export default function CoreAvatarGroupDocs() {
       <CoreTypographyBody1>
         AvatarGroup renders its children as a stack.
       </CoreTypographyBody1>
+
       <CodeImport name="CoreAvatarGroup" />
+
       <CodeSample
         title="Grouped"
         description="AvatarGroup renders its children as a stack. Use the max prop to limit the number of avatars."

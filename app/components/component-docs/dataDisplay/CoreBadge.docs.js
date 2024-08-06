@@ -9,9 +9,9 @@ import {
   CoreBox
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreBadgeDocs() {
   return (
@@ -24,7 +24,9 @@ export default function CoreBadgeDocs() {
       <CoreTypographyBody1>
         Badge generates a small badge to the top-right of its child(ren).
       </CoreTypographyBody1>
+
       <CodeImport name="CoreBadge" />
+
       <CodeSample
         title={"Basic badge"}
         description={

@@ -5,7 +5,6 @@ import {
 } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
-import CodeImport from "../../CodeImport";
 
 export default function CoreIconDocs() {
   return (
@@ -16,6 +15,7 @@ export default function CoreIconDocs() {
       Guidance and suggestions for using icons with Material UI.
 
       </CoreTypographyBody1>
+
       <CodeSample
         title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}

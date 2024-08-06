@@ -1,8 +1,8 @@
 import { CoreClasses, CoreH4, CoreIconText, CoreStack } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreIconTextDocs() {
 
@@ -11,7 +11,9 @@ export default function CoreIconTextDocs() {
       <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
       CoreIconText
       </CoreH4>
-<CodeImport name="CoreIconText" />
+
+      <CodeImport name="CoreIconText" />
+
       <CodeSample
         title={"Simple CoreIconText (NOT WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}

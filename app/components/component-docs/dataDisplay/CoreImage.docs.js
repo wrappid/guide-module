@@ -1,8 +1,8 @@
 import { CoreClasses, CoreH4, CoreImage } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreImageDocs() {
 
@@ -11,7 +11,9 @@ export default function CoreImageDocs() {
       <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
         CoreImage
       </CoreH4>
-<CodeImport name="CoreImage" />
+
+      <CodeImport name="CoreImage" />
+
       <CodeSample
         title={"Simple CoreImage "}
         description={"DESCRIPTION_OF_THE_SAMPLE"}

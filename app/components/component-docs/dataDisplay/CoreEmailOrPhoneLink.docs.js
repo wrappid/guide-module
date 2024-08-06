@@ -1,8 +1,8 @@
 import { CoreClasses, CoreEmailLink, CoreEmailOrPhoneLink, CoreH4, CoreStack } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreEmailOrPhoneLinkDocs() {
 
@@ -11,7 +11,9 @@ export default function CoreEmailOrPhoneLinkDocs() {
       <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
       CoreEmailOrPhoneLink
       </CoreH4>
-<CodeImport name="CoreEmailLink" />
+
+      <CodeImport name="CoreEmailLink" />
+
       <CodeSample
         title={"Simple CoreEmailLink (NOT WORKING)"}
         description={"DESCRIPTION_OF_THE_SAMPLE"}

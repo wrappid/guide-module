@@ -1,8 +1,8 @@
 import { CoreClasses, CoreH5, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
 export default function CoreH5Docs() {
   return (
@@ -12,7 +12,9 @@ export default function CoreH5Docs() {
       <CoreTypographyBody1>
         CoreH5 helps you to create H5 heading in your design.
       </CoreTypographyBody1>
-<CodeImport name="CoreH5" />
+
+      <CodeImport name="CoreH5" />
+
       <CodeSample
         title={"CoreH5 Usage"}
         description={"CoreH5 is used by developers."}
