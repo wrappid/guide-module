@@ -27,7 +27,7 @@ export default function ComponentProps(props) {
 
         {title === "Valid Props" && <CoreSelect
           gridProps={{ gridSize: { md: 12 } }}
-          label="View props"
+          // label="View props"
           id="viewPropsData"
           value={viewPropsData}
           handleChange={(event) => handleSelectChange(event)}
