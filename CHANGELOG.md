@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.24](https://https//github.com/wrappid/wrappid-module/compare/v0.0.23...v0.0.24) (2024-08-10)
+
+
+### Bug Fixes
+
+* :bug: There was a overlapping that was happening in validprops section in CoreComponents ([77a83e7](https://https//github.com/wrappid/wrappid-module/commit/77a83e74469a32198ae0f4e910b6805f88d36786)), closes [#160](https://https//github.com/wrappid/wrappid-module/issues/160)
+
 ### [0.0.23](https://https//github.com/wrappid/wrappid-module/compare/v0.0.21...v0.0.23) (2024-08-06)
 
 
