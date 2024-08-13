@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import {
   CoreH4,
@@ -23,17 +23,82 @@ import {
   CoreAvatar
 } from "@wrappid/core";
 
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-import CodeImport from "../../CodeImport";
 
-const listStyles = ["AUTO","CJK_HEAVENLY_STEM","ARABIC_INDIC","DISC","CIRCLE","SQUARE","DECIMAL","DECIMAL_LEADING_ZERO","ARMENIAN","BENGALI","CAMBODIAN","CJK_EARTHLY_BRANCH","CJK_IDEOGRAPHIC","DEVANAGARI","ETHIOPIC_HALEHAME","ETHIOPIC_HALEHAME_AM","ETHIOPIC_HALEHAME_TI_ER","ETHIOPIC_HALEHAME_TI_ET","GEORGIAN","GUJARATI","HANGUL","HANGUL_CONSONANT","HEBREW","HIRAGANA","HIRAGANAIROHA","INSIDE","KANNADA","KATAKANA","KATAKANA_IROHA","KHMER","KOREAN_HANJA_FORMAL","KOREAN_HANGUL_FORMAL","KOREAN_HANJA_INFORMAL","LAO","LOWER_ALPHA","LOWER_ARMENIAN","LOWER_LATIN","LOWER_GREEK","LOWER_ROMAN","MALAYALAM","MONGOLIAN","MYANMAR","ORIYA","OUTSIDE","PERSIAN","SIMP_CHINESE_FORMAL","SIMP_CHINESE_INFORMAL","TELUGU","THAI","TIBETAN","TRAD_CHINESE_FORMAL","TRAD_CHINESE_INFORMAL","UPPER_ALPHA","UPPER_ARMENIAN","UPPER_LATIN","UPPER_ROMAN","URDU","INHERIT","INITIAL","REVERT","REVERT_LAYER","UNSET","NONE"];
+const listStyles = [
+  "AUTO",
+  "CJK_HEAVENLY_STEM",
+  "ARABIC_INDIC",
+  "DISC",
+  "CIRCLE",
+  "SQUARE",
+  "DECIMAL",
+  "DECIMAL_LEADING_ZERO",
+  "ARMENIAN",
+  "BENGALI",
+  "CAMBODIAN",
+  "CJK_EARTHLY_BRANCH",
+  "CJK_IDEOGRAPHIC",
+  "DEVANAGARI",
+  "ETHIOPIC_HALEHAME",
+  "ETHIOPIC_HALEHAME_AM",
+  "ETHIOPIC_HALEHAME_TI_ER",
+  "ETHIOPIC_HALEHAME_TI_ET",
+  "GEORGIAN",
+  "GUJARATI",
+  "HANGUL",
+  "HANGUL_CONSONANT",
+  "HEBREW",
+  "HIRAGANA",
+  "HIRAGANAIROHA",
+  "INSIDE",
+  "KANNADA",
+  "KATAKANA",
+  "KATAKANA_IROHA",
+  "KHMER",
+  "KOREAN_HANJA_FORMAL",
+  "KOREAN_HANGUL_FORMAL",
+  "KOREAN_HANJA_INFORMAL",
+  "LAO",
+  "LOWER_ALPHA",
+  "LOWER_ARMENIAN",
+  "LOWER_LATIN",
+  "LOWER_GREEK",
+  "LOWER_ROMAN",
+  "MALAYALAM",
+  "MONGOLIAN",
+  "MYANMAR",
+  "ORIYA",
+  "OUTSIDE",
+  "PERSIAN",
+  "SIMP_CHINESE_FORMAL",
+  "SIMP_CHINESE_INFORMAL",
+  "TELUGU",
+  "THAI",
+  "TIBETAN",
+  "TRAD_CHINESE_FORMAL",
+  "TRAD_CHINESE_INFORMAL",
+  "UPPER_ALPHA",
+  "UPPER_ARMENIAN",
+  "UPPER_LATIN",
+  "UPPER_ROMAN",
+  "URDU",
+  "INHERIT",
+  "INITIAL",
+  "REVERT",
+  "REVERT_LAYER",
+  "UNSET",
+  "NONE"
+];
+
 export default function CoreListDocs() {
   // start of nested list code sample
   const [open, setOpen] = useState(false);
   
-  const [listStyleItem, setListStyleItem] = useState(listStyles[0])
-const handleSelectChange = (event) => {
+  const [listStyleItem, setListStyleItem] = useState(listStyles[0]);
+  const handleSelectChange = (event) => {
     setListStyleItem(event.target.value);
   };
 
@@ -59,49 +124,52 @@ const handleSelectChange = (event) => {
         items containing primary and supplemental actions, which are represented
         by icons and text.
       </CoreTypographyBody1>
+
       <CodeImport name="CoreList" />
+
       <CoreH5>Introduction</CoreH5>
 
       <CoreTypographyBody1 styleClasses={[CoreClasses.PADDING.PT1]}>
         Lists present information in a concise, easy-to-follow format through a continuous, vertical index of text or images.
       </CoreTypographyBody1>
+
       <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB0]}>
         Wrappid CoreComponent CoreLists are implemented using a collection of related components:
       </CoreTypographyBody1>
       
-        <CoreList listType="AUTO">
-          <CoreListItem>
-            <CoreListItemText primary="CoreList: a wrapper for list items. Renders as a <ul> by default." /> 
-          </CoreListItem>
+      <CoreList listType="AUTO">
+        <CoreListItem>
+          <CoreListItemText primary="CoreList: a wrapper for list items. Renders as a <ul> by default." /> 
+        </CoreListItem>
 
-          <CoreListItem>
-            <CoreListItemText primary="CoreList Item: a common list item. Renders as an <li> by default." />
-          </CoreListItem>
+        <CoreListItem>
+          <CoreListItemText primary="CoreList Item: a common list item. Renders as an <li> by default." />
+        </CoreListItem>
 
-          <CoreListItem>
-            <CoreListItemText primary="CoreList Item Button: an action element to be used inside a list item." /> 
-          </CoreListItem>
+        <CoreListItem>
+          <CoreListItemText primary="CoreList Item Button: an action element to be used inside a list item." /> 
+        </CoreListItem>
 
-          <CoreListItem>
-            <CoreListItemText primary="CoreList Item Icon: an icon to be used inside of a list item." /> 
-          </CoreListItem>
+        <CoreListItem>
+          <CoreListItemText primary="CoreList Item Icon: an icon to be used inside of a list item." /> 
+        </CoreListItem>
 
-          <CoreListItem>
-            <CoreListItemText primary="CoreList Item Avatar: an avatar to be used inside of a list item." />
-          </CoreListItem>
+        <CoreListItem>
+          <CoreListItemText primary="CoreList Item Avatar: an avatar to be used inside of a list item." />
+        </CoreListItem>
 
-          <CoreListItem>
-            <CoreListItemText primary="CoreList Item Text: a container inside a list item, used to display text content." /> 
-          </CoreListItem>
+        <CoreListItem>
+          <CoreListItemText primary="CoreList Item Text: a container inside a list item, used to display text content." /> 
+        </CoreListItem>
 
-          <CoreListItem>
-            <CoreListItemText primary="CoreList Divider: a separator between list items." />
-          </CoreListItem>
+        <CoreListItem>
+          <CoreListItemText primary="CoreList Divider: a separator between list items." />
+        </CoreListItem>
           
-          <CoreListItem>
-            <CoreListItemText primary="CoreList Subheader: a label for a nested list." />
-          </CoreListItem>
-        </CoreList>
+        <CoreListItem>
+          <CoreListItemText primary="CoreList Subheader: a label for a nested list." />
+        </CoreListItem>
+      </CoreList>
 
       <CodeSample
         title={"Basic List"}
@@ -419,7 +487,7 @@ const handleSelectChange = (event) => {
         renderElement={
           <>
             <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
-              <CoreStack component={CorePaper} styleClasses={[CoreClasses.WIDTH.W_25,CoreClasses.PADDING.P2]}>
+              <CoreStack component={CorePaper} styleClasses={[CoreClasses.WIDTH.W_25, CoreClasses.PADDING.P2]}>
                 <CoreList>
                   <CoreListItemButton
                     selected={selectedIndex === 0}
@@ -469,22 +537,25 @@ const handleSelectChange = (event) => {
 
       <CodeSample
         title={"Align list items"}
-        description={<><CoreTypographyBody1>"In Wrappid, you can control the alignment of CoreList components in various ways depending on how you want the content(text, icons, etc.) within the items to be arranged."</CoreTypographyBody1><CoreDivider /><CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB0, CoreClasses.PADDING.PT1]}>Use Cases:
-          </CoreTypographyBody1>
-          <CoreList listType="AUTO">
-            <CoreListItem>
-              <CoreListItemText primary="Navigation: Aligning items in navigation bars or side menus."/>
+        description={<><CoreTypographyBody1>In Wrappid, you can control the alignment of CoreList components in various ways depending on how you want the content(text, icons, etc.) within the items to be arranged.</CoreTypographyBody1><CoreDivider /><CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB0, CoreClasses.PADDING.PT1]}>Use Cases:
+        </CoreTypographyBody1>
+
+        <CoreList listType="AUTO">
+          <CoreListItem>
+            <CoreListItemText primary="Navigation: Aligning items in navigation bars or side menus."/>
           </CoreListItem>
-            <CoreListItem>
-              <CoreListItemText primary="File Explorer UI: Creating a visually organized list of files and folders."/>
+
+          <CoreListItem>
+            <CoreListItemText primary="File Explorer UI: Creating a visually organized list of files and folders."/>
           </CoreListItem>
-            <CoreListItem>
-              <CoreListItemText primary="Custom Lists: Any scenario where you need specific control over how list items are displayed and aligned."/>
+
+          <CoreListItem>
+            <CoreListItemText primary="Custom Lists: Any scenario where you need specific control over how list items are displayed and aligned."/>
           </CoreListItem>
-          </CoreList>
-          </>
+        </CoreList>
+        </>
         }
-      code={`
+        code={`
     <CoreList disablePadding>
       <CoreListItem alignItems="flex-start">
         <CoreListItemButton>
@@ -602,11 +673,12 @@ const handleSelectChange = (event) => {
             </CoreList>
           </>}
       />
+
       <>
-      <CodeSample
-        title={"List_Style"}
-        description={"List_Style helps you to directly implement types of list style in your list. "}
-        code={`
+        <CodeSample
+          title={"List_Style"}
+          description={"List_Style helps you to directly implement types of list style in your list. "}
+          code={`
         <CoreList listType="${listStyleItem}">
           <CoreListItem>
             <CoreListItemText primary="Write your text" />
@@ -621,46 +693,47 @@ const handleSelectChange = (event) => {
           </CoreListItem>
         </CoreList>
         `}
-        renderElement={
-          <> 
-            <CoreGrid styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-              <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-            <CoreSelect
-          gridProps={{ gridSize: { md: 6 } }}
-          // label="View props"
-          id="listStyleItem"
-          value={listStyleItem}
-          handleChange={(event) => handleSelectChange(event)}
-          options={Object.keys(listStyles).map((key) => ({
-            id   : listStyles[key],
-            label: listStyles[key],
-            value: listStyles[key],
-          }))}
-                />
-              </CoreBox>
-              <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-                <CoreTypographyBody1>Select from Dropdown to see our other listTypes</CoreTypographyBody1>
-              </CoreBox>
-              <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-          <CoreList listType={`${listStyleItem}`}>
-          <CoreListItem>
-            <CoreListItemText primary="Car" />
-          </CoreListItem>
+          renderElement={
+            <> 
+              <CoreGrid styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                  <CoreSelect
+                    gridProps={{ gridSize: { md: 6 } }}
+                    id="listStyleItem"
+                    value={listStyleItem}
+                    handleChange={(event) => handleSelectChange(event)}
+                    options={Object.keys(listStyles).map((key) => ({
+                      id   : listStyles[key],
+                      label: listStyles[key],
+                      value: listStyles[key],
+                    }))}
+                  />
+                </CoreBox>
 
-          <CoreListItem>
-            <CoreListItemText primary="Plane" />
-          </CoreListItem>
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                  <CoreTypographyBody1>Select from Dropdown to see our other listTypes</CoreTypographyBody1>
+                </CoreBox>
 
-          <CoreListItem>
-            <CoreListItemText primary="Rocket" />
-          </CoreListItem>
-        </CoreList>
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                  <CoreList listType={`${listStyleItem}`}>
+                    <CoreListItem>
+                      <CoreListItemText primary="Car" />
+                    </CoreListItem>
+
+                    <CoreListItem>
+                      <CoreListItemText primary="Plane" />
+                    </CoreListItem>
+
+                    <CoreListItem>
+                      <CoreListItemText primary="Rocket" />
+                    </CoreListItem>
+                  </CoreList>
             
-            </CoreBox>
-            </CoreGrid>
+                </CoreBox>
+              </CoreGrid>
             
-          </>}
-      />
+            </>}
+        />
       </>
       <ComponentProps component={CoreList} />
     </>
