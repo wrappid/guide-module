@@ -11,13 +11,28 @@ import {
   CoreChip,
   CoreDivider,
   CoreTypographyBody1,
-  CoreBox
+  CoreBox,
+  CoreStack
 } from "@wrappid/core";
 
+/**
+ * Renders a component's prop types in either a table or a list view.
+ * 
+ * @param {Object} props - The component's prop types and view type.
+ * @param {Array} props.propTypes - The array of prop types.
+ * @param {string} props.viewType - The view type, either "Table" or "List".
+ * @returns {JSX.Element} - The rendered prop types.
+ */
 export default function ComponentPropTypes({ propTypes, viewType }) {
   const VALUE_NOT_SPECIFIED = "NA";
+  const TYPE_NOT_SPECIFIED = "NA";
   const VALUE_NOT_PROVIDED = "Not Provided";
-
+  
+  /**
+   * Prepares the value string. 
+   * @param {*} value - The value to prepare.
+   * @returns {string} - The prepared value string.
+   */
   const prepareValueString = (value) => {
     if (value) {
       if (Array.isArray(value)) {
@@ -25,7 +40,7 @@ export default function ComponentPropTypes({ propTypes, viewType }) {
       } else {
         return JSON.stringify(value);
       }
-    } else if(typeof value === "boolean") {
+    } else if (typeof value === "boolean") {
       return value ? "true" : "false";
     }
     else {
@@ -33,36 +48,75 @@ export default function ComponentPropTypes({ propTypes, viewType }) {
     }
   };
 
+  /**
+   * Renders a chip with the default value 
+   * @returns {JSX.Element} - The rendered chip. 
+   */
+  const DefaultChip = () => {
+    return (
+      <>
+        <CoreChip size="small" label="default" />
+      </>
+    );
+  };
+
+  /**
+   * Handles the valid values for a prop type. 
+   * @param {*} value
+   * @returns {string} - The valid values string.
+   */
   const handleValidValues = (value) => {
     return value ? prepareValueString(value.validValues) : VALUE_NOT_PROVIDED;
   };
 
+  /**
+   * Handles the default values for a prop type.
+   * @param {*} value 
+   * @returns {string} - The default value string.
+   */
   const handleDefaultValues = (value) => {
     return value ? prepareValueString(value.default) : VALUE_NOT_PROVIDED;
   };
 
+  /**
+   * Handles the types for a prop type.
+   * @param {*} value 
+   * @returns {string} - The type string. 
+   */
+  const handleTypes = (value) => {
+    return value ? value.type : TYPE_NOT_SPECIFIED;
+  };
+
   return (
     <>
-      {viewType === "Table" && 
-          <CoreTableBody>
-            {propTypes?.types?.map((prop, index) => (
-              <CoreTableRow key={index}>
-                {index === 0 ? (
-                  <CoreTableCell rowSpan={propTypes.types.length}>{propTypes?.name || VALUE_NOT_SPECIFIED}</CoreTableCell>
-                ) : null}
+      {viewType === "Table" &&
+        <CoreTableBody>
+          {propTypes?.types?.map((prop, index) => (
+            <CoreTableRow key={index}>
+              {index === 0 ? (
+                <CoreTableCell rowSpan={propTypes.types.length}>{propTypes?.name || VALUE_NOT_SPECIFIED}</CoreTableCell>
+              ) : null}
 
-                {index === 0 ? (
-                  <CoreTableCell rowSpan={propTypes.types.length}>{propTypes?.description || VALUE_NOT_SPECIFIED}</CoreTableCell>
-                ) : null}
+              {index === 0 ? (
+                <CoreTableCell rowSpan={propTypes.types.length}>{propTypes?.description || VALUE_NOT_SPECIFIED}</CoreTableCell>
+              ) : null}
 
-                <CoreTableCell>{prop.type}</CoreTableCell>
+              <CoreTableCell>
+                <CoreStack direction={"row"} spacing={2}>
+                  {handleTypes(prop)} 
 
-                <CoreTableCell>{handleDefaultValues(prop) || VALUE_NOT_SPECIFIED}</CoreTableCell>
+                  {(prop && prop?.isDefaultType) && (
+                    <DefaultChip />
+                  )}
+                </CoreStack>
+              </CoreTableCell>
 
-                <CoreTableCell>{handleValidValues(prop) || VALUE_NOT_SPECIFIED}</CoreTableCell>
-              </CoreTableRow>
-            ))}
-          </CoreTableBody>
+              <CoreTableCell>{handleDefaultValues(prop) || VALUE_NOT_SPECIFIED}</CoreTableCell>
+
+              <CoreTableCell>{handleValidValues(prop) || VALUE_NOT_SPECIFIED}</CoreTableCell>
+            </CoreTableRow>
+          ))}
+        </CoreTableBody>
       }
 
       {viewType === "List" && (
@@ -89,15 +143,15 @@ export default function ComponentPropTypes({ propTypes, viewType }) {
                 {propTypes?.types?.map((type, index) => (
                   <CoreBox key={index}>
                     <CoreTypographyBody1>
-                    Type: {type.type}
+                      Type: {type.type}
                     </CoreTypographyBody1>
 
                     <CoreTypographyBody1>
-                    Default: {handleDefaultValues(type) || VALUE_NOT_SPECIFIED}
+                      Default: {handleDefaultValues(type) || VALUE_NOT_SPECIFIED}
                     </CoreTypographyBody1>
 
                     <CoreTypographyBody1>
-                    Valid Values: {handleValidValues(type) || VALUE_NOT_SPECIFIED}
+                      Valid Values: {handleValidValues(type) || VALUE_NOT_SPECIFIED}
                     </CoreTypographyBody1>
                   </CoreBox>
                 ))}
