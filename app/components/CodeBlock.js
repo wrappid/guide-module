@@ -17,14 +17,12 @@ function CodeBlock(props) {
         CoreClasses.BORDER.BORDER_GREY_200
       ]}
     >
-      <CoreTypographyBody1  code={true}>{children}</CoreTypographyBody1>
+      <CoreTypographyBody1 code={true}>{children}</CoreTypographyBody1>
     </CoreBox>
   ) : (
-    <CoreSpan code={true} styleClasses={[    CoreClasses.BG.BG_GREY_200,
-      CoreClasses.COLOR.TEXT_BLACK,
-      CoreClasses.PADDING.PX1,
-      CoreClasses.BORDER.BORDER_ROUNDED_1
-      ]}>
+    <CoreSpan
+      code={true}
+      styleClasses={[CoreClasses.BG.BG_GREY_200, CoreClasses.COLOR.TEXT_BLACK, CoreClasses.PADDING.PX1, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
       {children}
     </CoreSpan>
   );
