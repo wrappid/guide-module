@@ -469,11 +469,20 @@ const handleSelectChange = (event) => {
 
       <CodeSample
         title={"Align list items"}
-        description={"This props not working properly \n"
-        // +"Use Cases:"+
-        // "Navigation: Aligning items in navigation bars or side menus."+
-        // "File Explorer UI: Creating a visually organized list of files and folders."+
-        //   "Custom Lists: Any scenario where you need specific control over how list items are displayed and aligned."
+        description={<><CoreTypographyBody1>"In Wrappid Component, you can control the alignment of CoreList components in various ways depending on how you want the content (text, icons, etc.) within the items to be arranged."</CoreTypographyBody1><CoreDivider /><CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB0, CoreClasses.PADDING.PT1]}>Use Cases:
+          </CoreTypographyBody1>
+          <CoreList listType="AUTO">
+            <CoreListItem>
+              <CoreListItemText primary="Navigation: Aligning items in navigation bars or side menus."/>
+          </CoreListItem>
+            <CoreListItem>
+              <CoreListItemText primary="File Explorer UI: Creating a visually organized list of files and folders."/>
+          </CoreListItem>
+            <CoreListItem>
+              <CoreListItemText primary="Custom Lists: Any scenario where you need specific control over how list items are displayed and aligned."/>
+          </CoreListItem>
+          </CoreList>
+          </>
         }
       code={`
     <CoreList disablePadding>
