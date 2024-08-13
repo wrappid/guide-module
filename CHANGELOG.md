@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.26](https://https//github.com/wrappid/wrappid-module/compare/v0.0.25...v0.0.26) (2024-08-13)
+
+
+### Features
+
+* **core:** :sparkles: show default chip for default type ([345941b](https://https//github.com/wrappid/wrappid-module/commit/345941b5129213848cbbf5436c09b9b1095188f4)), closes [#165](https://https//github.com/wrappid/wrappid-module/issues/165)
+
+
+### Bug Fixes
+
+* **core:** :bug: component valid props ([e52d635](https://https//github.com/wrappid/wrappid-module/commit/e52d63592f2c9e8f7bffdefc480d00e01fcb0099)), closes [#165](https://https//github.com/wrappid/wrappid-module/issues/165)
+
 ### [0.0.25](https://https//github.com/wrappid/wrappid-module/compare/v0.0.24...v0.0.25) (2024-08-13)
 
 
