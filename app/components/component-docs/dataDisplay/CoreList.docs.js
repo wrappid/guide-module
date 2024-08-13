@@ -546,7 +546,7 @@ const handleSelectChange = (event) => {
                     primary="Profile 1"
                     secondary={<>
                       <CoreTypographyBody1 color="text.primary">
-        Sandra Adams
+                        Sandra Adams
                       </CoreTypographyBody1>
 
                       {" — Do you have Paris recommendations? Have you ever…"}
@@ -565,7 +565,7 @@ const handleSelectChange = (event) => {
                     primary="Profile 2"
                     secondary={<>
                       <CoreTypographyBody1 color="text.primary">
-            to Scott, Alex, Jennifer
+                         to Scott, Alex, Jennifer
                       </CoreTypographyBody1>
 
                       {" — Wish I could come, but I'm out of town this…"}
