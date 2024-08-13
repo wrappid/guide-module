@@ -15,6 +15,20 @@ import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
+/**
+ * Handles the click event, logging a message to the console.
+ * @returns
+ */
+function handleClick() {
+  // eslint-disable-next-line no-console
+  console.info("CoreChip clicked! 🎉");
+}
+
+function handleDelete() {
+  // eslint-disable-next-line no-console
+  console.info("Delete icon clicked! 🗑️");
+}
+
 export default function CoreChipDocs() {
   return (
     <>
@@ -54,54 +68,51 @@ While included here as a standalone component, the most common use will be in so
         description="You can use the following actions.
 Chips with the onClick prop defined change appearance on focus, hover, and click.
 Chips with the onDelete prop defined will display a delete icon which changes appearance on hover."
-        code={`
-<CoreStack direction="row" spacing={1}>
-  <CoreChip label="Clickable" onClick={()=>{}} />
-  <CoreChip label="Clickable" variant="outlined" onClick={()=>{}} />
+        code={`<CoreStack direction="row" spacing={1}>
+  <CoreChip label="Clickable" onClick={handleClick} />
+  <CoreChip label="Clickable" variant="outlined" onClick={handleClick} />
 </CoreStack>
         `}
         renderElement={
           <CoreStack direction="row" spacing={1}>
-            <CoreChip label="Clickable" onClick={()=>{}} />
+            <CoreChip label="Clickable" onClick={handleClick} />
 
-            <CoreChip label="Clickable" variant="outlined" onClick={()=>{}} />
+            <CoreChip label="Clickable" variant="outlined" onClick={handleClick} />
           </CoreStack>
         }
       />
 
       <CodeSample
         title="Deletable"
-        description=""
-        code={`
-<CoreStack direction="row" spacing={1}>
-  <CoreChip label="Deletable" onDelete={()=>{}} />
-  <CoreChip label="Deletable" variant="outlined" onDelete={()=>{}} />
+        description="You can use the onDelete prop to add a delete icon to the Chip."
+        code={`<CoreStack direction="row" spacing={1}>
+  <CoreChip label="Deletable" onDelete={handleDelete} />
+  <CoreChip label="Deletable" variant="outlined" onDelete={handleDelete} />
 </CoreStack>
         `}
         renderElement={
           <CoreStack direction="row" spacing={1}>
-            <CoreChip label="Deletable" onDelete={()=>{}} />
+            <CoreChip label="Deletable" onDelete={handleDelete} />
             
-            <CoreChip label="Deletable" variant="outlined" onDelete={()=>{}} />
+            <CoreChip label="Deletable" variant="outlined" onDelete={handleDelete} />
           </CoreStack>
         }
       />
 
       <CodeSample
         title="Clickable and deletable"
-        description=""
-        code={`
-<CoreStack direction="row" spacing={1}>
+        description="You can use the onClick and onDelete props together to make a Chip both clickable and deletable."
+        code={`<CoreStack direction="row" spacing={1}>
   <CoreChip
     label="Clickable Deletable"
-    onClick={()=>{}}
-    onDelete={()=>{}}
+    onClick={handleClick}
+    onDelete={handleDelete}
   />
   <CoreChip
     label="Clickable Deletable"
     variant="outlined"
-    onClick={()=>{}}
-    onDelete={()=>{}}
+    onClick={handleClick}
+    onDelete={handleDelete}
   />
 </CoreStack>
         `}
@@ -109,15 +120,15 @@ Chips with the onDelete prop defined will display a delete icon which changes ap
           <CoreStack direction="row" spacing={1}>
             <CoreChip
               label="Clickable Deletable"
-              onClick={()=>{}}
-              onDelete={()=>{}}
+              onClick={handleClick}
+              onDelete={handleDelete}
             />
 
             <CoreChip
               label="Clickable Deletable"
               variant="outlined"
-              onClick={()=>{}}
-              onDelete={()=>{}}
+              onClick={handleClick}
+              onDelete={handleDelete}
             />
           </CoreStack>
         }
@@ -125,9 +136,8 @@ Chips with the onDelete prop defined will display a delete icon which changes ap
 
       <CodeSample
         title="Clickable link"
-        description=""
-        code={`
-<CoreStack direction="row" spacing={1}>
+        description="You can use the component prop to use a link component."
+        code={`<CoreStack direction="row" spacing={1}>
   <CoreChip label="Clickable Link" component="a" href="#basic-chip" clickable />
   <CoreChip
     label="Clickable Link"
@@ -159,19 +169,18 @@ Chips with the onDelete prop defined will display a delete icon which changes ap
 
       <CodeSample
         title="Custom delete icon"
-        description=""
-        code={`
-<CoreStack direction="row" spacing={1}>
+        description="You can use the deleteIcon prop to provide a custom delete icon."
+        code={`<CoreStack direction="row" spacing={1}>
   <CoreChip
     label="Custom delete icon"
-    onClick={()=>{}}
-    onDelete={()=>{}}
+    onClick={handleClick}
+    onDelete={handleDelete}
     deleteIcon={<CoreIcon icon="done" />}
   />
   <CoreChip
     label="Custom delete icon"
-    onClick={()=>{}}
-    onDelete={()=>{}}
+    onClick={handleClick}
+    onDelete={handleDelete}
     deleteIcon={<CoreIcon icon="delete" />}
     variant="outlined"
   />
@@ -181,15 +190,15 @@ Chips with the onDelete prop defined will display a delete icon which changes ap
           <CoreStack direction="row" spacing={1}>
             <CoreChip
               label="Custom delete icon"
-              onClick={()=>{}}
-              onDelete={()=>{}}
+              onClick={handleClick}
+              onDelete={handleDelete}
               deleteIcon={<CoreIcon icon="done" />}
             />
 
             <CoreChip
               label="Custom delete icon"
-              onClick={()=>{}}
-              onDelete={()=>{}}
+              onClick={handleClick}
+              onDelete={handleDelete}
               deleteIcon={<CoreIcon icon="delete" />}
               variant="outlined"
             />
@@ -201,11 +210,11 @@ Chips with the onDelete prop defined will display a delete icon which changes ap
         title="Chip adornments"
         description="You can add ornaments to the beginning of the component.
 Use the avatar prop to add an avatar or use the icon prop to add an icon."
-        code={`
-<CoreStack direction="row" spacing={1}>
-  <CoreChip avatar={<CoreAvatar>M</CoreAvatar>} label="Avatar" />
+        code={`<CoreStack direction="row" spacing={1}>
+  <CoreChip avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}><CoreAvatar styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}>A</CoreAvatar></CoreBox>} label="Avatar" />
+  
   <CoreChip
-    avatar={<CoreAvatar alt="Natacha" src="https://mui.com/static/images/avatar/1.jpg" />}
+    avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}><CoreAvatar alt="Ananta" src="https://picsum.photos/200?random=1" styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]} /></CoreBox>}
     label="Avatar"
     variant="outlined"
   />
@@ -213,10 +222,10 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
         `}
         renderElement={
           <CoreStack direction="row" spacing={1}>
-            <CoreChip avatar={<CoreAvatar>M</CoreAvatar>} label="Avatar" />
+            <CoreChip avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}><CoreAvatar styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}>A</CoreAvatar></CoreBox>} label="Avatar" />
             
             <CoreChip
-              avatar={<CoreAvatar alt="Natacha" src="https://mui.com/static/images/avatar/1.jpg" />}
+              avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}><CoreAvatar alt="Ananta" src="https://picsum.photos/200?random=1" styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]} /></CoreBox>}
               label="Avatar"
               variant="outlined"
             />
@@ -226,7 +235,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
 
       <CodeSample
         title="Icon chip"
-        description=""
+        description="You can use the icon prop to add an icon to the Chip."
         code={`
 <CoreStack direction="row" spacing={1}>
   <CoreChip icon={<CoreIcon icon="mail" />} label="With Icon" />
@@ -235,7 +244,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
         `}
         renderElement={
           <CoreStack direction="row" spacing={1}>
-            <CoreChip icon={<CoreIcon icon="mail" />} label="With Icon" />
+            <CoreChip icon={<CoreIcon styleClasses={[CoreClasses.MARGIN]} icon="mail" />} label="With Icon" />
             
             <CoreChip icon={<CoreIcon icon="mail" />} label="With Icon" variant="outlined" />
           </CoreStack>
@@ -381,7 +390,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
                 <CoreListItem key={data.key}>
                   <CoreChip
                     label={data.label}
-                    onDelete={()=>{}}
+                    onDelete={handleDelete}
                   />
                 </CoreListItem>
               );
