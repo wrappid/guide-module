@@ -1,14 +1,20 @@
-/* eslint-disable etc/no-commented-out-code */
 import React from "react";
 
 import {
-  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreH5, CoreDivider, CoreSelect, CoreTable, CoreTableHead, CoreTableHeadCell, CoreTableRow, CoreTableBody
+  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreH5, CoreDivider, CoreSelect, CoreTable, CoreTableHead, CoreTableHeadCell, CoreTableRow
 } from "@wrappid/core";
 
 import ComponentPropTypes from "./ComponentPropTypes";
 
 const VIEWPROPSDATA = ["Table", "List"];
 
+/**
+ * Renders a component's props with valid and invalid props.
+ *
+ * @param {Object} props - The component's props.
+ * @param {Object} props.component - The component object.
+ * @returns {JSX.Element} The rendered component props.
+ */
 export default function ComponentProps(props) {
   const [viewPropsData, setViewPropsData] = React.useState(VIEWPROPSDATA[0]);
   const { component } = props;
@@ -16,10 +22,20 @@ export default function ComponentProps(props) {
   const validProps = [...(component?.validProps || []), ...defaultValidProps];
   const invalidProps = [...(component?.invalidProps || []), ...defaultInvalidProps];
 
+  /**
+   * Handles the select change event.
+   * @param {*} event
+   * @returns {void}
+   */
   const handleSelectChange = (event) => {
     setViewPropsData(event.target.value);
   };
 
+  /**
+   * Renders the props heading.
+   * @param {*} title
+   * @returns {JSX.Element} - The rendered props heading.
+   */
   const PropsHeading = ({ title }) => {
     return (
       <CoreBox styleClasses={[CoreClasses.BG.BG_GREY_100, CoreClasses.PADDING.P2, CoreClasses.BORDER.BORDER_ROUNDED_1, CoreClasses.MARGIN.MY2]}>
@@ -27,7 +43,6 @@ export default function ComponentProps(props) {
 
         {title === "Valid Props" && <CoreSelect
           gridProps={{ gridSize: { md: 12 } }}
-          // label="View props"
           id="viewPropsData"
           value={viewPropsData}
           handleChange={(event) => handleSelectChange(event)}
@@ -54,18 +69,17 @@ export default function ComponentProps(props) {
 
             <CoreTableHeadCell>Type</CoreTableHeadCell>
 
-            <CoreTableHeadCell>Default</CoreTableHeadCell>
+            <CoreTableHeadCell>Default Value</CoreTableHeadCell>
 
             <CoreTableHeadCell>Valid Values</CoreTableHeadCell>
           </CoreTableRow>
         </CoreTableHead>
 
-        <CoreTableBody>
-          {validProps && validProps?.map((eachProp, index) => {
-            return <ComponentPropTypes key={index} propTypes={eachProp} viewType={viewPropsData} />;
-          })}
-        </CoreTableBody>
-      </CoreTable>}
+        {validProps && validProps?.map((eachProp, index) => {
+          return <ComponentPropTypes key={index} propTypes={eachProp} viewType={viewPropsData} />;
+        })}
+      </CoreTable>
+      }
 
       {(viewPropsData === "List") &&
         validProps && validProps?.map((eachProp, index) => {
