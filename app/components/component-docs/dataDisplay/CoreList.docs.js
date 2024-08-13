@@ -469,7 +469,7 @@ const handleSelectChange = (event) => {
 
       <CodeSample
         title={"Align list items"}
-        description={<><CoreTypographyBody1>"In Wrappid Component, you can control the alignment of CoreList components in various ways depending on how you want the content (text, icons, etc.) within the items to be arranged."</CoreTypographyBody1><CoreDivider /><CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB0, CoreClasses.PADDING.PT1]}>Use Cases:
+        description={<><CoreTypographyBody1>"In Wrappid, you can control the alignment of CoreList components in various ways depending on how you want the content (text, icons, etc.) within the items to be arranged."</CoreTypographyBody1><CoreDivider /><CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB0, CoreClasses.PADDING.PT1]}>Use Cases:
           </CoreTypographyBody1>
           <CoreList listType="AUTO">
             <CoreListItem>
