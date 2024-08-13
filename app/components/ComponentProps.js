@@ -1,8 +1,7 @@
-/* eslint-disable etc/no-commented-out-code */
 import React from "react";
 
 import {
-  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreH5, CoreDivider, CoreSelect, CoreTable, CoreTableHead, CoreTableHeadCell, CoreTableRow, CoreTableBody
+  defaultValidProps, defaultInvalidProps, CoreBox, CoreClasses, CoreH5, CoreDivider, CoreSelect, CoreTable, CoreTableHead, CoreTableHeadCell, CoreTableRow
 } from "@wrappid/core";
 
 import ComponentPropTypes from "./ComponentPropTypes";
@@ -27,7 +26,6 @@ export default function ComponentProps(props) {
 
         {title === "Valid Props" && <CoreSelect
           gridProps={{ gridSize: { md: 12 } }}
-          // label="View props"
           id="viewPropsData"
           value={viewPropsData}
           handleChange={(event) => handleSelectChange(event)}
@@ -52,20 +50,19 @@ export default function ComponentProps(props) {
 
             <CoreTableHeadCell>Description</CoreTableHeadCell>
 
-            <CoreTableHeadCell>Type</CoreTableHeadCell>
+            <CoreTableHeadCell>Types</CoreTableHeadCell>
 
-            <CoreTableHeadCell>Default</CoreTableHeadCell>
+            <CoreTableHeadCell>Default Value</CoreTableHeadCell>
 
             <CoreTableHeadCell>Valid Values</CoreTableHeadCell>
           </CoreTableRow>
         </CoreTableHead>
 
-        <CoreTableBody>
-          {validProps && validProps?.map((eachProp, index) => {
-            return <ComponentPropTypes key={index} propTypes={eachProp} viewType={viewPropsData} />;
-          })}
-        </CoreTableBody>
-      </CoreTable>}
+        {validProps && validProps?.map((eachProp, index) => {
+          return <ComponentPropTypes key={index} propTypes={eachProp} viewType={viewPropsData} />;
+        })}
+      </CoreTable>
+      }
 
       {(viewPropsData === "List") &&
         validProps && validProps?.map((eachProp, index) => {

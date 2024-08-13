@@ -1,101 +1,113 @@
-/* eslint-disable no-console */
 import {
   CoreTableCell,
-  CoreTableRow, CoreAccordion, CoreAccordionSummary, CoreIconButton, CoreIcon, CoreH6, CoreAccordionDetail, CoreChip, CoreDivider, CoreTypographyBody1, CoreBox
+  CoreTableRow,
+  CoreTableBody,
+  CoreH6,
+  CoreAccordion,
+  CoreAccordionSummary,
+  CoreIconButton,
+  CoreIcon,
+  CoreAccordionDetail,
+  CoreChip,
+  CoreDivider,
+  CoreTypographyBody1,
+  CoreBox
 } from "@wrappid/core";
 
 export default function ComponentPropTypes({ propTypes, viewType }) {
-
-  // eslint-disable-next-line no-undef
-  console.log("viewType:", viewType);
-
   const VALUE_NOT_SPECIFIED = "NA";
   const VALUE_NOT_PROVIDED = "Not Provided";
+
   const prepareValueString = (value) => {
     if (value) {
-      console.log("ValidValue Exists");
       if (Array.isArray(value)) {
-        console.log("ValidValue is an array");
-        if (value.length > 0) {
-          console.log("ValidValue array contains element(s)");
-          return value.join(" | ");
-        } else {
-          console.log("ValidValue array is empty");
-          return VALUE_NOT_SPECIFIED;
-        }
+        return value.length > 0 ? value.join(" | ") : VALUE_NOT_SPECIFIED;
       } else {
-        console.log("ValidValue is not an array");
         return JSON.stringify(value);
       }
-    } else {
-      console.log("ValidValue Not Exists");
+    } else if(typeof value === "boolean") {
+      return value ? "true" : "false";
+    }
+    else {
       return VALUE_NOT_SPECIFIED;
     }
   };
 
   const handleValidValues = (value) => {
-    if (value) {
-      return prepareValueString(value.validValues);
-    } else {
-      return VALUE_NOT_PROVIDED;
-    }
+    return value ? prepareValueString(value.validValues) : VALUE_NOT_PROVIDED;
   };
-  
+
   const handleDefaultValues = (value) => {
-    if (value) {
-      return prepareValueString(value.default);
-    } else {
-      return VALUE_NOT_PROVIDED;
-    }
+    return value ? prepareValueString(value.default) : VALUE_NOT_PROVIDED;
   };
 
   return (
     <>
-      { viewType === "Table" && 
-      <CoreTableRow>
-        <CoreTableCell>{propTypes?.name || "NA"}</CoreTableCell>
+      {viewType === "Table" && 
+          <CoreTableBody>
+            {propTypes?.types?.map((prop, index) => (
+              <CoreTableRow key={index}>
+                {index === 0 ? (
+                  <CoreTableCell rowSpan={propTypes.types.length}>{propTypes?.name || VALUE_NOT_SPECIFIED}</CoreTableCell>
+                ) : null}
 
-        <CoreTableCell>{propTypes.description || "NA"}</CoreTableCell>
+                {index === 0 ? (
+                  <CoreTableCell rowSpan={propTypes.types.length}>{propTypes?.description || VALUE_NOT_SPECIFIED}</CoreTableCell>
+                ) : null}
 
-        <CoreTableCell>{propTypes?.types?.type || "NA"}</CoreTableCell>
-       
-        <CoreTableCell>{handleDefaultValues(propTypes?.types) || "NA"}</CoreTableCell>
+                <CoreTableCell>{prop.type}</CoreTableCell>
 
-        <CoreTableCell>{handleValidValues(propTypes?.types) || "NA"}</CoreTableCell>
-      </CoreTableRow>
-      } 
+                <CoreTableCell>{handleDefaultValues(prop) || VALUE_NOT_SPECIFIED}</CoreTableCell>
 
-      { viewType === "List" && <CoreAccordion>
-        <CoreAccordionSummary expandIcon={<CoreIconButton><CoreIcon icon="expand_more" /></CoreIconButton>}>
-          <CoreH6>{propTypes?.name || "NA"}</CoreH6>
-        </CoreAccordionSummary>
+                <CoreTableCell>{handleValidValues(prop) || VALUE_NOT_SPECIFIED}</CoreTableCell>
+              </CoreTableRow>
+            ))}
+          </CoreTableBody>
+      }
 
-        <CoreAccordionDetail>
-          <CoreBox>
-            {propTypes?.required ? (
-              <CoreChip size="small" color="info" label="REQUIRED" />
-            ) : (
-              <CoreChip size="small" color="warning" label="OPTIONAL" />
-            )}
+      {viewType === "List" && (
+        <CoreAccordion>
+          <CoreAccordionSummary expandIcon={<CoreIconButton><CoreIcon icon="expand_more" /></CoreIconButton>}>
+            <CoreH6>{propTypes?.name || VALUE_NOT_SPECIFIED}</CoreH6>
+          </CoreAccordionSummary>
 
-            <CoreDivider />
+          <CoreAccordionDetail>
+            <CoreBox>
+              {propTypes?.required ? (
+                <CoreChip size="small" color="info" label="REQUIRED" />
+              ) : (
+                <CoreChip size="small" color="warning" label="OPTIONAL" />
+              )}
 
-            <CoreTypographyBody1>
-              {propTypes?.description || "NA"}
-            </CoreTypographyBody1>
+              <CoreDivider />
 
-            <CoreTypographyBody1>
-              {handleDefaultValues(propTypes?.types) || "NA"}
-            </CoreTypographyBody1>
+              <CoreTypographyBody1>
+                {propTypes?.description || VALUE_NOT_SPECIFIED}
+              </CoreTypographyBody1>
 
-            <CoreTypographyBody1>
-              {handleValidValues(propTypes?.types) || "NA"}
-            </CoreTypographyBody1>
+              <CoreTypographyBody1>
+                {propTypes?.types?.map((type, index) => (
+                  <CoreBox key={index}>
+                    <CoreTypographyBody1>
+                    Type: {type.type}
+                    </CoreTypographyBody1>
 
-            <CoreDivider />
-          </CoreBox>
-        </CoreAccordionDetail>
-      </CoreAccordion>}
+                    <CoreTypographyBody1>
+                    Default: {handleDefaultValues(type) || VALUE_NOT_SPECIFIED}
+                    </CoreTypographyBody1>
+
+                    <CoreTypographyBody1>
+                    Valid Values: {handleValidValues(type) || VALUE_NOT_SPECIFIED}
+                    </CoreTypographyBody1>
+                  </CoreBox>
+                ))}
+              </CoreTypographyBody1>
+
+              <CoreDivider />
+            </CoreBox>
+          </CoreAccordionDetail>
+        </CoreAccordion>
+      )}
     </>
   );
 }
