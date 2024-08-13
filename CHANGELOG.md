@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.25](https://https//github.com/wrappid/wrappid-module/compare/v0.0.24...v0.0.25) (2024-08-13)
+
+
+### Bug Fixes
+
+* :bug: CodeBlock text highlight not working ([06692cc](https://https//github.com/wrappid/wrappid-module/commit/06692ccb122f3aeb1a9c19de9671e1f2518781d2)), closes [#167](https://https//github.com/wrappid/wrappid-module/issues/167)
+
 ### [0.0.24](https://https//github.com/wrappid/wrappid-module/compare/v0.0.23...v0.0.24) (2024-08-10)
 
 
