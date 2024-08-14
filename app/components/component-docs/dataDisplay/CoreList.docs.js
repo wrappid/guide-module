@@ -303,7 +303,7 @@ export default function CoreListDocs() {
               <CoreIcon icon="delete" />
             </CoreListItemIcon>
             <CoreListItemText primary="Trash" />
-                      {open ? (<CoreIcon icon="expandmore" />) : (<CoreIcon icon="expandless" />)}
+                      {open ? (<CoreIcon icon="arrow_back" />) : (<CoreIcon icon="arrow_forward" />)}
           </CoreListItemButton>
         </CoreListItem>
         <CoreCollapse in={open} >
