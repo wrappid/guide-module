@@ -8,7 +8,8 @@ import {
   CoreAvatar,
   CoreBox,
   CoreListItem,
-  CorePaper
+  CorePaper,
+  CoreH6
 } from "@wrappid/core";
 
 import CodeImport from "../../CodeImport";
@@ -135,7 +136,7 @@ Chips with the onDelete prop defined will display a delete icon which changes ap
       />
 
       <CodeSample
-        title="Clickable link"
+        title="Clickable link(NOT WORKING)"
         description="You can use the component prop to use a link component."
         code={`<CoreStack direction="row" spacing={1}>
   <CoreChip label="Clickable Link" component="a" href="#basic-chip" clickable />
@@ -208,8 +209,21 @@ Chips with the onDelete prop defined will display a delete icon which changes ap
 
       <CodeSample
         title="Chip adornments"
-        description="You can add ornaments to the beginning of the component.
-Use the avatar prop to add an avatar or use the icon prop to add an icon."
+        description={
+          <>
+            <CoreTypographyBody1>
+          You can add ornaments to the beginning of the component.
+Use the avatar prop to add an avatar or use the icon prop to add an icon.
+            </CoreTypographyBody1>
+
+            <CoreH6 styleClasses={[]}>Avatar Chip</CoreH6>
+
+            <CoreTypographyBody1>
+  You can use the avatar prop to add an avatar to the Chip.
+            </CoreTypographyBody1>
+          </>
+
+        }
         code={`<CoreStack direction="row" spacing={1}>
   <CoreChip avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}><CoreAvatar styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}>A</CoreAvatar></CoreBox>} label="Avatar" />
   
@@ -234,25 +248,35 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
       />
 
       <CodeSample
-        title="Icon chip"
-        description="You can use the icon prop to add an icon to the Chip."
+        title={" "}
+        description={<>
+          <CoreH6>Icon chip</CoreH6>
+
+          <CoreTypographyBody1>
+          You can use the icon prop to add an icon to the Chip
+          </CoreTypographyBody1>
+        </>
+        }
         code={`
 <CoreStack direction="row" spacing={1}>
-  <CoreChip icon={<CoreIcon icon="mail" />} label="With Icon" />
-  <CoreChip icon={<CoreIcon icon="mail" />} label="With Icon" variant="outlined" />
+  <CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" />
+  <CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" variant="outlined" />
 </CoreStack>
         `}
         renderElement={
           <CoreStack direction="row" spacing={1}>
-            <CoreChip icon={<CoreIcon styleClasses={[CoreClasses.MARGIN]} icon="mail" />} label="With Icon" />
-            
-            <CoreChip icon={<CoreIcon icon="mail" />} label="With Icon" variant="outlined" />
+            <CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" />
+
+            <CoreChip
+              icon={<CoreIcon icon="mood" />}
+              label="With Icon"
+              variant="outlined" />
           </CoreStack>
         }
       />
 
       <CodeSample
-        title="Color chip(NOT WORKING)"
+        title="Color chip"
         description="You can use the color prop to define a color from theme palette."
         code={`
 <CoreStack spacing={1} alignItems="center">
@@ -268,7 +292,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
         `}
         renderElement={
           <CoreStack spacing={1} alignItems="center">
-            {/* <CoreStack direction="row" spacing={1}>
+            <CoreStack direction="row" spacing={1}>
               <CoreChip label="primary" color="primary" />
             
               <CoreChip label="success" color="success" />
@@ -278,7 +302,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
               <CoreChip label="primary" color="primary" variant="outlined" />
             
               <CoreChip label="success" color="success" variant="outlined" />
-            </CoreStack> */}
+            </CoreStack>
           </CoreStack>
         }
       />
@@ -319,48 +343,42 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
 </CoreBox>
         `}
         renderElement={
-          <CoreBox /*sx={{ width: 100 }}*/>
-            <CoreChip
-              // sx={{
-              //   "& .MuiChip-label": {
-              //     display   : "block",
-              //     whiteSpace: "normal",
-              //   },
-              //   height: "auto",
-              // }}
-              label="This is a chip that has multiple lines."
-            />
-          </CoreBox>
+          <>
+
+            <CoreBox /*sx={{ width: 100 }}*/>
+              <CoreChip
+                // sx={{
+                //   height: 'auto',
+                //   '& .MuiChip-label': {
+                //     display: 'block',
+                //     whiteSpace: 'normal',
+                //   },
+                // }}
+                label="This is a chip that has multiple lines."
+              />
+            </CoreBox>
+          </>
         }
       />
 
       <CodeSample
         title="Chip array"
         description="An example of rendering multiple chips from an array of values. Deleting a chip removes it from the array. Note that since no onClick prop is defined, the Chip can be focused, but does not gain depth while clicked or touched."
-        code={`
-<CorePaper
-  // sx={{
-  //   display: 'flex',
-  //   justifyContent: 'center',
-  //   flexWrap: 'wrap',
-  //   listStyle: 'none',
-  //   p: 0.5,
-  //   m: 0,
-  // }}
+        code={`<CorePaper styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P1]}
   component="ul"
 >
   {[
-    { key: 0, label: 'Angular' },
-    { key: 1, label: 'jQuery' },
-    { key: 2, label: 'Polymer' },
-    { key: 3, label: 'React' },
-    { key: 4, label: 'Vue.js' },
+    { key: 0, label: "Angular" },
+    { key: 1, label: "jQuery" },
+    { key: 2, label: "Polymer" },
+    { key: 3, label: "React" },
+    { key: 4, label: "Vue.js" },
   ].map((data) => {
     return (
       <CoreListItem key={data.key}>
         <CoreChip
           label={data.label}
-          onDelete={}
+          onDelete={handleDelete}
         />
       </CoreListItem>
     );
@@ -369,14 +387,7 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon."
         `}
         renderElement={
           <CorePaper
-            // sx={{
-            //   display       : "flex",
-            //   flexWrap      : "wrap",
-            //   justifyContent: "center",
-            //   listStyle     : "none",
-            //   m             : 0,
-            //   p             : 0.5,
-            // }}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P1]}
             component="ul"
           >
             {[
