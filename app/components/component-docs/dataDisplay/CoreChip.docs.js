@@ -216,7 +216,7 @@ Chips with the onDelete prop defined will display a delete icon which changes ap
 Use the avatar prop to add an avatar or use the icon prop to add an icon.
             </CoreTypographyBody1>
 
-            <CoreH6 styleClasses={[]}>Avatar Chip</CoreH6>
+            <CoreH6>Avatar Chip</CoreH6>
 
             <CoreTypographyBody1>
   You can use the avatar prop to add an avatar to the Chip.
@@ -368,11 +368,11 @@ Use the avatar prop to add an avatar or use the icon prop to add an icon.
   component="ul"
 >
   {[
-    { key: 0, label: "Angular" },
-    { key: 1, label: "jQuery" },
-    { key: 2, label: "Polymer" },
-    { key: 3, label: "React" },
-    { key: 4, label: "Vue.js" },
+    { key: 0, label: "core" },
+    { key: 1, label: "native-web" },
+    { key: 2, label: "native-mobile" },
+    { key: 3, label: "styles" },
+    { key: 4, label: "toolkit" },
   ].map((data) => {
     return (
       <CoreListItem key={data.key}>
