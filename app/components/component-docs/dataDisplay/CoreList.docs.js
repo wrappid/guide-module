@@ -137,40 +137,42 @@ export default function CoreListDocs() {
         Wrappid CoreComponent CoreLists are implemented using a collection of related components:
       </CoreTypographyBody1>
       
-      <CoreList listType="AUTO">
-        <CoreListItem>
-          <CoreListItemText primary="CoreList: a wrapper for list items. Renders as a <ul> by default." /> 
-        </CoreListItem>
+      <CoreBox styleClasses={[CoreClasses.PADDING.PL2]}>
+        <CoreList variant="HTML" listType="AUTO">
+          <CoreListItem>
+            <CoreListItemText primary="CoreList: a wrapper for list items. Renders as a <ul> by default." /> 
+          </CoreListItem>
 
-        <CoreListItem>
-          <CoreListItemText primary="CoreList Item: a common list item. Renders as an <li> by default." />
-        </CoreListItem>
+          <CoreListItem>
+            <CoreListItemText primary="CoreList Item: a common list item. Renders as an <li> by default." />
+          </CoreListItem>
 
-        <CoreListItem>
-          <CoreListItemText primary="CoreList Item Button: an action element to be used inside a list item." /> 
-        </CoreListItem>
+          <CoreListItem>
+            <CoreListItemText primary="CoreList Item Button: an action element to be used inside a list item." /> 
+          </CoreListItem>
 
-        <CoreListItem>
-          <CoreListItemText primary="CoreList Item Icon: an icon to be used inside of a list item." /> 
-        </CoreListItem>
+          <CoreListItem>
+            <CoreListItemText primary="CoreList Item Icon: an icon to be used inside of a list item." /> 
+          </CoreListItem>
 
-        <CoreListItem>
-          <CoreListItemText primary="CoreList Item Avatar: an avatar to be used inside of a list item." />
-        </CoreListItem>
+          <CoreListItem>
+            <CoreListItemText primary="CoreList Item Avatar: an avatar to be used inside of a list item." />
+          </CoreListItem>
 
-        <CoreListItem>
-          <CoreListItemText primary="CoreList Item Text: a container inside a list item, used to display text content." /> 
-        </CoreListItem>
+          <CoreListItem>
+            <CoreListItemText primary="CoreList Item Text: a container inside a list item, used to display text content." /> 
+          </CoreListItem>
 
-        <CoreListItem>
-          <CoreListItemText primary="CoreList Divider: a separator between list items." />
-        </CoreListItem>
+          <CoreListItem>
+            <CoreListItemText primary="CoreList Divider: a separator between list items." />
+          </CoreListItem>
           
-        <CoreListItem>
-          <CoreListItemText primary="CoreList Subheader: a label for a nested list." />
-        </CoreListItem>
-      </CoreList>
-
+          <CoreListItem>
+            <CoreListItemText primary="CoreList Subheader: a label for a nested list." />
+          </CoreListItem>
+        </CoreList>
+      </CoreBox>
+      
       <CodeSample
         title={"Basic List"}
         description={"This is a basic structure of CoreList that a user can use."}
@@ -273,48 +275,47 @@ export default function CoreListDocs() {
         title={"Nested List"}
         description={"A nested list is a list that is contained within another list, making it an element of that list. This structure allows for the organization of data in a hierarchical or multi-dimensional manner. CoreList can also be used to make nested list. "}
         code={`
-          <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
-            <CoreStack component={CorePaper} styleClasses={[CoreClasses.WIDTH.W_25]}>
-              <CoreList>
-                <CoreListSubheader>Nested List Items</CoreListSubheader>
-                  <CoreListItem disablePadding>
-                    <CoreListItemButton>
-                      <CoreListItemIcon>
-                        <CoreIcon icon="inbox" />
-                      </CoreListItemIcon>
-                      <CoreListItemText primary="Inbox" />
-                    </CoreListItemButton>
-                  </CoreListItem>
+  <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+    <CoreStack component={CorePaper} styleClasses={[CoreClasses.WIDTH.W_25]}>
+      <CoreList>
+        <CoreListSubheader>Nested List Items</CoreListSubheader>
+          <CoreListItem disablePadding>
+            <CoreListItemButton>
+              <CoreListItemIcon>
+                <CoreIcon icon="inbox" />
+              </CoreListItemIcon>
+              <CoreListItemText primary="Inbox" />
+            </CoreListItemButton>
+          </CoreListItem>
 
-                <CoreListItem disablePadding>
-                  <CoreListItemButton>
-                    <CoreListItemIcon>
-                      <CoreIcon icon="drafts" />
-                    </CoreListItemIcon>
-                    <CoreListItemText primary="Drafts" />
-                  </CoreListItemButton>
-                </CoreListItem>
+        <CoreListItem disablePadding>
+          <CoreListItemButton>
+            <CoreListItemIcon>
+              <CoreIcon icon="drafts" />
+            </CoreListItemIcon>
+            <CoreListItemText primary="Drafts" />
+          </CoreListItemButton>
+        </CoreListItem>
 
-                <CoreListItem disablePadding onClick={handleClick}>
-                  <CoreListItemButton>
-                    <CoreListItemIcon>
-                      <CoreIcon icon="delete" />
-                    </CoreListItemIcon>
-                    <CoreListItemText primary="Trash" />
-                    {open ? <CoreIcon icon="arrow" /> : <CoreIcon icon="expandmore" />}
-                  </CoreListItemButton>
-                </CoreListItem>
-                <CoreCollapse in={open} >
-                      <CoreList disablePadding styleClasses={[CoreClasses.PADDING.PL2]}>
-                        <CoreListItemButton >
-                        <CoreIcon icon="expandmore" />
-                          <CoreListItemText primary="Collpased done" />
-                        </CoreListItemButton>
-                      </CoreList>
-                    </CoreCollapse>
+        <CoreListItem disablePadding onClick={handleClick}>
+          <CoreListItemButton>
+            <CoreListItemIcon>
+              <CoreIcon icon="delete" />
+            </CoreListItemIcon>
+            <CoreListItemText primary="Trash" />
+                      {open ? (<CoreIcon icon="expandmore" />) : (<CoreIcon icon="expandless" />)}
+          </CoreListItemButton>
+        </CoreListItem>
+        <CoreCollapse in={open} >
+              <CoreList disablePadding styleClasses={[CoreClasses.PADDING.PL2]}>
+                <CoreListItemButton >
+                  <CoreListItemText primary="Collpased done" />
+                </CoreListItemButton>
               </CoreList>
-            </CoreStack>
-          </CoreBox>`}
+            </CoreCollapse>
+      </CoreList>
+    </CoreStack>
+  </CoreBox>`}
         renderElement={
           <>
             <CoreBox
@@ -355,14 +356,16 @@ export default function CoreListDocs() {
 
                       <CoreListItemText primary="Trash" />
 
-                      {open ? <CoreIcon icon="arrow" /> : <CoreIcon icon="expandmore" />}
+                      {open ? (<CoreIcon icon="arrow_back" />) : (<CoreIcon icon="arrow_forward" />)}
+                      
                     </CoreListItemButton>
                   </CoreListItem>
 
                   <CoreCollapse in={open} >
+
                     <CoreList disablePadding styleClasses={[CoreClasses.PADDING.PL2]}>
+
                       <CoreListItemButton >
-                        <CoreIcon icon="expandmore" />
 
                         <CoreListItemText primary="Collpased done" />
                       </CoreListItemButton>
@@ -540,19 +543,21 @@ export default function CoreListDocs() {
         description={<><CoreTypographyBody1>In Wrappid, you can control the alignment of CoreList components in various ways depending on how you want the content(text, icons, etc.) within the items to be arranged.</CoreTypographyBody1><CoreDivider /><CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB0, CoreClasses.PADDING.PT1]}>Use Cases:
         </CoreTypographyBody1>
 
-        <CoreList listType="AUTO">
-          <CoreListItem>
-            <CoreListItemText primary="Navigation: Aligning items in navigation bars or side menus."/>
-          </CoreListItem>
+        <CoreBox styleClasses={[CoreClasses.PADDING.PL2]}>
+          <CoreList variant="HTML" listType="AUTO">
+            <CoreListItem>
+              <CoreListItemText primary="Navigation: Aligning items in navigation bars or side menus."/>
+            </CoreListItem>
 
-          <CoreListItem>
-            <CoreListItemText primary="File Explorer UI: Creating a visually organized list of files and folders."/>
-          </CoreListItem>
+            <CoreListItem>
+              <CoreListItemText primary="File Explorer UI: Creating a visually organized list of files and folders."/>
+            </CoreListItem>
 
-          <CoreListItem>
-            <CoreListItemText primary="Custom Lists: Any scenario where you need specific control over how list items are displayed and aligned."/>
-          </CoreListItem>
-        </CoreList>
+            <CoreListItem>
+              <CoreListItemText primary="Custom Lists: Any scenario where you need specific control over how list items are displayed and aligned."/>
+            </CoreListItem>
+          </CoreList>
+        </CoreBox>
         </>
         }
         code={`
@@ -679,7 +684,7 @@ export default function CoreListDocs() {
           title={"List_Style"}
           description={"List_Style helps you to directly implement types of list style in your list. "}
           code={`
-        <CoreList listType="${listStyleItem}">
+        <CoreList varient="HTML" listType="${listStyleItem}">
           <CoreListItem>
             <CoreListItemText primary="Write your text" />
           </CoreListItem>
@@ -715,7 +720,7 @@ export default function CoreListDocs() {
                 </CoreBox>
 
                 <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-                  <CoreList listType={`${listStyleItem}`}>
+                  <CoreList variant="HTML" listType={`${listStyleItem}`}>
                     <CoreListItem>
                       <CoreListItemText primary="Car" />
                     </CoreListItem>
