@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.30](https://https//github.com/wrappid/wrappid-module/compare/v0.0.29...v0.0.30) (2024-08-15)
+
+### [0.0.29](https://https//github.com/wrappid/wrappid-module/compare/v0.0.28...v0.0.29) (2024-08-15)
+
+
+### Features
+
+* **global:** :bug: documentation for CoreBadge ([b1d63f1](https://https//github.com/wrappid/wrappid-module/commit/b1d63f1e5a055ae4895f7781e518476bd0cbb23e)), closes [#170](https://https//github.com/wrappid/wrappid-module/issues/170)
+
+### [0.0.28](https://https//github.com/wrappid/wrappid-module/compare/v0.0.27...v0.0.28) (2024-08-14)
+
+
+### Bug Fixes
+
+* **core:** :bug: corechip description and code ([48f2ba8](https://https//github.com/wrappid/wrappid-module/commit/48f2ba87750420ccc382ffd032c138e0b3efc4ac)), closes [#172](https://https//github.com/wrappid/wrappid-module/issues/172)
+* **core:** :memo: update descriptions and render codes ([2b503b7](https://https//github.com/wrappid/wrappid-module/commit/2b503b70c4a9ce8e19624b071bb7af6afeafc5c4)), closes [#172](https://https//github.com/wrappid/wrappid-module/issues/172)
+
 ### [0.0.27](https://https//github.com/wrappid/wrappid-module/compare/v0.0.26...v0.0.27) (2024-08-14)
 
 ### [0.0.26](https://https//github.com/wrappid/wrappid-module/compare/v0.0.25...v0.0.26) (2024-08-13)

@@ -1,4 +1,4 @@
-import { CoreClasses, CoreH2, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
+import { CoreBox, CoreClasses, CoreH2, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
 
 import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
@@ -18,42 +18,46 @@ export default function CoreH2Docs() {
       <CodeSample
         title={"CoreH2 Usage"}
         description={"CoreH2 is used by developers."}
-        code={`
-          <CoreH2>h2.Heading</CoreH2>
-        `}
-        renderElement={<CoreH2>h2.Heading</CoreH2>}
-      />
-
-      <CodeSample
-        title={"CoreH2 Usage"}
-        description={"CoreH2 is used by developers."}
-        code={`
-          <CoreH2>h2.Heading</CoreH2>
-        `}
+        code={"<CoreH2>h2.Heading</CoreH2>"}
         renderElement={<CoreH2>h2.Heading</CoreH2>}
       />
 
       <CodeSample
         title={"Alignment"}
         description={"CoreH2 different alignment"}
-        code={`
-          <CoreH2 align="left">h2.Heading</CoreH2>
-          <CoreH2 align="center">h2.Heading</CoreH2>
-          <CoreH2 align="right">h2.Heading</CoreH2>
-          <CoreH2 align="justify">h2.Heading</CoreH2>
-          <CoreH2 align="ingerit">h2.Heading</CoreH2>
-        `}
+        code={`<CoreBox styleClasses={[
+  CoreClasses.WIDTH.VW_100,
+  CoreClasses.BORDER.BORDER,
+  CoreClasses.BORDER.BORDER_GREY_400,
+  CoreClasses.BORDER.BORDER_ROUNDED_1,
+  CoreClasses.PADDING.P2
+]}>
+  <CoreH2 align="left">h2.Heading</CoreH2>
+  <CoreH2 align="center">h2.Heading</CoreH2>
+  <CoreH2 align="right">h2.Heading</CoreH2>
+  <CoreH2 align="justify">h2.Heading</CoreH2>
+  <CoreH2 align="ingerit">h2.Heading</CoreH2>
+</CoreBox>`}
         renderElement={
           <>
-            <CoreH2 align="left">h2.Heading</CoreH2>
+            <CoreBox styleClasses={[
+              CoreClasses.WIDTH.VW_100,
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_GREY_400,
+              CoreClasses.BORDER.BORDER_ROUNDED_1,
+              CoreClasses.PADDING.P2
+            ]}>
 
-            <CoreH2 align="center">h2.Heading</CoreH2>
+              <CoreH2 align="left">h2.Heading</CoreH2>
 
-            <CoreH2 align="right">h2.Heading</CoreH2>
+              <CoreH2 align="center">h2.Heading</CoreH2>
 
-            <CoreH2 align="justify">h2.Heading</CoreH2>
+              <CoreH2 align="right">h2.Heading</CoreH2>
 
-            <CoreH2 align="ingerit">h2.Heading</CoreH2>
+              <CoreH2 align="justify">h2.Heading</CoreH2>
+
+              <CoreH2 align="ingerit">h2.Heading</CoreH2>
+            </CoreBox>
           </>
         }
       />
@@ -61,13 +65,15 @@ export default function CoreH2Docs() {
       <CodeSample
         title={"Gutter Bottom"}
         description={"The CoreH2 will have a bottom margin"}
-        code={`
-          <CoreH2 gutterBottom={true}>h2.Heading</CoreH2>
-          
-        `}
+        code={`<CoreBox styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1, CoreClasses.PADDING.P2]}>
+  <CoreH2 gutterBottom={true}>h2.Heading</CoreH2>
+</CoreBox>`}
         renderElement={
           <>
-            <CoreH2 gutterBottom={true}>h2.Heading</CoreH2>
+            <CoreBox styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1, CoreClasses.PADDING.P2]}>
+              <CoreH2 gutterBottom={true}>h2.Heading</CoreH2>
+            </CoreBox>
+
           </>
         }
       />
@@ -75,16 +81,30 @@ export default function CoreH2Docs() {
       <CodeSample
         title={"No wrap"}
         description={"This is CoreH2 with nowrap"}
-        code={`
-        <CoreH2 noWrap={true}>h2.Heading</CoreH2>
-        <CoreH2 noWrap={false}>h2.Heading</CoreH2>
-          
-        `}
+        code={`<CoreBox styleClasses={[
+  CoreClasses.BORDER.BORDER,
+  CoreClasses.BORDER.BORDER_GREY_400,
+  CoreClasses.BORDER.BORDER_ROUNDED_1,
+  CoreClasses.PADDING.P2,
+  CoreClasses.WIDTH.VW_25
+  ]}>   
+  <CoreH2 noWrap={true}>h2.Heading with no wrap true</CoreH2>
+
+  <CoreH2 noWrap={false}>h2.Heading</CoreH2>
+</CoreBox>`}
         renderElement={
           <>
-            <CoreH2 noWrap={true}>h2.Heading</CoreH2>
+            <CoreBox styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_GREY_400,
+              CoreClasses.BORDER.BORDER_ROUNDED_1,
+              CoreClasses.PADDING.P2,
+              CoreClasses.WIDTH.VW_25
+            ]}>   
+              <CoreH2 noWrap={true}>h2.Heading with no wrap true</CoreH2>
 
-            <CoreH2 noWrap={false}>h2.Heading</CoreH2>
+              <CoreH2 noWrap={false}>h2.Heading</CoreH2>
+            </CoreBox>
           </>
         }
       />
@@ -92,16 +112,30 @@ export default function CoreH2Docs() {
       <CodeSample
         title={"Paragraph"}
         description={"This is CoreH2 with paragraph"}
-        code={`
-        <CoreH2 paragraph={true}>h2.Heading</CoreH2>
-        <CoreH2 paragraph={false}>h2.Heading</CoreH2>
-          
-        `}
+        code={`<CoreBox styleClasses={[
+  CoreClasses.BORDER.BORDER,
+  CoreClasses.BORDER.BORDER_GREY_400,
+  CoreClasses.BORDER.BORDER_ROUNDED_1,
+  CoreClasses.PADDING.P2,
+  CoreClasses.WIDTH.VW_25
+  ]}>
+  <CoreH2 paragraph={true}>h2.Heading</CoreH2>
+
+  <CoreH2 paragraph={false}>h2.Heading</CoreH2>
+</CoreBox>`}
         renderElement={
           <>
-            <CoreH2 paragraph={true}>h2.Heading</CoreH2>
+            <CoreBox styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_GREY_400,
+              CoreClasses.BORDER.BORDER_ROUNDED_1,
+              CoreClasses.PADDING.P2,
+              CoreClasses.WIDTH.VW_25
+            ]}>
+              <CoreH2 paragraph={true}>h2.Heading</CoreH2>
 
-            <CoreH2 paragraph={false}>h2.Heading</CoreH2>
+              <CoreH2 paragraph={false}>h2.Heading</CoreH2>
+            </CoreBox>
           </>
         }
       />
