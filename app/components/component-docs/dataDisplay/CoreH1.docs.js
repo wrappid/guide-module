@@ -1,5 +1,8 @@
-import { CoreClasses, CoreH1, CoreH4, CoreTypographyBody1 } from "@wrappid/core";
+import {
+  CoreBox, CoreClasses, CoreH1, CoreH4, CoreStack, CoreTypographyBody1 
+} from "@wrappid/core";
 
+import CodeBlock from "../../CodeBlock";
 import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
@@ -18,33 +21,53 @@ export default function CoreH1Docs() {
       <CodeSample
         title={"CoreH1 Usage"}
         description={"CoreH1 is used by developers."}
-        code={`
-          <CoreH1>h1.Heading</CoreH1>
-        `}
+        code={"<CoreH1>h1.Heading</CoreH1>"}
         renderElement={<CoreH1>h1.Heading</CoreH1>}
       />
 
       <CodeSample
         title={"Alignment"}
         description={"CoreH1 different alignment"}
-        code={`
-          <CoreH1 align="left">h1.Heading</CoreH1>
-          <CoreH1 align="center">h1.Heading</CoreH1>
-          <CoreH1 align="right">h1.Heading</CoreH1>
-          <CoreH1 align="justify">h1.Heading</CoreH1>
-          <CoreH1 align="ingerit">h1.Heading</CoreH1>
-        `}
+        code={`<CoreBox styleClasses={[
+  CoreClasses.WIDTH.VW_100,
+  CoreClasses.BORDER.BORDER,
+  CoreClasses.BORDER.BORDER_GREY_400,
+  CoreClasses.BORDER.BORDER_ROUNDED_1,
+  CoreClasses.PADDING.P2
+  ]}>
+  <CoreStack direction="column">
+    <CoreH1 align="left">h1.Heading</CoreH1>
+
+    <CoreH1 align="center">h1.Heading</CoreH1>
+
+    <CoreH1 align="right">h1.Heading</CoreH1>
+
+    <CoreH1 align="justify">h1.Heading</CoreH1>
+
+    <CoreH1 align="inherit">h1.Heading</CoreH1>
+  </CoreStack>
+</CoreBox>`}
         renderElement={
           <>
-            <CoreH1 align="left">h1.Heading</CoreH1>
+            <CoreBox styleClasses={[
+              CoreClasses.WIDTH.VW_100,
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_GREY_400,
+              CoreClasses.BORDER.BORDER_ROUNDED_1,
+              CoreClasses.PADDING.P2
+            ]}>
+              <CoreStack direction="column">
+                <CoreH1 align="left">h1.Heading</CoreH1>
 
-            <CoreH1 align="center">h1.Heading</CoreH1>
+                <CoreH1 align="center">h1.Heading</CoreH1>
 
-            <CoreH1 align="right">h1.Heading</CoreH1>
+                <CoreH1 align="right">h1.Heading</CoreH1>
 
-            <CoreH1 align="justify">h1.Heading</CoreH1>
+                <CoreH1 align="justify">h1.Heading</CoreH1>
 
-            <CoreH1 align="ingerit">h1.Heading</CoreH1>
+                <CoreH1 align="inherit">h1.Heading</CoreH1>
+              </CoreStack>
+            </CoreBox>
           </>
         }
       />
@@ -52,30 +75,47 @@ export default function CoreH1Docs() {
       <CodeSample
         title={"Gutter Bottom"}
         description={"The CoreH1 will have a bottom margin"}
-        code={`
-          <CoreH1 gutterBottom={true}>h1.Heading</CoreH1>
-          
-        `}
+        code={`<CoreBox styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1, CoreClasses.PADDING.P2]}>
+  <CoreH1 gutterBottom={true}>h1.Heading</CoreH1>
+</CoreBox>`}
         renderElement={
           <>
-            <CoreH1 gutterBottom={true}>h1.Heading</CoreH1>
+            <CoreBox styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1, CoreClasses.PADDING.P2]}>
+              <CoreH1 gutterBottom={true}>h1.Heading</CoreH1>
+            </CoreBox>
           </>
         }
       />
 
       <CodeSample
         title={"No wrap"}
-        description={"This is CoreH1 with nowrap"}
-        code={`
-        <CoreH1 noWrap={true}>h1.Heading</CoreH1>
-        <CoreH1 noWrap={false}>h1.Heading</CoreH1>
-          
-        `}
+        description={<>
+        This is CoreH1 with <CodeBlock>noWrap</CodeBlock>.
+        </>}
+        code={`<CoreBox styleClasses={[
+  CoreClasses.BORDER.BORDER,
+  CoreClasses.BORDER.BORDER_GREY_400,
+  CoreClasses.BORDER.BORDER_ROUNDED_1,
+  CoreClasses.PADDING.P2,
+  CoreClasses.WIDTH.VW_25
+  ]}>              
+  <CoreH1 noWrap={true}>h1.Heading with no wrap true</CoreH1>
+
+  <CoreH1 noWrap={false}>h1.Heading</CoreH1>
+</CoreBox>`}
         renderElement={
           <>
-            <CoreH1 noWrap={true}>h1.Heading</CoreH1>
+            <CoreBox styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_GREY_400,
+              CoreClasses.BORDER.BORDER_ROUNDED_1,
+              CoreClasses.PADDING.P2,
+              CoreClasses.WIDTH.VW_25
+            ]}>              
+              <CoreH1 noWrap={true}>h1.Heading with no wrap true</CoreH1>
 
-            <CoreH1 noWrap={false}>h1.Heading</CoreH1>
+              <CoreH1 noWrap={false}>h1.Heading</CoreH1>
+            </CoreBox>
           </>
         }
       />
@@ -83,16 +123,30 @@ export default function CoreH1Docs() {
       <CodeSample
         title={"Paragraph"}
         description={"This is CoreH1 with paragraph"}
-        code={`
-        <CoreH1 paragraph={true}>h1.Heading</CoreH1>
-        <CoreH1 paragraph={false}>h1.Heading</CoreH1>
-          
-        `}
+        code={`<CoreBox styleClasses={[
+  CoreClasses.WIDTH.VW_100,
+  CoreClasses.BORDER.BORDER,
+  CoreClasses.BORDER.BORDER_GREY_400,
+  CoreClasses.BORDER.BORDER_ROUNDED_1,
+  CoreClasses.PADDING.P2
+  ]}>
+  <CoreH1 paragraph={true}>h1.Heading</CoreH1>
+
+  <CoreH1 paragraph={false}>h1.Heading</CoreH1>
+</CoreBox>`}
         renderElement={
           <>
-            <CoreH1 paragraph={true}>h1.Heading</CoreH1>
+            <CoreBox styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              CoreClasses.BORDER.BORDER_GREY_400,
+              CoreClasses.BORDER.BORDER_ROUNDED_1,
+              CoreClasses.PADDING.P2,
+              CoreClasses.WIDTH.VW_25
+            ]}>
+              <CoreH1 paragraph={true}>h1.Heading</CoreH1>
 
-            <CoreH1 paragraph={false}>h1.Heading</CoreH1>
+              <CoreH1 paragraph={false}>h1.Heading</CoreH1>
+            </CoreBox>
           </>
         }
       />
