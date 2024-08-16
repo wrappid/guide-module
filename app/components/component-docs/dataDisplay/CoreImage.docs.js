@@ -16,12 +16,10 @@ export default function CoreImageDocs() {
 
       <CodeSample
         title={"Simple CoreImage "}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={`
-        <CoreImage width={200} height={200}
-        src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg">
-        </CoreImage>
-        `}
+        description={"Below is a sample of how to use the CoreImage component."}
+        code={`<CoreImage width={200} height={200}
+src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg">
+</CoreImage>`}
         renderElement={<>
           <CoreImage
             width={200}
