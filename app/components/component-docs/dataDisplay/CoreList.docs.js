@@ -682,7 +682,15 @@ export default function CoreListDocs() {
       <>
         <CodeSample
           title={"List_Style"}
-          description={"List_Style helps you to directly implement types of list style in your list. "}
+          description={<>
+            <CoreTypographyBody1>
+              List_Style helps you to directly implement types of list style in your list.
+            </CoreTypographyBody1>
+
+            <CoreTypographyBody1>
+              Ensure to use variant={`${"HTML"}`} in the code below, as listType will not function properly without it.
+            </CoreTypographyBody1>
+          </>}
           code={`
         <CoreList varient="HTML" listType="${listStyleItem}">
           <CoreListItem>
