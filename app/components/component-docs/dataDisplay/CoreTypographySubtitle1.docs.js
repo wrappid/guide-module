@@ -8,6 +8,7 @@ import {
 } from "@wrappid/core";
   
 import CodeBlock from "../../CodeBlock";
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -20,6 +21,8 @@ export default function CoreTypographySubtitle1Docs() {
         The CoreTypographySubtitle1 component is used to display subtitle.
 
       </CoreTypographyBody1>
+
+      <CodeImport component="CoreTypographySubtitle1" />
 
       <CodeSample
         title={"CoreTypographySubtitle1 Usage"}

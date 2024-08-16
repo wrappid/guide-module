@@ -7,9 +7,9 @@ import {
   CoreTypographyCaption
 } from "@wrappid/core";
   
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
-
 export default function CoreTypographyCaptionDocs() {
   return (
     <>
@@ -19,6 +19,8 @@ export default function CoreTypographyCaptionDocs() {
         The CoreTypographyCaption component is used to display caption text.
 
       </CoreTypographyBody1>
+
+      <CodeImport name="CoreTypographyCaption" />
 
       <CodeSample
         title={"CoreTypographyCaption Usage"}

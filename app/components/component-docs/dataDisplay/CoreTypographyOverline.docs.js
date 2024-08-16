@@ -8,6 +8,7 @@ import {
 } from "@wrappid/core";
   
 import CodeBlock from "../../CodeBlock";
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -20,6 +21,8 @@ export default function CoreTypographyOverlineDocs() {
         The CoreTypographyOverline component is used to display overline text.
 
       </CoreTypographyBody1>
+
+      <CodeImport name="CoreTypographyOverline" />
 
       <CodeSample
         title={"CoreTypographyOverline Usage"}

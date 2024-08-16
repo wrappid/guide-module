@@ -8,6 +8,7 @@ import {
 } from "@wrappid/core";
   
 import CodeBlock from "../../CodeBlock";
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 export default function CoreTypographyButtonDocs() {
@@ -19,6 +20,8 @@ export default function CoreTypographyButtonDocs() {
         The CoreTypographyButton applies the theme typography styles of button
       </CoreTypographyBody1>
   
+      <CodeImport name="CoreTypographyButton" />
+
       <CodeSample
         title={"CoreTypographyButton Usage"}
         description={"Below is a sample usage."}

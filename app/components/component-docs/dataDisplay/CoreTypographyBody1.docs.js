@@ -7,6 +7,7 @@ import {
 } from "@wrappid/core";
   
 import CodeBlock from "../../CodeBlock";
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -19,6 +20,8 @@ export default function CoreTypographyBody1Docs() {
         The CoreTypographyBody1 component is used to display body text.
 
       </CoreTypographyBody1>
+
+      <CodeImport name="CoreTypographyBody1" />
 
       <CodeSample
         title={"CoreTypographyBody1 Usage"}

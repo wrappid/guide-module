@@ -6,8 +6,9 @@ import {
   CoreTypographyBody1,
   CoreTypographyBody2
 } from "@wrappid/core";
-  
+
 import CodeBlock from "../../CodeBlock";
+import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
@@ -20,6 +21,8 @@ export default function CoreTypographyBody2Docs() {
         The CoreTypographyBody2 component is used to display body text, with a smaller font size than CoreTypographyBody1.
 
       </CoreTypographyBody1>
+
+      <CodeImport name="CoreTypographyBody2" />
 
       <CodeSample
         title={"CoreTypographyBody2 Usage"}
