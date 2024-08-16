@@ -1,3 +1,4 @@
+/* eslint-disable etc/no-commented-out-code */
 import * as React from "react";
 
 import {
@@ -9,15 +10,16 @@ import {
   CoreIconButton,
   CoreIcon,
   CoreBox,
-  CoreGrid,
   CoreButton
 } from "@wrappid/core";
 
+import CodeBlock from "../../CodeBlock";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreTooltipDocs() {
   const [open, setOpen] = React.useState(false);
+  const [data, setData] = React.useState(false);
 
   const handleClose = () => {
     setOpen(false);
@@ -42,6 +44,14 @@ export default function CoreTooltipDocs() {
     }
   };
 
+  const handleTooltipClose = () => {
+    setData(false);
+  };
+
+  const handleTooltipOpen = () => {
+    setData(true);
+  };
+
   return (
     <>
       <CoreH4>CoreTooltip</CoreH4>
@@ -58,176 +68,147 @@ export default function CoreTooltipDocs() {
 
       <CodeSample
         title={"Basic tooltip"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={` <CoreTooltip title="Delete">
+        description={""}
+        code={`<CoreTooltip title="Delete">
   <CoreIconButton aria-label="delete">
-    <CoreIcon>delete</CoreIcon>
+    <CoreIcon fontSize="medium">delete</CoreIcon>
   </CoreIconButton>
 </CoreTooltip>`}
         renderElement={<>
           <CoreTooltip title="Delete">
             <CoreIconButton aria-label="delete">
-              <CoreIcon>delete</CoreIcon>
+              <CoreIcon fontSize="medium">delete</CoreIcon>
             </CoreIconButton>
           </CoreTooltip>
         </>}
       />
 
       <CodeSample
-        title={"Positioned tooltips (NOT_WORKING)"}
-        description={"The CoreTooltip has 12 placement choices. They don't have directional arrows; instead, they rely on motion emanating from the source to convey direction."}
-        code={`<CoreBox styleClasses = {[CoreClasses.WIDTH.W_25]}>
-  <CoreGrid container justifyContent="center">
-    <CoreGrid item>
-      <CoreTooltip title="Add" placement="top-start">
-        <CoreButton>top-start</CoreButton>
-      </CoreTooltip>
+        title={"Positioned tooltips"}
+        description={
+          <>
+          The <CodeBlock>CoreTooltip</CodeBlock> has 12 placement choices. They don&#39;t have directional arrows; instead, they rely on motion emanating from the source to convey direction.
+          </>
+        }
+        code={`<CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.WIDTH.W_100]}>
+  <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
+    <CoreTooltip title="Add" placement="top-start" >
+      <CoreButton>top-start</CoreButton>
+    </CoreTooltip>
 
-      <CoreTooltip title="Add" placement="top">
-        <CoreButton>top</CoreButton>
-      </CoreTooltip>
+    <CoreTooltip title="Add" placement="top" >
+      <CoreButton>top</CoreButton>
+    </CoreTooltip>
 
-      <CoreTooltip title="Add" placement="top-end">
-        <CoreButton>top-end</CoreButton>
-      </CoreTooltip>
-    </CoreGrid>
-  </CoreGrid>
+    <CoreTooltip title="Add" placement="top-end" >
+      <CoreButton>top-end</CoreButton>
+    </CoreTooltip>
+  </CoreBox>
 
-  <CoreGrid container justifyContent="center">
-    <CoreGrid item xs={6}>
-      <CoreTooltip title="Add" placement="left-start">
-        <CoreButton>left-start</CoreButton>
-      </CoreTooltip>
+  <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN, CoreClasses.DISPLAY.FLEX, CoreClasses.MARGIN.M1]}>
+    <CoreTooltip title="Add" placement="left-start" >
+      <CoreButton>left-start</CoreButton>
+    </CoreTooltip>
 
+    <CoreTooltip title="Add" placement="right-start" >
+      <CoreButton>right-startt</CoreButton>
+    </CoreTooltip>
+  </CoreBox>
 
-      <CoreTooltip title="Add" placement="left">
-        <CoreButton>left</CoreButton>
-      </CoreTooltip>
+  <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN, CoreClasses.DISPLAY.FLEX, CoreClasses.MARGIN.M1]}>
+    <CoreTooltip title="Add" placement="left" >
+      <CoreButton>left</CoreButton>
+    </CoreTooltip> 
 
+    <CoreTooltip title="Add" placement="right" >
+      <CoreButton>right</CoreButton>
+    </CoreTooltip>
+  </CoreBox>
 
-      <CoreTooltip title="Add" placement="left-end">
-        <CoreButton>left-end</CoreButton>
-      </CoreTooltip>
-    </CoreGrid>
+  <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN, CoreClasses.DISPLAY.FLEX, CoreClasses.MARGIN.M1]}>
+    <CoreTooltip title="Add" placement="left-end" >
+      <CoreButton>left-end</CoreButton>
+    </CoreTooltip>
 
-    <CoreGrid
-      item
-      container
-      xs={6}
-      alignItems="flex-end"
-      direction="column">
-      <CoreGrid item>
-        <CoreTooltip title="Add" placement="right-start">
-          <CoreButton>right-start</CoreButton>
-        </CoreTooltip>
-      </CoreGrid>
+    <CoreTooltip title="Add" placement="right-end" >
+      <CoreButton>right-end</CoreButton>
+    </CoreTooltip>
+  </CoreBox>
 
-      <CoreGrid item>
-        <CoreTooltip title="Add" placement="right">
-          <CoreButton>right</CoreButton>
-        </CoreTooltip>
-      </CoreGrid>
+  <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
+    <CoreTooltip title="Add" placement="bottom-start" >
+      <CoreButton>bottom-start</CoreButton>
+    </CoreTooltip>
 
-      <CoreGrid item>
-        <CoreTooltip title="Add" placement="right-end">
-          <CoreButton>right-end</CoreButton>
-        </CoreTooltip>
-      </CoreGrid>
-    </CoreGrid>
-  </CoreGrid>
+    <CoreTooltip title="Add" placement="bottom" >
+      <CoreButton>bottom</CoreButton>
+    </CoreTooltip>
 
-  <CoreGrid container justifyContent="center">
-    <CoreGrid item>
-      <CoreTooltip title="Add" placement="bottom-start">
-        <CoreButton>bottom-start</CoreButton>
-      </CoreTooltip>
-
-      <CoreTooltip title="Add" placement="bottom">
-        <CoreButton>bottom</CoreButton>
-      </CoreTooltip>
-
-      <CoreTooltip title="Add" placement="bottom-end">
-        <CoreButton>bottom-end</CoreButton>
-      </CoreTooltip>
-    </CoreGrid>
-  </CoreGrid>
+    <CoreTooltip title="Add" placement="bottom-end" >
+      <CoreButton>bottom-end</CoreButton>
+    </CoreTooltip>
+  </CoreBox>
 </CoreBox>`}
         renderElement={<>
-          <CoreBox styleClasses = {[CoreClasses.WIDTH.W_25]}>
-            <CoreGrid container justifyContent="center">
-              <CoreGrid item>
-                <CoreTooltip title="Add" placement="top-start">
-                  <CoreButton>top-start</CoreButton>
-                </CoreTooltip>
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.WIDTH.W_100]}>
+            <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
+              <CoreTooltip title="Add" placement="top-start" >
+                <CoreButton>top-start</CoreButton>
+              </CoreTooltip>
 
-                <CoreTooltip title="Add" placement="top">
-                  <CoreButton>top</CoreButton>
-                </CoreTooltip>
+              <CoreTooltip title="Add" placement="top" >
+                <CoreButton>top</CoreButton>
+              </CoreTooltip>
 
-                <CoreTooltip title="Add" placement="top-end">
-                  <CoreButton>top-end</CoreButton>
-                </CoreTooltip>
-              </CoreGrid>
-            </CoreGrid>
+              <CoreTooltip title="Add" placement="top-end" >
+                <CoreButton>top-end</CoreButton>
+              </CoreTooltip>
+            </CoreBox>
 
-            <CoreGrid container justifyContent="center">
-              <CoreGrid item xs={6}>
-                <CoreTooltip title="Add" placement="left-start">
-                  <CoreButton>left-start</CoreButton>
-                </CoreTooltip>
+            <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN, CoreClasses.DISPLAY.FLEX, CoreClasses.MARGIN.M1]}>
+              <CoreTooltip title="Add" placement="left-start" >
+                <CoreButton>left-start</CoreButton>
+              </CoreTooltip>
 
-                <CoreTooltip title="Add" placement="left">
-                  <CoreButton>left</CoreButton>
-                </CoreTooltip>
+              <CoreTooltip title="Add" placement="right-start" >
+                <CoreButton>right-startt</CoreButton>
+              </CoreTooltip>
+            </CoreBox>
 
-                <CoreTooltip title="Add" placement="left-end">
-                  <CoreButton>left-end</CoreButton>
-                </CoreTooltip>
-              </CoreGrid>
+            <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN, CoreClasses.DISPLAY.FLEX, CoreClasses.MARGIN.M1]}>
+              <CoreTooltip title="Add" placement="left" >
+                <CoreButton>left</CoreButton>
+              </CoreTooltip> 
 
-              <CoreGrid
-                item
-                container
-                xs={6}
-                alignItems="flex-end"
-                direction="column">
-                <CoreGrid item>
-                  <CoreTooltip title="Add" placement="right-start">
-                    <CoreButton>right-start</CoreButton>
-                  </CoreTooltip>
-                </CoreGrid>
+              <CoreTooltip title="Add" placement="right" >
+                <CoreButton>right</CoreButton>
+              </CoreTooltip>
+            </CoreBox>
 
-                <CoreGrid item>
-                  <CoreTooltip title="Add" placement="right">
-                    <CoreButton>right</CoreButton>
-                  </CoreTooltip>
-                </CoreGrid>
+            <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN, CoreClasses.DISPLAY.FLEX, CoreClasses.MARGIN.M1]}>
+              <CoreTooltip title="Add" placement="left-end" >
+                <CoreButton>left-end</CoreButton>
+              </CoreTooltip>
 
-                <CoreGrid item>
-                  <CoreTooltip title="Add" placement="right-end">
-                    <CoreButton>right-end</CoreButton>
-                  </CoreTooltip>
-                </CoreGrid>
-              </CoreGrid>
-            </CoreGrid>
+              <CoreTooltip title="Add" placement="right-end" >
+                <CoreButton>right-end</CoreButton>
+              </CoreTooltip>
+            </CoreBox>
 
-            <CoreGrid container justifyContent="center">
-              <CoreGrid item>
-                <CoreTooltip title="Add" placement="bottom-start">
-                  <CoreButton>bottom-start</CoreButton>
-                </CoreTooltip>
+            <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
+              <CoreTooltip title="Add" placement="bottom-start" >
+                <CoreButton>bottom-start</CoreButton>
+              </CoreTooltip>
 
-                <CoreTooltip title="Add" placement="bottom">
-                  <CoreButton>bottom</CoreButton>
-                </CoreTooltip>
+              <CoreTooltip title="Add" placement="bottom" >
+                <CoreButton>bottom</CoreButton>
+              </CoreTooltip>
 
-                <CoreTooltip title="Add" placement="bottom-end">
-                  <CoreButton>bottom-end</CoreButton>
-                </CoreTooltip>
-              </CoreGrid>
-            </CoreGrid>
+              <CoreTooltip title="Add" placement="bottom-end" >
+                <CoreButton>bottom-end</CoreButton>
+              </CoreTooltip>
+            </CoreBox>
           </CoreBox>
-        
         </>}
       />
 
@@ -239,16 +220,67 @@ export default function CoreTooltipDocs() {
       />
 
       <CodeSample
-        title={"Arrow tooltips (NOT_WORKING)"}
-        description={"You can use the arrow prop to give your tooltip an arrow indicating which element it refers to."}
-        code={` <CoreTooltip title="Add" arrow>
+        title={"Arrow tooltips"}
+        description={<>
+        You can use the <CodeBlock>arrow</CodeBlock> prop to give your tooltip an arrow indicating which element it refers to.
+        </>}
+        code={`<CoreTooltip title="Add" arrow>
   <CoreButton>Arrow</CoreButton>
-</CoreTooltip>
-        `}
+</CoreTooltip>`}
         renderElement={<>
           <CoreTooltip title="Add" arrow>
             <CoreButton>Arrow</CoreButton>
           </CoreTooltip>
+        </>}
+      />
+
+      <CodeSample
+        title={"Distance from anchor"}
+        description={<>
+        To adjust the distance between the tooltip and its anchor, you can use the <CodeBlock>slotProps</CodeBlock> prop to modify the offset of the popper.
+        </>}
+        code={`<CoreTooltip
+  title="Add"
+  slotProps={{
+    popper: {
+      modifiers: [
+        {
+          name   : "offset",
+          options: { offset: [0, -14] },
+        }
+      ]
+    }
+  }}
+  > 
+  <CoreButton>Arrow</CoreButton>
+</CoreTooltip>`}
+        renderElement={<>
+          <CoreTooltip
+            title="Add"
+            slotProps={{
+              popper: {
+                modifiers: [
+                  {
+                    name   : "offset",
+                    options: { offset: [0, -14] },
+                  }
+                ]
+              }
+            }}
+          > 
+            <CoreButton>Arrow</CoreButton>
+          </CoreTooltip>
+        </>}
+      />
+
+      <CodeSample
+        title={" "}
+        description={<>
+       Alternatively, you can use the slotProps prop to customize the margin of the popper.
+       (NOT WORKING)
+        </>}
+        code={""}
+        renderElement={<>
         </>}
       />
 
@@ -261,51 +293,67 @@ export default function CoreTooltipDocs() {
 
       <CodeSample
         title={"Triggers (NOT_WORKING)"}
-        description={"You can define the types of events that cause a tooltip to show.\
-        The touch action requires a long press due to the enterTouchDelay prop being set to 700ms by default."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
+        description={
+          <>
+          You can define the types of events that cause a tooltip to show.<br/><br/>
+
+          The touch action requires a long press due to the <CodeBlock>enterTouchDelay</CodeBlock> prop 
+
+          being set to <CodeBlock>700</CodeBlock>ms by default.
+          </>
+        }
+        code={`<CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} >
+  <CoreTooltip disableFocusListener title="Add">
+    <CoreButton>Hover or touch</CoreButton>
+  </CoreTooltip>
+
+  <CoreTooltip disableHoverListener title="Add">
+    <CoreButton>Focus or touch</CoreButton>
+  </CoreTooltip>
+
+  <CoreTooltip disableFocusListener disableTouchListener title="Add">
+    <CoreButton>Hover</CoreButton>
+  </CoreTooltip>
+
+  <CoreTooltip
+    PopperProps={{ disablePortal: true }}
+    onClose={handleTooltipClose}
+    open={data}
+    disableFocusListener
+    disableHoverListener
+    disableTouchListener
+    title="Add"
+  >
+    <CoreButton onClick={handleTooltipOpen}>Click</CoreButton>
+  </CoreTooltip>
+</CoreBox>`}
         renderElement={<>
-        
-          {/* eslint-disable-next-line etc/no-commented-out-code */}
-          {/* <div>
-            <CoreGrid container justifyContent="center">
-              <CoreGrid item>
-                <CoreTooltip disableFocusListener title="Add">
-                  <CoreButton>Hover or touch</CoreButton>
-                </CoreTooltip>
-              </CoreGrid>
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} >
 
-              <CoreGrid item>
-                <CoreTooltip disableHoverListener title="Add">
-                  <CoreButton>Focus or touch</CoreButton>
-                </CoreTooltip>
-              </CoreGrid>
+            <CoreTooltip disableFocusListener title="Add">
+              <CoreButton>Hover or touch</CoreButton>
+            </CoreTooltip>
 
-              <CoreGrid item>
-                <CoreTooltip disableFocusListener disableTouchListener title="Add">
-                  <CoreButton>Hover</CoreButton>
-                </CoreTooltip>
-              </CoreGrid>
+            <CoreTooltip disableHoverListener title="Add">
+              <CoreButton>Focus or touch</CoreButton>
+            </CoreTooltip>
 
-              <CoreGrid item>
-                <CoreClickAwayListener onClickAway={handleTooltipClose}>
-                  <div>
-                    <CoreTooltip
-                      PopperProps={{ disablePortal: true }}
-                      onClose={handleTooltipClose}
-                      open={open}
-                      disableFocusListener
-                      disableHoverListener
-                      disableTouchListener
-                      title="Add"
-                    >
-                      <CoreButton onClick={handleTooltipOpen}>Click</CoreButton>
-                    </CoreTooltip>
-                  </div>
-                </CoreClickAwayListener>
-              </CoreGrid>
-            </CoreGrid>
-          </div> */}
+            <CoreTooltip disableFocusListener disableTouchListener title="Add">
+              <CoreButton>Hover</CoreButton>
+            </CoreTooltip>
+          
+            <CoreTooltip
+              PopperProps={{ disablePortal: true }}
+              onClose={handleTooltipClose}
+              open={data}
+              disableFocusListener
+              disableHoverListener
+              disableTouchListener
+              title="Add"
+            >
+              <CoreButton onClick={handleTooltipOpen}>Click</CoreButton>
+            </CoreTooltip>
+          </CoreBox>
         </>}
       />
 
@@ -326,7 +374,7 @@ export default function CoreTooltipDocs() {
 
       <CodeSample
         title={"Variable width (NOT_WORKING)"}
-        description={"The Tooltip wraps long text by default to make it readable."}
+        description={"The CoreTooltip wraps long text by default to make it readable."}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
         renderElement={<></>}
       />
