@@ -4,25 +4,26 @@ import {
   CoreTypographyBody1,
   CoreList,
   CoreListItem,
-  CoreListItemAvatar,
   CoreListItemText,
   CoreDivider,
-  CoreAvatar,
   CoreIcon,
   CoreBox,
-  CoreGrid,
-  CoreButton,
   CoreStack,
   CoreChip,
   CoreTypographyBody2,
   CoreH6
 } from "@wrappid/core";
-  
+
+import CodeBlock from "../../CodeBlock";
 import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
   
 export default function CoreDividerDocs() {
+  const content = (
+    <CoreTypographyBody1>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}</CoreTypographyBody1>
+  );
+
   return (
     <>
       <CoreH4
@@ -32,233 +33,33 @@ export default function CoreDividerDocs() {
       </CoreH4>
   
       <CoreTypographyBody1>
-        A divider is a thin line that groups content in lists and layouts.
+      The CoreDivider component provides a thin, unobtrusive line for grouping elements to reinforce visual hierarchy.
       </CoreTypographyBody1>
 
       <CodeImport name="CoreDivider" />
 
       <CodeSample 
-        title="List dividers"
-        description="The divider renders as an <hr> by default. You can save rendering this DOM element by using the divider prop on the ListItem component."
-        code={`<CoreList component="nav" aria-label="mailbox folders">
-  <CoreListItem button>
-    <CoreListItemText primary="Inbox" />
-  </CoreListItem>
-  <CoreDivider />
-  <CoreListItem button divider>
-    <CoreListItemText primary="Drafts" />
-  </CoreListItem>
-  <CoreListItem button>
-    <CoreListItemText primary="Trash" />
-  </CoreListItem>
-  <CoreDivider light />
-  <CoreListItem button>
-    <CoreListItemText primary="Spam" />
-  </CoreListItem>
-</CoreList>
-        `}
-        renderElement={
-          <CoreList component="nav" aria-label="mailbox folders">
-            <CoreListItem button>
-              <CoreListItemText primary="Inbox" />
-            </CoreListItem>
-
-            <CoreDivider />
-            
-            <CoreListItem button divider>
-              <CoreListItemText primary="Drafts" />
-            </CoreListItem>
-            
-            <CoreListItem button>
-              <CoreListItemText primary="Trash" />
-            </CoreListItem>
-            
-            <CoreDivider light />
-            
-            <CoreListItem button>
-              <CoreListItemText primary="Spam" />
-            </CoreListItem>
-          </CoreList>
+        title="Introduction"
+        description={
+          <>
+          The Material UI Divider component renders as a dark gray <CodeBlock>{"<hr>"}</CodeBlock> by default, and features several useful props for quick style adjustments.
+          </>
         }
-      />
-
-      <CodeSample 
-        title="Inset dividers"
-        description=""
-        code={`
-<CoreList>
-  <CoreListItem>
-    <CoreListItemAvatar>
-      <CoreAvatar>
-        <CoreIcon icon="image" />
-      </CoreAvatar>
-    </CoreListItemAvatar>
-    <CoreListItemText primary="Photos" secondary="Jan 9, 2014" />
-  </CoreListItem>
-  <CoreDivider variant="inset" component="li" />
-  <CoreListItem>
-    <CoreListItemAvatar>
-      <CoreAvatar>
-        <CoreIcon icon="work" />
-      </CoreAvatar>
-    </CoreListItemAvatar>
-    <CoreListItemText primary="Work" secondary="Jan 7, 2014" />
-  </CoreListItem>
-  <CoreDivider variant="inset" component="li" />
-  <CoreListItem>
-    <CoreListItemAvatar>
-      <CoreAvatar>
-        <BeachAccessIcon />
-      </CoreAvatar>
-    </CoreListItemAvatar>
-    <CoreListItemText primary="Vacation" secondary="July 20, 2014" />
-  </CoreListItem>
-</CoreList>
-        `}
-        renderElement={
-          <CoreList>
-            <CoreListItem>
-              <CoreListItemAvatar>
-                <CoreAvatar>
-                  <CoreIcon icon="image" />
-                </CoreAvatar>
-              </CoreListItemAvatar>
-
-              <CoreListItemText primary="Photos" secondary="Jan 9, 2014" />
-            </CoreListItem>
-
-            <CoreDivider variant="inset" component="li" />
-
-            <CoreListItem>
-              <CoreListItemAvatar>
-                <CoreAvatar>
-                  <CoreIcon icon="work" />
-                </CoreAvatar>
-              </CoreListItemAvatar>
-
-              <CoreListItemText primary="Work" secondary="Jan 7, 2014" />
-            </CoreListItem>
-
-            <CoreDivider variant="inset" component="li" />
-
-            <CoreListItem>
-              <CoreListItemAvatar>
-                <CoreAvatar>
-                  <CoreIcon icon="beach_access" />
-                </CoreAvatar>
-              </CoreListItemAvatar>
-
-              <CoreListItemText primary="Vacation" secondary="July 20, 2014" />
-            </CoreListItem>
-          </CoreList>
-        }
-      />
-
-      <CodeSample 
-        title="Subheader dividers"
-        description=""
-        code={`<CoreList>
-  <CoreListItem>
-    <CoreListItemText primary="Photos" secondary="Jan 9, 2014" />
-  </CoreListItem>
-  <CoreDivider component="li" />
-  <CoreListItem>
-    <CoreTypographyBody1
-      color="text.secondary"
-      display="block"
-      variant="caption"
-    >
-      Divider
-    </CoreTypographyBody1>
-  </CoreListItem>
-  <CoreListItem>
-    <CoreListItemText primary="Work" secondary="Jan 7, 2014" />
-  </CoreListItem>
-  <CoreDivider component="li" variant="inset" />
-  <CoreListItem>
-    <CoreTypographyBody1
-      styleClasses={[CoreClasses.MARGIN.ML2]}
-      color="text.secondary"
-      display="block"
-      variant="caption"
-    >
-      Leisure
-    </CoreTypographyBody1>
-  </CoreListItem>
-  <CoreListItem>
-    <CoreListItemAvatar>
-      <CoreAvatar>
-        <CoreIcon icon="beach_access" />
-      </CoreAvatar>
-    </CoreListItemAvatar>
-    <CoreListItemText primary="Vacation" secondary="July 20, 2014" />
-  </CoreListItem>
-</CoreList>`}
-        renderElement={
-          <CoreList>
-            <CoreListItem>
-              <CoreListItemText primary="Photos" secondary="Jan 9, 2014" />
-            </CoreListItem>
-
-            <CoreDivider component="li" />
-
-            <CoreListItem>
-              <CoreTypographyBody1
-                color="text.secondary"
-                display="block"
-                variant="caption"
-              >
-      Divider
-              </CoreTypographyBody1>
-            </CoreListItem>
-
-            <CoreListItem>
-              <CoreListItemText primary="Work" secondary="Jan 7, 2014" />
-            </CoreListItem>
-
-            <CoreDivider component="li" variant="inset" />
-
-            <CoreListItem>
-              <CoreTypographyBody1
-                styleClasses={[CoreClasses.MARGIN.ML2]}
-                color="text.secondary"
-                display="block"
-                variant="caption"
-              >
-      Leisure
-              </CoreTypographyBody1>
-            </CoreListItem>
-
-            <CoreListItem>
-              <CoreListItemAvatar>
-                <CoreAvatar>
-                  <CoreIcon icon="beach_access" />
-                </CoreAvatar>
-              </CoreListItemAvatar>
-
-              <CoreListItemText primary="Vacation" secondary="July 20, 2014" />
-            </CoreListItem>
-          </CoreList>
-        }
-      />
-
-      <CodeSample 
-        title="Middle divider"
-        code={`<CoreBox>
-  <CoreBox>
-    <CoreGrid container alignItems="center">
-      <CoreGrid item xs>
-        <CoreH4 gutterBottom component="div">
+        code={`<CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+  <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
+    <CoreStack
+      direction="row"
+      styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}
+      justifyContent="space-between"
+      alignItems="center">
+      <CoreH4 gutterBottom component="div">
           Toothbrush
-        </CoreH4>
-      </CoreGrid>
+      </CoreH4>
 
-      <CoreGrid item>
-        <CoreH6 gutterBottom component="div">
+      <CoreH6 gutterBottom component="div">
           $4.50
-        </CoreH6>
-      </CoreGrid>
-    </CoreGrid>
+      </CoreH6>
+    </CoreStack>
 
     <CoreTypographyBody2 color="text.secondary">
       Pinstriped cornflower blue cotton blouse takes you on a walk to the park or
@@ -266,44 +67,40 @@ export default function CoreDividerDocs() {
     </CoreTypographyBody2>
   </CoreBox>
 
-  <CoreDivider variant="middle" />
+  <CoreDivider/>
 
-  <CoreBox>
-    <CoreTypographyBody1 gutterBottom>
+  <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
+    <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB1]}>
       Select type
     </CoreTypographyBody1>
 
     <CoreStack direction="row" spacing={1}>
-      <CoreChip label="Extra Soft" />
+      <CoreChip size="small" label="Extra Soft" />
 
-      <CoreChip color="primary" label="Soft" />
+      <CoreChip size="small" color="primary" label="Soft" />
 
-      <CoreChip label="Medium" />
+      <CoreChip size="small" label="Medium" />
 
-      <CoreChip label="Hard" />
+      <CoreChip size="small" label="Hard" />
     </CoreStack>
-  </CoreBox>
-
-  <CoreBox>
-    <CoreButton>Add to cart</CoreButton>
   </CoreBox>
 </CoreBox>`}
         renderElement={
-          <CoreBox>
-            <CoreBox>
-              <CoreGrid container alignItems="center">
-                <CoreGrid item xs>
-                  <CoreH4 gutterBottom component="div">
+          <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+            <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
+              <CoreStack
+                direction="row"
+                styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}
+                justifyContent="space-between"
+                alignItems="center">
+                <CoreH4 gutterBottom component="div">
                     Toothbrush
-                  </CoreH4>
-                </CoreGrid>
+                </CoreH4>
 
-                <CoreGrid item>
-                  <CoreH6 gutterBottom component="div">
+                <CoreH6 gutterBottom component="div">
                     $4.50
-                  </CoreH6>
-                </CoreGrid>
-              </CoreGrid>
+                </CoreH6>
+              </CoreStack>
 
               <CoreTypographyBody2 color="text.secondary">
                 Pinstriped cornflower blue cotton blouse takes you on a walk to the park or
@@ -311,126 +108,375 @@ export default function CoreDividerDocs() {
               </CoreTypographyBody2>
             </CoreBox>
 
-            <CoreDivider variant="middle" />
+            <CoreDivider/>
 
-            <CoreBox>
-              <CoreTypographyBody1 gutterBottom>
+            <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
+              <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB1]}>
                 Select type
               </CoreTypographyBody1>
 
               <CoreStack direction="row" spacing={1}>
-                <CoreChip label="Extra Soft" />
+                <CoreChip size="small" label="Extra Soft" />
 
-                <CoreChip color="primary" label="Soft" />
+                <CoreChip size="small" color="primary" label="Soft" />
 
-                <CoreChip label="Medium" />
+                <CoreChip size="small" label="Medium" />
 
-                <CoreChip label="Hard" />
+                <CoreChip size="small" label="Hard" />
               </CoreStack>
-            </CoreBox>
-
-            <CoreBox>
-              <CoreButton>Add to cart</CoreButton>
             </CoreBox>
           </CoreBox>
         }
       />
 
       <CodeSample 
-        title="Dividers with text"
-        description="You can also render a divider with content."
-        code={`
-<CoreBox>
-  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
-  <CoreDivider>CENTER</CoreDivider>
-  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
-  <CoreDivider textAlign="left">LEFT</CoreDivider>
-  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
-  <CoreDivider textAlign="right">RIGHT</CoreDivider>
-  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
-  <CoreDivider>
-    <CoreChip label="CHIP" />
-  </CoreDivider>
-  <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
-</CoreBox>
-        `}
-        renderElement={<CoreBox>
-          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+        title="Variants"
+        description={
+          <>
+          The Divider component supports three variants: <CodeBlock>fullWidth</CodeBlock> (default),
 
-          <CoreDivider>
-            <CoreTypographyBody1>CENTER</CoreTypographyBody1>
-          </CoreDivider>
+            {" "}
 
-          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+            <CodeBlock>inset</CodeBlock>, and 
 
-          <CoreDivider textAlign="left">
-            <CoreTypographyBody1>LEFT</CoreTypographyBody1>
-          </CoreDivider>
+            {" "}
 
-          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+            <CodeBlock>middle</CodeBlock>.
+          </>
+        }
+        code={` <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+  <CoreList styleClasses={[CoreClasses.PADDING.PY0, CoreClasses.BORDER.BORDER_ROUNDED_1, CoreClasses.BORDER.BORDER, CoreClasses.LAYOUT.FULL_WIDTH]}>
+    <CoreListItem>
+      <CoreListItemText primary="Full width variant below" />
+    </CoreListItem>
 
-          <CoreDivider textAlign="right">
-            <CoreTypographyBody1>RIGHT</CoreTypographyBody1>
-          </CoreDivider>
+    <CoreDivider component="li" />
 
-          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
+    <CoreListItem>
+      <CoreListItemText primary="Inset variant below" />
+    </CoreListItem>
 
-          <CoreDivider>
-            <CoreChip label="CHIP" />
-          </CoreDivider>
+    <CoreDivider variant="inset" component="li" />
 
-          <CoreTypographyBody1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-   Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-   Sed malesuada lobortis pretium.</CoreTypographyBody1>
-        </CoreBox>
+    <CoreListItem>
+      <CoreListItemText primary="Middle variant below" />
+    </CoreListItem>
+
+    <CoreDivider variant="middle" component="li" />
+
+    <CoreListItem>
+      <CoreListItemText primary="List item" />
+    </CoreListItem>
+  </CoreList>
+</CoreBox>`}
+        renderElement={
+          <>
+            <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+              <CoreList styleClasses={[CoreClasses.PADDING.PY0, CoreClasses.BORDER.BORDER_ROUNDED_1, CoreClasses.BORDER.BORDER, CoreClasses.LAYOUT.FULL_WIDTH]}>
+                <CoreListItem>
+                  <CoreListItemText primary="Full width variant below" />
+                </CoreListItem>
+
+                <CoreDivider component="li" />
+
+                <CoreListItem>
+                  <CoreListItemText primary="Inset variant below" />
+                </CoreListItem>
+
+                <CoreDivider variant="inset" component="li" />
+
+                <CoreListItem>
+                  <CoreListItemText primary="Middle variant below" />
+                </CoreListItem>
+
+                <CoreDivider variant="middle" component="li" />
+
+                <CoreListItem>
+                  <CoreListItemText primary="List item" />
+                </CoreListItem>
+              </CoreList>
+            </CoreBox></>}
+      />
+
+      <CodeSample 
+        title="Orientation"
+        description={
+          <>
+        Use the <CodeBlock>orientation</CodeBlock> prop to change the Divider from horizontal to vertical.
+          </>
+        }
+        code={`<CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+  <CoreStack direction="row"> 
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon fontSize="medium">cloud</CoreIcon>
+    </CoreBox>
+
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">folder</CoreIcon>
+    </CoreBox>
+
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">mail</CoreIcon>
+    </CoreBox>
+
+    <CoreDivider styleClasses={[CoreClasses.MARGIN.M0]} orientation="vertical" flexItem />
+    
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">phone</CoreIcon>
+    </CoreBox>
+  </CoreStack>
+</CoreBox>`}
+        renderElement={
+          <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+            <CoreStack direction="row"> 
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon fontSize="medium">cloud</CoreIcon>
+              </CoreBox>
+
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">folder</CoreIcon>
+              </CoreBox>
+
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">mail</CoreIcon>
+              </CoreBox>
+
+              <CoreDivider styleClasses={[CoreClasses.MARGIN.M0]} orientation="vertical" flexItem />
+              
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">phone</CoreIcon>
+              </CoreBox>
+            </CoreStack>
+          </CoreBox>
         }
       />
 
       <CodeSample 
-        title="Vertical divider"
-        description="You can also render a divider vertically using the orientation prop."
-        code={`
-<CoreStack direction="row" spacing={2}>
-  <CoreIcon icon="mail" />
-  <CoreIcon icon="mail" />
-  <CoreIcon icon="mail" />
-  <CoreDivider orientation="vertical" flexItem />
-  <CoreIcon icon="mail" />
-  <CoreIcon icon="mail" />
-</CoreStack>
+        title="Flex item"
+        description={
+          <>
+          Use the <CodeBlock>flexItem</CodeBlock> prop to display the Divider when it&apos; being used in a flex container.
+          </>
+        }
+        code={` <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+  <CoreStack direction="row">
+
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon>dehaze</CoreIcon>
+    </CoreBox>
+
+    <CoreDivider orientation="vertical" flexItem />
+
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon>edit</CoreIcon>
+    </CoreBox>
+  </CoreStack>
+</CoreBox>
+          `}
+        renderElement={
+          <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+            <CoreStack direction="row">
+
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon>dehaze</CoreIcon>
+              </CoreBox>
+
+              <CoreDivider orientation="vertical" flexItem />
+
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon>edit</CoreIcon>
+              </CoreBox>
+            </CoreStack>
+          </CoreBox>
+        }
+      />
+
+      <CodeSample 
+        title="With children"
+        description={
+          <>
+          Use the <CodeBlock>textAlign</CodeBlock> prop to align elements that are wrapped by the Divider.
+          </>
+        }
+        code={`const content = (
+    <CoreTypographyBody1>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}</CoreTypographyBody1>
+  );
+
+ <CoreBox styleClasses={[
+            CoreClasses.WIDTH.MAX_W_75,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_GREY_400,
+            CoreClasses.BORDER.BORDER_ROUNDED_1,
+            CoreClasses.PADDING.P2
+          ]}>
+  {content}
+  <CoreDivider>CENTER</CoreDivider>
+  {content}
+  <CoreDivider textAlign="left">LEFT</CoreDivider>
+  {content}
+  <CoreDivider textAlign="right">RIGHT</CoreDivider>
+  {content}
+  <CoreDivider>
+    <CoreChip label="Chip" size="small" />
+  </CoreDivider>
+  {content}
+</CoreBox>`}
+        renderElement={
+          <CoreBox styleClasses={[
+            CoreClasses.WIDTH.MAX_W_75,
+            CoreClasses.BORDER.BORDER,
+            CoreClasses.BORDER.BORDER_GREY_400,
+            CoreClasses.BORDER.BORDER_ROUNDED_1,
+            CoreClasses.PADDING.P2
+          ]}>
+
+            {content}
+
+            <CoreDivider>CENTER</CoreDivider>
+
+            {content}
+
+            <CoreDivider textAlign="left">LEFT</CoreDivider>
+
+            {content}
+
+            <CoreDivider textAlign="right">RIGHT</CoreDivider>
+
+            {content}
+
+            <CoreDivider>
+              <CoreChip label="Chip" size="small" />
+            </CoreDivider>
+
+            {content}
+          </CoreBox>
+        }
+      />
+      
+      <CodeSample 
+        title="Use with a List"
+        description={
+          <>
+          When using the Divider to separate items in a List, use the <CodeBlock>component</CodeBlock> prop to render it as an 
+
+            {" "}
+
+            <CodeBlock>{"<li>"}</CodeBlock>—otherwise it won&apos; be a valid HTML element.
+          </>
+        }
+        code={`<CoreBox styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+  <CoreList aria-label="mailbox folders">
+    <CoreListItem >
+      <CoreListItemText primary="Inbox" />
+    </CoreListItem>
+
+    <CoreDivider component="li" />
+
+    <CoreListItem>
+      <CoreListItemText primary="Drafts" />
+    </CoreListItem>
+
+    <CoreDivider component="li" />
+
+    <CoreListItem>
+      <CoreListItemText primary="Trash" />
+    </CoreListItem>
+
+    <CoreDivider component="li" />
+
+    <CoreListItem>
+      <CoreListItemText primary="Spam" />
+    </CoreListItem>
+  </CoreList>
+</CoreBox>
         `}
         renderElement={
-          <CoreStack direction="row" spacing={2}>
-            <CoreIcon icon="mail" />
+          <CoreBox styleClasses={[CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
 
-            <CoreIcon icon="mail" />
+            <CoreList aria-label="mailbox folders">
+              <CoreListItem >
+                <CoreListItemText primary="Inbox" />
+              </CoreListItem>
 
-            <CoreIcon icon="mail" />
+              <CoreDivider component="li" />
 
-            <CoreDivider orientation="vertical" flexItem />
+              <CoreListItem>
+                <CoreListItemText primary="Drafts" />
+              </CoreListItem>
 
-            <CoreIcon icon="mail" />
+              <CoreDivider component="li" />
 
-            <CoreIcon icon="mail" />
-          </CoreStack>
+              <CoreListItem>
+                <CoreListItemText primary="Trash" />
+              </CoreListItem>
+
+              <CoreDivider component="li" />
+
+              <CoreListItem>
+                <CoreListItemText primary="Spam" />
+              </CoreListItem>
+            </CoreList>
+          </CoreBox>
+        }
+      />
+
+      <CodeSample 
+        title="Icon grouping"
+        description={
+          <>
+          The demo below shows how to combine the props <CodeBlock>{"variant=\"middle\""}</CodeBlock> and 
+
+            {" "}
+
+            <CodeBlock>{"orientation=\"vertical\""}</CodeBlock>.
+
+          </>
+        }
+        code={`<CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+  <CoreStack direction="row">
+
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon>format_align_right</CoreIcon>
+    </CoreBox>
+
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon>format_align_center</CoreIcon>
+    </CoreBox>
+
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon>format_align_justify</CoreIcon>
+    </CoreBox>
+
+    <CoreDivider variant="middle" orientation="vertical" flexItem />
+
+    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+      <CoreIcon>format_bold</CoreIcon>
+    </CoreBox>
+  </CoreStack>
+</CoreBox>`}
+        renderElement={
+          <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+            <CoreStack direction="row">
+
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon>format_align_right</CoreIcon>
+              </CoreBox>
+
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon>format_align_center</CoreIcon>
+              </CoreBox>
+
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon>format_align_justify</CoreIcon>
+              </CoreBox>
+
+              <CoreDivider variant="middle" orientation="vertical" flexItem />
+
+              <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+                <CoreIcon>format_bold</CoreIcon>
+              </CoreBox>
+            </CoreStack>
+          </CoreBox>
         }
       />
 
