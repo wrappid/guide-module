@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.36](https://https//github.com/wrappid/wrappid-module/compare/v0.0.35...v0.0.36) (2024-08-17)
+
+### [0.0.35](https://https//github.com/wrappid/wrappid-module/compare/v0.0.34...v0.0.35) (2024-08-16)
+
+
+### Bug Fixes
+
+* **core:** :bug: codesample CoreImage correction ([5b9c36a](https://https//github.com/wrappid/wrappid-module/commit/5b9c36a437757b44286a4e4c49791dd9ed3b9c1d)), closes [#186](https://https//github.com/wrappid/wrappid-module/issues/186)
+
+### [0.0.34](https://https//github.com/wrappid/wrappid-module/compare/v0.0.33...v0.0.34) (2024-08-16)
+
+### [0.0.33](https://https//github.com/wrappid/wrappid-module/compare/v0.0.32...v0.0.33) (2024-08-16)
+
+### [0.0.32](https://https//github.com/wrappid/wrappid-module/compare/v0.0.31...v0.0.32) (2024-08-16)
+
+
+### Bug Fixes
+
+* **core:** :bug: error showing in CoreListItem ([846713b](https://https//github.com/wrappid/wrappid-module/commit/846713bda00611f2516c61624619f82261692d0d)), closes [#183](https://https//github.com/wrappid/wrappid-module/issues/183)
+
+### [0.0.31](https://https//github.com/wrappid/wrappid-module/compare/v0.0.30...v0.0.31) (2024-08-16)
+
+
+### Bug Fixes
+
+* **core:** :bug: nested list was not working properly ([c36ebc3](https://https//github.com/wrappid/wrappid-module/commit/c36ebc360e99901d06b4b7624261e4322a4ec60e)), closes [#179](https://https//github.com/wrappid/wrappid-module/issues/179)
+* **core:** :bug: there was a error in docomentation ([0a2288b](https://https//github.com/wrappid/wrappid-module/commit/0a2288b936b44bdccda02faf5cb3ade043853d93)), closes [#179](https://https//github.com/wrappid/wrappid-module/issues/179)
+
 ### [0.0.30](https://https//github.com/wrappid/wrappid-module/compare/v0.0.29...v0.0.30) (2024-08-15)
 
 ### [0.0.29](https://https//github.com/wrappid/wrappid-module/compare/v0.0.28...v0.0.29) (2024-08-15)
