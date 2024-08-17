@@ -19,6 +19,20 @@ import CodeBlock from "../../CodeBlock";
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
+function CustomComponents(){
+  return(
+    <>
+      <CoreTypographyBody1 styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY_DARK]}>
+      Tooltip with CustomComponents
+      </CoreTypographyBody1>
+
+      <CoreTypographyBody1>
+           And here&apos; ssomeamazing content. It&apos; very engaging. Right?
+      </CoreTypographyBody1>
+    </>
+  );
+}
+
 export default function CoreTooltipDocs() {
   const [open, setOpen] = React.useState(false);
   const [data, setData] = React.useState(false);
@@ -222,55 +236,35 @@ export default function CoreTooltipDocs() {
       <CodeSample
         title={"Customization (NOT_WORKING)"}
         description={"Here are some examples of customizing the component."}
-        code={`<CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
-  <CoreTooltip styleClasses={[CoreClasses.COLOR.TEXT_SUCCESS_DARK, CoreClasses.BG.BG_WHITE, CoreClasses.BORDER.BORDER_SUCCESS_DARK]} title="Add">
-    <CoreButton>Light</CoreButton>
-  </CoreTooltip>
+        code={`
+function CustomComponents(){
+  return(
+    <>
+      <CoreTypographyBody1 styleClasses={[CoreClasses.COLOR.TEXT_PRIMARY_DARK]}>
+      Tooltip with CustomComponents
+      </CoreTypographyBody1>
 
-  <CoreTooltip title="Add">
-    <CoreButton>Bootstrap</CoreButton>
-  </CoreTooltip>
-
+      <CoreTypographyBody1>
+           And here&apos; ssomeamazing content. It&apos; very engaging. Right?
+      </CoreTypographyBody1>
+    </>
+  );
+}
+  
+<CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
   <CoreTooltip
-    title={
-      <React.Fragment>
-        <CoreTypographyBody1 color="inherit">Tooltip with HTML</CoreTypographyBody1>
-        <em>{"And here's"}</em> 
-        <b>{"some"}</b> 
-        <u>{"amazing content"}</u>.
-        {" "}
-        {"It's very engaging. Right?"}
-      </React.Fragment>
-    }
+    title={<CustomComponents/>}
   >
     <CoreButton>HTML</CoreButton>
   </CoreTooltip>
-</CoreBox>`}
+</CoreBox>
+`}
         renderElement={<>
+       
           <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
-            <CoreTooltip styleClasses={[CoreClasses.COLOR.TEXT_SUCCESS_DARK, CoreClasses.BG.BG_WHITE, CoreClasses.BORDER.BORDER_SUCCESS_DARK]} title="Add">
-              <CoreButton>Light</CoreButton>
-            </CoreTooltip>
-
-            <CoreTooltip title="Add">
-              <CoreButton>Bootstrap</CoreButton>
-            </CoreTooltip>
-
             <CoreTooltip
               title={
-                <React.Fragment>
-                  <CoreTypographyBody1 color="inherit">Tooltip with HTML</CoreTypographyBody1>
-
-                  <em>{"And here's"}</em> 
-
-                  <b>{"some"}</b> 
-
-                  <u>{"amazing content"}</u>.
-
-                  {" "}
-
-                  {"It's very engaging. Right?"}
-                </React.Fragment>
+                <CustomComponents/>
               }
             >
               <CoreButton>HTML</CoreButton>
