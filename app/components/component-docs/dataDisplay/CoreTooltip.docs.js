@@ -10,7 +10,9 @@ import {
   CoreIconButton,
   CoreIcon,
   CoreBox,
-  CoreButton
+  CoreButton,
+  CoreSpan,
+  CoreAwayListner
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
@@ -33,6 +35,7 @@ export default function CoreTooltipDocs() {
     x: 0,
     y: 0,
   });
+
   const popperRef = React.useRef(null);
   const areaRef = React.useRef(null);
 
@@ -52,6 +55,10 @@ export default function CoreTooltipDocs() {
     setData(true);
   };
 
+  const longText = `Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.
+  Praesent non nunc mollis, fermentum neque at, semper arcu.
+  Nullam eget est sed sem iaculis gravida eget vitae justo.`;
+
   return (
     <>
       <CoreH4>CoreTooltip</CoreH4>
@@ -68,7 +75,7 @@ export default function CoreTooltipDocs() {
 
       <CodeSample
         title={"Basic tooltip"}
-        description={""}
+        description={" "}
         code={`<CoreTooltip title="Delete">
   <CoreIconButton aria-label="delete">
     <CoreIcon fontSize="medium">delete</CoreIcon>
@@ -214,9 +221,63 @@ export default function CoreTooltipDocs() {
 
       <CodeSample
         title={"Customization (NOT_WORKING)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        description={"Here are some examples of customizing the component."}
+        code={`<CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
+  <CoreTooltip styleClasses={[CoreClasses.COLOR.TEXT_SUCCESS_DARK, CoreClasses.BG.BG_WHITE, CoreClasses.BORDER.BORDER_SUCCESS_DARK]} title="Add">
+    <CoreButton>Light</CoreButton>
+  </CoreTooltip>
+
+  <CoreTooltip title="Add">
+    <CoreButton>Bootstrap</CoreButton>
+  </CoreTooltip>
+
+  <CoreTooltip
+    title={
+      <React.Fragment>
+        <CoreTypographyBody1 color="inherit">Tooltip with HTML</CoreTypographyBody1>
+        <em>{"And here's"}</em> 
+        <b>{"some"}</b> 
+        <u>{"amazing content"}</u>.
+        {" "}
+        {"It's very engaging. Right?"}
+      </React.Fragment>
+    }
+  >
+    <CoreButton>HTML</CoreButton>
+  </CoreTooltip>
+</CoreBox>`}
+        renderElement={<>
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
+            <CoreTooltip styleClasses={[CoreClasses.COLOR.TEXT_SUCCESS_DARK, CoreClasses.BG.BG_WHITE, CoreClasses.BORDER.BORDER_SUCCESS_DARK]} title="Add">
+              <CoreButton>Light</CoreButton>
+            </CoreTooltip>
+
+            <CoreTooltip title="Add">
+              <CoreButton>Bootstrap</CoreButton>
+            </CoreTooltip>
+
+            <CoreTooltip
+              title={
+                <React.Fragment>
+                  <CoreTypographyBody1 color="inherit">Tooltip with HTML</CoreTypographyBody1>
+
+                  <em>{"And here's"}</em> 
+
+                  <b>{"some"}</b> 
+
+                  <u>{"amazing content"}</u>.
+
+                  {" "}
+
+                  {"It's very engaging. Right?"}
+                </React.Fragment>
+              }
+            >
+              <CoreButton>HTML</CoreButton>
+            </CoreTooltip>
+          </CoreBox>
+        
+        </>}
       />
 
       <CodeSample
@@ -280,8 +341,7 @@ export default function CoreTooltipDocs() {
        (NOT WORKING)
         </>}
         code={""}
-        renderElement={<>
-        </>}
+        renderElement={<></>}
       />
 
       <CodeSample
@@ -292,7 +352,7 @@ export default function CoreTooltipDocs() {
       />
 
       <CodeSample
-        title={"Triggers (NOT_WORKING)"}
+        title={"Triggers"}
         description={
           <>
           You can define the types of events that cause a tooltip to show.<br/><br/>
@@ -342,25 +402,42 @@ export default function CoreTooltipDocs() {
               <CoreButton>Hover</CoreButton>
             </CoreTooltip>
           
-            <CoreTooltip
-              PopperProps={{ disablePortal: true }}
-              onClose={handleTooltipClose}
-              open={data}
-              disableFocusListener
-              disableHoverListener
-              disableTouchListener
-              title="Add"
-            >
-              <CoreButton onClick={handleTooltipOpen}>Click</CoreButton>
-            </CoreTooltip>
+            <CoreAwayListner onClickAway={handleTooltipClose} >
+
+              <CoreTooltip
+                PopperProps={{ disablePortal: true }}
+                onClose={handleTooltipClose}
+                open={data}
+                disableFocusListener
+                disableHoverListener
+                disableTouchListener
+                title="Add"
+              >
+                <CoreButton onClick={handleTooltipOpen}>Click</CoreButton>
+              </CoreTooltip>
+            </CoreAwayListner>
           </CoreBox>
         </>}
       />
 
       <CodeSample
-        title={"Controlled tooltips (NOT_WORKING)"}
-        description={"You can use the open, onOpen and onClose props to control the behavior of the tooltip."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
+        title={"Controlled tooltips"}
+        description={<>
+        You can use the <CodeBlock>open</CodeBlock>, 
+
+          <CodeBlock>onOpen</CodeBlock> and 
+
+          {" "}
+
+          <CodeBlock> onClose</CodeBlock> props to control the behavior of the tooltip.
+        </>}
+        code={`<CoreTooltip
+  open={open}
+  onClose={handleClose}
+  onOpen={handleOpen}
+  title="Add">
+  <CoreButton>Controlled</CoreButton>
+</CoreTooltip>`}
         renderElement={<>
           <CoreTooltip
             open={open}
@@ -374,82 +451,217 @@ export default function CoreTooltipDocs() {
 
       <CodeSample
         title={"Variable width (NOT_WORKING)"}
-        description={"The CoreTooltip wraps long text by default to make it readable."}
+        description={<>
+        The <CodeBlock>CoreTooltip</CodeBlock> wraps long text by default to make it readable.
+        </>
+        }
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+       
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} >
+            <CoreTooltip title={longText}>
+              <CoreButton styleClasses={[CoreClasses.MARGIN.M1]}>Default Width [300px]</CoreButton>
+            </CoreTooltip>
+
+            <CoreBox >
+              <CoreTooltip styleClasses={[CoreClasses.WIDTH.W_100]} title={longText}>
+                <CoreButton styleClasses={[CoreClasses.MARGIN.M1]}>Custom Width [500px]</CoreButton>
+              </CoreTooltip>
+            </CoreBox>
+
+            <CoreTooltip styleClasses={[CoreClasses.WIDTH.MAX_W_]} title={longText}>
+              <CoreButton styleClasses={[CoreClasses.MARGIN.M1]}>No wrapping</CoreButton>
+            </CoreTooltip>
+          </CoreBox>
+  
+        </>}
       />
 
       <CodeSample
-        title={"Interactive (NOT_WORKING)"}
-        description={"Tooltips are interactive by default (to pass WCAG 2.1 success criterion 1.4.13). It won't close when the user hovers over the tooltip before the leaveDelay is expired. You can disable this behavior (thus failing the success criterion which is required to reach level AA) by passing disableInteractive."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        title={"Interactive"}
+        description={<>Tooltips are interactive by default. It won&#39;t close when the user hovers over the tooltip before the <CodeBlock>leaveDelay</CodeBlock> is expired. You can disable this behavior by passing 
+
+          {" "}
+
+          <CodeBlock>disableInteractive</CodeBlock>.</>}
+        code={`<CoreTooltip title="Add" disableInteractive>
+  <CoreButton>Not interactive</CoreButton>
+</CoreTooltip>`}
+        renderElement={<>
+          <CoreTooltip title="Add" disableInteractive>
+            <CoreButton>Not interactive</CoreButton>
+          </CoreTooltip>
+        </>}
       />
 
       <CodeSample
-        title={"Disabled elements (NOT_WORKING)"}
-        description={""}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        title={"Disabled elements"}
+        description={<>
+        By default disabled elements like <CodeBlock>{"<button>"}</CodeBlock> do not trigger user interactions so a 
+
+          <CodeBlock>Tooltip</CodeBlock> will not activate on normal events like hover. To accommodate disabled elements, add a simple wrapper element, such as 
+
+          a <CodeBlock>span</CodeBlock>.
+
+        </>}
+        code={`<CoreTooltip title="You don't have permission to do this">
+  <CoreSpan>
+    <CoreButton disabled>A Disabled CoreButton</CoreButton>
+  </CoreSpan>
+</CoreTooltip>`}
+        renderElement={<>
+          <CoreTooltip title="You don't have permission to do this">
+            <CoreSpan>
+              <CoreButton disabled>A Disabled CoreButton</CoreButton>
+            </CoreSpan>
+          </CoreTooltip>
+        </>}
       />
 
       <CodeSample
         title={"Transitions (NOT_WORKING)"}
         description={""}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
+        code={`<CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} >
+  <CoreTooltip title="Add">
+    <CoreButton>Grow</CoreButton>
+  </CoreTooltip>
 
-      <CodeSample
-        title={"Follow cursor (NOT_WORKING)"}
-        description={""}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
+  <CoreTooltip
+    TransitionComponent={Fade}
+    TransitionProps={{ timeout: 600 }}
+    title="Add"
+  >
+    <CoreButton>Fade</CoreButton>
+  </CoreTooltip>
 
-      <CodeSample
-        title={"Virtual element (NOT_WORKING)"}
-        description={""}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
+  <CoreTooltip TransitionComponent={Zoom} title="Add">
+    <CoreButton>Zoom</CoreButton>
+  </CoreTooltip>
+</CoreBox>`}
         renderElement={<>
-          <CoreTooltip
-            title="Add"
-            placement="top"
-            arrow
-            PopperProps={{
-              anchorEl: {
-                getBoundingClientRect: () => {
-                  return new DOMRect(
-                    positionRef.current.x,
-                    areaRef.current.getBoundingClientRect().y,
-                    0,
-                    0
-                  );
-                },
-              },
-              popperRef,
-            }}
-          >
-            <CoreBox
-              ref={areaRef}
-              onMouseMove={handleMouseMove}
-              sx={{
-                bgcolor: "primary.main",
-                color  : "primary.contrastText",
-                p      : 2,
-              }}
-            >
-              <CoreTypographyBody1> Hover</CoreTypographyBody1>
+        </>}
+      />
+
+      <CodeSample
+        title={"Follow cursor"}
+        description={<>
+        You can enable the tooltip to follow the cursor by setting <CodeBlock>{"followCursor={true}"}</CodeBlock>.
+
+        </>}
+        code={`<CoreTooltip title="You don't have permission to do this" followCursor>
+  <CoreBox styleClasses={[CoreClasses.PADDING.P2, CoreClasses.BG.BG_GREY_500, CoreClasses.COLOR.TEXT_WHITE]}>
+  Disabled Action
+  </CoreBox>
+</CoreTooltip>`}
+        renderElement={<>
+          <CoreTooltip title="You don't have permission to do this" followCursor>
+            <CoreBox styleClasses={[CoreClasses.PADDING.P2, CoreClasses.BG.BG_GREY_500, CoreClasses.COLOR.TEXT_WHITE]}>
+             Disabled Action
             </CoreBox>
           </CoreTooltip>
         </>}
       />
 
       <CodeSample
-        title={"Accessibility (NOT_WORKING)"}
-        description={""}
+        title={"Virtual element (NOT_WORKING)"}
+        description={<>
+        In the event you need to implement a custom placement, you can use the <CodeBlock>anchorEl</CodeBlock> prop: The value of 
+
+        the <CodeBlock>anchorEl</CodeBlock> prop can be a reference to a fake DOM element.
+        </>}
         code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        renderElement={<>
+          <CoreBox>
+            <CoreTooltip
+              title="Add"
+              placement="top"
+              arrow
+              PopperProps={{
+                anchorEl: {
+                  getBoundingClientRect: () => {
+                    return new DOMRect(
+                      positionRef.current.x,
+                      areaRef.current.getBoundingClientRect().y,
+                      0,
+                      0
+                    );
+                  },
+                },
+                popperRef,
+              }}
+            >
+              <CoreBox
+                ref={areaRef}
+                onMouseMove={handleMouseMove}
+                sx={{
+                  bgcolor: "primary.main",
+                  color  : "primary.contrastText",
+                  p      : 2,
+                }}
+              >
+        Hover
+              </CoreBox>
+            </CoreTooltip>
+          </CoreBox>
+        </>}
+      />
+
+      <CodeSample
+        title={"Accessibility"}
+        description={<>
+        The tooltip is normally shown immediately when the user&apos; mouse hovers over the element, and hides immediately when the user&apos; mouse leaves. A delay in showing or hiding the tooltip can be added through the<CodeBlock>enterDelay</CodeBlock> 
+
+        and <CodeBlock>leaveDelay</CodeBlock> props.
+
+          <br/><br/>
+
+        On mobile, the tooltip is displayed when the user longpresses the element and hides after a delay of 1500ms. You can disable this feature with the <CodeBlock>disableTouchListener</CodeBlock> prop.
+        </>}
+        code={`<CoreTooltip title="Add" enterDelay={500} leaveDelay={200}>
+  <CoreButton>[500ms, 200ms]</CoreButton>
+</CoreTooltip>`}
+        renderElement={<>
+          <CoreTooltip title="Add" enterDelay={500} leaveDelay={200}>
+            <CoreButton>[500ms, 200ms]</CoreButton>
+          </CoreTooltip>
+        </>}
+      />
+
+      <CodeSample
+        title={"Accessibility"}
+        description={<>
+        By default, the tooltip only labels its child element. This is notably different from title which can either label or describe its child depending on whether the child already has a label. For example, in: 
+          <br/><br/>
+
+          <CodeBlock>{"<Corebutton title=\"some more information\">A button</Corebutton>"}</CodeBlock>
+
+          <br/><br/>
+          the title acts as an accessible description. If you want the tooltip to act as an accessible description you can pass describeChild. Note that you shouldn&#39;t use describeChild if the tooltip provides the only visual label.
+        </>}
+        code={`<CoreStack direction="row" spacing={2}>
+  <CoreTooltip title="Delete">
+    <CoreIconButton aria-label="delete">
+      <CoreIcon fontSize="medium">delete</CoreIcon>
+    </CoreIconButton>
+  </CoreTooltip>
+
+  <CoreTooltip describeChild title="Does not add if it already exists.">
+    <CoreButton>Add</CoreButton>
+  </CoreTooltip>
+</CoreStack>`}
+        renderElement={<>
+          <CoreStack direction="row" spacing={2}>
+            <CoreTooltip title="Delete">
+              <CoreIconButton aria-label="delete">
+                <CoreIcon fontSize="medium">delete</CoreIcon>
+              </CoreIconButton>
+            </CoreTooltip>
+
+            <CoreTooltip describeChild title="Does not add if it already exists.">
+              <CoreButton>Add</CoreButton>
+            </CoreTooltip>
+          </CoreStack>
+        </>}
       />
 
       <ComponentProps component={CoreTooltip} />
