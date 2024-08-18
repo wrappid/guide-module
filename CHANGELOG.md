@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.37](https://https//github.com/wrappid/wrappid-module/compare/v0.0.36...v0.0.37) (2024-08-18)
+
+
+### Bug Fixes
+
+* **core:** :bug: corelistitembutton has been fixed and corelistitem docoment has been corrected ([74b96ac](https://https//github.com/wrappid/wrappid-module/commit/74b96ac987b35bd37723f0bb78b0f1dad251bae5)), closes [#191](https://https//github.com/wrappid/wrappid-module/issues/191)
+
 ### [0.0.36](https://https//github.com/wrappid/wrappid-module/compare/v0.0.35...v0.0.36) (2024-08-17)
 
 ### [0.0.35](https://https//github.com/wrappid/wrappid-module/compare/v0.0.34...v0.0.35) (2024-08-16)
