@@ -76,7 +76,7 @@ export default function CoreListItemDocs() {
     component={CorePaper}
     styleClasses={[CoreClasses.WIDTH.W_25]}
   >
-    {/* <nav aria-label="main mailbox folders"> */}
+
     <CoreList>
       <CoreListItem disablePadding>
         <CoreListItemButton>
