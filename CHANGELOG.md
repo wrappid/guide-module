@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.43](https://https//github.com/wrappid/wrappid-module/compare/v0.0.42...v0.0.43) (2024-08-20)
+
+
+### Bug Fixes
+
+* **core:** :bug: corelistitemsecondaryaction heading corrected ([296aa99](https://https//github.com/wrappid/wrappid-module/commit/296aa998a140f3d02097c2db253dde7f4ab4be7b)), closes [#202](https://https//github.com/wrappid/wrappid-module/issues/202)
+* **core:** :bug: props are not available ([3926ef8](https://https//github.com/wrappid/wrappid-module/commit/3926ef8188e9385260bf262db9633954a435b598)), closes [#202](https://https//github.com/wrappid/wrappid-module/issues/202)
+
 ### [0.0.42](https://https//github.com/wrappid/wrappid-module/compare/v0.0.41...v0.0.42) (2024-08-20)
 
 
