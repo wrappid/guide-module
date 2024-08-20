@@ -13,6 +13,7 @@ import {
 
 import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreListItemSecondaryActionDocs() {
   return (
@@ -95,6 +96,9 @@ export default function CoreListItemSecondaryActionDocs() {
           </CoreList>
         </>}
       />
+      
+      <ComponentProps component={CoreListItemSecondaryAction} />
+
     </>
   );
 }
