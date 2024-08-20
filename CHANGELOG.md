@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.42](https://https//github.com/wrappid/wrappid-module/compare/v0.0.41...v0.0.42) (2024-08-20)
+
+
+### Bug Fixes
+
+* **core:** :bug: the docomentation is not present ([f2602da](https://https//github.com/wrappid/wrappid-module/commit/f2602daf67a3b64ef62afcf12b0fc4a0a7fa9be0)), closes [#189](https://https//github.com/wrappid/wrappid-module/issues/189)
+* **global:** :bug: fix Customization in CoreTooltip docs ([9bc221b](https://https//github.com/wrappid/wrappid-module/commit/9bc221b409b75745239d4fe266db26b3b0c46ab3)), closes [#182](https://https//github.com/wrappid/wrappid-module/issues/182)
+* **global:** :memo: documentation update for CoreTooltip ([58525c1](https://https//github.com/wrappid/wrappid-module/commit/58525c13534f1fcdfd616c7f95666622a932faca)), closes [#182](https://https//github.com/wrappid/wrappid-module/issues/182)
+
+### [0.0.41](https://https//github.com/wrappid/wrappid-module/compare/v0.0.40...v0.0.41) (2024-08-20)
+
+### [0.0.40](https://https//github.com/wrappid/wrappid-module/compare/v0.0.39...v0.0.40) (2024-08-19)
+
+### [0.0.39](https://https//github.com/wrappid/wrappid-module/compare/v0.0.38...v0.0.39) (2024-08-19)
+
+
+### Bug Fixes
+
+* **core:** :bug: corelistitemsecondaryaction has been implemented ([89475f4](https://https//github.com/wrappid/wrappid-module/commit/89475f499dcb6120137ba417f1bf4520f19e59a4)), closes [#202](https://https//github.com/wrappid/wrappid-module/issues/202)
+
 ### [0.0.38](https://https//github.com/wrappid/wrappid-module/compare/v0.0.37...v0.0.38) (2024-08-19)
 
 
