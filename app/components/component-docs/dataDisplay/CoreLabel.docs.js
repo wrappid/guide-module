@@ -1,29 +1,44 @@
 import {
+  CoreBox,
   CoreH4,
+  CoreLabel,
   CoreTypographyBody1
 } from "@wrappid/core";
-  
+
 import CodeSample from "../../CodeSample";
+import ComponentProps from "../../ComponentProps";
 
 export default function CoreLabelDocs() {
   return (
     <>
       <CoreH4>CoreLabel</CoreH4>
-  
+
       <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
+        CoreLabel helps you to put a label on your component.
       </CoreTypographyBody1>
-  
+
       <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+        title={"CoreLabel usage"}
+        description={"Below is an example of CoreLabel usage."}
+        code={`<CoreBox>
+  <CoreLabel>I am CoreLabel</CoreLabel>
+
+  <CoreTypographyBody1>Above text is a sample CoreLabel</CoreTypographyBody1>
+</CoreBox>`}
+        renderElement={
+          <>
+            <CoreBox>
+              <CoreLabel>I am CoreLabel</CoreLabel>
+
+              <CoreTypographyBody1>Above text is a sample CoreLabel</CoreTypographyBody1>
+            </CoreBox>
+
+          </>
+        }
       />
-        
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* <ComponentProps component={CoreLabel} /> */}
-      
+
+      <ComponentProps component={CoreLabel} />
+
     </>
   );
 }
