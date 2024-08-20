@@ -1,4 +1,4 @@
-# Guide Module - `Wrappid` Module Boilerplate
+# Guide Module - `Wrappid` Module
 ```
                                     _     _
     __      ___ __ __ _ _ __  _ __ (_) __| |
@@ -9,86 +9,112 @@
 
 ```
 
-**This is a template documentation, @wrappid/toolkit uses this template to create module boilerplate.**
+**This is a guide module which provide developer documentation.**
 
-- [Guide Module - `Wrappid` Module Boilerplate](#guide-module---wrappid-module-boilerplate)
+- [Guide Module - `Wrappid` Module](#guide-module---wrappid-module)
   - [1. Introduction](#1-introduction)
-  - [2. Getting Started](#2-getting-started)
-    - [2.1. What are my Pre-requisites?](#21-what-are-my-pre-requisites)
-    - [2.2. How to Create?](#22-how-to-create)
-    - [2.3 How to Use Modules?](#23-how-to-use-modules)
-      - [2.3.1 Include module in `wrappid-[app|service]`](#231-include-module-in-wrappid-appservice)
-      - [2.2.2 Exclude module from `wrappid-[app|service]`](#222-exclude-module-from-wrappid-appservice)
-    - [2.3 Where to Code?](#23-where-to-code)
-      - [2.3.1 Frontend](#231-frontend)
-      - [2.3.2 Backend](#232-backend)
-    - [2.4. How to see code in action?](#24-how-to-see-code-in-action)
+  - [2. Documentation Guide](#2-documentation-guide)
+    - [2.1 Styles Documentation Guide](#21-styles-documentation-guide)
+    - [2.1 Component Documentation Guide](#21-component-documentation-guide)
+  - [3 How to Use Modules?](#3-how-to-use-modules)
+    - [3.1 Include module in `wrappid-app`](#31-include-module-in-wrappid-app)
+    - [3.2 Exclude module from `wrappid-app`](#32-exclude-module-from-wrappid-app)
 
 ## 1. Introduction   
 
-This is a **module boilerplate** to build wrappid modules which serves specific technical needs or business specific needs.
+This is a guide module created by the `Wrappid` framework's `wrappid-module` template. This module will help you understand the usage of the wrappid's components and styles etc.
 
-## 2. Getting Started
-This getting started section will help you setup a basic module built using the `Wrappid` framework Wrappid Projects. Follow the below steps to get going.   
+## 2. Documentation Guide
 
-[2.1. What are my Pre-requisites?](#21-what-are-my-pre-requisites)
+This Documentation Guide section will help you to write documentation for wrappid users in guide module.
+Follow the below steps to start your contribution through documentation.   
 
-[2.2. How to Create?](#22-how-to-create)
+### 2.1 Styles Documentation Guide
 
-[2.3 How to Use Modules?](#23-how-to-use-modules)
+The documentation guide for styles usage will be provided by @samhere17 soon.
 
+### 2.1 Component Documentation Guide
 
-### 2.1. What are my Pre-requisites?
+This section will help you write documentation for core components with ease.
+Follow the below steps to write proper documentation:
+> eg. Let us write it for CoreComponent
+1. Create the `CoreComponent.docs.js` in the folder(in guide-module) same as it present in [`@wrappid/core`]('//github.com/wrappid/core') package.
+2. Then add the file reference in the `DocsRegistry.js` available in the following location:
+   ```
+   app\components\component-docs\DocsRegistry.js
+   ```
+3. Inside your newly created file `CoreComponent.docs.js` add the following snippet as per your requirements:
+   ```
+   import { ...(related components) } from "@wrappid/core";
 
-- [Refer here](https://github.com/wrappid/#1-check-pre-requisites)
-- install @wrappid/toolkit globally. [Click here](https://github.com/wrappid/#2-install-wrappid-toolkit)for installation guide of @wrappid/toolkit.
+   import CodeSample from "../../CodeSample";
+   import ComponentDocs from "../ComponentDocs";
 
-### 2.2. How to Create?
-Run the below command to create Module Wrappid Project
+   export default function CoreComponentDocs() {
+     return (
+       <ComponentDocs
+         component={CoreComponent}
+         description="Please provide your component description to describe what is it used for."
+         samples={
+           <>
+              <CodeSample
+                title={"Please provide the title within 4 words max"}
+                description={"Please provide description about this code sample within 1000 characters."}
+                code={`
+    <CoreComponent {...(related props)} />
+                `}
+                expandedCode={`
+    import {CoreComponent} from '@wrappid/core';
 
-```terminal
-wrappid init module <wrappid>
-```
+    function TestCoreComponent() {
+      (... state, hooks and custom functions can go here)
+      return <CoreComponent {...(related props)} />;
+    }
+                `}
+                renderElement={
+                  <CoreComponent {...(related props)} />
+                }
+              />
+           </>
+         }
+       />
+     )
+   }
+   ```
+4. Include guide module in your project and test how it looks.
+5. Follow the [wrappid contribution guideline](https://github.com/wrappid/.github/blob/main/profile/CONTRIBUTING.md) to share your contribution with the wrappid community.
 
-**Output:**  
-![wrappid-module](https://github.com/wrappid/.github/assets/61864488/fc0f4866-43d5-4e3a-92a6-7b3e0aa768ab)
+## 3 How to Use Modules?
 
+### 3.1 Include module in `wrappid-app`
 
-Now you have a `<wrappid-module>` Module Wrappid Project at the directory the command was executed from.
-
-> **_Note:_** _If you already have a wrappid-module project in your github, you need to clone it in the directory you have your `wrappid-[app|service]`._
-
-### 2.3 How to Use Modules?
-
-#### 2.3.1 Include module in `wrappid-[app|service]`
-
-> **_Note:_** _You cannot setup or start a wrappid-module project like wrappid-app and wrappid-service._   
+> **_Note:_** _You cannot setup or start a wrappid-module project like wrappid-app._   
 
 To use Wrappid module projects
 
-- You need to `include` the module into your `wrappid-[app|service]`, from inside of the root of `wrappid-[app|service]`.   
-- Your module must be located in the parent directory of  `wrappid-[app|service]` project.   
-- Your `wrappid-[app|service]` should be setup.   
+- You need to `include` the module into your `wrappid-app`, from inside of the root of `wrappid-app`.   
+- Your module must be located in the parent directory of  `wrappid-app` project.   
+- Your `wrappid-app` should be setup.   
 
-Run the below command from the root of the `wrappid-[app|service]` project you wish to include your module.   
+Run the below command from the root of the `wrappid-app` project you wish to include your module.   
 
 ```terminal
-cd wrappid-[app|service]
+cd wrappid-app
 wrappid include <module-name>
 ```
 
-Wrappid modules are hot swappable, you can `include` and `exclude` a module while `wrappid-[app|service]` is running.
+Wrappid modules are hot swappable, you can `include` and `exclude` a module while `wrappid-app` is running.
 
 
 
-#### 2.2.2 Exclude module from `wrappid-[app|service]`   
+### 3.2 Exclude module from `wrappid-app`   
 To exclude a wrappid module
 
-- You need to be inside at the root of `wrappid-[app|service]`,
-- Your module must be located in the parent directory of  `wrappid-[app|service]` project.
-- Your `wrappid-[app|service]` should be setup.
+- You need to be inside at the root of `wrappid-app`,
+- Your module must be located in the parent directory of  `wrappid-app` project.
+- Your `wrappid-app` should be setup.
 
-Run the below command from the root of the `wrappid-[app|service]` project you wish to exclude your module.
+Run the below command from the root of the `wrappid-app` project you wish to exclude your module.
 
 ```terminal
 wrappid exclude <module-name>
@@ -96,19 +122,7 @@ wrappid exclude <module-name>
 
 Make sure to not write `-module` following your <module-name>
 <br />
-Wrappid modules are hot swappable, you can `include` and `exclude` a module while `wrappid-[app|service]` is running.
-
-### 2.3 Where to Code?
-For frontend, we write code in ./app/components
-
-For backend, we write code in ./service/components
-
-
-#### 2.3.1 Frontend
-We will now see how to write code for frontend in the module you have created.
-
-For example the file you created is: ./app/components/portfolioPage.js
-
+Wrappid modules are hot swappable, you can `include` and `exclude` a module while `wrappid-app` is running.
 
 
 
@@ -124,39 +138,3 @@ PortfolioPage: {comp: portfolioPage}
 ```
 
 To know more about frontend wrappid app, [click here](https://github.com/wrappid/wrappid-app)
-
-#### 2.3.2 Backend
-
-
-### 2.4. How to see code in action?
-To see what we wrote in the browser, we will put another entry for our new component
-
-Go to the routes.registry.js,
-```js
-{
-portfolioPageRoute:{
-Page: {AppComponent: "PortfolioPage" },
-entityRef: 'uniquePortfolioPage',
-URL:'portfolio'
-} 
-}
-```
-
-Now change your directory to the root of the project you wish to include this module into
-
-
-Run
-
-```terminal
-wrappid include <module-name>
-```
-
-
-And start your project!
-
-```terminal
-wrappid start [web|mobile] --env=stage
-```
-
-
-You should be able to see render of your code at localhost:3000/portfolio
