@@ -18,7 +18,7 @@ import ComponentProps from "../../ComponentProps";
 export default function CoreListItemSecondaryActionDocs() {
   return (
     <>
-      <CoreH4>ListItemSecondaryAction</CoreH4>
+      <CoreH4>CoreListItemSecondaryAction</CoreH4>
 
       <CoreTypographyBody1 styleClasses={[CoreClasses.PADDING.PT2]}>
         CoreListItemSecondaryAction is a component from Wrappid that is used to position elements, typically actions like CoreButtons or CoreIcons, to the far right of a ListItem. It is often used when you want to add an interactive element, such as a delete button, a switch, or any other secondary action, that should be aligned to the end of the CoreListItem.
