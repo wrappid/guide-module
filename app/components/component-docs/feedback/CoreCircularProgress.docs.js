@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from "react";
 
 import {
@@ -6,7 +7,8 @@ import {
   CoreCircularProgress,
   CoreTypographyBody1,
   CoreBox,
-  CoreClasses
+  CoreClasses,
+  CoreTypographyOverline
   // CoreCircularProgressWithLabel
 } from "@wrappid/core";
 
@@ -17,19 +19,28 @@ import ComponentProps from "../../ComponentProps";
 
 function CircularProgressWithLabel(props) {
   return (
-    <CoreBox 
-      styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
-    // styleClasses={[CoreClasses.DISPLAY.INLINE_FLEX, CoreClasses.POSITION.POSITION_RELATIVE]} /* sx={{ display: "inline-flex", position: "relative" }} */
-    >
-      <CoreCircularProgress styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} variant="determinate" {...props} />
+    <CoreBox styleClasses={[CoreClasses.POSITION.POSITION_RELATIVE, CoreClasses.DISPLAY.INLINE_FLEX]}>
+      <CoreCircularProgress
+        variant="determinate"
+        value={`${Math.round(props.value)}`}
+      />
 
-      <CoreBox
-      >
-        <CoreTypographyBody1 variant="caption">
+      <CoreBox styleClasses={[
+        CoreClasses.POSITION.TOP_50,
+        CoreClasses.POSITION.BOTTOM_0,
+        CoreClasses.POSITION.START_0,
+        CoreClasses.POSITION.END_0,
+        CoreClasses.POSITION.POSITION_ABSOLUTE,
+        CoreClasses.DISPLAY.FLEX,
+        CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+        CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER
+      ]}>
+        <CoreTypographyOverline styleClasses={[CoreClasses.TEXT.TEXT_WEIGHT_MEDIUM, CoreClasses.COLOR.TEXT_PRIMARY]}>
           {`${Math.round(props.value)}%`}
-        </CoreTypographyBody1>
+        </CoreTypographyOverline>
       </CoreBox>
     </CoreBox>
+  
   );
 }
 
@@ -123,7 +134,7 @@ export default function CoreCircularProgressDocs() {
       />
 
       <CodeSample
-        title={"Interactive integration(TODO)"}
+        title={"Interactive integration(Not Working)"}
         description={<>
           <CoreTypographyBody1>
           </CoreTypographyBody1>
@@ -145,10 +156,36 @@ export default function CoreCircularProgressDocs() {
             </CoreTypographyBody1>
           </>
         }
-        code={"<CoreCircularProgressWithLabel value={progress} />"}
+        code={`function CircularProgressWithLabel(props) {
+  return (
+    <CoreBox styleClasses={[CoreClasses.POSITION.POSITION_RELATIVE, CoreClasses.DISPLAY.INLINE_FLEX]}>
+      <CoreCircularProgress
+        variant="determinate"
+        value={` + "`${Math.round(props.value)}" + `}
+      />
+
+      <CoreBox styleClasses={[
+        CoreClasses.POSITION.TOP_50,
+        CoreClasses.POSITION.BOTTOM_0,
+        CoreClasses.POSITION.START_0,
+        CoreClasses.POSITION.END_0,
+        CoreClasses.POSITION.POSITION_ABSOLUTE,
+        CoreClasses.DISPLAY.FLEX,
+        CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+        CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER
+      ]}>
+        <CoreTypographyOverline styleClasses={[CoreClasses.TEXT.TEXT_WEIGHT_MEDIUM, CoreClasses.COLOR.TEXT_PRIMARY]} >
+          {` + "`${Math.round(props.value)}%`" + `}
+        </CoreTypographyOverline>
+      </CoreBox>
+    </CoreBox>
+  );
+}
+
+<CircularProgressWithLabel value={progress} />`}
         renderElement={
           <>
-            <CircularProgressWithLabel value={progress} />;
+            <CircularProgressWithLabel value={progress} />
           </>
         }
       />
