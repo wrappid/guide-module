@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.41](https://https//github.com/wrappid/wrappid-module/compare/v0.0.40...v0.0.41) (2024-08-20)
+
+### [0.0.40](https://https//github.com/wrappid/wrappid-module/compare/v0.0.39...v0.0.40) (2024-08-19)
+
+### [0.0.39](https://https//github.com/wrappid/wrappid-module/compare/v0.0.38...v0.0.39) (2024-08-19)
+
+
+### Bug Fixes
+
+* **core:** :bug: corelistitemsecondaryaction has been implemented ([89475f4](https://https//github.com/wrappid/wrappid-module/commit/89475f499dcb6120137ba417f1bf4520f19e59a4)), closes [#202](https://https//github.com/wrappid/wrappid-module/issues/202)
+
 ### [0.0.38](https://https//github.com/wrappid/wrappid-module/compare/v0.0.37...v0.0.38) (2024-08-19)
 
 
