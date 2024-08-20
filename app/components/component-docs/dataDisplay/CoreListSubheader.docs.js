@@ -24,12 +24,12 @@ export default function CoreListSubheaderDocs() {
       <CodeImport name="CoreListSubheader" />
       
       <CodeSample
-        title={"CoreListSubheader"}
+        title={"Basic Description"}
         description={
           <>
             <CoreList variant="HTML" listType="DISC">
               <CoreListItem>
-                <CoreListItemText primary="Text Labeling: It usually contains text that labels a section of list items." />
+                <CoreListItemText primary="Text Labeling: It usually contains text that labels a section of CoreListItems." />
               </CoreListItem>
 
               <CoreListItem>
@@ -37,11 +37,11 @@ export default function CoreListSubheaderDocs() {
               </CoreListItem>
 
               <CoreListItem>
-                <CoreListItemText primary="Typography: By default, ListSubheader uses the MUI typography system, but you can customize it." />
+                <CoreListItemText primary="Typography: By default, CoreListSubheader uses the Wrappid system, but you can customize it." />
               </CoreListItem>
 
               <CoreListItem>
-                <CoreListItemText primary="Sticky Position: You can make the ListSubheader sticky, so it stays visible at the top of the section as the user scrolls through the list." />
+                <CoreListItemText primary="Sticky Position: You can make the CoreListSubheader sticky, so it stays visible at the top of the section as the user scrolls through the CoreList." />
               </CoreListItem>
             </CoreList>
           </>
