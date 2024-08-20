@@ -6,10 +6,12 @@ import {
   CoreDivider,
   CoreBackdrop,
   CoreStack,
-  CoreAlert
-  // CoreBackdropTitle
+  CoreButton,
+  CoreClasses,
+  CoreCircularProgress
 } from "@wrappid/core";
 
+import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
 
 export default function CoreBackdropDocs() {
@@ -37,22 +39,16 @@ export default function CoreBackdropDocs() {
         </CoreTypographyBody1>
       </CoreStack>
 
-      <CoreAlert severity="error">
-        Backdrop Error: On clinking show backdrop, backdrop comes, but does not
-        closes. In MUI on clicking backdrop, page remians srollable, but here
-        page is not scrolling.
-      </CoreAlert>
-
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* <CodeSample
+      <CodeSample
         title={"Backdrop"}
         description={
-          "The CoreBackdrop offers four severity levels that set a distinctive icon and color"
+          <>
+            <CoreTypographyBody1>
+            The demo below shows a basic CoreBackdrop with a Circular Progress component in the foreground to indicate a loading state. After clicking Show Backdrop, you can click anywhere on the page to close it.
+            </CoreTypographyBody1>
+          </>
         }
-        code={`<CoreStack
-  direction="row"
-  styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
->
+        code={`<CoreStack direction="row" styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} >
   <CoreButton
     onClick={() => {
       setOpen(true);
@@ -70,8 +66,7 @@ export default function CoreBackdropDocs() {
   >
     <CoreCircularProgress color="inherit" />
   </CoreBackdrop>
-</CoreStack>
-)`}
+</CoreStack>`}
         renderElement={
           <>
             <CoreStack
@@ -98,7 +93,7 @@ export default function CoreBackdropDocs() {
             </CoreStack>
           </>
         }
-      /> */}
+      />
 
       <CoreDivider />
 
