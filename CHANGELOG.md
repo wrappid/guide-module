@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.44](https://https//github.com/wrappid/wrappid-module/compare/v0.0.43...v0.0.44) (2024-08-20)
+
+
+### Features
+
+* **core:** :art: new component added ([52ac600](https://https//github.com/wrappid/wrappid-module/commit/52ac6008f69e883a21e9d7744a2250466da97ff4)), closes [#211](https://https//github.com/wrappid/wrappid-module/issues/211)
+
 ### [0.0.43](https://https//github.com/wrappid/wrappid-module/compare/v0.0.42...v0.0.43) (2024-08-20)
 
 
