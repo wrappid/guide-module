@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.45](https://https//github.com/wrappid/wrappid-module/compare/v0.0.44...v0.0.45) (2024-08-21)
+
+
+### Features
+
+* **core:** :zap: added expanded code section with copy to clipboard feature ([0f6490f](https://https//github.com/wrappid/wrappid-module/commit/0f6490fb3ab34c5e65f1661b961144edd1e2c1d0)), closes [#211](https://https//github.com/wrappid/wrappid-module/issues/211)
+
 ### [0.0.44](https://https//github.com/wrappid/wrappid-module/compare/v0.0.43...v0.0.44) (2024-08-20)
 
 
