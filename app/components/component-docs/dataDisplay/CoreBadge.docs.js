@@ -10,7 +10,8 @@ import {
   CoreButton,
   CoreClasses,
   CoreFormControlLabel,
-  CoreSwitch
+  CoreSwitch,
+  CoreIconButton
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
@@ -615,8 +616,341 @@ export default function BadgeOverlap() {
             You can use the <CodeBlock >anchorOrigin</CodeBlock>prop to move the badge to any corner of the wrapped element.
                 </>
               }
-              code={""}
-              expandedCode={""}
+              code={`<CoreBadge
+  anchorOrigin={{
+    horizontal: "right",
+    vertical  : "top",
+  }}
+  color="secondary"
+  variant="dot">
+  <CoreIcon
+    type={__IconTypes.MATERIAL_OUTLINED_ICON}
+    color="primary"
+    fontSize= "medium"
+  >
+    mail
+  </CoreIcon>
+</CoreBadge>`}
+              expandedCode={`import {
+  CoreIcon,
+  CoreBadge,
+  CoreBox,
+  __IconTypes,
+  CoreClasses,
+} from "@wrappid/core";
+
+export default function DotBadge() {
+   return(
+      <CoreBox>
+          <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+
+            <CoreBadge
+              anchorOrigin={{
+                horizontal: "right",
+                vertical  : "top",
+              }}
+              color="secondary"
+              variant="dot">
+              <CoreIcon
+                type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                color="primary"
+                fontSize= "medium"
+              >
+                mail
+              </CoreIcon>
+            </CoreBadge>
+
+            <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
+              <CoreBadge
+                badgeContent={1}
+                color="secondary"
+                anchorOrigin={{
+                  horizontal: "right",
+                  vertical  : "top",
+                }}
+              >
+                <CoreIcon
+                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                  color="primary"
+                  fontSize= "medium"
+                >
+              mail
+                </CoreIcon>
+              </CoreBadge>
+            </CoreBox>
+
+            <CoreBadge
+              anchorOrigin={{
+                horizontal: "right",
+                vertical  : "top",
+              }}
+              badgeContent={100}
+              color="secondary">
+              <CoreIcon
+                type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                color="primary"
+                fontSize= "medium"
+              > 
+                mail
+              </CoreIcon>
+            </CoreBadge>
+
+            <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
+              <CoreBadge
+                anchorOrigin={{
+                  horizontal: "right",
+                  vertical  : "top",
+                }}
+                color="secondary"
+                badgeContent={1000}
+                max={999}>
+                <CoreIcon
+                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                  color="primary"
+                  fontSize= "medium"
+                >
+              mail
+                </CoreIcon>
+              </CoreBadge>
+            </CoreBox>
+          </CoreBox>
+
+          <CoreBox styleClasses={[
+            CoreClasses.PADDING.PT3,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.WIDTH.W_100
+          ]}>
+            <CoreBadge
+              anchorOrigin={{
+                horizontal: "left",
+                vertical  : "top",
+              }}
+              color="secondary"
+              variant="dot">
+              <CoreIcon
+                type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                color="primary"
+                fontSize= "medium"
+              >
+                mail
+              </CoreIcon>
+            </CoreBadge>
+
+            <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
+              <CoreBadge
+                badgeContent={1}
+                color="secondary"
+                anchorOrigin={{
+                  horizontal: "left",
+                  vertical  : "top",
+                }}
+              >
+                <CoreIcon
+                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                  color="primary"
+                  fontSize= "medium"
+                >
+              mail
+                </CoreIcon>
+              </CoreBadge>
+            </CoreBox>
+
+            <CoreBadge
+              anchorOrigin={{
+                horizontal: "left",
+                vertical  : "top",
+              }}
+              badgeContent={100}
+              color="secondary">
+              <CoreIcon
+                type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                color="primary"
+                fontSize= "medium"
+              > 
+                mail
+              </CoreIcon>
+            </CoreBadge>
+
+            <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
+              <CoreBadge
+                anchorOrigin={{
+                  horizontal: "left",
+                  vertical  : "top",
+                }}
+                color="secondary"
+                badgeContent={1000}
+                max={999}>
+                <CoreIcon
+                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                  color="primary"
+                  fontSize= "medium"
+                >
+              mail
+                </CoreIcon>
+              </CoreBadge>
+            </CoreBox>
+          </CoreBox>
+
+          <CoreBox styleClasses={[
+            CoreClasses.PADDING.PT3,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.WIDTH.W_100
+          ]}>
+            <CoreBadge
+              anchorOrigin={{
+                horizontal: "left",
+                vertical  : "bottom",
+              }}
+              color="secondary"
+              variant="dot">
+              <CoreIcon
+                type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                color="primary"
+                fontSize= "medium"
+              >
+                mail
+              </CoreIcon>
+            </CoreBadge>
+
+            <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
+              <CoreBadge
+                badgeContent={1}
+                color="secondary"
+                anchorOrigin={{
+                  horizontal: "left",
+                  vertical  : "bottom",
+                }}
+              >
+                <CoreIcon
+                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                  color="primary"
+                  fontSize= "medium"
+                >
+              mail
+                </CoreIcon>
+              </CoreBadge>
+            </CoreBox>
+
+            <CoreBadge
+              anchorOrigin={{
+                horizontal: "left",
+                vertical  : "bottom",
+              }}
+              badgeContent={100}
+              color="secondary">
+              <CoreIcon
+                type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                color="primary"
+                fontSize= "medium"
+              > 
+                mail
+              </CoreIcon>
+            </CoreBadge>
+
+            <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
+              <CoreBadge
+                anchorOrigin={{
+                  horizontal: "left",
+                  vertical  : "bottom",
+                }}
+                color="secondary"
+                badgeContent={1000}
+                max={999}>
+                <CoreIcon
+                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                  color="primary"
+                  fontSize= "medium"
+                >
+              mail
+                </CoreIcon>
+              </CoreBadge>
+            </CoreBox>
+          </CoreBox>
+
+          <CoreBox styleClasses={[
+            CoreClasses.PADDING.PT3,
+            CoreClasses.DISPLAY.FLEX,
+            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+            CoreClasses.WIDTH.W_100
+          ]}>
+            <CoreBadge
+              anchorOrigin={{
+                horizontal: "right",
+                vertical  : "bottom",
+              }}
+              color="secondary"
+              variant="dot">
+              <CoreIcon
+                type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                color="primary"
+                fontSize= "medium"
+              >
+                mail
+              </CoreIcon>
+            </CoreBadge>
+
+            <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
+              <CoreBadge
+                badgeContent={1}
+                color="secondary"
+                anchorOrigin={{
+                  horizontal: "right",
+                  vertical  : "bottom",
+                }}
+              >
+                <CoreIcon
+                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                  color="primary"
+                  fontSize= "medium"
+                >
+              mail
+                </CoreIcon>
+              </CoreBadge>
+            </CoreBox>
+
+            <CoreBadge
+              anchorOrigin={{
+                horizontal: "right",
+                vertical  : "bottom",
+              }}
+              badgeContent={100}
+              color="secondary">
+              <CoreIcon
+                type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                color="primary"
+                fontSize= "medium"
+              > 
+                mail
+              </CoreIcon>
+            </CoreBadge>
+
+            <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
+              <CoreBadge
+                anchorOrigin={{
+                  horizontal: "right",
+                  vertical  : "bottom",
+                }}
+                color="secondary"
+                badgeContent={1000}
+                max={999}>
+                <CoreIcon
+                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                  color="primary"
+                  fontSize= "medium"
+                >
+              mail
+                </CoreIcon>
+              </CoreBadge>
+            </CoreBox>
+          </CoreBox>
+        </CoreBox>
+   );
+}                `}
               renderElement={
                 <>
                   <CoreBox>
@@ -928,7 +1262,7 @@ export default function BadgeOverlap() {
                       </CoreBox>
                     </CoreBox>
                   </CoreBox>
-                    
+
                 </>
               }
             />
@@ -941,9 +1275,17 @@ export default function BadgeOverlap() {
             correctly. You should provide a full description, for instance, with <CodeBlock >aria-label</CodeBlock>
                 </>
               }
-              code={`<CoreBadge color="secondary" variant="dot">
-    <CoreIcon icon="mail" />
-  </CoreBadge>`}
+              code={`<CoreIconButton aria-label={notificationsLabel(100)}>
+  <CoreBadge badgeContent={100} color="secondary">
+    <CoreIcon
+      type={__IconTypes.MATERIAL_OUTLINED_ICON}
+      color="primary"
+      fontSize= "medium"
+    > 
+      mail
+    </CoreIcon>
+  </CoreBadge>
+</CoreIconButton>`}
               expandedCode={`import {
   CoreIcon,
   CoreBadge,
@@ -960,10 +1302,11 @@ function notificationsLabel(count) {
   }
   return ` + "`${count} " + " notifications`" + `;
 }
-  
+
 export default function AccessibleBadges() {
+
   return (
-     <CoreIcon aria-label={100}>
+     <CoreIconButton aria-label={notificationsLabel(100)}>
         <CoreBadge badgeContent={100} color="secondary">
           <CoreIcon
             type={__IconTypes.MATERIAL_OUTLINED_ICON}
@@ -973,11 +1316,11 @@ export default function AccessibleBadges() {
             mail
           </CoreIcon>
         </CoreBadge>
-      </CoreIcon>
+      </CoreIconButton>
   );
 }`}
               renderElement={
-                <CoreIcon aria-label={notificationsLabel(100)}>
+                <CoreIconButton aria-label={notificationsLabel(100)}>
                   <CoreBadge badgeContent={100} color="secondary">
                     <CoreIcon
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
@@ -987,7 +1330,7 @@ export default function AccessibleBadges() {
                       mail
                     </CoreIcon>
                   </CoreBadge>
-                </CoreIcon>
+                </CoreIconButton>
               }
             />
           </>
