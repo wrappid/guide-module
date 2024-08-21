@@ -1,21 +1,21 @@
 import React from "react";
 
 import {
-  CoreClasses,
-  CoreStack,
-  CoreButton,
-  CoreTypographyBody1,
-  CoreH5,
+  ClipboardCopyButton,
   CoreBox,
-  useDynamicRefs,
-  CorePaper
+  CoreButton,
+  CoreClasses,
+  CoreH5,
+  CorePaper,
+  CoreTypographyBody1,
+  useDynamicRefs
 } from "@wrappid/core";
 
 import CodeBlock from "./CodeBlock";
 
 export default function CodeSample(props) {
-  const { title, description, code, renderElement } = props;
-  const [expandedBlock, setExpandedBlock] = React.useState("code");
+  const { title, description, code, expandedCode, renderElement } = props;
+  const [expandedBlock, setExpandedBlock] = React.useState(false);
   const { setRef } = useDynamicRefs();
 
   const expandBlock = (panel) => {
@@ -52,26 +52,33 @@ export default function CodeSample(props) {
           )}
 
           {code && (
-            <CoreBox>
-              <CoreStack
-                direction="row"
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END, CoreClasses.PADDING.P1]}
+            <>
+              <CoreBox
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END, CoreClasses.PADDING.P1]}
               >
                 <CoreButton
-                  varient="outlined"
+                  variant="outlined"
                   label={expandedBlock === "code" ? "Collapse Code" : "Expand Code"}
                   onClick={() => {
                     expandedBlock === "code" ? expandBlock(false) : expandBlock("code");
                   }}
                 />
-              </CoreStack>
+                
+                <ClipboardCopyButton
+                  triggered={expandedBlock}
+                  text={expandedBlock === "code" ? expandedCode : code} />
+              </CoreBox>
 
-              {expandedBlock === "code" && (
+              {expandedBlock === "code" ? (
+                <CodeBlock noWrap={true} block={true}>
+                  {expandedCode}
+                </CodeBlock>
+              ) : (
                 <CodeBlock noWrap={true} block={true}>
                   {code}
                 </CodeBlock>
               )}
-            </CoreBox>
+            </>
           )}
         </CoreBox>
       )}

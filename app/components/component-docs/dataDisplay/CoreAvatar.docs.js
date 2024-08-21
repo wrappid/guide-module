@@ -35,11 +35,22 @@ export default function CoreAvatarDocs() {
               </>
             }
             code={`
-<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
-  <CoreAvatar src="https://picsum.photos/200?random=1" />
-  <CoreAvatar src="https://picsum.photos/200?random=2" />
-  <CoreAvatar src="https://picsum.photos/200?random=3" />
-</CoreStack>
+<CoreAvatar src="https://picsum.photos/200?random=1" />
+<CoreAvatar src="https://picsum.photos/200?random=2" />
+<CoreAvatar src="https://picsum.photos/200?random=3" />
+            `}
+            expandedCode={`
+import { CoreAvatar, CoreClasses, CoreStack } from "@wrappid/core";
+
+export function Demo() {
+  return (
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+      <CoreAvatar src="https://picsum.photos/200?random=1" />
+      <CoreAvatar src="https://picsum.photos/200?random=2" />
+      <CoreAvatar src="https://picsum.photos/200?random=3" />
+    </CoreStack>
+  );
+}
             `}
             renderElement={
               <CoreStack
