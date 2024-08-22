@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.48](https://https//github.com/wrappid/wrappid-module/compare/v0.0.47...v0.0.48) (2024-08-22)
+
+
+### Features
+
+* **core:** :art: update CoreImage docs structure ([1ae7e74](https://https//github.com/wrappid/wrappid-module/commit/1ae7e741c12f70d36c08427a6f269128d12f8c00)), closes [#186](https://https//github.com/wrappid/wrappid-module/issues/186)
+
 ### [0.0.47](https://https//github.com/wrappid/wrappid-module/compare/v0.0.46...v0.0.47) (2024-08-22)
 
 ### [0.0.46](https://https//github.com/wrappid/wrappid-module/compare/v0.0.45...v0.0.46) (2024-08-21)
