@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   CoreClasses,
   CoreH6,
@@ -14,8 +16,9 @@ import {
 import CodeBlock from "../../CodeBlock";
 import CodeSample from "../../CodeSample";
 import ComponentDocs from "../ComponentDocs";
+
 const CORE_COMPONENT = CoreChip;
-const CORE_COMPONENT_NAME = (CoreChip?.displayName || CoreChip?.name);
+const CORE_COMPONENT_NAME = (CORE_COMPONENT?.displayName || CORE_COMPONENT?.name);
 
 /**
  * Handles the click event, logging a message to the console.
@@ -30,17 +33,6 @@ function handleDelete() {
   // eslint-disable-next-line no-console
   console.info("Delete icon clicked! 🗑️");
 }
-
-/**
- * @todo
- * use React.useState, create state variable and setChipData function
- * 
- */
-// eslint-disable-next-line no-unused-vars
-const handleDeleteData = (chipToDelete) => () => {
-  // eslint-disable-next-line etc/no-commented-out-code
-  // setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
-};
 
 /**
  * To handle Subtitles of CodeSamples till a concrete solution is made
@@ -61,6 +53,18 @@ function SubtitleDescription(props){
 
 }
 export default function CoreChipDocs() {
+
+  const handleDeleteData = (chipToDelete) => () => {
+    setCoreChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
+  };
+  const [chipData, setCoreChipData] = useState([
+    { key: 0, label: "core" },
+    { key: 1, label: "native-web" },
+    { key: 2, label: "native-mobile" },
+    { key: 3, label: "styles" },
+    { key: 4, label: "toolkit" },
+  ]);
+
   return (
     <ComponentDocs
       component={CORE_COMPONENT}
@@ -365,7 +369,7 @@ export default function CustomDeleteIconCoreChip() {
           />
 
           <CodeSample
-            title="Chip adornments"
+            title={`${CORE_COMPONENT_NAME} adornments`}
             description={
               <>
                 <SubtitleDescription>
@@ -434,8 +438,7 @@ export default function AvatarCoreChip() {
               </CoreTypographyBody1>
             </>
             }
-            code={`
-<CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" />
+            code={`<CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" />
 <CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" variant="outlined" />`}
             expandedCode={`import { CoreChip, CoreStack, CoreIcon } from "@wrappid/core";
 
@@ -601,34 +604,37 @@ export default function SizesCoreChip() {
           />
 
           <CodeSample
-            title="CoreChip array(Not Working)"
+            title={`Array ${CORE_COMPONENT_NAME}`}
             description="An example of rendering multiple chips from an array of values. Deleting a chip removes it from the array. Note that since no onClick prop is defined, the Chip can be focused, but does not gain depth while clicked or touched."
-            code={`<CorePaper styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P1]}
+            code={`<CorePaper
+  styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P1]}
   component="ul"
 >
-  {[
-    { key: 0, label: "core" },
-    { key: 1, label: "native-web" },
-    { key: 2, label: "native-mobile" },
-    { key: 3, label: "styles" },
-    { key: 4, label: "toolkit" },
-  ].map((data) => {
+  {chipData.map((data) => {
+
     return (
-      <CoreListItem key={data.key}>
+      <CoreListItem key={data?.key}>
         <CoreChip
-          label={data.label}
-          onDelete={handleDeleteData}
+          label={data?.label}
+          onDelete={handleDeleteData(data)}
         />
       </CoreListItem>
     );
   })}
-</CorePaper>
-        `}
-            expandedCode={`import { CoreChip, CoreClasses, CorePaper, CoreListItem } from "@wrappid/core";
+</CorePaper>`}
+            expandedCode={`import { useState } from "react";
+import { CoreChip, CoreClasses, CorePaper, CoreListItem } from "@wrappid/core";
 
-function handleDelete() {
-  console.info("Delete icon clicked! 🗑️");
-}
+const handleDeleteData = (chipToDelete) => () => {
+  setCoreChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
+};
+const [chipData, setCoreChipData] = useState([
+  { key: 0, label: "core" },
+  { key: 1, label: "native-web" },
+  { key: 2, label: "native-mobile" },
+  { key: 3, label: "styles" },
+  { key: 4, label: "toolkit" },
+]);
 
 export default function ArrayCoreChip() {
   return (
@@ -637,18 +643,13 @@ export default function ArrayCoreChip() {
         styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P1]}
         component="ul"
       >
-        {[
-          { key: 0, label: "core" },
-          { key: 1, label: "native-web" },
-          { key: 2, label: "native-mobile" },
-          { key: 3, label: "styles" },
-          { key: 4, label: "toolkit" },
-        ].map((data) => {
+        {chipData.map((data) => {
+
           return (
-            <CoreListItem key={data.key}>
+            <CoreListItem key={data?.key}>
               <CoreChip
-                label={data.label}
-                onDelete={handleDeleteData}
+                label={data?.label}
+                onDelete={handleDeleteData(data)}
               />
             </CoreListItem>
           );
@@ -662,18 +663,13 @@ export default function ArrayCoreChip() {
                 styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P1]}
                 component="ul"
               >
-                {[
-                  { key: 0, label: "core" },
-                  { key: 1, label: "native-web" },
-                  { key: 2, label: "native-mobile" },
-                  { key: 3, label: "styles" },
-                  { key: 4, label: "toolkit" },
-                ].map((data) => {
+                {chipData.map((data) => {
+
                   return (
-                    <CoreListItem key={data.key}>
+                    <CoreListItem key={data?.key}>
                       <CoreChip
-                        label={data.label}
-                        onDelete={handleDeleteData}
+                        label={data?.label}
+                        onDelete={handleDeleteData(data)}
                       />
                     </CoreListItem>
                   );
