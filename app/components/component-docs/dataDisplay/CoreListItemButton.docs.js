@@ -19,7 +19,7 @@ export default function CoreListItemButtonDocs() {
     <>
       <ComponentDocs
         component={CoreListItemButton}
-        description="CoreListItemButton is a simplified version of CoreListItem optimized for items that act like buttons. It's designed to make it easier to create clickable CoreList items without needing to configure additional props."
+        description="CoreListItemButton is a simplified version of CoreListItem, optimized for items that act like buttons. It's designed to make it easier to create clickable CoreList items without needing to configure additional props."
         samples={
           <>
             <CodeSample
@@ -33,16 +33,9 @@ export default function CoreListItemButtonDocs() {
   <CoreListItemText primary="Inbox" />
 </CoreListItemButton>`}
               expandedCode={`import {
-  BlankLayout,
-  CoreBox,
   CoreClasses,
   CoreListItemButton,
   CoreListItemIcon,
-  CoreIconText,
-  CoreLayoutItem,
-  CorePaper,
-  CoreStack,
-  CoreDivider,
   CoreList,
   CoreListItem,
   CoreListItemText
@@ -51,62 +44,46 @@ export default function CoreListItemButtonDocs() {
 export default function BasicCoreListItemButton() {
   return (
     <>
-      
-      <CoreLayoutItem
-        id={BlankLayout.PLACEHOLDER.CONTENT}
-        styleClasses={[CoreClasses.FLEX.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P5]}>
+      <CoreStack
+        component={CorePaper}
+        styleClasses={[CoreClasses.WIDTH.W_25]}
+      >
+        <CoreList component="nav">
+          <CoreListItemButton>
+            <CoreListItemIcon>
+              <CoreIconText icon="mail" />
+            </CoreListItemIcon>
 
-        <CoreBox
-          styleClasses={[
-            CoreClasses.WIDTH.W_100,
-            CoreClasses.MARGIN.M4,
-            CoreClasses.DISPLAY.FLEX,
-            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            CoreClasses.BORDER.BORDER_2
-          ]}
-        >
-          <CoreStack
-            component={CorePaper}
-            styleClasses={[CoreClasses.WIDTH.W_25]}
-          >
-            <CoreList component="nav">
-              <CoreListItemButton>
-                <CoreListItemIcon>
-                  <CoreIconText icon="mail" />
-                </CoreListItemIcon>
+            <CoreListItemText primary="Inbox" />
+          </CoreListItemButton>
 
-                <CoreListItemText primary="Inbox" />
-              </CoreListItemButton>
+          <CoreListItemButton>
+            <CoreListItemIcon>
+              <CoreIconText icon="drafts"/>
+            </CoreListItemIcon>
 
-              <CoreListItemButton>
-                <CoreListItemIcon>
-                  <CoreIconText icon="drafts"/>
-                </CoreListItemIcon>
+            <CoreListItemText primary="Draft" />
+          </CoreListItemButton>
 
-                <CoreListItemText primary="Draft" />
-              </CoreListItemButton>
+          <CoreDivider />
+  
+          <CoreListItem disablePadding> 
+            <CoreListItemButton> 
+              <CoreListItemText  
+                primary="Inbox" /> 
+            </CoreListItemButton> 
+          </CoreListItem> 
 
-              <CoreDivider />
-            
-              <CoreListItem disablePadding> 
-                <CoreListItemButton> 
-                  <CoreListItemText  
-                    primary="Inbox" /> 
-                </CoreListItemButton> 
-              </CoreListItem> 
-
-              <CoreListItem disablePadding> 
-                <CoreListItemButton
-                  component="a"
-                  href="#"> 
-                  <CoreListItemText  
-                    primary="Draft" /> 
-                </CoreListItemButton> 
-              </CoreListItem> 
-            </CoreList>
-          </CoreStack>
-        </CoreBox>
-      </CoreLayoutItem>
+          <CoreListItem disablePadding> 
+            <CoreListItemButton
+              component="a"
+              href="#"> 
+              <CoreListItemText  
+                primary="Draft" /> 
+            </CoreListItemButton> 
+          </CoreListItem> 
+        </CoreList>
+      </CoreStack>
     </>
   );
 };`}
