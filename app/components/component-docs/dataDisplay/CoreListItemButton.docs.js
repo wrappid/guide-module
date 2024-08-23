@@ -48,7 +48,7 @@ export default function CoreListItemButtonDocs() {
   CoreListItemText
 } from "@wrappid/core";
 
-export default function BasicCoreListItem() {
+export default function BasicCoreListItemButton() {
   return (
     <>
       
