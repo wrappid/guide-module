@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.52](https://https//github.com/wrappid/wrappid-module/compare/v0.0.51...v0.0.52) (2024-08-22)
+
+### [0.0.51](https://https//github.com/wrappid/wrappid-module/compare/v0.0.50...v0.0.51) (2024-08-22)
+
+
+### Features
+
+* **core:** :art: new structure ([a7f66af](https://https//github.com/wrappid/wrappid-module/commit/a7f66af8bf5139c335310df1acc2e728777e6a42)), closes [#207](https://https//github.com/wrappid/wrappid-module/issues/207)
+
 ### [0.0.50](https://https//github.com/wrappid/wrappid-module/compare/v0.0.49...v0.0.50) (2024-08-22)
 
 ### [0.0.49](https://https//github.com/wrappid/wrappid-module/compare/v0.0.48...v0.0.49) (2024-08-22)
