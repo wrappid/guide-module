@@ -42,7 +42,7 @@ export default function CoreListItemIconDocs() {
   CoreListItemText
 } from "@wrappid/core";
 
-export const Calculator = () => {
+export default function BasicCoreListItem() {
   return (
     <>
       <CoreStack
