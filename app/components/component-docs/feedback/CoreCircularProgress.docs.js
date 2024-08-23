@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-  CoreH4,
   CoreStack,
   CoreCircularProgress,
   CoreTypographyBody1,
@@ -13,7 +12,6 @@ import {
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
-import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
 import ComponentDocs from "../ComponentDocs";
 
@@ -59,7 +57,6 @@ export default function CoreCircularProgressDocs() {
 
   return (
     <>
-
       <ComponentDocs
         component={CoreCircularProgress}
         description={
@@ -262,15 +259,9 @@ export default function CircularWithValueLabel() {
                 </>
               }
             />
-
           </>
         }
       />
-
-      <CoreH4>CoreCircularProgress</CoreH4>
-
-      <CodeImport name="CoreCircularProgress" />
-    
     </>
   );
 }
