@@ -59,45 +59,41 @@ export default function CoreListItemAvatarDocs() {
 export default function BasicCoreListItemAvatar() {
   return (
     <>
-      <CoreLayoutItem
-        id={BlankLayout.PLACEHOLDER.CONTENT}
-        styleClasses={[CoreClasses.FLEX.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P5]}>
-        <CoreBox
-          styleClasses={[
-            CoreClasses.WIDTH.W_100,
-            CoreClasses.MARGIN.M4,
-            CoreClasses.DISPLAY.FLEX,
-            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            CoreClasses.BORDER.BORDER_2
-          ]}
+      <CoreBox
+        styleClasses={[
+          CoreClasses.WIDTH.W_100,
+          CoreClasses.MARGIN.M4,
+          CoreClasses.DISPLAY.FLEX,
+          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+          CoreClasses.BORDER.BORDER_2
+        ]}
+      >
+        <CoreStack
+          component={CorePaper}
+          styleClasses={[CoreClasses.WIDTH.W_25]}
         >
-          <CoreStack
-            component={CorePaper}
-            styleClasses={[CoreClasses.WIDTH.W_25]}
-          >
-            <CoreList>
-              <CoreListItem>
-                <CoreListItemAvatar>
-                  <CoreAvatar alt="Sam" src="/path/to/avatar.jpg" />
-                </CoreListItemAvatar>
+          <CoreList>
+            <CoreListItem>
+              <CoreListItemAvatar>
+                <CoreAvatar alt="Sam" src="/path/to/avatar.jpg" />
+              </CoreListItemAvatar>
 
-                <CoreListItemText primary="sam" secondary="sam@wrappid.com" />
-              </CoreListItem>
+              <CoreListItemText primary="sam" secondary="sam@wrappid.com" />
+            </CoreListItem>
 
-              <CoreDivider />
+            <CoreDivider />
 
-              <CoreListItem>
-                <CoreListItemAvatar>
-                  <CoreAvatar alt="Neel">JS</CoreAvatar>
-                </CoreListItemAvatar>
+            <CoreListItem>
+              <CoreListItemAvatar>
+                <CoreAvatar alt="Neel">JS</CoreAvatar>
+              </CoreListItemAvatar>
 
-                <CoreListItemText primary="Neel" secondary="neel@wrappid.com" />
-              </CoreListItem>
-            </CoreList>
+              <CoreListItemText primary="Neel" secondary="neel@wrappid.com" />
+            </CoreListItem>
+          </CoreList>
 
-          </CoreStack>
-        </CoreBox>
-      </CoreLayoutItem>
+        </CoreStack>
+      </CoreBox>
     </>
   );
 }`}
