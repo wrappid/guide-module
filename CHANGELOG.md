@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.52](https://https//github.com/wrappid/wrappid-module/compare/v0.0.51...v0.0.52) (2024-08-22)
+
+### [0.0.51](https://https//github.com/wrappid/wrappid-module/compare/v0.0.50...v0.0.51) (2024-08-22)
+
+
+### Features
+
+* **core:** :art: new structure ([a7f66af](https://https//github.com/wrappid/wrappid-module/commit/a7f66af8bf5139c335310df1acc2e728777e6a42)), closes [#207](https://https//github.com/wrappid/wrappid-module/issues/207)
+
+### [0.0.50](https://https//github.com/wrappid/wrappid-module/compare/v0.0.49...v0.0.50) (2024-08-22)
+
+### [0.0.49](https://https//github.com/wrappid/wrappid-module/compare/v0.0.48...v0.0.49) (2024-08-22)
+
+### [0.0.48](https://https//github.com/wrappid/wrappid-module/compare/v0.0.47...v0.0.48) (2024-08-22)
+
+
+### Features
+
+* **core:** :art: update CoreImage docs structure ([1ae7e74](https://https//github.com/wrappid/wrappid-module/commit/1ae7e741c12f70d36c08427a6f269128d12f8c00)), closes [#186](https://https//github.com/wrappid/wrappid-module/issues/186)
+
+### [0.0.47](https://https//github.com/wrappid/wrappid-module/compare/v0.0.46...v0.0.47) (2024-08-22)
+
 ### [0.0.46](https://https//github.com/wrappid/wrappid-module/compare/v0.0.45...v0.0.46) (2024-08-21)
 
 ### [0.0.45](https://https//github.com/wrappid/wrappid-module/compare/v0.0.44...v0.0.45) (2024-08-21)
