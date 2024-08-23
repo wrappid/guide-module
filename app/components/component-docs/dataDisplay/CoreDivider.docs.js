@@ -15,9 +15,7 @@ import {
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
-import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
-import ComponentProps from "../../ComponentProps";
 import ComponentDocs from "../ComponentDocs";
 
 export default function CoreDividerDocs() {
@@ -28,21 +26,13 @@ export default function CoreDividerDocs() {
 
   return (
     <>
-      <CoreH4
-        styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}
-      >
-          CoreDivider
-      </CoreH4>
-  
-      <CoreTypographyBody1>
-      The CoreDivider component provides a thin, unobtrusive line for grouping elements to reinforce visual hierarchy.
-      </CoreTypographyBody1>
-
-      <CodeImport name="CoreDivider" />
-
       <ComponentDocs
         component={CoreDivider}
-        description="Please provide your component description to describe what is it used for."
+        description={
+          <CoreTypographyBody1>
+            The CoreDivider component provides a thin, unobtrusive line for grouping elements to reinforce visual hierarchy.
+          </CoreTypographyBody1>
+        }
         samples={
           <>
             <CodeSample 
@@ -250,18 +240,19 @@ export default function DividerVariants(){
   CoreClasses,
   CoreDivider,
   CoreBox,
-  CoreIcon
+  CoreIcon,
+  CoreStack
 } from "@wrappid/core";
     
 export default function VerticalDividers() {
   return (
-       <CoreBox styleClasses={[
-                  CoreClasses.DISPLAY.FLEX,
-                  CoreClasses.WIDTH.MAX_W_75,
-                  CoreClasses.BORDER.BORDER,
-                  CoreClasses.BORDER.BORDER_GREY_400,
-                  CoreClasses.BORDER.BORDER_ROUNDED_1
-                ]}>
+    <CoreBox styleClasses={[
+      CoreClasses.DISPLAY.FLEX,
+      CoreClasses.WIDTH.MAX_W_75,
+      CoreClasses.BORDER.BORDER,
+      CoreClasses.BORDER.BORDER_GREY_400,
+      CoreClasses.BORDER.BORDER_ROUNDED_1
+    ]}>
       <CoreStack direction="row"> 
         <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
           <CoreIcon fontSize="medium">cloud</CoreIcon>
@@ -327,27 +318,26 @@ export default function VerticalDividers() {
   CoreBox,
   CoreIcon
 } from "@wrappid/core";
-    
 
 export default function FlexDivider() {
   return(
     <CoreBox styleClasses={[
-        CoreClasses.DISPLAY.FLEX,
-        CoreClasses.WIDTH.MAX_W_75,
-        CoreClasses.BORDER.BORDER,
-        CoreClasses.BORDER.BORDER_GREY_400,
-        CoreClasses.BORDER.BORDER_ROUNDED_1
-      ]}>
+      CoreClasses.DISPLAY.FLEX,
+      CoreClasses.WIDTH.MAX_W_75,
+      CoreClasses.BORDER.BORDER,
+      CoreClasses.BORDER.BORDER_GREY_400,
+      CoreClasses.BORDER.BORDER_ROUNDED_1
+    ]}>
 
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon>dehaze</CoreIcon>
-        </CoreBox>
+      <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+        <CoreIcon>dehaze</CoreIcon>
+      </CoreBox>
 
-        <CoreDivider orientation="vertical" flexItem />
+      <CoreDivider orientation="vertical" flexItem />
 
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon>edit</CoreIcon>
-        </CoreBox>
+      <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
+        <CoreIcon>edit</CoreIcon>
+      </CoreBox>
     </CoreBox>
   );
 }`}
@@ -402,23 +392,31 @@ export default function FlexDivider() {
 } from "@wrappid/core";
                 
 export default function DividerText() {
-  const content = <CoreTypographyBody1>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}</CoreTypographyBody1>
+  const content = <CoreTypographyBody1>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}</CoreTypographyBody1>;
 
   return(
     <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
       {content}
+
       <CoreDivider>CENTER</CoreDivider>
+
       {content}
+
       <CoreDivider textAlign="left">LEFT</CoreDivider>
+
       {content}
+
       <CoreDivider textAlign="right">RIGHT</CoreDivider>
+
       {content}
+
       <CoreDivider>
         <CoreChip label="Chip" size="small" />
       </CoreDivider>
+
       {content}
     </CoreBox>
-    )
+  );
 }`}
               renderElement={
                 <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
@@ -494,32 +492,29 @@ export default function ListDividers() {
     </CoreBox>
   );
 }`}
-              code={`<CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+              code={`<CoreList aria-label="mailbox folders">
+  <CoreListItem >
+    <CoreListItemText primary="Inbox" />
+  </CoreListItem>
 
-  <CoreList aria-label="mailbox folders">
-    <CoreListItem >
-      <CoreListItemText primary="Inbox" />
-    </CoreListItem>
+  <CoreDivider component="li" />
 
-    <CoreDivider component="li" />
+  <CoreListItem>
+    <CoreListItemText primary="Drafts" />
+  </CoreListItem>
 
-    <CoreListItem>
-      <CoreListItemText primary="Drafts" />
-    </CoreListItem>
+  <CoreDivider component="li" />
 
-    <CoreDivider component="li" />
+  <CoreListItem>
+    <CoreListItemText primary="Trash" />
+  </CoreListItem>
 
-    <CoreListItem>
-      <CoreListItemText primary="Trash" />
-    </CoreListItem>
+  <CoreDivider component="li" />
 
-    <CoreDivider component="li" />
-
-    <CoreListItem>
-      <CoreListItemText primary="Spam" />
-    </CoreListItem>
-  </CoreList>
-</CoreBox>`}
+  <CoreListItem>
+    <CoreListItemText primary="Spam" />
+  </CoreListItem>
+</CoreList>`}
               renderElement={
                 <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
 
@@ -625,8 +620,6 @@ export default function VerticalDividerMiddle() {
           </>
         }/>
 
-      <ComponentProps component={CoreDivider} />
-  
     </>
   );
 }
