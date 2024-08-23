@@ -30,54 +30,54 @@ export default function CoreListItemIconDocs() {
   <CoreIcon icon="inbox" />
 </CoreListItemIcon>`}
               expandedCode={`import {
-  BlankLayout,
   CoreBox,
+  CoreStack,
+  CorePaper,
   CoreClasses,
   CoreListItemButton,
   CoreListItemIcon,
-  CoreLayoutItem,
   CoreList,
   CoreListItem,
   CoreIcon,
   CoreListItemText
 } from "@wrappid/core";
 
-export default function BasicCoreListItemIcon() {
+export const Calculator = () => {
   return (
-    <CoreLayoutItem
-      id={BlankLayout.PLACEHOLDER.CONTENT}
-      styleClasses={[CoreClasses.FLEX.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P5]}>
-
-      <CoreBox
-        styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}
+    <>
+      <CoreStack
+        component={CorePaper}
+        styleClasses={[CoreClasses.WIDTH.W_25]}
       >
-        <CoreList>
-          <CoreListItem disablePadding>
-            <CoreListItemButton>
-              <CoreListItemIcon>
-                <CoreIcon icon="inbox" />
-              </CoreListItemIcon>
+        <CoreBox
+          styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}>
+          <CoreList>
+            <CoreListItem disablePadding>
+              <CoreListItemButton>
+                <CoreListItemIcon>
+                  <CoreIcon icon="inbox" />
+                </CoreListItemIcon>
 
-              <CoreListItemText primary="Inbox" />
-            </CoreListItemButton>
-          </CoreListItem>
+                <CoreListItemText primary="Inbox" />
+              </CoreListItemButton>
+            </CoreListItem>
 
-          <CoreListItem disablePadding>
-            <CoreListItemButton>
-              <CoreListItemIcon>
-                <CoreIcon icon="drafts" />
-              </CoreListItemIcon>
+            <CoreListItem disablePadding>
+              <CoreListItemButton>
+                <CoreListItemIcon>
+                  <CoreIcon icon="drafts" />
+                </CoreListItemIcon>
 
-              <CoreListItemText primary="Drafts" />
-            </CoreListItemButton>
-          </CoreListItem>
-        </CoreList>
+                <CoreListItemText primary="Drafts" />
+              </CoreListItemButton>
+            </CoreListItem>
+          </CoreList>
 
-      </CoreBox>
-    </CoreLayoutItem>
-
+        </CoreBox>
+      </CoreStack>
+    </>
   );
-}`}
+};`}
               renderElement={<>
                 <CoreStack
                   component={CorePaper}
