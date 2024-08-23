@@ -44,41 +44,40 @@ export default function CoreListItemIconDocs() {
 
 export default function BasicCoreListItemIcon() {
   return (
-    <>
-      <CoreLayoutItem
-        id={BlankLayout.PLACEHOLDER.CONTENT}
-        styleClasses={[CoreClasses.FLEX.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P5]}>
+    <CoreLayoutItem
+      id={BlankLayout.PLACEHOLDER.CONTENT}
+      styleClasses={[CoreClasses.FLEX.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P5]}>
 
-        <CoreBox
-          styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}
-        >
-          <CoreList>
-            <CoreListItem disablePadding>
-              <CoreListItemButton>
-                <CoreListItemIcon>
-                  <CoreIcon icon="inbox" />
-                </CoreListItemIcon>
+      <CoreBox
+        styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}
+      >
+        <CoreList>
+          <CoreListItem disablePadding>
+            <CoreListItemButton>
+              <CoreListItemIcon>
+                <CoreIcon icon="inbox" />
+              </CoreListItemIcon>
 
-                <CoreListItemText primary="Inbox" />
-              </CoreListItemButton>
-            </CoreListItem>
+              <CoreListItemText primary="Inbox" />
+            </CoreListItemButton>
+          </CoreListItem>
 
-            <CoreListItem disablePadding>
-              <CoreListItemButton>
-                <CoreListItemIcon>
-                  <CoreIcon icon="drafts" />
-                </CoreListItemIcon>
+          <CoreListItem disablePadding>
+            <CoreListItemButton>
+              <CoreListItemIcon>
+                <CoreIcon icon="drafts" />
+              </CoreListItemIcon>
 
-                <CoreListItemText primary="Drafts" />
-              </CoreListItemButton>
-            </CoreListItem>
-          </CoreList>
+              <CoreListItemText primary="Drafts" />
+            </CoreListItemButton>
+          </CoreListItem>
+        </CoreList>
 
-        </CoreBox>
-      </CoreLayoutItem>
-    </>
+      </CoreBox>
+    </CoreLayoutItem>
+
   );
-};`}
+}`}
               renderElement={<>
                 <CoreStack
                   component={CorePaper}
