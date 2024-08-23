@@ -79,9 +79,6 @@ export default function CoreListItemDocs() {
 export default function BasicCoreListItem() {
   return (
     <>
-      <CoreLayoutItem
-        id={BlankLayout.PLACEHOLDER.CONTENT}
-        styleClasses={[CoreClasses.FLEX.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P5]}>
         <CoreBox
           styleClasses={[
             CoreClasses.WIDTH.W_100,
@@ -135,7 +132,6 @@ export default function BasicCoreListItem() {
 
           </CoreStack>
         </CoreBox>
-      </CoreLayoutItem>
     </>
   );
 }
