@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.73](https://https//github.com/wrappid/wrappid-module/compare/v0.0.72...v0.0.73) (2024-08-24)
+
+
+### Bug Fixes
+
+* **global:** :ambulance: remove external library import ([cb69c19](https://https//github.com/wrappid/wrappid-module/commit/cb69c19268be98bfb60ffd3679a02ef828d98079)), closes [#210](https://https//github.com/wrappid/wrappid-module/issues/210)
+
 ### [0.0.72](https://https//github.com/wrappid/wrappid-module/compare/v0.0.71...v0.0.72) (2024-08-24)
 
 ### [0.0.71](https://https//github.com/wrappid/wrappid-module/compare/v0.0.70...v0.0.71) (2024-08-24)
