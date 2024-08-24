@@ -1,21 +1,19 @@
-/* eslint-disable no-undef */
 import React from "react";
 
 import {
-  CoreH4,
   CoreStack,
   CoreCircularProgress,
   CoreTypographyBody1,
   CoreBox,
   CoreClasses,
-  CoreTypographyOverline
-  // CoreCircularProgressWithLabel
+  CoreTypographyOverline,
+  CoreList,
+  CoreListItem
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
-import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
-import ComponentProps from "../../ComponentProps";
+import ComponentDocs from "../ComponentDocs";
 
 function CircularProgressWithLabel(props) {
   return (
@@ -45,7 +43,6 @@ function CircularProgressWithLabel(props) {
 }
 
 export default function CoreCircularProgressDocs() {
-  // eslint-disable-next-line no-unused-vars
   const [progress, setProgress] = React.useState(10);
 
   React.useEffect(() => {
@@ -60,108 +57,166 @@ export default function CoreCircularProgressDocs() {
 
   return (
     <>
-      <CoreH4>CoreCircularProgress</CoreH4>
-
-      <CoreTypographyBody1>
-          CoreCircularProgress indicators inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates.
-      </CoreTypographyBody1>
-
-      <CoreTypographyBody1>
-          1.Determinate indicators display how long an operation will take.
-      </CoreTypographyBody1>
-
-      <CoreTypographyBody1>
-          2.Indeterminate indicators visualize an unspecified wait time.
-      </CoreTypographyBody1>
-
-      <CodeImport name="CoreCircularProgress" />
-
-      <CodeSample
-        title={"Circular indeterminate"}
-        description={<>
-          <CoreTypographyBody1>Indeterminate indicators visualize an unspecified wait time</CoreTypographyBody1>
-        </>}
-        code={"<CoreCircularProgress />"}
-        renderElement={<CoreCircularProgress />}
-      />
-
-      <CodeSample
-        title={"Circular Color"}
-        description={<>
-          <CoreTypographyBody1>
-             CoreCircularProgress with <CodeBlock>color</CodeBlock> props.
+      <ComponentDocs
+        component={CoreCircularProgress}
+        description={
+          <><CoreTypographyBody1>
+            CoreCircularProgress indicators inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates.
           </CoreTypographyBody1>
-        </>}
-        code={`<CoreCircularProgress color="secondary" />
+
+          <CoreList variant="HTML" listType="DECIMAL">
+            <CoreListItem>
+            Determinate indicators display how long an operation will take.
+            </CoreListItem>
+
+            <CoreListItem>
+            Indeterminate indicators visualize an unspecified wait time.
+            </CoreListItem>
+          </CoreList></>
+        }
+        samples={
+          <>
+            <CodeSample
+              title={"Circular indeterminate"}
+              description={<>
+                <CoreTypographyBody1>Indeterminate indicators visualize an unspecified wait time.</CoreTypographyBody1>
+              </>}
+              code={"<CoreCircularProgress />"}
+              expandedCode={`import {CoreCircularProgress} from "@wrappid/core";
+
+export default function CircularIndeterminate() {
+  return (
+   <CoreCircularProgress />
+  );
+}`}
+              renderElement={<CoreCircularProgress />}
+            />
+
+            <CodeSample
+              title={"Circular Color"}
+              description={<>
+                <CoreTypographyBody1>
+             CoreCircularProgress with <CodeBlock>color</CodeBlock> props.
+                </CoreTypographyBody1>
+              </>}
+              code={`<CoreCircularProgress color="secondary" />
 <CoreCircularProgress color="success" />
 <CoreCircularProgress color="inherit" />`}
-        renderElement={
-          <CoreStack direction="row" spacing={2}>
-            <CoreCircularProgress color="secondary" />
+              expandedCode={`import { CoreCircularProgress, CoreStack } from "@wrappid/core";
 
-            <CoreCircularProgress color="success" />
+export default function CircularColor() {
+  return (
+    <CoreStack direction="row" spacing={2}>
+      <CoreCircularProgress color="secondary" />
 
-            <CoreCircularProgress color="inherit" />
-          </CoreStack>
-        }
-      />
+      <CoreCircularProgress color="success" />
 
-      <CodeSample
-        title={"Circular determinate"}
-        description={<>
-          <CoreTypographyBody1>
+      <CoreCircularProgress color="inherit" />
+    </CoreStack>
+  );
+}`}
+              renderElement={
+                <CoreStack direction="row" spacing={2}>
+                  <CoreCircularProgress color="secondary" />
+
+                  <CoreCircularProgress color="success" />
+
+                  <CoreCircularProgress color="inherit" />
+                </CoreStack>
+              }
+            />
+
+            <CodeSample
+              title={"Circular determinate"}
+              description={<>
+                <CoreTypographyBody1>
         Determinate indicators display how long an operation will take.
-          </CoreTypographyBody1>
-        </>}
-        code={`<CoreCircularProgress variant="determinate" value={25} />
+                </CoreTypographyBody1>
+              </>}
+              code={`<CoreCircularProgress variant="determinate" value={25} />
 <CoreCircularProgress variant="determinate" value={50} />
 <CoreCircularProgress variant="determinate" value={75} />
 <CoreCircularProgress variant="determinate" value={100} />
 <CoreCircularProgress variant="determinate" value={progress} />`}
-        renderElement={
-          <CoreStack direction="row" spacing={2}>
-            <CoreCircularProgress variant="determinate" value={25} />
+              expandedCode={`import React from "react";
 
-            <CoreCircularProgress variant="determinate" value={50} />
+import { CoreCircularProgress, CoreStack } from "@wrappid/core";
 
-            <CoreCircularProgress variant="determinate" value={75} />
+export default function CircularDeterminate() {
+  const [progress, setProgress] = React.useState(10);
 
-            <CoreCircularProgress variant="determinate" value={100} />
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+    }, 800);
 
-            <CoreCircularProgress variant="determinate" value={progress} />
-          </CoreStack>
-        }
-      />
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
-      <CodeSample
-        title={"Interactive integration(Not Working)"}
-        description={<>
-          <CoreTypographyBody1>
-          </CoreTypographyBody1>
-        </>}
-        code={" "}
-        renderElement={
-          <>
-         
-          </>
-        }
-      />
+  return (
+    <CoreStack direction="row" spacing={2}>
+      <CoreCircularProgress variant="determinate" value={25} />
 
-      <CodeSample
-        title={"Circular with label"}
-        description={
-          <>
-            <CoreTypographyBody1>
+      <CoreCircularProgress variant="determinate" value={50} />
+
+      <CoreCircularProgress variant="determinate" value={75} />
+
+      <CoreCircularProgress variant="determinate" value={100} />
+
+      <CoreCircularProgress variant="determinate" value={progress} />
+    </CoreStack>
+  );
+}`}
+              renderElement={
+                <CoreStack direction="row" spacing={2}>
+                  <CoreCircularProgress variant="determinate" value={25} />
+
+                  <CoreCircularProgress variant="determinate" value={50} />
+
+                  <CoreCircularProgress variant="determinate" value={75} />
+
+                  <CoreCircularProgress variant="determinate" value={100} />
+
+                  <CoreCircularProgress variant="determinate" value={progress} />
+                </CoreStack>
+              }
+            />
+
+            <CodeSample
+              title={"Interactive integration(Not Working)"}
+              description={<>
+                <CoreTypographyBody1>
+                </CoreTypographyBody1>
+              </>}
+              code={" "}
+              renderElement={
+                <>
+                </>
+              }
+            />
+
+            <CodeSample
+              title={"Circular with label"}
+              description={
+                <>
+                  <CoreTypographyBody1>
             CoreCircularProgress Label indicate users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates.
-            </CoreTypographyBody1>
-          </>
-        }
-        code={`function CircularProgressWithLabel(props) {
+                  </CoreTypographyBody1>
+                </>
+              }
+              code={"<CircularProgressWithLabel value={progress} />"}
+              expandedCode={`import React from "react";
+
+import { CoreBox, CoreCircularProgress, CoreClasses, CoreTypographyOverline } from "@wrappid/core";
+
+function CircularProgressWithLabel(props) {
   return (
     <CoreBox styleClasses={[CoreClasses.POSITION.POSITION_RELATIVE, CoreClasses.DISPLAY.INLINE_FLEX]}>
       <CoreCircularProgress
         variant="determinate"
-        value={` + "`${Math.round(props.value)}" + `}
+        value={` + "`${Math.round(props.value)}`" + `}
       />
 
       <CoreBox styleClasses={[
@@ -174,7 +229,7 @@ export default function CoreCircularProgressDocs() {
         CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
         CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER
       ]}>
-        <CoreTypographyOverline styleClasses={[CoreClasses.TEXT.TEXT_WEIGHT_MEDIUM, CoreClasses.COLOR.TEXT_PRIMARY]} >
+        <CoreTypographyOverline styleClasses={[CoreClasses.TEXT.TEXT_WEIGHT_MEDIUM, CoreClasses.COLOR.TEXT_PRIMARY]}>
           {` + "`${Math.round(props.value)}%`" + `}
         </CoreTypographyOverline>
       </CoreBox>
@@ -182,15 +237,31 @@ export default function CoreCircularProgressDocs() {
   );
 }
 
-<CircularProgressWithLabel value={progress} />`}
-        renderElement={
-          <>
-            <CircularProgressWithLabel value={progress} />
+export default function CircularWithValueLabel() {
+  const [progress, setProgress] = React.useState(10);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+    }, 800);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+  return (
+    <CircularProgressWithLabel value={progress} />
+  );
+}`}
+              renderElement={
+                <>
+                  <CircularProgressWithLabel value={progress} />
+                </>
+              }
+            />
           </>
         }
       />
-
-      <ComponentProps component={CoreCircularProgress} />
     </>
   );
 }
