@@ -18,28 +18,30 @@ const CORE_COMPONENT_NAME = (CORE_COMPONENT?.displayName || CORE_COMPONENT.name)
 
 /**
  * @todo
- *  Auto render as per user selection prop and value, and combination constrains.
+ * Auto render as per user selection prop and value, and combination constrains.
  * Move to a util
  * @param {*} props 
  * @returns 
  */
-function getValidValues(props) {
+function getValidValues(props, propName) {
   const validValues = [];
   let requiredProp = props;
 
   requiredProp.forEach(prop => {
-    prop.types.forEach(type => {
-      if (type.validValues && Array.isArray(type.validValues)) {
-        validValues.push(...type.validValues);
-      }
-    });
+    if (prop.name === propName) {
+      prop.types.forEach(type => {
+        if (type.validValues && Array.isArray(type.validValues)) {
+          validValues.push(...type.validValues);
+        }
+      });
+    }
   });
 
   return validValues;
 }
-const statusValues = getValidValues(StatusText.validProps);
 
 export default function StatusTextDocs() {
+  const statusValues = getValidValues(StatusText.validProps, "status");
   const [statusValueItem, setStatusValueItem] = useState(statusValues[0]);
   const handleSelectChange = (event) => {
     setStatusValueItem(event.target.value);
@@ -50,12 +52,12 @@ export default function StatusTextDocs() {
       component={CORE_COMPONENT}
       description={<>
         <CoreTypographyBody1>
-    The {CORE_COMPONENT_NAME} component is used to display a status label with specific styling based on the status value provided. It ensures that the status is clearly visible and formatted according to the design guidelines. This component is ideal for use in tables, lists, or any other UI elements where a status indicator is required.
+          The {CORE_COMPONENT_NAME} component is used to display a status label with specific styling based on the status value provided. It ensures that the status is clearly visible and formatted according to the design guidelines. This component is ideal for use in tables, lists, or any other UI elements where a status indicator is required.
         </CoreTypographyBody1>
 
         <CoreTypographyBody1>
 
-        Key Features
+          Key Features
         </CoreTypographyBody1>
 
         <CoreList variant="HTML" listType="AUTO">
