@@ -79,63 +79,59 @@ export default function CoreListItemDocs() {
 export default function BasicCoreListItem() {
   return (
     <>
-      <CoreLayoutItem
-        id={BlankLayout.PLACEHOLDER.CONTENT}
-        styleClasses={[CoreClasses.FLEX.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P5]}>
-        <CoreBox
-          styleClasses={[
-            CoreClasses.WIDTH.W_100,
-            CoreClasses.MARGIN.M4,
-            CoreClasses.DISPLAY.FLEX,
-            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            CoreClasses.BORDER.BORDER_2
-          ]}
+      <CoreBox
+        styleClasses={[
+          CoreClasses.WIDTH.W_100,
+          CoreClasses.MARGIN.M4,
+          CoreClasses.DISPLAY.FLEX,
+          CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+          CoreClasses.BORDER.BORDER_2
+        ]}
+      >
+        <CoreStack
+          component={CorePaper}
+          styleClasses={[CoreClasses.WIDTH.W_25]}
         >
-          <CoreStack
-            component={CorePaper}
-            styleClasses={[CoreClasses.WIDTH.W_25]}
-          >
-            <CoreList>
-              <CoreListItem disablePadding>
-                <CoreListItemButton>
-                  <CoreListItemIcon>
-                    <CoreIcon icon="inbox" />
-                  </CoreListItemIcon>
+          <CoreList>
+            <CoreListItem disablePadding>
+              <CoreListItemButton>
+                <CoreListItemIcon>
+                  <CoreIcon icon="inbox" />
+                </CoreListItemIcon>
 
-                  <CoreListItemText primary="Inbox" />
-                </CoreListItemButton>
-              </CoreListItem>
+                <CoreListItemText primary="Inbox" />
+              </CoreListItemButton>
+            </CoreListItem>
 
-              <CoreListItem disablePadding>
-                <CoreListItemButton>
-                  <CoreListItemIcon>
-                    <CoreIcon icon="drafts" />
-                  </CoreListItemIcon>
+            <CoreListItem disablePadding>
+              <CoreListItemButton>
+                <CoreListItemIcon>
+                  <CoreIcon icon="drafts" />
+                </CoreListItemIcon>
 
-                  <CoreListItemText primary="Drafts" />
-                </CoreListItemButton>
-              </CoreListItem>
-            </CoreList>
+                <CoreListItemText primary="Drafts" />
+              </CoreListItemButton>
+            </CoreListItem>
+          </CoreList>
 
-            <CoreDivider />
+          <CoreDivider />
 
-            <CoreList>
-              <CoreListItem disablePadding>
-                <CoreListItemButton>
-                  <CoreListItemText primary="Trash" />
-                </CoreListItemButton>
-              </CoreListItem>
+          <CoreList>
+            <CoreListItem disablePadding>
+              <CoreListItemButton>
+                <CoreListItemText primary="Trash" />
+              </CoreListItemButton>
+            </CoreListItem>
 
-              <CoreListItem disablePadding>
-                <CoreListItemButton component="a" href="#simple-Corelist">
-                  <CoreListItemText primary="Spam" />
-                </CoreListItemButton>
-              </CoreListItem>
-            </CoreList>
+            <CoreListItem disablePadding>
+              <CoreListItemButton component="a" href="#simple-Corelist">
+                <CoreListItemText primary="Spam" />
+              </CoreListItemButton>
+            </CoreListItem>
+          </CoreList>
 
-          </CoreStack>
-        </CoreBox>
-      </CoreLayoutItem>
+        </CoreStack>
+      </CoreBox>
     </>
   );
 }
