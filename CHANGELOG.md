@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.67](https://https//github.com/wrappid/wrappid-module/compare/v0.0.66...v0.0.67) (2024-08-24)
+
+
+### Bug Fixes
+
+* **utils:** :bug:  value shows for required prop ([e000519](https://https//github.com/wrappid/wrappid-module/commit/e0005193830bc213242bc9799572da8991e4257b)), closes [#239](https://https//github.com/wrappid/wrappid-module/issues/239)
+
 ### [0.0.66](https://https//github.com/wrappid/wrappid-module/compare/v0.0.65...v0.0.66) (2024-08-24)
 
 
