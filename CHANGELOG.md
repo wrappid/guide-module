@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.66](https://https//github.com/wrappid/wrappid-module/compare/v0.0.65...v0.0.66) (2024-08-24)
+
+
+### Bug Fixes
+
+* **core:** :coffin: remove unnecessary code ([2f950ee](https://https//github.com/wrappid/wrappid-module/commit/2f950ee6d18eab00104a9178245eac331c4d1452)), closes [#201](https://https//github.com/wrappid/wrappid-module/issues/201)
+
 ### [0.0.65](https://https//github.com/wrappid/wrappid-module/compare/v0.0.64...v0.0.65) (2024-08-23)
 
 ### [0.0.64](https://https//github.com/wrappid/wrappid-module/compare/v0.0.63...v0.0.64) (2024-08-23)
