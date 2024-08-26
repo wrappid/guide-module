@@ -4,7 +4,6 @@ import {
   CoreStack,
   CoreClasses,
   CoreIcon,
-  CoreIconButton,
   CoreList,
   CoreListItem,
   CoreBox,
@@ -209,64 +208,62 @@ export default function OutlinedButtons() {
               description={
                 "All components accept an onClick handler that is applied to the root DOM element"
               }
-              code={`<CoreButton
-  onClick={() => {
-    alert("clicked");
-  }}
->
-  Click Me
-</CoreButton>`}
+              code={" <CoreButton onClick={() => {console.log(\"onClick function called\");}} label=\"Click Me\" />"}
               expandedCode={`import { CoreButton } from "@wrappid/core";
 
 export default function HandlingClicks() {
   return (
-    <CoreButton
-      onClick={() => {
-        alert("clicked");
-      }}
-    >
-      Click Me
-    </CoreButton>
-  );
+     <CoreButton onClick={() => {console.log("onClick function called");}} label="Click Me" />
 }`}
               renderElement={
-                <>
-                  <CoreButton
-                    onClick={() => {
-                      alert("clicked");
-                    }}
-                  >
-                      Click Me
-                  </CoreButton>
-                </>
+                // eslint-disable-next-line no-console
+                <CoreButton onClick={() => {console.log("onClick function called");}} label="Click Me" />
+                      
               }
             />
 
             <CodeSample
               title={"Color"}
               description={"CoreButton with differnt color props value."}
-              code={`<CoreButton color="secondary" label="Secondary" />
-<CoreButton variant="contained" color="success" label="Success" />
-<CoreButton variant="outlined" color="error" label="Error" />`}
+              code={`<CoreButton variant="outlined" color="inherit" label="inherit" /> 
+<CoreButton variant="outlined" color="primary" label="primary" /> 
+<CoreButton variant="outlined" color="secondary" label="secondary" /> 
+<CoreButton variant="outlined" color="success" label="success" /> 
+<CoreButton variant="outlined" color="error" label="error" /> 
+<CoreButton variant="outlined" color="info" label="info" /> 
+<CoreButton variant="outlined" color="warning" label="warning" /> `}
               expandedCode={`import { CoreStack, CoreButton } from "@wrappid/core";
 
 export default function ColorButtons() {
   return (
     <CoreStack direction="row" spacing={2} >
-      <CoreButton color="secondary" label="Secondary" />
-      <CoreButton variant="contained" color="success" label="Success" />
-      <CoreButton variant="outlined" color="error" label="Error" />
-    </CoreStack>
+      <CoreButton variant="outlined" color="inherit" label="inherit" /> 
+      <CoreButton variant="outlined" color="primary" label="primary" /> 
+      <CoreButton variant="outlined" color="secondary" label="secondary" /> 
+      <CoreButton variant="outlined" color="success" label="success" /> 
+      <CoreButton variant="outlined" color="error" label="error" /> 
+      <CoreButton variant="outlined" color="info" label="info" /> 
+      <CoreButton variant="outlined" color="warning" label="warning" /> 
+</CoreStack>
   );
 }`}
               renderElement={
                 <>
                   <CoreStack direction="row" spacing={2} >
-                    <CoreButton color="secondary" label="Secondary" />
 
-                    <CoreButton variant="contained" color="success" label="Success" />
+                    <CoreButton variant="outlined" color="inherit" label="inherit" /> 
 
-                    <CoreButton variant="outlined" color="error" label="Error" />
+                    <CoreButton variant="outlined" color="primary" label="primary" /> 
+
+                    <CoreButton variant="outlined" color="secondary" label="secondary" /> 
+
+                    <CoreButton variant="outlined" color="success" label="success" /> 
+
+                    <CoreButton variant="outlined" color="error" label="error" /> 
+
+                    <CoreButton variant="outlined" color="info" label="info" /> 
+
+                    <CoreButton variant="outlined" color="warning" label="warning" /> 
                        
                   </CoreStack>
                 </>
@@ -284,27 +281,19 @@ export default function ButtonSizes() {
     <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.FLEX.DIRECTION_COLUMN, CoreClasses.WIDTH.W_100]}>
       <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.MR4]}>
         <CoreButton variant="text" size="small" label="Small" />
-
         <CoreButton variant="text" size="medium" label="Medium" />
-
         <CoreButton variant="text" size="large" label="Large" />
       </CoreBox>
 
       <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
-                    
         <CoreButton variant="outlined" size="small" label="Small" />
-
         <CoreButton variant="outlined" size="medium" label="Medium" />
-
         <CoreButton variant="outlined" size="large" label="Large" />
       </CoreBox>
 
       <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.MARGIN.M1]}>
-
         <CoreButton variant="contained" size="small" label="Small" />
-
         <CoreButton variant="contained" size="medium" label="Medium" />
-
         <CoreButton variant="contained" size="large" label="Large" />
       </CoreBox>
     </CoreBox>
@@ -348,204 +337,25 @@ export default function ButtonSizes() {
               description={
                 "Sometimes you might want to have icons for certain buttons to enhance the UX of the application as we recognize logos more easily than plain text. For example, if you have a delete button you can label it with a dustbin icon."
               }
-              code={`<CoreButton variant="outlined" startIcon={<CoreIcon icon="delete" />} >
-  Delete
-</CoreButton>
-
-<CoreButton variant="contained" endIcon={<CoreIcon icon="send" />} >
-  Send
-</CoreButton>`}
+              code={`<CoreButton variant="outlined" startIcon={<CoreIcon icon="delete" />} label="Delete"/>
+<CoreButton variant="contained" endIcon={<CoreIcon icon="send" />} label="Send"/>`}
               expandedCode={`import { CoreStack, CoreButton, CoreIcon } from "@wrappid/core";
 
 export default function IconLabelButtons() {
   return (
     <CoreStack direction="row" spacing={2} >
-      <CoreButton variant="outlined" startIcon={<CoreIcon icon="delete" />} >
-        Delete
-      </CoreButton>
-
-      <CoreButton variant="contained" endIcon={<CoreIcon icon="send" />} >
-        Send
-      </CoreButton>
+      <CoreButton variant="outlined" startIcon={<CoreIcon icon="delete" />} label="Delete"/>
+      <CoreButton variant="contained" endIcon={<CoreIcon icon="send" />} label="Send"/>
     </CoreStack>
   );
 }`}
               renderElement={
                 <>
                   <CoreStack direction="row" spacing={2} >
-                    <CoreButton variant="outlined" startIcon={<CoreIcon icon="delete" />} >
-                       Delete
-                    </CoreButton>
+                    <CoreButton variant="outlined" startIcon={<CoreIcon icon="delete" />} label="Delete"/>
 
-                    <CoreButton variant="contained" endIcon={<CoreIcon icon="send" />} >
-                      Send
-                    </CoreButton>
-                  </CoreStack>
-                </>
-              }
-            />
-
-            <CodeSample
-              title={"Icon Button"}
-              description={
-                "Icons are also appropriate for toggle buttons that allow a single choice to be selected or deselected, such as adding or removing a star to an item."
-              }
-              code={`<CoreIconButton aria-label="delete">
-  <CoreIcon fontSize="large">delete</CoreIcon>
-</CoreIconButton>
-
-<CoreIconButton aria-label="delete" disabled color="primary">
-  <CoreIcon fontSize="large">delete</CoreIcon>
-</CoreIconButton>
-
-<CoreIconButton color="secondary" aria-label="add an alarm">
-  <CoreIcon fontSize="large">alarm</CoreIcon>
-</CoreIconButton>
-
-<CoreIconButton color="primary" aria-label="add to shopping cart">
-  <CoreIcon fontSize="large">add_shopping_cart</CoreIcon>
-</CoreIconButton>`}
-              expandedCode={`import { CoreStack, CoreIcon, CoreIconButton } from "@wrappid/core";
-
-export default function IconButtons() {
-  return (
-    <CoreStack direction="row" spacing={2} >
-      <CoreIconButton aria-label="delete">
-        <CoreIcon fontSize="large">delete</CoreIcon>
-      </CoreIconButton>
-
-      <CoreIconButton aria-label="delete" disabled color="primary">
-        <CoreIcon fontSize="large">delete</CoreIcon>
-      </CoreIconButton>
-
-      <CoreIconButton color="secondary" aria-label="add an alarm">
-        <CoreIcon fontSize="large">alarm</CoreIcon>
-      </CoreIconButton>
-
-      <CoreIconButton color="primary" aria-label="add to shopping cart">
-        <CoreIcon fontSize="large">add_shopping_cart</CoreIcon>
-      </CoreIconButton>
-    </CoreStack>
-  );
-}`}
-              renderElement={
-                <>
-                  <CoreStack direction="row" spacing={2} >
-                    <CoreIconButton aria-label="delete">
-                      <CoreIcon fontSize="large">delete</CoreIcon>
-                    </CoreIconButton>
-
-                    <CoreIconButton aria-label="delete" disabled color="primary">
-                      <CoreIcon fontSize="large">delete</CoreIcon>
-                    </CoreIconButton>
-
-                    <CoreIconButton color="secondary" aria-label="add an alarm">
-                      <CoreIcon fontSize="large">alarm</CoreIcon>
-                    </CoreIconButton>
-
-                    <CoreIconButton color="primary" aria-label="add to shopping cart">
-                      <CoreIcon fontSize="large">add_shopping_cart</CoreIcon>
-                    </CoreIconButton>
-                  </CoreStack>
-                </>
-              }
-            />
-
-            <CodeSample
-              title={"Icon Button/Sizes(INCOMPLETE)"}
-              description={
-                <CoreTypographyBody1>
-            For larger or smaller icon buttons, use 
-            the <CodeBlock>size</CodeBlock> prop.
-                </CoreTypographyBody1>
-              }
-              code={"PRE-FORMATTED_CODE_GOES_HERE"}
-              expandedCode={`import { CoreStack, CoreIcon, CoreIconButton } from "@wrappid/core";
-
-export default function IconButtonSizes() {
-  return (
-    <CoreStack direction="row" spacing={1} >
-      <CoreIconButton aria-label="delete" size="small">
-        <CoreIcon fontSize="inherit">delete</CoreIcon>
-      </CoreIconButton>
-
-      <CoreIconButton aria-label="delete" size="small" >
-        <CoreIcon fontSize="small">delete</CoreIcon>
-      </CoreIconButton>
-
-      <CoreIconButton aria-label="delete" size="large">
-        <CoreIcon fontSize="medium">delete</CoreIcon>
-      </CoreIconButton>
-
-      <CoreIconButton aria-label="delete" size="large">
-        <CoreIcon fontSize="inherit">delete</CoreIcon>
-      </CoreIconButton>
-    </CoreStack>
-  );
-}`}
-              renderElement={
-                <>
-                  <CoreStack direction="row" spacing={1} >
-                    <CoreIconButton aria-label="delete" size="small">
-                      <CoreIcon fontSize="inherit">delete</CoreIcon>
-                    </CoreIconButton>
-
-                    <CoreIconButton aria-label="delete" size="small" >
-                      <CoreIcon fontSize="small">delete</CoreIcon>
-                    </CoreIconButton>
-
-                    <CoreIconButton aria-label="delete" size="large">
-                      <CoreIcon fontSize="medium">delete</CoreIcon>
-                    </CoreIconButton>
-
-                    <CoreIconButton aria-label="delete" size="large">
-                      <CoreIcon fontSize="inherit">delete</CoreIcon>
-                    </CoreIconButton>
-                  </CoreStack>
-                </>
-              }
-            />
-
-            <CodeSample
-              title={"Colors"}
-              description={
-                <CoreTypographyBody1>
-            Use <CodeBlock>color</CodeBlock> prop to apply theme color palette
-            to component.
-                </CoreTypographyBody1>
-              }
-              code={`<CoreIconButton aria-label="fingerprint" color="secondary">
-  <CoreIcon fontSize="large">fingerprint</CoreIcon>
-</CoreIconButton>
-
-<CoreIconButton aria-label="fingerprint" color="success">
-  <CoreIcon fontSize="large">fingerprint</CoreIcon>
-</CoreIconButton>`}
-              expandedCode={`import { CoreStack, CoreIcon, CoreIconButton } from "@wrappid/core";
-
-export default function IconButtonColors() {
-  return (
-    <CoreStack direction="row" spacing={1} >
-      <CoreIconButton aria-label="fingerprint" color="secondary">
-        <CoreIcon fontSize="large">fingerprint</CoreIcon>
-      </CoreIconButton>
-
-      <CoreIconButton aria-label="fingerprint" color="success">
-        <CoreIcon fontSize="large">fingerprint</CoreIcon>
-      </CoreIconButton>
-    </CoreStack>
-  );
-}`}
-              renderElement={
-                <>
-                  <CoreStack direction="row" spacing={1} >
-                    <CoreIconButton aria-label="fingerprint" color="secondary">
-                      <CoreIcon fontSize="large">fingerprint</CoreIcon>
-                    </CoreIconButton>
-
-                    <CoreIconButton aria-label="fingerprint" color="success">
-                      <CoreIcon fontSize="large">fingerprint</CoreIcon>
-                    </CoreIconButton>
+                    <CoreButton variant="contained" endIcon={<CoreIcon icon="send" />} label="Send"/>
+                      
                   </CoreStack>
                 </>
               }
@@ -567,21 +377,19 @@ export default function IconButtonColors() {
   variant="contained"
   onClick={() => {}}
   startIcon={<CoreIcon icon="cloud_upload" />}
-  >
-    Upload file
-</CoreButton>`}
+  lqbel="Upload file"
+/>`}
               expandedCode={`import { CoreButton, CoreIcon } from "@wrappid/core";
 
 export default function InputFileUpload() {
   return (
-    <CoreButton
+     <CoreButton
       component="label"
       variant="contained"
       onClick={() => {}}
       startIcon={<CoreIcon icon="cloud_upload" />}
-    >
-     Upload file
-    </CoreButton>
+      lqbel="Upload file"
+    />
   );
 }`}
               renderElement={
@@ -591,9 +399,8 @@ export default function InputFileUpload() {
                     variant="contained"
                     onClick={() => {}}
                     startIcon={<CoreIcon icon="cloud_upload" />}
-                  >
-                     Upload file
-                  </CoreButton>
+                    lqbel="Upload file"
+                  />
                 </>
               }
             />
@@ -614,7 +421,22 @@ export default function InputFileUpload() {
               description={
                 "CoreLoading buttons can show loading state and disable interactions."
               }
-              code={"PRE-FORMATTED_CODE_GOES_HERE"}
+              code={`<CoreButton
+  variant="outlined"
+  startIcon={ <CoreCircularProgress size={15} />}
+  disabled={true}
+  label=" " />
+
+<CoreButton
+  variant="outlined"
+  disabled={true}
+  label="loading..." />
+
+<CoreButton
+  variant="outlined"
+  startIcon={ <CoreCircularProgress size={15} />}
+  disabled={true}
+  label="save" />`}
               expandedCode={`import { CoreButton, CoreCircularProgress } from "@wrappid/core";
 
 export default function InputFileUpload() {
@@ -622,14 +444,18 @@ export default function InputFileUpload() {
     <>
       <CoreButton
         variant="outlined"
-        startIcon={<CoreCircularProgress size={15} />}
+        startIcon={ <CoreCircularProgress size={15} />}
         disabled={true}
-        label=" " /><CoreButton
+        label=" " />
+
+      <CoreButton
         variant="outlined"
         disabled={true}
-        label="loading..." /><CoreButton
+        label="loading..." />
+
+      <CoreButton
         variant="outlined"
-        startIcon={<CoreCircularProgress size={15} />}
+        startIcon={ <CoreCircularProgress size={15} />}
         disabled={true}
         label="save" />
     </>
