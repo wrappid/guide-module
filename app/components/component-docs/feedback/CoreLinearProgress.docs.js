@@ -4,7 +4,8 @@ import {
   CoreLinearProgress,
   CoreBox,
   CoreClasses,
-  CoreStack
+  CoreStack,
+  CoreTypographyBody1
 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
@@ -14,6 +15,8 @@ export default function CoreLinearProgressDocs() {
   const [determinateProgress, setDeterminateProgress] = React.useState(0);
   const [bufferProgress, setBufferProgress] = React.useState(0);
   const [buffer, setBuffer] = React.useState(10);
+  const [progressWithLabel, setProgressWithLabel] = React.useState(10);
+  const [progressTest, setProgressTest] = React.useState(10);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -59,6 +62,33 @@ export default function CoreLinearProgressDocs() {
     };
   }, []);
 
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgressWithLabel((prevProgressWithLabel) => (prevProgressWithLabel >= 100 ? 10 : prevProgressWithLabel + 10));
+    }, 800);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    // Function to update progress
+    const updateProgress = () => {
+      setProgressTest(prevProgressTest => {
+        if (prevProgressTest >= 100) {
+          return 10; 
+        } else {
+          return prevProgressTest + 10; 
+        }
+      });
+    };
+
+    const interval = setInterval(updateProgress, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <ComponentDocs 
@@ -95,10 +125,12 @@ export default function CoreLinearProgressDocs() {
             <CodeSample 
               title={"Linear color"}
               description={"To customize the color of the Linear Progress bar, pass color props to adjust its appearance."}
-              code={`<CoreLinearProgress color="secondary" />
-
+              code={`<CoreLinearProgress color="primary" />
+<CoreLinearProgress color="secondary" />
 <CoreLinearProgress color="success" />
-
+<CoreLinearProgress color="info" />
+<CoreLinearProgress color="warning" />
+<CoreLinearProgress color="error" />
 <CoreLinearProgress color="inherit" />`}
               expandedCode={`import {
   CoreLinearProgress,
@@ -109,20 +141,36 @@ export default function CoreLinearProgressDocs() {
 export default function CoreLinearProgressDocs() {
   return (
     <CoreStack spacing={2} styleClasses={[CoreClasses.WIDTH.W_100]}>
-      <CoreLinearProgress color="secondary" />
+      <CoreLinearProgress color="primary" />
 
-      <CoreLinearProgress color="success" />
+        <CoreLinearProgress color="secondary" />
 
-      <CoreLinearProgress color="inherit" />
+        <CoreLinearProgress color="success" />
+
+        <CoreLinearProgress color="info" />
+
+        <CoreLinearProgress color="warning" />
+
+        <CoreLinearProgress color="error" />
+
+        <CoreLinearProgress color="inherit" />
     </CoreStack>
   );
 }`}
               renderElement={
                 <>
                   <CoreStack spacing={2} styleClasses={[CoreClasses.WIDTH.W_100]}>
+                    <CoreLinearProgress color="primary" />
+
                     <CoreLinearProgress color="secondary" />
 
                     <CoreLinearProgress color="success" />
+
+                    <CoreLinearProgress color="info" />
+
+                    <CoreLinearProgress color="warning" />
+
+                    <CoreLinearProgress color="error" />
 
                     <CoreLinearProgress color="inherit" />
                   </CoreStack>
@@ -237,12 +285,93 @@ export default function CoreLinearProgressDocs() {
             />
 
             <CodeSample 
-              title={"Linear with label(NOT IMPLEMENTED)"}
-              description={""}
+              title={"Linear with label"}
+              description={"A linear progress bar alongside a text label indicating the completion percentage."}
+              code={`<CoreBox width="100%">
+  <CoreLinearProgressWithLabel value={progressWithLabel} />
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import { CoreBox, CoreClasses, CoreLinearProgress, CoreTypographyBody1 } from "@wrappid/core";
+
+function CoreLinearProgressWithLabel(props) {
+  return (
+    <CoreBox styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.DISPLAY.FLEX]}>
+      <CoreBox styleClasses={[CoreClasses.MARGIN.MR1, CoreClasses.WIDTH.W_100]}>
+        <CoreLinearProgress variant="determinate" {...props} />
+      </CoreBox>
+
+      <CoreBox width={35}>
+        <CoreTypographyBody1 color="text.secondary" styleClasses={[CoreClasses.MARGIN.M_AUTO]}>{\`\${Math.round(
+          props.value
+        )}%\`}</CoreTypographyBody1>
+      </CoreBox>
+    </CoreBox>
+  );
+}
+
+export default function CoreLinearProgressDocs() {
+  const [progressWithLabel, setProgressWithLabel] = React.useState(10);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgressWithLabel((prevProgressWithLabel) => (prevProgressWithLabel >= 100 ? 10 : prevProgressWithLabel + 10));
+    }, 800);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+  
+  return (
+    <CoreBox width="100%">
+      <CoreLinearProgressWithLabel value={progressWithLabel} />
+    </CoreBox>
+  );
+}
+`}
+              renderElement={
+                <CoreBox width="100%">
+                  <CoreLinearProgressWithLabel value={progressWithLabel}/>
+                </CoreBox>
+              }
+            />
+
+            <CodeSample 
+              title={"Linear with label props"}
+              description={"A linear progress bar alongside a text label indicating the completion percentage."}
+              code={`<CoreBox width="100%">
+  <CoreLinearProgressWithLabel value={progressWithLabel} />
+</CoreBox>`}
+              renderElement={
+                <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
+                  <CoreLinearProgress
+                    color="primary"
+                    value={progressTest}
+                    variant="determinate"
+                    showPercentage={true} />
+                </CoreBox>
+              }
             />
           </>
         }
       />
     </>
+  );
+}
+
+function CoreLinearProgressWithLabel(props) {
+  return (
+    <CoreBox styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.DISPLAY.FLEX]}>
+      <CoreBox styleClasses={[CoreClasses.MARGIN.MR1, CoreClasses.WIDTH.W_100]}>
+        <CoreLinearProgress variant="determinate" {...props} />
+      </CoreBox>
+
+      <CoreBox width={35}>
+        <CoreTypographyBody1 color="text.secondary" styleClasses={[CoreClasses.MARGIN.M_AUTO]}>{`${Math.round(
+          props.value
+        )}%`}</CoreTypographyBody1>
+      </CoreBox>
+    </CoreBox>
   );
 }
