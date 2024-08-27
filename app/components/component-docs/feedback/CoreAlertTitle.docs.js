@@ -88,32 +88,32 @@ export default function BasicCoreAlertTitle () {
 
                     <CoreAlert severity="primary">
                       <CoreAlertTitle>Primary</CoreAlertTitle>
-                This is a primary alert — check it out!
+                        This is a primary alert — check it out!
                     </CoreAlert>
 
                     <CoreAlert severity="secondary">
                       <CoreAlertTitle>Secondary</CoreAlertTitle>
-                This is a secondary alert — check it out!
+                        This is a secondary alert — check it out!
                     </CoreAlert>
 
                     <CoreAlert severity="success">
                       <CoreAlertTitle>Success</CoreAlertTitle>
-                This is a success alert — check it out!
+                        This is a success alert — check it out!
                     </CoreAlert>
 
                     <CoreAlert severity="info">
                       <CoreAlertTitle>Info</CoreAlertTitle>
-                This is an info alert — check it out!
+                        This is an info alert — check it out!
                     </CoreAlert>
 
                     <CoreAlert severity="warning">
                       <CoreAlertTitle>Warning</CoreAlertTitle>
-                This is a warning alert — check it out!
+                        This is a warning alert — check it out!
                     </CoreAlert>
 
                     <CoreAlert severity="error">
                       <CoreAlertTitle>Error</CoreAlertTitle>
-                This is an error alert — check it out!
+                        This is an error alert — check it out!
                     </CoreAlert>
             
                   </CoreStack>
