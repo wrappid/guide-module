@@ -1,6 +1,7 @@
 import React from "react";
 
 import {
+  CoreAlert,
   CoreBox,
   CoreButton,
   CoreClasses,
@@ -16,6 +17,8 @@ import ComponentDocs from "../ComponentDocs";
 
 export default function CoreSnackbarDocs() {
   const [openBasic, setOpenBasic] = React.useState(false);
+  const [openAutomaticSnack, setOpenAutomaticSnack] = React.useState(false);
+  const [openSnackAlerts, setOpenSnackAlerts] = React.useState(false);
 
   const handleClickBasicOpen = () => {
     setOpenBasic(true);
@@ -50,7 +53,6 @@ export default function CoreSnackbarDocs() {
     </>
   );
   
-  //new
   const [state, setState] = React.useState({
     horizontal: "center",
     open      : false,
@@ -107,6 +109,30 @@ export default function CoreSnackbarDocs() {
       </CoreBox>
     </>
   );
+
+  const handleAutomaticSnackClick = () => {
+    setOpenAutomaticSnack(true);
+  };
+
+  const handleAutomaticSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenAutomaticSnack(false);
+  };
+
+  const handleClickSnackAlerts = () => {
+    setOpenSnackAlerts(true);
+  };
+
+  const handleCloseSnackAlerts = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenSnackAlerts(false);
+  };
 
   return (
     <>
@@ -239,6 +265,102 @@ export default function CoreSnackbarDocs() {
                   />
                 </CoreBox>
               }
+            />
+
+            <CodeSample 
+              title={"Content"}
+              description={"This component can not implement now as we do not have Core Snack Content"}
+            />
+
+            <CodeSample 
+              title={"Automatic dismiss"}
+              description={<CoreBox>
+                <CoreTypographyBody1>Use the autoHideDuration prop to automatically trigger the Snackbar onClose function after a set period of time (in milliseconds).</CoreTypographyBody1>
+                
+                <CoreTypographyBody1>Make sure to provide sufficient time for the user to process the information displayed on it.</CoreTypographyBody1>
+              </CoreBox>}
+              code={`<CoreBox>
+  <CoreButton variant="text" onClick={handleAutomaticSnackClick}>Open Snackbar</CoreButton>
+
+  <CoreSnackbar 
+    open={openAutomaticSnack}
+    autoHideDuration={4000}
+    onClose={handleAutomaticSnackClose}
+    message="This Snackbar will be dismissed in 4 seconds."
+  />
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import { CoreBox, CoreButton, CoreSnackbar } from "@wrappid/core";
+
+export default function CoreLinearProgressDocs() {
+  const [openAutomaticSnack, setOpenAutomaticSnack] = React.useState(false);
+
+  const handleAutomaticSnackClick = () => {
+    setOpenAutomaticSnack(true);
+  };
+
+  const handleAutomaticSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenAutomaticSnack(false);
+  };
+  
+  return (
+    <CoreBox>
+      <CoreButton variant="text" onClick={handleAutomaticSnackClick}>Open Snackbar</CoreButton>
+
+      <CoreSnackbar 
+        open={openAutomaticSnack}
+        autoHideDuration={4000}
+        onClose={handleAutomaticSnackClose}
+        message="This Snackbar will be dismissed in 4 seconds."
+      />
+    </CoreBox>
+  );
+}
+`}
+              renderElement={
+                <CoreBox>
+                  <CoreButton variant="text" onClick={handleAutomaticSnackClick}>Open Snackbar</CoreButton>
+
+                  <CoreSnackbar 
+                    open={openAutomaticSnack}
+                    autoHideDuration={4000}
+                    onClose={handleAutomaticSnackClose}
+                    message="This Snackbar will be dismissed in 4 seconds."
+                  />
+                </CoreBox>
+              }
+            />
+
+            <CodeSample 
+              title={"Transitions"}
+              description={"We can not do this as we do not have such transitions component"}
+            />
+
+            <CodeSample 
+              title={"Use with Alerts"}
+              description={"Use an Alert inside a Snackbar for messages that communicate a certain severity."}
+              renderElement={
+                <CoreBox>
+                  <CoreButton onClick={handleClickSnackAlerts}>Open Snackbar</CoreButton>
+
+                  <CoreSnackbar open={openSnackAlerts} autoHideDuration={6000} onClose={handleCloseSnackAlerts}>
+                    <CoreAlert
+                      onClose={handleCloseSnackAlerts}
+                      severity="success"
+                      variant="filled"
+                      width="100%"
+                    >
+                      This is a success Alert inside a Snackbar!
+                    </CoreAlert>
+                  </CoreSnackbar>
+                </CoreBox>
+              }
+
             />
           </>
         }
