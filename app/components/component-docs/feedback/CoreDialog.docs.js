@@ -1,7 +1,7 @@
 import React from "react";
 
 // eslint-disable-next-line import/no-unresolved
-import Slide from "@mui/material/Slide";
+// import Slide from "@mui/material/Slide";
 import {
   CoreButton,
   CoreBox,
@@ -19,7 +19,7 @@ import CodeSample from "../../CodeSample";
 import ComponentDocs from "../ComponentDocs";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <CoreBox direction="up" ref={ref} {...props} />;
 });
 
 export default function CoreDialogDocs() {
