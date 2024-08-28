@@ -1,8 +1,6 @@
-import * as React from "react";
+import React from "react";
 
 import {
-  CoreH4,
-  CoreTypographyBody1,
   CoreTable,
   CoreTableContainer,
   CoreTableHead,
@@ -16,6 +14,7 @@ import {
 
 import CodeSample from "../../CodeSample";
 import ComponentProps from "../../ComponentProps";
+import ComponentDocs from "../ComponentDocs";
 
 export default function CoreTableDocs() {
   const [page, setPage] = React.useState(0);
@@ -30,18 +29,19 @@ export default function CoreTableDocs() {
     setPage(0);
   };
 
+  const CORE_COMPONENT = CoreTable;
+  const CORE_COMPONENT_NAME = (CORE_COMPONENT?.displayName || CORE_COMPONENT?.name);
+
   return (
-    <>
-      <CoreH4>CoreTable</CoreH4>
-
-      <CoreTypographyBody1>
-        COMPONENT_DESCRIPTION
-      </CoreTypographyBody1>
-
-      <CodeSample
-        title={"Basic Coretable"}
-        description={"A simple example with no frills."}
-        code={`<CoreTableContainer >
+    <ComponentDocs
+      component={CORE_COMPONENT}
+      description={`The ${CORE_COMPONENT_NAME} component is used to display data in a tabular format.`}
+      samples={
+        <>
+          <CodeSample
+            title={`Basic ${CORE_COMPONENT_NAME}`}
+            description={"A simple example with no frills."}
+            code={`<CoreTableContainer >
 <CoreTable styleClasses={[CoreClasses.WIDTH.MIN_W_50]} aria-label="simple table">
   <CoreTableHead>
     <CoreTableRow>
@@ -78,53 +78,53 @@ export default function CoreTableDocs() {
   </CoreTableBody>
 </CoreTable>
 </CoreTableContainer>`}
-        renderElement={<>
-          <CoreTableContainer >
-            <CoreTable styleClasses={[CoreClasses.WIDTH.MIN_W_50]} aria-label="simple table">
-              <CoreTableHead>
-                <CoreTableRow>
-                  <CoreTableCell>Dessert (100g serving)</CoreTableCell>
+            renderElement={<>
+              <CoreTableContainer >
+                <CoreTable styleClasses={[CoreClasses.WIDTH.MIN_W_50]} aria-label="simple table">
+                  <CoreTableHead>
+                    <CoreTableRow>
+                      <CoreTableCell>Dessert (100g serving)</CoreTableCell>
 
-                  <CoreTableCell align="right">Calories</CoreTableCell>
+                      <CoreTableCell align="right">Calories</CoreTableCell>
 
-                  <CoreTableCell align="right">Fat&nbsp;(g)</CoreTableCell>
+                      <CoreTableCell align="right">Fat&nbsp;(g)</CoreTableCell>
 
-                  <CoreTableCell align="right">Carbs&nbsp;(g)</CoreTableCell>
+                      <CoreTableCell align="right">Carbs&nbsp;(g)</CoreTableCell>
 
-                  <CoreTableCell align="right">Protein&nbsp;(g)</CoreTableCell>
-                </CoreTableRow>
-              </CoreTableHead>
+                      <CoreTableCell align="right">Protein&nbsp;(g)</CoreTableCell>
+                    </CoreTableRow>
+                  </CoreTableHead>
 
-              <CoreTableBody>
-                {rows.map((row) => (
-                  <CoreTableRow
-                    key={row.name}
-                    // sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  >
-                    <CoreTableCell component="th" scope="row">
-                      {row.name}
-                    </CoreTableCell>
+                  <CoreTableBody>
+                    {rows.map((row) => (
+                      <CoreTableRow
+                        key={row.name}
+                        // sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                      >
+                        <CoreTableCell component="th" scope="row">
+                          {row.name}
+                        </CoreTableCell>
 
-                    <CoreTableCell align="right">{row.calories}</CoreTableCell>
+                        <CoreTableCell align="right">{row.calories}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.fat}</CoreTableCell>
+                        <CoreTableCell align="right">{row.fat}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.carbs}</CoreTableCell>
+                        <CoreTableCell align="right">{row.carbs}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.protein}</CoreTableCell>
-                  </CoreTableRow>
-                ))}
-              </CoreTableBody>
-            </CoreTable>
-          </CoreTableContainer>
-        </>}
-      />
+                        <CoreTableCell align="right">{row.protein}</CoreTableCell>
+                      </CoreTableRow>
+                    ))}
+                  </CoreTableBody>
+                </CoreTable>
+              </CoreTableContainer>
+            </>}
+          />
 
-      <CodeSample
-        title={"Data table (CoreDataGrid NOT_WORKING)"}
-        description={"The CoreTable component has a close mapping to the native <table> elements. This constraint makes building rich data tables challenging.\
+          <CodeSample
+            title={"Data table (CoreDataGrid NOT_WORKING)"}
+            description={"The CoreTable component has a close mapping to the native <table> elements. This constraint makes building rich data tables challenging.\
         The DataGrid component is designed for use-cases that are focused on handling large amounts of tabular data. While it comes with a more rigid structure, in exchange, you gain more powerful features."}
-        code={`<div style={{ height: 400, width: "100%" }}>
+            code={`<div style={{ height: 400, width: "100%" }}>
   <CoreDataGrid
     rows={rows1}
     columns={columns}
@@ -133,15 +133,15 @@ export default function CoreTableDocs() {
     checkboxSelection
   />
 </div>     `}
-        renderElement={<>
+            renderElement={<>
           
-        </>}
-      />
+            </>}
+          />
 
-      <CodeSample
-        title={"Dense table "}
-        description={"A simple example of a dense table with no frills."}
-        code={`<CoreTableContainer >
+          <CodeSample
+            title={"Dense table "}
+            description={"A simple example of a dense table with no frills."}
+            code={`<CoreTableContainer >
 <CoreTable styleClasses={[CoreClasses.WIDTH.MIN_W_50]} size="small" aria-label="a dense table">
   <CoreTableHead>
     <CoreTableRow>
@@ -180,68 +180,68 @@ export default function CoreTableDocs() {
 </CoreTable>
 </CoreTableContainer>
         `}
-        renderElement={<>
-          <CoreTableContainer >
-            <CoreTable styleClasses={[CoreClasses.WIDTH.MIN_W_50]} size="small" aria-label="a dense table">
-              <CoreTableHead>
-                <CoreTableRow>
-                  <CoreTableCell>Dessert (100g serving)</CoreTableCell>
+            renderElement={<>
+              <CoreTableContainer >
+                <CoreTable styleClasses={[CoreClasses.WIDTH.MIN_W_50]} size="small" aria-label="a dense table">
+                  <CoreTableHead>
+                    <CoreTableRow>
+                      <CoreTableCell>Dessert (100g serving)</CoreTableCell>
 
-                  <CoreTableCell align="right">Calories</CoreTableCell>
+                      <CoreTableCell align="right">Calories</CoreTableCell>
 
-                  <CoreTableCell align="right">Fat&nbsp;(g)</CoreTableCell>
+                      <CoreTableCell align="right">Fat&nbsp;(g)</CoreTableCell>
 
-                  <CoreTableCell align="right">Carbs&nbsp;(g)</CoreTableCell>
+                      <CoreTableCell align="right">Carbs&nbsp;(g)</CoreTableCell>
 
-                  <CoreTableCell align="right">Protein&nbsp;(g)</CoreTableCell>
-                </CoreTableRow>
-              </CoreTableHead>
+                      <CoreTableCell align="right">Protein&nbsp;(g)</CoreTableCell>
+                    </CoreTableRow>
+                  </CoreTableHead>
 
-              <CoreTableBody>
-                {rows.map((row) => (
-                  <CoreTableRow
-                    key={row.name}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  >
-                    <CoreTableCell component="th" scope="row">
-                      {row.name}
-                    </CoreTableCell>
+                  <CoreTableBody>
+                    {rows.map((row) => (
+                      <CoreTableRow
+                        key={row.name}
+                        sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                      >
+                        <CoreTableCell component="th" scope="row">
+                          {row.name}
+                        </CoreTableCell>
 
-                    <CoreTableCell align="right">{row.calories}</CoreTableCell>
+                        <CoreTableCell align="right">{row.calories}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.fat}</CoreTableCell>
+                        <CoreTableCell align="right">{row.fat}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.carbs}</CoreTableCell>
+                        <CoreTableCell align="right">{row.carbs}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.protein}</CoreTableCell>
-                  </CoreTableRow>
-                ))}
-              </CoreTableBody>
-            </CoreTable>
-          </CoreTableContainer>
-        </>}
-      />
+                        <CoreTableCell align="right">{row.protein}</CoreTableCell>
+                      </CoreTableRow>
+                    ))}
+                  </CoreTableBody>
+                </CoreTable>
+              </CoreTableContainer>
+            </>}
+          />
 
-      <CodeSample
-        title={"Sorting & selecting (NOT_WOKING)"}
-        description={"This example demonstrates the use of Checkbox and clickable rows for selection, with a custom Toolbar. It uses the TableSortLabel component to help style column headings.\
+          <CodeSample
+            title={"Sorting & selecting (NOT_WOKING)"}
+            description={"This example demonstrates the use of Checkbox and clickable rows for selection, with a custom Toolbar. It uses the TableSortLabel component to help style column headings.\
         The Table has been given a fixed width to demonstrate horizontal scrolling. In order to prevent the pagination controls from scrolling, the CoreTablePagination component is used outside of the Table. (The 'Custom Table Pagination Action' example below shows the pagination within the TableFooter.)"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<>
-        </>}
-      />
+            code={"PRE-FORMATTED_CODE_GOES_HERE"}
+            renderElement={<>
+            </>}
+          />
 
-      <CodeSample
-        title={"Customization (NOT_DEFINED)"}
-        description={"Here is an example of customizing the component."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
+          <CodeSample
+            title={"Customization (NOT_DEFINED)"}
+            description={"Here is an example of customizing the component."}
+            code={"PRE-FORMATTED_CODE_GOES_HERE"}
+            renderElement={<></>}
+          />
 
-      <CodeSample
-        title={"Sticky header"}
-        description={"Here is an example of a table with scrollable rows and fixed column headers. It leverages the stickyHeader prop. (⚠️ no IE 11 support)"}
-        code={`<CorePaper styleClasses={[CoreClasses.OVERFLOW.OVERFLOW_HIDDEN, CoreClasses.WIDTH.W_100]} >
+          <CodeSample
+            title={"Sticky header"}
+            description={"Here is an example of a table with scrollable rows and fixed column headers. It leverages the stickyHeader prop. (⚠️ no IE 11 support)"}
+            code={`<CorePaper styleClasses={[CoreClasses.OVERFLOW.OVERFLOW_HIDDEN, CoreClasses.WIDTH.W_100]} >
 <CoreTableContainer styleClasses={[CoreClasses.HEIGHT.MAX_H_50]}>
   <CoreTable stickyHeader aria-label="sticky table">
     <CoreTableHead>
@@ -297,154 +297,154 @@ export default function CoreTableDocs() {
 />
 </CorePaper>
         `}
-        renderElement={<>
-          <CorePaper styleClasses={[CoreClasses.OVERFLOW.OVERFLOW_HIDDEN, CoreClasses.WIDTH.W_100]} >
-            <CoreTableContainer styleClasses={[CoreClasses.HEIGHT.MAX_H_50]}>
-              <CoreTable stickyHeader aria-label="sticky table">
-                <CoreTableHead>
-                  <CoreTableRow>
-                    {columns.map((column) => (
-                      <CoreTableCell
-                        key={column.id}
-                        align={column.align}
-                        style={{ minWidth: column.minWidth }}
-                      >
-                        {column.label}
-                      </CoreTableCell>
-                    ))}
-                  </CoreTableRow>
-                </CoreTableHead>
+            renderElement={<>
+              <CorePaper styleClasses={[CoreClasses.OVERFLOW.OVERFLOW_HIDDEN, CoreClasses.WIDTH.W_100]} >
+                <CoreTableContainer styleClasses={[CoreClasses.HEIGHT.MAX_H_50]}>
+                  <CoreTable stickyHeader aria-label="sticky table">
+                    <CoreTableHead>
+                      <CoreTableRow>
+                        {columns.map((column) => (
+                          <CoreTableCell
+                            key={column.id}
+                            align={column.align}
+                            style={{ minWidth: column.minWidth }}
+                          >
+                            {column.label}
+                          </CoreTableCell>
+                        ))}
+                      </CoreTableRow>
+                    </CoreTableHead>
 
-                <CoreTableBody>
-                  {rowss
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((row) => {
-                      return (
-                        <CoreTableRow
-                          hover
-                          role="checkbox"
-                          tabIndex={-1}
-                          key={row.code}>
-                          {columns.map((column) => {
-                            const value = row[column.id];
+                    <CoreTableBody>
+                      {rowss
+                        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                        .map((row) => {
+                          return (
+                            <CoreTableRow
+                              hover
+                              role="checkbox"
+                              tabIndex={-1}
+                              key={row.code}>
+                              {columns.map((column) => {
+                                const value = row[column.id];
 
-                            return (
-                              <CoreTableCell key={column.id} align={column.align}>
-                                {column.format && typeof value === "number"
-                                  ? column.format(value)
-                                  : value}
-                              </CoreTableCell>
-                            );
-                          })}
-                        </CoreTableRow>
-                      );
-                    })}
-                </CoreTableBody>
-              </CoreTable>
-            </CoreTableContainer>
+                                return (
+                                  <CoreTableCell key={column.id} align={column.align}>
+                                    {column.format && typeof value === "number"
+                                      ? column.format(value)
+                                      : value}
+                                  </CoreTableCell>
+                                );
+                              })}
+                            </CoreTableRow>
+                          );
+                        })}
+                    </CoreTableBody>
+                  </CoreTable>
+                </CoreTableContainer>
 
-            <CoreTablePagination
-              rowsPerPageOptions={[10, 25, 100]}
-              component="div"
-              count={rowss.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-          </CorePaper>
+                <CoreTablePagination
+                  rowsPerPageOptions={[10, 25, 100]}
+                  component="div"
+                  count={rowss.length}
+                  rowsPerPage={rowsPerPage}
+                  page={page}
+                  onPageChange={handleChangePage}
+                  onRowsPerPageChange={handleChangeRowsPerPage}
+                />
+              </CorePaper>
         
-        </>}
-      />
+            </>}
+          />
 
-      <CodeSample
-        title={"Column grouping (NOT_WORKING)"}
-        description={"You can group column headers by rendering multiple table rows inside a table head:"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<>
-          <CorePaper styleClasses={[CoreClasses.WIDTH.W_100]}>
-            <CoreTableContainer styleClasses={[CoreClasses.HEIGHT.MAX_H_50]}>
-              <CoreTable stickyHeader aria-label="sticky table">
-                <CoreTableHead>
-                  <CoreTableRow>
-                    <CoreTableCell align="center" colSpan={2}>
+          <CodeSample
+            title={"Column grouping (NOT_WORKING)"}
+            description={"You can group column headers by rendering multiple table rows inside a table head:"}
+            code={"PRE-FORMATTED_CODE_GOES_HERE"}
+            renderElement={<>
+              <CorePaper styleClasses={[CoreClasses.WIDTH.W_100]}>
+                <CoreTableContainer styleClasses={[CoreClasses.HEIGHT.MAX_H_50]}>
+                  <CoreTable stickyHeader aria-label="sticky table">
+                    <CoreTableHead>
+                      <CoreTableRow>
+                        <CoreTableCell align="center" colSpan={2}>
                 Country
-                    </CoreTableCell>
+                        </CoreTableCell>
 
-                    <CoreTableCell align="center" colSpan={3}>
+                        <CoreTableCell align="center" colSpan={3}>
                 Details
-                    </CoreTableCell>
-                  </CoreTableRow>
+                        </CoreTableCell>
+                      </CoreTableRow>
 
-                  <CoreTableRow>
-                    {columns.map((column) => (
-                      <CoreTableCell
-                        key={column.id}
-                        align={column.align}
-                        style={{ minWidth: column.minWidth, top: 57 }}
-                      >
-                        {column.label}
-                      </CoreTableCell>
-                    ))}
-                  </CoreTableRow>
-                </CoreTableHead>
+                      <CoreTableRow>
+                        {columns.map((column) => (
+                          <CoreTableCell
+                            key={column.id}
+                            align={column.align}
+                            style={{ minWidth: column.minWidth, top: 57 }}
+                          >
+                            {column.label}
+                          </CoreTableCell>
+                        ))}
+                      </CoreTableRow>
+                    </CoreTableHead>
 
-                <CoreTableBody>
-                  {rowss
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((row) => {
-                      return (
-                        <CoreTableRow
-                          hover
-                          role="checkbox"
-                          tabIndex={-1}
-                          key={row.code}>
-                          {columns.map((column) => {
-                            const value = row[column.id];
+                    <CoreTableBody>
+                      {rowss
+                        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                        .map((row) => {
+                          return (
+                            <CoreTableRow
+                              hover
+                              role="checkbox"
+                              tabIndex={-1}
+                              key={row.code}>
+                              {columns.map((column) => {
+                                const value = row[column.id];
 
-                            return (
-                              <CoreTableCell key={column.id} align={column.align}>
-                                {column.format && typeof value === "number"
-                                  ? column.format(value)
-                                  : value}
-                              </CoreTableCell>
-                            );
-                          })}
-                        </CoreTableRow>
-                      );
-                    })}
-                </CoreTableBody>
-              </CoreTable>
-            </CoreTableContainer>
+                                return (
+                                  <CoreTableCell key={column.id} align={column.align}>
+                                    {column.format && typeof value === "number"
+                                      ? column.format(value)
+                                      : value}
+                                  </CoreTableCell>
+                                );
+                              })}
+                            </CoreTableRow>
+                          );
+                        })}
+                    </CoreTableBody>
+                  </CoreTable>
+                </CoreTableContainer>
 
-            <CoreTablePagination
-              rowsPerPageOptions={[10, 25, 100]}
-              component="div"
-              count={rowss.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-          </CorePaper>
-        </>}
-      />
+                <CoreTablePagination
+                  rowsPerPageOptions={[10, 25, 100]}
+                  component="div"
+                  count={rowss.length}
+                  rowsPerPage={rowsPerPage}
+                  page={page}
+                  onPageChange={handleChangePage}
+                  onRowsPerPageChange={handleChangeRowsPerPage}
+                />
+              </CorePaper>
+            </>}
+          />
 Collapsible table
 
-      <CodeSample
-        title={"Collapsible table(NOT_WORKING)"}
-        description={"An example of a table with expandable rows, revealing more information. It utilizes the Collapse component."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
+          <CodeSample
+            title={"Collapsible table(NOT_WORKING)"}
+            description={"An example of a table with expandable rows, revealing more information. It utilizes the Collapse component."}
+            code={"PRE-FORMATTED_CODE_GOES_HERE"}
+            renderElement={<></>}
+          />
 
-      <CodeSample
-        title={"Spanning table(NOT_WORKING)"}
-        description={"A simple example with spanning rows & columns."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<>
-          {/* eslint-disable-next-line etc/no-commented-out-code */}
-          {/* <CoreTableContainer >
+          <CodeSample
+            title={"Spanning table(NOT_WORKING)"}
+            description={"A simple example with spanning rows & columns."}
+            code={"PRE-FORMATTED_CODE_GOES_HERE"}
+            renderElement={<>
+              {/* eslint-disable-next-line etc/no-commented-out-code */}
+              {/* <CoreTableContainer >
             <CoreTable sx={{ minWidth: 700 }} aria-label="spanning table">
               <CoreTableHead>
                 <CoreTableRow>
@@ -504,23 +504,23 @@ Collapsible table
             </CoreTable>
           </CoreTableContainer> */}
         
-        </>}
-      />
+            </>}
+          />
 
-      <CodeSample
-        title={"Virtualized table (NOT_WORKING)"}
-        description={"In the following example, we demonstrate how to use react-virtuoso with the Table component. It renders 200 rows and can easily handle more. Virtualization helps with performance issues."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<>
+          <CodeSample
+            title={"Virtualized table (NOT_WORKING)"}
+            description={"In the following example, we demonstrate how to use react-virtuoso with the Table component. It renders 200 rows and can easily handle more. Virtualization helps with performance issues."}
+            code={"PRE-FORMATTED_CODE_GOES_HERE"}
+            renderElement={<>
 
-        </>}
-      />
+            </>}
+          />
 
-      <CodeSample
-        title={"Accessibility (NOT_DEFINED)"}
-        description={`Caption
+          <CodeSample
+            title={"Accessibility (NOT_DEFINED)"}
+            description={`Caption
         A caption functions like a heading for a table. Most screen readers announce the content of captions. Captions help users to find a table and understand what it's about and decide if they want to read it.`}
-        code={`<CoreTableContainer >
+            code={`<CoreTableContainer >
 <CoreTable styleClasses= {[CoreClasses.WIDTH.MIN_W_50]} aria-label="caption table">
   <caption>A basic table example with a caption</caption>
 
@@ -558,50 +558,51 @@ Collapsible table
 </CoreTable>
 </CoreTableContainer>
         `}
-        renderElement={<>
-          <CoreTableContainer >
-            <CoreTable styleClasses= {[CoreClasses.WIDTH.MIN_W_50]} aria-label="caption table">
-              <caption>A basic table example with a caption</caption>
+            renderElement={<>
+              <CoreTableContainer >
+                <CoreTable styleClasses= {[CoreClasses.WIDTH.MIN_W_50]} aria-label="caption table">
+                  <caption>A basic table example with a caption</caption>
 
-              <CoreTableHead>
-                <CoreTableRow>
-                  <CoreTableCell>Dessert (100g serving)</CoreTableCell>
+                  <CoreTableHead>
+                    <CoreTableRow>
+                      <CoreTableCell>Dessert (100g serving)</CoreTableCell>
 
-                  <CoreTableCell align="right">Calories</CoreTableCell>
+                      <CoreTableCell align="right">Calories</CoreTableCell>
 
-                  <CoreTableCell align="right">Fat&nbsp;(g)</CoreTableCell>
+                      <CoreTableCell align="right">Fat&nbsp;(g)</CoreTableCell>
 
-                  <CoreTableCell align="right">Carbs&nbsp;(g)</CoreTableCell>
+                      <CoreTableCell align="right">Carbs&nbsp;(g)</CoreTableCell>
 
-                  <CoreTableCell align="right">Protein&nbsp;(g)</CoreTableCell>
-                </CoreTableRow>
-              </CoreTableHead>
+                      <CoreTableCell align="right">Protein&nbsp;(g)</CoreTableCell>
+                    </CoreTableRow>
+                  </CoreTableHead>
 
-              <CoreTableBody>
-                {rows.map((row) => (
-                  <CoreTableRow key={row.name}>
-                    <CoreTableCell component="th" scope="row">
-                      {row.name}
-                    </CoreTableCell>
+                  <CoreTableBody>
+                    {rows.map((row) => (
+                      <CoreTableRow key={row.name}>
+                        <CoreTableCell component="th" scope="row">
+                          {row.name}
+                        </CoreTableCell>
 
-                    <CoreTableCell align="right">{row.calories}</CoreTableCell>
+                        <CoreTableCell align="right">{row.calories}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.fat}</CoreTableCell>
+                        <CoreTableCell align="right">{row.fat}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.carbs}</CoreTableCell>
+                        <CoreTableCell align="right">{row.carbs}</CoreTableCell>
 
-                    <CoreTableCell align="right">{row.protein}</CoreTableCell>
-                  </CoreTableRow>
-                ))}
-              </CoreTableBody>
-            </CoreTable>
-          </CoreTableContainer>
+                        <CoreTableCell align="right">{row.protein}</CoreTableCell>
+                      </CoreTableRow>
+                    ))}
+                  </CoreTableBody>
+                </CoreTable>
+              </CoreTableContainer>
         
-        </>}
-      />
+            </>}
+          />
 
-      <ComponentProps component={CoreTable} />
-    </>
+          <ComponentProps component={CoreTable} />
+        </>
+      }/>
   );
 }
 
