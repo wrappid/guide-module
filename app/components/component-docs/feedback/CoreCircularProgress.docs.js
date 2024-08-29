@@ -99,29 +99,43 @@ export default function CircularIndeterminate() {
              CoreCircularProgress with <CodeBlock>color</CodeBlock> props.
                 </CoreTypographyBody1>
               </>}
-              code={`<CoreCircularProgress color="secondary" />
+              code={`<CoreCircularProgress color="primary" />
+<CoreCircularProgress color="secondary" />
+<CoreCircularProgress color="inherit" />
 <CoreCircularProgress color="success" />
-<CoreCircularProgress color="inherit" />`}
+<CoreCircularProgress color="info" />
+<CoreCircularProgress color="warning" />
+<CoreCircularProgress color="error" />`}
               expandedCode={`import { CoreCircularProgress, CoreStack } from "@wrappid/core";
 
 export default function CircularColor() {
   return (
     <CoreStack direction="row" spacing={2}>
+      <CoreCircularProgress color="primary" />
       <CoreCircularProgress color="secondary" />
-
-      <CoreCircularProgress color="success" />
-
       <CoreCircularProgress color="inherit" />
+      <CoreCircularProgress color="success" />
+      <CoreCircularProgress color="info" />
+      <CoreCircularProgress color="warning" />
+      <CoreCircularProgress color="error" />
     </CoreStack>
   );
 }`}
               renderElement={
                 <CoreStack direction="row" spacing={2}>
+                  <CoreCircularProgress color="primary" />
+
                   <CoreCircularProgress color="secondary" />
+
+                  <CoreCircularProgress color="inherit" />
 
                   <CoreCircularProgress color="success" />
 
-                  <CoreCircularProgress color="inherit" />
+                  <CoreCircularProgress color="info" />
+
+                  <CoreCircularProgress color="warning" />
+
+                  <CoreCircularProgress color="error" />
                 </CoreStack>
               }
             />
@@ -256,6 +270,96 @@ export default function CircularWithValueLabel() {
               renderElement={
                 <>
                   <CircularProgressWithLabel value={progress} />
+                </>
+              }
+            />
+
+            <CodeSample
+              title={"Delaying appearance(Not Working)"}
+              description={
+                <>
+                  <CoreTypographyBody1>
+                  There are 3 important limits to know around response time. The ripple effect of the ButtonBase component ensures that the user feels that the UI is reacting instantaneously. Normally, no special feedback is necessary during delays of more than 0.1 but less than 1.0 second. After 1.0 second, you can display a loader to keep user{"'"}s flow of thought uninterrupted
+                  </CoreTypographyBody1>
+                </>
+              }
+              code={"NA"}
+              expandedCode={`import React from "react";
+
+import { CoreBox, CoreCircularProgress, CoreClasses, CoreTypographyOverline, CoreButton, CoreFade } from "@wrappid/core";
+
+
+export default function DelayingAppearance() {
+  const [loading, setLoading] = React.useState(false);
+  const [query, setQuery] = React.useState("idle");
+  const timerRef = React.useRef(undefined);
+
+  React.useEffect(
+    () => () => {
+      clearTimeout(timerRef.current);
+    },
+    []
+  );
+
+  const handleClickLoading = () => {
+    setLoading((prevLoading) => !prevLoading);
+  };
+
+  const handleClickQuery = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    if (query !== "idle") {
+      setQuery("idle");
+      return;
+    }
+
+    setQuery("progress");
+    timerRef.current = setTimeout(() => {
+      setQuery("success");
+    }, 2000);
+  };
+
+  return (
+     <CoreBox sx={{ alignItems: "center", display: "flex", flexDirection: "column" }}>
+      <CoreBox sx={{ height: 40 }}>
+        <CoreFade
+          in={loading}
+          style={{ transitionDelay: loading ? "800ms" : "0ms" }}
+          unmountOnExit
+        >
+          <CoreCircularProgress />
+        </CoreFade>
+      </CoreBox>
+
+      <CoreButton onClick={handleClickLoading} sx={{ m: 2 }}>
+        {loading ? "Stop loading" : "Loading"}
+      </CoreButton>
+
+      <CoreBox sx={{ height: 40 }}>
+        {query === "success" ? (
+          <CoreTypographyBody1>Success!</CoreTypographyBody1>
+        ) : (
+          <CoreFade
+            in={query === "progress"}
+            style={{ transitionDelay: query === "progress" ? "800ms" : "0ms" }}
+            unmountOnExit
+          >
+            <CoreCircularProgress />
+          </CoreFade>
+        )}
+      </CoreBox>
+
+      <CoreButton onClick={handleClickQuery} sx={{ m: 2 }}>
+        {query !== "idle" ? "Reset" : "Simulate a load"}
+      </CoreButton>
+    </CoreBox>
+  );
+}`}
+              renderElement={
+                <>
+                
                 </>
               }
             />
