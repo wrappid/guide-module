@@ -1,4 +1,6 @@
-import { CoreInput } from "@wrappid/core";
+import React from "react";
+
+import { CoreBox, CoreInput, CoreTypographyBody1 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
 import ComponentDocs from "../ComponentDocs";
@@ -7,6 +9,7 @@ const CORE_COMPONENT = CoreInput;
 const CORE_COMPONENT_NAME = (CORE_COMPONENT?.displayName || CORE_COMPONENT?.name);
 
 export default function CoreInputDocs() {
+  const [inputValue, setInputValue] = React.useState("");
 
   return (
     <ComponentDocs
@@ -39,22 +42,33 @@ export default function BasicCoreInput() {
   helperText="Helper Text"
   onChange={(event) => console.log(event.target.value)}
 />`}
-            expandedCode={`import { CoreInput } from "@wrappid/core";
+            expandedCode={`import React from "react";
+import { CoreInput } from "@wrappid/core";
 
 export default function onChangeCoreInput() {
+const [inputValue, setInputValue] = React.useState("");
+
   return (
     <CoreInput
       helperText="Helper Text"
-      onChange={(event) => console.log(event.target.value)}
-    />
+      onChange={(event) => {
+        const value = event?.target?.value || event;
+
+        setInputValue(value);}} />
   );
 }`}
             renderElement={
-              <CoreInput
-                helperText="Helper Text"
-                // eslint-disable-next-line no-console
-                onChange={(event) => console.log("CoreInput: ", event)}
-              />
+              <CoreBox>
+                <CoreTypographyBody1> Input: {inputValue} </CoreTypographyBody1>
+              
+                <CoreInput
+                  helperText="Helper Text"
+                  // eslint-disable-next-line no-console
+                  onChange={(event) => {
+                    const value = event?.target?.value || event;
+
+                    setInputValue(value);}} />
+              </CoreBox>
             }
           />
         </>
