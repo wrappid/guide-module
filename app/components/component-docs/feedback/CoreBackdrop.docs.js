@@ -45,83 +45,152 @@ export default function CoreBackdropDocs() {
                   </CoreTypographyBody1>
                 </>
               }
-              code={`<CoreStack direction="row" styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} >
-  <CoreButton
-    onClick={() => {
-      setOpen(true);
-    }}
-  >
-    Show backdrop
-  </CoreButton>
+              code={`<CoreButton
+  onClick={() => {
+    setOpen(true);
+  }}
+>
+  Show backdrop
+</CoreButton>
 
-  <CoreBackdrop
-    styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
-    open={open}
-    onClick={() => {
-      setOpen(false);
-    }}
-  >
-    <CoreCircularProgress color="inherit" />
-  </CoreBackdrop>
-</CoreStack>`}
+<CoreBackdrop
+  styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
+  open={open}
+  onClick={() => {
+    setOpen(false);
+  }}
+>
+  <CoreCircularProgress color="inherit" />
+</CoreBackdrop>`}
               expandedCode={`import React from "react";
 
-import { CoreBackdrop, CoreButton, CoreCircularProgress, CoreClasses, CoreStack } from "@wrappid/core";
+import { CoreBackdrop, CoreButton, CoreCircularProgress, CoreClasses } from "@wrappid/core";
 const [open, setOpen] = React.useState(false);
 
 export default function BasicBackDrop(){
   return(
-    <CoreStack
-      direction="row"
-      styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+    <CoreButton
+      onClick={() => {
+        setOpen(true);
+      }}
     >
-      <CoreButton
-        onClick={() => {
-          setOpen(true);
-        }}
-      >
-        Show backdrop
-      </CoreButton>
+      Show backdrop
+    </CoreButton>
 
-      <CoreBackdrop
-        styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
-        open={open}
-        onClick={() => {
-          setOpen(false);
-        }}
-      >
-        <CoreCircularProgress color="inherit" />
-      </CoreBackdrop>
-    </CoreStack>
+    <CoreBackdrop
+      styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
+      open={open}
+      onClick={() => {
+        setOpen(false);
+      }}
+    >
+      <CoreCircularProgress color="inherit" />
+    </CoreBackdrop>
   );
 }`}
               renderElement={
                 <>
-                  <CoreStack
-                    direction="row"
-                    styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                 
+                  <CoreButton
+                    onClick={() => {
+                      setOpen(true);
+                    }}
                   >
-                    <CoreButton
-                      onClick={() => {
-                        setOpen(true);
-                      }}
-                    >
-                Show backdrop
-                    </CoreButton>
+                     Show backdrop
+                  </CoreButton>
 
-                    <CoreBackdrop
-                      styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
-                      open={open}
-                      onClick={() => {
-                        setOpen(false);
-                      }}
-                    >
-                      <CoreCircularProgress color="inherit" />
-                    </CoreBackdrop>
-                  </CoreStack>
+                  <CoreBackdrop
+                    styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
+                    open={open}
+                    onClick={() => {
+                      setOpen(false);
+                    }}
+                  >
+                    <CoreCircularProgress color="inherit" />
+                  </CoreBackdrop>
                 </>
               }
             />
+
+            <CodeSample
+              title={"Backdrop with transitionDuration"}
+              description={
+                <>
+                  <CoreTypographyBody1>
+                  The transitionDuration prop in CoreBackdrop controls the duration of the fade-in and fade-out animations when the backdrop appears and disappears.
+                  </CoreTypographyBody1>
+                </>
+              }
+              code={`<CoreButton
+  onClick={() => {
+    setOpen(true);
+  }}
+>
+    Show backdrop
+</CoreButton>
+
+<CoreBackdrop
+  styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
+  open={open}
+  onClick={() => {
+    setOpen(false);
+  }}
+  transitionDuration={{ enter: 10000, exit: 10000 }}
+>
+  <CoreCircularProgress color="inherit" />
+</CoreBackdrop>`}
+              expandedCode={`import React from "react";
+
+import { CoreBackdrop, CoreButton, CoreCircularProgress, CoreClasses } from "@wrappid/core";
+const [open, setOpen] = React.useState(false);
+
+export default function BasicBackDrop(){
+  return(
+    <CoreButton
+      onClick={() => {
+        setOpen(true);
+      }}
+    >
+        Show backdrop
+    </CoreButton>
+
+    <CoreBackdrop
+      styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
+      open={open}
+      onClick={() => {
+        setOpen(false);
+      }}
+      transitionDuration={{ enter: 10000, exit: 10000 }}
+    >
+      <CoreCircularProgress color="inherit" />
+    </CoreBackdrop>
+  );
+}`}
+              renderElement={
+                <>
+                 
+                  <CoreButton
+                    onClick={() => {
+                      setOpen(true);
+                    }}
+                  >
+                     Show backdrop
+                  </CoreButton>
+
+                  <CoreBackdrop
+                    styleClasses={[CoreClasses.COLOR.TEXT_WHITE, CoreClasses.Z_INDEX.Z_3]}
+                    open={open}
+                    onClick={() => {
+                      setOpen(false);
+                    }}
+                    transitionDuration={{ enter: 10000, exit: 10000 }}
+                  >
+                    <CoreCircularProgress color="inherit" />
+                  </CoreBackdrop>
+                </>
+              }
+            />
+
           </>
         }
       />
