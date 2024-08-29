@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.89](https://https//github.com/wrappid/wrappid-module/compare/v0.0.88...v0.0.89) (2024-08-29)
+
+
+### Bug Fixes
+
+* **global:** :memo: update documentation for CoreBadge ([599b508](https://https//github.com/wrappid/wrappid-module/commit/599b5080509335b9147024c6fee1259817f11d16)), closes [#170](https://https//github.com/wrappid/wrappid-module/issues/170)
+
 ### [0.0.88](https://https//github.com/wrappid/wrappid-module/compare/v0.0.87...v0.0.88) (2024-08-29)
 
 ### [0.0.87](https://https//github.com/wrappid/wrappid-module/compare/v0.0.86...v0.0.87) (2024-08-29)
