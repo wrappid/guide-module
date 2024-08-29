@@ -1,78 +1,128 @@
-import { CoreAlert, CoreH4, CoreStack, CoreAlertTitle } from "@wrappid/core";
+import { CoreAlert, CoreStack, CoreAlertTitle, CoreClasses } from "@wrappid/core";
 
-import CodeImport from "../../CodeImport";
 import CodeSample from "../../CodeSample";
-import ComponentProps from "../../ComponentProps";
+import ComponentDocs from "../ComponentDocs";
 
 export default function CoreAlertTitleDocs() {
   return (
     <>
-      <CoreH4>CoreAlertTitle</CoreH4>
-
-      <CodeImport name="CoreAlertTitle" />
-
-      <CodeSample
-        title={"Basic CoreAlertTitle "}
-        description={
-          "You can use the AlertTitle component to display a formatted title above the content."
-        }
-        code={`
-<CoreStack direction="column" spacing={2}>
-  <CoreAlert severity="error">
-    <CoreAlertTitle>Error</CoreAlertTitle>
-    This is an error alert — <strong>check it out!</strong>
-  </CoreAlert>
-
-  <CoreAlert severity="warning">
-    <CoreAlertTitle>Warning</CoreAlertTitle>
-    This is a warning alert — <strong>check it out!</strong>
-  </CoreAlert>
-
-  <CoreAlert severity="info">
-    <CoreAlertTitle>Info</CoreAlertTitle>
-    This is an info alert — <strong>check it out!</strong>
-  </CoreAlert>
-
-  <CoreAlert severity="success">
-    <CoreAlertTitle>Success</CoreAlertTitle>
-    This is a success alert — <strong>check it out!</strong>
-  </CoreAlert>
-</CoreStack>        
-        
-        `}
-        renderElement={
+      <ComponentDocs
+        component={CoreAlertTitle}
+        description=" CoreAlertTitle designed to provide a clear and concise heading for the message or information presented within the alert."
+        samples={
           <>
-            <CoreStack direction="column" spacing={2}>
-              <CoreAlert severity="error">
-                <CoreAlertTitle>Error</CoreAlertTitle>
+            <CodeSample
+              title={"Basic CoreAlertTitle "}
+              description={"CoreAlertTitle inherits typography properties from the CoreAlert component."}
+              code={`<CoreAlert severity="primary">
+  <CoreAlertTitle>Primary</CoreAlertTitle>
+  This is a primary alert — check it out!
+</CoreAlert>
 
-                This is an error alert — <strong>check it out!</strong>
-              </CoreAlert>
+<CoreAlert severity="secondary">
+  <CoreAlertTitle>Secondary</CoreAlertTitle>
+  This is a secondary alert — check it out!
+</CoreAlert>
 
-              <CoreAlert severity="warning">
-                <CoreAlertTitle>Warning</CoreAlertTitle>
+<CoreAlert severity="success">
+  <CoreAlertTitle>Success</CoreAlertTitle>
+  This is a success alert — check it out!
+</CoreAlert>
 
-                This is a warning alert — <strong>check it out!</strong>
-              </CoreAlert>
+<CoreAlert severity="info">
+  <CoreAlertTitle>Info</CoreAlertTitle>
+  This is an info alert — check it out!
+</CoreAlert>
 
-              <CoreAlert severity="info">
-                <CoreAlertTitle>Info</CoreAlertTitle>
+<CoreAlert severity="warning">
+  <CoreAlertTitle>Warning</CoreAlertTitle>
+  This is a warning alert — check it out!
+</CoreAlert>
 
-                This is an info alert — <strong>check it out!</strong>
-              </CoreAlert>
+<CoreAlert severity="error">
+  <CoreAlertTitle>Error</CoreAlertTitle>
+  This is an error alert — check it out!
+</CoreAlert>`}
+              expandedCode={`import { CoreAlert, CoreStack, CoreAlertTitle, CoreClasses } from "@wrappid/core";
 
-              <CoreAlert severity="success">
-                <CoreAlertTitle>Success</CoreAlertTitle>
+export default function BasicCoreAlertTitle () {
+  return (
+    <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
 
-                This is a success alert — <strong>check it out!</strong>
-              </CoreAlert>
-            </CoreStack>
+      <CoreAlert severity="primary">
+        <CoreAlertTitle>Primary</CoreAlertTitle>
+          This is a primary alert — check it out!
+      </CoreAlert>
+
+      <CoreAlert severity="secondary">
+        <CoreAlertTitle>Secondary</CoreAlertTitle>
+          This is a secondary alert — check it out!
+      </CoreAlert>
+
+      <CoreAlert severity="success">
+        <CoreAlertTitle>Success</CoreAlertTitle>
+          This is a success alert — check it out!
+      </CoreAlert>
+
+      <CoreAlert severity="info">
+        <CoreAlertTitle>Info</CoreAlertTitle>
+            This is an info alert — check it out!
+      </CoreAlert>
+
+      <CoreAlert severity="warning">
+        <CoreAlertTitle>Warning</CoreAlertTitle>
+          This is a warning alert — check it out!
+        </CoreAlert>
+
+      <CoreAlert severity="error">
+        <CoreAlertTitle>Error</CoreAlertTitle>
+            This is an error alert — check it out!
+      </CoreAlert>
+
+    </CoreStack>
+  );
+}`}
+              renderElement={
+                <>
+                  <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
+
+                    <CoreAlert severity="primary">
+                      <CoreAlertTitle>Primary</CoreAlertTitle>
+                        This is a primary alert — check it out!
+                    </CoreAlert>
+
+                    <CoreAlert severity="secondary">
+                      <CoreAlertTitle>Secondary</CoreAlertTitle>
+                        This is a secondary alert — check it out!
+                    </CoreAlert>
+
+                    <CoreAlert severity="success">
+                      <CoreAlertTitle>Success</CoreAlertTitle>
+                        This is a success alert — check it out!
+                    </CoreAlert>
+
+                    <CoreAlert severity="info">
+                      <CoreAlertTitle>Info</CoreAlertTitle>
+                        This is an info alert — check it out!
+                    </CoreAlert>
+
+                    <CoreAlert severity="warning">
+                      <CoreAlertTitle>Warning</CoreAlertTitle>
+                        This is a warning alert — check it out!
+                    </CoreAlert>
+
+                    <CoreAlert severity="error">
+                      <CoreAlertTitle>Error</CoreAlertTitle>
+                        This is an error alert — check it out!
+                    </CoreAlert>
+            
+                  </CoreStack>
+                </>
+              }
+            />
           </>
         }
       />
-
-      <ComponentProps component={CoreAlertTitle} />
-
     </>
   );
 }
