@@ -2,13 +2,17 @@ import React from "react";
 
 import {
   CoreAlert,
+  CoreAppBar,
   CoreBox,
   CoreButton,
   CoreClasses,
+  CoreFab,
   CoreGrid,
   CoreIcon,
   CoreIconButton,
   CoreSnackbar,
+  CoreToolbar,
+  CoreTypography,
   CoreTypographyBody1
 } from "@wrappid/core";
 
@@ -19,6 +23,9 @@ export default function CoreSnackbarDocs() {
   const [openBasic, setOpenBasic] = React.useState(false);
   const [openAutomaticSnack, setOpenAutomaticSnack] = React.useState(false);
   const [openSnackAlerts, setOpenSnackAlerts] = React.useState(false);
+  const [snackPackConsecutive, setSnackPackConsecutive] = React.useState([]);
+  const [openConsecutive, setOpenConsecutive] = React.useState(false);
+  const [messageInfoConsecutive, setMessageInfoConsecutive] = React.useState(undefined);
 
   const handleClickBasicOpen = () => {
     setOpenBasic(true);
@@ -132,6 +139,31 @@ export default function CoreSnackbarDocs() {
     }
 
     setOpenSnackAlerts(false);
+  };
+
+  React.useEffect(() => {
+    if (snackPackConsecutive.length && !messageInfoConsecutive) {
+      setMessageInfoConsecutive({ ...snackPackConsecutive[0] });
+      setSnackPackConsecutive((prev) => prev.slice(1));
+      setOpenConsecutive(true);
+    } else if (snackPackConsecutive.length && messageInfoConsecutive && openConsecutive) {
+      setOpenConsecutive(false);
+    }
+  }, [snackPackConsecutive, messageInfoConsecutive, open]);
+
+  const handleClickConsecutive = (message) => () => {
+    setSnackPackConsecutive((prev) => [...prev, { key: new Date().getTime(), message }]);
+  };
+
+  const handleCloseConsecutive = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenConsecutive(false);
+  };
+
+  const handleExited = () => {
+    setMessageInfoConsecutive(undefined);
   };
 
   return (
@@ -268,7 +300,7 @@ export default function CoreSnackbarDocs() {
             />
 
             <CodeSample 
-              title={"Content"}
+              title={"Content(NOT_IMPLEMENTED)"}
               description={"This component can not implement now as we do not have Core Snack Content"}
             />
 
@@ -337,30 +369,256 @@ export default function CoreLinearProgressDocs() {
             />
 
             <CodeSample 
-              title={"Transitions"}
+              title={"Transitions(NOT IMPLEMENTED)"}
               description={"We can not do this as we do not have such transitions component"}
             />
 
             <CodeSample 
               title={"Use with Alerts"}
-              description={"Use an Alert inside a Snackbar for messages that communicate a certain severity."}
+              description={"Use an Alert inside a Snackbar for messages that communicate a certain severity. **We use coreBox here in child of CoreSnackbar, because we pass ref in CoreBox."}
+              code={`<CoreBox>
+  <CoreButton onClick={handleClickSnackAlerts}>Open Snackbar</CoreButton>
+
+  <CoreSnackbar open={openSnackAlerts} autoHideDuration={6000} onClose={handleCloseSnackAlerts}>
+    <CoreBox>
+      <CoreAlert
+        onClose={handleCloseSnackAlerts}
+        severity="success"
+        variant="filled"
+        width="100%"
+      >
+        This is a success Alert inside a Snackbar!
+      </CoreAlert>
+    </CoreBox>
+  </CoreSnackbar>
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import { CoreAlert, CoreBox, CoreButton, CoreSnackbar } from "@wrappid/core";
+
+export default function CoreLinearProgressDocs() {
+  
+  const [openSnackAlerts, setOpenSnackAlerts] = React.useState(false);
+  
+  const handleClickSnackAlerts = () => {
+    setOpenSnackAlerts(true);
+  };
+
+  const handleCloseSnackAlerts = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenSnackAlerts(false);
+  };
+  
+  return (
+    <CoreBox>
+      <CoreButton onClick={handleClickSnackAlerts}>Open Snackbar</CoreButton>
+
+      <CoreSnackbar open={openSnackAlerts} autoHideDuration={6000} onClose={handleCloseSnackAlerts}>
+        <CoreBox>
+          <CoreAlert
+            onClose={handleCloseSnackAlerts}
+            severity="success"
+            variant="filled"
+            width="100%"
+          >
+                      This is a success Alert inside a Snackbar!
+          </CoreAlert>
+        </CoreBox>
+      </CoreSnackbar>
+    </CoreBox>
+  );
+}`}
               renderElement={
                 <CoreBox>
                   <CoreButton onClick={handleClickSnackAlerts}>Open Snackbar</CoreButton>
 
                   <CoreSnackbar open={openSnackAlerts} autoHideDuration={6000} onClose={handleCloseSnackAlerts}>
-                    <CoreAlert
-                      onClose={handleCloseSnackAlerts}
-                      severity="success"
-                      variant="filled"
-                      width="100%"
-                    >
+                    <CoreBox>
+                      <CoreAlert
+                        onClose={handleCloseSnackAlerts}
+                        severity="success"
+                        variant="filled"
+                        width="100%"
+                      >
                       This is a success Alert inside a Snackbar!
-                    </CoreAlert>
+                      </CoreAlert>
+                    </CoreBox>
                   </CoreSnackbar>
                 </CoreBox>
               }
+            />
 
+            <CodeSample 
+              title={"Consecutive Snackbars"}
+              description={"This demo shows how to display multiple Snackbars without stacking them by using a consecutive animation."}
+              code={`<CoreBox>
+  <CoreButton variant="outlined" onClick={handleClickConsecutive("Message A")}>Show message A</CoreButton>
+
+  <CoreButton variant="outlined" onClick={handleClickConsecutive("Message B")}>Show message B</CoreButton>
+
+  <CoreSnackbar
+    key={messageInfoConsecutive ? messageInfoConsecutive.key : undefined}
+    open={openConsecutive}
+    autoHideDuration={6000}
+    onClose={handleCloseConsecutive}
+    TransitionProps={{ onExited: handleExited }}
+    message={messageInfoConsecutive ? messageInfoConsecutive.message : undefined}
+    action={
+      <React.Fragment>
+        <CoreButton color="secondary" size="small" onClick={handleCloseConsecutive}>
+          UNDO
+        </CoreButton>
+
+        <CoreIconButton
+          aria-label="close"
+          color="inherit"
+          onClick={handleCloseConsecutive}
+        >
+          <CoreIcon>close</CoreIcon>
+        </CoreIconButton>
+      </React.Fragment>
+    }
+  />
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import { CoreBox, CoreButton, CoreIcon, CoreIconButton, CoreSnackbar } from "@wrappid/core";
+
+export default function CoreLinearProgressDocs() {
+  const [snackPackConsecutive, setSnackPackConsecutive] = React.useState([]);
+  const [openConsecutive, setOpenConsecutive] = React.useState(false);
+  const [messageInfoConsecutive, setMessageInfoConsecutive] = React.useState(undefined);
+
+  React.useEffect(() => {
+    if (snackPackConsecutive.length && !messageInfoConsecutive) {
+      setMessageInfoConsecutive({ ...snackPackConsecutive[0] });
+      setSnackPackConsecutive((prev) => prev.slice(1));
+      setOpenConsecutive(true);
+    } else if (snackPackConsecutive.length && messageInfoConsecutive && openConsecutive) {
+      setOpenConsecutive(false);
+    }
+  }, [snackPackConsecutive, messageInfoConsecutive, open]);
+
+  const handleClickConsecutive = (message) => () => {
+    setSnackPackConsecutive((prev) => [...prev, { key: new Date().getTime(), message }]);
+  };
+
+  const handleCloseConsecutive = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenConsecutive(false);
+  };
+
+  const handleExited = () => {
+    setMessageInfoConsecutive(undefined);
+  };
+  
+  return (
+    <CoreBox>
+      <CoreButton variant="outlined" onClick={handleClickConsecutive("Message A")}>Show message A</CoreButton>
+
+      <CoreButton variant="outlined" onClick={handleClickConsecutive("Message B")}>Show message B</CoreButton>
+
+      <CoreSnackbar
+        key={messageInfoConsecutive ? messageInfoConsecutive.key : undefined}
+        open={openConsecutive}
+        autoHideDuration={6000}
+        onClose={handleCloseConsecutive}
+        TransitionProps={{ onExited: handleExited }}
+        message={messageInfoConsecutive ? messageInfoConsecutive.message : undefined}
+        action={
+          <React.Fragment>
+            <CoreButton color="secondary" size="small" onClick={handleCloseConsecutive}>
+              UNDO
+            </CoreButton>
+
+            <CoreIconButton
+              aria-label="close"
+              color="inherit"
+              onClick={handleCloseConsecutive}
+            >
+              <CoreIcon>close</CoreIcon>
+            </CoreIconButton>
+          </React.Fragment>
+        }
+      />
+    </CoreBox>
+  );
+}`}
+              renderElement={<CoreBox>
+                <CoreButton variant="outlined" onClick={handleClickConsecutive("Message A")}>Show message A</CoreButton>
+
+                <CoreButton variant="outlined" onClick={handleClickConsecutive("Message B")}>Show message B</CoreButton>
+
+                <CoreSnackbar
+                  key={messageInfoConsecutive ? messageInfoConsecutive.key : undefined}
+                  open={openConsecutive}
+                  autoHideDuration={6000}
+                  onClose={handleCloseConsecutive}
+                  TransitionProps={{ onExited: handleExited }}
+                  message={messageInfoConsecutive ? messageInfoConsecutive.message : undefined}
+                  action={
+                    <React.Fragment>
+                      <CoreButton color="secondary" size="small" onClick={handleCloseConsecutive}>
+              UNDO
+                      </CoreButton>
+
+                      <CoreIconButton
+                        aria-label="close"
+                        color="inherit"
+                        onClick={handleCloseConsecutive}
+                      >
+                        <CoreIcon>close</CoreIcon>
+                      </CoreIconButton>
+                    </React.Fragment>
+                  }
+                />
+              </CoreBox>}
+            />
+
+            <CodeSample 
+              renderElement={<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
+                <CoreBox styleClasses={[CoreClasses.POSITION.POSITION_RELATIVE]}>
+                  <CoreAppBar position="static" color="primary" advanceMode={true}>
+                    <CoreToolbar>
+                      <CoreIconButton
+                        edge="start"
+                        sx={{ mr: 2 }}
+                        color="inherit"
+                        aria-label="menu"
+                      >
+                        <CoreIcon>menu</CoreIcon>
+                      </CoreIconButton>
+
+                      <CoreTypography variant="h6" color="inherit" component="div">
+                        App bar
+                      </CoreTypography>
+                    </CoreToolbar>
+                  </CoreAppBar>
+
+                  <CoreFab
+                    color="secondary"
+                  >
+                    <CoreIcon>add</CoreIcon>
+                  </CoreFab>
+
+                  <CoreSnackbar
+                    open
+                    autoHideDuration={6000}
+                    message="Archived"
+                    action={
+                      <CoreButton color="inherit" size="small">
+                        Undo
+                      </CoreButton>
+                    }
+                    styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE, CoreClasses.BG.BG_ERROR_LIGHT]}
+                  />
+                </CoreBox>
+              </CoreBox>}
             />
           </>
         }
