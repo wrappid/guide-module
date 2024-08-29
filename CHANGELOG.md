@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.78](https://https//github.com/wrappid/wrappid-module/compare/v0.0.77...v0.0.78) (2024-08-29)
+
+
+### Bug Fixes
+
+* **global:** :fire: remove CoreH and Typography docs ([f8e21d4](https://https//github.com/wrappid/wrappid-module/commit/f8e21d43fb9067140c44d440fa98bc8d03ca9cb0)), closes [#269](https://https//github.com/wrappid/wrappid-module/issues/269)
+
 ### [0.0.77](https://https//github.com/wrappid/wrappid-module/compare/v0.0.76...v0.0.77) (2024-08-29)
 
 ### [0.0.76](https://https//github.com/wrappid/wrappid-module/compare/v0.0.75...v0.0.76) (2024-08-29)
