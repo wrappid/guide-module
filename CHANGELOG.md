@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.84](https://https//github.com/wrappid/wrappid-module/compare/v0.0.83...v0.0.84) (2024-08-29)
+
+### [0.0.83](https://https//github.com/wrappid/wrappid-module/compare/v0.0.82...v0.0.83) (2024-08-29)
+
+### [0.0.82](https://https//github.com/wrappid/wrappid-module/compare/v0.0.81...v0.0.82) (2024-08-29)
+
+### [0.0.81](https://https//github.com/wrappid/wrappid-module/compare/v0.0.80...v0.0.81) (2024-08-29)
+
+### [0.0.80](https://https//github.com/wrappid/wrappid-module/compare/v0.0.79...v0.0.80) (2024-08-29)
+
+
+### Bug Fixes
+
+* **global:** :bug: corelistitemtext docs updated new way ([2a79cd8](https://https//github.com/wrappid/wrappid-module/commit/2a79cd8784fb66eddf1b316f91818c8cb96719fd)), closes [#196](https://https//github.com/wrappid/wrappid-module/issues/196)
+
+### [0.0.79](https://https//github.com/wrappid/wrappid-module/compare/v0.0.78...v0.0.79) (2024-08-29)
+
+### [0.0.78](https://https//github.com/wrappid/wrappid-module/compare/v0.0.77...v0.0.78) (2024-08-29)
+
+
+### Bug Fixes
+
+* **global:** :fire: remove CoreH and Typography docs ([f8e21d4](https://https//github.com/wrappid/wrappid-module/commit/f8e21d43fb9067140c44d440fa98bc8d03ca9cb0)), closes [#269](https://https//github.com/wrappid/wrappid-module/issues/269)
+
+### [0.0.77](https://https//github.com/wrappid/wrappid-module/compare/v0.0.76...v0.0.77) (2024-08-29)
+
+### [0.0.76](https://https//github.com/wrappid/wrappid-module/compare/v0.0.75...v0.0.76) (2024-08-29)
+
+
+### Bug Fixes
+
+* **global:** :bug: clickable link ([80ade67](https://https//github.com/wrappid/wrappid-module/commit/80ade67b0b5b431aac652f31dd546e90a0ffdc62)), closes [#172](https://https//github.com/wrappid/wrappid-module/issues/172)
+
 ### [0.0.75](https://https//github.com/wrappid/wrappid-module/compare/v0.0.74...v0.0.75) (2024-08-27)
 
 ### [0.0.74](https://https//github.com/wrappid/wrappid-module/compare/v0.0.73...v0.0.74) (2024-08-27)
