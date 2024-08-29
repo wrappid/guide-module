@@ -1,4 +1,4 @@
-import { CoreImage } from "@wrappid/core";
+import { CoreClasses, CoreImage } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
 import ComponentDocs from "../ComponentDocs";
@@ -26,16 +26,12 @@ export default function CoreImageDocs() {
             expandedCode={`import { CoreImage } from "@wrappid/core";
 
 export default function SampleCoreImage() {
-  return (
-    <>
-      <CoreImage
-        width={200}
-        height={200}
-        alt="Phoenicopterus ruber"
-        src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg"
-      />
-    </>
-  );
+  return <CoreImage
+    width={200}
+    height={200}
+    alt="Phoenicopterus ruber"
+    src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg"
+  />
 }`}
             renderElement={<>
               <CoreImage
@@ -58,18 +54,15 @@ export default function SampleCoreImage() {
             expandedCode={`import { CoreImage } from "@wrappid/core";
 
 export default function AltTextCoreImage() {
-  return (
-    <>
-      <CoreImage
-        width={200}
-        height={200}
-        alt="Phoenicopterus ruber"
-      />
-    </>
-  );
+  return <CoreImage
+    width={200}
+    height={200}
+    alt="Phoenicopterus ruber"
+  />;
 }`}
             renderElement={<>
               <CoreImage
+                styleClasses={[CoreClasses.BORDER.BORDER]}
                 width={200}
                 height={200}
                 alt="Phoenicopterus ruber"
