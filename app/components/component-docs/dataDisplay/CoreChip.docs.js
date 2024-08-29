@@ -96,22 +96,19 @@ export default function CoreChipDocs() {
 
   export default function BasicCoreChip() {
     return (
-      <>
-        <CoreStack direction="row" spacing={1}>
-          <CoreChip label="CoreChip Filled" />
+      <CoreStack direction="row" spacing={1}>
+        <CoreChip label="CoreChip Filled" />
 
-          <CoreChip label="CoreChip Outlined" variant="outlined" />
-        </CoreStack>
-      </>
+        <CoreChip label="CoreChip Outlined" variant="outlined" />
+      </CoreStack>
     );
   }`}
-            renderElement={<>
+            renderElement={
               <CoreStack direction="row" spacing={1}>
                 <CoreChip label="CoreChip Filled" />
 
                 <CoreChip label="CoreChip Outlined" variant="outlined" />
               </CoreStack>
-            </>
             }
 
           />
@@ -134,8 +131,7 @@ export default function CoreChipDocs() {
             </>
             }
             code={`<CoreChip label="Clickable" onClick={handleClick} />
-<CoreChip label="Clickable" variant="outlined" onClick={handleClick} />
-`}
+<CoreChip label="Clickable" variant="outlined" onClick={handleClick} />`}
             expandedCode={`import { CoreChip, CoreStack } from "@wrappid/core";
 
 function handleClick() {
@@ -144,23 +140,19 @@ function handleClick() {
 
 export default function ClickableCoreChip() {
   return (
-    <>
-      <CoreStack direction="row" spacing={1}>
-        <CoreChip label="Chip Filled" onClick={handleClick} />
+    <CoreStack direction="row" spacing={1}>
+      <CoreChip label="Chip Filled" onClick={handleClick} />
 
-        <CoreChip label="Chip Outlined" variant="outlined" onClick={handleClick} />
-      </CoreStack>
-    </>
+      <CoreChip label="Chip Outlined" variant="outlined" onClick={handleClick} />
+    </CoreStack>
   );
 }`}
             renderElement={
-              <>
-                <CoreStack direction="row" spacing={1}>
-                  <CoreChip label="Clickable" onClick={handleClick} />
+              <CoreStack direction="row" spacing={1}>
+                <CoreChip label="Clickable" onClick={handleClick} />
 
-                  <CoreChip label="Clickable" variant="outlined" onClick={handleClick} />
-                </CoreStack>
-              </>
+                <CoreChip label="Clickable" variant="outlined" onClick={handleClick} />
+              </CoreStack>
             }
           />
 
@@ -178,16 +170,13 @@ export default function ClickableCoreChip() {
 
 export default function DeletableCoreChip() {
   return (
-    <>
       <CoreStack direction="row" spacing={1}>
         <CoreChip label="Deletable" onDelete={handleDelete} />
 
         <CoreChip label="Deletable" variant="outlined" onDelete={handleDelete} />
       </CoreStack>
-    </>
   );
-}
-              `}
+}`}
             renderElement={
               <CoreStack direction="row" spacing={1}>
                 <CoreChip label="Deletable" onDelete={handleDelete} />
@@ -226,22 +215,20 @@ function handleDelete() {
 }
 export default function ClickableDeletableCoreChip() {
   return (
-    <>
-      <CoreStack direction="row" spacing={1}>
-        <CoreChip
-          label="Clickable Deletable"
-          onClick={handleClick}
-          onDelete={handleDelete}
-        />
+    <CoreStack direction="row" spacing={1}>
+      <CoreChip
+        label="Clickable Deletable"
+        onClick={handleClick}
+        onDelete={handleDelete}
+      />
 
-        <CoreChip
-          label="Clickable Deletable"
-          variant="outlined"
-          onClick={handleClick}
-          onDelete={handleDelete}
-        />
-      </CoreStack>
-    </>
+      <CoreChip
+        label="Clickable Deletable"
+        variant="outlined"
+        onClick={handleClick}
+        onDelete={handleDelete}
+      />
+    </CoreStack>
   );`}
             renderElement={
               <CoreStack direction="row" spacing={1}>
@@ -264,31 +251,62 @@ export default function ClickableDeletableCoreChip() {
           <CodeSample
             title="  "
             description={<>
-              <CoreH6> Clickable link(NOT WORKING) </CoreH6>
+              <Subtitle>Clickable link</Subtitle>
 
               <SubtitleDescription> <CodeBlock>component</CodeBlock> prop can be used to link a component.
               </SubtitleDescription></>}
-            code={`<CoreChip label="Clickable Link" component="a" href="#basic-chip" clickable />
+            code={`<CoreChip
+  label="Clickable Link"
+  component="a"
+  href="https://www.wrappid.dev"
+  target="_blank"
+  clickable />
+
 <CoreChip
   label="Clickable Link"
   component="a"
-  href="#basic-chip"
+  href="https://www.wrappid.dev"
+  target="_blank"
   variant="outlined"
   clickable
 />`}
-            expandedCode={""}
+            expandedCode={`import { CoreChip, CoreStack } from "@wrappid/core";
+
+export default function ClickableLinkCoreChip() {
+  return (
+    <CoreStack direction="row" spacing={1}>
+      <CoreChip
+        label="Clickable Link"
+        component="a"
+        href="https://www.wrappid.dev"
+        target="_blank"
+        clickable />
+
+      <CoreChip
+        label="Clickable Link"
+        component="a"
+        href="https://www.wrappid.dev"
+        target="_blank"
+        variant="outlined"
+        clickable
+      />
+    </CoreStack>
+  );
+}`}
             renderElement={
               <CoreStack direction="row" spacing={1}>
                 <CoreChip
                   label="Clickable Link"
                   component="a"
-                  href="#basic-chip"
+                  href="https://www.wrappid.dev"
+                  target="_blank"
                   clickable />
             
                 <CoreChip
                   label="Clickable Link"
                   component="a"
-                  href="#basic-chip"
+                  href="https://www.wrappid.dev"
+                  target="_blank"
                   variant="outlined"
                   clickable
                 />
@@ -299,10 +317,10 @@ export default function ClickableDeletableCoreChip() {
           <CodeSample
             title="  "
             description={<>
-              <CoreH6> Custom delete icon </CoreH6>
+              <Subtitle> Custom delete icon </Subtitle>
 
-              <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MY1]}> <CodeBlock>deleteIcon</CodeBlock> prop can be used to provide a custom delete icon.
-              </CoreTypographyBody1></>}
+              <SubtitleDescription> <CodeBlock>deleteIcon</CodeBlock> prop can be used to provide a custom delete icon.
+              </SubtitleDescription></>}
             code={`<CoreChip
   label="Custom delete icon"
   onClick={handleClick}
@@ -328,24 +346,22 @@ function handleDelete() {
 
 export default function CustomDeleteIconCoreChip() {
   return (
-    <>
-      <CoreStack direction="row" spacing={1}>
-        <CoreChip
-          label="Custom delete icon"
-          onClick={handleClick}
-          onDelete={handleDelete}
-          deleteIcon={<CoreIcon icon="done" />}
-        />
+    <CoreStack direction="row" spacing={1}>
+      <CoreChip
+        label="Custom delete icon"
+        onClick={handleClick}
+        onDelete={handleDelete}
+        deleteIcon={<CoreIcon icon="done" />}
+      />
 
-        <CoreChip
-          label="Custom delete icon"
-          onClick={handleClick}
-          onDelete={handleDelete}
-          deleteIcon={<CoreIcon icon="delete" />}
-          variant="outlined"
-        />
-      </CoreStack>
-    </>
+      <CoreChip
+        label="Custom delete icon"
+        onClick={handleClick}
+        onDelete={handleDelete}
+        deleteIcon={<CoreIcon icon="delete" />}
+        variant="outlined"
+      />
+    </CoreStack>
   );
 }`}
             renderElement={
@@ -398,25 +414,24 @@ export default function CustomDeleteIconCoreChip() {
 
 export default function AvatarCoreChip() {
   return (
-    <>
-      <CoreStack direction="row" spacing={1}>
-        <CoreChip avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}><CoreAvatar styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}>A</CoreAvatar></CoreBox>} label="Avatar" />
-            
-        <CoreChip
-          avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}>
-            <CoreAvatar alt="Ananta" src="https://picsum.photos/200?random=1" styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]} />
-          </CoreBox>}
-          label="Avatar"
-          variant="outlined"
-        />
-      </CoreStack>
-    </>
+    <CoreStack direction="row" spacing={1}>
+      <CoreChip avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}><CoreAvatar styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}>A</CoreAvatar></CoreBox>} label="Avatar" />
+          
+      <CoreChip
+        avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}>
+          <CoreAvatar alt="Ananta" src="https://picsum.photos/200?random=1" styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]} />
+        </CoreBox>}
+        label="Avatar"
+        variant="outlined"
+      />
+    </CoreStack>
+
   );
 }`}
             renderElement={
-              <>
+              <CoreStack direction="row" spacing={1}>
                 <CoreChip avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}><CoreAvatar styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}>A</CoreAvatar></CoreBox>} label="Avatar" />
-            
+                  
                 <CoreChip
                   avatar={<CoreBox styleClasses={[CoreClasses.PADDING.PL1]}>
                     <CoreAvatar alt="Ananta" src="https://picsum.photos/200?random=1" styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]} />
@@ -424,18 +439,18 @@ export default function AvatarCoreChip() {
                   label="Avatar"
                   variant="outlined"
                 />
-              </>
+              </CoreStack>
             }
           />
 
           <CodeSample
             title={" "}
             description={<>
-              <CoreH6>Icon chip</CoreH6>
+              <Subtitle>Icon chip</Subtitle>
 
-              <CoreTypographyBody1>
+              <SubtitleDescription>
                 <CodeBlock>icon</CodeBlock> prop to add an icon to the Chip
-              </CoreTypographyBody1>
+              </SubtitleDescription>
             </>
             }
             code={`<CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" />
@@ -444,16 +459,14 @@ export default function AvatarCoreChip() {
 
 export default function IconCoreChip() {
   return (
-    <>
-      <CoreStack direction="row" spacing={1}>
-        <CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" />
+    <CoreStack direction="row" spacing={1}>
+      <CoreChip icon={<CoreIcon icon="mood" />} label="With Icon" />
 
-        <CoreChip
-          icon={<CoreIcon icon="mood" />}
-          label="With Icon"
-          variant="outlined" />
-      </CoreStack>
-    </>
+      <CoreChip
+        icon={<CoreIcon icon="mood" />}
+        label="With Icon"
+        variant="outlined" />
+    </CoreStack>
   );
 }`}
             renderElement={
@@ -481,21 +494,19 @@ export default function IconCoreChip() {
 
 export default function ColorCoreChip() {
   return (
-    <>
-      <CoreStack spacing={1} alignItems="center">
-        <CoreStack direction="row" spacing={1}>
-          <CoreChip label="primary" color="primary" />
-            
-          <CoreChip label="success" color="success" />
-        </CoreStack>
-            
-        <CoreStack direction="row" spacing={1}>
-          <CoreChip label="primary" color="primary" variant="outlined" />
-            
-          <CoreChip label="success" color="success" variant="outlined" />
-        </CoreStack>
+    <CoreStack spacing={1} alignItems="center">
+      <CoreStack direction="row" spacing={1}>
+        <CoreChip label="primary" color="primary" />
+          
+        <CoreChip label="success" color="success" />
       </CoreStack>
-    </>
+          
+      <CoreStack direction="row" spacing={1}>
+        <CoreChip label="primary" color="primary" variant="outlined" />
+          
+        <CoreChip label="success" color="success" variant="outlined" />
+      </CoreStack>
+    </CoreStack>
   );
 }`}
             renderElement={
@@ -533,21 +544,19 @@ export default function ColorCoreChip() {
 
 export default function SizesCoreChip() {
   return (
-    <>
-      <CoreStack spacing={1} alignItems="center">
-        <CoreStack direction="row" spacing={1}>
-          <CoreChip label="Small" size="small" />
+    <CoreStack spacing={1} alignItems="center">
+      <CoreStack direction="row" spacing={1}>
+        <CoreChip label="Small" size="small" />
 
-          <CoreChip label="Small" size="small" variant="outlined" />
-        </CoreStack>
-
-        <CoreStack direction="row" spacing={1}>
-          <CoreChip label="Medium" size="medium" />
-
-          <CoreChip label="Default" />
-        </CoreStack>
+        <CoreChip label="Small" size="small" variant="outlined" />
       </CoreStack>
-    </>
+
+      <CoreStack direction="row" spacing={1}>
+        <CoreChip label="Medium" size="medium" />
+
+        <CoreChip label="Default" />
+      </CoreStack>
+    </CoreStack>
   );
 }`}
             renderElement={
@@ -638,24 +647,22 @@ const [chipData, setCoreChipData] = useState([
 
 export default function ArrayCoreChip() {
   return (
-    <>
-      <CorePaper
-        styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P1]}
-        component="ul"
-      >
-        {chipData.map((data) => {
+    <CorePaper
+      styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P1]}
+      component="ul"
+    >
+      {chipData.map((data) => {
 
-          return (
-            <CoreListItem key={data?.key}>
-              <CoreChip
-                label={data?.label}
-                onDelete={handleDeleteData(data)}
-              />
-            </CoreListItem>
-          );
-        })}
-      </CorePaper>
-    </>
+        return (
+          <CoreListItem key={data?.key}>
+            <CoreChip
+              label={data?.label}
+              onDelete={handleDeleteData(data)}
+            />
+          </CoreListItem>
+        );
+      })}
+    </CorePaper>
   );
 }`}
             renderElement={
@@ -681,6 +688,5 @@ export default function ArrayCoreChip() {
         </>
       }
     />
-      
   );
 }
