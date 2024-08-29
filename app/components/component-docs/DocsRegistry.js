@@ -5,7 +5,6 @@ import CoreChipDocs from "./dataDisplay/CoreChip.docs.js";
 import CoreDividerDocs from "./dataDisplay/CoreDivider.docs.js";
 import CoreEmailLinkDocs from "./dataDisplay/CoreEmailLink.docs.js";
 import CoreEmailOrPhoneLinkDocs from "./dataDisplay/CoreEmailOrPhoneLink.docs.js";
-import CoreHDocs from "./dataDisplay/CoreH.docs.js";
 import CoreH1Docs from "./dataDisplay/CoreH1.docs.js";
 import CoreH2Docs from "./dataDisplay/CoreH2.docs.js";
 import CoreH3Docs from "./dataDisplay/CoreH3.docs.js";
@@ -41,7 +40,6 @@ import CoreTableRowDocs from "./dataDisplay/CoreTableRow.docs.js";
 import CoreTableSortLabelDocs from "./dataDisplay/CoreTableSortLabel.docs.js";
 import CoreTimerDocs from "./dataDisplay/CoreTimer.docs.js";
 import CoreTooltipDocs from "./dataDisplay/CoreTooltip.docs.js";
-import CoreTypographyDocs from "./dataDisplay/CoreTypography.docs.js";
 import CoreTypographyBody1Docs from "./dataDisplay/CoreTypographyBody1.docs.js";
 import CoreTypographyBody2Docs from "./dataDisplay/CoreTypographyBody2.docs.js";
 import CoreTypographyButtonDocs from "./dataDisplay/CoreTypographyButton.docs.js";
@@ -222,7 +220,6 @@ export default {
       CoreDivider                : { main: CoreDividerDocs },
       CoreEmailLink              : { main: CoreEmailLinkDocs },
       CoreEmailOrPhoneLink       : { main: CoreEmailOrPhoneLinkDocs },
-      CoreH                      : { main: CoreHDocs },
       CoreH1                     : { main: CoreH1Docs },
       CoreH2                     : { main: CoreH2Docs },
       CoreH3                     : { main: CoreH3Docs },
@@ -258,7 +255,6 @@ export default {
       CoreTableSortLabel         : { main: CoreTableSortLabelDocs },
       CoreTimer                  : { main: CoreTimerDocs },
       CoreTooltip                : { main: CoreTooltipDocs },
-      CoreTypography             : { main: CoreTypographyDocs },
       CoreTypographyBody1        : { main: CoreTypographyBody1Docs },
       CoreTypographyBody2        : { main: CoreTypographyBody2Docs },
       CoreTypographyButton       : { main: CoreTypographyButtonDocs },
