@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.87](https://https//github.com/wrappid/wrappid-module/compare/v0.0.86...v0.0.87) (2024-08-29)
+
+
+### Features
+
+* **global:** :art: show border at place of image ([ad3deda](https://https//github.com/wrappid/wrappid-module/commit/ad3deda66d36a6b07ffc8adabd9b6bfc461b8331)), closes [#186](https://https//github.com/wrappid/wrappid-module/issues/186)
+
 ### [0.0.86](https://https//github.com/wrappid/wrappid-module/compare/v0.0.85...v0.0.86) (2024-08-29)
 
 ### [0.0.85](https://https//github.com/wrappid/wrappid-module/compare/v0.0.84...v0.0.85) (2024-08-29)
