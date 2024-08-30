@@ -8,11 +8,11 @@ import {
   CoreClasses,
   CoreFab,
   CoreGrid,
+  CoreH6,
   CoreIcon,
   CoreIconButton,
   CoreSnackbar,
   CoreToolbar,
-  CoreTypography,
   CoreTypographyBody1
 } from "@wrappid/core";
 
@@ -282,8 +282,99 @@ export default function CoreSnackbarDocs() {
             <CodeSample 
               title={"Position"}
               description={"Use the anchorOrigin prop to control the Snackbar's position on the screen."}
-              code={""}
-              expandedCode={""}
+              code={`<CoreBox>
+  {buttons}
+
+  <CoreSnackbar 
+    anchorOrigin={{ horizontal, vertical }}
+    open={open}
+    onClose={handleClose}
+    message="I love snacks"
+    key={vertical + horizontal}
+  />
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import {
+  CoreBox,
+  CoreButton,
+  CoreClasses,
+  CoreGrid,
+  CoreSnackbar
+} from "@wrappid/core";
+
+export default function CoreSnackbarDocs() {
+  const [state, setState] = React.useState({
+    horizontal: "center",
+    open      : false,
+    vertical  : "top",
+  });
+  const { vertical, horizontal, open } = state;
+
+  const handleClick = (newState) => () => {
+    setState({ ...newState, open: true });
+  };
+
+  const handleClose = () => {
+    setState({ ...state, open: false });
+  };
+
+  const buttons = (
+    <>
+      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+        <CoreButton variant="text" onClick={handleClick({ horizontal: "center", vertical: "top" })}>
+          Top-Center
+        </CoreButton>
+      </CoreBox>
+
+      <CoreGrid container justifyContent="center" >
+        <CoreBox gridProps={{ gridSize: { md: 6 } }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "left", vertical: "top" })}>
+            Top-Left
+          </CoreButton>
+        </CoreBox>
+
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }} >
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "top" })}>
+            Top-Right
+          </CoreButton>
+        </CoreBox>
+        
+        <CoreBox gridProps={{ gridSize: { md: 6 } }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "left", vertical: "bottom" })}>
+            Bottom-Left
+          </CoreButton>
+        </CoreBox>
+
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "bottom" })}>
+            Bottom-Right
+          </CoreButton>
+        </CoreBox>
+      </CoreGrid>
+
+      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+        <CoreButton variant="text" onClick={handleClick({ horizontal: "center", vertical: "bottom" })}>
+          Bottom-Center
+        </CoreButton>
+      </CoreBox>
+    </>
+  );
+  
+  return (
+    <CoreBox>
+      {buttons}
+
+      <CoreSnackbar 
+        anchorOrigin={{ horizontal, vertical }}
+        open={open}
+        onClose={handleClose}
+        message="I love snacks"
+        key={vertical + horizontal}
+      />
+    </CoreBox>
+  );
+}`}
               renderElement={
                 <CoreBox>
                   {buttons}
@@ -452,6 +543,147 @@ export default function CoreLinearProgressDocs() {
             />
 
             <CodeSample 
+              title={"Use with Floating Action Buttons"}
+              description={"If you're using a Floating Action Button on mobile, Material Design recommends positioning snackbars directly above it, as shown in the demo below:"}
+              code={`<CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+  <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
+    <CoreAppBar position="static" color="primary" advanceMode={true}>
+      <CoreToolbar>
+        <CoreIconButton
+          edge="start"
+          sx={{ mr: 2 }}
+          color="inherit"
+          aria-label="menu"
+        >
+          <CoreIcon>menu</CoreIcon>
+        </CoreIconButton>
+
+        <CoreH6 color="inherit" component="div">
+        App bar
+        </CoreH6>
+      </CoreToolbar>
+    </CoreAppBar>
+
+    <CoreFab
+      color="secondary"
+      styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE, CoreClasses.POSITION.BOTTOM_0, CoreClasses.POSITION.END_0]}
+    >
+      <CoreIcon>add</CoreIcon>
+    </CoreFab>
+
+    <CoreSnackbar
+      open
+      autoHideDuration={1000}
+      message="Archived"
+      action={
+        <CoreButton color="inherit" size="small">
+        Undo
+        </CoreButton>
+      }
+      styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE]}
+    />
+  </CoreBox>
+</CoreBox>`}  
+              expandedCode={`
+import {
+  CoreAppBar,
+  CoreBox,
+  CoreButton,
+  CoreClasses,
+  CoreFab,
+  CoreH6,
+  CoreIcon,
+  CoreIconButton,
+  CoreSnackbar,
+  CoreToolbar
+} from "@wrappid/core";
+
+export default function CoreSnackbarDocs() {
+  return (
+    <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
+        <CoreAppBar position="static" color="primary" advanceMode={true}>
+          <CoreToolbar>
+            <CoreIconButton
+              edge="start"
+              sx={{ mr: 2 }}
+              color="inherit"
+              aria-label="menu"
+            >
+              <CoreIcon>menu</CoreIcon>
+            </CoreIconButton>
+
+            <CoreH6 color="inherit" component="div">
+                        App bar
+            </CoreH6>
+          </CoreToolbar>
+        </CoreAppBar>
+
+        <CoreFab
+          color="secondary"
+          styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE, CoreClasses.POSITION.BOTTOM_0, CoreClasses.POSITION.END_0]}
+        >
+          <CoreIcon>add</CoreIcon>
+        </CoreFab>
+
+        <CoreSnackbar
+          open
+          autoHideDuration={1000}
+          message="Archived"
+          action={
+            <CoreButton color="inherit" size="small">
+                        Undo
+            </CoreButton>
+          }
+          styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE]}
+        />
+      </CoreBox>
+    </CoreBox>
+  );
+}`}
+              renderElement={
+                <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                  <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
+                    <CoreAppBar position="static" color="primary" advanceMode={true}>
+                      <CoreToolbar>
+                        <CoreIconButton
+                          edge="start"
+                          sx={{ mr: 2 }}
+                          color="inherit"
+                          aria-label="menu"
+                        >
+                          <CoreIcon>menu</CoreIcon>
+                        </CoreIconButton>
+
+                        <CoreH6 color="inherit" component="div">
+                        App bar
+                        </CoreH6>
+                      </CoreToolbar>
+                    </CoreAppBar>
+
+                    <CoreFab
+                      color="secondary"
+                      styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE, CoreClasses.POSITION.BOTTOM_0, CoreClasses.POSITION.END_0]}
+                    >
+                      <CoreIcon>add</CoreIcon>
+                    </CoreFab>
+
+                    <CoreSnackbar
+                      open
+                      autoHideDuration={1000}
+                      message="Archived"
+                      action={
+                        <CoreButton color="inherit" size="small">
+                        Undo
+                        </CoreButton>
+                      }
+                      styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE]}
+                    />
+                  </CoreBox>
+                </CoreBox>}
+            />
+
+            <CodeSample 
               title={"Consecutive Snackbars"}
               description={"This demo shows how to display multiple Snackbars without stacking them by using a consecutive animation."}
               code={`<CoreBox>
@@ -577,47 +809,6 @@ export default function CoreLinearProgressDocs() {
                     </React.Fragment>
                   }
                 />
-              </CoreBox>}
-            />
-
-            <CodeSample 
-              renderElement={<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
-                <CoreBox styleClasses={[CoreClasses.POSITION.POSITION_RELATIVE]}>
-                  <CoreAppBar position="static" color="primary" advanceMode={true}>
-                    <CoreToolbar>
-                      <CoreIconButton
-                        edge="start"
-                        sx={{ mr: 2 }}
-                        color="inherit"
-                        aria-label="menu"
-                      >
-                        <CoreIcon>menu</CoreIcon>
-                      </CoreIconButton>
-
-                      <CoreTypography variant="h6" color="inherit" component="div">
-                        App bar
-                      </CoreTypography>
-                    </CoreToolbar>
-                  </CoreAppBar>
-
-                  <CoreFab
-                    color="secondary"
-                  >
-                    <CoreIcon>add</CoreIcon>
-                  </CoreFab>
-
-                  <CoreSnackbar
-                    open
-                    autoHideDuration={6000}
-                    message="Archived"
-                    action={
-                      <CoreButton color="inherit" size="small">
-                        Undo
-                      </CoreButton>
-                    }
-                    styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE, CoreClasses.BG.BG_ERROR_LIGHT]}
-                  />
-                </CoreBox>
               </CoreBox>}
             />
           </>
