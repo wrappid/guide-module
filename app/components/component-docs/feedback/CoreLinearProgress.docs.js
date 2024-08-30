@@ -273,13 +273,13 @@ export default function CoreLinearProgressDocs() {
 
             <CodeSample 
               title={"Linear with label"}
-              description={"A linear progress bar alongside a text label indicating the completion percentage."}
+              description={"A linear progress bar alongside a text label indicating the completion."}
               code={`<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
   <CoreLinearProgress
     color="primary"
     value={progressWithLabel}
     variant="determinate"
-    showPercentage={true} />
+    showLabel={true} />
 </CoreBox>`}
               expandedCode={`import React from "react";
 
@@ -311,7 +311,7 @@ export default function CoreLinearProgressDocs() {
         color="primary"
         value={progressWithLabel}
         variant="determinate"
-        showPercentage={true} />
+        showLabel={true} />
     </CoreBox>
   );
 }`}
@@ -321,7 +321,8 @@ export default function CoreLinearProgressDocs() {
                     color="primary"
                     value={progressWithLabel}
                     variant="determinate"
-                    showPercentage={true} />
+                    showLabel={true}
+                  />
                 </CoreBox>
               }
             />
