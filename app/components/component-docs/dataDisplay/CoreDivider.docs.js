@@ -57,42 +57,31 @@ export default function CoreDividerDocs() {
 
 export default function BasicDivider() { 
   return(
-    <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+    <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
       <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
         <CoreStack
           direction="row"
           styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}
           justifyContent="space-between"
           alignItems="center">
-          <CoreH4 gutterBottom component="div">
-        Toothbrush
-          </CoreH4>
-
+          <CoreH4 gutterBottom component="div">Toothbrush</CoreH4>
           <CoreH6 gutterBottom component="div">
-        $4.50
+            $4.50
           </CoreH6>
         </CoreStack>
-
         <CoreTypographyBody2 color="text.secondary">
-    Pinstriped cornflower blue cotton blouse takes you on a walk to the park or
-    just down the hall.
+          Pinstriped cornflower blue cotton blouse takes you on a walk to the park or just down the hall.
         </CoreTypographyBody2>
       </CoreBox>
-
       <CoreDivider/>
-
       <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
         <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MB1]}>
-    Select type
+          Select type
         </CoreTypographyBody1>
-
         <CoreStack direction="row" spacing={1}>
           <CoreChip size="small" label="Extra Soft" />
-
           <CoreChip size="small" color="primary" label="Soft" />
-
           <CoreChip size="small" label="Medium" />
-
           <CoreChip size="small" label="Hard" />
         </CoreStack>
       </CoreBox>
@@ -100,7 +89,7 @@ export default function BasicDivider() {
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+                <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
                   <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
                     <CoreStack
                       direction="row"
@@ -147,7 +136,7 @@ export default function BasicDivider() {
               title="Variants"
               description={
                 <>
-          The Divider component supports three variants: <CodeBlock>fullWidth</CodeBlock> (default),
+                The Divider component supports three variants: <CodeBlock>fullWidth</CodeBlock> (default),
 
                   {" "}
 
@@ -171,36 +160,30 @@ export default function BasicDivider() {
 export default function DividerVariants(){
   return(
     <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
-      <CoreList styleClasses={[CoreClasses.PADDING.PY0, CoreClasses.LAYOUT.FULL_WIDTH]}>
+      <CoreList styleClasses={[CoreClasses.LAYOUT.FULL_WIDTH]}>
         <CoreListItem>
           <CoreListItemText primary="Full width variant below" />
         </CoreListItem>
-
         <CoreDivider component="li" />
-
         <CoreListItem>
           <CoreListItemText primary="Inset variant below" />
         </CoreListItem>
-
         <CoreDivider variant="inset" component="li" />
-
         <CoreListItem>
           <CoreListItemText primary="Middle variant below" />
         </CoreListItem>
-
         <CoreDivider variant="middle" component="li" />
-
         <CoreListItem>
           <CoreListItemText primary="List item" />
         </CoreListItem>
       </CoreList>
-    </CoreBox>  
+    </CoreBox>
   );
 }`}
               renderElement={
                 <>
                   <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
-                    <CoreList styleClasses={[CoreClasses.PADDING.PY0, CoreClasses.LAYOUT.FULL_WIDTH]}>
+                    <CoreList styleClasses={[CoreClasses.LAYOUT.FULL_WIDTH]}>
                       <CoreListItem>
                         <CoreListItemText primary="Full width variant below" />
                       </CoreListItem>
@@ -240,66 +223,31 @@ export default function DividerVariants(){
   CoreClasses,
   CoreDivider,
   CoreBox,
-  CoreIcon,
-  CoreStack
+  CoreIcon
 } from "@wrappid/core";
     
 export default function VerticalDividers() {
   return (
-    <CoreBox styleClasses={[
-      CoreClasses.DISPLAY.FLEX,
-      CoreClasses.WIDTH.MAX_W_75,
-      CoreClasses.BORDER.BORDER,
-      CoreClasses.BORDER.BORDER_GREY_400,
-      CoreClasses.BORDER.BORDER_ROUNDED_1
-    ]}>
-      <CoreStack direction="row"> 
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon fontSize="medium">cloud</CoreIcon>
-        </CoreBox>
-
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">folder</CoreIcon>
-        </CoreBox>
-
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">mail</CoreIcon>
-        </CoreBox>
-
-        <CoreDivider styleClasses={[CoreClasses.MARGIN.M0]} orientation="vertical" flexItem />
-  
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">phone</CoreIcon>
-        </CoreBox>
-      </CoreStack>
+    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="cloud" />
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="folder" />
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="mail" />
+      <CoreDivider styleClasses={[CoreClasses.MARGIN.M0]} orientation="vertical" flexItem />
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="phone" />
     </CoreBox>
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[
-                  CoreClasses.DISPLAY.FLEX,
-                  CoreClasses.WIDTH.MAX_W_75,
-                  CoreClasses.BORDER.BORDER,
-                  CoreClasses.BORDER.BORDER_GREY_400,
-                  CoreClasses.BORDER.BORDER_ROUNDED_1
-                ]}>
-                  <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                    <CoreIcon fontSize="medium">cloud</CoreIcon>
-                  </CoreBox>
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="cloud" />
 
-                  <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                    <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">folder</CoreIcon>
-                  </CoreBox>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="folder" />
 
-                  <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                    <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">mail</CoreIcon>
-                  </CoreBox>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="mail" />
 
                   <CoreDivider styleClasses={[CoreClasses.MARGIN.M0]} orientation="vertical" flexItem />
               
-                  <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                    <CoreIcon styleClasses={[CoreClasses.PADDING.P2]} fontSize="medium">phone</CoreIcon>
-                  </CoreBox>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="phone" />
                 </CoreBox>
               }
             />
@@ -328,16 +276,9 @@ export default function FlexDivider() {
       CoreClasses.BORDER.BORDER_GREY_400,
       CoreClasses.BORDER.BORDER_ROUNDED_1
     ]}>
-
-      <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-        <CoreIcon>dehaze</CoreIcon>
-      </CoreBox>
-
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} >dehaze</CoreIcon>
       <CoreDivider orientation="vertical" flexItem />
-
-      <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-        <CoreIcon>edit</CoreIcon>
-      </CoreBox>
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} >edit</CoreIcon>
     </CoreBox>
   );
 }`}
@@ -350,15 +291,11 @@ export default function FlexDivider() {
                   CoreClasses.BORDER.BORDER_ROUNDED_1
                 ]}>
 
-                  <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                    <CoreIcon>dehaze</CoreIcon>
-                  </CoreBox>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} >dehaze</CoreIcon>
 
                   <CoreDivider orientation="vertical" flexItem />
 
-                  <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                    <CoreIcon>edit</CoreIcon>
-                  </CoreBox>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} >edit</CoreIcon>
                 </CoreBox>
               }
             />
@@ -367,7 +304,7 @@ export default function FlexDivider() {
               title="With children"
               description={
                 <>
-          Use the <CodeBlock>textAlign</CodeBlock> prop to align elements that are wrapped by the Divider.
+                 Use the <CodeBlock>textAlign</CodeBlock> prop to align elements that are wrapped by the Divider.
                 </>
               }
               code={`<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
@@ -397,23 +334,15 @@ export default function DividerText() {
   return(
     <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
       {content}
-
       <CoreDivider>CENTER</CoreDivider>
-
       {content}
-
       <CoreDivider textAlign="left">LEFT</CoreDivider>
-
       {content}
-
       <CoreDivider textAlign="right">RIGHT</CoreDivider>
-
       {content}
-
       <CoreDivider>
         <CoreChip label="Chip" size="small" />
       </CoreDivider>
-
       {content}
     </CoreBox>
   );
@@ -454,6 +383,23 @@ export default function DividerText() {
                   <CodeBlock>{"<li>"}</CodeBlock>—otherwise it won&apos; be a valid HTML element.
                 </>
               }
+              code={`<CoreList aria-label="mailbox folders">
+  <CoreListItem >
+    <CoreListItemText primary="Inbox" />
+  </CoreListItem>
+  <CoreDivider component="li" />
+  <CoreListItem>
+    <CoreListItemText primary="Drafts" />
+  </CoreListItem>
+  <CoreDivider component="li" />
+  <CoreListItem>
+    <CoreListItemText primary="Trash" />
+  </CoreListItem>
+  <CoreDivider component="li" />
+  <CoreListItem>
+    <CoreListItemText primary="Spam" />
+  </CoreListItem>
+</CoreList>`}
               expandedCode={`import {
   CoreClasses,
   CoreList,
@@ -465,26 +411,20 @@ export default function DividerText() {
 
 export default function ListDividers() {
   return (
-    <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+    <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
       <CoreList aria-label="mailbox folders">
         <CoreListItem >
           <CoreListItemText primary="Inbox" />
         </CoreListItem>
-
         <CoreDivider component="li" />
-
         <CoreListItem>
           <CoreListItemText primary="Drafts" />
         </CoreListItem>
-
         <CoreDivider component="li" />
-
         <CoreListItem>
           <CoreListItemText primary="Trash" />
         </CoreListItem>
-
         <CoreDivider component="li" />
-
         <CoreListItem>
           <CoreListItemText primary="Spam" />
         </CoreListItem>
@@ -492,31 +432,8 @@ export default function ListDividers() {
     </CoreBox>
   );
 }`}
-              code={`<CoreList aria-label="mailbox folders">
-  <CoreListItem >
-    <CoreListItemText primary="Inbox" />
-  </CoreListItem>
-
-  <CoreDivider component="li" />
-
-  <CoreListItem>
-    <CoreListItemText primary="Drafts" />
-  </CoreListItem>
-
-  <CoreDivider component="li" />
-
-  <CoreListItem>
-    <CoreListItemText primary="Trash" />
-  </CoreListItem>
-
-  <CoreDivider component="li" />
-
-  <CoreListItem>
-    <CoreListItemText primary="Spam" />
-  </CoreListItem>
-</CoreList>`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+                <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
 
                   <CoreList aria-label="mailbox folders">
                     <CoreListItem >
@@ -557,10 +474,13 @@ export default function ListDividers() {
 
                 </>
               }
-              code={"NA"}
+              code={`<CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_right" />
+<CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_center" />
+<CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_justify" />
+<CoreDivider variant="middle" orientation="vertical" flexItem />
+<CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_bold" />`}
               expandedCode={`import {
   CoreClasses,
-  CoreStack,
   CoreDivider,
   CoreBox,
   CoreIcon
@@ -568,52 +488,28 @@ export default function ListDividers() {
                 
 export default function VerticalDividerMiddle() {
   return (
-    <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
-      <CoreStack direction="row">
+    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
 
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon>format_align_right</CoreIcon>
-        </CoreBox>
-
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon>format_align_center</CoreIcon>
-        </CoreBox>
-
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon>format_align_justify</CoreIcon>
-        </CoreBox>
-
-        <CoreDivider variant="middle" orientation="vertical" flexItem />
-
-        <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-          <CoreIcon>format_bold</CoreIcon>
-        </CoreBox>
-      </CoreStack>
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_right" />
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_center" />
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_justify" />
+      <CoreDivider variant="middle" orientation="vertical" flexItem />
+      <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_bold" />
     </CoreBox>
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.WIDTH.MAX_W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
-                  <CoreStack direction="row">
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
 
-                    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                      <CoreIcon>format_align_right</CoreIcon>
-                    </CoreBox>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_right" />
 
-                    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                      <CoreIcon>format_align_center</CoreIcon>
-                    </CoreBox>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_center" />
 
-                    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                      <CoreIcon>format_align_justify</CoreIcon>
-                    </CoreBox>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_justify" />
 
-                    <CoreDivider variant="middle" orientation="vertical" flexItem />
+                  <CoreDivider variant="middle" orientation="vertical" flexItem />
 
-                    <CoreBox styleClasses={[CoreClasses.PADDING.P1]}>
-                      <CoreIcon>format_bold</CoreIcon>
-                    </CoreBox>
-                  </CoreStack>
+                  <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_bold" />
                 </CoreBox>
               }
             />

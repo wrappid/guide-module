@@ -8,24 +8,15 @@ import {
   CoreIcon,
   CoreButton,
   CoreH5,
-  CoreAlertTitle,
   CoreCollapse,
   CoreIconButton,
-  CoreH6
+  CoreBox
 } from "@wrappid/core";
 
 import CodeBlock from "../../CodeBlock";
 import CodeSample from "../../CodeSample";
 import ComponentDocs from "../ComponentDocs";
 
-/**
- * To handle Subtitles of CodeSamples till a concrete solution is made
- * @param {*} props 
- * @returns 
- */
-function Subtitle(props){
-  return (<CoreH6 {...props} />);
-}
 export default function CoreAlertDocs() {
   const [open, setOpen] = React.useState(true);
 
@@ -41,6 +32,28 @@ export default function CoreAlertDocs() {
         samples={
           <>
             <CodeSample
+              title={"Default alerts"}
+              description={<>
+                <CoreTypographyBody1>
+                  This is example of basic CoreAlerts.
+                </CoreTypographyBody1>
+              </>}
+              expandedCode={`import { CoreAlert } from "@wrappid/core";
+
+export default function DefaultAlert(){
+  return (
+   <CoreAlert>Alert with default value.</CoreAlert>
+  );
+}`}
+              code={"<CoreAlert>Alert with default value.</CoreAlert>"}
+              renderElement={
+                <>
+                  <CoreAlert>Alert with default value.</CoreAlert>
+                </>
+              }
+            />
+
+            <CodeSample
               title={"Basic alerts"}
               description={<>
                 <CoreTypographyBody1>
@@ -51,17 +64,17 @@ export default function CoreAlertDocs() {
 
 export default function BasicAlert(){
   return (
-    <CoreAlert icon={<CoreIcon fontSize="inherit">check</CoreIcon>} severity="success">
-      Here is a gentle confirmation that your action was successful.
-    </CoreAlert>
+ <CoreAlert icon={<CoreIcon fontSize="inherit" icon="check" />} severity="success">
+    Here is a gentle confirmation that your action was successful.
+  </CoreAlert>
   );
 }`}
-              code={`<CoreAlert icon={<CoreIcon fontSize="inherit">check</CoreIcon>} severity="success">
+              code={` <CoreAlert icon={<CoreIcon fontSize="inherit" icon="check" />} severity="success">
     Here is a gentle confirmation that your action was successful.
 </CoreAlert>`}
               renderElement={
-                <CoreAlert icon={<CoreIcon fontSize="inherit">check</CoreIcon>} severity="success">
-              Here is a gentle confirmation that your action was successful.
+                <CoreAlert icon={<CoreIcon fontSize="inherit" icon="check" />} severity="success">
+                   Here is a gentle confirmation that your action was successful.
                 </CoreAlert>
               }
             />
@@ -73,6 +86,10 @@ export default function BasicAlert(){
           The <CodeBlock>severity</CodeBlock> prop accepts four values representing different 
 
           states—<CodeBlock>success</CodeBlock> (the default),
+
+                  {" "}<CodeBlock>primary</CodeBlock>,
+
+                  {" "}<CodeBlock>secondary</CodeBlock>,
 
                   {" "}<CodeBlock>info</CodeBlock>,
 
@@ -86,43 +103,35 @@ export default function BasicAlert(){
 export default function AlertSeverity(){
   return (
     <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-      <CoreAlert severity="error">
-        This is an error CoreAlert
-      </CoreAlert>
-
-      <CoreAlert severity="warning">
-        This is a warning CoreAlert
-      </CoreAlert>
-
+      <CoreAlert severity="primary">This is an success CoreAlert</CoreAlert>
+      <CoreAlert severity="secondary">This is an success CoreAlert</CoreAlert>
+      <CoreAlert severity="success">This is an success CoreAlert</CoreAlert>
       <CoreAlert severity="info">This is a info CoreAlert</CoreAlert>
-
-      <CoreAlert severity="success">
-        This is an success CoreAlert
-      </CoreAlert>
+      <CoreAlert severity="warning">This is a warning CoreAlert</CoreAlert>
+      <CoreAlert severity="error">This is an error CoreAlert</CoreAlert>
     </CoreStack>
   );
 }`}
-              code={`<CoreAlert severity="error">This is an error CoreAlert</CoreAlert>
-<CoreAlert severity="warning">This is a warning CoreAlert</CoreAlert>
+              code={`<CoreAlert severity="primary">This is an success CoreAlert</CoreAlert>
+<CoreAlert severity="secondary">This is an success CoreAlert</CoreAlert>
+<CoreAlert severity="success">This is an success CoreAlert</CoreAlert>
 <CoreAlert severity="info">This is a info CoreAlert</CoreAlert>
-<CoreAlert severity="success">This is an success CoreAlert</CoreAlert>`}
+<CoreAlert severity="warning">This is a warning CoreAlert</CoreAlert>
+<CoreAlert severity="error">This is an error CoreAlert</CoreAlert>`}
               renderElement={
                 <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-                  <CoreAlert
-                    severity="error"
-                  >
-              This is an error CoreAlert
-                  </CoreAlert>
+                  <CoreAlert severity="primary">This is an success CoreAlert</CoreAlert>
 
-                  <CoreAlert severity="warning">
-              This is a warning CoreAlert
-                  </CoreAlert>
+                  <CoreAlert severity="secondary">This is an success CoreAlert</CoreAlert>
+
+                  <CoreAlert severity="success">This is an success CoreAlert</CoreAlert>
 
                   <CoreAlert severity="info">This is a info CoreAlert</CoreAlert>
+                 
+                  <CoreAlert severity="warning">This is a warning CoreAlert</CoreAlert>
 
-                  <CoreAlert severity="success">
-              This is an success CoreAlert
-                  </CoreAlert>
+                  <CoreAlert severity="error">This is an error CoreAlert</CoreAlert>
+
                 </CoreStack>
               }
             />
@@ -142,61 +151,39 @@ export default function AlertSeverity(){
                   <CoreH5>Filled</CoreH5>
                 </>
               }
-              code={`<CoreAlert variant="filled" severity="success">
-  This is a filled success Alert.
-</CoreAlert>
-
-<CoreAlert variant="filled" severity="info">
-  This is a filled info Alert.
-</CoreAlert>
-
-<CoreAlert variant="filled" severity="warning">
-  This is a filled warning Alert.
-</CoreAlert>
-
-<CoreAlert variant="filled" severity="error">
-  This is a filled error Alert.
-</CoreAlert>`}
+              code={`<CoreAlert variant="filled" severity="primary">This is a filled success Alert.</CoreAlert>
+<CoreAlert variant="filled" severity="secondary">This is a filled success Alert.</CoreAlert>
+<CoreAlert variant="filled" severity="success">This is a filled success Alert.</CoreAlert>
+<CoreAlert variant="filled" severity="info">This is a filled info Alert.</CoreAlert>
+<CoreAlert variant="filled" severity="warning">This is a filled warning Alert.</CoreAlert>
+<CoreAlert variant="filled" severity="error">This is a filled error Alert.</CoreAlert>`}
               expandedCode={`import { CoreAlert, CoreClasses, CoreStack } from "@wrappid/core";
 
 export default function FilledAlerts(){
   return (
     <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-      <CoreAlert variant="filled" severity="success">
-        This is a filled success Alert.
-      </CoreAlert>
-
-      <CoreAlert variant="filled" severity="info">
-        This is a filled info Alert.
-      </CoreAlert>
-
-      <CoreAlert variant="filled" severity="warning">
-        This is a filled warning Alert.
-      </CoreAlert>
-
-      <CoreAlert variant="filled" severity="error">
-        This is a filled error Alert.
-      </CoreAlert>
+      CoreAlert variant="filled" severity="primary">This is a filled success Alert.</CoreAlert>
+      <CoreAlert variant="filled" severity="secondary">This is a filled success Alert.</CoreAlert>
+      <CoreAlert variant="filled" severity="success">This is a filled success Alert.</CoreAlert>
+      <CoreAlert variant="filled" severity="info">This is a filled info Alert.</CoreAlert>
+      <CoreAlert variant="filled" severity="warning">This is a filled warning Alert.</CoreAlert>
+      <CoreAlert variant="filled" severity="error">This is a filled error Alert.</CoreAlert>
     </CoreStack>
   );
 }`}
               renderElement={
                 <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-                  <CoreAlert variant="filled" severity="success">
-               This is a filled success Alert.
-                  </CoreAlert>
+                  <CoreAlert variant="filled" severity="primary">This is a filled success Alert.</CoreAlert>
 
-                  <CoreAlert variant="filled" severity="info">
-              This is a filled info Alert.
-                  </CoreAlert>
+                  <CoreAlert variant="filled" severity="secondary">This is a filled success Alert.</CoreAlert>
 
-                  <CoreAlert variant="filled" severity="warning">
-             This is a filled warning Alert.
-                  </CoreAlert>
+                  <CoreAlert variant="filled" severity="success">This is a filled success Alert.</CoreAlert>
 
-                  <CoreAlert variant="filled" severity="error">
-             This is a filled error Alert.
-                  </CoreAlert>
+                  <CoreAlert variant="filled" severity="info">This is a filled info Alert.</CoreAlert>
+
+                  <CoreAlert variant="filled" severity="warning">This is a filled warning Alert.</CoreAlert>
+
+                  <CoreAlert variant="filled" severity="error">This is a filled error Alert.</CoreAlert>
                 </CoreStack>
               }
             />
@@ -204,61 +191,39 @@ export default function FilledAlerts(){
             <CodeSample
               title={"outlined"}
               description={" "}
-              code={`<CoreAlert variant="outlined" severity="success">
-  This is a outlined success Alert.
-</CoreAlert>
-
-<CoreAlert variant="outlined" severity="info">
-  This is a outlined info Alert.
-</CoreAlert>
-
-<CoreAlert variant="outlined" severity="warning">
-  This is a outlined warning Alert.
-</CoreAlert>
-
-<CoreAlert variant="outlined" severity="error">
-  This is a outlined error Alert.
-</CoreAlert>`}
+              code={`<CoreAlert variant="outlined" severity="primary">This is a outlined success Alert.</CoreAlert>
+<CoreAlert variant="outlined" severity="secondary">This is a outlined success Alert.</CoreAlert>
+<CoreAlert variant="outlined" severity="success">This is a outlined success Alert.</CoreAlert>
+<CoreAlert variant="outlined" severity="info">This is a outlined info Alert.</CoreAlert>
+<CoreAlert variant="outlined" severity="warning">This is a outlined warning Alert.</CoreAlert>
+<CoreAlert variant="outlined" severity="error">This is a outlined error Alert.</CoreAlert>`}
               expandedCode={`import { CoreAlert, CoreClasses, CoreStack } from "@wrappid/core";
 
 export default function OutlinedAlerts(){
   return (
     <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-      <CoreAlert variant="outlined" severity="success">
-        This is a outlined success Alert.
-      </CoreAlert>
-
-      <CoreAlert variant="outlined" severity="info">
-        This is a outlined info Alert.
-      </CoreAlert>
-
-      <CoreAlert variant="outlined" severity="warning">
-        This is a outlined warning Alert.
-      </CoreAlert>
-
-      <CoreAlert variant="outlined" severity="error">
-        This is a outlined error Alert.
-      </CoreAlert>
+      <CoreAlert variant="outlined" severity="primary">This is a outlined success Alert.</CoreAlert>
+      <CoreAlert variant="outlined" severity="secondary">This is a outlined success Alert.</CoreAlert>
+      <CoreAlert variant="outlined" severity="success">This is a outlined success Alert.</CoreAlert>
+      <CoreAlert variant="outlined" severity="info">This is a outlined info Alert.</CoreAlert>
+      <CoreAlert variant="outlined" severity="warning">This is a outlined warning Alert.</CoreAlert>
+      <CoreAlert variant="outlined" severity="error">This is a outlined error Alert.</CoreAlert>
     </CoreStack>
   );
 }`}
               renderElement={
                 <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-                  <CoreAlert variant="outlined" severity="success">
-                    This is a outlined success Alert.
-                  </CoreAlert>
+                  <CoreAlert variant="outlined" severity="primary">This is a outlined success Alert.</CoreAlert>
 
-                  <CoreAlert variant="outlined" severity="info">
-                     This is a outlined info Alert.
-                  </CoreAlert>
+                  <CoreAlert variant="outlined" severity="secondary">This is a outlined success Alert.</CoreAlert>
 
-                  <CoreAlert variant="outlined" severity="warning">
-                    This is a outlined warning Alert.
-                  </CoreAlert>
+                  <CoreAlert variant="outlined" severity="success">This is a outlined success Alert.</CoreAlert>
 
-                  <CoreAlert variant="outlined" severity="error">
-                    This is a outlined error Alert.
-                  </CoreAlert>
+                  <CoreAlert variant="outlined" severity="info">This is a outlined info Alert.</CoreAlert>
+
+                  <CoreAlert variant="outlined" severity="warning">This is a outlined warning Alert.</CoreAlert>
+
+                  <CoreAlert variant="outlined" severity="error">This is a outlined error Alert.</CoreAlert>
                 </CoreStack>
               }
             />
@@ -273,49 +238,39 @@ export default function OutlinedAlerts(){
                   </CoreTypographyBody1>
                 </>
               }
-              code={`<CoreAlert severity="success" color="info">
-  This is a success CoreAlert with info color.
-</CoreAlert>
-
-<CoreAlert severity="info" color="success">
-  This is a info CoreAlert with success color.
-</CoreAlert>
-
-<CoreAlert severity="warning" color="warning">
-  This is a warning CoreAlert with warning color.
-</CoreAlert>`}
+              code={`<CoreAlert severity="info" color="primary">This is a info CoreAlert with primary color.</CoreAlert>
+<CoreAlert severity="info" color="secondary">This is a info CoreAlert with secondary color.</CoreAlert>
+<CoreAlert severity="info" color="success">This is a info CoreAlert with success color.</CoreAlert>
+<CoreAlert severity="success" color="info">This is a success CoreAlert with info color.</CoreAlert>
+<CoreAlert severity="warning" color="warning">This is a warning CoreAlert with warning color.</CoreAlert>
+<CoreAlert severity="error" color="error">This is a error CoreAlert with error color.</CoreAlert>`}
               expandedCode={`import { CoreAlert, CoreStack } from "@wrappid/core";
 
 export default function ColorAlerts(){
   return (
-    <CoreStack direction="column" spacing={2}>
-      <CoreAlert severity="success" color="info">
-        This is a success CoreAlert with info color.
-      </CoreAlert>
-
-      <CoreAlert severity="info" color="success">
-        This is a info CoreAlert with success color.
-      </CoreAlert>
-
-      <CoreAlert severity="warning" color="warning">
-        This is a warning CoreAlert with warning color.
-      </CoreAlert>
+    <CoreAlert severity="info" color="primary">This is a info CoreAlert with primary color.</CoreAlert>
+    <CoreAlert severity="info" color="secondary">This is a info CoreAlert with secondary color.</CoreAlert>
+    <CoreAlert severity="info" color="success">This is a info CoreAlert with success color.</CoreAlert>
+    <CoreAlert severity="success" color="info">This is a success CoreAlert with info color.</CoreAlert>
+    <CoreAlert severity="warning" color="warning">This is a warning CoreAlert with warning color.</CoreAlert>
+    <CoreAlert severity="error" color="error">This is a error CoreAlert with error color.</CoreAlert>
     </CoreStack>
   );
 }`}
               renderElement={
                 <CoreStack direction="column" spacing={2}>
-                  <CoreAlert severity="success" color="info">
-              This is a success CoreAlert with info color.
-                  </CoreAlert>
+                  <CoreAlert severity="info" color="primary">This is a info CoreAlert with primary color.</CoreAlert>
 
-                  <CoreAlert severity="info" color="success">
-              This is a info CoreAlert with success color.
-                  </CoreAlert>
+                  <CoreAlert severity="info" color="secondary">This is a info CoreAlert with secondary color.</CoreAlert>
 
-                  <CoreAlert severity="warning" color="warning">
-              This is a warning CoreAlert with warning color.
-                  </CoreAlert>
+                  <CoreAlert severity="info" color="success">This is a info CoreAlert with success color.</CoreAlert>
+
+                  <CoreAlert severity="success" color="info">This is a success CoreAlert with info color.</CoreAlert>
+
+                  <CoreAlert severity="warning" color="warning">This is a warning CoreAlert with warning color.</CoreAlert>
+
+                  <CoreAlert severity="error" color="error">This is a error CoreAlert with error color.</CoreAlert>
+              
                 </CoreStack>
               }
             />
@@ -339,11 +294,7 @@ export default function ColorAlerts(){
 
 <CoreAlert
   severity="success"
-  action={
-    <CoreButton color="inherit" size="small">
-      UNDO
-    </CoreButton>
-  }
+  action={<CoreButton color="inherit" size="small" label="UNDO"/>}  
 >
 This Alert uses a Button component for its action.
 </CoreAlert>`}
@@ -358,11 +309,7 @@ export default function ActionAlerts(){
 
       <CoreAlert
         severity="success"
-        action={
-          <CoreButton color="inherit" size="small">
-            UNDO
-          </CoreButton>
-        } 
+        action={<CoreButton color="inherit" size="small" label="UNDO"/>}
       >
         This Alert uses a Button component for its action.
       </CoreAlert>
@@ -377,11 +324,7 @@ export default function ActionAlerts(){
 
                   <CoreAlert
                     severity="success"
-                    action={
-                      <CoreButton color="inherit" size="small">
-            UNDO
-                      </CoreButton>
-                    }
+                    action={<CoreButton color="inherit" size="small" label="UNDO"/>}
                   >
         This Alert uses a Button component for its action.
                   </CoreAlert>
@@ -410,17 +353,13 @@ export default function ActionAlerts(){
                   </CoreTypographyBody1>
                 </>
               }
-              code={`<CoreAlert icon={<CoreIcon fontSize="inherit">check</CoreIcon>} severity="success">
+              code={`<CoreAlert icon={<CoreIcon fontSize="inherit" icon="check" />} severity="success">
   This success Alert has a custom icon.
 </CoreAlert>
 
-<CoreAlert icon={false} severity="success">
-  This success Alert has no icon.
-</CoreAlert>
+<CoreAlert icon={false} severity="success">This success Alert has no icon.</CoreAlert>
 
-<CoreAlert
-  iconMapping={{ success: <CoreIcon fontSize="inherit">check_circle_outline</CoreIcon> }}
->
+<CoreAlerticonMapping={{ success: <CoreIcon fontSize="inherit" icon="check_circle_outline+ />}} >
   This success Alert uses iconMapping to override the default icon.
 </CoreAlert>`}
               expandedCode={`import { CoreAlert, CoreClasses, CoreIcon, CoreStack } from "@wrappid/core";
@@ -428,17 +367,13 @@ export default function ActionAlerts(){
 export default function IconAlerts(){
   return (
     <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-      <CoreAlert icon={<CoreIcon fontSize="inherit">check</CoreIcon>} severity="success">
+      <CoreAlert icon={<CoreIcon fontSize="inherit" icon="check" />} severity="success">
         This success Alert has a custom icon.
       </CoreAlert>
 
-      <CoreAlert icon={false} severity="success">
-        This success Alert has no icon.
-      </CoreAlert>
+      <CoreAlert icon={false} severity="success">This success Alert has no icon.</CoreAlert>
 
-      <CoreAlert
-        iconMapping={{ success: <CoreIcon fontSize="inherit">check_circle_outline</CoreIcon> }}
-      >
+      <CoreAlerticonMapping={{ success: <CoreIcon fontSize="inherit" icon="check_circle_outline+ />}} >
         This success Alert uses iconMapping to override the default icon.
       </CoreAlert>
     </CoreStack>
@@ -446,7 +381,7 @@ export default function IconAlerts(){
 }`}
               renderElement={
                 <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-                  <CoreAlert icon={<CoreIcon fontSize="inherit">check</CoreIcon>} severity="success">
+                  <CoreAlert icon={<CoreIcon fontSize="inherit" icon="check" />} severity="success">
         This success Alert has a custom icon.
                   </CoreAlert>
 
@@ -455,177 +390,75 @@ export default function IconAlerts(){
                   </CoreAlert>
 
                   <CoreAlert
-                    iconMapping={{ success: <CoreIcon fontSize="inherit">check_circle_outline</CoreIcon> }}
+                    iconMapping={{ success: <CoreIcon fontSize="inherit" icon="check_circle_outline" /> }}
                   >
         This success Alert uses iconMapping to override the default icon.
                   </CoreAlert>
                 </CoreStack>
               }
             />
-        
-            <CodeSample
-              title={"Customization"}
-              description={
-                <>
-                  <Subtitle>Titles</Subtitle>
-
-                  <CoreTypographyBody1>
-             To add a title to an Alert, import the CoreAlertTitle component:
-                  </CoreTypographyBody1>
-
-                  <CoreTypographyBody1>
-                    <CodeBlock>
-                      {"import {CoreAlertTitle} from \"@wrappid/core\";"}
-                    </CodeBlock>
-                  </CoreTypographyBody1>
-
-                  <CoreTypographyBody1>
-            You can nest this component above the message in your Alert for a neatly styled and properly aligned title, as shown below:
-                  </CoreTypographyBody1>
-                </>
-              }
-              code={`<CoreAlert severity="success">
-  <CoreAlertTitle>Success</CoreAlertTitle>
-  This is a success Alert with an encouraging title.
-</CoreAlert>
-
-<CoreAlert severity="info">
-  <CoreAlertTitle>Info</CoreAlertTitle>
-  This is an info Alert with an informative title.
-</CoreAlert>
-
-<CoreAlert severity="warning">
-  <CoreAlertTitle>Warning</CoreAlertTitle>
-  This is a warning Alert with a cautious title.
-</CoreAlert>
-
-<CoreAlert severity="error">
-  <CoreAlertTitle>Error</CoreAlertTitle>
-  This is an error Alert with a scary title.
-</CoreAlert>`}
-              expandedCode={`import { CoreAlert, CoreAlertTitle, CoreClasses, CoreStack } from "@wrappid/core";
-
-export default function DescriptionAlerts(){
-  return (
-    <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-      <CoreAlert severity="success">
-        <CoreAlertTitle>Success</CoreAlertTitle>
-              This is a success Alert with an encouraging title.
-      </CoreAlert>
-
-      <CoreAlert severity="info">
-        <CoreAlertTitle>Info</CoreAlertTitle>
-              This is an info Alert with an informative title.
-      </CoreAlert>
-
-      <CoreAlert severity="warning">
-        <CoreAlertTitle>Warning</CoreAlertTitle>
-              This is a warning Alert with a cautious title.
-      </CoreAlert>
-
-      <CoreAlert severity="error">
-        <CoreAlertTitle>Error</CoreAlertTitle>
-              This is an error Alert with a scary title.
-      </CoreAlert>
-    </CoreStack>
-  );
-}`}
-              renderElement={
-                <>
-                  <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-                    <CoreAlert severity="success">
-                      <CoreAlertTitle>Success</CoreAlertTitle>
-              This is a success Alert with an encouraging title.
-                    </CoreAlert>
-
-                    <CoreAlert severity="info">
-                      <CoreAlertTitle>Info</CoreAlertTitle>
-              This is an info Alert with an informative title.
-                    </CoreAlert>
-
-                    <CoreAlert severity="warning">
-                      <CoreAlertTitle>Warning</CoreAlertTitle>
-              This is a warning Alert with a cautious title.
-                    </CoreAlert>
-
-                    <CoreAlert severity="error">
-                      <CoreAlertTitle>Error</CoreAlertTitle>
-              This is an error Alert with a scary title.
-                    </CoreAlert>
-                  </CoreStack>
-                </>
-              }
-            />
 
             <CodeSample
-              title=" "
+              title="Transition"
               description={
                 <>
-                  <Subtitle>Transition</Subtitle>
-
                   <CoreTypographyBody1>
                   A transition component such as CoreCollapse to transition the appearance of the alert.
 
                   </CoreTypographyBody1>
                 </>
               }
-              code={`<CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-  <CoreCollapse in={open}>
-    <CoreAlert
-      action={
-        <CoreIconButton
-          aria-label="close"
-          color="inherit"
-          size="small"
-          onClick={() => {
-            setOpen(false);
-          }}
-        >
-          <CoreIcon fontSize="inherit">clear</CoreIcon>
-        </CoreIconButton>
-      }
-      styleClasses={[CoreClasses.MARGIN.MB2]}
+              code={`<CoreCollapse in={open}>
+  <CoreAlert
+    action={<CoreIconButton
+      aria-label="close"
+      color="inherit"
+      size="small"
+      onClick={() => {
+        setOpen(false);
+      } }
     >
+      <CoreIcon fontSize="inherit">clear</CoreIcon>
+    </CoreIconButton>}
+    styleClasses={[CoreClasses.MARGIN.MB2]}
+  >
   Close me!
-    </CoreAlert>
-  </CoreCollapse>
+  </CoreAlert>
+</CoreCollapse>
 
-  <CoreButton
-    disabled={open}
-    variant="outlined"
-    onClick={() => {
-      setOpen(true);
-    }}
-    label="Re-open" />
-</CoreStack>`}
+<CoreButton
+  disabled={open}
+  variant="outlined"
+  onClick={() => {
+    setOpen(true);
+  } }
+  label="Re-open" />`}
               expandedCode={`import React from "react";
 
 import {
-  CoreAlert, CoreButton, CoreClasses, CoreCollapse, CoreIcon, CoreIconButton, CoreStack 
+  CoreAlert, CoreButton, CoreClasses, CoreCollapse, CoreIcon, CoreIconButton, CoreBox 
 } from "@wrappid/core";
 
 export default function TransitionAlerts(){
   const [open, setOpen] = React.useState(true);
 
   return (
-    <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
+    <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
       <CoreCollapse in={open}>
         <CoreAlert
-          action={
-            <CoreIconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              <CoreIcon fontSize="inherit">clear</CoreIcon>
-            </CoreIconButton>
-          }
+          action={<CoreIconButton
+            aria-label="close"
+            color="inherit"
+            size="small"
+            onClick={() => {
+              setOpen(false);
+            } }
+          >
+            <CoreIcon fontSize="inherit">clear</CoreIcon>
+          </CoreIconButton>}
           styleClasses={[CoreClasses.MARGIN.MB2]}
         >
-         Close me!
+        Close me!
         </CoreAlert>
       </CoreCollapse>
 
@@ -634,41 +467,41 @@ export default function TransitionAlerts(){
         variant="outlined"
         onClick={() => {
           setOpen(true);
-        }}
+        } }
         label="Re-open" />
-    </CoreStack>
+    </CoreBox>
   );
 }`}
               renderElement={
-                <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2}>
-                  <CoreCollapse in={open}>
-                    <CoreAlert
-                      action={
-                        <CoreIconButton
+                <>
+                  <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
+                    <CoreCollapse in={open}>
+                      <CoreAlert
+                        action={<CoreIconButton
                           aria-label="close"
                           color="inherit"
                           size="small"
                           onClick={() => {
                             setOpen(false);
-                          }}
+                          } }
                         >
                           <CoreIcon fontSize="inherit">clear</CoreIcon>
-                        </CoreIconButton>
-                      }
-                      styleClasses={[CoreClasses.MARGIN.MB2]}
-                    >
-                  Close me!
-                    </CoreAlert>
-                  </CoreCollapse>
+                        </CoreIconButton>}
+                        styleClasses={[CoreClasses.MARGIN.MB2]}
+                      >
+                      Close me!
+                      </CoreAlert>
+                    </CoreCollapse>
 
-                  <CoreButton
-                    disabled={open}
-                    variant="outlined"
-                    onClick={() => {
-                      setOpen(true);
-                    }}
-                    label="Re-open" />
-                </CoreStack>
+                    <CoreButton
+                      disabled={open}
+                      variant="outlined"
+                      onClick={() => {
+                        setOpen(true);
+                      } }
+                      label="Re-open" />
+                  </CoreBox>
+                </>
               }
             />
           </>
