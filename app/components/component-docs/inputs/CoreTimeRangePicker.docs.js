@@ -1,29 +1,34 @@
-import {
-  CoreH4,
-  CoreTypographyBody1
-} from "@wrappid/core";
-  
+import { CoreTimeRangePicker } from "@wrappid/core";
+
 import CodeSample from "../../CodeSample";
+import ComponentDocs from "../ComponentDocs";
 
 export default function CoreTimeRangePickerDocs() {
   return (
     <>
-      <CoreH4>CoreTimeRangePicker</CoreH4>
-  
-      <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
-      </CoreTypographyBody1>
-  
-      <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
+      <ComponentDocs
+        component={CoreTimeRangePicker}
+        description={"The Time Range Picker lets the user select a range of time."}
+        samples={
+          <>
+            <CodeSample
+              title={"Basic CoreTimeRangePicker"}
+              description={"Ability to set time ranges"}
+              code={"<CoreTimeRangePicker helperText={{ end: \"Check-out\", start: \"Check-in\" }}/>"}
+              expandedCode={`import { CoreDateTimeRangePicker } from "@wrappid/core";
+                
+export default function CoreTimeRangePicker(){
+  return(
+    <CoreTimeRangePicker helperText={{ end: "Check-out", start: "Check-in" }}/>
+  );                
+}`}
+              renderElement={<>
+                <CoreTimeRangePicker helperText={{ end: "Check-out", start: "Check-in" }}/>
+              </>}
+            />
+          </>
+        }
       />
-        
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* <ComponentProps component={CoreTimeRangePicker} /> */}
-      
     </>
   );
 }
