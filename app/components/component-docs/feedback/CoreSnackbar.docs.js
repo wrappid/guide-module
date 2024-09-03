@@ -1,3 +1,4 @@
+/* eslint-disable etc/no-commented-out-code */
 import React from "react";
 
 import {
@@ -15,6 +16,7 @@ import {
   CoreToolbar,
   CoreTypographyBody1
 } from "@wrappid/core";
+import { useDispatch } from "react-redux";
 
 import CodeSample from "../../CodeSample";
 import ComponentDocs from "../ComponentDocs";
@@ -26,6 +28,21 @@ export default function CoreSnackbarDocs() {
   const [snackPackConsecutive, setSnackPackConsecutive] = React.useState([]);
   const [openConsecutive, setOpenConsecutive] = React.useState(false);
   const [messageInfoConsecutive, setMessageInfoConsecutive] = React.useState(undefined);
+  const dispatch = useDispatch();
+
+  /**
+ * Snack message related action
+ */
+  const pushSnackMessage = ( message, snackProps = {}) => {
+    dispatch({
+      payload: {
+        _timestamp: new Date().getTime(),
+        message   : message || "Message not provided",
+        ...snackProps
+      },
+      type: "PUSH_SNACK_MESSAGE",
+    });
+  };
 
   const handleClickBasicOpen = () => {
     setOpenBasic(true);
@@ -680,7 +697,8 @@ export default function CoreSnackbarDocs() {
                       styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE]}
                     />
                   </CoreBox>
-                </CoreBox>}
+                </CoreBox>
+              }
             />
 
             <CodeSample 
@@ -763,7 +781,7 @@ export default function CoreLinearProgressDocs() {
         TransitionProps={{ onExited: handleExited }}
         message={messageInfoConsecutive ? messageInfoConsecutive.message : undefined}
         action={
-          <React.Fragment>
+          <>
             <CoreButton color="secondary" size="small" onClick={handleCloseConsecutive}>
               UNDO
             </CoreButton>
@@ -775,7 +793,7 @@ export default function CoreLinearProgressDocs() {
             >
               <CoreIcon>close</CoreIcon>
             </CoreIconButton>
-          </React.Fragment>
+          </>
         }
       />
     </CoreBox>
@@ -810,6 +828,91 @@ export default function CoreLinearProgressDocs() {
                   }
                 />
               </CoreBox>}
+            />
+
+            <CodeSample 
+              title={"Stack"}
+              description={"This lets you vertically stack multiple Snackbars without having to handle their open and close states."}
+              code={`<>
+  <CoreButton variant="outlined" onClick={() => { pushSnackMessage("Test Message", { autoHideDuration: 3000 }); } }>
+    Click Me
+  </CoreButton>
+
+  <CoreButton 
+    variant="outlined"
+    onClick={() => { 
+      pushSnackMessage("Data saved successfully", { 
+        autoHideDuration: 5000, 
+        color           : "secondary",
+        severity        : "warning", 
+        variant         : "filled"
+      }); 
+    }}
+  >
+    Click Me Warning
+  </CoreButton>
+</>`}
+              expandedCode={`
+import { CoreButton } from "@wrappid/core";
+import { useDispatch } from "react-redux";
+
+export default function CoreSnackbarDocs() {
+  const dispatch = useDispatch();
+
+  const pushSnackMessage = ( message, snackProps = {}) => {
+    dispatch({
+      payload: {
+        _timestamp: new Date().getTime(),
+        message   : message || "Message not provided",
+        ...snackProps
+      },
+      type: "PUSH_SNACK_MESSAGE",
+    });
+  };
+
+  return (
+    <>
+      <CoreButton variant="outlined" onClick={() => { pushSnackMessage("Test Message", { autoHideDuration: 3000 }); } }>
+        Click Me
+      </CoreButton>
+
+      <CoreButton 
+        variant="outlined"
+        onClick={() => { 
+          pushSnackMessage("Data saved successfully", { 
+            autoHideDuration: 5000, 
+            color           : "secondary",
+            severity        : "warning", 
+            variant         : "filled"
+          }); 
+        }}
+      >
+        Click Me Warning
+      </CoreButton>
+    </>
+  );
+}`}
+              renderElement={
+                <>
+                  <CoreButton variant="outlined" onClick={() => { pushSnackMessage("Test Message", { autoHideDuration: 3000 }); } }>
+                    Click Me
+                  </CoreButton>
+
+                  <CoreButton 
+                    variant="outlined"
+                    onClick={() => { 
+                      pushSnackMessage("Data saved successfully", { 
+                        autoHideDuration: 5000, 
+                        color           : "secondary",
+                        severity        : "warning", 
+                        variant         : "filled"
+                      }); 
+                    }}
+                  >
+                    Click Me Warning
+                  </CoreButton>
+                </>
+              }
             />
           </>
         }
