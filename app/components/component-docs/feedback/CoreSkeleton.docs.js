@@ -8,7 +8,6 @@ import {
   CoreStack,
   CoreClasses,
   CoreGrid,
-  CoreTypography,
   CoreImage,
   CoreCard,
   CoreCardHeader,
@@ -16,7 +15,11 @@ import {
   CoreIconButton,
   CoreIcon,
   CoreCardMedia,
-  CoreCardContent
+  CoreCardContent,
+  CoreTypographyBody2,
+  CoreTypographyCaption,
+  CoreH1,
+  CoreH3
 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
@@ -155,7 +158,9 @@ export default function CoreSkeletonDocs() {
   <Media />
 </CoreBox>`}
               expandedCode={`import {
-  CoreBox, CoreClasses, CoreGrid, CoreImage, CoreSkeleton, CoreStack, CoreTypography 
+  CoreBox, CoreClasses, CoreGrid, CoreImage, CoreSkeleton, CoreStack,
+  CoreTypographyBody2,
+  CoreTypographyCaption
 } from "@wrappid/core";
 
 function Media(props) {
@@ -202,18 +207,18 @@ function Media(props) {
 
           {item ? (
             <CoreBox>
-              <CoreTypography gutterBottom variant="body2">
+              <CoreTypographyBody2 gutterBottom>
                 {item.title}
-              </CoreTypography>
+              </CoreTypographyBody2>
 
               <CoreStack spacing={1}>
-                <CoreTypography variant="caption" color="text.secondary">
+                <CoreTypographyCaption color="text.secondary">
                   {item.channel}
-                </CoreTypography>
+                </CoreTypographyCaption>
 
-                <CoreTypography variant="caption" color="text.secondary">
+                <CoreTypographyCaption variant="caption" color="text.secondary">
                   {` + "`${item.views} • ${item.createdAt}`" + `}
-                </CoreTypography>
+                </CoreTypographyCaption>
               </CoreStack>
             </CoreBox>
           ) : (
@@ -259,7 +264,8 @@ export default function CoreSkeletonDocs() {
   <WaveMedia />
 </CoreBox>`}
               expandedCode={`import {
-  CoreAvatar, CoreBox, CoreCard, CoreCardContent, CoreCardHeader, CoreCardMedia, CoreClasses, CoreIcon, CoreIconButton, CoreSkeleton, CoreTypography 
+  CoreAvatar, CoreBox, CoreCard, CoreCardContent, CoreCardHeader, CoreCardMedia, CoreClasses, CoreIcon, CoreIconButton, CoreSkeleton, 
+  CoreTypographyBody1
 } from "@wrappid/core";
 
 function WaveMedia(props) {
@@ -329,11 +335,11 @@ function WaveMedia(props) {
             <CoreSkeleton animation="wave" height={10} width="80%" />
           </>
         ) : (
-          <CoreTypography variant="body1" color="text.secondary" component="p">
+          <CoreTypographyBody1 color="text.secondary" component="p">
             {
               "Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:"
             }
-          </CoreTypography>
+          </CoreTypographyBody1>
         )}
       </CoreCardContent>
     </CoreCard>
@@ -386,20 +392,33 @@ export default function CoreSkeletonDocs() {
     <TypographyDemo />
   </CoreBox>
 </CoreGrid>`}
-              expandedCode={`import { CoreBox, CoreGrid, CoreSkeleton, CoreTypography } from "@wrappid/core";
+              expandedCode={`import {
+  CoreBox, CoreGrid, CoreSkeleton, CoreH1, CoreH3, CoreTypographyBody1, CoreTypographyCaption 
+} from "@wrappid/core";
 
 function TypographyDemo(props) {
   const { loading = false } = props;
 
-  const variants = ["h1", "h3", "body1", "caption"];
+  const componentsMap = {
+    CoreH1               : CoreH1,
+    CoreH3               : CoreH3,
+    CoreTypographyBody1  : CoreTypographyBody1,
+    CoreTypographyCaption: CoreTypographyCaption,
+  };
 
+  const variants = Object.keys(componentsMap);
+  
   return (
     <CoreBox>
-      {variants.map((variant) => (
-        <CoreTypography component="div" key={variant} variant={variant}>
-          {loading ? <CoreSkeleton /> : variant}
-        </CoreTypography>
-      ))}
+      {variants.map((variant) => {
+        const Component = componentsMap[variant]; 
+
+        return (
+          <Component component="div" key={variant}>
+            {loading ? <CoreSkeleton /> : variant}
+          </Component>
+        );
+      })}
     </CoreBox>
   );
 }
@@ -461,7 +480,7 @@ export default function CoreSkeletonDocs() {
   </CoreBox>
 </CoreGrid>`}
               expandedCode={`import {
-  CoreAvatar, CoreBox, CoreClasses, CoreGrid, CoreImage, CoreSkeleton, CoreTypography 
+  CoreAvatar, CoreBox, CoreClasses, CoreGrid, CoreImage, CoreSkeleton, CoreTypographyBody1
 } from "@wrappid/core";
 
 function SkeletonChildrenDemo(props) {
@@ -483,10 +502,10 @@ function SkeletonChildrenDemo(props) {
         <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
           {loading ? (
             <CoreSkeleton width="100%">
-              <CoreTypography>.</CoreTypography>
+              <CoreTypographyBody1>.</CoreTypographyBody1>
             </CoreSkeleton>
           ) : (
-            <CoreTypography>Josh</CoreTypography>
+            <CoreTypographyBody1>Josh</CoreTypographyBody1>
           )}
         </CoreBox>
       </CoreBox>
@@ -600,17 +619,6 @@ export default function CoreSkeletonDocs() {
               }
             />
 
-            <CodeSample 
-              title={"Accessibility"}
-              description={
-                <CoreBox>
-                  <CoreTypographyBody1>Skeleton screens provide an alternative to the traditional spinner method. Rather than showing an abstract widget, skeleton screens create anticipation of what is to come and reduce cognitive load.</CoreTypographyBody1>
-
-                  <CoreTypographyBody1>The background color of the skeleton uses the least amount of luminance to be visible in good conditions (good ambient light, good screen, no visual impairments).</CoreTypographyBody1>
-                </CoreBox>
-              }
-            />
-
           </>
         }
       />
@@ -662,18 +670,18 @@ function Media(props) {
 
           {item ? (
             <CoreBox>
-              <CoreTypography gutterBottom variant="body2">
+              <CoreTypographyBody2 gutterBottom>
                 {item.title}
-              </CoreTypography>
+              </CoreTypographyBody2>
 
               <CoreStack spacing={1}>
-                <CoreTypography variant="caption" color="text.secondary">
+                <CoreTypographyCaption color="text.secondary">
                   {item.channel}
-                </CoreTypography>
+                </CoreTypographyCaption>
 
-                <CoreTypography variant="caption" color="text.secondary">
+                <CoreTypographyCaption variant="caption" color="text.secondary">
                   {`${item.views} • ${item.createdAt}`}
-                </CoreTypography>
+                </CoreTypographyCaption>
               </CoreStack>
             </CoreBox>
           ) : (
@@ -756,11 +764,11 @@ function WaveMedia(props) {
             <CoreSkeleton animation="wave" height={10} width="80%" />
           </>
         ) : (
-          <CoreTypography variant="body1" color="text.secondary" component="p">
+          <CoreTypographyBody1 color="text.secondary" component="p">
             {
               "Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:"
             }
-          </CoreTypography>
+          </CoreTypographyBody1>
         )}
       </CoreCardContent>
     </CoreCard>
@@ -770,15 +778,26 @@ function WaveMedia(props) {
 function TypographyDemo(props) {
   const { loading = false } = props;
 
-  const variants = ["h1", "h3", "body1", "caption"];
+  const componentsMap = {
+    CoreH1               : CoreH1,
+    CoreH3               : CoreH3,
+    CoreTypographyBody1  : CoreTypographyBody1,
+    CoreTypographyCaption: CoreTypographyCaption,
+  };
 
+  const variants = Object.keys(componentsMap);
+  
   return (
     <CoreBox>
-      {variants.map((variant) => (
-        <CoreTypography component="div" key={variant} variant={variant}>
-          {loading ? <CoreSkeleton /> : variant}
-        </CoreTypography>
-      ))}
+      {variants.map((variant) => {
+        const Component = componentsMap[variant]; 
+
+        return (
+          <Component component="div" key={variant}>
+            {loading ? <CoreSkeleton /> : variant}
+          </Component>
+        );
+      })}
     </CoreBox>
   );
 }
@@ -802,10 +821,10 @@ function SkeletonChildrenDemo(props) {
         <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
           {loading ? (
             <CoreSkeleton width="100%">
-              <CoreTypography>.</CoreTypography>
+              <CoreTypographyBody1>.</CoreTypographyBody1>
             </CoreSkeleton>
           ) : (
-            <CoreTypography>Josh</CoreTypography>
+            <CoreTypographyBody1>Josh</CoreTypographyBody1>
           )}
         </CoreBox>
       </CoreBox>
