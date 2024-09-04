@@ -1,32 +1,36 @@
-import {
-  CoreH4,
-  CoreTypographyBody1
-} from "@wrappid/core";
-  
+
+import { CoreDateTimeRangePicker } from "@wrappid/core";
+
 import CodeSample from "../../CodeSample";
+import ComponentDocs from "../ComponentDocs";
 
 export default function CoreDateTimeRangePickerDocs() {
   return (
     <>
-      <CoreH4>CoreDateTimeRangePicker</CoreH4>
-  
-      <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
-      </CoreTypographyBody1>
-  
-      <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (ERROR)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={`
-<CoreDateTimeRangePicker></CoreDateTimeRangePicker>
-        `}
-        renderElement={<>
-        </>}
+      <ComponentDocs
+        component={CoreDateTimeRangePicker}
+        description={"CoreDateTimeRangePicker allows users to select a range of dates and times within a specified interval.\
+It's commonly used in applications where users need to specify a timeframe for events, bookings, or other activities."}
+        samples={
+          <>
+            <CodeSample
+              title={"Basic CoreDateTimeRangePicker"}
+              description={"Ability to set minimum and maximum date time ranges"}
+              code={"<CoreDateTimeRangePicker helperText={{ end: \"Check-out\", start: \"Check-in\" }}/>"}
+              expandedCode={`import { CoreDateTimeRangePicker } from "@wrappid/core";
+                
+export default function BasicCoreDateTimeRangePicker(){
+  return(
+    <CoreDateTimeRangePicker helperText={{ end: "Check-out", start: "Check-in" }}/>
+  );                
+}`}
+              renderElement={<>
+                <CoreDateTimeRangePicker helperText={{ end: "Check-out", start: "Check-in" }}/>
+              </>}
+            />
+          </>
+        }
       />
-        
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* <ComponentProps component={CoreDateTimeRangePicker} /> */}
-      
     </>
   );
 }
