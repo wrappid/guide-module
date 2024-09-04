@@ -61,7 +61,7 @@ export default function Components() {
         </CoreBox>
 
         <CoreGrid>
-          <CoreBox styleClasses={[CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.POSITION.POSITION_STICKY]} gridProps={{ gridSize: 2 }}>
+          <CoreBox styleClasses={[CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL]} gridProps={{ gridSize: 2 }}>
             <ComponentsMenu
               docsRegistry={_DocsRegistry}
               currentPage={currentPage}
@@ -72,7 +72,7 @@ export default function Components() {
 
           <CoreBox gridProps={{ gridSize: 8 }}>
             <CoreContainer>
-              <CoreBox ref={contentRef} styleClasses={[CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL, CoreClasses.POSITION.POSITION_STICKY]}>
+              <CoreBox ref={contentRef} styleClasses={[CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL]}>
                 {currentPage && docsPageRegistry[currentPage] ? (
                   React.createElement(docsPageRegistry[currentPage])
                 ) : (
@@ -87,13 +87,7 @@ export default function Components() {
           <CoreBox
             gridProps={{
               gridSize    : 2,
-              styleClasses: [
-                CoreClasses.BG.BG_GREY_100,
-                CoreClasses.COLOR.TEXT_BLACK,
-                CoreClasses.HEIGHT.VH_100,
-                CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL,
-                CoreClasses.POSITION.POSITION_STICKY
-              ],
+              styleClasses: [CoreClasses.BG.BG_GREY_100, CoreClasses.COLOR.TEXT_BLACK, CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL],
             }}
           >
             <CoreTOC
