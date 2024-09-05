@@ -1,21 +1,324 @@
+/* eslint-disable etc/no-commented-out-code */
 import React from "react";
 
 import {
-  CoreH4,
-  CoreSnackbar,
-  CoreTypographyBody1,
+  CoreAlert,
+  CoreAppBar,
   CoreBox,
   CoreButton,
-  CoreStack,
   CoreClasses,
-  CoreIconButton,
+  CoreFab,
+  CoreGrid,
+  CoreH6,
   CoreIcon,
-  CoreAlert
+  CoreIconButton,
+  CoreSnackbar,
+  CoreToolbar,
+  CoreTypographyBody1
+} from "@wrappid/core";
+import { useDispatch } from "react-redux";
+
+import CodeSample from "../../CodeSample";
+import ComponentDocs from "../ComponentDocs";
+
+export default function CoreSnackbarDocs() {
+  const [openBasic, setOpenBasic] = React.useState(false);
+  const [openAutomaticSnack, setOpenAutomaticSnack] = React.useState(false);
+  const [openSnackAlerts, setOpenSnackAlerts] = React.useState(false);
+  const [snackPackConsecutive, setSnackPackConsecutive] = React.useState([]);
+  const [openConsecutive, setOpenConsecutive] = React.useState(false);
+  const [messageInfoConsecutive, setMessageInfoConsecutive] = React.useState(undefined);
+  const dispatch = useDispatch();
+
+  /**
+ * Snack message related action
+ */
+  const pushSnackMessage = ( message, snackProps = {}) => {
+    dispatch({
+      payload: {
+        _timestamp: new Date().getTime(),
+        message   : message || "Message not provided",
+        ...snackProps
+      },
+      type: "PUSH_SNACK_MESSAGE",
+    });
+  };
+
+  const handleClickBasicOpen = () => {
+    setOpenBasic(true);
+  };
+
+  const handleBasicClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenBasic(false);
+  };
+
+  const action = (
+    <>
+      <CoreButton
+        color="secondary"
+        variant="text"
+        size="small"
+        onClick={handleBasicClose}>
+        UNDO
+      </CoreButton>
+
+      <CoreIconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleBasicClose}
+      >
+        <CoreIcon>close</CoreIcon>
+      </CoreIconButton>
+    </>
+  );
+  
+  const [state, setState] = React.useState({
+    horizontal: "center",
+    open      : false,
+    vertical  : "top",
+  });
+  const { vertical, horizontal, open } = state;
+
+  const handleClick = (newState) => () => {
+    setState({ ...newState, open: true });
+  };
+
+  const handleClose = () => {
+    setState({ ...state, open: false });
+  };
+
+  const buttons = (
+    <>
+      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+        <CoreButton variant="text" onClick={handleClick({ horizontal: "center", vertical: "top" })}>
+          Top-Center
+        </CoreButton>
+      </CoreBox>
+
+      <CoreGrid container justifyContent="center" >
+        <CoreBox gridProps={{ gridSize: { md: 6 } }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "left", vertical: "top" })}>
+            Top-Left
+          </CoreButton>
+        </CoreBox>
+
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }} >
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "top" })}>
+            Top-Right
+          </CoreButton>
+        </CoreBox>
+        
+        <CoreBox gridProps={{ gridSize: { md: 6 } }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "left", vertical: "bottom" })}>
+            Bottom-Left
+          </CoreButton>
+        </CoreBox>
+
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "bottom" })}>
+            Bottom-Right
+          </CoreButton>
+        </CoreBox>
+      </CoreGrid>
+
+      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+        <CoreButton variant="text" onClick={handleClick({ horizontal: "center", vertical: "bottom" })}>
+          Bottom-Center
+        </CoreButton>
+      </CoreBox>
+    </>
+  );
+
+  const handleAutomaticSnackClick = () => {
+    setOpenAutomaticSnack(true);
+  };
+
+  const handleAutomaticSnackClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenAutomaticSnack(false);
+  };
+
+  const handleClickSnackAlerts = () => {
+    setOpenSnackAlerts(true);
+  };
+
+  const handleCloseSnackAlerts = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenSnackAlerts(false);
+  };
+
+  React.useEffect(() => {
+    if (snackPackConsecutive.length && !messageInfoConsecutive) {
+      setMessageInfoConsecutive({ ...snackPackConsecutive[0] });
+      setSnackPackConsecutive((prev) => prev.slice(1));
+      setOpenConsecutive(true);
+    } else if (snackPackConsecutive.length && messageInfoConsecutive && openConsecutive) {
+      setOpenConsecutive(false);
+    }
+  }, [snackPackConsecutive, messageInfoConsecutive, open]);
+
+  const handleClickConsecutive = (message) => () => {
+    setSnackPackConsecutive((prev) => [...prev, { key: new Date().getTime(), message }]);
+  };
+
+  const handleCloseConsecutive = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenConsecutive(false);
+  };
+
+  const handleExited = () => {
+    setMessageInfoConsecutive(undefined);
+  };
+
+  return (
+    <>
+      <ComponentDocs 
+        component={CoreSnackbar}
+        description={"Snackbars (also known as toasts) are used for brief notifications of processes that have been or will be performed."}
+        samples={
+          <>
+            <CodeSample 
+              title={"Introduction"}
+              description={"The Snackbar component appears temporarily and floats above the UI to provide users with (non-critical) updates on an app's processes. The demo below, inspired by Google Keep, shows a basic Snackbar with a text element and two actions:"}
+              code={`<CoreBox>
+  <CoreButton variant="outlined" onClick={handleClickBasicOpen}>
+    Open Snackbar
+  </CoreButton>
+
+  <CoreSnackbar 
+    open={openBasic}
+    autoHideDuration={6000}
+    onClose={handleBasicClose}
+    message="Snackbar archived"
+    action={action}
+  />
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import {
+  CoreBox,
+  CoreButton,
+  CoreIcon,
+  CoreIconButton,
+  CoreSnackbar
 } from "@wrappid/core";
 
-import CodeImport from "../../CodeImport";
-import CodeSample from "../../CodeSample";
-import ComponentProps from "../../ComponentProps";
+export default function CoreSnackbarDocs() {
+  const [openBasic, setOpenBasic] = React.useState(false);
+
+  const handleClickBasicOpen = () => {
+    setOpenBasic(true);
+  };
+
+  const handleBasicClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenBasic(false);
+  };
+
+  const action = (
+    <>
+      <CoreButton
+        color="secondary"
+        variant="text"
+        size="small"
+        onClick={handleBasicClose}>
+        UNDO
+      </CoreButton>
+
+      <CoreIconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleBasicClose}
+      >
+        <CoreIcon>close</CoreIcon>
+      </CoreIconButton>
+    </>
+  );
+  
+  return (
+    <CoreBox>
+      <CoreButton variant="outlined" onClick={handleClickBasicOpen}>
+        Open Snackbar
+      </CoreButton>
+
+      <CoreSnackbar 
+        open={openBasic}
+        autoHideDuration={6000}
+        onClose={handleBasicClose}
+        message="Snackbar archived"
+        action={action}
+      />
+    </CoreBox>
+  );
+}`}
+              renderElement={
+                <CoreBox>
+                  <CoreButton variant="outlined" onClick={handleClickBasicOpen}>
+                    Open Snackbar
+                  </CoreButton>
+
+                  <CoreSnackbar 
+                    open={openBasic}
+                    autoHideDuration={6000}
+                    onClose={handleBasicClose}
+                    message="Snackbar archived"
+                    action={action}
+                  />
+                </CoreBox>
+              }
+            />
+
+            <CodeSample 
+              title={"Usage"}
+              description={
+                <CoreBox>
+                  <CoreTypographyBody1>Snackbars differ from Alerts in that Snackbars have a fixed position and a high z-index, so they are intended to break out of the document flow; Alerts, on the other hand, are usually part of the flow—except when they are used as children of a Snackbar.</CoreTypographyBody1>
+
+                  <CoreTypographyBody1>Snackbars also from differ from Dialogs in that Snackbars are not intended to convey critical information or block the user from interacting with the rest of the app; Dialogs, by contrast, require input from the user in order to be dismissed.</CoreTypographyBody1>
+                </CoreBox>
+              }
+            />
+
+            <CodeSample 
+              title={"Position"}
+              description={"Use the anchorOrigin prop to control the Snackbar's position on the screen."}
+              code={`<CoreBox>
+  {buttons}
+
+  <CoreSnackbar 
+    anchorOrigin={{ horizontal, vertical }}
+    open={open}
+    onClose={handleClose}
+    message="I love snacks"
+    key={vertical + horizontal}
+  />
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import {
+  CoreBox,
+  CoreButton,
+  CoreClasses,
+  CoreGrid,
+  CoreSnackbar
+} from "@wrappid/core";
 
 export default function CoreSnackbarDocs() {
   const [state, setState] = React.useState({
@@ -34,289 +337,586 @@ export default function CoreSnackbarDocs() {
   };
 
   const buttons = (
-    // <React.Fragment>
     <>
-      <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-        <CoreButton label="Top-Center" onClick={handleClick({ horizontal: "center", vertical: "top" })}>
+      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+        <CoreButton variant="text" onClick={handleClick({ horizontal: "center", vertical: "top" })}>
+          Top-Center
         </CoreButton>
       </CoreBox>
 
-      <CoreStack direction="row" container styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}>
+      <CoreGrid container justifyContent="center" >
+        <CoreBox gridProps={{ gridSize: { md: 6 } }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "left", vertical: "top" })}>
+            Top-Left
+          </CoreButton>
+        </CoreBox>
 
-        <CoreButton label="Top-Left" onClick={handleClick({ horizontal: "left", vertical: "top" })}>
-        </CoreButton>
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }} >
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "top" })}>
+            Top-Right
+          </CoreButton>
+        </CoreBox>
+        
+        <CoreBox gridProps={{ gridSize: { md: 6 } }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "left", vertical: "bottom" })}>
+            Bottom-Left
+          </CoreButton>
+        </CoreBox>
 
-        <CoreButton label="Top-Right" onClick={handleClick({ horizontal: "right", vertical: "top" })}>
-        </CoreButton>
-      </CoreStack>
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }}>
+          <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "bottom" })}>
+            Bottom-Right
+          </CoreButton>
+        </CoreBox>
+      </CoreGrid>
 
-      <CoreStack direction="row" container styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}>
-
-        <CoreButton label="Bottom-Left" onClick={handleClick({ horizontal: "left", vertical: "bottom" })} />
-
-        <CoreButton label="Bottom-Right" onClick={handleClick({ horizontal: "right", vertical: "bottom" })} />
-      </CoreStack>
-
-      <CoreBox styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
-        <CoreButton label="Bottom-Center" onClick={handleClick({ horizontal: "center", vertical: "bottom" })}>
+      <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+        <CoreButton variant="text" onClick={handleClick({ horizontal: "center", vertical: "bottom" })}>
           Bottom-Center
         </CoreButton>
       </CoreBox>
-
-      {/* </React.Fragment> */}
     </>
   );
+  
+  return (
+    <CoreBox>
+      {buttons}
 
-  //
-  const [opeN, setOpen] = React.useState(false);
-  const handleClicK = () => {
-    setOpen(true);
+      <CoreSnackbar 
+        anchorOrigin={{ horizontal, vertical }}
+        open={open}
+        onClose={handleClose}
+        message="I love snacks"
+        key={vertical + horizontal}
+      />
+    </CoreBox>
+  );
+}`}
+              renderElement={
+                <CoreBox>
+                  {buttons}
+
+                  <CoreSnackbar 
+                    anchorOrigin={{ horizontal, vertical }}
+                    open={open}
+                    onClose={handleClose}
+                    message="I love snacks"
+                    key={vertical + horizontal}
+                  />
+                </CoreBox>
+              }
+            />
+
+            <CodeSample 
+              title={"Content(NOT_IMPLEMENTED)"}
+              description={"This component can not implement now as we do not have Core Snack Content"}
+            />
+
+            <CodeSample 
+              title={"Automatic dismiss"}
+              description={<CoreBox>
+                <CoreTypographyBody1>Use the autoHideDuration prop to automatically trigger the Snackbar onClose function after a set period of time (in milliseconds).</CoreTypographyBody1>
+                
+                <CoreTypographyBody1>Make sure to provide sufficient time for the user to process the information displayed on it.</CoreTypographyBody1>
+              </CoreBox>}
+              code={`<CoreBox>
+  <CoreButton variant="text" onClick={handleAutomaticSnackClick}>Open Snackbar</CoreButton>
+
+  <CoreSnackbar 
+    open={openAutomaticSnack}
+    autoHideDuration={4000}
+    onClose={handleAutomaticSnackClose}
+    message="This Snackbar will be dismissed in 4 seconds."
+  />
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import { CoreBox, CoreButton, CoreSnackbar } from "@wrappid/core";
+
+export default function CoreLinearProgressDocs() {
+  const [openAutomaticSnack, setOpenAutomaticSnack] = React.useState(false);
+
+  const handleAutomaticSnackClick = () => {
+    setOpenAutomaticSnack(true);
   };
 
-  const handleClosE = (event, reason) => {
+  const handleAutomaticSnackClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
 
-    setOpen(false);
+    setOpenAutomaticSnack(false);
   };
-
-  // <React.Fragment>
-  const action = (
-    <><CoreButton color="secondary" size="small" onClick={handleClosE}>
-    UNDO
-    </CoreButton><CoreIconButton
-      size="small"
-      aria-label="close"
-      color="inherit"
-      onClick={handleClosE}
-    >
-      <CoreIcon fontSize="small" >close</CoreIcon>
-    </CoreIconButton></>
-  );
-
-  {/* eslint-disable-next-line etc/no-commented-out-code */}
-  {/*// </React.Fragment>
-  const Action = (
-    <CoreButton color="secondary" size="small">
-      lorem ipsum dolorem
-    </CoreButton>
-  );*/}
   
   return (
-    <>
-      <CoreH4>{"CoreSnackbar (NOT DEFINED)"}</CoreH4>
+    <CoreBox>
+      <CoreButton variant="text" onClick={handleAutomaticSnackClick}>Open Snackbar</CoreButton>
 
-      <CoreTypographyBody1>
-        Snackbars provide brief notifications. The component is also known as a
-        toast.
-      </CoreTypographyBody1>
+      <CoreSnackbar 
+        open={openAutomaticSnack}
+        autoHideDuration={4000}
+        onClose={handleAutomaticSnackClose}
+        message="This Snackbar will be dismissed in 4 seconds."
+      />
+    </CoreBox>
+  );
+}
+`}
+              renderElement={
+                <CoreBox>
+                  <CoreButton variant="text" onClick={handleAutomaticSnackClick}>Open Snackbar</CoreButton>
 
-      <CoreTypographyBody1>
-        Snackbars inform users of a process that an app has performed or will
-        perform. They appear temporarily, towards the bottom of the screen. They
-        should not interrupt the user experience, and they do not require user
-        input to disappear.
-      </CoreTypographyBody1>
+                  <CoreSnackbar 
+                    open={openAutomaticSnack}
+                    autoHideDuration={4000}
+                    onClose={handleAutomaticSnackClose}
+                    message="This Snackbar will be dismissed in 4 seconds."
+                  />
+                </CoreBox>
+              }
+            />
 
-      <CoreTypographyBody1>
-        Snackbars contain a single line of text directly related to the
-        operation performed. They may contain a text action, but no icons. You
-        can use them to display notifications.
-      </CoreTypographyBody1>
+            <CodeSample 
+              title={"Transitions(NOT IMPLEMENTED)"}
+              description={"We can not do this as we do not have such transitions component"}
+            />
 
-      <CodeImport name="CoreSnackbar" />
+            <CodeSample 
+              title={"Use with Alerts"}
+              description={"Use an Alert inside a Snackbar for messages that communicate a certain severity. **We use coreBox here in child of CoreSnackbar, because we pass ref in CoreBox."}
+              code={`<CoreBox>
+  <CoreButton onClick={handleClickSnackAlerts}>Open Snackbar</CoreButton>
 
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* 
-      <CodeSample
-        title={"TITLE_OF_THE_SAMPLE"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      /> */}
+  <CoreSnackbar open={openSnackAlerts} autoHideDuration={6000} onClose={handleCloseSnackAlerts}>
+    <CoreBox>
+      <CoreAlert
+        onClose={handleCloseSnackAlerts}
+        severity="success"
+        variant="filled"
+        width="100%"
+      >
+        This is a success Alert inside a Snackbar!
+      </CoreAlert>
+    </CoreBox>
+  </CoreSnackbar>
+</CoreBox>`}
+              expandedCode={`import React from "react";
 
-      <CodeSample
-        title={"Simple snackbars(NOT WORKING)"}
-        description={
-          "A basic snackbar that aims to reproduce Google Keep's snackbar behavior."
-        }
-        code={`
-<CoreButton onClick={handleClick}>Open simple snackbar</CoreButton>
+import { CoreAlert, CoreBox, CoreButton, CoreSnackbar } from "@wrappid/core";
+
+export default function CoreLinearProgressDocs() {
+  
+  const [openSnackAlerts, setOpenSnackAlerts] = React.useState(false);
+  
+  const handleClickSnackAlerts = () => {
+    setOpenSnackAlerts(true);
+  };
+
+  const handleCloseSnackAlerts = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenSnackAlerts(false);
+  };
+  
+  return (
+    <CoreBox>
+      <CoreButton onClick={handleClickSnackAlerts}>Open Snackbar</CoreButton>
+
+      <CoreSnackbar open={openSnackAlerts} autoHideDuration={6000} onClose={handleCloseSnackAlerts}>
+        <CoreBox>
+          <CoreAlert
+            onClose={handleCloseSnackAlerts}
+            severity="success"
+            variant="filled"
+            width="100%"
+          >
+                      This is a success Alert inside a Snackbar!
+          </CoreAlert>
+        </CoreBox>
+      </CoreSnackbar>
+    </CoreBox>
+  );
+}`}
+              renderElement={
+                <CoreBox>
+                  <CoreButton onClick={handleClickSnackAlerts}>Open Snackbar</CoreButton>
+
+                  <CoreSnackbar open={openSnackAlerts} autoHideDuration={6000} onClose={handleCloseSnackAlerts}>
+                    <CoreBox>
+                      <CoreAlert
+                        onClose={handleCloseSnackAlerts}
+                        severity="success"
+                        variant="filled"
+                        width="100%"
+                      >
+                      This is a success Alert inside a Snackbar!
+                      </CoreAlert>
+                    </CoreBox>
+                  </CoreSnackbar>
+                </CoreBox>
+              }
+            />
+
+            <CodeSample 
+              title={"Use with Floating Action Buttons"}
+              description={"If you're using a Floating Action Button on mobile, Material Design recommends positioning snackbars directly above it, as shown in the demo below:"}
+              code={`<CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+  <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
+    <CoreAppBar position="static" color="primary" advanceMode={true}>
+      <CoreToolbar>
+        <CoreIconButton
+          edge="start"
+          sx={{ mr: 2 }}
+          color="inherit"
+          aria-label="menu"
+        >
+          <CoreIcon>menu</CoreIcon>
+        </CoreIconButton>
+
+        <CoreH6 color="inherit" component="div">
+        App bar
+        </CoreH6>
+      </CoreToolbar>
+    </CoreAppBar>
+
+    <CoreFab
+      color="secondary"
+      styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE, CoreClasses.POSITION.BOTTOM_0, CoreClasses.POSITION.END_0]}
+    >
+      <CoreIcon>add</CoreIcon>
+    </CoreFab>
 
     <CoreSnackbar
-      open={open}
-      autoHideDuration={6000}
-      onClose={handleClose}
-      message="Note archived"
-      action={action}
-      />
-        
-        `}
-        renderElement={<>
-          <CoreButton label="Open simple snackbar" onClick={handleClicK}></CoreButton>
+      open
+      autoHideDuration={1000}
+      message="Archived"
+      action={
+        <CoreButton color="inherit" size="small">
+        Undo
+        </CoreButton>
+      }
+      styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE]}
+    />
+  </CoreBox>
+</CoreBox>`}  
+              expandedCode={`
+import {
+  CoreAppBar,
+  CoreBox,
+  CoreButton,
+  CoreClasses,
+  CoreFab,
+  CoreH6,
+  CoreIcon,
+  CoreIconButton,
+  CoreSnackbar,
+  CoreToolbar
+} from "@wrappid/core";
 
-          <CoreSnackbar
-            open={opeN}
-            autoHideDuration={6000}
-            onClose={handleClosE}
-            message="Note archived"
-            action={action}
-          />
-        </>}
-      />
+export default function CoreSnackbarDocs() {
+  return (
+    <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+      <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
+        <CoreAppBar position="static" color="primary" advanceMode={true}>
+          <CoreToolbar>
+            <CoreIconButton
+              edge="start"
+              sx={{ mr: 2 }}
+              color="inherit"
+              aria-label="menu"
+            >
+              <CoreIcon>menu</CoreIcon>
+            </CoreIconButton>
 
-      <CodeSample
-        title={"Customization (NOT WORKING)"}
-        description={
-          "Here are some examples of customizing the component. You can learn more about this in the overrides documentation page."
-        }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<>
-          <CoreStack styleClasses={[CoreClasses.WIDTH.W_100]} direction="column" spacing={2} >
-            <CoreButton
-              label="Open success snackbar"
-              variant="outlined"
-              onClick={handleClicK}>
+            <CoreH6 color="inherit" component="div">
+                        App bar
+            </CoreH6>
+          </CoreToolbar>
+        </CoreAppBar>
+
+        <CoreFab
+          color="secondary"
+          styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE, CoreClasses.POSITION.BOTTOM_0, CoreClasses.POSITION.END_0]}
+        >
+          <CoreIcon>add</CoreIcon>
+        </CoreFab>
+
+        <CoreSnackbar
+          open
+          autoHideDuration={1000}
+          message="Archived"
+          action={
+            <CoreButton color="inherit" size="small">
+                        Undo
+            </CoreButton>
+          }
+          styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE]}
+        />
+      </CoreBox>
+    </CoreBox>
+  );
+}`}
+              renderElement={
+                <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                  <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
+                    <CoreAppBar position="static" color="primary" advanceMode={true}>
+                      <CoreToolbar>
+                        <CoreIconButton
+                          edge="start"
+                          sx={{ mr: 2 }}
+                          color="inherit"
+                          aria-label="menu"
+                        >
+                          <CoreIcon>menu</CoreIcon>
+                        </CoreIconButton>
+
+                        <CoreH6 color="inherit" component="div">
+                        App bar
+                        </CoreH6>
+                      </CoreToolbar>
+                    </CoreAppBar>
+
+                    <CoreFab
+                      color="secondary"
+                      styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE, CoreClasses.POSITION.BOTTOM_0, CoreClasses.POSITION.END_0]}
+                    >
+                      <CoreIcon>add</CoreIcon>
+                    </CoreFab>
+
+                    <CoreSnackbar
+                      open
+                      autoHideDuration={1000}
+                      message="Archived"
+                      action={
+                        <CoreButton color="inherit" size="small">
+                        Undo
+                        </CoreButton>
+                      }
+                      styleClasses={[CoreClasses.POSITION.POSITION_ABSOLUTE]}
+                    />
+                  </CoreBox>
+                </CoreBox>
+              }
+            />
+
+            <CodeSample 
+              title={"Consecutive Snackbars"}
+              description={"This demo shows how to display multiple Snackbars without stacking them by using a consecutive animation."}
+              code={`<CoreBox>
+  <CoreButton variant="outlined" onClick={handleClickConsecutive("Message A")}>Show message A</CoreButton>
+
+  <CoreButton variant="outlined" onClick={handleClickConsecutive("Message B")}>Show message B</CoreButton>
+
+  <CoreSnackbar
+    key={messageInfoConsecutive ? messageInfoConsecutive.key : undefined}
+    open={openConsecutive}
+    autoHideDuration={6000}
+    onClose={handleCloseConsecutive}
+    TransitionProps={{ onExited: handleExited }}
+    message={messageInfoConsecutive ? messageInfoConsecutive.message : undefined}
+    action={
+      <React.Fragment>
+        <CoreButton color="secondary" size="small" onClick={handleCloseConsecutive}>
+          UNDO
+        </CoreButton>
+
+        <CoreIconButton
+          aria-label="close"
+          color="inherit"
+          onClick={handleCloseConsecutive}
+        >
+          <CoreIcon>close</CoreIcon>
+        </CoreIconButton>
+      </React.Fragment>
+    }
+  />
+</CoreBox>`}
+              expandedCode={`import React from "react";
+
+import { CoreBox, CoreButton, CoreIcon, CoreIconButton, CoreSnackbar } from "@wrappid/core";
+
+export default function CoreLinearProgressDocs() {
+  const [snackPackConsecutive, setSnackPackConsecutive] = React.useState([]);
+  const [openConsecutive, setOpenConsecutive] = React.useState(false);
+  const [messageInfoConsecutive, setMessageInfoConsecutive] = React.useState(undefined);
+
+  React.useEffect(() => {
+    if (snackPackConsecutive.length && !messageInfoConsecutive) {
+      setMessageInfoConsecutive({ ...snackPackConsecutive[0] });
+      setSnackPackConsecutive((prev) => prev.slice(1));
+      setOpenConsecutive(true);
+    } else if (snackPackConsecutive.length && messageInfoConsecutive && openConsecutive) {
+      setOpenConsecutive(false);
+    }
+  }, [snackPackConsecutive, messageInfoConsecutive, open]);
+
+  const handleClickConsecutive = (message) => () => {
+    setSnackPackConsecutive((prev) => [...prev, { key: new Date().getTime(), message }]);
+  };
+
+  const handleCloseConsecutive = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenConsecutive(false);
+  };
+
+  const handleExited = () => {
+    setMessageInfoConsecutive(undefined);
+  };
+  
+  return (
+    <CoreBox>
+      <CoreButton variant="outlined" onClick={handleClickConsecutive("Message A")}>Show message A</CoreButton>
+
+      <CoreButton variant="outlined" onClick={handleClickConsecutive("Message B")}>Show message B</CoreButton>
+
+      <CoreSnackbar
+        key={messageInfoConsecutive ? messageInfoConsecutive.key : undefined}
+        open={openConsecutive}
+        autoHideDuration={6000}
+        onClose={handleCloseConsecutive}
+        TransitionProps={{ onExited: handleExited }}
+        message={messageInfoConsecutive ? messageInfoConsecutive.message : undefined}
+        action={
+          <>
+            <CoreButton color="secondary" size="small" onClick={handleCloseConsecutive}>
+              UNDO
             </CoreButton>
 
-            <CoreSnackbar open={opeN} autoHideDuration={6000} onClose={handleClosE}>
-              <CoreAlert onClose={handleClosE} severity="success" >
-          This is a success message!
-              </CoreAlert>
-            </CoreSnackbar>
-
-            <CoreAlert severity="error">This is an error message!</CoreAlert>
-
-            <CoreAlert severity="warning">This is a warning message!</CoreAlert>
-
-            <CoreAlert severity="info">This is an information message!</CoreAlert>
-
-            <CoreAlert severity="success">This is a success message!</CoreAlert>
-          </CoreStack>
-        
-        </>}
-      />
-
-      <CodeSample
-        title={"Positioned snackbars(NOT WORKING)"}
-        description={
-          "In wide layouts, snackbars can be left-aligned or center-aligned if they are consistently placed on the same spot at the bottom of the screen, however there may be circumstances where the placement of the snackbar needs to be more flexible. You can control the position of the snackbar by specifying the anchorOrigin prop."
+            <CoreIconButton
+              aria-label="close"
+              color="inherit"
+              onClick={handleCloseConsecutive}
+            >
+              <CoreIcon>close</CoreIcon>
+            </CoreIconButton>
+          </>
         }
-        code={`<CoreBox styleClasses={[CoreClasses.WIDTH.MIN_W_100]}>
-{buttons}
-
-<CoreSnackbar
-  anchorOrigin={{ horizontal, vertical }}
-  open={open}
-  onClose={handleClose}
-  message="I love snacks"
-  key={vertical + horizontal}
-/>
-</CoreBox>`}
-        renderElement={<>
-          <CoreBox styleClasses={[CoreClasses.WIDTH.MIN_W_100]}>   {/* 300 */}
-            {buttons}
-
-            <CoreSnackbar
-              anchorOrigin={{ horizontal, vertical }}
-              open={open}
-              onClose={handleClose}
-              message="I love snacks"
-              key={vertical + horizontal}
-            />
-          </CoreBox>
-        </>}
       />
+    </CoreBox>
+  );
+}`}
+              renderElement={<CoreBox>
+                <CoreButton variant="outlined" onClick={handleClickConsecutive("Message A")}>Show message A</CoreButton>
 
-      <CodeSample
-        title={"Message Length (NOT WORKING)"}
-        description={"Some snackbars with varying message length."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<>
-          <CoreStack spacing={2} styleClasses={[CoreClasses.WIDTH.MIN_W_100]} >
-            {/* <SnackbarContent message="I love snacks." action={Action} />
+                <CoreButton variant="outlined" onClick={handleClickConsecutive("Message B")}>Show message B</CoreButton>
 
-            <SnackbarContent
-              message={
-                "I love candy. I love cookies. I love cupcakes. \
-          I love cheesecake. I love chocolate."
+                <CoreSnackbar
+                  key={messageInfoConsecutive ? messageInfoConsecutive.key : undefined}
+                  open={openConsecutive}
+                  autoHideDuration={6000}
+                  onClose={handleCloseConsecutive}
+                  TransitionProps={{ onExited: handleExited }}
+                  message={messageInfoConsecutive ? messageInfoConsecutive.message : undefined}
+                  action={
+                    <React.Fragment>
+                      <CoreButton color="secondary" size="small" onClick={handleCloseConsecutive}>
+              UNDO
+                      </CoreButton>
+
+                      <CoreIconButton
+                        aria-label="close"
+                        color="inherit"
+                        onClick={handleCloseConsecutive}
+                      >
+                        <CoreIcon>close</CoreIcon>
+                      </CoreIconButton>
+                    </React.Fragment>
+                  }
+                />
+              </CoreBox>}
+            />
+
+            <CodeSample 
+              title={"Stack"}
+              description={"This lets you vertically stack multiple Snackbars without having to handle their open and close states."}
+              code={`<>
+  <CoreButton variant="outlined" onClick={() => { pushSnackMessage("Test Message", { autoHideDuration: 3000 }); } }>
+    Click Me
+  </CoreButton>
+
+  <CoreButton 
+    variant="outlined"
+    onClick={() => { 
+      pushSnackMessage("Data saved successfully", { 
+        autoHideDuration: 5000, 
+        color           : "secondary",
+        severity        : "warning", 
+        variant         : "filled"
+      }); 
+    }}
+  >
+    Click Me Warning
+  </CoreButton>
+</>`}
+              expandedCode={`
+import { CoreButton } from "@wrappid/core";
+import { useDispatch } from "react-redux";
+
+export default function CoreSnackbarDocs() {
+  const dispatch = useDispatch();
+
+  const pushSnackMessage = ( message, snackProps = {}) => {
+    dispatch({
+      payload: {
+        _timestamp: new Date().getTime(),
+        message   : message || "Message not provided",
+        ...snackProps
+      },
+      type: "PUSH_SNACK_MESSAGE",
+    });
+  };
+
+  return (
+    <>
+      <CoreButton variant="outlined" onClick={() => { pushSnackMessage("Test Message", { autoHideDuration: 3000 }); } }>
+        Click Me
+      </CoreButton>
+
+      <CoreButton 
+        variant="outlined"
+        onClick={() => { 
+          pushSnackMessage("Data saved successfully", { 
+            autoHideDuration: 5000, 
+            color           : "secondary",
+            severity        : "warning", 
+            variant         : "filled"
+          }); 
+        }}
+      >
+        Click Me Warning
+      </CoreButton>
+    </>
+  );
+}`}
+              renderElement={
+                <>
+                  <CoreButton variant="outlined" onClick={() => { pushSnackMessage("Test Message", { autoHideDuration: 3000 }); } }>
+                    Click Me
+                  </CoreButton>
+
+                  <CoreButton 
+                    variant="outlined"
+                    onClick={() => { 
+                      pushSnackMessage("Data saved successfully", { 
+                        autoHideDuration: 5000, 
+                        color           : "secondary",
+                        severity        : "warning", 
+                        variant         : "filled"
+                      }); 
+                    }}
+                  >
+                    Click Me Warning
+                  </CoreButton>
+                </>
               }
             />
-
-            <SnackbarContent
-              message="I love candy. I love cookies. I love cupcakes."
-              action={Action}
-            />
-
-            <SnackbarContent
-              message={
-                "I love candy. I love cookies. I love cupcakes. \
-          I love cheesecake. I love chocolate."
-              }
-              action={Action}
-            /> */}
-          </CoreStack>
-        
-        </>}
-      />
-
-      <CodeSample
-        title={"Transitions (NOT WORKING)"}
-        description={
-          "Consecutive Snackbars\
-        When multiple snackbar updates are necessary, they should appear one at a time.   "
+          </>
         }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
       />
-
-      <CodeSample
-        title={"Snackbars and floating action buttons (FABs)(NOT WORKING)"}
-        description={"Snackbars should appear above FABs (on mobile)."}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
-
-      <CodeSample
-        title={"Change transition (NOT WORKING)"}
-        description={
-          "Grow is the default transition but you can use a different one."
-        }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
-
-      <CodeSample
-        title={"Control Slide direction (NOT WORKING)"}
-        description={
-          "You can change the direction of the Slide transition.\
-        Example of making the slide transition to the left:"
-        }
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
-
-      <CodeSample
-        title={"Complementary projects (NOT WORKING)"}
-        description={`For more advanced use cases you might be able to take advantage of:
-notistack
-This example demonstrates how to use notistack. notistack has an imperative API that makes it easy to display snackbars, without having to handle their open/close state. It also enables you to stack them on top of one another (although this is discouraged by the Material Design guidelines).
-        `}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
-
-      <CodeSample
-        title={"Accessibility (NOT WORKING)"}
-        description={`By default, the snackbar won't auto-hide. However, if you decide to use the autoHideDuration prop, it's recommended to give the user sufficient time to respond.
-        When open, every Snackbar will be dismissed if Escape is pressed. Unless you don't handle onClose with the "escapeKeyDown" reason. If you want to limit this behavior to only dismiss the oldest currently open Snackbar call event.preventDefault in onClose.
-        `}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
-
-      <ComponentProps component={CoreSnackbar} />
     </>
   );
 }
