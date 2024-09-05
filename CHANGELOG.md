@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.98](https://https//github.com/wrappid/wrappid-module/compare/v0.0.97...v0.0.98) (2024-09-05)
+
+
+### Bug Fixes
+
+* **global:** :adhesive_bandage: removed position:sticky ([0de25e2](https://https//github.com/wrappid/wrappid-module/commit/0de25e24044417922fa88763dc3b7127a0331876)), closes [#289](https://https//github.com/wrappid/wrappid-module/issues/289)
+
+### [0.0.97](https://https//github.com/wrappid/wrappid-module/compare/v0.0.96...v0.0.97) (2024-09-05)
+
+### [0.0.96](https://https//github.com/wrappid/wrappid-module/compare/v0.0.95...v0.0.96) (2024-09-05)
+
 ### [0.0.95](https://https//github.com/wrappid/wrappid-module/compare/v0.0.94...v0.0.95) (2024-09-04)
 
 ### [0.0.94](https://https//github.com/wrappid/wrappid-module/compare/v0.0.93...v0.0.94) (2024-09-04)
