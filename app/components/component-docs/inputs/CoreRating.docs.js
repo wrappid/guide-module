@@ -1,58 +1,31 @@
+
 import React from "react";
 
 import {
-  CoreH4,
-  CoreTypographyBody1,
-  CoreRating,
-  CoreBox,
-  CoreIcon,
-  CoreTypographyCaption,
-  CoreClasses
+  CoreBox, CoreClasses, CoreIcon, CoreRating, CoreSpan, CoreStack, CoreTypographyBody1 
 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
-import ComponentProps from "../../ComponentProps";
+import ComponentDocs from "../ComponentDocs";
 
-// labels for hover Feedback Section
 const labels = {
-  0.5: "Useless",
-  1  : "Useless+",
-  1.5: "Poor",
-  2  : "Poor+",
-  2.5: "Ok",
-  3  : "Ok+",
-  3.5: "Good",
-  4  : "Good+",
-  4.5: "Excellent",
-  5  : "Excellent+",
+  0.5: "Terrible",
+  1  : "Very Bad",
+  1.5: "Bad",
+  2  : "Fairly Bad",
+  2.5: "Average",
+  3  : "Good",
+  3.5: "Very Good",
+  4  : "Excellent",
+  4.5: "Outstanding",
+  5  : "Exceptional",
 };
 
-// getLabelText for hover Feedback Section
 function getLabelText(value) {
   return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
 }
 
-// StyledRating for the Customization Section
-// const StyledRating = styled(Rating)({
-//   "& .MuiRating-iconFilled": {
-//     color: "#ff6d75",
-//   },
-//   "& .MuiRating-iconHover": {
-//     color: "#ff3d47",
-//   },
-// });
-
-// eslint-disable-next-line etc/no-commented-out-code
-// // StyledRating1 for the Radio Section
-// const StyledRating1 = styled(Rating)(({ theme }) => ({
-//   "& .MuiRating-iconEmpty .MuiSvgIcon-root": {
-//     color: theme.palette.action.disabled,
-//   },
-// }));
-
-// customIcons for Radio Section
-// eslint-disable-next-line etc/no-commented-out-code
-{/*const customIcons = {
+const customIcons = {
   1: {
     icon : <CoreIcon icon="sentiment_very_dissatisfied" color="error" />,
     label: "Very Dissatisfied",
@@ -73,240 +46,392 @@ function getLabelText(value) {
     icon : <CoreIcon icon="sentiment_very_satisfied" color="success" />,
     label: "Very Satisfied",
   },
-};*/}
+};
 
-// IconContainer for Radio Section
+function IconContainer(props) {
+  const { value, ...other } = props;
 
-// Default export function
+  // return <span {...other}>{customIcons[value].icon}</span>;
+  return <CoreSpan {...other}>{customIcons[value].icon}</CoreSpan>;
+  
+  // return <CoreStack {...other}>{customIcons[value].icon}</CoreStack>;
+
+}
+
 export default function CoreRatingDocs() {
-  const [value, setValue] = React.useState(3);
-  const [hover, setHover] = React.useState(-1);
+  const [basicValue, setBasicValue] = React.useState(2);
+  const [valueFeedback, setValueFeedback] = React.useState(2);
+  const [hoverFeedback, setHoverFeedback] = React.useState(-1);
 
   return (
     <>
-      <CoreH4>CoreRating</CoreH4>
-
-      <CoreTypographyBody1>
-        Ratings provide insight regarding others opinions and experiences, and
-        can allow the user to submit a rating of their own.
-      </CoreTypographyBody1>
-
-      <CodeSample
-        title={"Basic Rating"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={`<CoreTypographyBody1>Controlled </CoreTypographyBody1>
-        <CoreRating
-          name="simple-controlled"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        />
-       
-        <CoreTypographyBody1>Read only </CoreTypographyBody1>
-        <CoreRating name="read-only" value={value} readOnly />
-        
-        <CoreTypographyBody1>Disabled </CoreTypographyBody1>
-        <CoreRating name="disabled" value={value} disabled />
-
-        <CoreTypographyBody1>No rating given </CoreTypographyBody1>
-        <CoreRating name="no-value" value={null} />`}
-        renderElement={
+      <ComponentDocs 
+        component={CoreRating}
+        description="CoreRatings provide insight regarding others' opinions and experiences, and can allow the user to submit a rating of their own."
+        samples={
           <>
-            <CoreTypographyBody1>Controlled </CoreTypographyBody1>
+            <CodeSample
+              title={"Basic"}
+              description={"Here are some examples demonstrating the basic usage of the rating component."}
+              code={`<CoreBox>
+  <CoreTypographyBody1>Controlled </CoreTypographyBody1>
 
-            <CoreRating
-              name="simple-controlled"
-              value={value}
-              onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
-            />
+  <CoreRating
+    name="simple-controlled"
+    value={basicValue}
+    onChange={(event, newValue) => {
+      setBasicValue(newValue);
+    }}
+  />
 
-            <CoreTypographyBody1>Read only </CoreTypographyBody1>
+  <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>Read only </CoreTypographyBody1>
 
-            <CoreRating name="read-only" value={value} readOnly />
+  <CoreRating name="read-only" value={basicValue} readOnly />
 
-            <CoreTypographyBody1>Disabled </CoreTypographyBody1>
+  <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>Disabled </CoreTypographyBody1>
 
-            <CoreRating name="disabled" value={value} disabled />
+  <CoreRating name="disabled" value={basicValue} disabled />
 
-            <CoreTypographyBody1>No rating given </CoreTypographyBody1>
+  <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>No rating given </CoreTypographyBody1>
 
-            <CoreRating name="no-value" value={null} />
-          </>
-        }
+  <CoreRating name="no-value" value={null} />
+
+</CoreBox> `}
+              expandedCode={`
+import React from "react";
+
+import { CoreBox, CoreClasses, CoreRating, CoreTypographyBody1 } from "@wrappid/core";
+
+export default function CoreRatingDocs() {
+  const [basicValue, setBasicValue] = React.useState(2);
+
+  return (
+    <CoreBox>
+      <CoreTypographyBody1>Controlled </CoreTypographyBody1>
+
+      <CoreRating
+        name="simple-controlled"
+        value={basicValue}
+        onChange={(event, newValue) => {
+          setBasicValue(newValue);
+        }}
       />
 
-      <CodeSample
-        title={"Rating precision"}
-        description={
-          "The rating can display any float number with the value prop. Use the precision prop to define the minimum increment value change allowed."
-        }
-        code={`<CoreRating name="half-rating" defaultValue={2.5} precision={0.5} />
-        <CoreRating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />`}
-        renderElement={
-          <>
-            <CoreRating name="half-rating" defaultValue={2.5} precision={0.5} />
+      <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>Read only </CoreTypographyBody1>
 
-            <CoreRating
-              name="half-rating-read"
-              defaultValue={2.5}
-              precision={0.5}
-              readOnly
-            />
-          </>
-        }
-      />
+      <CoreRating name="read-only" value={basicValue} readOnly />
 
-      <CodeSample
-        title={"Hover feedback"}
-        description={
-          "You can display a label on hover to help the user pick the correct rating value. The demo uses the onChangeActive prop."
-        }
-        code={`<CoreRating
-          name="hover-feedback"
-          value={value}
-          precision={0.5}
-          getLabelText={getLabelText}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-          onChangeActive={(event, newHover) => {
-            setHover(newHover);
-          }}
-          emptyIcon={
-            <CoreIcon icon="star" style={{ opacity: 0.55 }} fontSize="inherit" />
-          }
-        />
-        {value !== null && (
-          <CoreBox sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</CoreBox>
-        )}`}
-        renderElement={
-          <>
-            <CoreRating
-              name="hover-feedback"
-              value={value}
-              precision={0.5}
-              getLabelText={getLabelText}
-              onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
-              onChangeActive={(event, newHover) => {
-                setHover(newHover);
-              }}
-              emptyIcon={
-                <CoreIcon icon="star" style={{ opacity: 0.55 }} fontSize="inherit" />
+      <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>Disabled </CoreTypographyBody1>
+
+      <CoreRating name="disabled" value={basicValue} disabled />
+
+      <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>No rating given </CoreTypographyBody1>
+
+      <CoreRating name="no-value" value={null} />
+
+    </CoreBox>       
+  );
+}`}
+              renderElement={
+                <CoreBox>
+                  <CoreTypographyBody1>Controlled </CoreTypographyBody1>
+
+                  <CoreRating
+                    name="simple-controlled"
+                    value={basicValue}
+                    onChange={(event, newValue) => {
+                      setBasicValue(newValue);
+                    }}
+                  />
+
+                  <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>Read only </CoreTypographyBody1>
+
+                  <CoreRating name="read-only" value={basicValue} readOnly />
+
+                  <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>Disabled </CoreTypographyBody1>
+
+                  <CoreRating name="disabled" value={basicValue} disabled />
+
+                  <CoreTypographyBody1 styleClasses={[CoreClasses.MARGIN.MT3]}>No rating given </CoreTypographyBody1>
+
+                  <CoreRating name="no-value" value={null} />
+
+                </CoreBox> 
               }
             />
 
-            {value !== null && (
-              <CoreBox sx={{ ml: 2 }}>
-                {labels[hover !== -1 ? hover : value]}
-              </CoreBox>
-            )}
-          </>
-        }
+            <CodeSample 
+              title={"Rating precision"}
+              description={"The rating can display any float number with the value prop. Use the precision prop to define the minimum increment value change allowed."}
+              code={`<CoreStack spacing={1}>
+  <CoreTypographyBody1>Controlled</CoreTypographyBody1>
+
+  <CoreRating name="half-rating" defaultValue={2.5} precision={0.5} />
+
+  <CoreTypographyBody1>Read only</CoreTypographyBody1>
+              
+  <CoreRating
+    name="half-rating-read"
+    defaultValue={2.5}
+    precision={0.5}
+    readOnly
+  />
+</CoreStack>`}
+              expandedCode={`import { CoreRating, CoreStack, CoreTypographyBody1 } from "@wrappid/core";
+
+export default function CoreRatingDocs() {
+  return ( 
+    <CoreStack spacing={1}>
+      <CoreTypographyBody1>Controlled</CoreTypographyBody1>
+
+      <CoreRating name="half-rating" defaultValue={2.5} precision={0.5} />
+
+      <CoreTypographyBody1>Read only</CoreTypographyBody1>
+                  
+      <CoreRating
+        name="half-rating-read"
+        defaultValue={2.5}
+        precision={0.5}
+        readOnly
+      />
+    </CoreStack>
+  );
+}
+`}
+              renderElement={
+                <CoreStack spacing={1}>
+                  <CoreTypographyBody1>Controlled</CoreTypographyBody1>
+
+                  <CoreRating name="half-rating" defaultValue={2.5} precision={0.5} />
+
+                  <CoreTypographyBody1>Read only</CoreTypographyBody1>
+                  
+                  <CoreRating
+                    name="half-rating-read"
+                    defaultValue={2.5}
+                    precision={0.5}
+                    readOnly
+                  />
+                </CoreStack>
+              }
+            />
+
+            <CodeSample 
+              title={"Hover feedback"}
+              description={"You can display a label on hover to help the user pick the correct rating value. The demo uses the onChangeActive prop.0.5 Stars, Useless"}
+              code={`<CoreBox width={200} styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.DISPLAY.FLEX]}>
+  <CoreRating
+    name="hover-feedback"
+    value={valueFeedback}
+    precision={0.5}
+    getLabelText={getLabelText}
+    onChange={(event, newValue) => {
+      setValueFeedback(newValue);
+    }}
+    onChangeActive={(event, newHover) => {
+      setHoverFeedback(newHover);
+    }}
+    emptyIcon={<CoreIcon
+    icon="star"
+    styleClasses={[CoreClasses.OPACITY.OPACITY_50]}
+    fontSize="inherit" />}
+  />
+
+  {valueFeedback !== null && (
+    <CoreBox styleClasses={[CoreClasses.MARGIN.ML1]}>{labels[hoverFeedback !== -1 ? hoverFeedback : valueFeedback]}</CoreBox>
+  )}
+</CoreBox>`}
+              expandedCode={`
+import React from "react";
+
+import { CoreBox, CoreClasses, CoreIcon, CoreRating } from "@wrappid/core";
+
+const labels = {
+  0.5: "Terrible",
+  1  : "Very Bad",
+  1.5: "Bad",
+  2  : "Fairly Bad",
+  2.5: "Average",
+  3  : "Good",
+  3.5: "Very Good",
+  4  : "Excellent",
+  4.5: "Outstanding",
+  5  : "Exceptional",
+};
+
+function getLabelText(value) {
+  return \`\${value} Star$\{value !== 1 ? "s" : ""}, \${labels[value]}\`;
+}
+
+export default function CoreRatingDocs() {
+  const [valueFeedback, setValueFeedback] = React.useState(2);
+  const [hoverFeedback, setHoverFeedback] = React.useState(-1);
+
+  return ( 
+    <CoreBox width={200} styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.DISPLAY.FLEX]}>
+      <CoreRating
+        name="hover-feedback"
+        value={valueFeedback}
+        precision={0.5}
+        getLabelText={getLabelText}
+        onChange={(event, newValue) => {
+          setValueFeedback(newValue);
+        }}
+        onChangeActive={(event, newHover) => {
+          setHoverFeedback(newHover);
+        }}
+        emptyIcon={<CoreIcon
+        icon="star"
+        styleClasses={[CoreClasses.OPACITY.OPACITY_50]}
+        fontSize="inherit" />}
       />
 
-      <CodeSample
-        title={"Sizes"}
-        description={"For larger or smaller ratings use the size prop."}
-        code={`<CoreRating name="size-small" defaultValue={2} size="small" />
-        <CoreRating name="size-medium" defaultValue={2} />
-        <CoreRating name="size-large" defaultValue={2} size="large" />`}
-        renderElement={
-          <>
-            <CoreRating name="size-small" defaultValue={2} size="small" />
+      {valueFeedback !== null && (
+        <CoreBox styleClasses={[CoreClasses.MARGIN.ML1]}>{labels[hoverFeedback !== -1 ? hoverFeedback : valueFeedback]}</CoreBox>
+      )}
+    </CoreBox>   
+  );
+}`}
+              renderElement={
+                <CoreBox width={200} styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.DISPLAY.FLEX]}>
+                  <CoreRating
+                    name="hover-feedback"
+                    value={valueFeedback}
+                    precision={0.5}
+                    getLabelText={getLabelText}
+                    onChange={(event, newValue) => {
+                      setValueFeedback(newValue);
+                    }}
+                    onChangeActive={(event, newHover) => {
+                      setHoverFeedback(newHover);
+                    }}
+                    emptyIcon={<CoreIcon
+                      icon="star"
+                      styleClasses={[CoreClasses.OPACITY.OPACITY_50]}
+                      fontSize="inherit" />}
+                  />
 
-            <CoreRating name="size-medium" defaultValue={2} />
+                  {valueFeedback !== null && (
+                    <CoreBox styleClasses={[CoreClasses.MARGIN.ML1]}>{labels[hoverFeedback !== -1 ? hoverFeedback : valueFeedback]}</CoreBox>
+                  )}
+                </CoreBox>
+              }
+            />
 
-            <CoreRating name="size-large" defaultValue={2} size="large" />
-          </>
-        }
-      />
+            <CodeSample 
+              title={"Sizes"}
+              description={"For larger or smaller ratings use the size prop."}
+              code={`<CoreStack spacing={1}>
+  <CoreRating name="size-small" defaultValue={2} size="small" />
 
-      <CodeSample
-        title={"Customization"}
-        description={"Here are some examples of customizing the component."}
-        code={`<CoreTypographyBody1 component="legend">
-        Custom icon and color
-      </CoreTypographyBody1>
-      <StyledRating
+  <CoreRating name="size-medium" defaultValue={2} />
+
+  <CoreRating name="size-large" defaultValue={2} size="large" />
+</CoreStack>`}
+              expandedCode={`
+import { CoreRating, CoreStack } from "@wrappid/core";
+
+export default function CoreRatingDocs() {
+  return ( 
+    <CoreStack spacing={1}>
+      <CoreRating name="size-small" defaultValue={2} size="small" />
+
+      <CoreRating name="size-medium" defaultValue={2} />
+
+      <CoreRating name="size-large" defaultValue={2} size="large" />
+    </CoreStack>
+  );
+}
+`}
+              renderElement={
+                <CoreStack spacing={1}>
+                  <CoreRating name="size-small" defaultValue={2} size="small" />
+
+                  <CoreRating name="size-medium" defaultValue={2} />
+
+                  <CoreRating name="size-large" defaultValue={2} size="large" />
+                </CoreStack>
+              }
+            />
+
+            <CodeSample 
+              title={"Customization"}
+              description={"Here are some examples of customizing the component."}
+              code={`<CoreBox>
+  <CoreTypographyBody1 component="legend">Custom icon and color</CoreTypographyBody1>
+
+  <CoreRating
+    name="customized-color"
+    defaultValue={2}
+    getLabelText={(value) => \`\${value} Heart\${value !== 1 ? "s" : ""}\`}
+    precision={0.5}
+    icon={<CoreIcon icon="favorite" fontSize="inherit" color="secondary"/>}
+    emptyIcon={<CoreIcon icon="favorite_border" fontSize="inherit" />}
+  />
+
+  <CoreTypographyBody1 component="legend" styleClasses={[CoreClasses.MARGIN.MT3]}>10 stars</CoreTypographyBody1>
+
+  <CoreRating name="customized-10" defaultValue={2} max={10} />
+</CoreBox>`}
+              expandedCode={`import { CoreBox, CoreClasses, CoreIcon, CoreRating, CoreTypographyBody1 } from "@wrappid/core";
+
+export default function CoreRatingDocs() {
+  return ( 
+    <CoreBox>
+      <CoreTypographyBody1 component="legend">Custom icon and color</CoreTypographyBody1>
+
+      <CoreRating
         name="customized-color"
         defaultValue={2}
-        getLabelText={(value: number) =>
-          \`\${value} Heart\${value !== 1 ? "s" : ""}\`
-        }
+        getLabelText={(value) => \`\${value} Heart\${value !== 1 ? "s" : ""}\`}
         precision={0.5}
-        icon={<CoreIcon icon="favorite" />}
-        emptyIcon={<CoreIcon icon="favorite_border" />}
+        icon={<CoreIcon icon="favorite" fontSize="inherit" color="secondary"/>}
+        emptyIcon={<CoreIcon icon="favorite_border" fontSize="inherit" />}
       />
-      <CoreTypographyBody1 component="legend">
-        10 stars
-      </CoreTypographyBody1>
-      <CoreRating name="customized-10" defaultValue={2} max={10} />`}
-        renderElement={
-          <>
-            <CoreTypographyCaption
-              key={1}
-              component="p"
-              styleClasses={[CoreClasses.COLOR.TEXT_WARNING_LIGHT]}
-            >
-              Can not used mui styled function & Rating component directly in our application. Issue available here: https://github.com/wrappid/guide-module/issues/5
-            </CoreTypographyCaption>
 
-            <CoreTypographyBody1 component="legend">
-              Custom icon and color
-            </CoreTypographyBody1>
+      <CoreTypographyBody1 component="legend" styleClasses={[CoreClasses.MARGIN.MT3]}>10 stars</CoreTypographyBody1>
 
-            {/* eslint-disable-next-line etc/no-commented-out-code */}
-            {/* <StyledRating
-              name="customized-color"
-              defaultValue={2}
-              getLabelText={(value) =>
-                `${value} Heart${value !== 1 ? "s" : ""}`
+      <CoreRating name="customized-10" defaultValue={2} max={10} />
+    </CoreBox>
+  );
+}
+`}
+              renderElement={
+                <CoreBox>
+                  <CoreTypographyBody1 component="legend">Custom icon and color</CoreTypographyBody1>
+
+                  <CoreRating
+                    name="customized-color"
+                    defaultValue={2}
+                    getLabelText={(value) => `${value} Heart${value !== 1 ? "s" : ""}`}
+                    precision={0.5}
+                    icon={<CoreIcon icon="favorite" fontSize="inherit" color="secondary"/>}
+                    emptyIcon={<CoreIcon icon="favorite_border" fontSize="inherit" />}
+                  />
+
+                  <CoreTypographyBody1 component="legend" styleClasses={[CoreClasses.MARGIN.MT3]}>10 stars</CoreTypographyBody1>
+
+                  <CoreRating name="customized-10" defaultValue={2} max={10} />
+                </CoreBox>
               }
-              precision={0.5}
-              icon={<CoreIcon icon="favorite" />}
-              emptyIcon={<CoreIcon icon="favorite_border" />}
-            /> */}
-            <CoreTypographyBody1 component="legend">
-              10 stars
-            </CoreTypographyBody1>
+            />
 
-            <CoreRating name="customized-10" defaultValue={2} max={10} />
+            <CodeSample 
+              title={"Radio group(Not_Working)"}
+              description={"If we use <CoreSpan> in place of <span> that is not working"}
+              renderElement={
+                <CoreRating
+                  name="highlight-selected-only"
+                  defaultValue={2}
+                  IconContainerComponent={IconContainer}
+                  getLabelText={(value) => customIcons[value].label}
+                  highlightSelectedOnly
+                />
+              }
+            />
           </>
         }
       />
-
-      <CodeSample
-        title={"Radio group"}
-        description={
-          "The rating is implemented with a radio group, set highlightSelectedOnly to restore the natural behavior."
-        }
-        code={`<StyledRating
-          name="highlight-selected-only"
-          defaultValue={2}
-          IconContainerComponent={IconContainer}
-          getLabelText={(value) => customIcons[value].label}
-          highlightSelectedOnly
-        />`}
-        renderElement={
-          <>
-            {/* eslint-disable-next-line etc/no-commented-out-code */}
-            {/* <StyledRating
-              name="highlight-selected-only"
-              defaultValue={2}
-              IconContainerComponent={IconContainer}
-              getLabelText={(value) => customIcons[value].label}
-              highlightSelectedOnly
-            /> */}
-          </>
-        }
-      />
-
-      <ComponentProps component={CoreRating} />
     </>
   );
 }
