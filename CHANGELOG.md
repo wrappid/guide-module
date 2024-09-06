@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.102](https://https//github.com/wrappid/wrappid-module/compare/v0.0.101...v0.0.102) (2024-09-06)
+
+
+### Features
+
+* **core:** :art: update structure ([fcebd91](https://https//github.com/wrappid/wrappid-module/commit/fcebd91d87d88316deeebf575511057651f80f43)), closes [#299](https://https//github.com/wrappid/wrappid-module/issues/299)
+
 ### [0.0.101](https://https//github.com/wrappid/wrappid-module/compare/v0.0.100...v0.0.101) (2024-09-06)
 
 
