@@ -17,6 +17,7 @@ export default function CoreAvatarDocs() {
     <ComponentDocs
       component={CoreAvatar}
       description="Avatars are found throughout material design with uses in everything from tables to dialog menus."
+      basicSampleProps={{ src: "https://picsum.photos/200?random=1" }}
       samples={
         <>
           <CodeSample
