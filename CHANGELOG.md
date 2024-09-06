@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.100](https://https//github.com/wrappid/wrappid-module/compare/v0.0.99...v0.0.100) (2024-09-06)
+
 ### [0.0.99](https://https//github.com/wrappid/wrappid-module/compare/v0.0.98...v0.0.99) (2024-09-05)
 
 ### [0.0.98](https://https//github.com/wrappid/wrappid-module/compare/v0.0.97...v0.0.98) (2024-09-05)
