@@ -1,29 +1,15 @@
-import {
-  CoreH4,
-  CoreTypographyBody1
-} from "@wrappid/core";
-  
-import CodeSample from "../../CodeSample";
+import { CorePhone } from "@wrappid/core";
+
+import ComponentDocs from "../ComponentDocs";
+
+const CORE_COMPONENT = CorePhone;
+const CORE_COMPONENT_NAME = CORE_COMPONENT?.name;
 
 export default function CorePhoneDocs() {
   return (
-    <>
-      <CoreH4>CorePhone</CoreH4>
-  
-      <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
-      </CoreTypographyBody1>
-  
-      <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={"PRE-FORMATTED_CODE_GOES_HERE"}
-        renderElement={<></>}
-      />
-        
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* <ComponentProps component={CorePhone} /> */}
-      
-    </>
+    <ComponentDocs
+      component={CORE_COMPONENT}
+      description={`The ${CORE_COMPONENT_NAME} component is made for Phone Number inputs.`}
+    />
   );
 }
