@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.103](https://https//github.com/wrappid/wrappid-module/compare/v0.0.102...v0.0.103) (2024-09-06)
+
+### [0.0.102](https://https//github.com/wrappid/wrappid-module/compare/v0.0.101...v0.0.102) (2024-09-06)
+
+
+### Features
+
+* **core:** :art: update structure ([fcebd91](https://https//github.com/wrappid/wrappid-module/commit/fcebd91d87d88316deeebf575511057651f80f43)), closes [#299](https://https//github.com/wrappid/wrappid-module/issues/299)
+
+### [0.0.101](https://https//github.com/wrappid/wrappid-module/compare/v0.0.100...v0.0.101) (2024-09-06)
+
+
+### Features
+
+* **core:** :sparkles: auto create basic code sample ([cafea99](https://https//github.com/wrappid/wrappid-module/commit/cafea99e38fc410ff1b012a739ee18b677bd217f)), closes [#297](https://https//github.com/wrappid/wrappid-module/issues/297)
+
+### [0.0.100](https://https//github.com/wrappid/wrappid-module/compare/v0.0.99...v0.0.100) (2024-09-06)
+
+### [0.0.99](https://https//github.com/wrappid/wrappid-module/compare/v0.0.98...v0.0.99) (2024-09-05)
+
+### [0.0.98](https://https//github.com/wrappid/wrappid-module/compare/v0.0.97...v0.0.98) (2024-09-05)
+
+
+### Bug Fixes
+
+* **global:** :adhesive_bandage: removed position:sticky ([0de25e2](https://https//github.com/wrappid/wrappid-module/commit/0de25e24044417922fa88763dc3b7127a0331876)), closes [#289](https://https//github.com/wrappid/wrappid-module/issues/289)
+
+### [0.0.97](https://https//github.com/wrappid/wrappid-module/compare/v0.0.96...v0.0.97) (2024-09-05)
+
+### [0.0.96](https://https//github.com/wrappid/wrappid-module/compare/v0.0.95...v0.0.96) (2024-09-05)
+
+### [0.0.95](https://https//github.com/wrappid/wrappid-module/compare/v0.0.94...v0.0.95) (2024-09-04)
+
+### [0.0.94](https://https//github.com/wrappid/wrappid-module/compare/v0.0.93...v0.0.94) (2024-09-04)
+
+### [0.0.93](https://https//github.com/wrappid/wrappid-module/compare/v0.0.92...v0.0.93) (2024-09-04)
+
+### [0.0.92](https://https//github.com/wrappid/wrappid-module/compare/v0.0.91...v0.0.92) (2024-09-04)
+
+### [0.0.91](https://https//github.com/wrappid/wrappid-module/compare/v0.0.90...v0.0.91) (2024-09-02)
+
+### [0.0.90](https://https//github.com/wrappid/wrappid-module/compare/v0.0.89...v0.0.90) (2024-08-29)
+
+### [0.0.89](https://https//github.com/wrappid/wrappid-module/compare/v0.0.88...v0.0.89) (2024-08-29)
+
+
+### Bug Fixes
+
+* **global:** :memo: update documentation for CoreBadge ([599b508](https://https//github.com/wrappid/wrappid-module/commit/599b5080509335b9147024c6fee1259817f11d16)), closes [#170](https://https//github.com/wrappid/wrappid-module/issues/170)
+
+### [0.0.88](https://https//github.com/wrappid/wrappid-module/compare/v0.0.87...v0.0.88) (2024-08-29)
+
 ### [0.0.87](https://https//github.com/wrappid/wrappid-module/compare/v0.0.86...v0.0.87) (2024-08-29)
 
 

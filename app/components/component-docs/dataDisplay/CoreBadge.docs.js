@@ -1,3 +1,4 @@
+/* eslint-disable etc/no-commented-out-code */
 import React from "react";
 
 import {
@@ -29,6 +30,7 @@ function notificationsLabel(count) {
 }
 
 export default function CoreBadgeDocs() {
+  const [countZero, setCountZero] = React.useState(0);
   const [count, setCount] = React.useState(1);
   const [invisible, setInvisible] = React.useState(true);
 
@@ -70,9 +72,7 @@ export default function CoreBadgeDocs() {
               </>
               }
               code={`<CoreBadge badgeContent={4} color="primary">
-  <CoreIcon type={__IconTypes.MATERIAL_OUTLINED_ICON} color="primary" >
-    mail
-  </CoreIcon>
+  <CoreIcon type={__IconTypes.MATERIAL_OUTLINED_ICON} color="primary" icon="mail" />
 </CoreBadge>`}
               expandedCode={`import {
   CoreIcon,
@@ -89,9 +89,8 @@ export default function SimpleBadge() {
           type={__IconTypes.MATERIAL_OUTLINED_ICON}
           color="primary"
           fontSize= "medium"
-        >
-          mail
-        </CoreIcon>
+          icon="mail"
+        />
       </CoreBadge>
     </CoreBox>
   );
@@ -103,9 +102,8 @@ export default function SimpleBadge() {
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
                       color="primary"
                       fontSize= "medium"
-                    >
-                       mail
-                    </CoreIcon>
+                      icon="mail"
+                    />
                   </CoreBadge>
                 </CoreBox>
               }
@@ -123,9 +121,8 @@ export default function SimpleBadge() {
     type={__IconTypes.MATERIAL_OUTLINED_ICON}
     color="primary"
     fontSize= "medium"
-  >
-    mail
-  </CoreIcon>
+    icon="mail"
+  />
 </CoreBadge>
 
 <CoreBadge badgeContent={4} color="success">
@@ -133,9 +130,8 @@ export default function SimpleBadge() {
     type={__IconTypes.MATERIAL_OUTLINED_ICON}
     color="primary"
     fontSize= "medium"
-  >
-    mail
-  </CoreIcon>
+    icon="mail"
+  />
 </CoreBadge>`}
               expandedCode={`import {
   CoreStack,
@@ -152,9 +148,8 @@ export default function ColorBadge() {
           type={__IconTypes.MATERIAL_OUTLINED_ICON}
           color="primary"
           fontSize= "medium"
-        >
-          mail
-        </CoreIcon>
+          icon="mail"
+        />
       </CoreBadge>
 
       <CoreBadge badgeContent={4} color="success">
@@ -162,9 +157,8 @@ export default function ColorBadge() {
           type={__IconTypes.MATERIAL_OUTLINED_ICON}
           color="primary"
           fontSize= "medium"
-        >
-           mail
-        </CoreIcon>
+          icon="mail"
+        />
       </CoreBadge>
     </CoreStack>
   );
@@ -176,9 +170,8 @@ export default function ColorBadge() {
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
                       color="primary"
                       fontSize= "medium"
-                    >
-                mail
-                    </CoreIcon>
+                      icon="mail"
+                    />
                   </CoreBadge>
 
                   <CoreBadge badgeContent={4} color="success">
@@ -186,15 +179,14 @@ export default function ColorBadge() {
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
                       color="primary"
                       fontSize= "medium"
-                    >
-                mail
-                    </CoreIcon>
+                      icon="mail"
+                    />
                   </CoreBadge>
                 </CoreStack>
               }
             />
 
-            <CodeSample title="Customization (NOT IMPLEMENTED)" />
+            <CodeSample title="Customization (NOT IMPLEMENTED AS OF NOW)" />
 
             <CodeSample
               title="Badge visibility " 
@@ -217,7 +209,6 @@ import {
   CoreSwitch
 } from "@wrappid/core";
 
-
 export default function BadgeVisibility() {
   const [count, setCount] = React.useState(1);
   const [invisible, setInvisible] = React.useState(false);
@@ -231,7 +222,7 @@ export default function BadgeVisibility() {
 
       <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
         <CoreBadge color="secondary" badgeContent={count}>
-          <CoreIcon>mail</CoreIcon>
+          <CoreIcon icon="mail" />
         </CoreBadge>
 
         <CoreBox
@@ -244,7 +235,7 @@ export default function BadgeVisibility() {
               setCount(Math.max(count - 1, 0));
             }}
           >
-            <CoreIcon fontSize="small" >remove</CoreIcon>
+            <CoreIcon fontSize="small" icon="remove" />
           </CoreButton>
 
           <CoreButton
@@ -253,7 +244,7 @@ export default function BadgeVisibility() {
               setCount(count + 1);
             }}
           >
-            <CoreIcon fontSize="small" >add</CoreIcon>
+            <CoreIcon fontSize="small" icon="add" />
           </CoreButton>
         </CoreBox>
       </CoreBox>
@@ -266,7 +257,7 @@ export default function BadgeVisibility() {
         CoreClasses.WIDTH.W_100
       ]}>
         <CoreBadge color="secondary" variant="dot" invisible={invisible}>
-          <CoreIcon>mail</CoreIcon>
+          <CoreIcon icon="mail" />
         </CoreBadge>
 
         <CoreFormControlLabel
@@ -277,20 +268,17 @@ export default function BadgeVisibility() {
       </CoreBox>
     </CoreBox>
     );
-}`
-              }
+}`}
               renderElement={
                 <>
                   <CoreBox>
 
                     <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
                       <CoreBadge color="secondary" badgeContent={count}>
-                        <CoreIcon>mail</CoreIcon>
+                        <CoreIcon icon="mail" />
                       </CoreBadge>
 
-                      <CoreBox
-                        styleClasses={[CoreClasses.PADDING.PL3]}
-                      >
+                      <CoreBox styleClasses={[CoreClasses.PADDING.PL3]} >
 
                         <CoreButton
                           aria-label="reduce"
@@ -298,7 +286,7 @@ export default function BadgeVisibility() {
                             setCount(Math.max(count - 1, 0));
                           }}
                         >
-                          <CoreIcon fontSize="small" >remove</CoreIcon>
+                          <CoreIcon fontSize="small" icon="remove" />
                         </CoreButton>
 
                         <CoreButton
@@ -307,7 +295,7 @@ export default function BadgeVisibility() {
                             setCount(count + 1);
                           }}
                         >
-                          <CoreIcon fontSize="small" >add</CoreIcon>
+                          <CoreIcon fontSize="small" icon="add" />
                         </CoreButton>
                       </CoreBox>
                     </CoreBox>
@@ -320,7 +308,7 @@ export default function BadgeVisibility() {
                       CoreClasses.WIDTH.W_100
                     ]}>
                       <CoreBadge color="secondary" variant="dot" invisible={invisible}>
-                        <CoreIcon>mail</CoreIcon>
+                        <CoreIcon icon="mail" />
                       </CoreBadge>
 
                       <CoreFormControlLabel
@@ -328,6 +316,84 @@ export default function BadgeVisibility() {
                         control={<CoreSwitch checked={!invisible} onChange={handleBadgeVisibility} />}
                         label="Show Badge"
                       />
+                    </CoreBox>
+                  </CoreBox>
+                </>
+              }
+            />
+
+            <CodeSample 
+              title="Show Zero"
+              description="The badge hides automatically when badgeContent is zero. You can override this with the showZero prop." 
+              code={"Na"}
+              expandedCode={`import React from "react";
+
+import {
+  CoreIcon,
+  CoreBadge,
+  CoreBox,
+  CoreButton,
+  CoreClasses
+} from "@wrappid/core";
+
+export default function ShowZero() {
+  const [countZero, setCountZero] = React.useState(0);
+
+  return (
+    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+      <CoreBadge color="secondary" showZero badgeContent={countZero}>
+        <CoreIcon icon="mail" />
+      </CoreBadge>
+
+      <CoreBox styleClasses={[CoreClasses.PADDING.PL3]} >
+
+        <CoreButton
+          aria-label="reduce"
+          onClick={() => {
+            setCountZero(Math.max(countZero - 1, 0));
+          }}
+        >
+          <CoreIcon fontSize="small" icon="remove" />
+        </CoreButton>
+
+        <CoreButton
+          aria-label="increase"
+          onClick={() => {
+            setCountZero(countZero + 1);
+          }}
+        >
+          <CoreIcon fontSize="small" icon="add" />
+        </CoreButton>
+      </CoreBox>
+    </CoreBox>
+  );
+}`}
+              renderElement={
+                <>
+                  <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+                    <CoreBadge color="secondary" showZero badgeContent={countZero}>
+                      <CoreIcon icon="mail" />
+                    </CoreBadge>
+
+                    <CoreBox styleClasses={[CoreClasses.PADDING.PL3]} >
+
+                      <CoreButton
+                        aria-label="reduce"
+                        onClick={() => {
+                          setCountZero(Math.max(countZero - 1, 0));
+                        }}
+                      >
+                        <CoreIcon fontSize="small" icon="remove" />
+                      </CoreButton>
+
+                      <CoreButton
+                        aria-label="increase"
+                        onClick={() => {
+                          setCountZero(countZero + 1);
+                        }}
+                      >
+                        <CoreIcon fontSize="small" icon="add" />
+                      </CoreButton>
                     </CoreBox>
                   </CoreBox>
                 </>
@@ -346,9 +412,8 @@ export default function BadgeVisibility() {
     type={__IconTypes.MATERIAL_OUTLINED_ICON}
     color="primary"
     fontSize= "medium"
-  >
-    mail
-  </CoreIcon>
+    icon="mail"
+  />
 </CoreBadge>
 
 <CoreBadge color="secondary" badgeContent={100}>
@@ -356,9 +421,8 @@ export default function BadgeVisibility() {
     type={__IconTypes.MATERIAL_OUTLINED_ICON}
     color="primary"
     fontSize= "medium"
-  >
-    mail
-  </CoreIcon>
+    icon="mail"
+  />
 </CoreBadge>
 
 <CoreBadge color="secondary" badgeContent={1000} max={999}>
@@ -366,9 +430,8 @@ export default function BadgeVisibility() {
     type={__IconTypes.MATERIAL_OUTLINED_ICON}
     color="primary"
     fontSize= "medium"
-  >
-    mail
-  </CoreIcon>
+    icon="mail"
+  />
 </CoreBadge>`}
               expandedCode={`import {
   CoreStack,
@@ -385,9 +448,8 @@ export default function BadgeMax() {
           type={__IconTypes.MATERIAL_OUTLINED_ICON}
           color="primary"
           fontSize= "medium"
-        >
-          mail
-        </CoreIcon>
+          icon="mail"
+        />
       </CoreBadge>
 
       <CoreBadge color="secondary" badgeContent={100}>
@@ -395,9 +457,8 @@ export default function BadgeMax() {
           type={__IconTypes.MATERIAL_OUTLINED_ICON}
           color="primary"
           fontSize= "medium"
-        >
-         mail
-        </CoreIcon>
+          icon="mail"
+        />
       </CoreBadge>
 
       <CoreBadge color="secondary" badgeContent={1000} max={999}>
@@ -405,9 +466,8 @@ export default function BadgeMax() {
           type={__IconTypes.MATERIAL_OUTLINED_ICON}
           color="primary"
           fontSize= "medium"
-        >
-          mail
-        </CoreIcon>
+          icon="mail"
+        />
       </CoreBadge>
     </CoreStack>
   );
@@ -419,9 +479,8 @@ export default function BadgeMax() {
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
                       color="primary"
                       fontSize= "medium"
-                    >
-                mail
-                    </CoreIcon>
+                      icon="mail"
+                    />
                   </CoreBadge>
 
                   <CoreBadge color="secondary" badgeContent={100}>
@@ -429,9 +488,8 @@ export default function BadgeMax() {
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
                       color="primary"
                       fontSize= "medium"
-                    >
-                mail
-                    </CoreIcon>
+                      icon="mail"
+                    />
                   </CoreBadge>
 
                   <CoreBadge color="secondary" badgeContent={1000} max={999}>
@@ -439,9 +497,8 @@ export default function BadgeMax() {
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
                       color="primary"
                       fontSize= "medium"
-                    >
-                mail
-                    </CoreIcon>
+                      icon="mail"
+                    />
                   </CoreBadge>
                 </CoreStack>
               }
@@ -460,9 +517,8 @@ export default function BadgeMax() {
     type={__IconTypes.MATERIAL_OUTLINED_ICON}
     color="primary"
     fontSize= "medium"
-    >
-    mail
-  </CoreIcon>
+    icon="mail"
+    />
 </CoreBadge>`}
               expandedCode={`import {
   CoreStack,
@@ -479,9 +535,8 @@ export default function DotBadge() {
           type={__IconTypes.MATERIAL_OUTLINED_ICON}
           color="primary"
           fontSize= "medium"
-        >
-          mail
-        </CoreIcon>
+          icon="mail"
+        />
       </CoreBadge>
     </CoreStack>
   );
@@ -493,9 +548,8 @@ export default function DotBadge() {
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
                       color="primary"
                       fontSize= "medium"
-                    >
-                mail
-                    </CoreIcon>
+                      icon="mail"
+                    />
                   </CoreBadge>
                 </CoreStack>
               }
@@ -616,653 +670,94 @@ export default function BadgeOverlap() {
             You can use the <CodeBlock >anchorOrigin</CodeBlock>prop to move the badge to any corner of the wrapped element.
                 </>
               }
-              code={`<CoreBadge
-  anchorOrigin={{
-    horizontal: "right",
-    vertical  : "top",
-  }}
-  color="secondary"
-  variant="dot">
-  <CoreIcon
-    type={__IconTypes.MATERIAL_OUTLINED_ICON}
-    color="primary"
-    fontSize= "medium"
-  >
-    mail
-  </CoreIcon>
-</CoreBadge>`}
+              code={"NA"}
               expandedCode={`import {
   CoreIcon,
   CoreBadge,
   CoreBox,
   __IconTypes,
+  CoreStack,
   CoreClasses,
 } from "@wrappid/core";
 
-export default function DotBadge() {
+export default function BadgeAlignment() {
    return(
-      <CoreBox>
-          <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+     <CoreStack direction="column" spacing={4}>
+        {["Top-Right", "Top-Left", "Bottom-Right", "Bottom-Left"].map((position) => (
+          <CoreStack
+            key={position}
+            direction="row"
+            spacing={4}
+            styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+          >
+            <CoreBox width={100}>{position}</CoreBox>
 
-            <CoreBadge
-              anchorOrigin={{
-                horizontal: "right",
-                vertical  : "top",
-              }}
-              color="secondary"
-              variant="dot">
-              <CoreIcon
-                type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                color="primary"
-                fontSize= "medium"
-              >
-                mail
-              </CoreIcon>
-            </CoreBadge>
-
-            <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
-              <CoreBadge
-                badgeContent={1}
-                color="secondary"
-                anchorOrigin={{
-                  horizontal: "right",
-                  vertical  : "top",
-                }}
-              >
-                <CoreIcon
-                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                  color="primary"
-                  fontSize= "medium"
-                >
-              mail
-                </CoreIcon>
-              </CoreBadge>
+            <CoreBox
+              styleClasses={[CoreClasses.PADDING.PR2, CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_START]}
+            >
+              {[{ variant: "dot" }, { badgeContent: 1 }, { badgeContent: 100 }, { badgeContent: 1000, max: 999 }].map((badgeProps, badgeIndex) => (
+                <CoreBox key={badgeIndex} styleClasses={[CoreClasses.PADDING.PX2]}>
+                  <CoreBadge
+                    anchorOrigin={{
+                      horizontal: position.includes("Left") ? "left" : "right",
+                      vertical  : position.includes("Top") ? "top" : "bottom",
+                    }}
+                    color="secondary"
+                    {...badgeProps}
+                  >
+                    <CoreIcon
+                      type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                      color="primary"
+                      fontSize="medium"
+                      icon="mail"
+                    />
+                  </CoreBadge>
+                </CoreBox>
+              ))}
             </CoreBox>
-
-            <CoreBadge
-              anchorOrigin={{
-                horizontal: "right",
-                vertical  : "top",
-              }}
-              badgeContent={100}
-              color="secondary">
-              <CoreIcon
-                type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                color="primary"
-                fontSize= "medium"
-              > 
-                mail
-              </CoreIcon>
-            </CoreBadge>
-
-            <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
-              <CoreBadge
-                anchorOrigin={{
-                  horizontal: "right",
-                  vertical  : "top",
-                }}
-                color="secondary"
-                badgeContent={1000}
-                max={999}>
-                <CoreIcon
-                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                  color="primary"
-                  fontSize= "medium"
-                >
-              mail
-                </CoreIcon>
-              </CoreBadge>
-            </CoreBox>
-          </CoreBox>
-
-          <CoreBox styleClasses={[
-            CoreClasses.PADDING.PT3,
-            CoreClasses.DISPLAY.FLEX,
-            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-            CoreClasses.WIDTH.W_100
-          ]}>
-            <CoreBadge
-              anchorOrigin={{
-                horizontal: "left",
-                vertical  : "top",
-              }}
-              color="secondary"
-              variant="dot">
-              <CoreIcon
-                type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                color="primary"
-                fontSize= "medium"
-              >
-                mail
-              </CoreIcon>
-            </CoreBadge>
-
-            <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
-              <CoreBadge
-                badgeContent={1}
-                color="secondary"
-                anchorOrigin={{
-                  horizontal: "left",
-                  vertical  : "top",
-                }}
-              >
-                <CoreIcon
-                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                  color="primary"
-                  fontSize= "medium"
-                >
-              mail
-                </CoreIcon>
-              </CoreBadge>
-            </CoreBox>
-
-            <CoreBadge
-              anchorOrigin={{
-                horizontal: "left",
-                vertical  : "top",
-              }}
-              badgeContent={100}
-              color="secondary">
-              <CoreIcon
-                type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                color="primary"
-                fontSize= "medium"
-              > 
-                mail
-              </CoreIcon>
-            </CoreBadge>
-
-            <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
-              <CoreBadge
-                anchorOrigin={{
-                  horizontal: "left",
-                  vertical  : "top",
-                }}
-                color="secondary"
-                badgeContent={1000}
-                max={999}>
-                <CoreIcon
-                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                  color="primary"
-                  fontSize= "medium"
-                >
-              mail
-                </CoreIcon>
-              </CoreBadge>
-            </CoreBox>
-          </CoreBox>
-
-          <CoreBox styleClasses={[
-            CoreClasses.PADDING.PT3,
-            CoreClasses.DISPLAY.FLEX,
-            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-            CoreClasses.WIDTH.W_100
-          ]}>
-            <CoreBadge
-              anchorOrigin={{
-                horizontal: "left",
-                vertical  : "bottom",
-              }}
-              color="secondary"
-              variant="dot">
-              <CoreIcon
-                type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                color="primary"
-                fontSize= "medium"
-              >
-                mail
-              </CoreIcon>
-            </CoreBadge>
-
-            <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
-              <CoreBadge
-                badgeContent={1}
-                color="secondary"
-                anchorOrigin={{
-                  horizontal: "left",
-                  vertical  : "bottom",
-                }}
-              >
-                <CoreIcon
-                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                  color="primary"
-                  fontSize= "medium"
-                >
-              mail
-                </CoreIcon>
-              </CoreBadge>
-            </CoreBox>
-
-            <CoreBadge
-              anchorOrigin={{
-                horizontal: "left",
-                vertical  : "bottom",
-              }}
-              badgeContent={100}
-              color="secondary">
-              <CoreIcon
-                type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                color="primary"
-                fontSize= "medium"
-              > 
-                mail
-              </CoreIcon>
-            </CoreBadge>
-
-            <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
-              <CoreBadge
-                anchorOrigin={{
-                  horizontal: "left",
-                  vertical  : "bottom",
-                }}
-                color="secondary"
-                badgeContent={1000}
-                max={999}>
-                <CoreIcon
-                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                  color="primary"
-                  fontSize= "medium"
-                >
-              mail
-                </CoreIcon>
-              </CoreBadge>
-            </CoreBox>
-          </CoreBox>
-
-          <CoreBox styleClasses={[
-            CoreClasses.PADDING.PT3,
-            CoreClasses.DISPLAY.FLEX,
-            CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-            CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-            CoreClasses.WIDTH.W_100
-          ]}>
-            <CoreBadge
-              anchorOrigin={{
-                horizontal: "right",
-                vertical  : "bottom",
-              }}
-              color="secondary"
-              variant="dot">
-              <CoreIcon
-                type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                color="primary"
-                fontSize= "medium"
-              >
-                mail
-              </CoreIcon>
-            </CoreBadge>
-
-            <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
-              <CoreBadge
-                badgeContent={1}
-                color="secondary"
-                anchorOrigin={{
-                  horizontal: "right",
-                  vertical  : "bottom",
-                }}
-              >
-                <CoreIcon
-                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                  color="primary"
-                  fontSize= "medium"
-                >
-              mail
-                </CoreIcon>
-              </CoreBadge>
-            </CoreBox>
-
-            <CoreBadge
-              anchorOrigin={{
-                horizontal: "right",
-                vertical  : "bottom",
-              }}
-              badgeContent={100}
-              color="secondary">
-              <CoreIcon
-                type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                color="primary"
-                fontSize= "medium"
-              > 
-                mail
-              </CoreIcon>
-            </CoreBadge>
-
-            <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
-              <CoreBadge
-                anchorOrigin={{
-                  horizontal: "right",
-                  vertical  : "bottom",
-                }}
-                color="secondary"
-                badgeContent={1000}
-                max={999}>
-                <CoreIcon
-                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                  color="primary"
-                  fontSize= "medium"
-                >
-              mail
-                </CoreIcon>
-              </CoreBadge>
-            </CoreBox>
-          </CoreBox>
-        </CoreBox>
+          </CoreStack>
+        ))}
+      </CoreStack>
    );
-}                `}
+}`}
               renderElement={
                 <>
-                  <CoreBox>
+                  <CoreStack direction="column" spacing={4}>
+                    {["Top-Right", "Top-Left", "Bottom-Right", "Bottom-Left"].map((position) => (
+                      <CoreStack
+                        key={position}
+                        direction="row"
+                        spacing={4}
+                        styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+                      >
+                        <CoreBox width={100}>{position}</CoreBox>
 
-                    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
-
-                      <CoreBadge
-                        anchorOrigin={{
-                          horizontal: "right",
-                          vertical  : "top",
-                        }}
-                        color="secondary"
-                        variant="dot">
-                        <CoreIcon
-                          type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                          color="primary"
-                          fontSize= "medium"
+                        <CoreBox
+                          styleClasses={[CoreClasses.PADDING.PR2, CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_START]}
                         >
-                         mail
-                        </CoreIcon>
-                      </CoreBadge>
-
-                      <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
-                        <CoreBadge
-                          badgeContent={1}
-                          color="secondary"
-                          anchorOrigin={{
-                            horizontal: "right",
-                            vertical  : "top",
-                          }}
-                        >
-                          <CoreIcon
-                            type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                            color="primary"
-                            fontSize= "medium"
-                          >
-                       mail
-                          </CoreIcon>
-                        </CoreBadge>
-                      </CoreBox>
-
-                      <CoreBadge
-                        anchorOrigin={{
-                          horizontal: "right",
-                          vertical  : "top",
-                        }}
-                        badgeContent={100}
-                        color="secondary">
-                        <CoreIcon
-                          type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                          color="primary"
-                          fontSize= "medium"
-                        > 
-                          mail
-                        </CoreIcon>
-                      </CoreBadge>
-
-                      <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
-                        <CoreBadge
-                          anchorOrigin={{
-                            horizontal: "right",
-                            vertical  : "top",
-                          }}
-                          color="secondary"
-                          badgeContent={1000}
-                          max={999}>
-                          <CoreIcon
-                            type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                            color="primary"
-                            fontSize= "medium"
-                          >
-                        mail
-                          </CoreIcon>
-                        </CoreBadge>
-                      </CoreBox>
-                    </CoreBox>
-
-                    <CoreBox styleClasses={[
-                      CoreClasses.PADDING.PT3,
-                      CoreClasses.DISPLAY.FLEX,
-                      CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-                      CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-                      CoreClasses.WIDTH.W_100
-                    ]}>
-                      <CoreBadge
-                        anchorOrigin={{
-                          horizontal: "left",
-                          vertical  : "top",
-                        }}
-                        color="secondary"
-                        variant="dot">
-                        <CoreIcon
-                          type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                          color="primary"
-                          fontSize= "medium"
-                        >
-                         mail
-                        </CoreIcon>
-                      </CoreBadge>
-
-                      <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
-                        <CoreBadge
-                          badgeContent={1}
-                          color="secondary"
-                          anchorOrigin={{
-                            horizontal: "left",
-                            vertical  : "top",
-                          }}
-                        >
-                          <CoreIcon
-                            type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                            color="primary"
-                            fontSize= "medium"
-                          >
-                       mail
-                          </CoreIcon>
-                        </CoreBadge>
-                      </CoreBox>
-
-                      <CoreBadge
-                        anchorOrigin={{
-                          horizontal: "left",
-                          vertical  : "top",
-                        }}
-                        badgeContent={100}
-                        color="secondary">
-                        <CoreIcon
-                          type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                          color="primary"
-                          fontSize= "medium"
-                        > 
-                          mail
-                        </CoreIcon>
-                      </CoreBadge>
-
-                      <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
-                        <CoreBadge
-                          anchorOrigin={{
-                            horizontal: "left",
-                            vertical  : "top",
-                          }}
-                          color="secondary"
-                          badgeContent={1000}
-                          max={999}>
-                          <CoreIcon
-                            type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                            color="primary"
-                            fontSize= "medium"
-                          >
-                        mail
-                          </CoreIcon>
-                        </CoreBadge>
-                      </CoreBox>
-                    </CoreBox>
-
-                    <CoreBox styleClasses={[
-                      CoreClasses.PADDING.PT3,
-                      CoreClasses.DISPLAY.FLEX,
-                      CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-                      CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-                      CoreClasses.WIDTH.W_100
-                    ]}>
-                      <CoreBadge
-                        anchorOrigin={{
-                          horizontal: "left",
-                          vertical  : "bottom",
-                        }}
-                        color="secondary"
-                        variant="dot">
-                        <CoreIcon
-                          type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                          color="primary"
-                          fontSize= "medium"
-                        >
-                         mail
-                        </CoreIcon>
-                      </CoreBadge>
-
-                      <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
-                        <CoreBadge
-                          badgeContent={1}
-                          color="secondary"
-                          anchorOrigin={{
-                            horizontal: "left",
-                            vertical  : "bottom",
-                          }}
-                        >
-                          <CoreIcon
-                            type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                            color="primary"
-                            fontSize= "medium"
-                          >
-                       mail
-                          </CoreIcon>
-                        </CoreBadge>
-                      </CoreBox>
-
-                      <CoreBadge
-                        anchorOrigin={{
-                          horizontal: "left",
-                          vertical  : "bottom",
-                        }}
-                        badgeContent={100}
-                        color="secondary">
-                        <CoreIcon
-                          type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                          color="primary"
-                          fontSize= "medium"
-                        > 
-                          mail
-                        </CoreIcon>
-                      </CoreBadge>
-
-                      <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
-                        <CoreBadge
-                          anchorOrigin={{
-                            horizontal: "left",
-                            vertical  : "bottom",
-                          }}
-                          color="secondary"
-                          badgeContent={1000}
-                          max={999}>
-                          <CoreIcon
-                            type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                            color="primary"
-                            fontSize= "medium"
-                          >
-                        mail
-                          </CoreIcon>
-                        </CoreBadge>
-                      </CoreBox>
-                    </CoreBox>
-
-                    <CoreBox styleClasses={[
-                      CoreClasses.PADDING.PT3,
-                      CoreClasses.DISPLAY.FLEX,
-                      CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-                      CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
-                      CoreClasses.WIDTH.W_100
-                    ]}>
-                      <CoreBadge
-                        anchorOrigin={{
-                          horizontal: "right",
-                          vertical  : "bottom",
-                        }}
-                        color="secondary"
-                        variant="dot">
-                        <CoreIcon
-                          type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                          color="primary"
-                          fontSize= "medium"
-                        >
-                         mail
-                        </CoreIcon>
-                      </CoreBadge>
-
-                      <CoreBox styleClasses={[CoreClasses.PADDING.PX4]} >
-                        <CoreBadge
-                          badgeContent={1}
-                          color="secondary"
-                          anchorOrigin={{
-                            horizontal: "right",
-                            vertical  : "bottom",
-                          }}
-                        >
-                          <CoreIcon
-                            type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                            color="primary"
-                            fontSize= "medium"
-                          >
-                       mail
-                          </CoreIcon>
-                        </CoreBadge>
-                      </CoreBox>
-
-                      <CoreBadge
-                        anchorOrigin={{
-                          horizontal: "right",
-                          vertical  : "bottom",
-                        }}
-                        badgeContent={100}
-                        color="secondary">
-                        <CoreIcon
-                          type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                          color="primary"
-                          fontSize= "medium"
-                        > 
-                          mail
-                        </CoreIcon>
-                      </CoreBadge>
-
-                      <CoreBox styleClasses={[CoreClasses.PADDING.PL4]} >
-                        <CoreBadge
-                          anchorOrigin={{
-                            horizontal: "right",
-                            vertical  : "bottom",
-                          }}
-                          color="secondary"
-                          badgeContent={1000}
-                          max={999}>
-                          <CoreIcon
-                            type={__IconTypes.MATERIAL_OUTLINED_ICON}
-                            color="primary"
-                            fontSize= "medium"
-                          >
-                        mail
-                          </CoreIcon>
-                        </CoreBadge>
-                      </CoreBox>
-                    </CoreBox>
-                  </CoreBox>
-
+                          {[{ variant: "dot" }, { badgeContent: 1 }, { badgeContent: 100 }, { badgeContent: 1000, max: 999 }].map((badgeProps, badgeIndex) => (
+                            <CoreBox key={badgeIndex} styleClasses={[CoreClasses.PADDING.PX2]}>
+                              <CoreBadge
+                                anchorOrigin={{
+                                  horizontal: position.includes("Left") ? "left" : "right",
+                                  vertical  : position.includes("Top") ? "top" : "bottom",
+                                }}
+                                color="secondary"
+                                {...badgeProps}
+                              >
+                                <CoreIcon
+                                  type={__IconTypes.MATERIAL_OUTLINED_ICON}
+                                  color="primary"
+                                  fontSize="medium"
+                                  icon="mail"
+                                />
+                              </CoreBadge>
+                            </CoreBox>
+                          ))}
+                        </CoreBox>
+                      </CoreStack>
+                    ))}
+                  </CoreStack>
                 </>
               }
             />
@@ -1281,17 +776,15 @@ export default function DotBadge() {
       type={__IconTypes.MATERIAL_OUTLINED_ICON}
       color="primary"
       fontSize= "medium"
-    > 
-      mail
-    </CoreIcon>
-  </CoreBadge>
+      icon="mail"
+    /> 
+    </CoreBadge>
 </CoreIconButton>`}
               expandedCode={`import {
   CoreIcon,
   CoreBadge,
   __IconTypes
 } from "@wrappid/core";
-
 
 function notificationsLabel(count) {
   if (count === 0) {
@@ -1304,7 +797,6 @@ function notificationsLabel(count) {
 }
 
 export default function AccessibleBadges() {
-
   return (
      <CoreIconButton aria-label={notificationsLabel(100)}>
         <CoreBadge badgeContent={100} color="secondary">
@@ -1312,9 +804,8 @@ export default function AccessibleBadges() {
             type={__IconTypes.MATERIAL_OUTLINED_ICON}
             color="primary"
             fontSize= "medium"
-          > 
-            mail
-          </CoreIcon>
+            icon="mail"
+          />
         </CoreBadge>
       </CoreIconButton>
   );
@@ -1326,9 +817,8 @@ export default function AccessibleBadges() {
                       type={__IconTypes.MATERIAL_OUTLINED_ICON}
                       color="primary"
                       fontSize= "medium"
-                    > 
-                      mail
-                    </CoreIcon>
+                      icon="mail"
+                    /> 
                   </CoreBadge>
                 </CoreIconButton>
               }
