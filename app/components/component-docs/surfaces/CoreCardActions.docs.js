@@ -1,102 +1,84 @@
 import {
-  CoreBox,
   CoreButton,
   CoreCard,
   CoreCardActions,
   CoreCardContent,
   CoreClasses,
-  CoreH4,
-  CoreTypographyBody1,
-  CoreTypographyBody2
+  CoreH6,
+  CoreIcon,
+  CoreIconButton
 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
+import ComponentDocs from "../ComponentDocs";
 
 export default function CoreCardActionsDocs() {
-  const bull = (
-    <CoreBox
-      component="span"
-      // sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-    >
-      •
-    </CoreBox>
-  );
 
   return (
     <>
-      <CoreH4>CoreCardActions</CoreH4>
-
-      <CoreTypographyBody1>COMPONENT_DESCRIPTION</CoreTypographyBody1>
-
-      <CodeSample
-        title={"Basic Corecard"}
-        description={
-          "Although cards can support multiple actions, UI controls, and an overflow menu, use restraint and remember that cards are entry points to more complex and detailed information."
-        }
-        code={`
-<CoreCard >
-    <CoreCardContent>
-      <CoreTypographyBody1 color="text.secondary" gutterBottom>
-         Word of the Day
-      </CoreTypographyBody1>
-
-      <CoreTypographyBody1 variant="h5" component="div">
-        be{bull}nev{bull}o{bull}lent
-      </CoreTypographyBody1>
-
-      <CoreTypographyBody1 color="text.secondary">
-         adjective
-      </CoreTypographyBody1>
-
-      <CoreTypographyBody2 >
-        well meaning and kindly.
-        <br />
-
-        {""a benevolent smile""}
-      </CoreTypographyBody2>
-    </CoreCardContent>
-
-    <CoreCardActions>
-      <CoreButton size="small">Learn More</CoreButton>
-
-      <CoreButton size="small">Share</CoreButton>
-    </CoreCardActions>
-  </CoreCard>
-        `}
-        renderElement={
+      <ComponentDocs 
+        component={CoreCardActions}
+        description="CoreCardActions is a component that arranges action buttons at the bottom of a card, providing a consistent layout for primary and secondary actions to enhance user interaction and usability."
+        samples={
           <>
-            <CoreCard styleClasses={[CoreClasses.WIDTH.MAX_W_25]}>
-              <CoreCardContent>
-                <CoreTypographyBody1 color="text.secondary" gutterBottom>
-                  Word of the Day
-                </CoreTypographyBody1>
+            <CodeSample
+              title={"Card Action"}
+              description={"Here you can see how CoreCardAction is used to enhance the interactivity and functionality of a card layout."} 
+              code={`<CoreCardActions>
+  <CoreButton variant="outlined" size="small" color="success">
+      Absolutely!
+  </CoreButton>
 
-                <CoreTypographyBody1 variant="h5" component="div">
-                  {`be${bull}nev${bull}o${bull}lent`}
-                </CoreTypographyBody1>
+  <CoreIconButton variant="text">
+    <CoreIcon icon="favorite" color="error"/>
+  </CoreIconButton>
+</CoreCardActions>`}
+              expandedCode={`import {
+  CoreButton,
+  CoreCard, CoreCardActions, CoreCardContent, CoreClasses, CoreH6, CoreIcon, CoreIconButton 
+} from "@wrappid/core";
 
-                <CoreTypographyBody1 color="text.secondary">
-                  adjective
-                </CoreTypographyBody1>
+export default function CoreCardDocs() {
+  
+  return ( 
+    <CoreCard styleClasses={[CoreClasses.WIDTH.W_25]}>
+      <CoreCardContent>
+        <CoreH6 styleClasses={[CoreClasses.COLOR.TEXT_OPACITY_75]}>Are you a fan of Wrappid?</CoreH6>
+      </CoreCardContent>
 
-                <CoreTypographyBody2>
-                  well meaning and kindly.
-                  {"\"a benevolent smile\""}
-                </CoreTypographyBody2>
-              </CoreCardContent>
+      <CoreCardActions>
+        <CoreButton variant="outlined" size="small" color="success">
+          Absolutely!
+        </CoreButton>
 
-              <CoreCardActions>
-                <CoreButton size="small">Learn More</CoreButton>
+        <CoreIconButton variant="text">
+          <CoreIcon icon="favorite" color="error"/>
+        </CoreIconButton>
+      </CoreCardActions>
+    </CoreCard>
+  );  
+}`}
+              renderElement={
+                <CoreCard styleClasses={[CoreClasses.WIDTH.W_25]}>
+                  <CoreCardContent>
+                    <CoreH6 styleClasses={[CoreClasses.COLOR.TEXT_OPACITY_75]}>Are you a fan of Wrappid?</CoreH6>
+                  </CoreCardContent>
 
-                <CoreButton size="small">Share</CoreButton>
-              </CoreCardActions>
-            </CoreCard>
+                  <CoreCardActions>
+                    <CoreButton variant="outlined" size="small" color="success">
+                      Absolutely!
+                    </CoreButton>
+
+                    <CoreIconButton variant="text">
+                      <CoreIcon icon="favorite" color="error"/>
+                    </CoreIconButton>
+                  </CoreCardActions>
+                </CoreCard>
+              }
+            />
           </>
         }
       />
-
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* <ComponentProps component={CoreCardActions} /> */}
     </>
   );
 }
