@@ -253,31 +253,31 @@ export default function BasicCoreGridSpacing() {
             description="The rowSpacing and columnSpacing props allow for specifying the row and column gaps independently. It's similar to the row-gap and column-gap properties of CSS Grid."
             code={`<CoreGrid rowSpacing={1} columnSpacing={{ md: 3, sm: 2, xs: 1 }}>     
   <CorePaper
-    gridProps={{ gridSize: { md: 6 } }}
+    gridProps={{ gridSize: { md: 6, xs: 6 } }}
     styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
       xs=8
   </CorePaper>
-  <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+  <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
       xs=8
   </CorePaper>
-  <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=4</CorePaper>
-  <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=8</CorePaper>
+  <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=4</CorePaper>
+  <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=8</CorePaper>
 </CoreGrid>`}
             expandedCode={`import { CoreBox, CoreClasses, CorePaper, CoreGrid } from "@wrappid/core";
 export default function BasicCoreGridRowCol() {
   return (
     <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
       <CoreGrid rowSpacing={1} columnSpacing={{ md: 3, sm: 2, xs: 1 }}>
-        <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=8
         </CorePaper>
-        <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=8
         </CorePaper>
-        <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=4
         </CorePaper>
-        <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=8
         </CorePaper>
       </CoreGrid>
@@ -289,18 +289,18 @@ export default function BasicCoreGridRowCol() {
                 <CoreGrid rowSpacing={1} columnSpacing={{ md: 3, sm: 2, xs: 1 }}>
                    
                   <CorePaper
-                    gridProps={{ gridSize: { md: 6 } }}
+                    gridProps={{ gridSize: { md: 6, xs: 6 } }}
                     styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
                         xs=8
                   </CorePaper>
                    
-                  <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+                  <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
                         xs=8
                   </CorePaper>
                     
-                  <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=4</CorePaper>
+                  <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=4</CorePaper>
                    
-                  <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=8</CorePaper>
+                  <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=8</CorePaper>
    
                 </CoreGrid>
               </CoreBox>
@@ -311,22 +311,22 @@ export default function BasicCoreGridRowCol() {
             title={"Responsive values"}
             description="You can switch the props' value based on the active breakpoint. "
             code={`<CoreGrid spacing={{ md: 3, xs: 2 }} columns={{ md: 12, sm: 8, xs: 4 }}>           
-  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
     xs=2
   </CorePaper>       
-  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
     xs=2
   </CorePaper>         
-  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
     xs=2
   </CorePaper>      
-  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
     xs=2
   </CorePaper>          
-  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
     xs=2
   </CorePaper>   
-  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
     xs=2
   </CorePaper>
 </CoreGrid>`}
@@ -335,22 +335,22 @@ export default function BasicCoreGridResponsive() {
   return (
     <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
       <CoreGrid spacing={{ md: 3, xs: 2 }} columns={{ md: 12, sm: 8, xs: 4 }}>           
-        <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=2
         </CorePaper>       
-        <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=2
         </CorePaper>         
-        <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=2
         </CorePaper>      
-        <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=2
         </CorePaper>          
-        <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=2
         </CorePaper>   
-        <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=2
         </CorePaper>
       </CoreGrid>
@@ -362,22 +362,22 @@ export default function BasicCoreGridResponsive() {
                 <CoreGrid spacing={{ md: 3, xs: 2 }} columns={{ md: 12, sm: 8, xs: 4 }}>
                    
                   <CorePaper
-                    gridProps={{ gridSize: { md: 4 } }}
+                    gridProps={{ gridSize: { md: 4, xs: 4 } }}
                     styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
                         xs=2
                   </CorePaper>
                    
-                  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+                  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
                         xs=2
                   </CorePaper>
                     
-                  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=2</CorePaper>
+                  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=2</CorePaper>
                    
-                  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=2</CorePaper>
+                  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=2</CorePaper>
                     
-                  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=2</CorePaper>
+                  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=2</CorePaper>
                     
-                  <CorePaper gridProps={{ gridSize: { md: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=2</CorePaper>
+                  <CorePaper gridProps={{ gridSize: { md: 4, xs: 4 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>xs=2</CorePaper>
    
                 </CoreGrid>
               </CoreBox>
@@ -498,13 +498,13 @@ export default function BasicCoreGridInteractive() {
             description="The Auto-layout makes the items equitably share the available space. That also means you can set the width of one item and the others will automatically resize around it."
             code={`<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
   <CoreGrid spacing={3}>
-    <CorePaper gridProps={{ gridSize: { md: 3 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+    <CorePaper gridProps={{ gridSize: { md: 3, xs: 3 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
       xs
     </CorePaper>
-    <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+    <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
       xs=6
     </CorePaper>
-    <CorePaper gridProps={{ gridSize: { md: 3 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+    <CorePaper gridProps={{ gridSize: { md: 3, xs: 3 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
       xs
     </CorePaper>
   </CoreGrid>
@@ -514,13 +514,13 @@ export default function BasicCoreGridAutoLayout() {
   return (
     <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
       <CoreGrid spacing={3}>
-        <CorePaper gridProps={{ gridSize: { md: 3 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 3, xs: 3 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs
         </CorePaper>
-        <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs=6
         </CorePaper>
-        <CorePaper gridProps={{ gridSize: { md: 3 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+        <CorePaper gridProps={{ gridSize: { md: 3, xs: 3 } }} styleClasses={ [CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
           xs
         </CorePaper>
       </CoreGrid>
@@ -532,16 +532,16 @@ export default function BasicCoreGridAutoLayout() {
                 <CoreGrid spacing={3}>
                    
                   <CorePaper
-                    gridProps={{ gridSize: { md: 3 } }}
+                    gridProps={{ gridSize: { md: 3, xs: 3 } }}
                     styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
                         xs
                   </CorePaper>
                    
-                  <CorePaper gridProps={{ gridSize: { md: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+                  <CorePaper gridProps={{ gridSize: { md: 6, xs: 6 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
                         xs=6
                   </CorePaper>
                     
-                  <CorePaper gridProps={{ gridSize: { md: 3 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
+                  <CorePaper gridProps={{ gridSize: { md: 3, xs: 3 } }} styleClasses={[CoreClasses.PADDING.P1, CoreClasses.TEXT.TEXT_CENTER]}>
                       xs
                   </CorePaper>
    
@@ -710,18 +710,16 @@ export default function BasicCoreGridComplex() {
 }`}
             renderElement={
               <CorePaper>
-                <CoreGrid spacing={2} styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.PADDING.P3]}>
-                  <CoreGrid gridProps={{ gridSize: { xs: 3 } }}>
+                <CoreGrid spacing={2} styleClasses={[CoreClasses.PADDING.P3]}>
+                  <CoreBox gridProps={{ gridSize: { xs: "auto" } }}>
                     <CoreImage
                       width={128}
                       height={128}
                       alt="complex"
                       src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" />
-                  </CoreGrid>
+                  </CoreBox>
 
-                  <CoreGrid
-                    gridProps={{ gridSize: { xs: 9 } }}
-                  >
+                  <CoreBox gridProps={{ gridSize: { xs: 9 } }}>
                     <CoreGrid
                       direction="row"
                       spacing={2}
@@ -753,7 +751,7 @@ export default function BasicCoreGridComplex() {
                           Remove
                       </CoreTypographyBody1>
                     </CoreGrid>
-                  </CoreGrid>
+                  </CoreBox>
                 </CoreGrid>
               </CorePaper>
             }
