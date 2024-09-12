@@ -1506,6 +1506,7 @@ return <Autocomplete multiple value={selectedValues} />;`;
   return (
     <>
       <ComponentDocs
+        basicSample={false}
         component={CoreAutocomplete}
         description={
           <>

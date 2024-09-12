@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 import {
   CoreBox,
@@ -12,7 +12,12 @@ import CodeImport from "../CodeImport";
 import CodeSample from "../CodeSample";
 import ComponentProps from "../ComponentProps";
 
-const DynamicComponent = ({ componentName, ...props }) => {
+/**
+ * @description Dynamic component to load component dynamically.
+ * @param {*} param
+ * @returns 
+ */
+const DynamicComponent = ({ componentName, children, ...props }) => {
   const [Component, setComponent] = useState(null);
 
   useEffect(() => {
@@ -40,24 +45,110 @@ const DynamicComponent = ({ componentName, ...props }) => {
     return <CoreBox>Loading...</CoreBox>;
   }
 
-  return <Component {...props} />;
+  return <Component {...props}>{children}</Component>;
+};
+
+/**
+ * @description Render props as string.
+ * @param {*} props 
+ * @returns 
+ */
+const renderPropsString = (props) => {
+  return Object.entries(props)
+    .filter(([key]) => key !== "children")
+    .map(([key, value]) => {
+      if (React.isValidElement(value)) {
+        return `${key}={${renderReactElementAsString(value)}}`;
+      }
+      return `${key}=${typeof value === "string" ? `"${value}"` : `{${JSON.stringify(value)}}`}`;
+    })
+    .join(" ");
+};
+
+/**
+ * @description Render react element as string.
+ * @param {*} element 
+ * @param {*} indent 
+ * @returns 
+ */
+const renderReactElementAsString = (element, indent = 0) => {
+  const indentString = "  ".repeat(indent);
+
+  if (typeof element.type === "string") {
+    const props = renderPropsString(element.props);
+    const children = renderChildrenAsString(element.props.children, indent + 1);
+
+    if (children) {
+      return `${indentString}<${element.type} ${props}>\n${children}\n${indentString}</${element.type}>`;
+    }
+    return `${indentString}<${element.type} ${props} />`;
+  }
+  if (typeof element.type === "function") {
+    const props = renderPropsString(element.props);
+    const children = renderChildrenAsString(element.props.children, indent + 1);
+
+    if (children) {
+      return `${indentString}<${element.type.name} ${props}>\n${children}\n${indentString}</${element.type.name}>`;
+    }
+    return `${indentString}<${element.type.name} ${props} />`;
+  }
+  return `${indentString}${element}`;
+};
+
+/**
+ * @description Render children as string.
+ * @param {*} children 
+ * @param {*} indent 
+ * @returns 
+ */
+const renderChildrenAsString = (children, indent = 0) => {
+  if (children === undefined || children === null) {
+    return "";
+  }
+  if (typeof children === "string") {
+    return `${"  ".repeat(indent)}${children}`;
+  }
+  if (React.isValidElement(children)) {
+    return renderReactElementAsString(children, indent);
+  }
+  if (Array.isArray(children)) {
+    return children.map(child => renderChildrenAsString(child, indent)).join("\n");
+  }
+  return `${"  ".repeat(indent)}${children}`;
+};
+
+/**
+ * @description Render component code.
+ * @param {*} component 
+ * @param { Boolean } hasChildren 
+ * @param {*} otherProps 
+ * @returns 
+ */
+const renderComponentCode = (component, children, otherProps) => {
+  const hasChildren = children !== undefined;
+  const propsString = renderPropsString(otherProps);
+
+  if (hasChildren) {
+    return `<${component?.name} ${propsString}>\n${renderChildrenAsString(children, 1)}\n</${component?.name}>`;
+  } else {
+    return `<${component?.name} ${propsString} />`;
+  }
 };
 
 /**
  * @description Component to render component documentation.
  * @todo handle styleClasses props
- * @param {*} props 
- * @returns 
+ * @param {*} props
+ * @returns
  */
 function ComponentDocs(props) {
-  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-imports
   const { component = null, description = null, samples = [], basicSample = true, basicSampleProps = {} } = props;
 
-  const renderPropsString = (props) => {
-    return Object.entries(props)
-      .map(([key, value]) => `${key}=${typeof value === "string" ? `"${value}"` : `{${JSON.stringify(value)}}`}`)
-      .join(" ");
-  };
+  const { children, ...otherProps } = basicSampleProps;
+
+  const renderedComponentCode = useMemo(() => {
+    return renderComponentCode(component, children, otherProps);
+  }, [component, children, otherProps]);
 
   return (
     <>
@@ -77,14 +168,18 @@ function ComponentDocs(props) {
               Basic representation of <CodeBlock>{component?.name}</CodeBlock> component.
             </CoreTypographyBody1>
           }
-          code={`<${component?.name} ${renderPropsString(basicSampleProps)} />`}
+          code={renderedComponentCode}
           expandedCode={`import { ${component?.name} } from "@wrappid/core";
 
 export default function Basic${component?.name}() {
-  return <${component?.name} ${renderPropsString(basicSampleProps)} />;
+  return (
+${renderedComponentCode.split("\n").map(line => "    " + line).join("\n")}
+  );
 }`}
           renderElement={
-            <DynamicComponent componentName={component?.name} {...basicSampleProps} />
+            <DynamicComponent componentName={component?.name} {...otherProps}>
+              {children}
+            </DynamicComponent>
           }
         />
       )}
