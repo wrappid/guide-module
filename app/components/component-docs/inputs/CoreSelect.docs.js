@@ -35,6 +35,7 @@ export default function CoreSelectDocs() {
   return (
     <>
       <ComponentDocs
+        basicSample={false}
         component={CoreSelect}
         description={ <CoreTypographyBody1>
           Select components are used for collecting user provided information from a list of options.
