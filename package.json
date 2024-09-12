@@ -1,6 +1,6 @@
 {
   "name": "guide-module",
-  "version": "0.0.107",
+  "version": "0.0.108",
   "description": "This is a template repository for a guide module.",
   "main": "index.js",
   "scripts": {
