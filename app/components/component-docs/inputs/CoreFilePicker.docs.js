@@ -1,34 +1,32 @@
-import {
-  CoreFilePicker,
-  CoreH4,
-  CoreTypographyBody1
-} from "@wrappid/core";
+import { CoreFilePicker } from "@wrappid/core";
   
 import CodeSample from "../../CodeSample";
+import ComponentDocs from "../ComponentDocs";
 
 export default function CoreFilePickerDocs() {
   return (
-    <>
-      <CoreH4>CoreFilePicker</CoreH4>
-  
-      <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
-      </CoreTypographyBody1>
-  
-      <CodeSample
-        title={"TITLE_OF_THE_SAMPLE (NOT_DEFINED)"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={`
-<CoreFilePicker label="Profile Photo" helperText="JPEG and PNG Formate Only"></CoreFilePicker>
-        `}
-        renderElement={<>
-          <CoreFilePicker label="Profile Photo" helperText="JPEG and PNG Formate Only"></CoreFilePicker>
-        </>}
-      />
-        
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* <ComponentProps component={CoreFilePicker} /> */}
-      
-    </>
+    <ComponentDocs
+      component={CoreFilePicker}
+      description="The CoreFilePicker helps to directly upload file."
+      samples={
+        <>
+          <CodeSample
+            title={"Label & Helper Text"}
+            description="CoreFilePicker can use label and helper text props. Here is a example of it"
+            code={"<CoreFilePicker label=\"Profile Photo\" helperText=\"JPEG and PNG Formate Only\"></CoreFilePicker>"}
+            expandedCode={`import { CoreFilePicker } from "@wrappid/core";
+export default function BasicCoreBox() {
+  return (
+    <CoreFilePicker label="Profile Photo" helperText="JPEG and PNG Formate Only"></CoreFilePicker>
+  );
+}`}
+            renderElement={<>
+              <CoreFilePicker label="Profile Photo" helperText="JPEG and PNG Formate Only"></CoreFilePicker>
+            </>}
+          />
+
+        </>
+      }
+    />
   );
 }
