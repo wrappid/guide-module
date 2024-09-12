@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.110](https://https//github.com/wrappid/wrappid-module/compare/v0.0.109...v0.0.110) (2024-09-12)
+
+
+### Features
+
+* **core:** :zap: display children support ([bc79a5a](https://https//github.com/wrappid/wrappid-module/commit/bc79a5ae98d822382ef966d42daaa58de4b43abe)), closes [#313](https://https//github.com/wrappid/wrappid-module/issues/313)
+
 ### [0.0.109](https://https//github.com/wrappid/wrappid-module/compare/v0.0.108...v0.0.109) (2024-09-12)
 
 ### [0.0.108](https://https//github.com/wrappid/wrappid-module/compare/v0.0.107...v0.0.108) (2024-09-12)
