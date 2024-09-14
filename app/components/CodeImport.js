@@ -6,9 +6,9 @@ function CodeImport(props) {
   const getImportStatement = () => {
     if (props?.name) {
       if (Array.isArray(props.name) && props.name.length > 0) {
-        return `import {${props.name.join(", ")}} from "@wrappid/core";`;
+        return `import { ${props.name.join(", ")} } from "@wrappid/core";`;
       } else {
-        return `import {${props.name}} from "@wrappid/core";`;
+        return `import { ${props.name} } from "@wrappid/core";`;
       }
     } else {
       return "Not Given";
