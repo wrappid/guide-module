@@ -1,58 +1,65 @@
 import {
   CoreCard,
-  CoreCardActionArea,
   CoreClasses,
-  CoreH4,
-  CoreTypographyBody1,
-  CoreCardMedia
+  CoreCardMedia,
+  CoreCardContent,
+  CoreH6
 } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
+import ComponentDocs from "../ComponentDocs";
 
 export default function CoreCardMediaDocs() {
   return (
     <>
-      <CoreH4>CoreCardMedia</CoreH4>
+      <ComponentDocs 
+        component={CoreCardMedia}
+        description=""
+        samples={
+          <>
+            <CodeSample 
+              title={" "}
+              description={"Check out this straightforward example to see how CoreCardMedia can bring visual elements to life in your card design!"}
+              code={`<CoreCardMedia
+  component="img"
+  height="350"
+  image="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNvd3xlbnwwfHwwfHx8MA%3D%3D"
+/>`}
+              expandedCode={`import { CoreCard, CoreCardContent, CoreCardMedia, CoreClasses, CoreH6 } from "@wrappid/core";
+
+export default function CoreCardDocs() {
   
-      <CoreTypographyBody1>
-          COMPONENT_DESCRIPTION
-      </CoreTypographyBody1>
-
-      <CodeSample
-        title={"Basic CoreCardMedia"}
-        description={"Often a card allow users to interact with the entirety of its surface to trigger its main action, be it an expansion, a link to another screen or some other behavior. The action area of the card can be specified by wrapping its contents in a CardActionArea component."}
-        code={`
-<CoreCard styleClasses={[CoreClasses.WIDTH.MAX_W_25]}>
-  <CoreCardActionArea>
-    <CoreCardMedia
-      component="img"
-      height="140"
-      image="https://upload.wikimedia.org/wikipedia/commons/7/7e/Lizard_-_e.JPG"
-      alt="green iguana"
-    />
-    
-  </CoreCardActionArea>
-</CoreCard>
-        `}
-        renderElement={<>
-          <CoreCard styleClasses={[CoreClasses.WIDTH.MAX_W_25]}>
-            <CoreCardActionArea>
-              <CoreCardMedia
-                component="img"
-                height="140"
-                image="https://upload.wikimedia.org/wikipedia/commons/7/7e/Lizard_-_e.JPG"
-                alt="green iguana"
-              />
-              
-            </CoreCardActionArea>
-          </CoreCard>
-
-        </>}
+  return ( 
+    <CoreCard styleClasses={[CoreClasses.WIDTH.W_25]}>
+      <CoreCardMedia
+        component="img"
+        height="350"
+        image="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNvd3xlbnwwfHwwfHx8MA%3D%3D"
       />
-        
-      {/* eslint-disable-next-line etc/no-commented-out-code */}
-      {/* <ComponentProps component={CoreCardMedia} /> */}
-      
+
+      <CoreCardContent styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+        <CoreH6>This is an image of cow.</CoreH6>
+      </CoreCardContent>
+    </CoreCard>
+  );  
+}`}
+              renderElement={
+                <CoreCard styleClasses={[CoreClasses.WIDTH.W_25]}>
+                  <CoreCardMedia
+                    component="img"
+                    height="350"
+                    image="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNvd3xlbnwwfHwwfHx8MA%3D%3D"
+                  />
+
+                  <CoreCardContent styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+                    <CoreH6>This is an image of cow.</CoreH6>
+                  </CoreCardContent>
+                </CoreCard>
+              }
+            />
+          </>
+        }
+      />
     </>
   );
 }

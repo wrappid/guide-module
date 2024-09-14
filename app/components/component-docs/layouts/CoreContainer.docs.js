@@ -23,7 +23,7 @@ export default function CoreContainerDocs() {
 </CoreContainer>`}
             expandedCode={`import { CoreBox, CoreClasses, CoreContainer } from "@wrappid/core";
 
-export default function BasicCoreBox() {
+export default function BasicCoreContainer() {
 
   return (
     <CoreContainer maxWidth="sm">
@@ -46,7 +46,7 @@ export default function BasicCoreBox() {
 </CoreContainer>`}
             expandedCode={`import { CoreBox, CoreClasses, CoreContainer } from "@wrappid/core";
 
-export default function BasicCoreBox() {
+export default function BasicCoreContainerFixed() {
 
   return (
     <CoreBox styleClasses={[CoreClasses.WIDTH.W_50]}>

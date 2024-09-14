@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.118](https://https//github.com/wrappid/wrappid-module/compare/v0.0.117...v0.0.118) (2024-09-14)
+
+
+### Bug Fixes
+
+* **core:** :bug: move CoreMenuDocs registry entry to Navigation ([2d09efc](https://https//github.com/wrappid/wrappid-module/commit/2d09efcfef26eec04102aae033658ed4cae818bf)), closes [#336](https://https//github.com/wrappid/wrappid-module/issues/336)
+
+### [0.0.117](https://https//github.com/wrappid/wrappid-module/compare/v0.0.116...v0.0.117) (2024-09-12)
+
+### [0.0.116](https://https//github.com/wrappid/wrappid-module/compare/v0.0.115...v0.0.116) (2024-09-12)
+
+### [0.0.115](https://https//github.com/wrappid/wrappid-module/compare/v0.0.114...v0.0.115) (2024-09-12)
+
+### [0.0.114](https://https//github.com/wrappid/wrappid-module/compare/v0.0.113...v0.0.114) (2024-09-12)
+
+### [0.0.113](https://https//github.com/wrappid/wrappid-module/compare/v0.0.112...v0.0.113) (2024-09-12)
+
+### [0.0.112](https://https//github.com/wrappid/wrappid-module/compare/v0.0.111...v0.0.112) (2024-09-12)
+
+### [0.0.111](https://https//github.com/wrappid/wrappid-module/compare/v0.0.110...v0.0.111) (2024-09-12)
+
+### [0.0.110](https://https//github.com/wrappid/wrappid-module/compare/v0.0.109...v0.0.110) (2024-09-12)
+
+
+### Features
+
+* **core:** :zap: display children support ([bc79a5a](https://https//github.com/wrappid/wrappid-module/commit/bc79a5ae98d822382ef966d42daaa58de4b43abe)), closes [#313](https://https//github.com/wrappid/wrappid-module/issues/313)
+
+### [0.0.109](https://https//github.com/wrappid/wrappid-module/compare/v0.0.108...v0.0.109) (2024-09-12)
+
+### [0.0.108](https://https//github.com/wrappid/wrappid-module/compare/v0.0.107...v0.0.108) (2024-09-12)
+
+
+### Bug Fixes
+
+* **global:** :bug: fix basicSampl ([5257595](https://https//github.com/wrappid/wrappid-module/commit/5257595a5bcb966b988ac8d23bf6520c1c3b69b3)), closes [#294](https://https//github.com/wrappid/wrappid-module/issues/294)
+
 ### [0.0.107](https://https//github.com/wrappid/wrappid-module/compare/v0.0.106...v0.0.107) (2024-09-09)
 
 ### [0.0.106](https://https//github.com/wrappid/wrappid-module/compare/v0.0.105...v0.0.106) (2024-09-09)
