@@ -4,7 +4,6 @@ import CoreBadgeDocs from "./dataDisplay/CoreBadge.docs.js";
 import CoreChipDocs from "./dataDisplay/CoreChip.docs.js";
 import CoreDividerDocs from "./dataDisplay/CoreDivider.docs.js";
 import CoreEmailLinkDocs from "./dataDisplay/CoreEmailLink.docs.js";
-import CoreEmailOrPhoneLinkDocs from "./dataDisplay/CoreEmailOrPhoneLink.docs.js";
 import CoreH1Docs from "./dataDisplay/CoreH1.docs.js";
 import CoreH2Docs from "./dataDisplay/CoreH2.docs.js";
 import CoreH3Docs from "./dataDisplay/CoreH3.docs.js";
@@ -219,7 +218,6 @@ export default {
       CoreChip                   : { main: CoreChipDocs },
       CoreDivider                : { main: CoreDividerDocs },
       CoreEmailLink              : { main: CoreEmailLinkDocs },
-      CoreEmailOrPhoneLink       : { main: CoreEmailOrPhoneLinkDocs },
       CoreH1                     : { main: CoreH1Docs },
       CoreH2                     : { main: CoreH2Docs },
       CoreH3                     : { main: CoreH3Docs },
@@ -383,7 +381,6 @@ export default {
       CoreJSONInput           : { main: CoreJSONInputDocs },
       CoreLoadingButton       : { main: CoreLoadingButtonDocs },
       CoreMedicineSelector    : { main: CoreMedicineSelectorDocs },
-      CoreMenu                : { main: CoreMenuDocs },
       CoreMultiTimeRangePicker: { main: CoreMultiTimeRangePickerDocs },
       CoreOtpInput            : { main: CoreOtpInputDocs },
       CoreOutlinedButton      : { main: CoreOutlinedButtonDocs },
@@ -429,6 +426,7 @@ export default {
     children: {
       CoreCustomTabs : { main: CoreCustomTabsDocs },
       CoreLink       : { main: CoreLinkDocs },
+      CoreMenu       : { main: CoreMenuDocs },
       CoreMenuItem   : { main: CoreMenuItemDocs },
       CoreMenuList   : { main: CoreMenuListDocs },
       CoreNavigation : { main: CoreNavigationDocs },
