@@ -35,15 +35,12 @@ export default function CoreAvatarDocs() {
                 <CodeBlock>srcSet</CodeBlock> to the component.
               </>
             }
-            code={`
-<CoreAvatar src="https://picsum.photos/200?random=1" />
+            code={`<CoreAvatar src="https://picsum.photos/200?random=1" />
 <CoreAvatar src="https://picsum.photos/200?random=2" />
-<CoreAvatar src="https://picsum.photos/200?random=3" />
-            `}
-            expandedCode={`
-import { CoreAvatar, CoreClasses, CoreStack } from "@wrappid/core";
+<CoreAvatar src="https://picsum.photos/200?random=3" />`}
+            expandedCode={`import { CoreAvatar, CoreClasses, CoreStack } from "@wrappid/core";
 
-export function Demo() {
+export default function Demo() {
   return (
     <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
       <CoreAvatar src="https://picsum.photos/200?random=1" />
@@ -51,8 +48,7 @@ export function Demo() {
       <CoreAvatar src="https://picsum.photos/200?random=3" />
     </CoreStack>
   );
-}
-            `}
+}`}
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -78,15 +74,22 @@ export function Demo() {
                 <CodeBlock>{"children"}</CodeBlock>.
               </>
             }
-            code={`<CoreStack
-  styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
-  spacing={2}
-  direction="row"
-  >
+            code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row" >
   <CoreAvatar>W</CoreAvatar>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]}>WR</CoreAvatar>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>OP</CoreAvatar>
 </CoreStack>`}
+            expandedCode={`import { CoreAvatar, CoreClasses, CoreStack } from "@wrappid/core";
+  
+export default function LetterAvatars() {
+  return (
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row" >
+      <CoreAvatar>W</CoreAvatar>
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]}>WR</CoreAvatar>
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>OP</CoreAvatar>
+    </CoreStack>
+  );
+}`}
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -137,6 +140,36 @@ export function Demo() {
     styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XXLARGE]}
   />
 </CoreStack>`}
+            expandedCode={`import { CoreAvatar, CoreClasses, CoreStack } from "@wrappid/core";
+  
+export default function SizesAvatars() {
+  return (
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
+      <CoreAvatar src="https://picsum.photos/200?random=1" />
+      <CoreAvatar
+        src="https://picsum.photos/200?random=1"
+        styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_SMALL]}
+      />
+      <CoreAvatar src="https://picsum.photos/200?random=2"/>
+      <CoreAvatar
+        src="https://picsum.photos/200?random=3"
+        styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_MEDIUM]}
+      />
+      <CoreAvatar
+        src="https://picsum.photos/200?random=4"
+        styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_LARGE]}
+      />
+      <CoreAvatar
+        src="https://picsum.photos/200?random=5"
+        styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XLARGE]}
+      />
+      <CoreAvatar
+        src="https://picsum.photos/200?random=6"
+        styleClasses={[CoreClasses.DATA_DISPLAY.AVATAR_XXLARGE]}
+      />
+    </CoreStack>
+  );
+}`}   
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -194,6 +227,23 @@ export function Demo() {
     <CoreIcon>assignment</CoreIcon>
   </CoreAvatar>
 </CoreStack>`}
+            expandedCode={`import { CoreAvatar, CoreClasses, CoreStack, CoreIcon } from "@wrappid/core";
+  
+export default function IconAvatars() {
+  return (
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY_DARK]}>
+        <CoreIcon>folder</CoreIcon>
+      </CoreAvatar>
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]}>
+        <CoreIcon>pageview</CoreIcon>
+      </CoreAvatar>
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]}>
+        <CoreIcon>assignment</CoreIcon>
+      </CoreAvatar>
+    </CoreStack>         
+  );
+}`}
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -228,6 +278,18 @@ export function Demo() {
     <CoreIcon>assignment</CoreIcon>
   </CoreAvatar>
 </CoreStack>`}
+            expandedCode={`import { CoreAvatar, CoreClasses, CoreStack, CoreIcon } from "@wrappid/core";
+  
+export default function VariantsAvatar(){
+  return(
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]} variant="square">N</CoreAvatar>
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]} variant="rounded">
+        <CoreIcon>assignment</CoreIcon>
+      </CoreAvatar>
+    </CoreStack>
+  );
+}`}
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -264,19 +326,21 @@ export function Demo() {
               </>
             }
             code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
-  <CoreAvatar
-    styleClasses={[CoreClasses.BG.BG_PRIMARY]}
-    alt="Remy Sharp"
-    src="/broken-image.jpg"
-  >W</CoreAvatar>
-  <CoreAvatar
-    styleClasses={[CoreClasses.BG.BG_PRIMARY]}
-    alt="Remy Sharp"
-    src="/broken-image.jpg"
-  />
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]} alt="Remy Sharp" src="/broken-image.jpg">W</CoreAvatar>
+  <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]} alt="Remy Sharp" src="/broken-image.jpg"/>
   <CoreAvatar src="/broken-image.jpg" />
-</CoreStack>
-        `}
+</CoreStack>`}
+            expandedCode={`import { CoreStack, CoreAvatar, CoreClasses } from "@wrappid/core";
+
+export default function FallbacksAvatar(){
+  return(
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]} alt="Remy Sharp" src="/broken-image.jpg">W</CoreAvatar>
+      <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]} alt="Remy Sharp" src="/broken-image.jpg"/>
+      <CoreAvatar src="/broken-image.jpg" />
+    </CoreStack>
+  );
+}`}
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -319,6 +383,21 @@ export function Demo() {
     <CoreAvatar alt="Some Photo 5" src="https://picsum.photos/200?random=5" />
   </CoreAvatarGroup>
 </CoreStack>`}
+            expandedCode={`import { CoreStack, CoreAvatar, CoreClasses, CoreAvatarGroup } from "@wrappid/core";
+  
+export default function GroupedAvatar (){
+  return(
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+      <CoreAvatarGroup max={4}>
+        <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+        <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+        <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+        <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
+        <CoreAvatar alt="Some Photo 5" src="https://picsum.photos/200?random=5" />
+      </CoreAvatarGroup>
+    </CoreStack>
+  );
+}`}
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -355,6 +434,20 @@ export function Demo() {
     <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
   </CoreAvatarGroup>
 </CoreStack>`}
+            expandedCode={`import { CoreStack, CoreAvatar, CoreClasses, CoreAvatarGroup } from "@wrappid/core";
+ 
+export default function TotalAvatars(){
+  return(
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+      <CoreAvatarGroup total={24}>
+        <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+        <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+        <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+        <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
+      </CoreAvatarGroup>
+    </CoreStack>
+  );
+}`}
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -390,12 +483,25 @@ The <CodeBlock>renderSurplus</CodeBlock> prop is useful when you need to render 
               </>
             }
             code={`<CoreAvatarGroup renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</>}total={4250}>
-    <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
-    <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
-    <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
-    <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
-</CoreAvatarGroup>
-        `}
+  <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+  <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+  <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+  <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
+</CoreAvatarGroup>`}
+            expandedCode={`import { CoreStack, CoreAvatar, CoreClasses, CoreSpan, CoreAvatarGroup } from "@wrappid/core";
+          
+export default function CustomSurplusAvatar (){
+  return(
+    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2} >
+      <CoreAvatarGroup renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>} total={4251}>
+        <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
+        <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
+        <CoreAvatar alt="Some Photo 3" src="https://picsum.photos/200?random=3" />
+        <CoreAvatar alt="Some Photo 4" src="https://picsum.photos/200?random=4" />
+      </CoreAvatarGroup>
+    </CoreStack>
+  );
+}`}
             renderElement={
               <CoreStack
                 styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
@@ -429,7 +535,6 @@ The <CodeBlock>renderSurplus</CodeBlock> prop is useful when you need to render 
                 direction="row"
                 spacing={2}
               >
-            
               </CoreStack>
             }
           />
