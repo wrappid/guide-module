@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.118](https://https//github.com/wrappid/wrappid-module/compare/v0.0.117...v0.0.118) (2024-09-14)
+
+
+### Bug Fixes
+
+* **core:** :bug: move CoreMenuDocs registry entry to Navigation ([2d09efc](https://https//github.com/wrappid/wrappid-module/commit/2d09efcfef26eec04102aae033658ed4cae818bf)), closes [#336](https://https//github.com/wrappid/wrappid-module/issues/336)
+
 ### [0.0.117](https://https//github.com/wrappid/wrappid-module/compare/v0.0.116...v0.0.117) (2024-09-12)
 
 ### [0.0.116](https://https//github.com/wrappid/wrappid-module/compare/v0.0.115...v0.0.116) (2024-09-12)
