@@ -18,27 +18,58 @@ export default function CoreTableHeadDocs() {
       <ComponentDocs
         component={CORE_COMPONENT}
         description={`${CORE_COMPONENT_NAME}`}
+        basicSampleProps={{
+          children: <CoreTableRow>
+            <CoreTableCell>Header 1</CoreTableCell></CoreTableRow>
+        }}
         samples={
           <CodeSample
-            title={`Basic ${CORE_COMPONENT_NAME}`}
-            description={"A simple example of CoreTableHead."}
-            code={`<CoreTable>
-  <CoreTableHead>
-    <CoreTableRow>
-      <CoreTableCell>Header 1</CoreTableCell>
+            title={`${CORE_COMPONENT_NAME} with CoreTableBody representation`}
+            description={"A sample with CoreTableHead and CoreTableBody."}
+            code={`<CoreTableHead>
+  <CoreTableRow>
+    <CoreTableCell>Header 1</CoreTableCell>
 
-      <CoreTableCell>Header 2</CoreTableCell>
-    </CoreTableRow>
-  </CoreTableHead>
+    <CoreTableCell>Header 2</CoreTableCell>
+  </CoreTableRow>
+</CoreTableHead>
 
-  <CoreTableBody>
-    <CoreTableRow>
-      <CoreTableCell>Body 1</CoreTableCell>
+<CoreTableBody>
+  <CoreTableRow>
+    <CoreTableCell>Body 1</CoreTableCell>
 
-      <CoreTableCell>Body 2</CoreTableCell>
-    </CoreTableRow>
-  </CoreTableBody>
-</CoreTable>`}
+    <CoreTableCell>Body 2</CoreTableCell>
+  </CoreTableRow>
+</CoreTableBody>`}
+            expandedCode={`import {
+  CoreTable,
+  CoreTableBody,
+  CoreTableCell,
+  CoreTableHead,
+  CoreTableRow
+} from "@wrappid/core";
+
+export default function SampleCoreTableHeadWithCoreTableBody() {
+  return (
+    <CoreTable>
+      <CoreTableHead>
+        <CoreTableRow>
+          <CoreTableCell>Header 1</CoreTableCell>
+
+          <CoreTableCell>Header 2</CoreTableCell>
+        </CoreTableRow>
+      </CoreTableHead>
+
+      <CoreTableBody>
+        <CoreTableRow>
+          <CoreTableCell>Body 1</CoreTableCell>
+
+          <CoreTableCell>Body 2</CoreTableCell>
+        </CoreTableRow>
+      </CoreTableBody>
+    </CoreTable>
+  );
+}`}
             renderElement={<>
               <CoreTable>
                 <CoreTableHead>

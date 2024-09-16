@@ -21,21 +21,43 @@ export default function CoreTableRowDocs() {
           <CodeSample
             title={"Basic CoreTableRow"}
             description={`A basic sample of ${CORE_COMPONENT_NAME}.`}
-            code={`<CoreTable>
-  <CoreTableBody>
-    <CoreTableRow>
-      <CoreTableCell>Row 1, Cell 1</CoreTableCell>
+            code={`<CoreTableRow>
+  <CoreTableCell>Row 1, Cell 1</CoreTableCell>
 
-      <CoreTableCell>Row 1, Cell 2</CoreTableCell>
-    </CoreTableRow>
+  <CoreTableCell>Row 1, Cell 2</CoreTableCell>
+</CoreTableRow>
 
-    <CoreTableRow>
-      <CoreTableCell>Row 2, Cell 1</CoreTableCell>
+<CoreTableRow>
+  <CoreTableCell>Row 2, Cell 1</CoreTableCell>
 
-      <CoreTableCell>Row 2, Cell 2</CoreTableCell>
-    </CoreTableRow>
-  </CoreTableBody>
-</CoreTable>`}
+  <CoreTableCell>Row 2, Cell 2</CoreTableCell>
+</CoreTableRow>`}
+            expandedCode={`import {
+  CoreTable,
+  CoreTableBody,
+  CoreTableCell,
+  CoreTableRow
+} from "@wrappid/core";
+
+export default function SampleCoreTableRow() {
+  return (
+    <CoreTable>
+      <CoreTableBody>
+        <CoreTableRow>
+          <CoreTableCell>Row 1, Cell 1</CoreTableCell>
+
+          <CoreTableCell>Row 1, Cell 2</CoreTableCell>
+        </CoreTableRow>
+
+        <CoreTableRow>
+          <CoreTableCell>Row 2, Cell 1</CoreTableCell>
+
+          <CoreTableCell>Row 2, Cell 2</CoreTableCell>
+        </CoreTableRow>
+      </CoreTableBody>
+    </CoreTable>
+  );
+}`}
             renderElement={<>
               <CoreTable>
                 <CoreTableBody>

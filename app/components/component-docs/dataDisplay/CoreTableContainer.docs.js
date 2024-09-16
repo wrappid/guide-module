@@ -18,6 +18,7 @@ export default function CoreTableContainerDocs() {
     <ComponentDocs
       component={CORE_COMPONENT}
       description={`${CORE_COMPONENT_NAME} is a wrapper component that adds a border and sets the Table width`}
+      basicSample={false}
       samples={
         <>
           <CodeSample
@@ -32,6 +33,27 @@ export default function CoreTableContainerDocs() {
     </CoreTableBody>
   </CoreTable>
 </CoreTableContainer>`}
+            expandedCode={`import {
+  CoreTable,
+  CoreTableBody,
+  CoreTableCell,
+  CoreTableContainer,
+  CoreTableRow
+} from "@wrappid/core";
+
+export default function BasicCoreTableContainer() {
+  return (
+    <CoreTableContainer component={CorePaper}>
+      <CoreTable>
+        <CoreTableBody>
+          <CoreTableRow>
+            <CoreTableCell>Content in a CoreTableContainer</CoreTableCell>
+          </CoreTableRow>
+        </CoreTableBody>
+      </CoreTable>
+    </CoreTableContainer>
+  );
+}`}
             renderElement={<>
               <CoreTableContainer component={CorePaper}>
                 <CoreTable>

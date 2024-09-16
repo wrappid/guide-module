@@ -16,27 +16,51 @@ export default function CoreTableBodyDocs() {
     <ComponentDocs
       component={CORE_COMPONENT}
       description={`${CORE_COMPONENT_NAME} is used to group the body content of a table.`}
+      basicSample={false}
       samples={
         <>
           <CodeSample
             title="Basic Usage"
             description={`Below is a basic usage sample of ${CORE_COMPONENT_NAME}.`}
-            code={`<CoreTable>
-  <CoreTableBody>
-    <CoreTableRow>
-      <CoreTableCell>Content 1</CoreTableCell>
+            code={`<CoreTableBody>
+  <CoreTableRow>
+    <CoreTableCell>Content 1</CoreTableCell>
 
-      <CoreTableCell>Content 2</CoreTableCell>
-    </CoreTableRow>
+    <CoreTableCell>Content 2</CoreTableCell>
+  </CoreTableRow>
 
-    <CoreTableRow>
-      <CoreTableCell>Content 3</CoreTableCell>
+  <CoreTableRow>
+    <CoreTableCell>Content 3</CoreTableCell>
 
-      <CoreTableCell>Content 4</CoreTableCell>
-    </CoreTableRow>
-  </CoreTableBody>
-</CoreTable>`}
-            expandedCode={""}
+    <CoreTableCell>Content 4</CoreTableCell>
+  </CoreTableRow>
+</CoreTableBody>`}
+            expandedCode={`import {
+  CoreTable,
+  CoreTableBody,
+  CoreTableCell,
+  CoreTableRow 
+} from "@wrappid/core";
+
+export default function BasicCoreTableBody() {
+  return (
+    <CoreTable>
+      <CoreTableBody>
+        <CoreTableRow>
+          <CoreTableCell>Content 1</CoreTableCell>
+
+          <CoreTableCell>Content 2</CoreTableCell>
+        </CoreTableRow>
+
+        <CoreTableRow>
+          <CoreTableCell>Content 3</CoreTableCell>
+
+          <CoreTableCell>Content 4</CoreTableCell>
+        </CoreTableRow>
+      </CoreTableBody>
+    </CoreTable>
+  );
+}`}
             renderElement={<>
               <CoreTable>
                 <CoreTableBody>
