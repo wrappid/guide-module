@@ -1,45 +1,60 @@
-import { CoreClasses, CoreH4, CoreTable, CoreTableBodyCell } from "@wrappid/core";
+import { CoreTable, CoreTableBodyCell } from "@wrappid/core";
 
 import CodeSample from "../../CodeSample";
-import ComponentProps from "../../ComponentProps";
+import ComponentDocs from "../ComponentDocs";
+
+const CORE_COMPONENT = CoreTableBodyCell;
+const CORE_COMPONENT_NAME = "CoreTableBodyCell";
 
 export default function CoreTableBodyCellDocs() {
 
   return (
     <>
-      <CoreH4 styleClasses={[CoreClasses.MARGIN.MY2, CoreClasses.COLOR.TEXT_PRIMARY]}>
-        CoreTableBodyCell
-      </CoreH4>
+      <ComponentDocs
+        component={CORE_COMPONENT}
+        description={CORE_COMPONENT_NAME + " component is used to display data in a table body cell."}
+        basicSample={false}
+        samples={
+          <CodeSample
+            title={"Basic " + CORE_COMPONENT_NAME}
+            description={CORE_COMPONENT_NAME + " component is used to display data in a table body cell."}
+            code={`<CoreTableBodyCell>DATA</CoreTableBodyCell>
 
-      <CodeSample
-        title={"Simple CoreTableBodyCell"}
-        description={"DESCRIPTION_OF_THE_SAMPLE"}
-        code={`
-<CoreTable>
-  <CoreTableBodyCell>DATA</CoreTableBodyCell>
+<CoreTableBodyCell>DATA</CoreTableBodyCell>
 
-  <CoreTableBodyCell>DATA</CoreTableBodyCell>
+<CoreTableBodyCell>DATA</CoreTableBodyCell>
 
-  <CoreTableBodyCell>DATA</CoreTableBodyCell>
+<CoreTableBodyCell>DATA</CoreTableBodyCell>`}
+            expandedCode={`import {
+  CoreTable,
+  CoreTableBodyCell
+} from "@wrappid/core";
 
-  <CoreTableBodyCell>DATA</CoreTableBodyCell>
-</CoreTable>
-        
-        `}
-        renderElement={<>
-          <CoreTable>
-            <CoreTableBodyCell>DATA</CoreTableBodyCell>
+export default function BasicCoreTableBodyCell() {
+  return (
+    <CoreTable>
+      <CoreTableBodyCell>DATA</CoreTableBodyCell>
 
-            <CoreTableBodyCell>DATA</CoreTableBodyCell>
+      <CoreTableBodyCell>DATA</CoreTableBodyCell>
 
-            <CoreTableBodyCell>DATA</CoreTableBodyCell>
+      <CoreTableBodyCell>DATA</CoreTableBodyCell>
 
-            <CoreTableBodyCell>DATA</CoreTableBodyCell>
-          </CoreTable>
-        </>} />
+      <CoreTableBodyCell>DATA</CoreTableBodyCell>
+    </CoreTable>
+  );
+}`}
+            renderElement={<>
+              <CoreTable>
+                <CoreTableBodyCell>DATA</CoreTableBodyCell>
 
-      <ComponentProps component={CoreTableBodyCell} />
-        
+                <CoreTableBodyCell>DATA</CoreTableBodyCell>
+
+                <CoreTableBodyCell>DATA</CoreTableBodyCell>
+
+                <CoreTableBodyCell>DATA</CoreTableBodyCell>
+              </CoreTable>
+            </>} />
+        }/>
     </>
   );
 }
