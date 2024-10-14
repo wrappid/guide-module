@@ -356,7 +356,7 @@ export default function BasicCoreList() {
 
                 <CodeSample
                   title={"Basic Nested List"}
-                  description={"This is the basic structure of nested list using varient=\"HTML\" and liststyle props."}
+                  description={"This is the basic structure of nested list using variant=\"HTML\" and liststyle props."}
                   code={`<CoreList variant="HTML" listType="DECIMAL">
   <CoreListItem>
     <CoreListItemText primary="List Item" />
@@ -502,47 +502,43 @@ export default function BasicNestedList() {
                 <CodeSample
                   title={"Dropdown Nested List"}
                   description={"This structure allows for the organization of data in a hierarchical or multi-dimensional manner."}
-                  code={`<CoreList variant="HTML" listType="DECIMAL">
-  <CoreListItem>
-    <CoreListItemText primary="List Item" />
-
-    <CoreList variant="HTML" listType="UPPER_ROMAN">
-      <CoreListItem>
-        <CoreListItemText primary="List Item 1" />
-
-        <CoreList variant="HTML" listType="LOWER_ROMAN">
-          <CoreListItem>
-            <CoreListItemText primary="List Item 1" />
-          </CoreListItem>
-
-          <CoreListItem>
-            <CoreListItemText primary="List Item 2" />
-          </CoreListItem>
-
-          <CoreListItem>
-            <CoreListItemText primary="List Item 3" />
-          </CoreListItem>
-        </CoreList>
-      </CoreListItem>
-
-      <CoreListItem>
-        <CoreListItemText primary="List Item 2" />
-      </CoreListItem>
-
-      <CoreListItem>
-        <CoreListItemText primary="List Item 3" />
-      </CoreListItem>
+                  code={`<CoreList>
+  <CoreListSubheader>Nested List Items</CoreListSubheader>
+  <CoreListItem disablePadding>
+    <CoreListItemButton>
+      <CoreListItemIcon>
+        <CoreIcon icon="inbox" />
+      </CoreListItemIcon>
+      <CoreListItemText primary="Inbox" />
+    </CoreListItemButton>
+  </CoreListItem>
+  <CoreListItem disablePadding>
+    <CoreListItemButton>
+      <CoreListItemIcon>
+        <CoreIcon icon="drafts" />
+      </CoreListItemIcon>
+      <CoreListItemText primary="Drafts" />
+    </CoreListItemButton>
+  </CoreListItem>
+  <CoreListItem disablePadding onClick={handleClick}>
+    <CoreListItemButton>
+      <CoreListItemIcon>
+        <CoreIcon icon="merge_type" />
+      </CoreListItemIcon>
+      <CoreListItemText primary="Type" />
+      {open ? (<CoreIcon icon="keyboard_arrow_up" />) : (<CoreIcon icon="keyboard_arrow_down" />)}
+    </CoreListItemButton>
+  </CoreListItem>
+  <CoreCollapse in={open} >
+    <CoreList disablePadding styleClasses={[CoreClasses.PADDING.PL2]}>
+      <CoreListItemButton >
+        <CoreListItemText primary="Type 1" />
+      </CoreListItemButton>
+      <CoreListItemButton >
+        <CoreListItemText primary="Type 2" />
+      </CoreListItemButton>
     </CoreList>
-
-  </CoreListItem>
-
-  <CoreListItem>
-    <CoreListItemText primary="List" />
-  </CoreListItem>
-
-  <CoreListItem>
-    <CoreListItemText primary="Item" />
-  </CoreListItem>
+  </CoreCollapse>
 </CoreList>`}
                   expandedCode={`import React from "react";
 
@@ -1759,22 +1755,22 @@ export default function ScrollableList() {
               title={"Sticky Subheader"}
               description="Upon scrolling, subheaders remain pinned to the top of the screen until pushed off screen by the next subheader. This feature relies on CSS sticky positioning."
               code={`<CoreList
-        subheader={<li />}
-      >
-        {[1,2,3,4].map((sectionId) => (
-          <li key={${"section-${sectionId}"}}>
-            <ul>
-              <CoreListSubheader>{${"I'm sticky ${sectionId}"}}</CoreListSubheader>
+  subheader={<li />}
+>
+  {[1,2,3,4].map((sectionId) => (
+    <li key={${"section-${sectionId}"}}>
+      <ul>
+        <CoreListSubheader>{${"I'm sticky ${sectionId}"}}</CoreListSubheader>
 
-              {[0, 1, 2].map((item) => (
-                <CoreListItem key={${"item-${sectionId}-${item}"}}>
-                  <CoreListItemText primary={${"Item ${item}"}} />
-                </CoreListItem>
-              ))}
-            </ul>
-          </li>
+        {[0, 1, 2].map((item) => (
+          <CoreListItem key={${"item-${sectionId}-${item}"}}>
+            <CoreListItemText primary={${"Item ${item}"}} />
+          </CoreListItem>
         ))}
-      </CoreList>`}
+      </ul>
+    </li>
+  ))}
+</CoreList>`}
               expandedCode={`import {
   CoreClasses,
   CoreList,
@@ -1985,6 +1981,251 @@ export default function GutterlessList() {
                       <CoreListItemText primary={`Line item ${value}`} />
                     </CoreListItem>
                   ))}
+                </CoreList>
+              }
+            />
+
+            <CodeSample
+              title={"Grid Props"}
+              description={<><CoreTypographyBody1>Grid props enable grid view in CoreList. When using the <CodeBlock>grid variant</CodeBlock> we use
+
+                <CodeBlock>Grid</CodeBlock> all direct children of coreList will be wrapped within CoreGrid and thus give us a grid view.
+              </CoreTypographyBody1>
+
+              <CoreTypographyBody1>Without <CodeBlock>variant=Grid</CodeBlock> we cannot use
+                  
+                <CodeBlock>itemGridProps</CodeBlock>.</CoreTypographyBody1></>}
+              code={`<CoreList variant="grid">
+  <CoreListItem >
+    <CoreListItemText primary="Car" />
+  </CoreListItem>
+  <CoreListItem>
+    <CoreListItemText primary="Truck"/>
+  </CoreListItem>
+  <CoreListItem>
+    <CoreListItemText primary="Bus"/>
+  </CoreListItem>
+</CoreList>`}
+              expandedCode={`import {
+  CoreList,
+  CoreListItem,
+  CoreListItemText
+} from "@wrappid/core";
+
+export default function BasicCoreListGrid() {
+  return (
+    <CoreList variant="grid">
+      <CoreListItem >
+        <CoreListItemText primary="Car" />
+      </CoreListItem>
+      <CoreListItem>
+        <CoreListItemText primary="Truck"/>
+      </CoreListItem>
+      <CoreListItem>
+        <CoreListItemText primary="Bus"/>
+      </CoreListItem>
+    </CoreList>
+  );
+}`}
+              renderElement={
+                <CoreList
+                  variant="grid"
+                  styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                  <CoreListItem >
+                    <CoreListItemText primary="CAR" />
+                  </CoreListItem>
+
+                  <CoreListItem>
+                    <CoreListItemText primary="PLANE"/>
+                  </CoreListItem>
+
+                  <CoreListItem>
+                    <CoreListItemText primary="ROCKET"/>
+                  </CoreListItem>
+                </CoreList>
+              }
+            />
+
+            <CodeSample
+              title={"ItemGridProps"}
+              description="ItemGridProps apply gridProps to all the child(CoreListItem) of CoreList"
+              code={`<CoreList
+  variant="grid"
+  itemGridProps={{
+    gridSize    : { md: 6, sm: 6 },
+    styleClasses: [CoreClasses.BORDER.BORDER] 
+  }}
+>
+  <CoreListItem>
+    <CoreListItemText primary="Car" />
+  </CoreListItem>
+  <CoreListItem>
+    <CoreListItemText primary="Bus"/>
+  </CoreListItem>
+  <CoreListItem>
+    <CoreListItemText primary="Train"/>
+  </CoreListItem>
+  <CoreListItem>
+    <CoreListItemText primary="Ship"/>
+  </CoreListItem>
+</CoreList>`}
+              expandedCode={`import {
+  CoreClasses, 
+  CoreLayoutItem, 
+  BlankLayout,
+  CoreList,
+  CoreListItem,
+  CoreListItemText,
+  CoreBox,
+  CoreTypographyBody1,
+  CoreButton
+} from "@wrappid/core";
+
+export default function BasicItemGridProps() {
+  return (
+    <CoreList
+      variant="grid"
+      itemGridProps={{
+        gridSize    : { md: 6, sm: 6 },
+        styleClasses: [CoreClasses.BORDER.BORDER] 
+      }}
+    >
+      <CoreListItem>
+        <CoreListItemText primary="Car" />
+      </CoreListItem>
+      <CoreListItem>
+        <CoreListItemText primary="Bus"/>
+      </CoreListItem>
+      <CoreListItem>
+        <CoreListItemText primary="Train"/>
+      </CoreListItem>
+      <CoreListItem>
+        <CoreListItemText primary="Ship"/>
+      </CoreListItem>
+    </CoreList>
+  );
+}`}
+              renderElement={
+                <CoreList
+                  variant="grid"
+                  itemGridProps={{
+                    gridSize    : { md: 6, sm: 6 },
+                    styleClasses: [CoreClasses.BORDER.BORDER] 
+                  }}
+                >
+                  <CoreListItem>
+                    <CoreListItemText primary="Arka" />
+                  </CoreListItem>
+
+                  <CoreListItem>
+                    <CoreListItemText primary="Arka1"/>
+                  </CoreListItem>
+
+                  <CoreListItem>
+                    <CoreListItemText primary="Arka2"/>
+                  </CoreListItem>
+
+                  <CoreListItem>
+                    <CoreListItemText primary="Sambuddha Chatterjee"/>
+                  </CoreListItem>
+                </CoreList>
+              }
+            />
+
+            <CodeSample
+              title={"ItemStyleProps"}
+              description="ItemStyleProps apply StyleClasses to all the child(CoreListItem) of CoreList"
+              code={`<CoreList
+  variant="grid"
+  itemGridProps={{ gridSize: { md: 6, sm: 6 } }}
+  itemStylesProps={[
+    CoreClasses.FLEX.DIRECTION_COLUMN,
+    CoreClasses.DISPLAY.FLEX,
+    CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+    CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+    CoreClasses.BORDER.BORDER
+  ]}
+>
+  <CoreListItem>
+    <CoreListItemText primary="Car" />
+  </CoreListItem>
+  <CoreListItem>
+    <CoreListItemText primary="Train"/>
+  </CoreListItem>
+  <CoreListItem>
+    <CoreListItemText primary="Bus"/>
+  </CoreListItem>
+  <CoreListItem>
+    <CoreListItemText primary="Truck"/>
+  </CoreListItem>
+</CoreList>`}
+              expandedCode={`import {
+  CoreClasses, 
+  CoreLayoutItem, 
+  BlankLayout,
+  CoreList,
+  CoreListItem,
+  CoreListItemText,
+  CoreBox,
+  CoreTypographyBody1,
+  CoreButton
+} from "@wrappid/core";
+
+export default function BasicItemStyleProps() {
+  return (
+   <CoreList
+    variant="grid"
+    itemGridProps={{ gridSize: { md: 6, sm: 6 } }}
+    itemStylesProps={[
+      CoreClasses.FLEX.DIRECTION_COLUMN,
+      CoreClasses.DISPLAY.FLEX,
+      CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+      CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+      CoreClasses.BORDER.BORDER
+    ]}
+  >
+    <CoreListItem>
+      <CoreListItemText primary="Car" />
+    </CoreListItem>
+    <CoreListItem>
+      <CoreListItemText primary="Train"/>
+    </CoreListItem>
+    <CoreListItem>
+      <CoreListItemText primary="Bus"/>
+    </CoreListItem>
+    <CoreListItem>
+      <CoreListItemText primary="Truck"/>
+    </CoreListItem>
+  </CoreList>
+  );
+}`}
+              renderElement={
+                <CoreList
+                  variant="grid"
+                  itemGridProps={{ gridSize: { md: 6, sm: 6 } }}
+                  itemStylesProps={[
+                    CoreClasses.FLEX.DIRECTION_COLUMN,
+                    CoreClasses.DISPLAY.FLEX,
+                    CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+                    CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
+                    CoreClasses.BORDER.BORDER
+                  ]}
+                >
+                  <CoreListItem>
+                    <CoreListItemText primary="Car" />
+                  </CoreListItem>
+
+                  <CoreListItem>
+                    <CoreListItemText primary="Train"/>
+                  </CoreListItem>
+
+                  <CoreListItem>
+                    <CoreListItemText primary="Bus"/>
+                  </CoreListItem>
+
+                  <CoreListItem>
+                    <CoreListItemText primary="Truck"/>
+                  </CoreListItem>
                 </CoreList>
               }
             />
