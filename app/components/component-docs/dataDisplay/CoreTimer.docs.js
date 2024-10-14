@@ -16,6 +16,7 @@ export default function CoreTimerDocs() {
     <ComponentDocs
       component={CORE_COMPONENT}
       description={`The ${CORE_COMPONENT_NAME} component is used to display a countdown timer with a button that enables after timer reaches zero. This component is ideal for use in forms, quizzes, or any other UI elements where a countdown timer is required.`}
+      basicSample={false}
       samples={
         <>
           <CodeSample
