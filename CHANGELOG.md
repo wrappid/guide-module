@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.126](https://https//github.com/wrappid/wrappid-module/compare/v0.0.125...v0.0.126) (2024-10-14)
+
+
+### Bug Fixes
+
+* **core:** :bug: components of space between the scroll bar and the side bar solved ([7a864d8](https://https//github.com/wrappid/wrappid-module/commit/7a864d8b5c4b7acdee795d24f9af9d512d698bcd)), closes [#342](https://https//github.com/wrappid/wrappid-module/issues/342)
+
 ### [0.0.125](https://https//github.com/wrappid/wrappid-module/compare/v0.0.124...v0.0.125) (2024-10-14)
 
 ### [0.0.124](https://https//github.com/wrappid/wrappid-module/compare/v0.0.123...v0.0.124) (2024-09-27)
