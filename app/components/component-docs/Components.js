@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  CoreBox, CoreH4, CoreClasses, CoreLayoutItem, BlankLayout, CoreTOC, CoreH5, CoreContainer, CoreGrid, CoreAppBar 
+  CoreBox, CoreH4, CoreClasses, CoreLayoutItem, BlankLayout, CoreTOC, CoreH5, CoreContainer, CoreGrid, CoreAppBar
 } from "@wrappid/core";
 
 import ComponentsMenu from "./ComponentsMenu";
@@ -61,7 +61,7 @@ export default function Components() {
         </CoreBox>
 
         <CoreGrid>
-          <CoreBox styleClasses={[CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL]} gridProps={{ gridSize: 2 }}>
+          <CoreBox styleClasses={[CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_AUTO]} gridProps={{ gridSize: 2 }}>
             <ComponentsMenu
               docsRegistry={_DocsRegistry}
               currentPage={currentPage}
@@ -70,9 +70,9 @@ export default function Components() {
            
           </CoreBox>
 
-          <CoreBox gridProps={{ gridSize: 8 }}>
+          <CoreBox gridProps={{ gridSize: 8 }} styleClasses={[CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL]}>
             <CoreContainer>
-              <CoreBox ref={contentRef} styleClasses={[CoreClasses.HEIGHT.VH_100, CoreClasses.OVERFLOW.OVERFLOW_Y_SCROLL]}>
+              <CoreBox ref={contentRef} >
                 {currentPage && docsPageRegistry[currentPage] ? (
                   React.createElement(docsPageRegistry[currentPage])
                 ) : (
