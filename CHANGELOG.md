@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.124](https://https//github.com/wrappid/wrappid-module/compare/v0.0.123...v0.0.124) (2024-09-27)
+
+
+### Bug Fixes
+
+* **global:** :memo: disable basicSample CoreTimer ([2cfd715](https://https//github.com/wrappid/wrappid-module/commit/2cfd715f0bdf5ff049155a75231f07dda605cff6)), closes [#245](https://https//github.com/wrappid/wrappid-module/issues/245)
+* **global:** :memo: docs added and fixed, expandedCode wip ([88edfee](https://https//github.com/wrappid/wrappid-module/commit/88edfee5c26c5e3657e8550399ec554a22fff7d5)), closes [#260](https://https//github.com/wrappid/wrappid-module/issues/260)
+
 ### [0.0.123](https://https//github.com/wrappid/wrappid-module/compare/v0.0.122...v0.0.123) (2024-09-21)
 
 ### [0.0.122](https://https//github.com/wrappid/wrappid-module/compare/v0.0.121...v0.0.122) (2024-09-14)
