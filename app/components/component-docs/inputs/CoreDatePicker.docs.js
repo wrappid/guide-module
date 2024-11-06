@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  CoreStack, CoreDatepicker, CoreList, CoreListItem, CoreTypographyBody1, CoreBox, CoreAlert, 
+  CoreStack, CoreDatePicker, CoreList, CoreListItem, CoreTypographyBody1, CoreBox, CoreAlert, 
   CoreClasses
 } from "@wrappid/core";
 import moment from "moment";
@@ -9,7 +9,7 @@ import moment from "moment";
 import CodeSample from "../../CodeSample";
 import ComponentDocs from "../ComponentDocs";
 
-export default function CoreDatepickerDocs() {
+export default function CoreDatePickerDocs() {
   const [value, setValue] = React.useState(moment("2022-04-17"));
   const [cleared, setCleared] = React.useState (false);
 
@@ -26,24 +26,24 @@ export default function CoreDatepickerDocs() {
   return (
     <>
       <ComponentDocs
-        component={CoreDatepicker}
+        component={CoreDatePicker}
         description="The CoreDatePicker component lets users select a date."
         samples={
           <>
             <CodeSample
               title={"Basic CoreDatePicker"}
               description={" "}
-              code={"<CoreDatepicker/>"}
+              code={"<CoreDatePicker/>"}
               expandedCode={`import { CoreDatePicker } from "@wrappid/core"
               
 export default function BasicCoreDatePicker(){
   return(
-    <CoreDatepicker/>
+    <CoreDatePicker/>
   );
 }`}
               renderElement={
                 <>
-                  <CoreDatepicker/>
+                  <CoreDatePicker/>
                 </>
               }
             />
@@ -67,8 +67,8 @@ export default function BasicCoreDatePicker(){
                   </CoreList>
                 </>
               }
-              code={`<CoreDatepicker label="Uncontrolled picker" defaultValue={moment("2022-04-17")} />
-<CoreDatepicker
+              code={`<CoreDatePicker label="Uncontrolled picker" defaultValue={moment("2022-04-17")} />
+<CoreDatePicker
   label="Controlled picker"
   value={value}
   onChange={(newValue) => setValue(newValue)}
@@ -82,8 +82,8 @@ export default function DatePickerValue(){
 
   return(
      <CoreStack direction="column" spacing={4}>
-        <CoreDatepicker label="Uncontrolled picker" defaultValue={moment("2022-04-17")} />
-        <CoreDatepicker
+        <CoreDatePicker label="Uncontrolled picker" defaultValue={moment("2022-04-17")} />
+        <CoreDatePicker
           label="Controlled picker"
           value={value}
           onChange={(newValue) => setValue(newValue)}
@@ -94,9 +94,9 @@ export default function DatePickerValue(){
               renderElement={
                 <>
                   <CoreStack direction="column" spacing={4}>
-                    <CoreDatepicker label="Uncontrolled picker" defaultValue={moment("2022-04-17")} />
+                    <CoreDatePicker label="Uncontrolled picker" defaultValue={moment("2022-04-17")} />
 
-                    <CoreDatepicker
+                    <CoreDatePicker
                       label="Controlled picker"
                       value={value}
                       onChange={(newValue) => setValue(newValue)}
@@ -115,28 +115,28 @@ export default function DatePickerValue(){
                   </CoreTypographyBody1>
                 </>
               }
-              code={`<CoreDatepicker label="disabled" disabled />
-<CoreDatepicker label="readOnly" readOnly />
-<CoreDatepicker label="name" name="startDate" />`}
+              code={`<CoreDatePicker label="disabled" disabled />
+<CoreDatePicker label="readOnly" readOnly />
+<CoreDatePicker label="name" name="startDate" />`}
               expandedCode={`import { CoreStack, CoreDatePicker } from "@wrappid/core"
               
 export default function FormPropsDatePickers(){
   return(
     <CoreStack direction="column" spacing={4}>
-      <CoreDatepicker label="disabled" disabled />
-      <CoreDatepicker label="readOnly" readOnly />
-      <CoreDatepicker label="name" name="startDate" />
+      <CoreDatePicker label="disabled" disabled />
+      <CoreDatePicker label="readOnly" readOnly />
+      <CoreDatePicker label="name" name="startDate" />
     </CoreStack>
   );
 }`}
               renderElement={
                 <>
                   <CoreStack direction="column" spacing={4}>
-                    <CoreDatepicker label="disabled" disabled />
+                    <CoreDatePicker label="disabled" disabled />
 
-                    <CoreDatepicker label="readOnly" readOnly />
+                    <CoreDatePicker label="readOnly" readOnly />
 
-                    <CoreDatepicker label="name" name="startDate" />
+                    <CoreDatePicker label="name" name="startDate" />
                   </CoreStack>
                 </>
               }
@@ -154,31 +154,31 @@ By default, the day and year views are enabled. Use the views prop to change thi
                   </CoreTypographyBody1>
                 </>
               }
-              code={`<CoreDatepicker label="disabled" disabled />
-<CoreDatepicker label="readOnly" readOnly />
-<CoreDatepicker label="name" name="startDate" />`}
+              code={`<CoreDatePicker label="disabled" disabled />
+<CoreDatePicker label="readOnly" readOnly />
+<CoreDatePicker label="name" name="startDate" />`}
               expandedCode={`import { CoreStack, CoreDatePicker } from "@wrappid/core"
               
 export default function FormPropsDatePickers(){
   return(
     <CoreStack direction="column" spacing={4}>
-      <CoreDatepicker label="disabled" disabled />
-      <CoreDatepicker label="readOnly" readOnly />
-      <CoreDatepicker label="name" name="startDate" />
+      <CoreDatePicker label="disabled" disabled />
+      <CoreDatePicker label="readOnly" readOnly />
+      <CoreDatePicker label="name" name="startDate" />
     </CoreStack>
   );
 }`}
               renderElement={
                 <>
                   <CoreStack direction="column" spacing={4}>
-                    <CoreDatepicker
+                    <CoreDatePicker
                       label={"\"year\", \"month\" and \"day\""}
                       views={["year", "month", "day"]}
                     />
 
-                    <CoreDatepicker label={"\"day\""} views={["day"]} />
+                    <CoreDatePicker label={"\"day\""} views={["day"]} />
 
-                    <CoreDatepicker label={"\"month\" and \"year\""} views={["month", "year"]} />
+                    <CoreDatePicker label={"\"month\" and \"year\""} views={["month", "year"]} />
                   </CoreStack>
                 </>
               }
@@ -193,26 +193,26 @@ export default function FormPropsDatePickers(){
                   </CoreTypographyBody1>
                 </>
               }
-              code={`<CoreDatepicker label="disabled" disabled />
-<CoreDatepicker label="readOnly" readOnly />
-<CoreDatepicker label="name" name="startDate" />`}
+              code={`<CoreDatePicker label="disabled" disabled />
+<CoreDatePicker label="readOnly" readOnly />
+<CoreDatePicker label="name" name="startDate" />`}
               expandedCode={`import { CoreStack, CoreDatePicker } from "@wrappid/core"
               
 export default function DatePickerOpenTo(){
   return(
     <CoreStack direction="column" spacing={4}>
-      <CoreDatepicker label="disabled" disabled />
-      <CoreDatepicker label="readOnly" readOnly />
-      <CoreDatepicker label="name" name="startDate" />
+      <CoreDatePicker label="disabled" disabled />
+      <CoreDatePicker label="readOnly" readOnly />
+      <CoreDatePicker label="name" name="startDate" />
     </CoreStack>
   );
 }`}
               renderElement={
                 <>
                   <CoreStack direction="column" spacing={4}>
-                    <CoreDatepicker label={"\"year\""} openTo="year" />
+                    <CoreDatePicker label={"\"year\""} openTo="year" />
 
-                    <CoreDatepicker
+                    <CoreDatePicker
                       label={"\"month\""}
                       openTo="month"
                       views={["year", "month", "day"]}
@@ -231,7 +231,7 @@ export default function DatePickerOpenTo(){
                   </CoreTypographyBody1>
                 </>
               }
-              code={`<CoreDatepicker
+              code={`<CoreDatePicker
   label="Helper text example"
   helperText="DD/MM/YYYY"
 />`}
@@ -239,7 +239,7 @@ export default function DatePickerOpenTo(){
               
 export default function HelperText(){
   return(
-   <CoreDatepicker
+   <CoreDatePicker
     label="Helper text example"
     helperText="DD/MM/YYYY"
   />
@@ -247,7 +247,7 @@ export default function HelperText(){
 }`}
               renderElement={
                 <>
-                  <CoreDatepicker
+                  <CoreDatePicker
                     label="Helper text example"
                     helperText="DD/MM/YYYY"
                   />
@@ -265,7 +265,7 @@ export default function HelperText(){
                 </>
               }
               code={"NA"}
-              expandedCode={`import {CoreDatepicker, CoreBox, CoreAlert, CoreClasses } from "@wrappid/core";
+              expandedCode={`import {CoreDatePicker, CoreBox, CoreAlert, CoreClasses } from "@wrappid/core";
 
 export default function ValueClearing(){
   return (
@@ -279,7 +279,7 @@ export default function ValueClearing(){
       ]}
     
     >
-      <CoreDatepicker
+      <CoreDatePicker
         width={260 }
         slotProps={{ field: { clearable: true, onClear: () => setCleared(true) } }}
       />
@@ -306,7 +306,7 @@ export default function ValueClearing(){
                     ]}
                   
                   >
-                    <CoreDatepicker
+                    <CoreDatePicker
                       width={260 }
                       slotProps={{ field: { clearable: true, onClear: () => setCleared(true) } }}
                     />

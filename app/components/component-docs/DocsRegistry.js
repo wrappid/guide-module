@@ -100,7 +100,7 @@ import CoreCheckboxDocs from "./inputs/CoreCheckbox.docs.js";
 import CoreConfirmPasswordDocs from "./inputs/CoreConfirmPassword.docs.js";
 import CoreConfirmPasswordFieldDocs from "./inputs/CoreConfirmPasswordField.docs.js";
 import CoreContainedButtonDocs from "./inputs/CoreContainedButton.docs.js";
-import CoreDatepickerDocs from "./inputs/CoreDatepicker.docs.js";
+import CoreDatePickerDocs from "./inputs/CoreDatePicker.docs.js";
 import CoreDateRangepickerDocs from "./inputs/CoreDateRangepicker.docs.js";
 import CoreDateTimePickerDocs from "./inputs/CoreDateTimePicker.docs.js";
 import CoreDateTimeRangePickerDocs from "./inputs/CoreDateTimeRangePicker.docs.js";
@@ -363,7 +363,7 @@ export default {
       CoreDateRangepicker     : { main: CoreDateRangepickerDocs },
       CoreDateTimePicker      : { main: CoreDateTimePickerDocs },
       CoreDateTimeRangePicker : { main: CoreDateTimeRangePickerDocs },
-      CoreDatepicker          : { main: CoreDatepickerDocs },
+      CoreDatepicker          : { main: CoreDatePickerDocs },
       CoreFab                 : { main: CoreFabDocs },
       CoreFilePicker          : { main: CoreFilePickerDocs },
       CoreFormControl         : { main: CoreFormControlDocs },
