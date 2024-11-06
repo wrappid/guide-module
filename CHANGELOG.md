@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.127](https://https//github.com/wrappid/wrappid-module/compare/v0.0.126...v0.0.127) (2024-11-06)
+
+
+### Bug Fixes
+
+* **core:** :art: core component name change impact handle ([100aba1](https://https//github.com/wrappid/wrappid-module/commit/100aba16d29cc500da723c0f86165f748404444c))
+
 ### [0.0.126](https://https//github.com/wrappid/wrappid-module/compare/v0.0.125...v0.0.126) (2024-10-14)
 
 
