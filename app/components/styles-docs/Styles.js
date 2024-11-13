@@ -116,7 +116,7 @@ export default function Styles() {
               CoreClasses.HEIGHT.VH_100,
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_LEFT,
-              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.BORDER.BORDER_COLOR_PRIMARY_LIGHT,
             ]}
           >
             <CoreH6

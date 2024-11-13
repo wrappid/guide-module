@@ -226,7 +226,7 @@ export default function CoreTabDocs() {
               title={"Basic tabs"}
               description={"A basic example with tab panels."}
               code={`<CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
-  <CoreBox styleClasses={[CoreClasses.BORDER.BORDER_BOTTOM, CoreClasses.BORDER.BORDER_GREY_300]}>
+  <CoreBox styleClasses={[CoreClasses.BORDER.BORDER_BOTTOM, CoreClasses.BORDER.BORDER_COLOR_GREY_300]}>
     <CoreTabs value={value} onChange={handleChange} aria-label="basic tabs example">
       <CoreTab label="Item One" {...a11yProps(0)} />
       <CoreTab label="Item Two" {...a11yProps(1)} />
@@ -279,7 +279,7 @@ export default function BasicTabs() {
 
   return (
     <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
-      <CoreBox styleClasses={[CoreClasses.BORDER.BORDER_BOTTOM, CoreClasses.BORDER.BORDER_GREY_300]}>
+      <CoreBox styleClasses={[CoreClasses.BORDER.BORDER_BOTTOM, CoreClasses.BORDER.BORDER_COLOR_GREY_300]}>
         <CoreTabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <CoreTab label="Item One" {...a11yProps(0)} />
           <CoreTab label="Item Two" {...a11yProps(1)} />
@@ -300,7 +300,7 @@ export default function BasicTabs() {
 }`}
               renderElement={<>
                 <CoreBox styleClasses={[CoreClasses.WIDTH.W_100]}>
-                  <CoreBox styleClasses={[CoreClasses.BORDER.BORDER_BOTTOM, CoreClasses.BORDER.BORDER_GREY_300]}>
+                  <CoreBox styleClasses={[CoreClasses.BORDER.BORDER_BOTTOM, CoreClasses.BORDER.BORDER_COLOR_GREY_300]}>
                     <CoreTabs value={value} onChange={handleChange} aria-label="basic tabs example">
                       <CoreTab label="Item One" {...a11yProps(0)} />
 
@@ -863,7 +863,7 @@ export default function ScrollableTabsButtonPrevent() {
     value={value}
     onChange={handleChange}
     aria-label="Vertical tabs example"
-    styleClasses={[CoreClasses.BORDER.BORDER_1, CoreClasses.BORDER.BORDER_GREY_300]}
+    styleClasses={[CoreClasses.BORDER.BORDER_WIDTH_1, CoreClasses.BORDER.BORDER_COLOR_GREY_300]}
   >
     <CoreTab label="Item One" {...a11yProps(0)} />
     <CoreTab label="Item Two" {...a11yProps(1)} />
@@ -914,7 +914,7 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        styleClasses={[CoreClasses.BORDER.BORDER_1, CoreClasses.BORDER.BORDER_GREY_300]}
+        styleClasses={[CoreClasses.BORDER.BORDER_WIDTH_1, CoreClasses.BORDER.BORDER_COLOR_GREY_300]}
       >
         <CoreTab label="Item One" {...a11yProps(0)} />
         <CoreTab label="Item Two" {...a11yProps(1)} />
@@ -956,7 +956,7 @@ export default function VerticalTabs() {
                     value={veritcalValue}
                     onChange={VerticalHandleChange}
                     aria-label="Vertical tabs example"
-                    styleClasses={[CoreClasses.BORDER.BORDER_1, CoreClasses.BORDER.BORDER_GREY_300]}
+                    styleClasses={[CoreClasses.BORDER.BORDER_WIDTH_1, CoreClasses.BORDER.BORDER_COLOR_GREY_300]}
                   >
                     <CoreTab label="Item One" {...a11yProps(0)} />
 

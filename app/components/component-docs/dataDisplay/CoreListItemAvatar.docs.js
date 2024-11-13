@@ -65,7 +65,7 @@ export default function BasicCoreListItemAvatar() {
           CoreClasses.MARGIN.M4,
           CoreClasses.DISPLAY.FLEX,
           CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-          CoreClasses.BORDER.BORDER_2
+          CoreClasses.BORDER.BORDER_WIDTH_2
         ]}
       >
         <CoreStack

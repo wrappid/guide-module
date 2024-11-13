@@ -57,7 +57,7 @@ export default function CoreDividerDocs() {
 
 export default function BasicDivider() { 
   return(
-    <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+    <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
       <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
         <CoreStack
           direction="row"
@@ -89,7 +89,7 @@ export default function BasicDivider() {
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+                <CoreBox styleClasses={[CoreClasses.WIDTH.VW_50, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
                   <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
                     <CoreStack
                       direction="row"
@@ -159,7 +159,7 @@ export default function BasicDivider() {
                
 export default function DividerVariants(){
   return(
-    <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+    <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
       <CoreList styleClasses={[CoreClasses.LAYOUT.FULL_WIDTH]}>
         <CoreListItem>
           <CoreListItemText primary="Full width variant below" />
@@ -182,7 +182,7 @@ export default function DividerVariants(){
 }`}
               renderElement={
                 <>
-                  <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+                  <CoreBox styleClasses={[CoreClasses.WIDTH.W_75, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
                     <CoreList styleClasses={[CoreClasses.LAYOUT.FULL_WIDTH]}>
                       <CoreListItem>
                         <CoreListItemText primary="Full width variant below" />
@@ -228,7 +228,7 @@ export default function DividerVariants(){
     
 export default function VerticalDividers() {
   return (
-    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
       <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="cloud" />
       <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="folder" />
       <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="mail" />
@@ -238,7 +238,7 @@ export default function VerticalDividers() {
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
                   <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="cloud" />
 
                   <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} fontSize="large" icon="folder" />
@@ -273,7 +273,7 @@ export default function FlexDivider() {
       CoreClasses.DISPLAY.FLEX,
       CoreClasses.WIDTH.MAX_W_75,
       CoreClasses.BORDER.BORDER,
-      CoreClasses.BORDER.BORDER_GREY_400,
+      CoreClasses.BORDER.BORDER_COLOR_GREY_400,
       CoreClasses.BORDER.BORDER_ROUNDED_1
     ]}>
       <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} >dehaze</CoreIcon>
@@ -287,7 +287,7 @@ export default function FlexDivider() {
                   CoreClasses.DISPLAY.FLEX,
                   CoreClasses.WIDTH.MAX_W_75,
                   CoreClasses.BORDER.BORDER,
-                  CoreClasses.BORDER.BORDER_GREY_400,
+                  CoreClasses.BORDER.BORDER_COLOR_GREY_400,
                   CoreClasses.BORDER.BORDER_ROUNDED_1
                 ]}>
 
@@ -411,7 +411,7 @@ export default function DividerText() {
 
 export default function ListDividers() {
   return (
-    <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+    <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
       <CoreList aria-label="mailbox folders">
         <CoreListItem >
           <CoreListItemText primary="Inbox" />
@@ -433,7 +433,7 @@ export default function ListDividers() {
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+                <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
 
                   <CoreList aria-label="mailbox folders">
                     <CoreListItem >
@@ -488,7 +488,7 @@ export default function ListDividers() {
                 
 export default function VerticalDividerMiddle() {
   return (
-    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
 
       <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_right" />
       <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_center" />
@@ -499,7 +499,7 @@ export default function VerticalDividerMiddle() {
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.BORDER.BORDER, CoreClasses.BORDER.BORDER_COLOR_GREY_400, CoreClasses.BORDER.BORDER_ROUNDED_1]}>
 
                   <CoreIcon styleClasses={[CoreClasses.MARGIN.M1]} icon="format_align_right" />
 

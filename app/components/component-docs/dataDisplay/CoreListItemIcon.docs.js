@@ -50,7 +50,7 @@ export default function BasicCoreListItem() {
         styleClasses={[CoreClasses.WIDTH.W_25]}
       >
         <CoreBox
-          styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}>
+          styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_WIDTH_2]}>
           <CoreList>
             <CoreListItem disablePadding>
               <CoreListItemButton>
@@ -84,7 +84,7 @@ export default function BasicCoreListItem() {
                   styleClasses={[CoreClasses.WIDTH.W_25]}
                 >
                   <CoreBox
-                    styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}
+                    styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_WIDTH_2]}
                     // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
                   >
                     {/* <nav aria-label="main mailbox folders"> */}

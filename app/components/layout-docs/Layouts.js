@@ -69,7 +69,7 @@ export default function Layouts() {
               CoreClasses.HEIGHT.VH_100,
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_LEFT,
-              CoreClasses.BORDER.BORDER_SECONDARY_LIGHT,
+              CoreClasses.BORDER.BORDER_COLOR_SECONDARY_LIGHT,
             ]}
             gridProps={{ gridSize: 2 }}
           >

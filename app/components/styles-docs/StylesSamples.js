@@ -16,7 +16,26 @@ import {
 const handleClick = () => {
   alert("Link clicked!");
 };
-
+export const DEFAULT_BORDER_RENDERED = {
+  renderElement: (key, classes, className) => {
+      return (
+        <CoreBox gridProps={{ gridSize: { md: 4} }}>
+          <CoreBox
+            key={key}
+            styleClasses={[
+              CoreClasses.BORDER.BORDER,
+              // CoreClasses.BORDER.BORDER_WIDTH_2,
+              classes[className],
+              CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+              CoreClasses.PADDING.P1,
+            ]}
+          >
+            <CoreTypographyCaption>{className}</CoreTypographyCaption>
+          </CoreBox>
+        </CoreBox>
+      );
+    },
+}
 export const DEFAULT_SAMPLE_COMPONENT = {
   code: (classGroupName, className) => {
     return `<AnyComponent styleClasses={[CoreClasses${
@@ -33,7 +52,7 @@ export const DEFAULT_SAMPLE_COMPONENT = {
         styleClasses={[
           classes[className],
           CoreClasses.BORDER.BORDER,
-          CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+          CoreClasses.BORDER.BORDER_COLOR_PRIMARY_LIGHT,
           CoreClasses.PADDING.P1,
           CoreClasses.TEXT.TEXT_CENTER,
         ]}
@@ -95,15 +114,15 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
             ]}
           >
             <CoreTypographyCaption
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
@@ -112,8 +131,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
@@ -144,16 +163,16 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
             ]}
           >
             <CoreTypographyCaption
               height={20}
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
@@ -163,8 +182,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               height={40}
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
@@ -174,8 +193,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               height={30}
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
@@ -185,8 +204,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               height={10}
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
@@ -219,16 +238,16 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.DISPLAY.FLEX,
               CoreClasses.FLEX.DIRECTION_ROW,
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
             ]}
           >
             <CoreTypographyCaption
               styleClasses={[
                 classes[className],
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
@@ -238,8 +257,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               styleClasses={[
                 classes[className],
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
               ]}
             >
@@ -280,8 +299,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER_WIDTH_2,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
@@ -314,8 +333,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           <CoreBox
             key={key}
             styleClasses={[
-              CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
+              // CoreClasses.BORDER.BORDER,
+              // CoreClasses.BORDER.BORDER_WIDTH_2,
               classes[className],
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
               CoreClasses.PADDING.P1,
@@ -326,6 +345,15 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         </CoreBox>
       );
     },
+  },
+  BORDER__INCLUDES__COLOR: {
+    ...DEFAULT_BORDER_RENDERED
+  },
+  BORDER__INCLUDES__ROUNDED: {
+    ...DEFAULT_BORDER_RENDERED
+  },
+  BORDER__INCLUDES__WIDTH: {
+    ...DEFAULT_BORDER_RENDERED
   },
   BORDER__ENDS_WITH___CIRCLE: {
     renderElement: (key, classes, className) => {
@@ -345,7 +373,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               CoreClasses.HEIGHT.H_50,
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
               classes[className],
               CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
@@ -416,11 +444,11 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
     description: (
       <>
         <CoreTypographyBody1>
-          Small utility that sets cursor when element is hovered.
+          Small utility that sets cursor when element is hovered. *** Not working in mobile ***
         </CoreTypographyBody1>
         <CoreTypographyBody1>
           <CoreList dense={true} marker="disc">
-            {"Where The alphabets stands for:"}
+            <CoreListItem>{"Where The alphabets stands for:"}</CoreListItem>
 
             <CoreListItem>{"N -> (North) For the Top direction"}</CoreListItem>
 
@@ -449,8 +477,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER_WIDTH_2,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
@@ -495,8 +523,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           <CoreBox
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -505,8 +533,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               styleClasses={[
                 classes[className],
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
@@ -517,8 +545,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               styleClasses={[
                 classes[className],
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
@@ -561,8 +589,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               classes[className],
               CoreClasses.DISPLAY.FLEX,
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -570,8 +598,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreBox
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
@@ -581,8 +609,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreBox
               styleClasses={[
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
@@ -836,8 +864,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_INFO,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_INFO,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -883,8 +911,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -911,8 +939,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -940,8 +968,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -977,8 +1005,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -1005,8 +1033,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -1035,8 +1063,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
             ]}
           >
             <CoreTypographyCaption>{className}</CoreTypographyCaption>
@@ -1075,7 +1103,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           }
 
           <CoreList dense={true} marker="disc">
-            {"Where sides is one of:"}
+            <CoreListItem>{"Where sides is one of:"}</CoreListItem>
 
             <CoreListItem>
               {"T - (top) for classes that set margin-top"}
@@ -1109,7 +1137,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           </CoreList>
 
           <CoreList dense={true} marker="disc">
-            {"Where size is one of:"}
+            <CoreListItem>{"Where size is one of:"}</CoreListItem>
 
             <CoreListItem>
               {"0 - for classes that eliminate the margin by setting it to 0"}
@@ -1151,7 +1179,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             CoreClasses.BG.BG_WARNING_LIGHT,
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_WARNING,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
@@ -1174,7 +1202,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             CoreClasses.BG.BG_WARNING_LIGHT,
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_WARNING,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
@@ -1333,8 +1361,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.DISPLAY.GRID,
             CoreClasses.HEIGHT.H_100,
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER_WIDTH_2,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
           ]}
           gridProps={{ gridSize: { md: 3, lg: 3, xl: 3 } }}
         >
@@ -1345,8 +1373,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.HEIGHT.H_50,
               CoreClasses.WIDTH.W_75,
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_PRIMARY_LIGHT,
               CoreClasses.MARGIN.M1,
             ]}
           >
@@ -1389,8 +1417,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
         <CoreBox
           styleClasses={[
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER_WIDTH_2,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
           ]}
           gridProps={{ gridSize: { md: 3, lg: 3, xl: 3 } }}
         >
@@ -1400,8 +1428,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               classes[className],
               CoreClasses.WIDTH.W_75,
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_PRIMARY_LIGHT,
               CoreClasses.MARGIN.M1,
               CoreClasses.TEXT.TEXT_NOWRAP,
             ]}
@@ -1429,8 +1457,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             CoreClasses.DISPLAY.GRID,
             CoreClasses.HEIGHT.H_100,
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER_WIDTH_2,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
           ]}
           gridProps={{ gridSize: { md: 3, lg: 3, xl: 3 } }}
         >
@@ -1441,8 +1469,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.WIDTH.W_75,
               CoreClasses.HEIGHT.H_50,
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_PRIMARY_LIGHT,
               CoreClasses.MARGIN.M1,
             ]}
           >
@@ -1487,7 +1515,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           }
 
           <CoreList dense={true} marker="disc">
-            {"Where sides is one of:"}
+            <CoreListItem>{"Where sides is one of:"}</CoreListItem>
 
             <CoreListItem>
               {"T - (top) for classes that set padding-top"}
@@ -1521,7 +1549,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           </CoreList>
 
           <CoreList dense={true} marker="disc">
-            {"Where size is one of:"}
+            <CoreListItem>{"Where size is one of:"}</CoreListItem>
 
             <CoreListItem>
               {"0 - for classes that eliminate the padding by setting it to 0"}
@@ -1560,7 +1588,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             classes[className],
             CoreClasses.BG.BG_SUCCESS_LIGHT,
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_SUCCESS,
+            CoreClasses.BORDER.BORDER_COLOR_SUCCESS,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
         >
@@ -1628,8 +1656,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           <CoreBox
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.WIDTH.W_50,
             ]}
           >
@@ -1637,7 +1665,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               styleClasses={[
                 classes[className],
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_PRIMARY_LIGHT,
+                CoreClasses.BORDER.BORDER_COLOR_PRIMARY_LIGHT,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
@@ -1669,8 +1697,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           <CoreBox
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.HEIGHT.VH_25,
               CoreClasses.DISPLAY.FLEX,
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
@@ -1747,8 +1775,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               classes[className],
             ]}
@@ -1778,8 +1806,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
             ]}
           >
@@ -1805,8 +1833,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
             ]}
           >
@@ -1831,8 +1859,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
             ]}
           >
@@ -1857,8 +1885,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
             ]}
           >
@@ -1883,8 +1911,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.HEIGHT.VH_25,
             ]}
@@ -1913,8 +1941,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
             ]}
           >
@@ -1943,8 +1971,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -1969,8 +1997,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               CoreClasses.WIDTH.W_50,
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
             ]}
           >
@@ -1997,8 +2025,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
             ]}
           >
@@ -2026,8 +2054,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             styleClasses={[
               classes[className],
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
             ]}
           >
@@ -2100,8 +2128,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             key={key}
             styleClasses={[
               CoreClasses.BORDER.BORDER,
-              CoreClasses.BORDER.BORDER_2,
-              CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+              CoreClasses.BORDER.BORDER_WIDTH_2,
+              CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
               CoreClasses.PADDING.P1,
               CoreClasses.TEXT.TEXT_CENTER,
             ]}
@@ -2112,8 +2140,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
                 classes[className],
                 CoreClasses.BG.BG_PRIMARY,
                 CoreClasses.BORDER.BORDER,
-                CoreClasses.BORDER.BORDER_2,
-                CoreClasses.BORDER.BORDER_INFO,
+                CoreClasses.BORDER.BORDER_WIDTH_2,
+                CoreClasses.BORDER.BORDER_COLOR_INFO,
                 CoreClasses.PADDING.P1,
                 CoreClasses.TEXT.TEXT_CENTER,
               ]}
@@ -2161,8 +2189,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_INFO,
+            CoreClasses.BORDER.BORDER_WIDTH_2,
+            CoreClasses.BORDER.BORDER_COLOR_INFO,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
@@ -2230,6 +2258,14 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
       );
     },
   },
+  LIST_STYLE: {
+    description: (
+      <CoreTypographyBody1>
+        Different list styles, this needs to be elaborate more
+      </CoreTypographyBody1>
+    ),
+    grouped: true,
+  },
   POSITION: {
     description: (
       <>
@@ -2285,8 +2321,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER_WIDTH_2,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}
@@ -2311,8 +2347,8 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           styleClasses={[
             classes[className],
             CoreClasses.BORDER.BORDER,
-            CoreClasses.BORDER.BORDER_2,
-            CoreClasses.BORDER.BORDER_WARNING_LIGHT,
+            CoreClasses.BORDER.BORDER_WIDTH_2,
+            CoreClasses.BORDER.BORDER_COLOR_WARNING_LIGHT,
             CoreClasses.PADDING.P1,
             CoreClasses.TEXT.TEXT_CENTER,
           ]}

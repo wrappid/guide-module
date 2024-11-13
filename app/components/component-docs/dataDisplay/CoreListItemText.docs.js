@@ -44,7 +44,7 @@ export default function CoreListItemTextDocs() {
 export default function ListType() {
 
   return (
-    <CoreBox styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}>
+    <CoreBox styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_WIDTH_2]}>
       <CoreList>
   <CoreList>
     <CoreListItem disablePadding>
@@ -60,7 +60,7 @@ export default function ListType() {
 }`}
             renderElement={
               <CoreBox
-                styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_2]}
+                styleClasses={[CoreClasses.WIDTH.W_100.MAX_W_100, CoreClasses.BORDER.BORDER_WIDTH_2]}
               // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
               >
                 <CoreList>

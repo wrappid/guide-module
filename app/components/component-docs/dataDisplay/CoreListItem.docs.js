@@ -85,7 +85,7 @@ export default function BasicCoreListItem() {
           CoreClasses.MARGIN.M4,
           CoreClasses.DISPLAY.FLEX,
           CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-          CoreClasses.BORDER.BORDER_2
+          CoreClasses.BORDER.BORDER_WIDTH_2
         ]}
       >
         <CoreStack
@@ -144,7 +144,7 @@ export default function BasicCoreListItem() {
                       CoreClasses.MARGIN.M4,
                       CoreClasses.DISPLAY.FLEX,
                       CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
-                      CoreClasses.BORDER.BORDER_2
+                      CoreClasses.BORDER.BORDER_WIDTH_2
                     ]}
                     // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
                   >
