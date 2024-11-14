@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.128](https://https//github.com/wrappid/wrappid-module/compare/v0.0.127...v0.0.128) (2024-11-14)
+
+
+### Bug Fixes
+
+* :bug: some border style property name changed, update this to resolve style changes ([edf8bc6](https://https//github.com/wrappid/wrappid-module/commit/edf8bc69ce6e1ec45379bd3e6ac9412e9a32fc64))
+
 ### [0.0.127](https://https//github.com/wrappid/wrappid-module/compare/v0.0.126...v0.0.127) (2024-11-06)
 
 
