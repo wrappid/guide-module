@@ -122,7 +122,7 @@ export const RoutesRegistry = {
   Styles: {
     Page        : { appComponent: Styles.name },
     authRequired: false,
-    entityRef   : "styles",
+    entityRef   : "Styles",
     url         : "guide/styles"
   },
   ThreeColumnLayoutPage: {

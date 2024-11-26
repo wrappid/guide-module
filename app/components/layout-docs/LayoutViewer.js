@@ -490,7 +490,7 @@ export default function LayoutViewer(props) {
           />
 
           <CoreBox
-            gridProps={{ gridSize: { md: 4, xs: 4 }, styleClasses: [CoreClasses.ALIGNMENT.ALIGN_ITEMS_END] }}
+            gridProps={{ gridSize: { md: 4, xs: 4 }, styleClasses: [CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_END] }}
           >
             <CoreIconButton
               title={currentDevice.allowRotate ? "Rotate" : "Screen orientation option"}
@@ -551,7 +551,7 @@ export default function LayoutViewer(props) {
   const renderLayoutViewerCanvas = () => {
     return (
       <>
-        <CoreTypographyBody2
+        {/* <CoreTypographyBody2
           styleClasses={[CoreClasses.BG.BG_WHITE, CoreClasses.POSITION.STICKY_TOP, CoreClasses.MARGIN.MB0, CoreClasses.MARGIN.ML3]}
         >←&nbsp;&nbsp;&nbsp;Screen Width: {getCurrentDimensionWidth()}px,
 
@@ -567,11 +567,11 @@ export default function LayoutViewer(props) {
           ]}
         >←&nbsp;&nbsp;&nbsp;Screen Height: {getCurrentDimensionHeight()}px, 
 
-        Rendered Height: {getRenderedDimensionHeight()}px&nbsp;&nbsp;&nbsp;→</CoreTypographyBody2>
+        Rendered Height: {getRenderedDimensionHeight()}px&nbsp;&nbsp;&nbsp;→</CoreTypographyBody2> */}
 
         <CoreBox
           styleClasses={[
-            CoreClasses.BG.BG_DOT_GRID_1,
+            // CoreClasses.BG.BG_DOT_GRID_1,
             CoreClasses.HEIGHT.MIN_VH_75,
             CoreClasses.HEIGHT.MAX_VH_100,
             CoreClasses.MARGIN.MB3,

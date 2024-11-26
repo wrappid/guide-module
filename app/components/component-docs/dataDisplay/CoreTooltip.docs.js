@@ -77,7 +77,7 @@ export default function CoreTooltipDocs() {
       <ComponentDocs
         component={CoreTooltip}
         description={
-          <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="column">
+          <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="column">
     
             <CoreTypographyBody1>
             CoreTooltips display informative text when users hover over, focus on, or tap an element.

@@ -22,7 +22,7 @@ export default function CoreConfirmPasswordFieldDocs() {
         description={"DESCRIPTION_OF_THE_SAMPLE"}
         code={`
 <CoreStack
-    styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+    styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
     spacing={2}
     direction="row">
     <CoreConfirmPasswordField
@@ -46,7 +46,7 @@ export default function CoreConfirmPasswordFieldDocs() {
         `}
         renderElement={<>
           <CoreStack
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             spacing={2}
             direction="row">
             <CoreConfirmPasswordField

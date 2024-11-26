@@ -688,7 +688,7 @@ export default function BadgeAlignment() {
             key={position}
             direction="row"
             spacing={4}
-            styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
           >
             <CoreBox width={100}>{position}</CoreBox>
 
@@ -728,7 +728,7 @@ export default function BadgeAlignment() {
                         key={position}
                         direction="row"
                         spacing={4}
-                        styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+                        styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
                       >
                         <CoreBox width={100}>{position}</CoreBox>
 

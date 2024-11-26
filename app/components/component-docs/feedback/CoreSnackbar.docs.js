@@ -107,7 +107,7 @@ export default function CoreSnackbarDocs() {
           </CoreButton>
         </CoreBox>
 
-        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }} >
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }} >
           <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "top" })}>
             Top-Right
           </CoreButton>
@@ -119,7 +119,7 @@ export default function CoreSnackbarDocs() {
           </CoreButton>
         </CoreBox>
 
-        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }}>
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }}>
           <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "bottom" })}>
             Bottom-Right
           </CoreButton>
@@ -351,7 +351,7 @@ export default function CoreSnackbarDocs() {
           </CoreButton>
         </CoreBox>
 
-        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }} >
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }} >
           <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "top" })}>
             Top-Right
           </CoreButton>
@@ -363,7 +363,7 @@ export default function CoreSnackbarDocs() {
           </CoreButton>
         </CoreBox>
 
-        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }}>
+        <CoreBox gridProps={{ gridSize: { md: 6 }, styleClasses: [CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_FLEX_END] }}>
           <CoreButton variant="text" onClick={handleClick({ horizontal: "right", vertical: "bottom" })}>
             Bottom-Right
           </CoreButton>
@@ -562,7 +562,7 @@ export default function CoreLinearProgressDocs() {
             <CodeSample 
               title={"Use with Floating Action Buttons"}
               description={"If you're using a Floating Action Button on mobile, Material Design recommends positioning snackbars directly above it, as shown in the demo below:"}
-              code={`<CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+              code={`<CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
   <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
     <CoreAppBar position="static" color="primary" advanceMode={true}>
       <CoreToolbar>
@@ -617,7 +617,7 @@ import {
 
 export default function CoreSnackbarDocs() {
   return (
-    <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
       <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
         <CoreAppBar position="static" color="primary" advanceMode={true}>
           <CoreToolbar>
@@ -659,7 +659,7 @@ export default function CoreSnackbarDocs() {
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>
                   <CoreBox styleClasses={[CoreClasses.WIDTH.VW_25, CoreClasses.HEIGHT.VH_50, CoreClasses.BORDER.BORDER, CoreClasses.POSITION.POSITION_RELATIVE]}>
                     <CoreAppBar position="static" color="primary" advanceMode={true}>
                       <CoreToolbar>

@@ -248,7 +248,7 @@ export default function CoreListDocs() {
 export default function BasicCoreList() {
   return (
     <CoreBox
-      styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+      styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
     >
       <CoreStack
         component={CorePaper}
@@ -298,7 +298,7 @@ export default function BasicCoreList() {
               renderElement={
                 <>
                   <CoreBox
-                    styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+                    styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
                   >
                     <CoreStack
                       component={CorePaper}
@@ -563,7 +563,7 @@ export default function DropdownNestedList() {
 
   return (
     <CoreBox
-      styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+      styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
     >
       <CoreStack
         component={CorePaper}
@@ -629,7 +629,7 @@ export default function DropdownNestedList() {
                   renderElement={
                     
                     <CoreBox
-                      styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+                      styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
                     >
                       <CoreStack
                         component={CorePaper}
@@ -745,7 +745,7 @@ export default function DropdownNestedList() {
 
 export default function FolderList() {
   return (
-    <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
     >
       <CoreStack
         component={CorePaper}
@@ -787,7 +787,7 @@ export default function FolderList() {
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}
                 >
                   <CoreStack
                     component={CorePaper}
@@ -883,7 +883,7 @@ export default function SelectedListItem() {
   };
 
   return (
-    <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+    <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
       <CoreStack component={CorePaper} styleClasses={[CoreClasses.WIDTH.W_25, CoreClasses.PADDING.P2]}>
         <CoreList>
           <CoreListItemButton
@@ -931,7 +931,7 @@ export default function SelectedListItem() {
   );
 }`}
               renderElement={
-                <CoreBox styleClasses={[CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
+                <CoreBox styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.WIDTH.W_100, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]}>
                   <CoreStack component={CorePaper} styleClasses={[CoreClasses.WIDTH.W_25, CoreClasses.PADDING.P2]}>
                     <CoreList>
                       <CoreListItemButton

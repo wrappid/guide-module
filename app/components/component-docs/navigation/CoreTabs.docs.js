@@ -12,7 +12,7 @@ export default function CoreTabsDocs() {
     <>
       <CoreH4>CoreTabs</CoreH4>
 
-      <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+      <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
         <CoreTypographyBody1>
       Tabs make it easy to explore and switch between different views.
         </CoreTypographyBody1>

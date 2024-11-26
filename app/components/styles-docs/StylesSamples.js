@@ -26,6 +26,7 @@ export const DEFAULT_BORDER_RENDERED = {
               CoreClasses.BORDER.BORDER,
               // CoreClasses.BORDER.BORDER_WIDTH_2,
               classes[className],
+              CoreClasses.DISPLAY.FLEX, 
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
               CoreClasses.PADDING.P1,
             ]}
@@ -58,7 +59,7 @@ export const DEFAULT_SAMPLE_COMPONENT = {
         ]}
       >
         <CoreTypographyCaption
-          styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
         >
           {className}
         </CoreTypographyCaption>
@@ -336,6 +337,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               // CoreClasses.BORDER.BORDER,
               // CoreClasses.BORDER.BORDER_WIDTH_2,
               classes[className],
+              CoreClasses.DISPLAY.FLEX, 
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
               CoreClasses.PADDING.P1,
             ]}
@@ -375,6 +377,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               CoreClasses.BORDER.BORDER,
               CoreClasses.BORDER.BORDER_WIDTH_2,
               classes[className],
+              CoreClasses.DISPLAY.FLEX, 
               CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
               CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
               CoreClasses.PADDING.P1,
@@ -383,7 +386,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             <CoreTypographyCaption>56x56</CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -484,7 +487,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -555,7 +558,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreBox>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -619,7 +622,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreBox>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -653,7 +656,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -725,7 +728,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreBox>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -765,7 +768,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             ]}
           >
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -796,7 +799,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             ]}
           >
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -827,7 +830,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             ]}
           >
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -871,7 +874,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             ]}
           >
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -922,7 +925,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -951,7 +954,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -979,7 +982,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1017,7 +1020,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1045,7 +1048,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1286,7 +1289,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1335,7 +1338,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1390,7 +1393,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           </CoreBox>
           <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -1440,7 +1443,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           </CoreBox>
           <CoreBox styleClasses={[CoreClasses.PADDING.PT1]}>
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -1482,7 +1485,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           </CoreBox>
           <CoreBox>
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -1618,7 +1621,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1788,7 +1791,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1816,7 +1819,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1842,7 +1845,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               {"Fusce mattis egestas risus, in euismod odio tincidunt in."}
             </CoreTypographyCaption>
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -1869,7 +1872,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1895,7 +1898,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1924,7 +1927,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -1953,7 +1956,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
             <CoreTypographyCaption
-              styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
             >
               {className}
             </CoreTypographyCaption>
@@ -1983,7 +1986,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
               Lorem ipsum dolor sit amet.
             </CoreTypographyCaption>
           </CoreBox>
-          <CoreTypographyCaption styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+          <CoreTypographyCaption styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
         </CoreBox>
       );
     },
@@ -2009,7 +2012,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2037,7 +2040,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2066,7 +2069,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreTypographyCaption>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2100,7 +2103,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2154,7 +2157,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             </CoreBox>
           </CoreBox>
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2196,7 +2199,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2250,7 +2253,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           </CoreBox>
 
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2299,7 +2302,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           </CoreBox>
 
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2328,7 +2331,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>
@@ -2354,7 +2357,7 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
           ]}
         >
           <CoreTypographyCaption
-            styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+            styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
           >
             {className}
           </CoreTypographyCaption>

@@ -77,7 +77,7 @@ export default function BasicStack() {
   CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
   CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER
 ]}>
-  <CoreStack styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} spacing={2} direction="row">
+  <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} spacing={2} direction="row">
     <Item title={"Item 1"}/>
     <Item title={"Item 2"}/>
     <Item title={"Item 3"}/>
@@ -104,7 +104,7 @@ export default function DirectionStack() {
       CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
       CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER
     ]}>
-      <CoreStack styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} spacing={2} direction="row">
+      <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} spacing={2} direction="row">
         <Item title={"Item 1"}/>
         <Item title={"Item 2"}/>
         <Item title={"Item 3"}/>
@@ -121,7 +121,7 @@ export default function DirectionStack() {
                   CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER,
                   CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER
                 ]}>
-                  <CoreStack styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} spacing={2} direction="row">
+                  <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} spacing={2} direction="row">
                     <Item title={"Item 1"}/>
 
                     <Item title={"Item 2"}/>

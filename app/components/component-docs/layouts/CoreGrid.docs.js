@@ -648,7 +648,7 @@ export default function BasicCoreGridVariable() {
           ID: 1030114
         </CoreTypographyCaption>
       </CoreGrid>
-      <CoreGrid direction="column" gridProps={{ gridSize: { xs: 3 } }} styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_END]}>
+      <CoreGrid direction="column" gridProps={{ gridSize: { xs: 3 } }} styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_END]}>
         <CoreTypographyBody1 variant="body2">
           $19.00
         </CoreTypographyBody1>
@@ -692,7 +692,7 @@ export default function BasicCoreGridComplex() {
                 ID: 1030114
               </CoreTypographyCaption>
             </CoreGrid>
-            <CoreGrid direction="column" gridProps={{ gridSize: { xs: 3 } }} styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_END]}>
+            <CoreGrid direction="column" gridProps={{ gridSize: { xs: 3 } }} styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_END]}>
               <CoreTypographyBody1 variant="body2">
                 $19.00
               </CoreTypographyBody1>
@@ -739,7 +739,7 @@ export default function BasicCoreGridComplex() {
                         </CoreTypographyCaption>
                       </CoreGrid>
 
-                      <CoreGrid direction="column" gridProps={{ gridSize: { xs: 3 } }} styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_END]}>
+                      <CoreGrid direction="column" gridProps={{ gridSize: { xs: 3 } }} styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_END]}>
                         <CoreTypographyBody1 variant="body2">
                             $19.00
                         </CoreTypographyBody1>

@@ -61,7 +61,7 @@ export default function BasicDivider() {
       <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
         <CoreStack
           direction="row"
-          styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}
+          styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}
           justifyContent="space-between"
           alignItems="center">
           <CoreH4 gutterBottom component="div">Toothbrush</CoreH4>
@@ -93,7 +93,7 @@ export default function BasicDivider() {
                   <CoreBox styleClasses={[CoreClasses.PADDING.P2]}>
                     <CoreStack
                       direction="row"
-                      styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}
+                      styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_SPACE_BETWEEN]}
                       justifyContent="space-between"
                       alignItems="center">
                       <CoreH4 gutterBottom component="div">

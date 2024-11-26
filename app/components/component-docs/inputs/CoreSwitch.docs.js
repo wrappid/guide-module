@@ -294,7 +294,7 @@ export default function SwitchesGroup() {
   };
 
   return (
-    <CoreFormControl styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} component="fieldset" variant="standard">
+    <CoreFormControl styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} component="fieldset" variant="standard">
       <CoreTypographyBody1>Assign responsibility</CoreTypographyBody1>
       <CoreFormGroup>
         <CoreFormControlLabel
@@ -315,7 +315,7 @@ export default function SwitchesGroup() {
   );                
 }`}
               renderElement={<>
-                <CoreFormControl styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} component="fieldset" variant="standard">
+                <CoreFormControl styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} component="fieldset" variant="standard">
                   <CoreTypographyBody1>Assign responsibility</CoreTypographyBody1>
 
                   <CoreFormGroup>
@@ -369,7 +369,7 @@ export default function SwitchesGroup() {
 
 export default function FormControlLabelPosition() {
   return (
-    <CoreFormControl styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} component="fieldset">
+    <CoreFormControl styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} component="fieldset">
         <CoreTypographyBody1>Label placement</CoreTypographyBody1>
         <CoreFormGroup aria-label="position" row>
           <CoreFormControlLabel
@@ -401,7 +401,7 @@ export default function FormControlLabelPosition() {
   );
 }`}
               renderElement={<>
-                <CoreFormControl styleClasses={[CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} component="fieldset">
+                <CoreFormControl styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.ALIGN_ITEMS_CENTER]} component="fieldset">
                   <CoreTypographyBody1>Label placement</CoreTypographyBody1>
 
                   <CoreFormGroup aria-label="position" row>

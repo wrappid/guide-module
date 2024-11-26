@@ -42,7 +42,7 @@ export default function CoreAvatarDocs() {
 
 export default function Demo() {
   return (
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
       <CoreAvatar src="https://picsum.photos/200?random=1" />
       <CoreAvatar src="https://picsum.photos/200?random=2" />
       <CoreAvatar src="https://picsum.photos/200?random=3" />
@@ -51,7 +51,7 @@ export default function Demo() {
 }`}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 spacing={2}
                 direction="row"
               >
@@ -74,7 +74,7 @@ export default function Demo() {
                 <CodeBlock>{"children"}</CodeBlock>.
               </>
             }
-            code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row" >
+            code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row" >
   <CoreAvatar>W</CoreAvatar>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]}>WR</CoreAvatar>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>OP</CoreAvatar>
@@ -83,7 +83,7 @@ export default function Demo() {
   
 export default function LetterAvatars() {
   return (
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row" >
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row" >
       <CoreAvatar>W</CoreAvatar>
       <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]}>WR</CoreAvatar>
       <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY]}>OP</CoreAvatar>
@@ -92,7 +92,7 @@ export default function LetterAvatars() {
 }`}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 spacing={2}
                 direction="row"
               >
@@ -116,7 +116,7 @@ export default function LetterAvatars() {
                 <CodeBlock>{"width"}</CodeBlock> CSS properties.
               </CoreTypographyBody1>
             }
-            code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
+            code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
   <CoreAvatar src="https://picsum.photos/200?random=1" />
   <CoreAvatar
     src="https://picsum.photos/200?random=1"
@@ -144,7 +144,7 @@ export default function LetterAvatars() {
   
 export default function SizesAvatars() {
   return (
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row">
       <CoreAvatar src="https://picsum.photos/200?random=1" />
       <CoreAvatar
         src="https://picsum.photos/200?random=1"
@@ -172,7 +172,7 @@ export default function SizesAvatars() {
 }`}   
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 direction="row"
                 spacing={2}
               >
@@ -216,7 +216,7 @@ export default function SizesAvatars() {
                 <CodeBlock>{" children "}</CodeBlock>.
               </>
             }
-            code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+            code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY_DARK]}>
     <CoreIcon>folder</CoreIcon>
   </CoreAvatar>
@@ -231,7 +231,7 @@ export default function SizesAvatars() {
   
 export default function IconAvatars() {
   return (
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
       <CoreAvatar styleClasses={[CoreClasses.BG.BG_SECONDARY_DARK]}>
         <CoreIcon>folder</CoreIcon>
       </CoreAvatar>
@@ -246,7 +246,7 @@ export default function IconAvatars() {
 }`}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 spacing={2}
                 direction="row"
               >
@@ -272,7 +272,7 @@ export default function IconAvatars() {
             If you need square or rounded avatars, use the {" "}<CodeBlock>{"variant"}</CodeBlock>{" "}prop.
               </>
             }
-            code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+            code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]} variant="square">N</CoreAvatar>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]} variant="rounded">
     <CoreIcon>assignment</CoreIcon>
@@ -282,7 +282,7 @@ export default function IconAvatars() {
   
 export default function VariantsAvatar(){
   return(
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} spacing={2} direction="row">
       <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY_LIGHT]} variant="square">N</CoreAvatar>
       <CoreAvatar styleClasses={[CoreClasses.BG.BG_SUCCESS_LIGHT]} variant="rounded">
         <CoreIcon>assignment</CoreIcon>
@@ -292,7 +292,7 @@ export default function VariantsAvatar(){
 }`}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 spacing={2}
                 direction="row"
               >
@@ -325,7 +325,7 @@ export default function VariantsAvatar(){
              */}
               </>
             }
-            code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+            code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]} alt="Remy Sharp" src="/broken-image.jpg">W</CoreAvatar>
   <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]} alt="Remy Sharp" src="/broken-image.jpg"/>
   <CoreAvatar src="/broken-image.jpg" />
@@ -334,7 +334,7 @@ export default function VariantsAvatar(){
 
 export default function FallbacksAvatar(){
   return(
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
       <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]} alt="Remy Sharp" src="/broken-image.jpg">W</CoreAvatar>
       <CoreAvatar styleClasses={[CoreClasses.BG.BG_PRIMARY]} alt="Remy Sharp" src="/broken-image.jpg"/>
       <CoreAvatar src="/broken-image.jpg" />
@@ -343,7 +343,7 @@ export default function FallbacksAvatar(){
 }`}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 direction="row"
                 spacing={2}
               >
@@ -374,7 +374,7 @@ export default function FallbacksAvatar(){
           
               </>
             }
-            code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+            code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <CoreAvatarGroup max={4}>
     <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
     <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -387,7 +387,7 @@ export default function FallbacksAvatar(){
   
 export default function GroupedAvatar (){
   return(
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
       <CoreAvatarGroup max={4}>
         <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
         <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -400,7 +400,7 @@ export default function GroupedAvatar (){
 }`}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 direction="row"
                 spacing={2}
               >
@@ -426,7 +426,7 @@ export default function GroupedAvatar (){
           If you need to control the total number of avatars not shown, you can use the <CodeBlock>total</CodeBlock> prop.
               </>
             }
-            code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+            code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <CoreAvatarGroup total={24}>
     <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
     <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -438,7 +438,7 @@ export default function GroupedAvatar (){
  
 export default function TotalAvatars(){
   return(
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
       <CoreAvatarGroup total={24}>
         <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
         <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -450,7 +450,7 @@ export default function TotalAvatars(){
 }`}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 direction="row"
                 spacing={2}
               >
@@ -492,7 +492,7 @@ The <CodeBlock>renderSurplus</CodeBlock> prop is useful when you need to render 
           
 export default function CustomSurplusAvatar (){
   return(
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2} >
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2} >
       <CoreAvatarGroup renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>} total={4251}>
         <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
         <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -504,7 +504,7 @@ export default function CustomSurplusAvatar (){
 }`}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 direction="row"
                 spacing={2}
               >
@@ -531,7 +531,7 @@ export default function CustomSurplusAvatar (){
           `}
             renderElement={
               <CoreStack
-                styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                 direction="row"
                 spacing={2}
               >

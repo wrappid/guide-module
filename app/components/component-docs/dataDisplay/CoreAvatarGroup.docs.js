@@ -33,7 +33,7 @@ export default function CoreAvatarGroupDocs() {
           
                 </>
               }
-              code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+              code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <CoreAvatarGroup max={4}>
     <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
     <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -46,7 +46,7 @@ export default function CoreAvatarGroupDocs() {
   
 export default function GroupedAvatar (){
   return(
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
       <CoreAvatarGroup max={4}>
         <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
         <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -59,7 +59,7 @@ export default function GroupedAvatar (){
 }`}
               renderElement={
                 <CoreStack
-                  styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                  styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                   direction="row"
                   spacing={2}
                 >
@@ -85,7 +85,7 @@ export default function GroupedAvatar (){
           If you need to control the total number of avatars not shown, you can use the <CodeBlock>total</CodeBlock> prop.
                 </>
               }
-              code={`<CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+              code={`<CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
   <CoreAvatarGroup total={24}>
     <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
     <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -97,7 +97,7 @@ export default function GroupedAvatar (){
  
 export default function TotalAvatars(){
   return(
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2}>
       <CoreAvatarGroup total={24}>
         <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
         <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -109,7 +109,7 @@ export default function TotalAvatars(){
 }`}
               renderElement={
                 <CoreStack
-                  styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                  styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                   direction="row"
                   spacing={2}
                 >
@@ -151,7 +151,7 @@ The <CodeBlock>renderSurplus</CodeBlock> prop is useful when you need to render 
           
 export default function CustomSurplusAvatar (){
   return(
-    <CoreStack styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2} >
+    <CoreStack styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]} direction="row" spacing={2} >
       <CoreAvatarGroup renderSurplus={(surplus) => <CoreSpan>+{surplus.toString()[0]}k</CoreSpan>} total={4251}>
         <CoreAvatar alt="Some Photo 1" src="https://picsum.photos/200?random=1" />
         <CoreAvatar alt="Some Photo 2" src="https://picsum.photos/200?random=2" />
@@ -163,7 +163,7 @@ export default function CustomSurplusAvatar (){
 }`}
               renderElement={
                 <CoreStack
-                  styleClasses={[CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
+                  styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}
                   direction="row"
                   spacing={2}
                 >
