@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.129](https://https//github.com/wrappid/wrappid-module/compare/v0.0.128...v0.0.129) (2024-11-26)
+
+
+### Bug Fixes
+
+* :bug: handelling impact of style package ([61d80da](https://https//github.com/wrappid/wrappid-module/commit/61d80da7fb18da34946149d19d7d2e8ca073671d))
+
 ### [0.0.128](https://https//github.com/wrappid/wrappid-module/compare/v0.0.127...v0.0.128) (2024-11-14)
 
 
