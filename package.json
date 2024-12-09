@@ -39,7 +39,7 @@
     "@commitlint/prompt-cli": "~17.5.0",
     "@faker-js/faker": "~8.1.0",
     "@types/supertest": "~6.0.2",
-    "@wrappid/core": "0.0.592",
+    "@wrappid/core": "0.0.593",
     "@wrappid/service-core": "0.0.132",
     "@wrappid/styles": "0.0.178",
     "eslint": "~8.40.0",
