@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.132](https://https//github.com/wrappid/wrappid-module/compare/v0.0.131...v0.0.132) (2025-03-25)
+
+
+### Bug Fixes
+
+* **core:** :bug: add REQUEST_PROGRESS_BAR sample ([7017b44](https://https//github.com/wrappid/wrappid-module/commit/7017b44fc7a8c3e34ddbbfcf9a0bf34e960482b2)), closes [#347](https://https//github.com/wrappid/wrappid-module/issues/347)
+
 ### [0.0.131](https://https//github.com/wrappid/wrappid-module/compare/v0.0.130...v0.0.131) (2025-03-21)
 
 ### [0.0.130](https://https//github.com/wrappid/wrappid-module/compare/v0.0.129...v0.0.130) (2024-12-09)
