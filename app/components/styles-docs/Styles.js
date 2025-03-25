@@ -48,6 +48,7 @@ const CLASS_NAME_TO_EXCLUDE = [
   // "SHADOW", // DONE
   // "TRANSFORM", //DONE
   // "ROTATE", //DONE
+  // "REQUEST_PROGRESS_BAR",
   // "TEXT", // DONE*
   "VERTICAL_ALIGN",
   // "VISIBILITY", // DONE

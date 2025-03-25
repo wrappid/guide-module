@@ -45,7 +45,13 @@ export default function CodeSample(props) {
         >
           {renderElement && (
             <CoreBox
-              styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER, CoreClasses.PADDING.P2, CoreClasses.BORDER.BORDER_BOTTOM, CoreClasses.BORDER.BORDER_COLOR_GREY_200]}
+              styleClasses={[
+                CoreClasses.DISPLAY.FLEX,
+                CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER,
+                CoreClasses.PADDING.P2,
+                CoreClasses.BORDER.BORDER_BOTTOM,
+                CoreClasses.BORDER.BORDER_COLOR_GREY_200
+              ]}
             >
               {renderElement}
             </CoreBox>

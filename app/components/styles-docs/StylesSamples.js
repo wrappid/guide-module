@@ -1,9 +1,11 @@
 /* eslint-disable */
+import React from "react";
 import {
   CoreAlert,
   CoreBox,
+  CoreButton,
+  CoreIcon,
   CoreClasses,
-  CoreH3,
   CoreH6,
   CoreLink,
   CoreList,
@@ -1053,6 +1055,32 @@ export const CLASS_SPECIFIC_SAMPLE_COMPONENT = {
             {className}
           </CoreTypographyCaption>
         </CoreBox>
+      );
+    },
+  },
+  REQUEST_PROGRESS_BAR: {
+    description: (<CoreTypographyBody1>Click the button to show/hide the sample. Sample will show below the CoreAppBar.</CoreTypographyBody1>),
+    renderElement: (key, classes, className) => {
+      const [showProgressBar, setShowProgressBar] = React.useState(false);
+      return (
+        <CoreBox key={key} gridProps={{ gridSize: 3 }}>
+            <CoreButton onClick={() => setShowProgressBar(!showProgressBar)} startIcon={<CoreIcon>{showProgressBar ? 'visibility' : 'visibility_off'}</CoreIcon>}>
+              {showProgressBar ? 'Hide' : 'Show'} Sample
+            </CoreButton>
+            {showProgressBar && (
+              <CoreBox
+                styleClasses={[
+                  classes[className],
+                  CoreClasses.BORDER.BORDER,
+                  CoreClasses.BORDER.BORDER_COLOR_PRIMARY_LIGHT,
+                  CoreClasses.PADDING.P1,
+                  CoreClasses.TEXT.TEXT_CENTER,
+                ]}
+              >
+                <CoreTypographyCaption styleClasses={[CoreClasses.DISPLAY.FLEX, CoreClasses.ALIGNMENT.JUSTIFY_CONTENT_CENTER]}>{className}</CoreTypographyCaption>
+              </CoreBox>
+            )}
+          </CoreBox>
       );
     },
   },

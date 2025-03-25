@@ -368,6 +368,7 @@ export default function LayoutViewer(props) {
    * 
    * @returns 
    */
+  // eslint-disable-next-line no-unused-vars
   const getCurrentDimensionWidth = () => {
     getCurrentDimension();
     return currentDevice.dimension.current.width;
@@ -377,6 +378,7 @@ export default function LayoutViewer(props) {
    * 
    * @returns 
    */
+  // eslint-disable-next-line no-unused-vars
   const getCurrentDimensionHeight = () => {
     getCurrentDimension();
     return currentDevice.dimension.current.height;
@@ -399,6 +401,7 @@ export default function LayoutViewer(props) {
    * 
    * @returns 
    */
+  // eslint-disable-next-line no-unused-vars
   const getRenderedDimensionWidth = () => {
     getRenderedDimension();
     return currentDevice.dimension.rendered.width;
@@ -408,6 +411,7 @@ export default function LayoutViewer(props) {
    * 
    * @returns 
    */
+  // eslint-disable-next-line no-unused-vars
   const getRenderedDimensionHeight = () => {
     getRenderedDimension();
     return currentDevice.dimension.rendered.height;
@@ -571,7 +575,6 @@ export default function LayoutViewer(props) {
 
         <CoreBox
           styleClasses={[
-            // CoreClasses.BG.BG_DOT_GRID_1,
             CoreClasses.HEIGHT.MIN_VH_75,
             CoreClasses.HEIGHT.MAX_VH_100,
             CoreClasses.MARGIN.MB3,
